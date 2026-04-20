@@ -1,0 +1,70 @@
+@keyframes gmove {
+	0% {
+		background-position: 0 0;
+	}
+
+	100% {
+		background-position: 38px 38px;
+	}
+}
+
+@keyframes hbr {
+	0%,
+	100% {
+		opacity: 0.5;
+		transform: translate(-50%, -54%) scale(1);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translate(-50%, -54%) scale(1.08);
+	}
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	50% {
+		opacity: 0.35;
+		transform: scale(0.65);
+	}
+}
+
+@keyframes fup {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes cur {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes slin {
+	from {
+		opacity: 0;
+		transform: translateX(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
