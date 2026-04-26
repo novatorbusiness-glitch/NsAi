@@ -110,6 +110,73 @@ function ChapterCTA({ text, href }: { text: string; href: string }) {
 	);
 }
 
+function StatRow({ children }: { children: ReactNode }) {
+	return <div className="bk-stat-row">{children}</div>;
+}
+
+function Stat({ value, label }: { value: string; label: string }) {
+	return (
+		<div className="bk-stat">
+			<div className="bk-stat-val">{value}</div>
+			<div className="bk-stat-label">{label}</div>
+		</div>
+	);
+}
+
+function MomentBlock({ children }: { children: ReactNode }) {
+	return <div className="bk-moment">{children}</div>;
+}
+
+function ResultsFlow({ children }: { children: ReactNode }) {
+	return <div className="bk-flow">{children}</div>;
+}
+
+function FlowStep({ children, peak }: { children: ReactNode; peak?: boolean }) {
+	return <span className={`bk-flow-step${peak ? " peak" : ""}`}>{children}</span>;
+}
+
+function FlowArrow() {
+	return <span className="bk-flow-arrow">→</span>;
+}
+
+function LightCard({ label, title, children }: { label?: string; title?: string; children: ReactNode }) {
+	return (
+		<div className="bk-light">
+			{label && <div className="bk-light-label">{label}</div>}
+			{title && <div className="bk-light-title">{title}</div>}
+			<p>{children}</p>
+		</div>
+	);
+}
+
+function RoadmapGrid({ children }: { children: ReactNode }) {
+	return <div className="bk-road">{children}</div>;
+}
+
+function RoadItem({
+	num,
+	title,
+	color,
+	children,
+}: {
+	num: string;
+	title: string;
+	color?: string;
+	children: ReactNode;
+}) {
+	return (
+		<div className="bk-road-item">
+			<div className="bk-road-num" style={color ? { color } : undefined}>
+				{num}
+			</div>
+			<div>
+				<div className="bk-road-title">{title}</div>
+				<p className="bk-road-desc">{children}</p>
+			</div>
+		</div>
+	);
+}
+
 export function generateMetadata({ params }: ChapterPageProps): Metadata {
 	const slugs = getBookSlugs();
 	const resolvedSlug = resolveChapterSlug(params.slug);
@@ -180,7 +247,9 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 			</p>
 			) : null}
 
-			{!isFullHtml ? <h1 style={{ marginBottom: "12px" }}>{chapterTitle}</h1> : null}
+			{!isFullHtml && !chapterSource.trimStart().startsWith("<") && !chapterSource.includes("# ") ? (
+				<h1 style={{ marginBottom: "12px" }}>{chapterTitle}</h1>
+			) : null}
 
 			{chapterSource && !isFullHtml ? (
 				<article className="book-article">
@@ -189,6 +258,15 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 						components={{
 							KeyTakeaway,
 							ChapterCTA,
+							StatRow,
+							Stat,
+							MomentBlock,
+							ResultsFlow,
+							FlowStep,
+							FlowArrow,
+							LightCard,
+							RoadmapGrid,
+							RoadItem,
 						}}
 					/>
 				</article>
