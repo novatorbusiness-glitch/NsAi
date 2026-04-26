@@ -7,12 +7,13 @@ export interface BookChapterLink {
 export interface BookIntroLink {
 	title: string;
 	slug: string;
+	description: string;
 }
 
-export const BOOK_INTRO_LINK: BookIntroLink = {
-	title: "Введение",
-	slug: "00-vvedenie",
-};
+export const BOOK_INTRO_LINKS: BookIntroLink[] = [
+	{ title: "Знакомство", slug: "00-a-znakomstvo", description: "Об авторе и книге" },
+	{ title: "Пролог", slug: "00-b-prolog", description: "Манифест Архитектора" },
+];
 
 // Single source of truth for chapter entry links.
 // We link each chapter to its first existing subchapter file slug.

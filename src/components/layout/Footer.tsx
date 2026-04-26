@@ -1,4 +1,4 @@
-import { BOOK_CHAPTER_LINKS, BOOK_INTRO_LINK } from "@/lib/book-data";
+import { BOOK_CHAPTER_LINKS, BOOK_INTRO_LINKS } from "@/lib/book-data";
 
 export default function Footer() {
 	return (
@@ -22,9 +22,11 @@ export default function Footer() {
 					<div>
 						<div className="fch">Книга</div>
 						<ul className="fls">
-							<li>
-								<a href={`/book/${BOOK_INTRO_LINK.slug}`}>{BOOK_INTRO_LINK.title}</a>
-							</li>
+							{BOOK_INTRO_LINKS.map((intro) => (
+								<li key={intro.slug}>
+									<a href={`/book/${intro.slug}`}>{intro.title}</a>
+								</li>
+							))}
 							{BOOK_CHAPTER_LINKS.map((chapter) => (
 								<li key={chapter.id}>
 									<a href={`/book/${chapter.entrySlug}`}>
