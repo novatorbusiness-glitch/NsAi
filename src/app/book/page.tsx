@@ -1,4 +1,4 @@
-import { BOOK_CHAPTER_LINKS, BOOK_INTRO_LINK } from "@/lib/book-data";
+import { BOOK_CHAPTER_LINKS, BOOK_INTRO_LINKS } from "@/lib/book-data";
 
 export default function BookPage() {
 	return (
@@ -12,12 +12,15 @@ export default function BookPage() {
 			</p>
 
 			<div className="book-index-start">
-				<div className="book-index-start-label">
-					Рекомендуемый старт
+				<div className="book-index-start-label">С чего начать</div>
+				<div className="book-index-intro-links">
+					{BOOK_INTRO_LINKS.map((intro) => (
+						<a key={intro.slug} href={`/book/${intro.slug}`} className="book-index-intro-link">
+							<span className="book-index-intro-title">{intro.title}</span>
+							<span className="book-index-intro-desc">{intro.description}</span>
+						</a>
+					))}
 				</div>
-				<a href={`/book/${BOOK_INTRO_LINK.slug}`} className="book-index-start-link">
-					{BOOK_INTRO_LINK.title}
-				</a>
 			</div>
 
 			<ul className="book-index-list">
