@@ -26,6 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "weekly",
 			priority: 0.9,
 		},
+		{
+			url: `${SITE_URL}/consulting`,
+			changeFrequency: "monthly",
+			priority: 0.9,
+		},
 	];
 
 	const bookRoutes: MetadataRoute.Sitemap = getBookSlugs().map((slug) => ({
