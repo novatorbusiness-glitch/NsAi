@@ -13,6 +13,7 @@ export interface BookIntroLink {
 export const BOOK_INTRO_LINKS: BookIntroLink[] = [
 	{ title: "Знакомство", slug: "00-a-znakomstvo", description: "Об авторе и книге" },
 	{ title: "Пролог", slug: "00-b-prolog", description: "Манифест Архитектора" },
+	{ title: "Эпилог", slug: "00-c-epilog", description: "Архитектура цифровой монополии" },
 ];
 
 // Single source of truth for chapter entry links.
@@ -31,6 +32,7 @@ export const BOOK_CHAPTER_LINKS: BookChapterLink[] = [
 export const BOOK_SUBCHAPTER_TITLES: Record<string, string> = {
 	"00-a-znakomstvo": "Знакомство",
 	"00-b-prolog": "Пролог. Манифест Архитектора",
+	"00-c-epilog": "Эпилог. Архитектура твоей цифровой монополии",
 	"1-1-kognitivnye-lovushki": "Когнитивные ловушки",
 	"1-2-nejrokopiraiting": "Нейрокопирайтинг",
 	"1-3-lid-magnit": "Лид-магнит",
