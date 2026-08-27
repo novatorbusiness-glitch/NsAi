@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 
-const SITE_URL = "https://ncai-consulting-20260420.surge.sh";
+const SITE_URL = "https://ilya-novitsky.ru";
 
 function getBookSlugs(): string[] {
 	const dir = path.join(process.cwd(), "content/book");

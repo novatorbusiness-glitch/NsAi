@@ -25,3 +25,43 @@ export const BOOK_CHAPTER_LINKS: BookChapterLink[] = [
 	{ id: 5, title: "Автоматизация", entrySlug: "5-1-algoritm-vs-chelovek" },
 	{ id: 6, title: "Автономный разум", entrySlug: "6-1-cifrovye-sotrudniki" },
 ];
+
+// Человеческие заголовки подглав (для SEO: title/description).
+// Слаг → нормальный заголовок из книги «Нейро-Воронка».
+export const BOOK_SUBCHAPTER_TITLES: Record<string, string> = {
+	"00-a-znakomstvo": "Знакомство",
+	"00-b-prolog": "Пролог. Манифест Архитектора",
+	"1-1-kognitivnye-lovushki": "Когнитивные ловушки",
+	"1-2-nejrokopiraiting": "Нейрокопирайтинг",
+	"1-3-lid-magnit": "Лид-магнит",
+	"1-4-vizualnye-stimuly": "Визуальные стимулы",
+	"2-1-produktovaya-matrica": "Продуктовая матрица",
+	"2-2-anatomiya-voronki": "Анатомия воронки",
+	"2-3-arhitektura-voronki": "Архитектура воронки",
+	"2-4-finalnaya-sborka": "Финальная сборка",
+	"3-1-fiziologiya-uderzhaniya": "Физиология удержания",
+	"3-2-chetyre-elementa-doveriya": "Четыре элемента доверия",
+	"3-3-cepochki-kasanij": "Цепочки касаний",
+	"3-4-usilenie-ohvatov": "Усиление охватов",
+	"3-5-ai-kopiraiter": "AI-копирайтер",
+	"4-1-anatomiya-kreativa": "Анатомия креатива",
+	"4-2-shest-stimulov": "Шесть стимулов",
+	"4-3-virusnaya-mehanika": "Вирусная механика",
+	"4-4-organicheskij-trafik": "Органический трафик",
+	"4-5-poisk-segmentaciya": "Поиск и сегментация",
+	"4-6-analitika-trafika": "Аналитика трафика",
+	"4-7-ai-kreativy": "AI-креативы",
+	"5-1-algoritm-vs-chelovek": "Алгоритм против человека",
+	"5-2-stek-avtomatizacii": "Стек автоматизации",
+	"5-3-vebinarnyj-dvigatel": "Вебинарный двигатель",
+	"5-4-audit-voronki": "Аудит воронки",
+	"5-5-ai-v-prodazhah": "AI в продажах",
+	"6-1-cifrovye-sotrudniki": "Цифровые сотрудники",
+	"6-2-razrabotka-bez-programmistov": "Разработка без программистов",
+};
+
+// Получить человеческий заголовок подглавы (слаг → название).
+export function getSubchapterTitle(slug: string): string {
+	return BOOK_SUBCHAPTER_TITLES[slug] ?? slug.replace(/-/g, " ");
+}
+
