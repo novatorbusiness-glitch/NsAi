@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Разработка в новой логике: IT-инфраструктура на естественном языке — Нейро-воронка · NcAi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0d0d0d;--bgc:#131313;--bgc2:#181818;
+  --br:#1e1e1e;--br2:#2a2a2a;
+  --t:#f0ede6;--t2:#7a7670;--t3:#333;
+  --a:#FFD000;--ad:rgba(255,208,0,.08);
+  --red:#e84040;
+  --metal:linear-gradient(135deg,#e8e8e8 0%,#c8c8c8 35%,#888 65%,#d4d4d4 100%);
+  --fd:'Space Grotesk',sans-serif;--fs:'Manrope',sans-serif;--fm:'Space Mono',monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--max:800px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:18px;line-height:1.8;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
+@media(pointer:fine){#cd,#cr{display:block}}
+#cd{width:5px;height:5px;background:var(--a);border-radius:50%}
+#cr{z-index:9998;width:28px;height:28px;border:1px solid rgba(255,208,0,.35);border-radius:50%;transition:width .3s var(--ease),height .3s var(--ease)}
+#cr.ex{width:46px;height:46px;opacity:.3}
+body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.4));z-index:200;width:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+  background:rgba(8,8,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);transition:all .3s}
+nav.sc{border-color:rgba(255,255,255,.07)}
+.ni{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
+  background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.nav-chap{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-back{font-family:var(--fd);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);
+  text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;flex-shrink:0;white-space:nowrap}
+.nav-back:hover{color:var(--t)}
+
+/* BASE */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}.rv.d4{transition-delay:.44s}
+
+/* SCROLL NAV */
+.scroll-nav{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.45rem;z-index:50}
+@media(max-width:900px){.scroll-nav{display:none}}
+.sn-dot{width:4px;height:4px;border-radius:50%;background:var(--br2);cursor:pointer;transition:background .3s,transform .3s,height .3s}
+.sn-dot.act{background:var(--a);height:20px;border-radius:2px}
+.sn-dot:hover{background:rgba(255,208,0,.5)}
+
+/* HERO */
+#hero{min-height:52vh;display:flex;align-items:flex-end;padding:calc(60px + 5rem) 0 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 0%,rgba(255,208,0,.055),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.chap-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--t2);padding:.36rem .88rem;border:1px solid var(--br2);border-radius:999px;
+  margin-bottom:1.75rem;animation:fup .8s var(--ease) both}
+.bd{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.2rem,5.5vw,4.6rem);font-weight:800;line-height:.97;letter-spacing:-.04em;
+  margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
+.hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--t2);max-width:560px;line-height:1.78;animation:fup 1s .2s var(--ease) both;margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--br);animation:fup 1s .3s var(--ease) both;flex-wrap:wrap}
+.hm-item{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.hm-item span{display:block;color:var(--t2);margin-top:.2rem;font-size:.68rem;letter-spacing:0;text-transform:none}
+
+/* ARTICLE */
+article{padding:5rem 0 8rem}
+.prose-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;
+  color:var(--t);margin:4.5rem 0 1.4rem}
+.prose-h3{font-family:var(--fd);font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:var(--t);margin:2.6rem 0 .9rem}
+.prose-p{font-size:1.02rem;color:#b0aca5;line-height:1.85;margin-bottom:1.35rem}
+.prose-p strong{color:var(--t);font-weight:600}
+.prose-p em{font-style:italic;color:#ccc9c2}
+hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
+ul.ticks{list-style:none;margin:1.2rem 0 1.6rem}
+ul.ticks li{position:relative;padding:0 0 0 1.6rem;margin-bottom:.8rem;font-size:.98rem;color:#b0aca5;line-height:1.7}
+ul.ticks li::before{content:'+';position:absolute;left:0;top:0;color:var(--a);font-family:var(--fm);font-size:.9rem}
+ul.ticks li strong{color:var(--t)}
+ul.minus{list-style:none;margin:1.2rem 0 1.6rem}
+ul.minus li{position:relative;padding:0 0 0 1.6rem;margin-bottom:.8rem;font-size:.98rem;color:#b0aca5;line-height:1.7}
+ul.minus li::before{content:'—';position:absolute;left:0;top:0;color:var(--red);font-family:var(--fm);font-size:.9rem}
+
+/* PRACTICE */
+.practice{margin:2rem 0;padding:1.75rem 2rem 1.75rem 1.75rem;border-left:3px solid rgba(255,208,0,.5);
+  background:rgba(255,208,0,.04);border-radius:0 10px 10px 0}
+.practice-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);
+  opacity:.8;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.practice-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a);opacity:.6;flex-shrink:0}
+.practice p{font-size:.92rem;color:#b8b4ad;line-height:1.75}
+.practice strong{color:var(--t)}
+
+/* KEY INSIGHT */
+.insight{margin:4rem 0;padding:2.5rem;background:var(--bgc);border:1px solid rgba(255,208,0,.2);border-radius:14px;
+  position:relative;overflow:hidden;text-align:center}
+.insight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(255,208,0,.05),transparent);pointer-events:none}
+.insight-icon{font-size:2.5rem;margin-bottom:1.2rem}
+.insight-text{font-family:var(--fs);font-style:italic;font-size:1.12rem;line-height:1.75;color:var(--t);max-width:580px;margin:0 auto 1.5rem}
+.insight-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+
+/* CHAPTER NAV */
+.chapter-nav{margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.chapter-nav{grid-template-columns:1fr}}
+.cn-btn{padding:1.5rem;border:1px solid var(--br);border-radius:12px;text-decoration:none;background:var(--bgc);
+  transition:border-color .25s,transform .25s var(--ease),background .25s;display:block}
+.cn-btn:hover{border-color:rgba(255,208,0,.3);background:var(--bgc2);transform:translateY(-3px)}
+.cn-btn.next{border-color:rgba(255,208,0,.2);background:var(--ad)}
+.cn-btn.next:hover{border-color:rgba(255,208,0,.5)}
+.cn-dir{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.cn-btn.next .cn-dir{color:var(--a);opacity:.8}
+.cn-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.3}
+
+/* ── SHARED COMPONENT BLOCKS (used across generated chapters) ── */
+
+/* NUMBERED CARD GRID */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+.card{padding:1.4rem 1.5rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s var(--ease),background .25s}
+.card:hover{border-color:rgba(255,208,0,.35);background:var(--bgc2);transform:translateY(-3px)}
+.card .c-num{font-family:var(--fd);font-size:2.1rem;font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:.8rem;
+  color:transparent;-webkit-text-stroke:1px rgba(255,208,0,.25)}
+.card .c-title{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--t);margin-bottom:.45rem;line-height:1.3}
+.card .c-text{font-size:.84rem;color:var(--t2);line-height:1.6}
+.card .c-text strong{color:var(--t)}
+
+/* STEP FLOW */
+.steps{margin:2rem 0;display:flex;flex-direction:column;gap:.6rem}
+.step{display:grid;grid-template-columns:54px 1fr;gap:1.1rem;align-items:start;padding:1.1rem 1.3rem;
+  border:1px solid var(--br);border-radius:11px;background:var(--bgc);transition:border-color .25s,transform .25s var(--ease)}
+.step:hover{border-color:rgba(255,208,0,.3);transform:translateX(5px)}
+.step .s-num{font-family:var(--fm);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);
+  background:var(--ad);border:1px solid rgba(255,208,0,.22);border-radius:8px;text-align:center;padding:.5rem .4rem;line-height:1.4}
+.step .s-body .s-title{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.step .s-body .s-text{font-size:.87rem;color:var(--t2);line-height:1.65}
+.step .s-body .s-text strong{color:var(--t)}
+
+/* COMPARISON */
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+@media(max-width:560px){.comp{grid-template-columns:1fr}}
+.comp-col{padding:1.5rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc)}
+.comp-col.bad{border-color:rgba(232,64,64,.22);background:rgba(232,64,64,.03)}
+.comp-col.good{border-color:rgba(255,208,0,.25);background:var(--ad)}
+.comp-col .cc-tag{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.9rem}
+.comp-col.bad .cc-tag{color:var(--red)}
+.comp-col.good .cc-tag{color:var(--a)}
+.comp-col .cc-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.55rem}
+.comp-col .cc-text{font-size:.85rem;color:var(--t2);line-height:1.65}
+.comp-col .cc-text strong{color:var(--t)}
+
+/* METRIC / STAT ROW */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.metric{padding:1.3rem 1.2rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);text-align:center;transition:border-color .25s}
+.metric:hover{border-color:rgba(255,208,0,.35)}
+.metric .m-val{font-family:var(--fd);font-size:1.9rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--a);margin-bottom:.5rem}
+.metric .m-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t2)}
+
+/* DOSSIER (case study) */
+.dossier{margin:3rem 0;border:1px solid var(--br);border-radius:16px;overflow:hidden;background:var(--bgc)}
+.dossier-head{padding:1.3rem 1.8rem;border-bottom:1px solid var(--br);display:flex;align-items:center;gap:.8rem;
+  background:linear-gradient(90deg,rgba(255,208,0,.06),transparent)}
+.dossier-head .d-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a)}
+.dossier-head .d-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t)}
+.dossier-body{padding:1.8rem}
+.dossier-body .d-row{margin-bottom:1.4rem}
+.dossier-body .d-row:last-child{margin-bottom:0}
+.dossier-body .d-row .dr-tag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.dossier-body .d-row p{font-size:.92rem;color:var(--t2);line-height:1.75}
+.dossier-body .d-row p strong{color:var(--t)}
+
+/* GLOSSARY */
+.glossary{margin:3rem 0}
+.glossary .g-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:1.4rem}
+.g-term{display:grid;grid-template-columns:190px 1fr;gap:1.1rem;padding:1rem 0;border-bottom:1px solid var(--br);align-items:start}
+@media(max-width:560px){.g-term{grid-template-columns:1fr;gap:.3rem}}
+.g-term .gt-name{font-family:var(--fm);font-size:.72rem;line-height:1.5;color:var(--t);font-weight:700}
+.g-term .gt-desc{font-size:.88rem;color:var(--t2);line-height:1.7}
+
+/* FORMULA BANNER */
+.formula{margin:2rem 0;padding:1.6rem 1.8rem;border:1px solid rgba(255,208,0,.28);border-radius:12px;background:var(--ad);
+  font-family:var(--fm);font-size:.92rem;color:var(--t);text-align:center;letter-spacing:.01em;line-height:1.7}
+.formula .f-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a);margin-bottom:.6rem}
+
+/* QUOTE */
+blockquote.quote{margin:2.2rem 0;padding:1.6rem 1.9rem;border-left:3px solid rgba(255,208,0,.4);background:var(--bgc);
+  border-radius:0 10px 10px 0;font-size:1.04rem;font-style:italic;color:#ccc9c2;line-height:1.75}
+blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);font-style:normal}
+
+/* TAGS */
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t2);
+  border:1px solid var(--br2);border-radius:999px;padding:.35rem .8rem}
+.tag.hot{color:var(--a);border-color:rgba(255,208,0,.3)}
+
+/* GLOSSARY (matches completed chapter pages) */
+.gl-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.45);margin-bottom:.8rem}
+.gl-h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:2rem;line-height:1.1}
+.gloss-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:3rem}
+@media(max-width:540px){.gloss-grid{grid-template-columns:1fr}}
+.gl-item{padding:1rem 1.25rem;border:1px solid var(--br2);border-radius:10px;background:var(--bgc);
+  cursor:default;transition:border-color .2s,background .2s}
+.gl-item:hover{border-color:rgba(255,208,0,.18);background:var(--bgc2)}
+.gl-term{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--a);margin-bottom:.32rem;line-height:1.25;opacity:.9}
+.gl-def{font-size:.75rem;color:var(--t2);line-height:1.6}
+.gl-def strong{color:var(--t3);font-weight:600}
+.gl-closer{margin-top:2rem;padding:1.5rem;background:var(--bgc);border:1px solid var(--br2);border-radius:12px;text-align:center}
+.gl-closer p{font-size:.88rem;color:rgba(240,237,230,.6);line-height:1.8}
+.gl-closer strong{color:var(--t)}
+
+
+</style>
+</head>
+<body>
+<div id="cd"></div><div id="cr"></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <div class="ni">
+    <a href="/" class="logo">NcAi</a>
+    <span class="nav-chap">Гл. 6.2 · Разработка без программистов</span>
+    <a href="/book" class="nav-back">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11 6.5H2M5.5 3L2 6.5l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      К главам
+    </a>
+  </div>
+</nav>
+
+<div class="scroll-nav" id="scrollNav">
+  <div class="sn-dot act" data-s="hero" title="Начало"></div>
+  <div class="sn-dot" data-s="why" title="Почему трещит старая модель"></div>
+  <div class="sn-dot" data-s="live" title="Live coding"></div>
+  <div class="sn-dot" data-s="mechanism" title="Новый механизм"></div>
+  <div class="sn-dot" data-s="lang" title="Естественный язык"></div>
+  <div class="sn-dot" data-s="orchestra" title="Команда агентов"></div>
+  <div class="sn-dot" data-s="dossier" title="Досье"></div>
+  <div class="sn-dot" data-s="glossary" title="Словарь"></div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="chap-badge"><span class="bd"></span>Глава 6 · Подглава 6.2 · 13 мин чтения</div>
+    <h1 class="hero-h1">Разработка в новой логике:<br>IT-инфраструктура<br>на <em>естественном</em> языке</h1>
+    <p class="hero-sub">Live coding, агентная координация и контекст вместо «ТЗ → команда → месяцы». Что меняется, когда архитектурное мышление становится важнее синтаксической ловкости.</p>
+    <div class="hero-meta">
+      <div class="hm-item">Глава<span>6 · Автономный контур</span></div>
+      <div class="hm-item">Подглава<span>6.2</span></div>
+      <div class="hm-item">Механизмов<span>архитектура → контекст → агенты</span></div>
+      <div class="hm-item">Продуктов<span>5 собрано в новой логике</span></div>
+    </div>
+  </div>
+</section>
+
+<article>
+<div class="wrap">
+
+<div class="rv"><p class="prose-p" style="margin-top:0">Значимую часть цифровых продуктов можно собирать через естественный язык, архитектуру контекста и агентную координацию. Исчезает не сложность — ослабевает старая монополия на вход и смещается центр тяжести. Раньше ключевой дефицит был в умении писать код руками, теперь всё чаще — в способности <strong>ясно мыслить, собирать систему, удерживать контекст и отличать рабочую архитектуру от красивой иллюзии</strong>. Новая эпоха не делает всех разработчиками — она делает архитектурное мышление важнее синтаксической ловкости.</p></div><h2 class="prose-h2 rv">Почему старая модель разработки начинает трещать</h2><p class="prose-p rv d1">Классическая разработка держалась на длинном переводческом коридоре: идея на языке бизнеса → описание → техническое мышление → код → интерфейс → серия уточнений. Каждый слой между замыслом и реализацией создаёт задержку, шум и вероятность искажения. Для мозга это особенно тяжело: <strong>длинный цикл обратной связи повышает неопределённость — один из самых энергозатратных режимов для нервной системы</strong>. С точки зрения predictive coding это почти идеальная фабрика ошибок предсказания: ожидаешь одно, получаешь другое, перестраиваешь модель, снова объясняешь. Live coding сокращает этот разрыв, сжимая дистанцию между мыслью, проверкой, правкой и реализацией до почти непрерывного цикла.</p><h2 class="prose-h2 rv">Что такое live coding на самом деле</h2><p class="prose-p rv d1">Live coding — не эффектная демонстрация экрана, где кто-то быстро печатает код. Это <strong>режим прозрачной сборки системы в реальном времени</strong>, когда архитектура, интерфейс, логика и код развиваются не в чёрном ящике подрядчика, а внутри общего поля понимания. Ты видишь не только результат, но и механизм принятия решений: почему блок появился здесь, почему выбрана такая структура, почему эта интеграция нужна, а эта нет. В старой модели заказчик видит две точки — обещание и артефакт. В новой — ход мысли между ними. Live coding делает объяснение частью самой работы: результатом становится не только продукт, но и <strong>передаваемое понимание</strong>.</p><h2 class="prose-h2 rv">Как работает новый механизм</h2><p class="prose-p rv d1">Сначала появляется не код, а <strong>архитектура намерения</strong>: что строим, для кого, какой сценарий должен возникнуть, где ценность, а что декоративная оболочка. Потом собирается контекст — внешний сверхмозг (Obsidian, документация, карты решений, правила, ограничения): это пространство, где проект обретает память и непрерывность. После включается агентный слой — не одна вкладка с чатом, а распределённая команда ролей.</p><p class="prose-p rv d1">Для разных задач — разные среды. Claude — глубина рассуждения и архитектурная связность. Gemini — мультимодальный разбор и широкий контекст. Cursor и кодовые среды — быстрая материализация в интерфейс и код. Плюс облако, базы данных, деплой, аналитика. <strong>Моя роль — не отойти в сторону и смотреть, как «AI всё делает», а держать целостность, цену ошибки, приоритеты и точку, где скорость не должна победить смысл.</strong></p><h2 class="prose-h2 rv">Почему естественный язык становится новым интерфейсом разработки</h2><p class="prose-p rv d1">Долгое время интерфейсом между человеком и машиной был синтаксис. Сейчас естественный язык становится интерфейсом высокого уровня: через него ты описываешь не только «что написать», но и «какую систему строим», «где лежит риск», «что важно для пользователя на эмоциональном уровне». Но здесь же рождается самообман: людям кажется, что если можно писать по-русски, значит можно не думать. На практике всё наоборот: <strong>чем ниже порог входа, тем дороже становится слабая мысль</strong> — нечёткая идея теперь масштабируется не месяцами, а часами. Настоящая сила новой эпохи не в том, что «код теперь пишет AI», а в том, что сильный архитектор быстрее превращает ясное мышление в работающую систему.</p><h2 class="prose-h2 rv">Не один чат, а команда агентов под управлением Архитектора</h2><p class="prose-p rv d1">Рынок упрощает всё до истории про один универсальный AI, который «сделал приложение». На практике работает не одна вкладка, а <strong>связка ролей</strong>: один лучше держит архитектурный разговор, другой сильнее в мультимодальном анализе, третий быстрее материализует интерфейс, четвёртый доводит до рабочего состояния. И всё это живёт как оркестр под единым управлением. Поэтому точнее говорить не «я пользователь нейросети», а «я управляю цифровым отделом». Именно за это платят сильному AI-архитектору: <strong>не за доступ к модели — он есть почти у всех, а за способность собрать из моделей работоспособную систему с логикой, качеством, приоритетами и передачей знаний</strong>.</p><div class="practice rv d1">
+  <div class="practice-label">Практика</div>
+  <p>Сформулируй следующую задачу развития на естественном языке: сначала архитектура намерения (что, для кого, какой сценарий), затем контекст в Obsidian, затем делегирование по ролям. Проверь: где ты сам должен держать контроль, а что можно отдать агенту с правом локальных решений.</p>
+</div><hr class="div rv"><div class="dossier rv">
+  <div class="dossier-head"><div class="d-label">Досье Архитектора</div><div class="d-title">Продукты, которые уже собраны в новой логике</div></div>
+  <div class="dossier-body">
+    <div class="d-row"><div class="dr-tag">Дано</div><p>Скепсис естественен: где доказательство, что модель работает не только для лендинга? Проверка одна — смотреть, какие системы уже собраны в этой логике и насколько они различаются по природе.</p></div>
+    <div class="d-row"><div class="dr-tag">Решение</div><p>Vlinx — приложение для снижения веса, дисциплины и трекинга: логика ежедневного движения, контрольные точки, игровая динамика. Nezha Quest — приложение для ребёнка: мотивация, награды, путь чести, уровни и кристаллы. GAZE.ARCH — коммерческий фасад бренда. Neuro Flow — черновой health-tech проект с PPG-замерами и перспективой данных часов. И собственный сайт и упаковка AI-консалтинга — как маркер честности.</p></div>
+    <div class="d-row"><div class="dr-tag">Результат</div><p>Во всех повторяется один принцип: AI работает не вместо меня, а под моим управлением как усиленный производственный контур. Live coding и агентная разработка — уже действующий режим производства, а не разговор о будущем.</p></div>
+  </div>
+</div><p class="prose-p rv d1"><em>Финал.</em> Главное изменение — между человеком и цифровым продуктом исчезает прежняя бетонная стена. Сильная мысль может материализоваться почти сразу: не идеально, не безошибочно, но с такой скоростью, которая меняет саму экономику создания. Книга должна продавать не услугу, а мышление — и если логика глав тебе откликается, прикладные детали уже можно разбирать отдельно.</p><div class="insight rv">
+  <div class="insight-icon">🏛️</div>
+  <p class="insight-text">Эпоха, где цифровой продукт рождался только через дефицитную прослойку классической разработки, заканчивается. Архитектурное мышление, агентная координация и естественный язык становятся новой производственной силой.</p>
+  <div class="insight-tag">→ Финал книги: читай эпилог на странице книги</div>
+</div><div class="glossary rv"><div class="g-title">Термины Главы 6 · Автономный контур</div>
+<div class="g-term"><div class="gt-name">AI-агент</div><div class="gt-desc">Искусственный исполнитель в конкретной роли: память, контекст, инструменты, рамки поведения и право на ограниченные действия.</div></div>
+<div class="g-term"><div class="gt-name">Цифровой сотрудник</div><div class="gt-desc">Агент с функциональной ролью внутри системы: архитектор, копирайтер, редактор, разработчик — работающие в общем контексте.</div></div>
+<div class="g-term"><div class="gt-name">Агентность</div><div class="gt-desc">Не про «ум», а про архитектуру: память, роль, инструменты, границы, маршруты и делегированное действие.</div></div>
+<div class="g-term"><div class="gt-name">Внешний разумовой контур</div><div class="gt-desc">Слой, который удерживает контекст, продолжает работу между сессиями и не теряет нить проекта.</div></div>
+<div class="g-term"><div class="gt-name">Сверхмозг</div><div class="gt-desc">Obsidian и подобные среды: карта смыслов, правил, решений и версий — общая операционная память цифровой команды.</div></div>
+<div class="g-term"><div class="gt-name">Дозированное делегирование</div><div class="gt-desc">«Внутри этих границ ты имеешь право действовать без ручного подтверждения». Не слепая автономия.</div></div>
+<div class="g-term"><div class="gt-name">Live coding</div><div class="gt-desc">Режим прозрачной сборки системы в реальном времени: виден не только результат, но и механизм принятия решений.</div></div>
+<div class="g-term"><div class="gt-name">Архитектура намерения</div><div class="gt-desc">Сначала: что строим, для кого, какой сценарий, где ценность — до появления кода.</div></div>
+<div class="g-term"><div class="gt-name">Естественный язык как интерфейс</div><div class="gt-desc">Описание системы, поведения, риска и ограничений на естественном языке вместо синтаксиса.</div></div>
+<div class="g-term"><div class="gt-name">Цифровой отдел</div><div class="gt-desc">Связка агентных ролей под единым управлением Архитектора — не одна вкладка, а оркестр.</div></div>
+</div>
+
+    <div class="chapter-nav rv d1">
+    <a href="/book/6-1-cifrovye-sotrudniki" class="cn-btn">
+      <div class="cn-dir">← Назад</div>
+      <div class="cn-title">6.1 · Цифровые сотрудники</div>
+    </a>
+  </div>
+
+</div>
+</article>
+
+
+<script>
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button,.card,.step,.metric,.comp-col,.g-term').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cr.classList.add('ex'));
+    el.addEventListener('mouseleave',()=>cr.classList.remove('ex'));
+  });
+}
+// NAV + PROGRESS
+const nav=document.getElementById('nav'),prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('sc',window.scrollY>40);
+  prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+},{passive:true});
+// REVEAL
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// SCROLL NAV dots
+const sections=['hero', 'why', 'live', 'mechanism', 'lang', 'orchestra', 'dossier', 'glossary'];
+const dots=document.querySelectorAll('.sn-dot');
+dots.forEach((d,i)=>{d.addEventListener('click',()=>{
+  const el=document.getElementById(sections[i]);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+})});
+const sio=new IntersectionObserver(es=>{es.forEach(e=>{
+  if(e.isIntersecting){const idx=sections.indexOf(e.target.id);if(idx>=0)dots.forEach((d,i)=>d.classList.toggle('act',i===idx))}
+})},{threshold:.35});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)sio.observe(el)});
+// METER fill animation (if present)
+const meters=document.querySelectorAll('[data-fill]');
+if(meters.length){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
+  }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+</script>
+</body>
+</html>
+

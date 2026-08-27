@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import type { ReactNode } from "react";
 import fs from "fs";
 import path from "path";
+import { getSubchapterTitle } from "@/lib/book-data";
 
 const LEGACY_SLUG_ALIASES: Record<string, string> = {
 	vvedenie: "00-vvedenie",
@@ -193,11 +194,11 @@ export function generateMetadata({ params }: ChapterPageProps): Metadata {
 		};
 	}
 
-	const chapterTitle = resolvedSlug.replace(/-/g, " ");
+	const chapterTitle = getSubchapterTitle(resolvedSlug);
 
 	return {
-		title: `${chapterTitle} | Книга | NcAi`,
-		description: `Глава книги NcAi: ${chapterTitle}.`,
+		title: `${chapterTitle} — Нейро-воронка | NcAi`,
+		description: `${chapterTitle}. Глава книги «Нейро-воронка» Ильи Новицкого — инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI.`,
 		alternates: {
 			canonical: `/book/${resolvedSlug}`,
 		},
@@ -216,7 +217,7 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 	const prevSlug = index > 0 ? slugs[index - 1] : null;
 	const nextSlug = index < slugs.length - 1 ? slugs[index + 1] : null;
 	const chapterSource = getChapterSource(resolvedSlug);
-	const chapterTitle = slugToTitle(resolvedSlug);
+	const chapterTitle = getSubchapterTitle(resolvedSlug);
 	const isFullHtml = isFullHtmlDocument(chapterSource);
 	const normalizedFullHtml = isFullHtml ? normalizeChapterHtmlFonts(chapterSource, resolvedSlug) : "";
 
