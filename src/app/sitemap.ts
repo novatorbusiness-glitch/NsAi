@@ -31,6 +31,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "monthly",
 			priority: 0.9,
 		},
+		{
+			url: `${SITE_URL}/ai-training`,
+			changeFrequency: "monthly",
+			priority: 0.9,
+		},
+		{
+			url: `${SITE_URL}/portfolio`,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
 	];
 
 	const bookRoutes: MetadataRoute.Sitemap = getBookSlugs().map((slug) => ({

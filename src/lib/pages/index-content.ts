@@ -264,9 +264,9 @@ export const body = `
     <a href="/" class="logo">NCAi</a>
     <ul class="nav-links">
       <li><a href="/consulting">Консалтинг</a></li>
-      <li><a href="/">Обучение AI</a></li>
+      <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
-      <li><a href="/#projects">Портфолио</a></li>
+      <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
   </div>
@@ -308,7 +308,7 @@ export const body = `
           </div>
           <div class="pc-arr">→</div>
         </a>
-        <a href="/" class="pc pc-training" style="--c:#4ECDC4">
+        <a href="/ai-training" class="pc pc-training" style="--c:#4ECDC4">
           <div class="pc-icon">⚡</div>
           <div class="pc-body">
             <div class="pc-label">Обучение AI</div>
@@ -326,7 +326,7 @@ export const body = `
           </div>
           <div class="pc-arr">→</div>
         </a>
-        <a href="/#projects" class="pc pc-portfolio" style="--c:#ff9d2e">
+        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">🎯</div>
           <div class="pc-body">
             <div class="pc-label">Портфолио · Найм</div>
@@ -371,7 +371,7 @@ export const body = `
         </div>
       </a>
 
-      <a href="/" class="prod-card c2 rv d1">
+      <a href="/ai-training" class="prod-card c2 rv d1">
         <div class="prod-stripe" style="--stripe:#4ECDC4"></div>
         <div class="prod-top">
           <div class="prod-icon">⚡</div>
@@ -556,9 +556,9 @@ export const body = `
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
           <li><a href="/consulting">Консалтинг</a></li>
-          <li><a href="/">Обучение AI</a></li>
+          <li><a href="/ai-training">Обучение AI</a></li>
           <li><a href="/book">Книга</a></li>
-          <li><a href="/#projects">Портфолио</a></li>
+          <li><a href="/portfolio">Портфолио</a></li>
         </ul>
       </div>
       <div>
