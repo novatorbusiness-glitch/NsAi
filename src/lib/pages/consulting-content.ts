@@ -369,7 +369,7 @@ export const body = `
 <nav id="nav">
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
-    <ul class="nl"><li><a href="#mechanism">Метод</a></li><li><a href="#cases">Кейсы</a></li><li><a href="/book">Книга</a></li></ul>
+    <ul class="nl"><li><a href="#mechanism">Метод</a></li><li><a href="#cases">Кейсы</a></li><li><a href="/book">Книга</a></li><li><a href="/agency-in-a-box">Агентство в коробке</a></li></ul>
     <a href="#offer" class="nc">Обсудить проект</a>
   </div>
 </nav>

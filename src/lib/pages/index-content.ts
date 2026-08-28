@@ -266,6 +266,7 @@ export const body = `
       <li><a href="/consulting">Консалтинг</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
+      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>

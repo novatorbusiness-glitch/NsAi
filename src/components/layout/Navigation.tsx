@@ -44,6 +44,9 @@ export default function Navigation() {
 						<li>
 							<a href="/book">Книга</a>
 						</li>
+						<li>
+							<a href="/agency-in-a-box">Агентство в коробке</a>
+						</li>
 					</ul>
 					<a href="#offer" className="nc">
 						Обсудить проект
