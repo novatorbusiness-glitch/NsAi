@@ -168,9 +168,11 @@ export const body = `
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
     <ul class="nav-links">
-      <li><a href="/consulting">Консалтинг</a></li>
+      <li><a href="/consulting">Внедрение</a></li>
+      <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
-      <li><a href="/#products">Обучение</a></li>
+      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
+      <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="https://t.me/Ilya_novator" class="nav-cta">Обсудить проект</a>
   </div>
@@ -364,8 +366,9 @@ export const body = `
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/consulting">Консалтинг</a></li>
-          <li><a href="/">Обучение AI</a></li>
+          <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
+          <li><a href="/ai-training">Обучение AI</a></li>
+          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>
         </ul>

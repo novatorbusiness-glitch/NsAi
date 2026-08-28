@@ -1,4 +1,5 @@
-// Автогенерировано из doc_9bc2c3b323f1_consulting.html. Не редактировать вручную.
+// Внедрение NCAi-агентства за 30 дней (по книге «Агентство в коробке», гл. 3 «Распаковка»).
+// Стиль NCAi: токены 1:1 с index/portfolio/ai-training. CSS унаследован от прежней страницы.
 export const css = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -360,94 +361,104 @@ footer{background:#040404;padding:4.5rem 0 2rem;border-top:1px solid var(--br);p
 
 /* фикс: якоря не перекрываются фиксированным навом */
 section[id]{scroll-margin-top:76px}
-`;
 
-export const body = `
-<div id="cd"></div><div id="cr"></div>
+/* Внедрение NCAi за 30 дней: мелкие правки под новый контент */
+.tlcon{min-height:190px}
+@media(max-width:640px){.tlcon{min-height:auto}}
+/* Внедрение NCAi за 30 дней: мелкие правки под новый контент */
+.tlcon{min-height:190px}
+@media(max-width:640px){.tlcon{min-height:auto}}`;
+
+export const body = `<div id="cd"></div><div id="cr"></div>
 <div id="prog"></div>
 
 <nav id="nav">
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
-    <ul class="nl"><li><a href="#mechanism">Метод</a></li><li><a href="#cases">Кейсы</a></li><li><a href="/book">Книга</a></li><li><a href="/agency-in-a-box">Агентство в коробке</a></li></ul>
-    <a href="#offer" class="nc">Обсудить проект</a>
+    <ul class="nl">
+      <li><a href="/consulting">Внедрение</a></li>
+      <li><a href="/ai-training">Обучение AI</a></li>
+      <li><a href="/book">Книга</a></li>
+      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
+      <li><a href="/portfolio">Портфолио</a></li>
+    </ul>
+    <a href="mailto:ilya.novitskii@yandex.ru" class="nc">Написать</a>
   </div>
 </nav>
 
 <section id="hero">
-  <canvas id="pcanvas"></canvas>
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
-    <div class="hew"><span class="hdot"></span>Архитектор систем · AI-консалтинг</div>
-    <h1 class="hh1">Я захожу<br>в проект <em>мозгами.</em><span class="acc">Система остаётся.</span></h1>
-    <p class="hsub">Вхожу в команду заказчика — вместе строим маркетинговую систему, AI-автоматизацию и продукт. Лайф-кодинг: видите каждое решение. Ухожу — зависимости нет.</p>
+    <div class="hew"><span class="hdot"></span>Внедрение NCAi-агентства · 30 дней</div>
+    <h1 class="hh1">Агентство<br>в коробке. <em>Распаковка за 30 дней.</em><span class="acc">Работает уже с первой сессии.</span></h1>
+    <p class="hsub">Внедряю вам рабочее NCAi-агентство прямо в панели: AI-команда, отделы, задачи, база клиентов и аналитика. За 30 дней — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
     <div class="hacts">
-      <a href="#offer" class="bp">Обсудить проект <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#mechanism" class="bs">Как это работает</a>
+      <a href="mailto:ilya.novitskii@yandex.ru" class="bp">Обсудить внедрение <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#unpack" class="bs">Как проходит внедрение</a>
     </div>
     <div class="hstats">
-      <div class="hstat"><div class="hstatn"><span class="cnt" data-to="300">0</span><span class="sfx">+</span></div><div class="hstatl">Кейсов всего</div></div>
-      <div class="hstat"><div class="hstatn"><span class="cnt" data-to="7">0</span><span class="sfx">лет</span></div><div class="hstatl">В маркетинге и автоматизации</div></div>
-      <div class="hstat"><div class="hstatn">2–3<span class="sfx">мес</span></div><div class="hstatl">Длительность работы</div></div>
-      <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Прозрачность процесса</div></div>
+      <div class="hstat"><div class="hstatn"><span class="cnt" data-to="30">0</span><span class="sfx">дней</span></div><div class="hstatl">От распаковки до передачи руля</div></div>
+      <div class="hstat"><div class="hstatn">90<span class="sfx">мин</span></div><div class="hstatl">Сессия распаковки — агентство готово</div></div>
+      <div class="hstat"><div class="hstatn">3–5<span class="sfx">шт</span></div><div class="hstatl">AI-сотрудников в команде</div></div>
+      <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Прозрачность: всё в панели у вас</div></div>
     </div>
   </div>
   <div class="hright">
     <div class="hcard">
-      <div class="hctop"><div class="hcdot"></div><div class="hctitle">NCAi · <span>архитектура системы</span></div></div>
+      <div class="hctop"><div class="hcdot"></div><div class="hctitle">NCAi · <span>агентство в коробке</span></div></div>
       <div class="hsys">
         <div class="hsys-row">
-          <div class="hbox lit" id="hb0">Нейромаркетинг<br>+ смыслы</div>
+          <div class="hbox lit" id="hb0">Workspace<br>вашего бизнеса</div>
           <div class="harr">→</div>
-          <div class="hbox" id="hb1">Сайт / Лендинг<br>liveCode</div>
+          <div class="hbox" id="hb1">AI-команда<br>3–5 сотрудников</div>
         </div>
         <div class="hsys-conn"><div class="hsys-line"></div></div>
         <div class="hsys-row">
-          <div class="hbox" id="hb2">AI-агенты<br>автоматизация</div>
+          <div class="hbox" id="hb2">Отделы<br>и задачи</div>
           <div class="harr">→</div>
-          <div class="hbox" id="hb3">Воронка<br>+ аналитика</div>
+          <div class="hbox" id="hb3">База<br>клиентов</div>
         </div>
         <div class="hsys-conn"><div class="hsys-line"></div></div>
         <div class="hsys-row">
-          <div class="hbox" id="hb4">Трафик<br>и контент</div>
+          <div class="hbox" id="hb4">Аналитика<br>и финансы</div>
           <div class="harr">→</div>
-          <div class="hbox" id="hb5">Документация<br>→ передача</div>
+          <div class="hbox" id="hb5">Оператор<br>и передача руля</div>
         </div>
       </div>
-      <div class="hccap">building system.architecture<span class="cur">▌</span></div>
+      <div class="hccap">unpacking agency.workspace<span class="cur">▌</span></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="unique">
+<section id="box">
   <div class="w">
     <div class="uw">
       <div>
         <div class="ugh rv">01</div>
-        <span class="lb rv d1">Уникальность</span>
-        <h2 class="uh2 rv d1">Я не строю маркетинг.<br>Я строю системы,<br>которые его делают.</h2>
-        <p class="up rv d2">Пока агентства пишут отчёты, а консультанты строят презентации — <strong>я работаю рядом с вашей командой</strong>. Каждое решение в реальном времени. Каждая строка кода — с объяснением зачем.</p>
-        <p class="up rv d2">Когда ухожу — у вас <strong>не зависимость от подрядчика</strong>. Работающая система и команда, которая понимает как она устроена.</p>
+        <span class="lb rv d1">Агентство в коробке</span>
+        <h2 class="uh2 rv d1">Покупаете не консультанта.<br>Покупаете агентство.<br>Уже распакованное.</h2>
+        <p class="up rv d2">NCAi — SaaS-платформа, в которой у каждого клиента своё агентство в панели. Не «чат с нейросетью», а <strong>рабочее агентство</strong>: цифровые сотрудники с ролями и базой знаний, отделы, задачи, база клиентов, аналитика и финансы.</p>
+        <p class="up rv d2">Обычный консалтинг длится 2–3 месяца и заканчивается презентацией. Внедрение NCAi длится 30 дней и заканчивается <strong>работающим агентством</strong>, в котором клиент сам ставит задачи и видит финансы.</p>
       </div>
       <div class="rv d2">
         <div class="ucmp">
-          <div class="urow"><div class="uchead bad">Обычный подрядчик</div><div class="uchead good">NCAi</div></div>
+          <div class="urow"><div class="uchead bad">Обычный консалтинг</div><div class="uchead good">NCAi · 30 дней</div></div>
           <div class="urow">
-            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Чёрный ящик. Результат без объяснений</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Лайф-кодинг: каждое решение на ваших глазах</div>
+            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>2–3 месяца работы. Результат «в конце»</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Рабочее агентство — с первой сессии</div>
           </div>
           <div class="urow">
-            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>AI прикручен сверху — ChatGPT для текстов</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>AI — несущая архитектура с первой строки</div>
+            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Отдаёте на аутсорс — не понимаете как устроено</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё в панели: задачи, сотрудники, финансы</div>
           </div>
           <div class="urow">
-            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Ушёл — всё встало. Знания у подрядчика</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Цель — уйти и не быть нужным. Система остаётся</div>
+            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Консультант ушёл — знания ушли с ним</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Передаём руль. Клиент сам ставит задачи</div>
           </div>
           <div class="urow">
-            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>«Так принято», «у конкурентов так»</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Нейромаркетинг + данные. Всё объяснено</div>
+            <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Агентство на аутсорсе — чек каждый месяц</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Подписка от 2 900 ₽/мес + внедрение</div>
           </div>
         </div>
       </div>
@@ -456,54 +467,52 @@ export const body = `
 </section>
 <hr class="dv">
 
-<section id="benefit">
+<section id="gets" style="background:var(--bg2)">
   <div class="w">
-    <span class="lb rv">Выгода</span>
-    <h2 class="sh2 rv d1">Что меняется<br>после работы</h2>
-    <p class="sl rv d2">Не «улучшение показателей». Конкретные трансформации — было / стало.</p>
-    <div class="bgrid rv d2">
-      <div class="bcard"><div class="btag">Маркетинговая система</div><p class="bbf">Запускаете рекламу — трафик идёт, заявок нет. Непонятно где теряется каждый рубль</p><div class="barr"><svg width="13" height="9" viewBox="0 0 13 9" fill="none"><path d="M1 4.5h11M8 1l4 3.5L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>После</div><p class="baf">Воронка с аналитикой: видите где теряется каждый рубль и знаете как это починить</p></div>
-      <div class="bcard"><div class="btag">Операционка</div><p class="bbf">Держите всё в голове. Операционка съедает день — на стратегию времени не остаётся</p><div class="barr"><svg width="13" height="9" viewBox="0 0 13 9" fill="none"><path d="M1 4.5h11M8 1l4 3.5L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>После</div><p class="baf">AI-агенты обрабатывают рутину 24/7. Вы занимаетесь только решениями, которые нельзя автоматизировать</p></div>
-      <div class="bcard"><div class="btag">Зависимость от подрядчиков</div><p class="bbf">Объясняете задачу — получаете не то. Платите снова. Ушёл человек — всё встало</p><div class="barr"><svg width="13" height="9" viewBox="0 0 13 9" fill="none"><path d="M1 4.5h11M8 1l4 3.5L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>После</div><p class="baf">Команда понимает систему изнутри. Развиваете сами или с кем угодно — без зависимости</p></div>
+    <span class="lb rv">Что получаете</span>
+    <h2 class="sh2 rv d1">Распаковка. И у вас<br>рабочее агентство.</h2>
+    <p class="sl rv d2">За одну сессию 60–90 минут вы получаете то, что запускаете сразу. За 30 дней — систему, которая работает без вас.</p>
+    <div class="ngrid">
+      <div class="ncard rv"><div class="nnum">01</div><div class="ntit">Workspace вашего бизнеса</div><p class="ntx">Не «Мой проект», а «Салон Анны». Кабинет агентства: команда, задачи, отчёты и деньги в одном месте.</p></div>
+      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-команда 3–5 сотрудников</div><p class="ntx">Цифровые сотрудники с ролями и базой знаний: маркетолог, копирайтер, администратор, финансист. Каждый — со зоной ответственности.</p></div>
+      <div class="ncard rv d2"><div class="nnum">03</div><div class="ntit">Отделы под вашу нишу</div><p class="ntx">Разработка, маркетинг, контент, финансы. Не меню, а структура ответственности — у каждого сотрудника есть «дом».</p></div>
+      <div class="ncard rv"><div class="nnum">04</div><div class="ntit">3–5 стартовых задач</div><p class="ntx">Реальные задачи из вашей анкеты: номер, срок, ответственный. До конца сессии вы сами ставите первую задачу.</p></div>
+      <div class="ncard rv d1"><div class="nnum">05</div><div class="ntit">База клиентов в системе</div><p class="ntx">Ваша база — топливо агентства. Подключаем список, таблицу или CRM. Нет базы — заводим 10 тёплых контактов для старта.</p></div>
+      <div class="ncard rv d2"><div class="nnum">06</div><div class="ntit">Аналитика и финансы</div><p class="ntx">Доход, расход, маржа, прибыль. Каждый вечер в 18:00 — отчёт дня. Вы видите картину целиком, а не догадываетесь.</p></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="proof">
+<section id="unpack">
   <div class="w">
-    <span class="lb rv">Механика оффера</span>
-    <h2 class="sh2 rv d1">Почему одни предложения<br>покупают сразу, а другие — нет</h2>
-    <p class="sl rv d2">Это формула. И каждый блок этой страницы работает на одну из переменных.</p>
-    <div class="fvis rv d2" id="fvisEl">
-      <div class="fvlbl">Формула мощного оффера — Хормози · применяю в каждом проекте</div>
-      <div class="frow"><div class="fcel"><div class="fval pos">Результат мечты</div><div class="fkey">что клиент хочет получить</div></div><div class="fop">×</div><div class="fcel"><div class="fval pos">Вероятность достижения</div><div class="fkey">насколько он верит что это произойдёт</div></div></div>
-      <hr class="fline">
-      <div class="frow"><div class="fcel"><div class="fval neg">Задержка по времени</div><div class="fkey">как долго ждать первого результата</div></div><div class="fop">×</div><div class="fcel"><div class="fval neg">Усилия и жертвы</div><div class="fkey">что нужно сделать чтобы получить результат</div></div></div>
-      <div class="fbars">
-        <div class="fbi"><div class="fblbl">Результат ↑</div><div class="fbtrack"><div class="fbfill" data-w="92"></div></div><div class="fbnote">Блоки 1–3<br>на этой странице</div></div>
-        <div class="fbi"><div class="fblbl">Вероятность ↑</div><div class="fbtrack"><div class="fbfill" data-w="78"></div></div><div class="fbnote">Кейсы<br>и механизм</div></div>
-        <div class="fbi"><div class="fblbl">Время ↓</div><div class="fbtrack"><div class="fbfill" data-w="85"></div></div><div class="fbnote">MVP за 2–3<br>недели</div></div>
-        <div class="fbi"><div class="fblbl">Усилия ↓</div><div class="fbtrack"><div class="fbfill" data-w="70"></div></div><div class="fbnote">Лайф-кодинг<br>и документация</div></div>
-      </div>
+    <div class="mhead">
+      <div><span class="lb rv">30 дней</span><h2 class="sh2 rv d1">Как проходит<br>внедрение</h2></div>
+      <div><p class="rv d1" style="font-size:1rem;color:var(--t2);line-height:1.75;padding-top:1.2rem">Не «мы над этим работаем». Четыре недели, каждый этап — с понятным результатом. Клиент двигается от распаковки к передаче руля.</p></div>
     </div>
-    <div class="srow rv d3">
-      <div class="scard"><div class="snum">×2.1</div><div class="slbl">Рост выручки без роста бюджета</div></div>
-      <div class="scard"><div class="snum">−80%</div><div class="slbl">Потерянных лидов после внедрения</div></div>
-      <div class="scard"><div class="snum">8.3%</div><div class="slbl">Конверсия лендинга на холодный трафик</div></div>
-      <div class="scard"><div class="snum">3 нед</div><div class="slbl">От идеи до живого AI-продукта</div></div>
+    <div class="tltrack rv d2">
+      <div class="tlst act" data-s="0"><div class="tldt">01</div><div class="tlstit">Распаковка</div><div class="tldur">нед 1</div></div>
+      <div class="tlst" data-s="1"><div class="tldt">02</div><div class="tlstit">В работу</div><div class="tldur">нед 2</div></div>
+      <div class="tlst" data-s="2"><div class="tldt">03</div><div class="tlstit">Автоматизация</div><div class="tldur">нед 3</div></div>
+      <div class="tlst" data-s="3"><div class="tldt">04</div><div class="tlstit">Передача руля</div><div class="tldur">нед 4</div></div>
+    </div>
+    <div class="tlcon rv d3">
+      <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-команда 3–5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Клиент сам ставит первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 2 · в работу</div><div class="tlptit">Клиент ведёт задачи сам</div><p class="tlptx">Ежедневные отчёты идут, клиент ставит задачи без подсказок. Созвон через 3 дня — разбираем первые вопросы. Сотрудники выполняют рутину, владелец принимает решения, а не тонет в операционке.</p><div class="tlpdel"><span>→</span> Первый реальный результат</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда клиент сам увидел пользу и попросил.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Клиент самостоятелен</div><p class="tlptx">Клиент сам ставит задачи и смотрит финансы без участия внедренца. Знает, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся — зависимость уходит.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="why">
+<section id="steps" style="background:var(--bg2)">
   <div class="w">
     <div class="wlay">
       <div>
-        <span class="lb rv">Диагностика</span>
-        <h2 class="sh2 rv d1">Почему<br>не получается</h2>
-        <p class="sl rv d2" style="margin-bottom:0">Причина редко там, где кажется. Нажмите — узнайте диагноз.</p>
+        <span class="lb rv">Распаковка · сессия</span>
+        <h2 class="sh2 rv d1">90 минут —<br>и агентство работает</h2>
+        <p class="sl rv d2" style="margin-bottom:0">Шесть шагов, за которые клиент получает агентство и понимает, как оно устроено. Нажмите на шаг.</p>
         <div class="funnelw rv d3">
           <svg viewBox="0 0 280 270" width="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -513,123 +522,25 @@ export const body = `
               <linearGradient id="fl4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFD000" stop-opacity=".16"/><stop offset="100%" stop-color="#FFD000" stop-opacity=".04"/></linearGradient>
             </defs>
             <path d="M8 8 L272 8 L232 60 L48 60 Z" fill="url(#fl1)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
-            <text x="140" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.7)">Трафик · 1000 чел</text>
+            <text x="140" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.7)">Workspace · команда</text>
             <path d="M48 66 L232 66 L202 116 L78 116 Z" fill="url(#fl2)" stroke="rgba(255,208,0,.2)" stroke-width="1"/>
-            <text x="140" y="95" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.6)">Лиды · 400</text>
+            <text x="140" y="95" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.6)">Отделы · задачи</text>
             <path d="M78 122 L202 122 L178 170 L102 170 Z" fill="url(#fl3)" stroke="rgba(255,208,0,.15)" stroke-width="1"/>
-            <text x="140" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.5)">Интерес · 150</text>
+            <text x="140" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.5)">База клиентов</text>
             <path d="M102 176 L178 176 L160 222 L120 222 Z" fill="url(#fl4)" stroke="rgba(255,208,0,.1)" stroke-width="1"/>
-            <text x="140" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.4)">Продажи · 30</text>
-            <g opacity=".85"><line x1="232" y1="34" x2="255" y2="34" stroke="#e84040" stroke-width="1.5" stroke-dasharray="3,2"/><text x="258" y="38" font-family="JetBrains Mono,monospace" font-size="8" fill="#e84040">−60%</text></g>
-            <g opacity=".75"><line x1="202" y1="91" x2="225" y2="91" stroke="#e84040" stroke-width="1.5" stroke-dasharray="3,2"/><text x="228" y="95" font-family="JetBrains Mono,monospace" font-size="8" fill="#e84040">−25%</text></g>
-            <g opacity=".65"><line x1="178" y1="146" x2="201" y2="146" stroke="#e84040" stroke-width="1.5" stroke-dasharray="3,2"/><text x="204" y="150" font-family="JetBrains Mono,monospace" font-size="8" fill="#e84040">−8%</text></g>
-            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(255,255,255,.15)">где именно теряется — видно в аналитике</text>
+            <text x="140" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.4)">Аналитика · финансы</text>
+            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(255,255,255,.15)">в конце — клиент сам ставит задачу</text>
           </svg>
         </div>
       </div>
       <div class="wdiag rv d2">
-        <div class="wi act"><div class="wico">🔍</div><div><div class="wtit">Нет архитектуры — есть набор действий</div><div class="wtx">Трафик, лендинг, рассылка — всё по отдельности. Между ними нет логики. Это не система, это дорогой хаос.</div></div></div>
-        <div class="wi"><div class="wico">🧱</div><div><div class="wtit">Копируете чужие воронки</div><div class="wtx">Воронка — не шаблон. Это отражение вашей бизнес-логики. Чужая не подходит по той же причине, что чужой костюм.</div></div></div>
-        <div class="wi"><div class="wico">⚡</div><div><div class="wtit">AI прикручен, а не встроен</div><div class="wtx">ChatGPT для текстов — это не автоматизация. Разница как между электромобилем и бензиновым с доп. мотором.</div></div></div>
-        <div class="wi"><div class="wico">🔌</div><div><div class="wtit">Знания в голове у подрядчика</div><div class="wtx">Ушёл один человек — всё встало. Система должна жить в документации, а не в голове исполнителя.</div></div></div>
-        <div class="wi"><div class="wico">📊</div><div><div class="wtit">Смотрите не на те метрики</div><div class="wtx">Охваты и лайки — витамины. CPL и LTV — лекарства. Оптимизируете приятное, а не то что влияет на деньги.</div></div></div>
+        <div class="wi act"><div class="wico">📦</div><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет агентства с названием вашего бизнеса. Это не «Мой проект» — здесь живут сотрудники, задачи и деньги.</div></div></div>
+        <div class="wi"><div class="wico">🧑‍💼</div><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">3–5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Не больше 5 ролей на старте — слабого выводим, а не терпим.</div></div></div>
+        <div class="wi"><div class="wico">🏛️</div><div><div class="wtit">Шаг 3 · Отделы (10 мин)</div><div class="wtx">Разработка, маркетинг, контент, финансы. Раскладываем сотрудников по отделам, чтобы у каждого был «дом» и зона ответственности.</div></div></div>
+        <div class="wi"><div class="wico">✅</div><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Клиент сам ставит одну задачу — это его «экзамен» дня.</div></div></div>
+        <div class="wi"><div class="wico">📇</div><div><div class="wtit">Шаг 5 · База клиентов (15 мин)</div><div class="wtx">Подключаем базу: список, таблица или CRM. База — топливо системы. Нет базы — заводим 10 тёплых контактов для старта.</div></div></div>
+        <div class="wi"><div class="wico">📊</div><div><div class="wtit">Шаг 6 · Аналитика и финансы (10 мин)</div><div class="wtx">Доход, расход, маржа, прибыль, расход токенов. «Контроль» — кто сегодня что делал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
       </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">
-
-<section id="enemy">
-  <div class="w">
-    <div class="elay">
-      <div>
-        <span class="lb rv">Общий враг</span>
-        <h2 class="ebig rv d1">Иллюзия<br><span class="red">деятельности.</span></h2>
-        <p class="ep rv d2">Главный враг — не конкуренты и не маленький бюджет. Это когда все заняты, деньги тратятся, что-то происходит — <strong>но системы нет</strong>.</p>
-        <p class="ep rv d2">Без архитектуры любые действия — дорогой хаос. Причина не в плохих подрядчиках. Причина в отсутствии логики связей между элементами.</p>
-      </div>
-      <div>
-        <p style="font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:1.25rem" class="rv">Узнаёте себя?</p>
-        <div class="esyms">
-          <div class="esym rv d1"><div class="epu"></div><p class="estx">Каждый месяц новая гипотеза — и каждый месяц «не зашло»</p></div>
-          <div class="esym rv d1"><div class="epu"></div><p class="estx">Подрядчики заняты, но результата не видно</p></div>
-          <div class="esym rv d2"><div class="epu"></div><p class="estx">Трафик есть — продаж нет. Непонятно почему</p></div>
-          <div class="esym rv d2"><div class="epu"></div><p class="estx">Красивые отчёты, падающая выручка</p></div>
-          <div class="esym rv d3"><div class="epu"></div><p class="estx">Постоянное «надо бы пересмотреть стратегию»</p></div>
-          <div class="esym rv d3"><div class="epu"></div><p class="estx">Ключевые знания в голове одного человека</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">
-
-<section id="now">
-  <div class="w">
-    <span class="lb rv">Почему сейчас</span>
-    <h2 class="sh2 rv d1">Окно не закроется<br>завтра. Но закроется.</h2>
-    <div class="ngrid">
-      <div class="ncard rv"><div class="nnum">01</div><div class="ntit">AI меняет стоимость входа</div><p class="ntx">Инфраструктура, которая раньше стоила 3М и полгода, сегодня строится за 3 недели. Через год это станет стандартом. Сейчас — преимущество.</p></div>
-      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">Каждый день без системы считается</div><p class="ntx">Пока воронка не работает — блог не растёт, заявки не поступают, база не прогревается. Это не страшно. Но это считается.</p></div>
-      <div class="ncard rv d2"><div class="nnum">03</div><div class="ntit">Первые получают больше</div><p class="ntx">В любой нише первые 20% компаний с AI-системами занимают позиции, которые потом очень дорого отвоёвывать у конкурентов.</p></div>
-    </div>
-    <div class="ntl rv d3">
-      <div class="ntli"><div class="ntldot soon"><span style="font-size:.55rem">2022</span></div><div class="ntll" style="color:var(--t3)">Прошлое</div><div class="ntls">Агентства, подрядчики, ручной труд</div></div>
-      <div class="ntli"><div class="ntldot now"><span style="font-size:.55rem">сейчас</span></div><div class="ntll" style="color:var(--a)">Сейчас</div><div class="ntls">AI + человек. Скорость × 10</div></div>
-      <div class="ntli"><div class="ntldot soon"></div><div class="ntll" style="color:var(--t2)">Скоро</div><div class="ntls">AI-системы — новый минимум рынка</div></div>
-      <div class="ntli"><div class="ntldot late"></div><div class="ntll" style="color:var(--t3)">2026+</div><div class="ntls">Без AI — не конкурент</div></div>
-    </div>
-  </div>
-</section>
-<hr class="dv">
-
-<section id="trust">
-  <div class="w">
-    <span class="lb rv">Доверие</span>
-    <div class="tlay">
-      <div>
-        <div class="tquote rv">
-          <p class="tqtx">Я прошёл обе эры. Строил маркетинговые системы до ChatGPT — и строю сейчас. Понимаю что изменилось, а что осталось неизменным. Нейробиология принятия решений не поменялась. Поменялась скорость и стоимость реализации.</p>
-          <div class="tqau">— Основатель NCAi</div>
-        </div>
-        <div class="eras rv d2">
-          <div class="erastit">Две эры — одна система мышления</div>
-          <div class="erasrow">
-            <div class="erl"><div class="erlbl">Классическая эра</div>15+ кейсов: воронки, лендинги, Email, запуски, SEO</div>
-            <div class="erarr">→</div>
-            <div class="err"><div class="erlbl">AI-эра</div>AI-системы, автоматизация, live-кодинг, агенты</div>
-          </div>
-        </div>
-      </div>
-      <div class="tpts rv d2">
-        <div class="tpt"><div class="tpico">📖</div><div><div class="tptit">Книга как доказательство</div><p class="tptx">30 подглав — задокументированная методология. Читая книгу, видите как я думаю — до принятия решения о работе.</p></div></div>
-        <div class="tpt"><div class="tpico">⚡</div><div><div class="tptit">Лайф-кодинг — никаких чёрных ящиков</div><p class="tptx">Весь процесс у вас на глазах: экран, код, решения в реальном времени. Понимаете как работает — не только что получили.</p></div></div>
-        <div class="tpt"><div class="tpico">🎯</div><div><div class="tptit">15 кейсов до AI + 3 после</div><p class="tptx">Две эры — два набора инструментов. Понимание обеих изнутри. Разница — не в технологии, а в скорости.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">
-
-<section id="mechanism">
-  <div class="w">
-    <div class="mhead">
-      <div><span class="lb rv">Механизм</span><h2 class="sh2 rv d1">Как выглядят<br>2–3 месяца вместе</h2></div>
-      <div><p class="rv d1" style="font-size:1rem;color:var(--t2);line-height:1.75;padding-top:1.2rem">Не «мы над этим работаем». Конкретные этапы, артефакты, сроки. Каждый шаг — с понятным результатом.</p></div>
-    </div>
-    <div class="tltrack rv d2">
-      <div class="tlst act" data-s="0"><div class="tldt">01</div><div class="tlstit">Аудит</div><div class="tldur">1–2 нед</div></div>
-      <div class="tlst" data-s="1"><div class="tldt">02</div><div class="tlstit">Фундамент</div><div class="tldur">2–4 нед</div></div>
-      <div class="tlst" data-s="2"><div class="tldt">03</div><div class="tlstit">Запуск</div><div class="tldur">2–3 нед</div></div>
-      <div class="tlst" data-s="3"><div class="tldt">04</div><div class="tlstit">Оптимизация</div><div class="tldur">3–4 нед</div></div>
-      <div class="tlst" data-s="4"><div class="tldt">05</div><div class="tlstit">Передача</div><div class="tldur">1 нед</div></div>
-    </div>
-    <div class="tlcon rv d3">
-      <div class="tlp act"><div class="tlpdur">1–2 недели</div><div class="tlptit">Аудит и архитектура системы</div><p class="tlptx">Разбираем текущую ситуацию: что есть, что работает, что нет. Проектируем архитектуру — воронка, контент, автоматизация. Вы видите карту системы до старта работ.</p><div class="tlpdel"><span>→</span> Документ архитектуры + карта системы</div></div>
-      <div class="tlp"><div class="tlpdur">2–4 недели</div><div class="tlptit">Строим фундамент вместе</div><p class="tlptx">Создаём несущие элементы: сайт, воронка, базовая автоматизация. Всё — в прямом эфире с командой. Можно остановить, спросить, изменить решение прямо сейчас.</p><div class="tlpdel"><span>→</span> Работающий MVP системы</div></div>
-      <div class="tlp"><div class="tlpdur">2–3 недели</div><div class="tlptit">Запускаем и смотрим на данные</div><p class="tlptx">Первые тесты, первые данные. Настраиваем аналитику, наблюдаем за цифрами, делаем первую итерацию. Не слепой запуск — управляемый эксперимент.</p><div class="tlpdel"><span>→</span> Данные первых 500–1000 пользователей</div></div>
-      <div class="tlp"><div class="tlpdur">3–4 недели</div><div class="tlptit">Оптимизируем по данным</div><p class="tlptx">На основе реальных цифр улучшаем конверсию, дорабатываем слабые места, добавляем автоматизацию там, где она экономит максимум времени.</p><div class="tlpdel"><span>→</span> Оптимизированная воронка + отчёт по метрикам</div></div>
-      <div class="tlp"><div class="tlpdur">1 неделя</div><div class="tlptit">Передача — вы самостоятельны</div><p class="tlptx">Документируем всё. Команда понимает каждый элемент. Можете развивать сами или с любым разработчиком. Я ухожу — система остаётся.</p><div class="tlpdel"><span>→</span> Документация + обучение команды + чеклист поддержки</div></div>
     </div>
   </div>
 </section>
@@ -638,70 +549,52 @@ export const body = `
 <section id="vsmarket">
   <div class="w">
     <span class="lb rv">Сравнение</span>
-    <h2 class="sh2 rv d1">Как делают все.<br>Как делаю я.</h2>
+    <h2 class="sh2 rv d1">Как внедряют обычно.<br>Как внедряю я.</h2>
     <div class="vstable-wrap rv d2">
       <div class="vstable">
-        <div class="vshead"><div class="vsh cr">Критерий</div><div class="vsh th">Агентства / фрилансеры</div><div class="vsh me2">→ NCAi</div></div>
-        <div class="vsrow"><div class="vsc cr">Прозрачность</div><div class="vsc th">Чёрный ящик. Результат через N недель</div><div class="vsc me">Лайф-кодинг: каждое решение у вас на глазах</div></div>
-        <div class="vsrow"><div class="vsc cr">AI в работе</div><div class="vsc th">ChatGPT для текстов. Зовут «AI-автоматизацией»</div><div class="vsc me">AI — несущая архитектура с первой строки, не надстройка</div></div>
-        <div class="vsrow"><div class="vsc cr">Результат</div><div class="vsc th">Набор задач без системной логики</div><div class="vsc me">Механизм с логикой, метриками и документацией</div></div>
-        <div class="vsrow"><div class="vsc cr">После ухода</div><div class="vsc th">Без нас не поддержать — ретейнер навсегда</div><div class="vsc me">Команда понимает. Развивайте сами или с кем угодно</div></div>
-        <div class="vsrow"><div class="vsc cr">Обоснование</div><div class="vsc th">«Нам кажется», «у конкурентов так»</div><div class="vsc me">Нейромаркетинг + данные. Каждое решение объяснено</div></div>
-        <div class="vsrow"><div class="vsc cr">Скорость</div><div class="vsc th">3–6 мес на сайт. Год на «маркетинг»</div><div class="vsc me">MVP за 2–3 недели. Система за 2–3 месяца</div></div>
+        <div class="vshead"><div class="vsh cr">Критерий</div><div class="vsh th">Обычно</div><div class="vsh me2">→ NCAi</div></div>
+        <div class="vsrow"><div class="vsc cr">Срок</div><div class="vsc th">Консалтинг 2–3 месяца, агентство на аутсорсе</div><div class="vsc me">30 дней до работающего агентства</div></div>
+        <div class="vsrow"><div class="vsc cr">Результат</div><div class="vsc th">Презентация, рекомендации, отчёты</div><div class="vsc me">Система в панели: команда, задачи, финансы</div></div>
+        <div class="vsrow"><div class="vsc cr">Зависимость</div><div class="vsc th">Всё в голове подрядчика. Ушёл — встало</div><div class="vsc me">Передаём руль. Клиент сам ведёт задачи</div></div>
+        <div class="vsrow"><div class="vsc cr">Стоимость</div><div class="vsc th">Найм команды или чек агентства каждый месяц</div><div class="vsc me">Разовый чек за внедрение + подписка от 2 900 ₽</div></div>
+        <div class="vsrow"><div class="vsc cr">Прозрачность</div><div class="vsc th">Отчёт раз в месяц, «чёрный ящик» между ними</div><div class="vsc me">Панель 24/7: задачи, отчёты, аналитика, финансы</div></div>
+        <div class="vsrow"><div class="vsc cr">AI</div><div class="vsc th">ChatGPT для текстов — «AI-автоматизация» на словах</div><div class="vsc me">Цифровые сотрудники с ролями и правом на действие</div></div>
       </div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="how">
+<section id="how" style="background:var(--bg2)">
   <div class="w">
     <div class="hlay">
       <div>
-        <span class="lb rv">Принципы</span>
-        <h2 class="sh2 rv d1">Как я работаю<br>и как нужно</h2>
-        <p class="sl rv d2" style="margin-bottom:2rem">Это не слова для сайта. Правила, которые я не нарушаю ни с одним клиентом.</p>
+        <span class="lb rv">Кому подходит</span>
+        <h2 class="sh2 rv d1">Кому внедрение<br>за 30 дней</h2>
+        <p class="sl rv d2" style="margin-bottom:2rem">Агентство в коробке — для действующего бизнеса, который хочет автоматизировать рутину, а не покупать лекции.</p>
         <div class="hplist">
-          <div class="hpr rv"><div class="hptit">Система выше задач</div><p class="hptx">Каждое действие — элемент механизма. Не набор работ, а связанная архитектура с логикой роста.</p></div>
-          <div class="hpr rv d1"><div class="hptit">Объяснение — часть работы</div><p class="hptx">Если клиент не понимает почему принято решение — я не выполнил работу. Лайф-кодинг — стандарт, не опция.</p></div>
-          <div class="hpr rv d2"><div class="hptit">Цель — уйти</div><p class="hptx">Успех работы — когда я больше не нужен. Зависимость клиента от меня — это провал, а не бизнес-модель.</p></div>
-          <div class="hpr rv d3"><div class="hptit">Данные, не интуиция</div><p class="hptx">Каждое решение обосновано нейромаркетингом или реальными цифрами. «Мне кажется» — не аргумент.</p></div>
+          <div class="hpr rv"><div class="hptit">Система, а не услуга</div><p class="hptx">Вы платите за работающее агентство в панели, а не за часы консультанта. Результат остаётся с вами после 30 дней.</p></div>
+          <div class="hpr rv d1"><div class="hptit">Передача руля — цель</div><p class="hptx">Успех внедрения — когда вы сами ставите задачи и смотрите финансы без чьего-либо участия. Зависимость — провал, а не бизнес-модель.</p></div>
+          <div class="hpr rv d2"><div class="hptit">Цифровые сотрудники, не чат</div><p class="hptx">У каждого агента роль, память и право на действие. Команда внутри общего контекста агентства — контент, напоминания, отчёты.</p></div>
+          <div class="hpr rv d3"><div class="hptit">Ценность сначала, доплаты потом</div><p class="hptx">Ничего не продаём на распаковке. Расширение — только когда клиент увидел результат и сам попросил больше.</p></div>
         </div>
       </div>
       <div class="hfor rv d2">
-        <div class="hfortit no">Кому это не подойдёт</div>
+        <div class="hfortit no">Кому не подойдёт</div>
         <div class="hflist">
-          <div class="hfno">Хотите красивые слайды без реализации</div>
-          <div class="hfno">Команды нет — только вы один</div>
-          <div class="hfno">Ждёте результат за неделю без участия</div>
+          <div class="hfno">Хотите слайды и стратегию без системы</div>
+          <div class="hfno">Команды и рутины нет — автоматизировать нечего</div>
+          <div class="hfno">Ждёте результат без своей сессии распаковки</div>
           <div class="hfno">Продукт ещё не проверен рынком</div>
         </div>
         <div class="hfortit yes">Кому подойдёт идеально</div>
         <div class="hflist" style="margin-bottom:0">
-          <div class="hfyes"><span>✓</span>Есть работающий продукт, нет системного маркетинга</div>
-          <div class="hfyes"><span>✓</span>Команда 2–10 человек, готовая учиться</div>
-          <div class="hfyes"><span>✓</span>Хотите понимать систему, а не зависеть от неё</div>
-          <div class="hfyes"><span>✓</span>Готовы работать вместе, а не ждать результата</div>
+          <div class="hfyes"><span>✓</span>Есть действующий бизнес и повторяющаяся рутина</div>
+          <div class="hfyes"><span>✓</span>Есть база клиентов или контакты для старта</div>
+          <div class="hfyes"><span>✓</span>Хотите систему, а не зависимость от подрядчика</div>
+          <div class="hfyes"><span>✓</span>Готовы одну сессию поработать вместе</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">
-
-<section id="cases" style="background:var(--bg2)">
-  <div class="w">
-    <span class="lb rv">Кейсы · Новая эра</span>
-    <h2 class="sh2 rv d1">AI-системы,<br>которые уже работают</h2>
-    <p class="sl rv d2">Проекты 2024–2025. До этого — 15 кейсов классического маркетинга.</p>
-    <div class="cgrid">
-      <div class="ccard rv" style="--cc:#FFD000"><div class="ctag">Сайт · Консалтинг · Next.js</div><div class="ctit">Сайт-воронка для AI-консалтинга</div><p class="csub">Личный сайт + 30 SEO-статей из книги + система заявок. Разработка — полностью в прямом эфире.</p><div class="cress"><div class="cres"><strong>30 SEO-страниц</strong> — готовы с первого дня</div><div class="cres"><strong>3 недели</strong> — от идеи до деплоя</div><div class="cres"><strong>0 ₽</strong> — на агентство</div></div></div>
-      <div class="ccard rv d1" style="--cc:#4ECDC4"><div class="ctag">Приложение · Marketing OS · React Native</div><div class="ctit">Marketing OS — AI вместо маркетолога</div><p class="csub">Мобильное приложение с AI-агентом: контент-план, генерация текстов, публикация по расписанию.</p><div class="cress"><div class="cres"><strong>−2.5 часа/день</strong> — маркетинговой рутины убрано</div><div class="cres"><strong>×3 скорость</strong> — публикации контента</div><div class="cres"><strong>8 недель</strong> — до App Store</div></div></div>
-      <div class="ccard rv d2" style="--cc:#B4A7D6"><div class="ctag">Приложение · SaaS · Claude API</div><div class="ctit">Funnel Builder — конструктор воронок с AI</div><p class="csub">Визуальный редактор воронок с AI-советником: анализирует логику, предсказывает конверсию.</p><div class="cress"><div class="cres"><strong>−60%</strong> — времени на проектирование запуска</div><div class="cres"><strong>12 архитектур</strong> — воронок в библиотеке</div><div class="cres"><strong>10 недель</strong> — до MVP</div></div></div>
-    </div>
-    <div class="cold rv d3">
-      <div class="coldtag">Прошлая эра →</div>
-      <p class="coldtx">15 кейсов классического маркетинга: воронки, лендинги, Email-автоматизация, запуски, SEO — до того, как в работу вошёл AI. Архив по запросу.</p>
     </div>
   </div>
 </section>
@@ -710,28 +603,28 @@ export const body = `
 <section id="offer">
   <div class="w">
     <div class="ofin">
-      <span class="lb rv" style="justify-content:center">Оффер</span>
-      <h2 class="ofh2 rv d1">Купите мои мозги<br>на 2–3 месяца</h2>
-      <p class="ofsub rv d2">Я вхожу в ваш проект — работаю вместе с командой, строю систему, передаю знания.</p>
+      <span class="lb rv" style="justify-content:center">Внедрение · 30 дней</span>
+      <h2 class="ofh2 rv d1">Агентство в коробке.<br>Внедрение за 30 дней.</h2>
+      <p class="ofsub rv d2">Разовый чек за внедрение (распаковку) + ежемесячная подписка на платформу. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
-        <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в работу</p>
+        <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит во внедрение</p>
         <div class="ofgrid">
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Упаковка проекта <span>Стратегия, смыслы, позиционирование — с нуля или аудит существующего</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Сайт через лайф-кодинг <span>Каждое решение у вас на глазах. Команда понимает как это работает</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Маркетинговое приложение <span>AI-инструмент под вашу специфику</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Технический стек под ключ <span>Деплой, интеграции, аналитика</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-агенты в процессы <span>Не чат-боты — реальные системы решений</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Передача и документация <span>Полная автономия команды</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Распаковка 60–90 минут <span>workspace, команда, отделы, задачи, база, аналитика</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-команда 3–5 сотрудников <span>с ролями и базами знаний под вашу нишу</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">30 дней внедрения <span>4 недели: распаковка → передача руля</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Ежедневное сопровождение <span>брифинг в 10:00, отчёт в 18:00, созвоны</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка от 2 900 ₽/мес <span>Standard · 5 мест · $15 AI-бюджета · 14 дней trial</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Передача руля <span>клиент сам ставит задачи и смотрит финансы</span></div></div>
         </div>
         <div class="ofmeta">
-          <div><div class="ofml">Формат</div><div class="ofmv">Сессии + асинхрон</div></div>
-          <div><div class="ofml">Длительность</div><div class="ofmv">2–3 месяца</div></div>
-          <div><div class="ofml">Мест сейчас</div><div class="ofmv">1–2 проекта</div></div>
+          <div><div class="ofml">Формат</div><div class="ofmv">Сессия + панель</div></div>
+          <div><div class="ofml">Длительность</div><div class="ofmv">30 дней</div></div>
+          <div><div class="ofml">Подписка</div><div class="ofmv">от 2 900 ₽/мес</div></div>
         </div>
       </div>
       <div class="ofcta rv d3">
-        <a href="mailto:hello@ncai.pro" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="/book" class="bs">Читать книгу бесплатно</a>
+        <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/agency-in-a-box" class="bs">Читать «Агентство в коробке»</a>
       </div>
     </div>
   </div>
@@ -743,8 +636,8 @@ export const body = `
     <div class="fgrid">
       <div>
         <div class="flogo">NCAi</div>
-        <p class="ftag">Архитектор систем. Нейромаркетинг, AI-автоматизация и системное мышление для тех, кто строит бизнес серьёзно.</p>
-        <div class="fsoc"><a href="#" class="fsi">✈</a><a href="#" class="fsi">▶</a><a href="#" class="fsi">in</a></div>
+        <p class="ftag">Архитектор систем. Нейромаркетинг, AI-автоматизация и агентства в коробке для тех, кто строит бизнес серьёзно.</p>
+        <div class="fsoc"><a href="https://t.me/Ilya_novator" class="fsi" target="_blank" rel="noopener noreferrer">✈</a><a href="mailto:ilya.novitskii@yandex.ru" class="fsi">✉</a></div>
       </div>
       <div>
         <div class="fch">Книга</div>
@@ -758,12 +651,12 @@ export const body = `
         </ul>
       </div>
       <div>
-        <div class="fch">Работа</div>
+        <div class="fch">Продукты</div>
         <ul class="fls">
-          <li><a href="#offer">Консалтинг</a></li>
-          <li><a href="#cases">Кейсы</a></li>
-          <li><a href="#mechanism">Метод</a></li>
-          <li><a href="/book">Книга бесплатно</a></li>
+          <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
+          <li><a href="/ai-training">Обучение AI</a></li>
+          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
+          <li><a href="/portfolio">Портфолио</a></li>
         </ul>
       </div>
     </div>
@@ -772,83 +665,26 @@ export const body = `
       <span class="fea">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
-</footer>
+</footer>`;
 
-<script>
-const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+export const js = `const cd=document.getElementById('cd'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
 if(window.matchMedia('(pointer:fine)').matches){
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
   (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('ex'));el.addEventListener('mouseleave',()=>cr.classList.remove('ex'))});
+  document.querySelectorAll('a,button,.wi,.tlst').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('ex'));el.addEventListener('mouseleave',()=>cr.classList.remove('ex'))});
 }
 const nav=document.getElementById('nav'),prog=document.getElementById('prog');
 window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40);prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%'},{passive:true});
 const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-// FIX: counters — textContent only on the span, not innerHTML
 document.querySelectorAll('.cnt').forEach(el=>{
   const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const to=+el.dataset.to;let s=null;(function f(t){if(!s)s=t;const p=Math.min((t-s)/1500,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(f)})(performance.now());io.unobserve(el)})},{threshold:.6});
   io.observe(el);
 });
-// FIX: formula bars — observe the wrapper div directly
-const fve=document.getElementById('fvisEl');
-if(fve){let done=false;new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;fve.querySelectorAll('.fbfill').forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.w+'%'},250+i*180))}})},{threshold:.3}).observe(fve)}
-// FIX: timeline — data-s index mapping
 const tls=document.querySelectorAll('.tlst'),tlps=document.querySelectorAll('.tlp');
 tls.forEach(s=>s.addEventListener('click',()=>{const i=+s.dataset.s;tls.forEach(x=>x.classList.remove('act'));tlps.forEach(x=>x.classList.remove('act'));s.classList.add('act');tlps[i].classList.add('act')}));
-// Diagnostic accordion
 document.querySelectorAll('.wi').forEach(item=>item.addEventListener('click',()=>{document.querySelectorAll('.wi').forEach(x=>x.classList.remove('act'));item.classList.add('act')}));
-// Particles
-const cv=document.getElementById('pcanvas');
-if(cv){const ctx=cv.getContext('2d');let W,H;
-const pts=Array.from({length:55},()=>({x:Math.random()*1400,y:Math.random()*900,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*1.5+.4,a:Math.random()*.4+.07}));
-function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();window.addEventListener('resize',rs,{passive:true});
-(function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=\`rgba(255,208,0,\${p.a})\`;ctx.fill()});
-for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.strokeStyle=\`rgba(255,208,0,\${.06*(1-d/120)})\`;ctx.lineWidth=.4;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}}
-requestAnimationFrame(draw)})()}
-// Hero diagram — sequential highlight
 const hboxes=[document.getElementById('hb0'),document.getElementById('hb1'),document.getElementById('hb2'),document.getElementById('hb3'),document.getElementById('hb4'),document.getElementById('hb5')].filter(Boolean);
 let hbi=0;
-setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);
-</script>
-`;
-
-export const js = `
-const cd=document.getElementById('cd'),cr=document.getElementById('cr');
-let mx=0,my=0,rx=0,ry=0;
-if(window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
-  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
-  document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('ex'));el.addEventListener('mouseleave',()=>cr.classList.remove('ex'))});
-}
-const nav=document.getElementById('nav'),prog=document.getElementById('prog');
-window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40);prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%'},{passive:true});
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.08});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
-// FIX: counters — textContent only on the span, not innerHTML
-document.querySelectorAll('.cnt').forEach(el=>{
-  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(!e.isIntersecting)return;const to=+el.dataset.to;let s=null;(function f(t){if(!s)s=t;const p=Math.min((t-s)/1500,1);el.textContent=Math.round((1-Math.pow(1-p,3))*to);if(p<1)requestAnimationFrame(f)})(performance.now());io.unobserve(el)})},{threshold:.6});
-  io.observe(el);
-});
-// FIX: formula bars — observe the wrapper div directly
-const fve=document.getElementById('fvisEl');
-if(fve){let done=false;new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;fve.querySelectorAll('.fbfill').forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.w+'%'},250+i*180))}})},{threshold:.3}).observe(fve)}
-// FIX: timeline — data-s index mapping
-const tls=document.querySelectorAll('.tlst'),tlps=document.querySelectorAll('.tlp');
-tls.forEach(s=>s.addEventListener('click',()=>{const i=+s.dataset.s;tls.forEach(x=>x.classList.remove('act'));tlps.forEach(x=>x.classList.remove('act'));s.classList.add('act');tlps[i].classList.add('act')}));
-// Diagnostic accordion
-document.querySelectorAll('.wi').forEach(item=>item.addEventListener('click',()=>{document.querySelectorAll('.wi').forEach(x=>x.classList.remove('act'));item.classList.add('act')}));
-// Particles
-const cv=document.getElementById('pcanvas');
-if(cv){const ctx=cv.getContext('2d');let W,H;
-const pts=Array.from({length:55},()=>({x:Math.random()*1400,y:Math.random()*900,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*1.5+.4,a:Math.random()*.4+.07}));
-function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();window.addEventListener('resize',rs,{passive:true});
-(function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=\`rgba(255,208,0,\${p.a})\`;ctx.fill()});
-for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.strokeStyle=\`rgba(255,208,0,\${.06*(1-d/120)})\`;ctx.lineWidth=.4;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}}
-requestAnimationFrame(draw)})()}
-// Hero diagram — sequential highlight
-const hboxes=[document.getElementById('hb0'),document.getElementById('hb1'),document.getElementById('hb2'),document.getElementById('hb3'),document.getElementById('hb4'),document.getElementById('hb5')].filter(Boolean);
-let hbi=0;
-setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);
-`;
+setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);`;
