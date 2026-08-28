@@ -108,3 +108,111 @@ body {
 	background: rgba(255, 255, 255, 0.02);
 }
 
+/* ── Docs: доп. стили для страницы «Агентство в коробке» ── */
+.docs-h2 {
+	scroll-margin-top: 24px;
+}
+.docs-h4 {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 17px;
+	font-weight: 600;
+	margin: 22px 0 10px;
+}
+.docs-code {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 0.86em;
+	background: rgba(255, 208, 0, 0.1);
+	color: #ffe57a;
+	padding: 0.1em 0.35em;
+	border-radius: 5px;
+	white-space: nowrap;
+}
+.docs-pre {
+	background: #0d0d0d;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	padding: 16px 18px;
+	overflow-x: auto;
+	margin: 14px 0 20px;
+}
+.docs-pre code {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #d8d4c9;
+	white-space: pre;
+}
+.docs-check {
+	display: inline-flex;
+	gap: 0.5rem;
+	align-items: baseline;
+}
+.docs-check-box {
+	color: var(--a);
+	font-family: "JetBrains Mono", monospace;
+}
+.docs-back {
+	margin: 0 0 18px;
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 0.82rem;
+	letter-spacing: 0.04em;
+}
+.docs-back a {
+	color: var(--t2);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 208, 0, 0.3);
+	transition: color 0.2s, border-color 0.2s;
+}
+.docs-back a:hover {
+	color: var(--a);
+	border-color: var(--a);
+}
+.docs-back-sep {
+	margin: 0 0.6rem;
+	color: rgba(255, 255, 255, 0.2);
+}
+.docs-toc {
+	margin: 8px 0 40px;
+	padding: 1.15rem 1.3rem;
+	border: 1px solid rgba(255, 208, 0, 0.26);
+	border-radius: 12px;
+	background: linear-gradient(90deg, rgba(255, 208, 0, 0.1), rgba(255, 208, 0, 0.03));
+}
+.docs-toc-label {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 0.65rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--a);
+	margin-bottom: 0.7rem;
+}
+.docs-toc-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	gap: 0.45rem;
+}
+.docs-toc-link {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 0.98rem;
+	font-weight: 600;
+	color: var(--t);
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	transition: color 0.2s, border-color 0.2s;
+}
+.docs-toc-link:hover {
+	color: #ffe57a;
+	border-color: rgba(255, 229, 122, 0.6);
+}
+.agency-page .book-index-title {
+	font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+.agency-page .book-index-subtitle {
+	margin-top: 6px;
+}
+.docs-body {
+	margin-top: 6px;
+}
+
