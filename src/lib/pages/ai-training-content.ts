@@ -106,7 +106,7 @@ section{padding:6rem 0}
   line-height:1.05;margin-bottom:.75rem}
 .sl{font-size:1rem;color:var(--t2);max-width:540px;margin-bottom:3rem;line-height:1.75}
 .rv{opacity:1;transform:none}
-html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 .alt{background:var(--bgc)}

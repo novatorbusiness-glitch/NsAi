@@ -125,7 +125,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 /* REVEAL — прогрессивное улучшение: без JS контент видим сразу,
    с JS — плавное появление при скролле (html.js ставит страница) */
 .rv{opacity:1;transform:none}
-html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 
