@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="Продуктовая матрица: лестница ценности от бесплатного до VIP">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <linearGradient id="bar0" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,208,0,.05)"/>
+      <stop offset="1" stop-color="rgba(255,208,0,.12)"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,208,0,.10)"/>
+      <stop offset="1" stop-color="rgba(255,208,0,.20)"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,208,0,.18)"/>
+      <stop offset="1" stop-color="rgba(255,208,0,.32)"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="rgba(255,208,0,.34)"/>
+      <stop offset="1" stop-color="rgba(255,208,0,.6)"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#panel)" stroke="#1e1e1e"/>
+  <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#grid)" opacity=".5"/>
+
+  <rect x="80" y="66" width="280" height="44" rx="22" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.28)"/>
+  <text x="220" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+
+  <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">ПРОДУКТОВАЯ МАТРИЦА</text>
+  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">лестница ценности · техника «нога в двери» · каждое «да» делает следующее проще</text>
+
+  <!-- лестница: 4 ступени -->
+  <!-- Уровень 0 · бесплатно -->
+  <rect x="140" y="820" width="1320" height="100" rx="16" fill="url(#bar0)" stroke="rgba(255,208,0,.35)" stroke-width="2"/>
+  <text x="180" y="862" font-family="'Space Mono',monospace" font-size="20" letter-spacing="1" fill="rgba(255,208,0,.8)">УР. 0 · 0 ₽</text>
+  <text x="360" y="864" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="32" fill="#f0ede6">ЛИД-МАГНИТ</text>
+  <text x="360" y="898" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">бесплатная ценность → доверие + контакт</text>
+  <text x="1430" y="882" text-anchor="end" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">вход</text>
+
+  <!-- Уровень 1 · трипвайер -->
+  <rect x="140" y="640" width="1320" height="100" rx="16" fill="url(#bar1)" stroke="rgba(255,208,0,.4)" stroke-width="2"/>
+  <text x="180" y="682" font-family="'Space Mono',monospace" font-size="20" letter-spacing="1" fill="rgba(255,208,0,.9)">УР. 1</text>
+  <text x="360" y="684" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="32" fill="#f0ede6">ТРИПВАЙЕР</text>
+  <text x="360" y="718" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">символическая цена · мастер-класс, интенсив</text>
+  <text x="1430" y="702" text-anchor="end" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">подписчик → покупатель</text>
+
+  <!-- Уровень 2 · основной продукт -->
+  <rect x="140" y="460" width="1320" height="100" rx="16" fill="url(#bar2)" stroke="rgba(255,208,0,.5)" stroke-width="2"/>
+  <text x="180" y="502" font-family="'Space Mono',monospace" font-size="20" letter-spacing="1" fill="#FFD000">УР. 2</text>
+  <text x="360" y="504" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="32" fill="#f0ede6">ОСНОВНОЙ ПРОДУКТ</text>
+  <text x="360" y="538" font-family="'Manrope',sans-serif" font-size="21" fill="#b0aca5">флагман · главная проблема клиента + основной доход</text>
+  <text x="1430" y="522" text-anchor="end" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">ядро бизнеса</text>
+
+  <!-- Уровень 3 · VIP -->
+  <rect x="140" y="280" width="1320" height="100" rx="16" fill="url(#bar3)" stroke="rgba(255,208,0,.65)" stroke-width="2"/>
+  <text x="180" y="322" font-family="'Space Mono',monospace" font-size="20" letter-spacing="1" fill="#FFD000">УР. 3</text>
+  <text x="360" y="324" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="32" fill="#FFD000">VIP / ПРЕМИУМ</text>
+  <text x="360" y="358" font-family="'Manrope',sans-serif" font-size="21" fill="#cfc9b8">наставничество / консалтинг · максимум ценности</text>
+  <text x="1430" y="342" text-anchor="end" font-family="'Space Mono',monospace" font-size="19" fill="#FFD000">вершина</text>
+
+  <!-- стрелки вверх -->
+  <g stroke="#FFD000" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M70,780 l14,-14 m-14,14 l-14,-14"/>
+    <path d="M70,600 l14,-14 m-14,14 l-14,-14"/>
+    <path d="M70,420 l14,-14 m-14,14 l-14,-14"/>
+  </g>
+  <text x="70" y="766" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.6)">▲</text>
+  <text x="70" y="586" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.6)">▲</text>
+  <text x="70" y="406" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.6)">▲</text>
+
+  <!-- подпись -->
+  <text x="80" y="942" font-family="'Space Mono',monospace" font-size="18" letter-spacing="1" fill="#555">не пытайся продать дорогое холодному контакту · выстраивай плавную лестницу</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 940" width="1600" height="940" role="img" aria-label="Экономика NCAi: лестница MRR">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFD000"/>
+      <stop offset="1" stop-color="rgba(255,208,0,.25)"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1560" height="900" rx="28" fill="url(#panel)" stroke="#1e1e1e"/>
+  <rect x="20" y="20" width="1560" height="900" rx="28" fill="url(#grid)" opacity=".5"/>
+
+  <rect x="80" y="66" width="300" height="44" rx="22" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.28)"/>
+  <text x="230" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">АГЕНТСТВО В КОРОБКЕ</text>
+
+  <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">ЭКОНОМИКА · ЛЕСТНИЦА MRR</text>
+  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">предсказуемый ежемесячный доход · растёт с каждым клиентом · смесь Standard / Pro</text>
+
+  <!-- базис -->
+  <line x1="240" y1="820" x2="1320" y2="820" stroke="#2a2a2a" stroke-width="3"/>
+
+  <!-- столбец: 10 клиентов -->
+  <rect x="260" y="690" width="280" height="130" rx="8" fill="url(#bar)"/>
+  <text x="400" y="672" text-anchor="middle" font-family="'Space Mono',monospace" font-size="30" fill="#FFD000">39 000 ₽/мес</text>
+  <text x="400" y="866" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">10 КЛИЕНТОВ</text>
+
+  <!-- столбец: 30 клиентов -->
+  <rect x="660" y="430" width="280" height="390" rx="8" fill="url(#bar)"/>
+  <text x="800" y="412" text-anchor="middle" font-family="'Space Mono',monospace" font-size="30" fill="#FFD000">117 000 ₽/мес</text>
+  <text x="800" y="866" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">30 КЛИЕНТОВ</text>
+
+  <!-- столбец: 50 клиентов -->
+  <rect x="1060" y="170" width="280" height="650" rx="8" fill="url(#bar)"/>
+  <text x="1200" y="152" text-anchor="middle" font-family="'Space Mono',monospace" font-size="30" fill="#FFD000">195 000 ₽/мес</text>
+  <text x="1200" y="866" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">50 КЛИЕНТОВ</text>
+
+  <!-- рост -->
+  <g stroke="#FFD000" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M540,720 l16,-10 m-16,10 l16,10"/>
+    <path d="M940,460 l16,-10 m-16,10 l16,10"/>
+  </g>
+  <text x="566" y="708" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.7)">+20 клиентов</text>
+  <text x="966" y="448" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.7)">+20 клиентов</text>
+
+  <!-- подпись -->
+  <text x="80" y="902" font-family="'Space Mono',monospace" font-size="18" letter-spacing="1" fill="#555">сверх MRR — внедрение, слоты, топ-апы AI, апгрейды · маржу защищает kill-switch AI-бюджета</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 940" width="1600" height="940" role="img" aria-label="Распаковка: шесть шагов внедрения клиента">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1560" height="900" rx="28" fill="url(#panel)" stroke="#1e1e1e"/>
+  <rect x="20" y="20" width="1560" height="900" rx="28" fill="url(#grid)" opacity=".5"/>
+
+  <rect x="80" y="66" width="300" height="44" rx="22" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.28)"/>
+  <text x="230" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">АГЕНТСТВО В КОРОБКЕ</text>
+
+  <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">РАСПАКОВКА · 6 ШАГОВ</text>
+  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">одна сессия 60–90 минут · передача руля клиенту · критерий: «я понял, как это работает у меня»</text>
+
+  <g font-family="'Manrope',sans-serif">
+    <!-- Шаг 1 -->
+    <rect x="40" y="300" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="72" y="368" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">1</text>
+    <text x="150" y="368" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">10 МИН</text>
+    <text x="72" y="420" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">ВХОД И WORKSPACE</text>
+    <text x="72" y="462" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">кабинет агентства с названием</text>
+    <text x="72" y="494" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">бизнеса клиента — не «Мой проект»</text>
+
+    <!-- Шаг 2 -->
+    <rect x="550" y="300" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="582" y="368" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">2</text>
+    <text x="660" y="368" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">15 МИН</text>
+    <text x="582" y="420" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">СОТРУДНИКИ И РОЛИ</text>
+    <text x="582" y="462" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">3–5 цифровых сотрудников</text>
+    <text x="582" y="494" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">не больше 5 ролей на старте</text>
+
+    <!-- Шаг 3 -->
+    <rect x="1060" y="300" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="1092" y="368" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">3</text>
+    <text x="1170" y="368" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">10 МИН</text>
+    <text x="1092" y="420" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">ОТДЕЛЫ</text>
+    <text x="1092" y="462" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">структура ответственности:</text>
+    <text x="1092" y="494" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">маркетинг · контент · финансы</text>
+
+    <!-- Шаг 4 -->
+    <rect x="40" y="560" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="72" y="628" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">4</text>
+    <text x="150" y="628" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">15 МИН</text>
+    <text x="72" y="680" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">СТАРТОВЫЕ ЗАДАЧИ</text>
+    <text x="72" y="722" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">3–5 реальных задач из анкеты</text>
+    <text x="72" y="754" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">«экзамен дня»: клиент ставит сам</text>
+
+    <!-- Шаг 5 -->
+    <rect x="550" y="560" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="582" y="628" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">5</text>
+    <text x="660" y="628" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">15 МИН</text>
+    <text x="582" y="680" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">БАЗА КЛИЕНТОВ</text>
+    <text x="582" y="722" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">загрузка базы клиента</text>
+    <text x="582" y="754" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">база — топливо системы</text>
+
+    <!-- Шаг 6 -->
+    <rect x="1060" y="560" width="500" height="240" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="1092" y="628" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="54" fill="none" stroke="rgba(255,208,0,.4)" stroke-width="1.5">6</text>
+    <text x="1170" y="628" font-family="'Space Mono',monospace" font-size="20" fill="#FFD000">10 МИН</text>
+    <text x="1092" y="680" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#f0ede6">АНАЛИТИКА И ФИНАНСЫ</text>
+    <text x="1092" y="722" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">доход · расход · маржа · прибыль</text>
+    <text x="1092" y="754" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">кто что делал и сколько времени</text>
+  </g>
+
+  <!-- поток-змейка -->
+  <g stroke="#FFD000" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M545,420 l16,-8 m-16,8 l16,8"/>
+    <path d="M1055,420 l16,-8 m-16,8 l16,8"/>
+    <path d="M1310,545 l-8,14 m8,-14 l8,14"/>
+    <path d="M545,680 l16,-8 m-16,8 l16,8"/>
+    <path d="M1055,680 l16,-8 m-16,8 l16,8"/>
+  </g>
+
+  <!-- итог -->
+  <rect x="330" y="826" width="940" height="56" rx="28" fill="rgba(255,208,0,.07)" stroke="rgba(255,208,0,.3)"/>
+  <text x="800" y="861" text-anchor="middle" font-family="'Space Mono',monospace" font-size="21" letter-spacing="1" fill="#FFD000">ИТОГО ~75 МИН · ЗАПАС ДО 90 · ПЕРВАЯ НЕДЕЛЯ СОПРОВОЖДЕНИЯ</text>
+</svg>

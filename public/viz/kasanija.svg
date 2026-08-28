@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" width="1600" height="760" role="img" aria-label="Цепочка касаний: линия времени прогрева">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#panel)" stroke="#1e1e1e"/>
+  <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#grid)" opacity=".5"/>
+
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.28)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+
+  <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">ЦЕПОЧКА КАСАНИЙ</text>
+  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">каждый «джеб» снимает один барьер и готовит следующий шаг · 24/7, автоматически</text>
+
+  <!-- линия времени -->
+  <line x1="200" y1="400" x2="1400" y2="400" stroke="rgba(255,208,0,.4)" stroke-width="3"/>
+  <g font-family="'Manrope',sans-serif">
+    <!-- Д0 -->
+    <circle cx="200" cy="400" r="16" fill="#FFD000"/>
+    <text x="200" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#FFD000">Д0</text>
+    <text x="200" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ЛИД-МАГНИТ</text>
+    <text x="200" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">ценность в обмен</text>
+    <text x="200" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">на контакт</text>
+    <text x="200" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">«внедри один приём»</text>
+
+    <!-- Д2 -->
+    <circle cx="440" cy="400" r="16" fill="#FFD000"/>
+    <text x="440" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#FFD000">Д2</text>
+    <text x="440" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ЭКСПЕРТНОСТЬ</text>
+    <text x="440" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">кейс с цифрами</text>
+    <text x="440" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">+17% заявок</text>
+    <text x="440" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">«этот источник даёт результат»</text>
+
+    <!-- Д3 -->
+    <circle cx="680" cy="400" r="16" fill="#FFD000"/>
+    <text x="680" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#FFD000">Д3</text>
+    <text x="680" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ТРАНСФОРМАЦИЯ</text>
+    <text x="680" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">скриншот выпускницы,</text>
+    <text x="680" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">Future Pacing</text>
+    <text x="680" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">мозг проживает результат</text>
+
+    <!-- Д5 -->
+    <circle cx="920" cy="400" r="16" fill="#FFD000"/>
+    <text x="920" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#FFD000">Д5</text>
+    <text x="920" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ПРОБЛЕМА</text>
+    <text x="920" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">«окно есть,</text>
+    <text x="920" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">но не вечно»</text>
+    <text x="920" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">дефицит + FOMO</text>
+
+    <!-- Д7 -->
+    <circle cx="1160" cy="400" r="16" fill="#FFD000"/>
+    <text x="1160" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#FFD000">Д7</text>
+    <text x="1160" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ХУК</text>
+    <text x="1160" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">флагманский курс,</text>
+    <text x="1160" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">модель завершена</text>
+    <text x="1160" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">оффер = следующий шаг</text>
+
+    <!-- Покупка -->
+    <circle cx="1400" cy="400" r="16" fill="#f0ede6" stroke="#FFD000" stroke-width="3"/>
+    <text x="1400" y="330" text-anchor="middle" font-family="'Space Mono',monospace" font-size="22" fill="#f0ede6">✓</text>
+    <text x="1400" y="300" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="26" fill="#f0ede6">ПОКУПКА</text>
+    <text x="1400" y="450" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">решение стало</text>
+    <text x="1400" y="478" text-anchor="middle" font-family="'Manrope',sans-serif" font-size="19" fill="#b0aca5">очевидным</text>
+    <text x="1400" y="512" text-anchor="middle" font-family="'Space Mono',monospace" font-size="16" fill="rgba(255,208,0,.65)">когнитивная лёгкость</text>
+  </g>
+
+  <text x="80" y="676" font-family="'Space Mono',monospace" font-size="18" letter-spacing="1" fill="#555">последовательность снимает барьеры доверия · каждый джеб бьёт в реальную боль сегмента</text>
+</svg>

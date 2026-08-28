@@ -219,6 +219,16 @@ function mdToReact(src: string): { toc: TocEntry[]; nodes: React.ReactNode[] } {
 			out.push(<hr key={`hr-${key++}`} className="docs-hr" />);
 		} else if (trimmed === "") {
 			flushList();
+		} else if (trimmed.startsWith("![")) {
+			flushList();
+			const m = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+			if (m) {
+				out.push(
+					<div key={`img-${key++}`} className="docs-img-wrap">
+						<img src={m[2]} alt={m[1]} className="docs-img" loading="lazy" />
+					</div>,
+				);
+			}
 		} else {
 			flushList();
 			out.push(

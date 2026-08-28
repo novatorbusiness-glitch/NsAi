@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" width="1600" height="800" role="img" aria-label="Четыре элемента доверия: экспертиза, тема, трансформация, продукт">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0e0e"/>
+      <stop offset="1" stop-color="#090909"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#panel)" stroke="#1e1e1e"/>
+  <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#grid)" opacity=".5"/>
+
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.28)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+
+  <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">ЧЕТЫРЕ ЭЛЕМЕНТА ДОВЕРИЯ</text>
+  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">прогрев: спроектированное меню из четырёх блюд · от скепсиса к готовности действовать</text>
+
+  <!-- 4 карточки -->
+  <g font-family="'Manrope',sans-serif">
+    <rect x="40" y="310" width="360" height="300" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="72" y="378" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.35)" stroke-width="1.5">1</text>
+    <text x="72" y="442" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#FFD000">ЭКСПЕРТНОСТЬ</text>
+    <text x="72" y="486" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">«Почему я должен слушать тебя?»</text>
+    <text x="72" y="530" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">сторителлинг, кейсы с цифрами,</text>
+    <text x="72" y="562" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">авторская методология</text>
+    <text x="72" y="600" font-family="'Space Mono',monospace" font-size="17" fill="rgba(255,208,0,.6)">надежный проводник</text>
+
+    <rect x="420" y="310" width="360" height="300" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="452" y="378" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.35)" stroke-width="1.5">2</text>
+    <text x="452" y="442" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#FFD000">ТЕМА / ПРОБЛЕМА</text>
+    <text x="452" y="486" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">«Почему это важно для меня сейчас?»</text>
+    <text x="452" y="530" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">разрушение мифов, статистика,</text>
+    <text x="452" y="562" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">формула PAS</text>
+    <text x="452" y="600" font-family="'Space Mono',monospace" font-size="17" fill="rgba(255,208,0,.6)">управляемый диссонанс</text>
+
+    <rect x="800" y="310" width="360" height="300" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="832" y="378" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.35)" stroke-width="1.5">3</text>
+    <text x="832" y="442" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#FFD000">ТРАНСФОРМАЦИЯ</text>
+    <text x="832" y="486" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">«Какой результат я получу?»</text>
+    <text x="832" y="530" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">истории клиентов, Future Pacing,</text>
+    <text x="832" y="562" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">визуализация будущего</text>
+    <text x="832" y="600" font-family="'Space Mono',monospace" font-size="17" fill="rgba(255,208,0,.6)">предвкушение награды</text>
+
+    <rect x="1180" y="310" width="380" height="300" rx="20" fill="#101010" stroke="#1e1e1e"/>
+    <text x="1212" y="378" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.35)" stroke-width="1.5">4</text>
+    <text x="1212" y="442" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="30" fill="#FFD000">ПРОДУКТ</text>
+    <text x="1212" y="486" font-family="'Space Mono',monospace" font-size="19" fill="#b0aca5">«Как получить этот результат?»</text>
+    <text x="1212" y="530" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">анонс через пользу, разбор</text>
+    <text x="1212" y="562" font-family="'Manrope',sans-serif" font-size="21" fill="#7a7670">возражений, демо изнутри</text>
+    <text x="1212" y="600" font-family="'Space Mono',monospace" font-size="17" fill="rgba(255,208,0,.6)">мост к решению</text>
+  </g>
+
+  <!-- поток -->
+  <g stroke="#FFD000" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M405,460 l14,-10 m-14,10 l14,10"/>
+    <path d="M785,460 l14,-10 m-14,10 l14,10"/>
+    <path d="M1165,460 l14,-10 m-14,10 l14,10"/>
+  </g>
+  <text x="220" y="660" text-anchor="middle" font-family="'Space Mono',monospace" font-size="21" letter-spacing="1" fill="#b0aca5">порядок подачи строг: каждый элемент готовит следующий шаг</text>
+
+  <text x="80" y="744" font-family="'Space Mono',monospace" font-size="18" letter-spacing="1" fill="#555">к моменту открытия продаж все четыре опоры должны быть выстроены</text>
+</svg>

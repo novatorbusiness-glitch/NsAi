@@ -111,6 +111,20 @@ body {
 .docs-h2 {
 	scroll-margin-top: 24px;
 }
+.docs-img-wrap {
+	margin: 22px 0 26px;
+}
+.docs-img {
+	display: block;
+	width: 100%;
+	max-width: 760px;
+	height: auto;
+	margin: 0 auto;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 14px;
+	background: #080808;
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
 .docs-h4 {
 	font-family: "Space Grotesk", sans-serif;
 	font-size: 17px;
