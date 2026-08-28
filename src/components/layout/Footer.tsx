@@ -40,6 +40,7 @@ export default function Footer() {
             <ul className="fls">
               <li><a href="/book">{t("nav.bookNeuro")}</a></li>
               <li><a href="/agency-in-a-box">{t("nav.bookAgency")}</a></li>
+              <li><a href="/prompts">Промпты NCAi</a></li>
             </ul>
           </div>
 
