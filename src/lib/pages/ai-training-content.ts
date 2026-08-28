@@ -4,16 +4,16 @@ export const css = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
-  --br:#1e1e1e;--br2:#2a2a2a;
-  --t:#f4f1ea;--t2:#8f8c84;--t3:#57544f;
-  --a:#FFD000;--ad:rgba(255,208,0,.09);--ag:rgba(255,208,0,.14);
+  --br:#1e1e1e;--br2:#272727;
+  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --tr:#4ECDC4;--trd:rgba(78,205,196,.08);--trb:rgba(78,205,196,.28);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
-  --fd:'Syne',sans-serif;--fs:'Instrument Serif',serif;--fm:'JetBrains Mono',monospace;
-  --ease:cubic-bezier(.16,1,.3,1);--max:1200px;
+  --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--max:1280px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:17px;line-height:1.65;overflow-x:hidden;min-height:100vh}
+body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:17px;line-height:1.85;overflow-x:hidden;min-height:100vh}
 @media(pointer:fine){body{cursor:none}}
 #cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
 @media(pointer:fine){#cd,#cr{display:block}}
@@ -66,7 +66,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hero-sub strong{color:var(--t);font-weight:600}
 .hero-acts{display:flex;gap:.875rem;flex-wrap:wrap;animation:fup 1s .32s var(--ease) both}
 .bp{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;letter-spacing:.01em;
-  background:var(--a);color:#050505;padding:.95rem 2.1rem;border-radius:8px;text-decoration:none;
+  background:var(--a);color:#050505;-webkit-text-fill-color:#050505;padding:.95rem 2.1rem;border-radius:8px;text-decoration:none;
   transition:transform .2s var(--ease),box-shadow .2s;box-shadow:0 3px 0 rgba(180,140,0,.5),0 8px 32px rgba(255,208,0,.18)}
 .bp:hover{transform:translateY(-2px);box-shadow:0 3px 0 rgba(180,140,0,.5),0 16px 44px rgba(255,208,0,.38)}
 .bs{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:700;color:#e0ddd6;
@@ -105,7 +105,8 @@ section{padding:6rem 0}
 .sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
 .sl{font-size:1rem;color:var(--t2);max-width:540px;margin-bottom:3rem;line-height:1.75}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv{opacity:1;transform:none}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 .alt{background:var(--bgc)}
@@ -674,9 +675,20 @@ if(window.matchMedia('(pointer:fine)').matches){
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('sc',window.scrollY>40);
 },{passive:true});
-// REVEAL
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// REVEAL (с защитой: контент никогда не остаётся невидимым)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+}else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{
+    document.querySelectorAll('.rv:not(.on)').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<innerHeight&&r.bottom>0)el.classList.add('on');
+    });
+  },1500);
+}
 // CANVAS PARTICLES
 const cv=document.getElementById('cvs');
 if(cv){const ctx=cv.getContext('2d');let W,H;

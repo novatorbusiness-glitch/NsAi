@@ -3,12 +3,12 @@ export const css = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
-  --br:#1e1e1e;--br2:#2a2a2a;
-  --t:#f4f1ea;--t2:#8f8c84;--t3:#57544f;
-  --a:#FFD000;--ad:rgba(255,208,0,.09);--ag:rgba(255,208,0,.14);
+  --br:#1e1e1e;--br2:#272727;
+  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
-  --fd:'Syne',sans-serif;--fs:'Instrument Serif',serif;--fm:'JetBrains Mono',monospace;
-  --ease:cubic-bezier(.16,1,.3,1);--max:1200px;
+  --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--max:1280px;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--t);font-family:var(--fs);overflow-x:hidden;min-height:100vh}
@@ -122,7 +122,10 @@ nav.sc{background:rgba(8,8,8,.97)}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
 .sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+/* REVEAL — прогрессивное улучшение: без JS контент видим сразу,
+   с JS — плавное появление при скролле (html.js ставит страница) */
+.rv{opacity:1;transform:none}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 
@@ -260,21 +263,28 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:1rem}
 @media(max-width:860px){.books-grid{grid-template-columns:1fr;gap:1.25rem}}
 .bk-card{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;align-items:center;background:var(--bgc);
-  border:1px solid var(--br);border-radius:18px;padding:1.4rem;text-decoration:none;position:relative;overflow:hidden;
-  transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
-.bk-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 0% 50%,var(--ad),transparent 60%);opacity:.6;pointer-events:none}
+  border:1px solid var(--br);border-radius:18px;padding:1.5rem;text-decoration:none;position:relative;
+  transition:border-color .3s,transform .3s var(--ease),box-shadow .3s;isolation:isolate}
+.bk-card::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(ellipse 70% 90% at 0% 50%,var(--ad),transparent 60%);opacity:.6;z-index:0}
+.bk-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.03)}
 .bk-card:hover{border-color:rgba(255,208,0,.4);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
-@media(max-width:520px){.bk-card{grid-template-columns:1fr}}
-.bk-cover{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);position:relative;z-index:2}
-.bk-body{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;position:relative;z-index:2}
+@media(max-width:520px){.bk-card{grid-template-columns:1fr;text-align:center;justify-items:center}.bk-body{align-items:center}}
+.bk-cover{display:block;width:150px;height:auto;aspect-ratio:600/840;object-fit:cover;border-radius:10px;
+  box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);position:relative;z-index:2}
+@media(max-width:520px){.bk-cover{width:180px}}
+.bk-body{display:flex;flex-direction:column;align-items:flex-start;gap:.5rem;position:relative;z-index:2}
 .bk-badge{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);
-  padding:.28rem .65rem;border:1px solid var(--br2);border-radius:999px}
+  padding:.28rem .65rem;border:1px solid var(--br2);border-radius:999px;background:rgba(255,255,255,.02)}
 .bk-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--t)}
+.bk-author{font-family:var(--fm);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.bk-author span{color:var(--a)}
 .bk-desc{font-size:.85rem;color:var(--t2);line-height:1.6;margin:0}
 .bk-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:800;
-  color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
-  box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease)}
-.bk-card:hover .bk-cta{transform:translateX(4px)}
+  color:#050505;-webkit-text-fill-color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
+  box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease),box-shadow .2s}
+.bk-card:hover .bk-cta{transform:translateX(4px);box-shadow:0 10px 30px rgba(255,208,0,.3)}
 section[id]{scroll-margin-top:76px}
 `;
 
@@ -450,8 +460,9 @@ export const body = `
       <a href="/book" class="bk-card rv d1">
         <img src="/covers/neuro-voronka.svg" alt="Книга Нейро-Воронка — обложка" class="bk-cover" loading="lazy" />
         <div class="bk-body">
-          <div class="bk-badge">Книга · Часть 1 · 2026</div>
+          <div class="bk-badge">Книга · Бесплатно</div>
           <div class="bk-title">Нейро-Воронка</div>
+          <div class="bk-author">Илья Новицкий · <span>2026</span></div>
           <div class="bk-desc">Инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI. 6 глав, 30 подглав.</div>
           <div class="bk-cta">Читать →</div>
         </div>
@@ -461,6 +472,7 @@ export const body = `
         <div class="bk-body">
           <div class="bk-badge">Методология NCAi · 2026</div>
           <div class="bk-title">Агентство в коробке</div>
+          <div class="bk-author">Илья Новицкий · <span>2026</span></div>
           <div class="bk-desc">SaaS-платформа NCAi: мульти-аренда, распаковка клиента, подписка и тарифы, автоматизация.</div>
           <div class="bk-cta">Читать →</div>
         </div>
@@ -668,6 +680,8 @@ if(cv){const ctx=cv.getContext('2d');let W,H;
 `;
 
 export const js = `
+// Включаем прогрессивный reveal: без этой метки контент виден сразу
+document.documentElement.classList.add('js');
 // CURSOR
 const cd=document.getElementById('cd'),cr=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
@@ -683,9 +697,20 @@ if(window.matchMedia('(pointer:fine)').matches){
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('sc',window.scrollY>40);
 },{passive:true});
-// REVEAL
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// REVEAL (с защитой: контент никогда не остаётся невидимым)
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+}else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  // Страховка: если observer по какой-то причине не сработал для видимых блоков — показываем их
+  setTimeout(()=>{
+    document.querySelectorAll('.rv:not(.on)').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<innerHeight&&r.bottom>0)el.classList.add('on');
+    });
+  },1500);
+}
 // CANVAS PARTICLES
 const cv=document.getElementById('cvs');
 if(cv){const ctx=cv.getContext('2d');let W,H;

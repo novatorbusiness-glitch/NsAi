@@ -4,34 +4,35 @@
    золотой акцент, читаемые серые. Легаси-алиасы сохранены.
    ──────────────────────────────────────────────────────────── */
 :root {
-	/* Поверхности */
-	--bg: #0a0a0c;
-	--bg2: #0f0f12;
-	--bgc: #151518;
-	--bgc2: #1b1b1f;
-	--bgc3: #212126;
+	/* Поверхности — строго по спецификации NCAi */
+	--bg: #080808;
+	--bg2: #0d0d0d;
+	--bgc: #111;
+	--bgc2: #161616;
+	--bgc3: #1a1a1a;
 
-	/* Границы */
-	--br: #1e1e23;
-	--br2: #2b2b31;
+	/* Границы — строго по спецификации NCAi */
+	--br: #1e1e1e;
+	--br2: #272727;
 
-	/* Текст (читаемые серые) */
-	--t: #f4f1ea;
-	--t2: #8f8c84;
-	--t3: #57544f;
+	/* Текст — строго по спецификации NCAi */
+	--t: #edeae3;
+	--t2: #7c7870;
+	--t3: #383430;
 
-	/* Акцент — точечный */
+	/* Акцент — жёлтый #FFD000 */
 	--a: #ffd000;
-	--ad: rgba(255, 208, 0, 0.09);
+	--ad: rgba(255, 208, 0, 0.07);
 	--ag: rgba(255, 208, 0, 0.14);
+	--red: #e84040;
 
 	--metal: linear-gradient(135deg, #f0f0ec 0%, #cfcfca 35%, #8a8a86 65%, #d8d8d3 100%);
 
 	/* Типографика — единая система (Syne / Instrument Serif / JetBrains Mono),
-	   тот же брендовый набор, что и на главной (уже подгружается в layout.tsx) */
-	--font-display: "Syne", sans-serif;
-	--font-serif: "Instrument Serif", serif;
-	--font-mono: "JetBrains Mono", monospace;
+	   подключена через next/font в layout.tsx (переменные --font-syne и т.д.) */
+	--font-display: var(--font-syne), sans-serif;
+	--font-serif: var(--font-instrument-serif), serif;
+	--font-mono: var(--font-jetbrains-mono), monospace;
 
 	/* Легаси-алиасы (используются по всему проекту) */
 	--fd: var(--font-display);
@@ -40,7 +41,7 @@
 
 	/* Движение и ширина контейнера */
 	--ease: cubic-bezier(0.16, 1, 0.3, 1);
-	--max: 1200px;
+	--max: 1280px;
 
 	/* Шкала отступов (4/8) */
 	--sp-1: 0.25rem;
