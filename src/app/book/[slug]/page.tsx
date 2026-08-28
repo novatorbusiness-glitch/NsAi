@@ -5,6 +5,9 @@ import type { ReactNode } from "react";
 import fs from "fs";
 import path from "path";
 import { getSubchapterTitle } from "@/lib/book-data";
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
+import ChapterToc from "@/components/book/ChapterToc";
 
 const LEGACY_SLUG_ALIASES: Record<string, string> = {
 	vvedenie: "00-vvedenie",
@@ -222,6 +225,8 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 	const normalizedFullHtml = isFullHtml ? normalizeChapterHtmlFonts(chapterSource, resolvedSlug) : "";
 
 	return (
+		<>
+		{!isFullHtml ? <Navigation /> : null}
 		<main
 			className="w"
 			style={{
@@ -249,9 +254,18 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 			) : null}
 
 			{!isFullHtml ? (
-			<p style={{ marginTop: 0 }}>
-				<a href="/book">← Ко всем главам</a>
-			</p>
+				<>
+					<div className="chapter-topbar">
+						<p className="chapter-breadcrumb" style={{ marginTop: 0, marginBottom: 0 }}>
+							<a href="/book">Книги</a>
+							<span className="sep">·</span>
+							<a href="/book">Нейро-Воронка</a>
+							<span className="sep">→</span>
+							<span style={{ color: "var(--t)" }}>{chapterTitle}</span>
+						</p>
+						<ChapterToc current={resolvedSlug} />
+					</div>
+				</>
 			) : null}
 
 			{!isFullHtml && !chapterSource.trimStart().startsWith("<") && !chapterSource.includes("# ") ? (
@@ -286,11 +300,14 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 			)}
 
 			{!isFullHtml ? (
-				<div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+				<div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "2.5rem" }}>
 					{prevSlug ? <a href={`/book/${prevSlug}`}>← Предыдущая</a> : null}
 					{nextSlug ? <a href={`/book/${nextSlug}`}>Следующая →</a> : null}
+					<a href="/book">← Оглавление</a>
 				</div>
 			) : null}
 		</main>
+		{!isFullHtml ? <Footer /> : null}
+		</>
 	);
 }
