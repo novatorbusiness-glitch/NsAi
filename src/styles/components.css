@@ -102,7 +102,7 @@ nav {
 	display: flex;
 	align-items: center;
 	padding: 0 2rem;
-	background: rgba(10, 10, 12, 0.72);
+	background: rgba(8, 8, 8, 0.72);
 	backdrop-filter: blur(24px) saturate(180%);
 	-webkit-backdrop-filter: blur(24px) saturate(180%);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -319,6 +319,7 @@ nav.sc {
 	letter-spacing: 0.01em;
 	background: var(--a);
 	color: #050505;
+	-webkit-text-fill-color: #050505;
 	padding: 0.9rem 2rem;
 	border-radius: 8px;
 	text-decoration: none;
@@ -4554,7 +4555,7 @@ footer {
 
 /* Book chapter reading experience */
 .book-article {
-	max-width: 860px;
+	max-width: 740px;
 	margin: 0 auto;
 	color: var(--t);
 	line-height: 1.8;
@@ -4909,6 +4910,38 @@ footer {
 	color: var(--t);
 }
 
+/* Воронка книги: CTA на следующую подглаву (оглавления на страницах нет) */
+.chapter-next-cta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem;
+	margin-top: 2.5rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--br);
+	max-width: 740px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chapter-next-cta .bp {
+	font-size: 0.92rem;
+	padding: 0.95rem 2.1rem;
+}
+
+.chapter-prev-btn {
+	font-family: var(--fd);
+	font-size: 0.82rem;
+	font-weight: 600;
+	color: var(--t2);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.chapter-prev-btn:hover {
+	color: var(--t);
+}
+
 @media (max-width: 800px) {
 	.book-cards-2 {
 		grid-template-columns: 1fr;
@@ -5110,3 +5143,150 @@ footer {
 		padding: 1.5rem;
 	}
 }
+
+/* ──────────────────────────────────────────────
+   Мобильные нижние табы (приложение-стиль, ≤640px).
+   На десктопе скрыты — там верхнее меню.
+   ────────────────────────────────────────────── */
+.ntabs-spacer {
+	display: none;
+}
+
+.ntabs {
+	display: none;
+}
+
+@media (max-width: 640px) {
+	.ntabs-spacer {
+		display: block;
+		height: calc(62px + env(safe-area-inset-bottom));
+		flex-shrink: 0;
+	}
+
+	.ntabs {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 95;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		background: rgba(8, 8, 8, 0.94);
+		backdrop-filter: blur(20px) saturate(160%);
+		-webkit-backdrop-filter: blur(20px) saturate(160%);
+		border-top: 1px solid var(--br);
+		padding-bottom: env(safe-area-inset-bottom);
+		box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.45);
+	}
+
+	.ntab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0.2rem;
+		padding: 0.55rem 0 0.5rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
+		position: relative;
+	}
+
+	.ntab::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scaleX(0);
+		width: 32px;
+		height: 2px;
+		background: var(--a);
+		border-radius: 999px;
+		transition: transform 0.25s var(--ease);
+	}
+
+	.ntab.on::before {
+		transform: translateX(-50%) scaleX(1);
+	}
+
+	.ntab-icon {
+		font-size: 1.05rem;
+		line-height: 1;
+		filter: grayscale(0.4);
+		opacity: 0.85;
+		transition: filter 0.2s, opacity 0.2s;
+	}
+
+	.ntab.on .ntab-icon {
+		filter: none;
+		opacity: 1;
+	}
+
+	.ntab-label {
+		font-family: var(--fm);
+		font-size: 0.55rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--t2);
+		transition: color 0.2s;
+	}
+
+	.ntab.on .ntab-label {
+		color: var(--a);
+	}
+
+	/* Шторка «Ещё» — над нижней панелью */
+	.ntabs-more {
+		position: absolute;
+		bottom: calc(100% + 8px);
+		left: 12px;
+		right: 12px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		padding: 0.9rem;
+		background: rgba(17, 17, 17, 0.98);
+		border: 1px solid var(--br2);
+		border-radius: 16px;
+		box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+		max-height: 52vh;
+		overflow-y: auto;
+	}
+
+	.ntabs-more-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0.65rem 0.8rem;
+		border: 1px solid var(--br);
+		border-radius: 10px;
+		background: var(--bgc2);
+		font-family: var(--fd);
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--t);
+		text-decoration: none;
+		transition: border-color 0.2s, background 0.2s;
+	}
+
+	.ntabs-more-link.on {
+		border-color: rgba(255, 208, 0, 0.4);
+		color: var(--a);
+	}
+
+	.ntabs-more-link:hover {
+		border-color: rgba(255, 208, 0, 0.3);
+		background: var(--bgc);
+	}
+
+	.ntabs-more-go {
+		color: var(--a);
+		font-family: var(--fm);
+		font-size: 0.75rem;
+	}
+}
+

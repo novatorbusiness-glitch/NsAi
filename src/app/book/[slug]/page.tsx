@@ -7,7 +7,6 @@ import path from "path";
 import { getSubchapterTitle } from "@/lib/book-data";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
-import ChapterToc from "@/components/book/ChapterToc";
 
 const LEGACY_SLUG_ALIASES: Record<string, string> = {
 	vvedenie: "00-vvedenie",
@@ -263,7 +262,6 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 							<span className="sep">→</span>
 							<span style={{ color: "var(--t)" }}>{chapterTitle}</span>
 						</p>
-						<ChapterToc current={resolvedSlug} />
 					</div>
 				</>
 			) : null}
@@ -300,10 +298,17 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 			)}
 
 			{!isFullHtml ? (
-				<div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "2.5rem" }}>
-					{prevSlug ? <a href={`/book/${prevSlug}`}>← Предыдущая</a> : null}
-					{nextSlug ? <a href={`/book/${nextSlug}`}>Следующая →</a> : null}
-					<a href="/book">← Оглавление</a>
+				<div className="chapter-next-cta">
+					{prevSlug ? (
+						<a href={`/book/${prevSlug}`} className="chapter-prev-btn">
+							← {getSubchapterTitle(prevSlug)}
+						</a>
+					) : null}
+					{nextSlug ? (
+						<a href={`/book/${nextSlug}`} className="bp">
+							Дальше: {getSubchapterTitle(nextSlug)}
+						</a>
+					) : null}
 				</div>
 			) : null}
 		</main>

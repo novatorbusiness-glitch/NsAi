@@ -224,6 +224,24 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .gl-closer strong{color:var(--t)}
 
 
+
+/* ─── VIZ KIT: таблицы, ASCII, эмодзи-списки, бейджи ─── */
+.viz-wrap{margin:2.2rem 0;overflow-x:auto;border:1px solid var(--br);border-radius:12px;background:var(--bgc)}
+.viz-table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:500px}
+.viz-table th{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);text-align:left;padding:.85rem 1.15rem;border-bottom:1px solid var(--br2);background:var(--bgc2);font-weight:700}
+.viz-table td{padding:.8rem 1.15rem;border-bottom:1px solid var(--br);color:#b0aca5;line-height:1.62;vertical-align:top}
+.viz-table tr:last-child td{border-bottom:none}
+.viz-table td strong{color:var(--t)}
+.viz-table .y{color:var(--a);font-family:var(--fm);font-size:.78rem;white-space:nowrap}
+.viz-table .r{color:var(--red);font-family:var(--fm);font-size:.78rem;white-space:nowrap}
+.ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:#0b0b0b;overflow-x:auto}
+.ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#cfcbc0;white-space:pre}
+.ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+.emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
+.emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:#b0aca5;line-height:1.72}
+.emoji-list li .em{position:absolute;left:0;top:.45rem;font-size:1.05rem}
+.emoji-list li strong{color:var(--t)}
+.viz-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.55);margin:2.4rem 0 .8rem}
 </style>
 </head>
 <body>
@@ -269,32 +287,81 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <article>
 <div class="wrap">
 
-<div class="rv"><p class="prose-p" style="margin-top:0">Неправильно подобранная модель сводит на нет качество даже самых точных деталей. Никто не строит небоскрёб по плану дачного домика — тяжёлая конструкция для простого продукта раздавит клиента когнитивной нагрузкой на входе. Модель должна соответствовать двум параметрам: <strong>весу продукта и температуре аудитории</strong>.</p></div><h2 class="prose-h2 rv">Группа 1. Воронки для первого знакомства</h2><div class="cards rv">
-<div class="card"><div class="c-num">01</div><div class="c-title">«Любопытство»</div><div class="c-text">Squeeze Page. Эффект Зейгарник: интрига без разгадки создаёт ментальный зуд. Контакт — способ снять его.</div></div>
-<div class="card"><div class="c-num">02</div><div class="c-title">«Ценность в обмен на контакт»</div><div class="c-text">Lead Magnet. Классика на принципе взаимности: отдаёшь ценность — получаешь лид.</div></div>
-<div class="card"><div class="c-num">03</div><div class="c-title">«Открытая демонстрация»</div><div class="c-text">Reverse Squeeze. Сначала максимум ценности, потом подписка. Меньше лидов, но горячее.</div></div>
-<div class="card"><div class="c-num">04</div><div class="c-title">«Диагностика»</div><div class="c-text">Survey / Квиз. Интерес к себе + эффект авторитета: персональный «диагноз» снижает защиту.</div></div>
-</div><h2 class="prose-h2 rv">Группа 2. Воронки для быстрых продаж</h2><div class="cards rv">
-<div class="card"><div class="c-num">01</div><div class="c-title">«Быстрое доверие»</div><div class="c-text">Tripwire. Символическая цена переводит подписчика в покупателя. Техника «нога в двери».</div></div>
-<div class="card"><div class="c-num">02</div><div class="c-title">«Невидимая продажа»</div><div class="c-text">Invisible Funnel. Оплата списывается после первого дня ценности. Эффект владения + неприятие потерь.</div></div>
-</div><h2 class="prose-h2 rv">Группа 3. Воронки для дорогих продуктов</h2><div class="cards rv">
-<div class="card"><div class="c-num">01</div><div class="c-title">«Событие»</div><div class="c-text">Webinar Funnel. Коктейль триггеров в одной точке: соц. доказательство, дефицит, взаимность, авторитет сцены.</div></div>
-<div class="card"><div class="c-num">02</div><div class="c-title">«Премьера»</div><div class="c-text">Product Launch. Механика предвкушения: серия материалов как трейлер к фильму. Окно продаж на пике готовности.</div></div>
-<div class="card"><div class="c-num">03</div><div class="c-title">«Отбор»</div><div class="c-text">Application Funnel. Доступ нужно заслужить: анкета + ручной отбор. Растёт воспринимаемая ценность и приверженность.</div></div>
-</div><h2 class="prose-h2 rv">Группа 4. Воронки для бренда и сообщества</h2><div class="cards rv">
-<div class="card"><div class="c-num">01</div><div class="c-title">«Личный бренд»</div><div class="c-text">Hero Funnel. Регулярный контент от первого лица создаёт кредит доверия. Продажи — через редкие закрытые запуски.</div></div>
-<div class="card"><div class="c-num">02</div><div class="c-title">«Конференция»</div><div class="c-text">Summit Funnel. Гало-эффект: вес 15–20 экспертов частично переносится на организатора.</div></div>
-</div><h2 class="prose-h2 rv">Группа 5. Специализированные воронки</h2><div class="cards rv">
-<div class="card"><div class="c-num">01</div><div class="c-title">«Мост»</div><div class="c-text">Bridge Funnel. Передача чужому продукту части доверия через личную страницу-рекомендацию.</div></div>
-<div class="card"><div class="c-num">02</div><div class="c-title">«Витрина»</div><div class="c-text">Storefront. Прозрачный выбор из 3–5 направлений снижает сопротивление — контроль у клиента.</div></div>
-<div class="card"><div class="c-num">03</div><div class="c-title">«Живой эфир»</div><div class="c-text">Live Demo. Показ сложного продукта в действии + Q&A снимают страх ошибки.</div></div>
-<div class="card"><div class="c-num">04</div><div class="c-title">«Удержание»</div><div class="c-text">Cancellation Funnel. Прерывает импульс отписки вопросом «Почему?» и персональным оффером.</div></div>
-</div><h2 class="prose-h2 rv">Как выбирать и комбинировать</h2><p class="prose-p rv d1">Не внедряй все пятнадцать разом. Для большинства проектов релевантны две-три модели, и их можно комбинировать в гибриды: холодный трафик → лид-магнит → трипвайр → вебинар. За всем разнообразием — один принцип: <strong>любая покупка это стресс</strong>, и задача системы разбить одно пугающее решение на серию маленьких безопасных «да».</p><div class="practice rv d1">
-  <div class="practice-label">Практика</div>
-  <p>Выбери для старта 2–3 модели. Спроси себя: каков вес продукта (быстрое решение или длинный цикл) и какова температура аудитории (холодная или горячая)? Только после этого собирай гибрид.</p>
-</div><div class="insight rv">
-  <div class="insight-icon">🗺️</div>
-  <p class="insight-text">Каждое крошечное «да» меняет самовосприятие клиента и делает следующее «да» психологически проще. Ты ведёшь человека по пути наименьшего когнитивного сопротивления.</p>
+<div class="rv"><p class="prose-p" style="margin-top:0">Элементы понятны, страницы собраны, анатомия разобрана. Теперь самый ответственный этап проектирования — выбрать конкретный чертёж. Неправильно подобранная модель сводит на нет качество даже самых точных деталей. Никто не строит небоскрёб по плану дачного домика — и в обратную сторону это работает так же: тяжёлая конструкция для простого продукта раздавит клиента когнитивной нагрузкой ещё на входе.</p></div>
+
+<h2 class="prose-h2 rv">Два параметра выбора модели</h2>
+<p class="prose-p rv d1">Модель воронки должна соответствовать двум параметрам: <strong>весу продукта</strong> и <strong>температуре аудитории</strong>. Для недорогого, интуитивно понятного продукта нужна короткая динамичная воронка — минимум шагов и решение за минуты. Для дорогой услуги с длинным циклом принятия решения необходим другой маршрут: спокойный, поэтапный, выстраивающий доверие через несколько касаний. Ошибка в этом выборе — одна из главных причин, по которой технически грамотные системы не работают.</p>
+
+<div class="ascii rv">
+<div class="a-title">Матрица выбора: вес продукта × температура аудитории</div>
+<pre>
+                 ЛЁГКИЙ ПРОДУКТ                 ТЯЖЁЛЫЙ ПРОДУКТ
+                 (быстрое решение)               (долгий цикл решения)
+  ─────────────────────────────────────────────────────────────────
+  Холодная      Короткая динамичная              Поэтапный прогрев,
+  аудитория     воронка, минимум шагов,          доверие через серию
+                 решение за минуты               касаний, кейсы
+  Тёплая        Tripwire + быстрый               Webinar / Launch /
+  аудитория     переход на основной              Application — длинный
+                 продукт                          маршрут к высокому чеку
+</pre>
+</div>
+
+<h2 class="prose-h2 rv">Каталог из пятнадцати моделей</h2>
+<p class="prose-p rv d1">Ниже собраны пятнадцать проверенных моделей, сгруппированных по главной бизнес-задаче. Не нужно заучивать все — достаточно найти две-три, которые точно соответствуют твоей ситуации.</p>
+
+<div class="viz-wrap rv">
+<table class="viz-table">
+<tr><th>Группа</th><th>Модель</th><th>Механика</th><th>Психология</th></tr>
+<tr><td rowspan="4"><strong>1. Первое знакомство</strong></td><td>1 · Любопытство (Squeeze)</td><td>Интрига → форма → разгадка</td><td>Эффект Зейгарник, незакрытая петля</td></tr>
+<tr><td>2 · Ценность в обмен (Lead Magnet)</td><td>Магнит → контакт → благодарность</td><td>Принцип взаимности</td></tr>
+<tr><td>3 · Открытая демонстрация (Reverse)</td><td>Сначала ценность, потом подписка</td><td>Сигнал уверенности, авторитет</td></tr>
+<tr><td>4 · Диагностика (Survey/Квиз)</td><td>Опрос → персонализированный результат</td><td>Интерес к себе + эффект авторитета</td></tr>
+<tr><td rowspan="2"><strong>2. Быстрые продажи</strong></td><td>5 · Быстрое доверие (Tripwire)</td><td>Магнит → дешёвый продукт → основной</td><td>«Нога в двери», первая транзакция</td></tr>
+<tr><td>6 · Невидимая продажа (Invisible)</td><td>Сначала ценность, оплата после</td><td>Эффект владения + неприятие потерь</td></tr>
+<tr><td rowspan="3"><strong>3. Дорогие продукты</strong></td><td>7 · Событие (Webinar)</td><td>Регистрация → эфир → окно продаж</td><td>Соц. доказательство + дефицит + взаимность</td></tr>
+<tr><td>8 · Премьера (Product Launch)</td><td>Список ожидания → контент → открытие</td><td>Предвкушение, нарастающее желание</td></tr>
+<tr><td>9 · Отбор (Application)</td><td>Кейс → анкета → ручной отбор</td><td>Заявка как «заслуженный» доступ</td></tr>
+<tr><td rowspan="2"><strong>4. Бренд и сообщество</strong></td><td>10 · Личный бренд (Hero)</td><td>Контент → подписка → редкие запуски</td><td>Парасоциальное доверие</td></tr>
+<tr><td>11 · Конференция (Summit)</td><td>Эксперты → регистрация → записи</td><td>Гало-эффект, перенос авторитета</td></tr>
+<tr><td rowspan="4"><strong>5. Специализированные</strong></td><td>12 · Мост (Bridge)</td><td>Партнёрская продажа через страницу-поручительство</td><td>Трансфер доверия</td></tr>
+<tr><td>13 · Витрина (Storefront)</td><td>Несколько продуктов → выбор пути</td><td>Контроль выбора, меньше сопротивления</td></tr>
+<tr><td>14 · Живой эфир (Live Demo)</td><td>Живая демонстрация + Q&amp;A</td><td>Снятие страха ошибки в реальном времени</td></tr>
+<tr><td>15 · Удержание (Cancellation)</td><td>«Почему уходите?» → персональный оффер</td><td>Переключение с потери на новую выгоду</td></tr>
+</table>
+</div>
+
+<h2 class="prose-h2 rv">Как выбирать и комбинировать</h2>
+<p class="prose-p rv d1">Перед тобой пятнадцать чертежей, и не нужно внедрять их все разом. Для большинства проектов на старте релевантны две-три модели. Свобода инженерии в том, что эти блоки можно комбинировать в многоступенчатые гибриды. Например, завести холодный трафик через лид-магнит, затем предложить трипвайр, а после — пригласить на вебинар. Такая связка работает как единый маршрут, где каждый шаг снижает когнитивную нагрузку следующего.</p>
+
+<div class="ascii rv">
+<div class="a-title">Пример гибридной связки</div>
+<pre>
+  ХОЛОДНЫЙ ТРАФИК
+        │
+        ▼
+  ЛИД-МАГНИТ ───────► контакт получен, доверие запущено
+        │
+        ▼
+  TRIPWIRE (490 ₽) ──► подписчик стал покупателем
+        │
+        ▼
+  ВЕБИНАР ──────────► основной продукт
+</pre>
+</div>
+
+<p class="prose-p rv d1">За всем разнообразием форматов скрывается один фундаментальный принцип: любая покупка для человека — это стресс и риск потери ресурса. Задача системы — разбить одно большое пугающее решение на серию маленьких, безопасных и логичных шагов. Каждое крошечное «да» меняет самовосприятие клиента и делает следующее «да» психологически проще.</p>
+
+<div class="practice rv">
+<div class="practice-label">Практика</div>
+<p>Выбери две-три модели из каталога под свою задачу и собери из них гибрид. Проверь связку вопросом: <strong>снижает ли каждый следующий шаг когнитивную нагрузку</strong> предыдущего? Если где-то клиент делает «прыжок», а не шаг — архитектура требует доработки.</p>
+</div>
+
+<hr class="div rv">
+
+<div class="insight rv">
+  <div class="insight-icon">🏗️</div>
+  <p class="insight-text">Ты ведёшь человека по пути наименьшего когнитивного сопротивления — и он сам приходит к покупке как к логичному результату. Не нужно ломать психику: достаточно спроектировать лестницу маленьких «да».</p>
   <div class="insight-tag">→ Дальше: финальная сборка — соединяем всё в работающий механизм</div>
 </div>
 
@@ -305,7 +372,7 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
     </a>
     <a href="/book/2-4-finalnaya-sborka" class="cn-btn next">
       <div class="cn-dir">Следующая →</div>
-      <div class="cn-title">2.4 · Финальная сборка: соединяем элементы в механизм</div>
+      <div class="cn-title">2.4 · Финальная сборка</div>
     </a>
   </div>
 

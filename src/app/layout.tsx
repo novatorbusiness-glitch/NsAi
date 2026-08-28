@@ -1,6 +1,30 @@
 import type { Metadata } from "next";
+import { Syne, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
+import MobileTabs from "@/components/layout/MobileTabs";
 import "../styles/globals.css";
+
+const syne = Syne({
+	subsets: ["latin"],
+	weight: ["400", "600", "700", "800"],
+	variable: "--font-syne",
+	display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+	subsets: ["latin"],
+	weight: "400",
+	style: ["normal", "italic"],
+	variable: "--font-instrument-serif",
+	display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+	subsets: ["latin"],
+	weight: ["400", "500"],
+	variable: "--font-jetbrains-mono",
+	display: "swap",
+});
 
 const SITE_URL = "https://ilya-novitsky.ru";
 
@@ -49,17 +73,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru">
-			<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
-					rel="stylesheet"
-				/>
-			</head>
+		<html lang="ru" className={`${syne.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
 			<body>
 				<LangProvider>{children}</LangProvider>
+				<MobileTabs />
 			</body>
 		</html>
 	);

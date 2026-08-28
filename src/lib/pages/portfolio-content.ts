@@ -4,12 +4,12 @@ export const css = `
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
-  --br:#1e1e1e;--br2:#2a2a2a;
-  --t:#f4f1ea;--t2:#8f8c84;--t3:#57544f;
-  --a:#FFD000;--ad:rgba(255,208,0,.09);--ag:rgba(255,208,0,.14);
+  --br:#1e1e1e;--br2:#272727;
+  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
-  --fd:'Syne',sans-serif;--fs:'Instrument Serif',serif;--fm:'JetBrains Mono',monospace;
-  --ease:cubic-bezier(.16,1,.3,1);--max:1200px;
+  --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--max:1280px;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--t);font-family:var(--fs);overflow-x:hidden;min-height:100vh}
@@ -64,7 +64,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;
   padding:.95rem 2.1rem;border-radius:8px;text-decoration:none;
   transition:transform .2s var(--ease),box-shadow .2s,background .2s,border-color .2s,color .2s}
-.btn-p{background:var(--a);color:#050505;box-shadow:0 3px 0 rgba(180,140,0,.5),0 8px 32px rgba(255,208,0,.18)}
+.btn-p{background:var(--a);color:#050505;-webkit-text-fill-color:#050505;box-shadow:0 3px 0 rgba(180,140,0,.5),0 8px 32px rgba(255,208,0,.18)}
 .btn-p:hover{transform:translateY(-2px);box-shadow:0 3px 0 rgba(180,140,0,.5),0 16px 44px rgba(255,208,0,.38)}
 .btn-s{color:#e0ddd6;border:1.5px solid #4a4a4a;background:rgba(255,255,255,.05)}
 .btn-s:hover{border-color:#6a6a6a;background:rgba(255,255,255,.08);color:var(--t)}
@@ -85,7 +85,8 @@ section{padding:6rem 0}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
 .sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.rv{opacity:1;transform:none}
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 
@@ -404,7 +405,18 @@ if(window.matchMedia('(pointer:fine)').matches){
 // NAV SCROLL
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('sc',window.scrollY>40)},{passive:true});
-// REVEAL
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.08});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// REVEAL (с защитой: контент никогда не остаётся невидимым)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));
+}else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.08});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{
+    document.querySelectorAll('.rv:not(.on)').forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<innerHeight&&r.bottom>0)el.classList.add('on');
+    });
+  },1500);
+}
 `;
