@@ -236,10 +236,55 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .f-copy,.f-easter{font-family:var(--fm);font-size:.62rem;color:var(--t3);letter-spacing:.04em}
 .f-easter span{color:var(--a)}
 section[id]{scroll-margin-top:76px}
+
+/* NEW · 10-блочная продающая структура */
+.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
+.pr{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:2rem;position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
+.pr:hover{border-color:var(--trb);transform:translateY(-4px)}
+.pr-n{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tr);margin-bottom:.8rem}
+.pr-t{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.6rem}
+.pr-x{font-size:.87rem;color:var(--t2);line-height:1.62}
+.w-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start}
+@media(max-width:800px){.w-row{grid-template-columns:1fr}}
+.w-col{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:1.75rem 2rem}
+.w-col-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+.w-li{display:flex;gap:.85rem;padding:.65rem 0;font-size:.9rem;color:var(--t2);line-height:1.55;border-bottom:1px solid var(--br)}
+.w-li:last-child{border-bottom:none}
+.w-li b{color:var(--t);font-weight:600}
+.w-ico{flex-shrink:0;margin-top:.05rem;color:var(--tr);font-family:var(--fd);font-weight:700}
+.bigidea{margin-top:2.5rem;padding:2rem 2.25rem;border:1px solid var(--trb);border-radius:14px;background:var(--trd);position:relative}
+.bigidea-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tr);margin-bottom:.7rem}
+.bigidea-tx{font-family:var(--fd);font-size:clamp(1.15rem,2.2vw,1.6rem);font-weight:800;line-height:1.3;letter-spacing:-.02em}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+@media(max-width:800px){.qgrid{grid-template-columns:1fr}}
+.qcard{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem 1.75rem;transition:border-color .25s}
+.qcard:hover{border-color:var(--trb)}
+.qtag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.qtag.e{color:var(--tr)}.qtag.l{color:var(--a)}
+.qq{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);line-height:1.35;margin-bottom:.5rem}
+.qa{font-size:.85rem;color:var(--t2);line-height:1.55}
+.obj{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.5rem 1.75rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);margin-top:1rem;transition:border-color .25s}
+.obj:hover{border-color:var(--trb)}
+@media(max-width:700px){.obj{grid-template-columns:1fr;gap:.6rem}}
+.obj-q{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);line-height:1.3}
+.obj-q::before{content:'«'}
+.obj-a{font-size:.9rem;color:var(--t2);line-height:1.6}
+.obj-a b{color:var(--t);font-weight:600}
+.meta4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+@media(max-width:640px){.meta4{grid-template-columns:1fr 1fr}}
+.m4{background:var(--bgc2);border:1px solid var(--br);border-radius:10px;padding:1rem 1.1rem}
+.m4-l{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.35rem}
+.m4-v{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.35}
+.amp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem}
+@media(max-width:640px){.amp-grid{grid-template-columns:1fr}}
+.amp{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.amp-ico{font-size:1.3rem;flex-shrink:0}
+.amp-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.35rem}
+.amp-x{font-size:.85rem;color:var(--t2);line-height:1.55}
 `;
 
-export const body = `
-<div id="cd"></div><div id="cr"></div>
+export const body = `<div id="cd"></div><div id="cr"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -256,19 +301,19 @@ export const body = `
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <canvas id="cvs"></canvas>
   <div class="hero-inner">
     <div>
-      <div class="hero-badge"><span class="bdot"></span>Обучение AI · 1 на 1</div>
-      <h1 class="hero-h1">Научись работать<br>с AI <em>руками.</em><span class="acc">За один месяц.</span></h1>
-      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> — сайт, книгу или автоматизацию — и собираем его вместе на 5–6 сессиях один на один. Уходишь с работающим продуктом и навыком.</p>
+      <div class="hero-badge"><span class="bdot"></span>Обучение AI · 1 на 1 · 1 месяц</div>
+      <h1 class="hero-h1">Ты не можешь собрать свой продукт с помощью AI, потому что тебя учили <em>смотреть,</em> а не <em>делать.</em><span class="acc">Новый способ: твой проект. Месяц. 1 на 1.</span></h1>
+      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> — сайт, книгу или автоматизацию — и собираем его вместе на 5–6 сессиях. Уходишь не с сертификатом, а с работающим продуктом и навыком, который остаётся с тобой.</p>
       <div class="hero-acts">
         <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="#inside" class="bs">Что входит</a>
+        <a href="#idea" class="bs">Почему это работает</a>
       </div>
       <div class="hero-meta">
         <div class="hm">Формат<span>5–6 сессий · 1 на 1</span></div>
@@ -305,43 +350,62 @@ export const body = `
   </div>
 </section>
 
-<!-- WHO -->
-<section id="who" class="alt">
+<!-- 1 · БОЛЬШАЯ ИДЕЯ -->
+<section id="idea" class="alt">
   <div class="wrap">
-    <span class="sec-tag rv">Для кого</span>
-    <h2 class="sec-h2 rv d1">Кому это подходит</h2>
-    <p class="sl rv d2">Три сценария, в которых месяц работы со мной окупается быстрее, чем найм команды.</p>
-    <div class="fit-grid">
-      <div class="fit-card rv d1">
-        <div class="fit-ico">🧭</div>
-        <div class="fit-tit">Предприниматель без команды</div>
-        <div class="fit-tx">Нужен сайт, книга или автоматизация, но нанимать разработчиков на старте — дорого и долго. Собираешь сам, под моим контролем, и понимаешь, как это устроено.</div>
+    <span class="sec-tag rv">Большая идея</span>
+    <h2 class="sec-h2 rv d1">Почему у тебя до сих пор нет своего продукта</h2>
+    <p class="sl rv d2">Дело не в лени и не в отсутствии времени. Дело в том, как тебя учили. Ты владелец бизнеса или эксперт: идеи есть, задачи ясны — а продукт так и не собрался.</p>
+    <div class="pr-grid">
+      <div class="pr rv d1">
+        <div class="pr-n">Проблема 1</div>
+        <div class="pr-t">Идея есть — старта нет</div>
+        <div class="pr-x">Непонятно, с чего начать и чем собирать. Проект живёт в голове, а не на экране.</div>
       </div>
-      <div class="fit-card rv d2">
-        <div class="fit-ico">🧠</div>
-        <div class="fit-tit">Эксперт, который хочет сам</div>
-        <div class="fit-tx">Уже пробовал ChatGPT «в лоб» — получается вяло. Нужен навык, а не ролики: когда какой инструмент брать и как выжимать из AI результат.</div>
+      <div class="pr rv d2">
+        <div class="pr-n">Проблема 2</div>
+        <div class="pr-t">AI — как чат, а не как сотрудник</div>
+        <div class="pr-x">Результат случайный: то получилось, то нет. Системы нет, воспроизвести нечего.</div>
       </div>
-      <div class="fit-card rv d3">
-        <div class="fit-ico">⚙️</div>
-        <div class="fit-tit">Тот, кто застрял на теории</div>
-        <div class="fit-tx">Курсов пройдено много, продукта — ноль. Здесь всё наоборот: продукт — цель, теория подтягивается по ходу, только там, где нужна.</div>
+      <div class="pr rv d3">
+        <div class="pr-n">Проблема 3</div>
+        <div class="pr-t">Каждый шаг — через подрядчика</div>
+        <div class="pr-x">«Потом разберусь» растягивается на месяцы. Деньги уходят, навык не остаётся.</div>
       </div>
+    </div>
+    <div class="w-row">
+      <div class="w-col rv d2">
+        <div class="w-col-tag">Почему так происходит</div>
+        <div class="w-li"><span class="w-ico">1</span><span><b>Курсы учат смотреть, а не делать.</b> После вебинара ты зритель, а не исполнитель.</span></div>
+        <div class="w-li"><span class="w-ico">2</span><span><b>«Копипаст промптов» даёт иллюзию, а не систему.</b> Чужие запросы не знают твоей задачи.</span></div>
+        <div class="w-li"><span class="w-ico">3</span><span><b>Никто не садится рядом с твоим проектом.</b> Менторство «в общем» не ведёт к результату.</span></div>
+      </div>
+      <div class="w-col rv d3">
+        <div class="w-col-tag">Истинные причины</div>
+        <div class="w-li"><span class="w-ico">1</span><span><b>Навык не вырос</b> — не было одного собранного руками продукта.</span></div>
+        <div class="w-li"><span class="w-ico">2</span><span><b>Уверенность не появилась</b> — не было подтверждения «я могу».</span></div>
+        <div class="w-li"><span class="w-ico">3</span><span><b>Результат не пришёл</b> — ты ждал готовое «из коробки», а не строил сам.</span></div>
+      </div>
+    </div>
+    <div class="bigidea rv d2">
+      <div class="bigidea-tag">Big idea</div>
+      <div class="bigidea-tx">Не «учиться AI вообще» — а собрать свой продукт с помощью AI за месяц. Навык рождается из результата, а не из лекций.</div>
     </div>
   </div>
 </section>
 
-<!-- OUTCOME -->
-<section id="outcome">
+<!-- 2 · СУТЬ ИДЕИ -->
+<section id="sut">
   <div class="wrap">
-    <span class="sec-tag rv">Результат</span>
-    <h2 class="sec-h2 rv d1">Что меняется за месяц</h2>
-    <p class="sl rv d2">Не «базовые навыки AI». Конкретная разница — было / стало.</p>
+    <span class="sec-tag rv">Суть идеи</span>
+    <h2 class="sec-h2 rv d1">Почему «как все» не работает</h2>
+    <p class="sl rv d2">Ты пробовал ChatGPT «в лоб» — получалось вяло. И решил: «мне это не дано». Дело не в тебе. Дело в том, что нейросети дали задачу без структуры.</p>
+    <p class="sl rv d2" style="margin-bottom:2.5rem">Модель не знает твоей воронки и твоего бизнеса. Она собирает текст из того, что ты задал. Задал «напиши продающий текст» — получил штамп, который продаёт всем и никому. Нейро-воронка — это система ограничений: крючок → боль → решение → оффер → CTA. Я научу тебя собирать такие тексты и продукты руками.</p>
     <div class="ba-grid rv d2">
       <div class="ba-card ba-before">
         <div class="ba-head">Было</div>
-        <div class="ba-line"><span class="ba-x">✕</span>Есть идея, но непонятно, с чего начать и чем собирать</div>
-        <div class="ba-line"><span class="ba-x">✕</span>AI используешь как чат — без системы и воспроизводимого результата</div>
+        <div class="ba-line"><span class="ba-x">✕</span>Идея есть, а продукта нет</div>
+        <div class="ba-line"><span class="ba-x">✕</span>AI как чат — без системы и воспроизводимого результата</div>
         <div class="ba-line"><span class="ba-x">✕</span>Каждый шаг зависит от подрядчика или «потом разберусь»</div>
       </div>
       <div class="ba-card ba-after">
@@ -351,48 +415,48 @@ export const body = `
         <div class="ba-line"><span class="ba-ok">✓</span>Записи всех занятий — пересматриваешь и повторяешь сам</div>
       </div>
     </div>
-    <div class="out-grid rv d3">
-      <div class="out-item"><div class="out-num">1</div><div class="out-tx">Готовый продукт, который уже работает на тебя</div></div>
-      <div class="out-item"><div class="out-num">4</div><div class="out-tx">Инструмента в арсенале: Claude, Gemini, ChatGPT, Cursor</div></div>
-      <div class="out-item"><div class="out-num">100%</div><div class="out-tx">Запись каждого занятия остаётся у тебя</div></div>
-      <div class="out-item"><div class="out-num">0</div><div class="out-tx">Зависимости от меня после месяца работы</div></div>
-    </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section id="how" class="alt">
+<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
+<section id="mechanism" class="alt">
   <div class="wrap">
-    <span class="sec-tag rv">Механика</span>
-    <h2 class="sec-h2 rv d1">Как проходит обучение</h2>
-    <p class="sl rv d2">Никакой теории в пустоту. Четыре шага от твоей задачи до работающего продукта.</p>
+    <span class="sec-tag rv">Уникальный механизм</span>
+    <h2 class="sec-h2 rv d1">Learning by building — единственный способ, который оставляет навык</h2>
+    <p class="sl rv d2">Не «смотри запись». Мы собираем твой проект вместе, в моменте. Ты не слушаешь — ты строишь.</p>
     <div class="steps">
       <div class="step rv d1">
         <div class="step-num">01</div>
-        <div><div class="step-tit">Диагностика</div><div class="step-tx">Разбираем твой проект и задачу, фиксируем точку А — что есть сейчас и что должно получиться на выходе.</div></div>
+        <div><div class="step-tit">Диагностика</div><div class="step-tx">Разбираем твой проект, фиксируем точку А и карту решения. Становится ясно, что собираем и каким стеком.</div></div>
       </div>
       <div class="step rv d2">
         <div class="step-num">02</div>
-        <div><div class="step-tit">5–6 сессий 1 на 1</div><div class="step-tx">Живой лайф-кодинг: я показываю каждое решение на твоём проекте, ты собираешь вместе со мной. Не «смотри запись», а работаем в моменте.</div></div>
+        <div><div class="step-tit">5–6 сессий 1 на 1</div><div class="step-tx">Живой лайф-кодинг на твоём проекте: я показываю каждое решение, ты собираешь вместе со мной. Работаем в моменте, а не «потом посмотришь».</div></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">03</div>
-        <div><div class="step-tit">Практика между сессиями</div><div class="step-tx">Между встречами применяешь сам. Застреваешь — разбираем на следующей сессии, это часть процесса.</div></div>
+        <div><div class="step-tit">Практика между сессиями</div><div class="step-tx">Между встречами применяешь сам. Застреваешь — разбираем на следующей сессии. Это часть процесса, а не провал.</div></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">04</div>
         <div><div class="step-tit">Передача</div><div class="step-tx">Запись каждого занятия + готовая система. Дальше развиваешь сам или с кем угодно — без зависимости от меня.</div></div>
       </div>
     </div>
+    <div class="out-grid rv d3" style="margin-top:3rem">
+      <div class="out-item"><div class="out-num">1</div><div class="out-tx">Твой проект, а не учебный пример</div></div>
+      <div class="out-item"><div class="out-num">4</div><div class="out-tx">Инструмента в деле: Claude, Gemini, ChatGPT, Cursor</div></div>
+      <div class="out-item"><div class="out-num">100%</div><div class="out-tx">Запись каждого занятия остаётся у тебя</div></div>
+      <div class="out-item"><div class="out-num">0</div><div class="out-tx">Зависимости от меня после месяца</div></div>
+    </div>
   </div>
 </section>
 
-<!-- PROGRAM -->
+<!-- 4 · ПЛАН МЕСЯЦА -->
 <section id="program">
   <div class="wrap">
     <span class="sec-tag rv">Программа</span>
-    <h2 class="sec-h2 rv d1">План месяца</h2>
-    <p class="sl rv d2">Маршрут гибкий — под твой проект, но логика всегда одна: от идеи к готовому продукту.</p>
+    <h2 class="sec-h2 rv d1">Как выглядит твой месяц</h2>
+    <p class="sl rv d2">Маршрут гибкий — под твой проект, но логика всегда одна: от идеи к работающему продукту.</p>
     <div class="tl">
       <div class="tl-item rv d1">
         <div><div class="tl-n">Сессия 1</div><div class="tl-t">Разбор проекта и карта решения</div></div>
@@ -422,52 +486,47 @@ export const body = `
   </div>
 </section>
 
-<!-- TOOLS -->
-<section id="tools" class="alt">
+<!-- 5 · 10 ВОПРОСОВ -->
+<section id="questions" class="alt">
   <div class="wrap">
-    <span class="sec-tag rv">Инструменты</span>
-    <h2 class="sec-h2 rv d1">Стек, на котором работаем</h2>
-    <p class="sl rv d2">Не «один всемогущий чат». Четыре инструмента — каждый под свою задачу.</p>
-    <div class="tools-grid">
-      <div class="tool rv d1"><div class="tool-name">Claude</div><div class="tool-use">Смыслы и архитектура</div><div class="tool-tx">Тексты, стратегия, структура продукта. Глубина рассуждения и точность формулировок.</div></div>
-      <div class="tool rv d1"><div class="tool-name">Gemini</div><div class="tool-use">Большие контексты</div><div class="tool-tx">Разбор объёмных документов, исследования, работа с длинными материалами.</div></div>
-      <div class="tool rv d2"><div class="tool-name">ChatGPT</div><div class="tool-use">Универсальный ассистент</div><div class="tool-tx">Быстрые задачи, генерация идей, черновая работа — там, где важна скорость.</div></div>
-      <div class="tool rv d2"><div class="tool-name">Cursor</div><div class="tool-use">Сборка кодом</div><div class="tool-tx">Проектирование и сборка продукта: сайт, автоматизация, MVP — на естественном языке.</div></div>
+    <span class="sec-tag rv">10 вопросов</span>
+    <h2 class="sec-h2 rv d1">Ответь себе честно</h2>
+    <p class="sl rv d2">Семь вопросов про эмоции и три про логику. Если на большинство ответишь «да» — этот месяц для тебя.</p>
+    <div class="qgrid">
+      <div class="qcard rv"><span class="qtag e">Вопрос 1 · эмоции</span><div class="qq">Сколько ещё ты будешь откладывать свой продукт «на потом»?</div><div class="qa">Каждый месяц отсрочки — это месяц, который твои конкуренты уже работают.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 2 · эмоции</span><div class="qq">Тебе не надоело платить подрядчикам за то, что можно собрать самому за месяц?</div><div class="qa">Навык остаётся с тобой, а не в голове подрядчика.</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 3 · эмоции</span><div class="qq">Что ты почувствуешь, когда твой сайт, книга или автоматизация наконец заработают?</div><div class="qa">Ощущение «я могу» не даёт ни один сертификат.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 4 · эмоции</span><div class="qq">Ты уверен, что «потом разберусь» не превращается в «никогда»?</div><div class="qa">Через год ты будешь в той же точке, только с большим опытом откладывания.</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 5 · эмоции</span><div class="qq">Сколько уже денег ты потратил на курсы и ролики, после которых продукта нет?</div><div class="qa">Инвестиция в ролики не вернулась. Инвестиция в продукт возвращается.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 6 · эмоции</span><div class="qq">Тебе не тревожно, что конкуренты собирают AI-продукты, пока ты смотришь?</div><div class="qa">Отставание на год начинается с месяца бездействия.</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 7 · эмоции</span><div class="qq">Что бы изменилось, если бы через месяц у тебя был работающий продукт?</div><div class="qa">Изменился бы не только продукт — изменилась бы твоя уверенность.</div></div>
+      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: собрать самому за 70–80к или нанять команду за 300–500к, когда заявок ещё нет?</div><div class="qa">Математика в пользу навыка: платишь один раз, а умение остаётся навсегда.</div></div>
+      <div class="qcard rv"><span class="qtag l">Вопрос 9 · логика</span><div class="qq">Сколько времени ты готов потратить, чтобы навык остался с тобой навсегда?</div><div class="qa">Один месяц. Записи остаются у тебя. Это не разовая услуга.</div></div>
+      <div class="qcard rv d1"><span class="qtag l">Вопрос 10 · логика</span><div class="qq">Что для тебя дороже: потерять 70–80к на месяце работы или потерять год на ожидании «удобного момента»?</div><div class="qa">Цена месяца — это цена одной ошибки на найме. Год ожидания стоит дороже.</div></div>
     </div>
   </div>
 </section>
 
-<!-- BUILD -->
-<section id="build">
+<!-- 6 · ВОЗРАЖЕНИЯ -->
+<section id="objections">
   <div class="wrap">
-    <span class="sec-tag rv">Что можно собрать</span>
-    <h2 class="sec-h2 rv d1">Твой продукт — твой выбор</h2>
-    <p class="sl rv d2">Три самых частых результата. Можно сфокусироваться на одном или совместить.</p>
-    <div class="build-grid">
-      <div class="build-card rv d1">
-        <div class="build-ico">🖥️</div>
-        <div class="build-tit">Сайт / лендинг</div>
-        <div class="build-tx">Витрина, которая продаёт: от структуры и текстов до рабочей страницы, которую можно запускать.</div>
-      </div>
-      <div class="build-card rv d2">
-        <div class="build-ico">📖</div>
-        <div class="build-tit">Книга / контент-система</div>
-        <div class="build-tx">Экспертный материал: структура, главы, воронка чтения. Или система контента, которая генерируется на потоке.</div>
-      </div>
-      <div class="build-card rv d3">
-        <div class="build-ico">🤖</div>
-        <div class="build-tit">Автоматизация / AI-агенты</div>
-        <div class="build-tx">Рутина, которая съедает день, уходит в цифрового сотрудника: воронки, касания, отчёты — на автомате.</div>
-      </div>
-    </div>
+    <span class="sec-tag rv">Возражения</span>
+    <h2 class="sec-h2 rv d1">«Да, но...» — и почему это не аргумент</h2>
+    <p class="sl rv d2">Самые частые причины, по которым люди остаются на месте. Разберём каждую по очереди.</p>
+    <div class="obj rv d1"><div class="obj-q">Я не технарь</div><div class="obj-a">И не нужно. Мы собираем через AI и естественный язык. Техническая часть — моя, решения — твои.</div></div>
+    <div class="obj rv d1"><div class="obj-q">У меня нет проекта</div><div class="obj-a">За месяц найдём. Сайт, книга, автоматизация — что-то из этого есть у каждого. Точка А есть всегда.</div></div>
+    <div class="obj rv d1"><div class="obj-q">Дорого</div><div class="obj-a">Дороже — нанять команду. Дешевле — ещё один курс, который не оставит навыка. Здесь 70–80к = продукт + навык навсегда.</div></div>
+    <div class="obj rv d2"><div class="obj-q">А вдруг не получится?</div><div class="obj-a">Работаем на твоём проекте, в моменте, по шагам. Каждый шаг проверяем. «Не получится ничего» — невозможно: продукт собирается частями.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Я уже проходил курсы — не зашло</div><div class="obj-a">Это не курс. Это работа. Ты не слушаешь — ты собираешь. Разница как между просмотром фильма о спорте и тренировкой.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Нет времени</div><div class="obj-a">5–6 сессий, график под тебя. Месяц — это 4 недели. Вопрос не во времени, а в приоритете: что важнее — смотреть или собрать.</div></div>
   </div>
 </section>
 
-<!-- PRICE -->
+<!-- 7 · ОФФЕР -->
 <section id="inside" class="alt">
   <div class="wrap price-wrap">
-    <span class="sec-tag rv" style="justify-content:center">Стоимость</span>
-    <h2 class="sec-h2 rv d1" style="text-align:center">Один месяц. Один результат.</h2>
+    <span class="sec-tag rv" style="justify-content:center">Оффер</span>
+    <h2 class="sec-h2 rv d1" style="text-align:center">Что ты получаешь за 70–80к</h2>
     <div class="price-card rv d2">
       <div class="price-top">
         <div>
@@ -489,6 +548,12 @@ export const body = `
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">На выходе — работающий продукт и навык</span></div>
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">План развития без меня после месяца</span></div>
       </div>
+      <div class="meta4">
+        <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Работающий продукт + навык без зависимости</div></div>
+        <div class="m4"><div class="m4-l">Вероятность</div><div class="m4-v">Высокая: твой проект, лайф-кодинг, шаг за шагом</div></div>
+        <div class="m4"><div class="m4-l">Время до результата</div><div class="m4-v">1 месяц, 5–6 сессий</div></div>
+        <div class="m4"><div class="m4-l">Твои усилия</div><div class="m4-v">Диагностика + практика между сессиями</div></div>
+      </div>
       <div class="price-cta">
         <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
         <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Написать на почту</a>
@@ -498,11 +563,56 @@ export const body = `
   </div>
 </section>
 
-<!-- FINAL -->
+<!-- 8 · УСИЛИТЕЛИ -->
+<section id="amp">
+  <div class="wrap">
+    <span class="sec-tag rv">Почему сейчас</span>
+    <h2 class="sec-h2 rv d1">Дефицит и срочность</h2>
+    <p class="sl rv d2">Месяц работы с тобой лично нельзя растянуть на поток. Поэтому мест мало — и это честно, а не маркетинг.</p>
+    <div class="amp-grid">
+      <div class="amp rv d1"><div class="amp-ico">🎯</div><div><div class="amp-t">1–2 человека в месяц</div><div class="amp-x">Не поток, а личная работа. Именно поэтому результат — продукт, а не «посмотрел вебинар».</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Мест всего два</div><div class="amp-x">Когда места заняты — встаёшь в лист ожидания на следующий месяц.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">Старт в ближайшие недели</div><div class="amp-x">Чем раньше начнёшь — тем раньше продукт начнёт работать на тебя.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🔒</div><div><div class="amp-t">Цена фиксирована</div><div class="amp-x">Стоимость не растёт, пока ты думаешь. Решение сегодня — та же цена, что и завтра.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · КЕЙСЫ / ПРИМЕР -->
+<section id="cases" class="alt">
+  <div class="wrap">
+    <span class="sec-tag rv">Как это работает</span>
+    <h2 class="sec-h2 rv d1">Три истории, которые случаются с каждым учеником</h2>
+    <p class="sl rv d2">Один месяц, один проект, один навык. Вот что чаще всего собирают ученики.</p>
+    <div class="build-grid">
+      <div class="build-card rv d1">
+        <div class="build-ico">🖥️</div>
+        <div class="build-tit">Сайт / лендинг</div>
+        <div class="build-tx">Витрина, которая продаёт: от структуры и текстов до рабочей страницы, которую можно запускать.</div>
+      </div>
+      <div class="build-card rv d2">
+        <div class="build-ico">📖</div>
+        <div class="build-tit">Книга / контент-система</div>
+        <div class="build-tx">Экспертный материал: структура, главы, воронка чтения. Или система контента, которая генерируется на потоке.</div>
+      </div>
+      <div class="build-card rv d3">
+        <div class="build-ico">🤖</div>
+        <div class="build-tit">Автоматизация / AI-агенты</div>
+        <div class="build-tx">Рутина, которая съедает день, уходит в цифрового сотрудника: воронки, касания, отчёты — на автомате.</div>
+      </div>
+    </div>
+    <div class="bigidea rv d2" style="margin-top:3rem">
+      <div class="bigidea-tag">Пример · как это происходит</div>
+      <div class="bigidea-tx" style="font-size:1.02rem;line-height:1.55">Ты эксперт, и тебе нужна книга. На первой сессии фиксируем тему и структуру. На второй — учим нейросеть писать в твоём голосе. На третьей — ты собираешь первые главы вместе со мной. На пятой — у тебя готовая книга и навык продолжать её самому. Вот и весь месяц.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · CTA -->
 <section id="final">
   <div class="final-in">
-    <h2 class="final-h2 rv">Не хочешь нанимать команду.<br>Хочешь <em>собрать сам</em>.</h2>
-    <p class="final-sub rv d1">За месяц ты уходишь не с сертификатом, а с работающим продуктом и навыком, который остаётся.</p>
+    <h2 class="final-h2 rv">Хватит смотреть.<br>Начни <em>собирать.</em></h2>
+    <p class="final-sub rv d1">Месяц, твой проект, 1 на 1. Уходишь с продуктом и навыком, который остаётся.</p>
     <div class="final-acts rv d2">
       <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/consulting" class="bs">Сравнить с внедрением NCAi</a>
@@ -546,8 +656,7 @@ export const body = `
       <span class="f-easter">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
-</footer>
-`;
+</footer>`;
 
 export const js = `
 // CURSOR
