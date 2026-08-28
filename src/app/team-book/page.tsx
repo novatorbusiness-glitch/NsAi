@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import TeamBook from "@/components/pages/TeamBook";
+import PageGuard from "@/lib/page-guard";
 
 export const metadata: Metadata = {
 	title: "NCAi · команда под капотом — 17 сотрудников · 111 промптов",
@@ -12,8 +13,13 @@ export const metadata: Metadata = {
 		description: "17 AI-сотрудников · 111 промптов · механика агентства. Как работает команда NCAi сама, 24/7.",
 		url: "https://ilya-novitsky.ru/team-book",
 	},
+	robots: { index: false, follow: false },
 };
 
 export default function Page() {
-	return <TeamBook />;
+	return (
+		<PageGuard>
+			<TeamBook />
+		</PageGuard>
+	);
 }
