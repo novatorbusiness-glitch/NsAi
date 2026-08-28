@@ -102,10 +102,10 @@ nav {
 	display: flex;
 	align-items: center;
 	padding: 0 2rem;
-	background: rgba(8, 8, 8, 0.8);
+	background: rgba(10, 10, 12, 0.72);
 	backdrop-filter: blur(24px) saturate(180%);
 	-webkit-backdrop-filter: blur(24px) saturate(180%);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 	transition: all 0.3s;
 }
 
@@ -166,13 +166,15 @@ nav.sc {
 	text-decoration: none;
 	padding: 0.5rem 1.25rem;
 	border: 1px solid rgba(255, 208, 0, 0.3);
-	border-radius: 6px;
-	transition: background 0.2s, border-color 0.25s;
+	border-radius: 8px;
+	transition: background 0.2s, border-color 0.25s, box-shadow 0.25s, transform 0.2s var(--ease);
 }
 
 .nc:hover {
 	background: var(--ad);
-	border-color: rgba(255, 208, 0, 0.6);
+	border-color: rgba(255, 208, 0, 0.55);
+	box-shadow: 0 0 0 4px rgba(255, 208, 0, 0.06);
+	transform: translateY(-1px);
 }
 
 @media (max-width: 640px) {
@@ -3647,58 +3649,449 @@ footer {
 	padding-left: 1.3rem;
 }
 
-/* ── Каталог промптов ── */
-.prompts-page {
-	padding-bottom: 6rem;
+/* ════════════════════════════════════════════════════════════════
+   Книга промптов NCAi (/prompts) — стиль exnihilo/kniga-bota
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Шапка ── */
+.pb-hero {
+	padding: clamp(3.6rem, 8vw, 6.5rem) 0 2.5rem;
 }
 
-.prompts-summary {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1rem;
-	margin: 2.5rem 0 3rem;
+.pb-hero-in {
+	max-width: 760px;
 }
 
-@media (max-width: 640px) {
-	.prompts-summary {
-		grid-template-columns: 1fr;
-	}
+.pb-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	font-weight: 500;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--a);
+	margin: 0 0 1rem;
 }
 
-.prompt-sum {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2rem;
-	padding: 1.4rem;
-	border: 1px solid var(--br);
-	border-radius: 14px;
-	background: var(--bgc);
-}
-
-.prompt-sum-n {
+.pb-title {
 	font-family: var(--fd);
-	font-size: 2rem;
+	font-size: clamp(2.2rem, 5vw, 3.8rem);
 	font-weight: 800;
 	letter-spacing: -0.04em;
-	color: var(--a);
-	line-height: 1;
+	line-height: 1.02;
+	margin: 0 0 1.1rem;
 }
 
-.prompt-sum-l {
+.pb-sub {
+	font-size: clamp(0.95rem, 1.6vw, 1.08rem);
+	color: var(--t2);
+	line-height: 1.75;
+	margin: 0 0 1.8rem;
+}
+
+/* ── Поиск ── */
+.pb-search-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background: var(--bgc);
+	border: 1px solid var(--br2);
+	border-radius: 14px;
+	padding: 0 0.9rem;
+	transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pb-search-wrap:focus-within {
+	border-color: rgba(255, 208, 0, 0.45);
+	box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.08);
+}
+
+.pb-search-icon {
+	color: var(--t3);
+	font-size: 1.05rem;
+	margin-right: 0.6rem;
+}
+
+.pb-search {
+	flex: 1;
+	background: none;
+	border: none;
+	outline: none;
+	color: var(--t);
+	font-size: 0.95rem;
+	padding: 0.85rem 0;
 	font-family: var(--fm);
-	font-size: 0.68rem;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
+}
+
+.pb-search::placeholder {
 	color: var(--t3);
 }
 
-.prompts-accordion {
+.pb-kbd {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--t3);
+	border: 1px solid var(--br2);
+	border-radius: 6px;
+	padding: 0.2rem 0.45rem;
+	background: var(--bgc2);
+	white-space: nowrap;
+}
+
+.pb-clear {
+	background: none;
+	border: none;
+	color: var(--t3);
+	cursor: pointer;
+	font-size: 0.85rem;
+	padding: 0.3rem 0.4rem;
+	margin-left: 0.3rem;
+	border-radius: 6px;
+	transition: color 0.2s;
+}
+
+.pb-clear:hover {
+	color: var(--t);
+}
+
+.pb-meta {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	flex-wrap: wrap;
+	font-family: var(--fm);
+	font-size: 0.7rem;
+	color: var(--t3);
+	letter-spacing: 0.04em;
+	margin: 1rem 0 0;
+}
+
+.pb-meta strong {
+	color: var(--a);
+	font-weight: 600;
+}
+
+.pb-meta .dot {
+	color: var(--t3);
+	opacity: 0.6;
+}
+
+/* ── Sticky-навигация ── */
+.pb-nav {
+	position: sticky;
+	top: 0;
+	z-index: 40;
+	background: rgba(10, 10, 12, 0.85);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-top: 1px solid var(--br);
+	border-bottom: 1px solid var(--br);
+}
+
+.pb-nav-in {
+	display: flex;
+	align-items: center;
+	gap: 1.4rem;
+	overflow-x: auto;
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	scrollbar-width: none;
+}
+
+.pb-nav-in::-webkit-scrollbar {
+	display: none;
+}
+
+.pb-nav-l {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.2em;
+	color: var(--t3);
+	white-space: nowrap;
+}
+
+.pb-nav-i {
+	font-family: var(--fd);
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--t2);
+	text-decoration: none;
+	white-space: nowrap;
+	transition: color 0.2s;
+}
+
+.pb-nav-i:hover {
+	color: var(--a);
+}
+
+/* ── Контент ── */
+.pb-main {
+	padding-bottom: 6rem;
+}
+
+.pb-sec {
+	padding: clamp(3.5rem, 7vw, 5.5rem) 0 0;
+}
+
+.pb-h2 {
+	font-family: var(--fd);
+	font-size: clamp(1.5rem, 3vw, 2.2rem);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	margin: 0 0 0.6rem;
+}
+
+.pb-sec-sub {
+	color: var(--t2);
+	font-size: 0.98rem;
+	line-height: 1.7;
+	max-width: 680px;
+	margin: 0 0 2rem;
+}
+
+/* ── Карточки (Обзор / Приложения) ── */
+.pb-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.4rem;
+	margin: 2rem 0 0;
+}
+
+.pb-card {
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 16px;
+	padding: 1.6rem 1.6rem 1.8rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.pb-card-h {
+	font-family: var(--fd);
+	font-size: 1.02rem;
+	font-weight: 800;
+	margin: 0;
+}
+
+.pb-card-p {
+	color: var(--t2);
+	font-size: 0.92rem;
+	line-height: 1.7;
+	margin: 0;
+}
+
+.pb-card-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+}
+
+.pb-card-list li {
+	position: relative;
+	padding-left: 1.15rem;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	color: var(--t2);
+}
+
+.pb-card-list li::before {
+	content: "→";
+	position: absolute;
+	left: 0;
+	color: var(--a);
+	opacity: 0.8;
+}
+
+/* ── Таблица «Промпты по группам» ── */
+.pb-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9rem;
+}
+
+.pb-table th {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--t3);
+	text-align: left;
+	padding: 0.4rem 0.5rem;
+	border-bottom: 1px solid var(--br);
+}
+
+.pb-table th.num,
+.pb-table td.num {
+	text-align: right;
+	width: 3rem;
+}
+
+.pb-table td {
+	padding: 0.55rem 0.5rem;
+	border-bottom: 1px solid var(--br);
+	color: var(--t2);
+	font-family: var(--fm);
+	font-size: 0.82rem;
+}
+
+.pb-table tr:last-child td {
+	border-bottom: none;
+}
+
+.pb-table-cat {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	color: var(--t);
+	text-decoration: none;
+	font-family: var(--fd);
+	font-size: 0.92rem;
+	font-weight: 700;
+	transition: color 0.2s;
+}
+
+.pb-table-cat:hover {
+	color: var(--a);
+}
+
+.pb-table-e {
+	font-size: 1.05rem;
+}
+
+.pb-table-note {
+	font-size: 0.78rem;
+	color: var(--t3);
+	margin: 0.9rem 0 0;
+	font-family: var(--fm);
+}
+
+/* ── Книга: главы ── */
+.pb-book {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	margin-top: 0.5rem;
+}
+
+.pb-ch {
+	border: 1px solid var(--br);
+	border-radius: 14px;
+	background: var(--bgc);
+	overflow: hidden;
+	transition: border-color 0.25s;
+}
+
+.pb-ch.is-open {
+	border-color: rgba(255, 208, 0, 0.3);
+}
+
+.pb-ch-head {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 1rem 1.3rem;
+	cursor: pointer;
+	text-align: left;
+	color: var(--t);
+	transition: background 0.2s;
+	font: inherit;
+}
+
+.pb-ch-head:hover {
+	background: rgba(255, 208, 0, 0.04);
+}
+
+.pb-ch-head-link {
+	text-decoration: none;
+}
+
+.pb-ch-num {
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	color: var(--a);
+	border: 1px solid rgba(255, 208, 0, 0.3);
+	border-radius: 8px;
+	padding: 0.15rem 0.5rem;
+	min-width: 2rem;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.pb-ch-title {
+	font-family: var(--fd);
+	font-size: 0.98rem;
+	font-weight: 800;
+	flex: 1;
+}
+
+.pb-ch-count {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--t3);
+}
+
+.pb-ch-caret {
+	font-family: var(--fm);
+	color: var(--t3);
+	font-size: 0.9rem;
+	transition: color 0.2s;
+}
+
+.pb-ch-head:hover .pb-ch-caret {
+	color: var(--a);
+}
+
+.pb-ch-subs {
+	list-style: none;
+	margin: 0;
+	padding: 0 1.3rem 1rem 3.9rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+}
+
+.pb-ch-subs a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.45rem 0.4rem;
+	border-radius: 8px;
+	text-decoration: none;
+	color: var(--t2);
+	font-size: 0.88rem;
+	transition: background 0.2s, color 0.2s;
+}
+
+.pb-ch-subs a:hover {
+	background: rgba(255, 208, 0, 0.05);
+	color: var(--t);
+}
+
+.pb-ch-sub-go {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--t3);
+	white-space: nowrap;
+}
+
+/* ── Каталог: категории-аккордеон ── */
+.pb-cats {
 	display: flex;
 	flex-direction: column;
 	gap: 0.9rem;
 }
 
-.prompt-cat {
+.pb-cat {
 	border: 1px solid var(--br);
 	border-radius: 16px;
 	background: var(--bgc);
@@ -3706,11 +4099,11 @@ footer {
 	transition: border-color 0.25s;
 }
 
-.prompt-cat.is-open {
+.pb-cat.is-open {
 	border-color: rgba(255, 208, 0, 0.35);
 }
 
-.prompt-cat-head {
+.pb-cat-head {
 	display: flex;
 	align-items: center;
 	gap: 0.9rem;
@@ -3721,144 +4114,218 @@ footer {
 	cursor: pointer;
 	text-align: left;
 	transition: background 0.2s;
+	font: inherit;
 }
 
-.prompt-cat-head:hover {
+.pb-cat-head:hover:not(:disabled) {
 	background: rgba(255, 208, 0, 0.04);
 }
 
-.prompt-cat-emoji {
-	font-size: 1.3rem;
+.pb-cat-head:disabled {
+	cursor: default;
+	opacity: 0.55;
 }
 
-.prompt-cat-title {
+.pb-cat-emoji {
+	font-size: 1.35rem;
+}
+
+.pb-cat-title {
 	font-family: var(--fd);
-	font-size: 1.05rem;
+	font-size: 1.08rem;
 	font-weight: 800;
 	text-transform: capitalize;
 	color: var(--t);
 	flex: 1;
 }
 
-.prompt-cat-count {
+.pb-cat-count {
 	font-family: var(--fm);
-	font-size: 0.66rem;
+	font-size: 0.68rem;
 	color: var(--a);
 	border: 1px solid rgba(255, 208, 0, 0.3);
 	border-radius: 999px;
-	padding: 0.18rem 0.6rem;
+	padding: 0.18rem 0.7rem;
+	background: rgba(255, 208, 0, 0.05);
 }
 
-.prompt-cat-caret {
+.pb-cat-caret {
 	color: var(--t3);
 	font-family: var(--fm);
+	font-size: 1rem;
 }
 
-.prompt-cat-body {
-	padding: 0 1.4rem 1.3rem;
+.pb-cat-body {
+	padding: 0 1.4rem 1.4rem;
 }
 
-.prompt-cat-desc {
+.pb-cat-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	margin-bottom: 1.1rem;
+}
+
+.pb-cat-desc {
 	font-size: 0.9rem;
 	color: var(--t2);
 	line-height: 1.6;
-	margin: 0 0 1rem;
-}
-
-.prompt-list {
-	list-style: none;
 	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+	flex: 1;
+	min-width: 200px;
 }
 
-.prompt-row {
-	display: grid;
-	grid-template-columns: 74px 1fr auto auto;
-	align-items: center;
-	gap: 0.9rem;
-	padding: 0.7rem 0.9rem;
-	border: 1px solid var(--br);
-	border-radius: 10px;
-	background: var(--bgc2);
-	transition: border-color 0.2s, background 0.2s;
-}
-
-.prompt-row:hover {
-	border-color: rgba(255, 208, 0, 0.35);
-	background: rgba(255, 208, 0, 0.04);
-}
-
-@media (max-width: 720px) {
-	.prompt-row {
-		grid-template-columns: 1fr auto;
-	}
-	.prompt-id,
-	.prompt-source {
-		display: none;
-	}
-}
-
-.prompt-id {
-	font-family: var(--fm);
-	font-size: 0.6rem;
-	letter-spacing: 0.05em;
+.pb-cat-empty {
+	padding: 0.2rem 1.4rem 1.2rem;
+	font-size: 0.86rem;
 	color: var(--t3);
 }
 
-.prompt-title {
-	font-size: 0.94rem;
-	color: var(--t);
-	line-height: 1.4;
-}
-
-.prompt-source {
-	font-family: var(--fm);
-	font-size: 0.66rem;
-	color: var(--t2);
-	white-space: nowrap;
-}
-
-.prompt-go {
-	font-family: var(--fd);
-	font-size: 0.74rem;
-	font-weight: 700;
-	color: var(--a);
-	text-decoration: none;
-	white-space: nowrap;
-	transition: color 0.2s;
-}
-
-.prompt-go:hover {
-	color: #ffe57a;
-}
-
-.prompts-cta {
-	margin-top: 3rem;
-	padding: 2rem;
-	border: 1px solid var(--br2);
-	border-radius: 16px;
-	background: linear-gradient(135deg, var(--bgc), var(--bgc2));
+/* ── Карточки промптов ── */
+.pb-prompts {
 	display: flex;
 	flex-direction: column;
-	gap: 1.25rem;
-	align-items: flex-start;
+	gap: 1rem;
 }
 
-.prompts-cta-text {
-	font-size: 0.98rem;
-	line-height: 1.7;
-	color: var(--t2);
-	margin: 0;
-	max-width: 640px;
-}
-
-.prompts-cta-actions {
+.pb-prompt {
+	border: 1px solid var(--br);
+	border-radius: 14px;
+	background: var(--bgc2);
+	padding: 1.2rem 1.3rem;
 	display: flex;
-	gap: 0.85rem;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.pb-prompt-h {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
 	flex-wrap: wrap;
+}
+
+.pb-prompt-id {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	letter-spacing: 0.06em;
+	color: var(--a);
+	border: 1px solid rgba(255, 208, 0, 0.25);
+	border-radius: 6px;
+	padding: 0.15rem 0.45rem;
+	background: rgba(255, 208, 0, 0.05);
+	white-space: nowrap;
+}
+
+.pb-prompt-title {
+	font-family: var(--fd);
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.35;
+	color: var(--t);
+	margin: 0;
+	flex: 1;
+	min-width: 200px;
+}
+
+.pb-prompt-src {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--t3);
+	margin: 0;
+	letter-spacing: 0.03em;
+}
+
+.pb-prompt-text {
+	margin: 0;
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 10px;
+	padding: 1rem 1.1rem;
+	font-family: var(--fm);
+	font-size: 0.78rem;
+	line-height: 1.65;
+	color: var(--t2);
+	white-space: pre-wrap;
+	word-break: break-word;
+	max-height: 340px;
+	overflow-y: auto;
+}
+
+/* ── Кнопки ── */
+.pb-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	font-family: var(--fd);
+	font-size: 0.78rem;
+	font-weight: 700;
+	border-radius: 10px;
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.1s;
+	border: 1px solid var(--br2);
+	background: var(--bgc2);
+	color: var(--t);
+	white-space: nowrap;
+}
+
+.pb-btn:hover {
+	border-color: rgba(255, 208, 0, 0.4);
+	color: var(--a);
+}
+
+.pb-btn:active {
+	transform: translateY(1px);
+}
+
+.pb-btn-primary {
+	background: var(--a);
+	color: #0a0a0c;
+	border-color: var(--a);
+}
+
+.pb-btn-primary:hover {
+	background: #ffe14d;
+	color: #0a0a0c;
+	border-color: #ffe14d;
+}
+
+.pb-btn-ghost {
+	background: none;
+}
+
+.pb-copy {
+	min-width: 128px;
+	justify-content: center;
+}
+
+.pb-empty {
+	padding: 2.5rem 1.5rem;
+	border: 1px dashed var(--br2);
+	border-radius: 14px;
+	text-align: center;
+	color: var(--t3);
+	font-size: 0.95rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+	.pb-ch-subs {
+		padding-left: 1.3rem;
+	}
+	.pb-prompt-h {
+		align-items: flex-start;
+	}
+	.pb-copy {
+		width: 100%;
+	}
+	.pb-nav-in {
+		gap: 1rem;
+	}
 }
 
 /* Book index page */

@@ -5,8 +5,8 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#2a2a2a;
-  --t:#edeae3;--t2:#7c7870;--t3:#3a3632;
-  --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.12);
+  --t:#f4f1ea;--t2:#8f8c84;--t3:#57544f;
+  --a:#FFD000;--ad:rgba(255,208,0,.09);--ag:rgba(255,208,0,.14);
   --tr:#4ECDC4;--trd:rgba(78,205,196,.08);--trb:rgba(78,205,196,.28);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
   --fd:'Syne',sans-serif;--fs:'Instrument Serif',serif;--fm:'JetBrains Mono',monospace;
