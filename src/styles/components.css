@@ -36,10 +36,28 @@ section {
 	opacity: 0.5;
 }
 
+/* REVEAL — прогрессивное улучшение.
+   Без JS контент виден сразу (.rv по умолчанию видим).
+   С JS страница ставит класс js на <html> — тогда .rv скрыт
+   и плавно проявляется при скролле через IntersectionObserver (.rv.on). */
 .rv {
+	opacity: 1;
+	transform: none;
+}
+
+.js .rv {
 	opacity: 0;
 	transform: translateY(28px);
 	transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+/* Дополнительная страховка: если скрипты отключены, контент виден всегда,
+   даже при наличии класса js по любой причине. */
+@media (scripting: none) {
+	.rv {
+		opacity: 1 !important;
+		transform: none !important;
+	}
 }
 
 .rv.on {

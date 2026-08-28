@@ -46,7 +46,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 .sh2{font-family:var(--fd);font-size:clamp(1.85rem,3.4vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.07;margin-bottom:.8rem}
 .sl{font-size:1.03rem;color:var(--t2);max-width:500px;margin-bottom:3.5rem;line-height:1.72}
 .rv{opacity:1;transform:none}
-html.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}.rv.d4{transition-delay:.44s}
 
