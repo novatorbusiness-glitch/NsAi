@@ -49,9 +49,10 @@ nav.sc{background:rgba(8,8,8,.97)}
   background:radial-gradient(circle,rgba(255,208,0,.055) 0%,transparent 62%);
   top:50%;left:35%;transform:translate(-50%,-50%);pointer-events:none}
 #cvs{position:absolute;inset:0;pointer-events:none}
-.hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 2rem;width:100%;
+.hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 2rem;width:100%;min-width:0;
   display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
 .hero-inner>*{min-width:0}
+@media(max-width:640px){.hero-inner{padding:0 1.25rem}.hero-quote{font-size:.98rem}}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:3rem}}
 
 /* HERO LEFT */
