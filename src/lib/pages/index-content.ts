@@ -455,7 +455,7 @@ export const body = `
   <div class="wrap">
     <span class="sec-tag rv">Книги · бесплатно</span>
     <h2 class="sec-h2 rv d1">Читай, применяй,<br>собирай систему.</h2>
-    <p class="sl rv d2">Две книги Ильи Новицкого — с механикой нейро-воронки, читаются прямо на сайте.</p>
+    <p class="sl rv d2">Книга Ильи Новицкого — с механикой нейро-воронки, читается прямо на сайте.</p>
     <div class="books-grid">
       <a href="/book" class="bk-card rv d1">
         <img src="/covers/neuro-voronka.svg" alt="Книга Нейро-Воронка — обложка" class="bk-cover" loading="lazy" />
@@ -464,16 +464,6 @@ export const body = `
           <div class="bk-title">Нейро-Воронка</div>
           <div class="bk-author">Илья Новицкий · <span>2026</span></div>
           <div class="bk-desc">Инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI. 6 глав, 30 подглав.</div>
-          <div class="bk-cta">Читать →</div>
-        </div>
-      </a>
-      <a href="/agency-in-a-box" class="bk-card rv d2">
-        <img src="/covers/agency-in-a-box.svg" alt="Книга Агентство в коробке — обложка" class="bk-cover" loading="lazy" />
-        <div class="bk-body">
-          <div class="bk-badge">Методология NCAi · 2026</div>
-          <div class="bk-title">Агентство в коробке</div>
-          <div class="bk-author">Илья Новицкий · <span>2026</span></div>
-          <div class="bk-desc">SaaS-платформа NCAi: мульти-аренда, распаковка клиента, подписка и тарифы, автоматизация.</div>
           <div class="bk-cta">Читать →</div>
         </div>
       </a>
@@ -623,7 +613,6 @@ export const body = `
         <ul class="f-links">
           <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
-          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/blog">Блог</a></li>
           <li><a href="/o-proekte">О проекте</a></li>

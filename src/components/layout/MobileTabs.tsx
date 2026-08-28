@@ -24,13 +24,12 @@ export default function MobileTabs() {
     { label: "Блог", icon: "✍️", href: "/blog", active: isActive(["/blog"]) },
     { label: "Промпты", icon: "⚡", href: "/prompts", active: isActive(["/prompts"]) },
     { label: "Команда", icon: "🛰️", href: "/team-book", active: isActive(["/team-book"]) },
-    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners", "/agency-in-a-box"]) },
+    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners"]) },
   ];
 
   const moreLinks = [
     { label: "Внедрение NCAi", href: "/consulting" },
     { label: "Обучение AI", href: "/ai-training" },
-    { label: "Агентство в коробке", href: "/agency-in-a-box" },
     { label: "О проекте", href: "/o-proekte" },
     { label: "Портфолио", href: "/portfolio" },
     { label: "Партнёры", href: "/partners" },
