@@ -253,6 +253,27 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
   padding-top:1.75rem;border-top:1px solid #0f0f0f;flex-wrap:wrap;gap:.75rem}
 .f-copy,.f-easter{font-family:var(--fm);font-size:.62rem;color:var(--t3);letter-spacing:.04em}
 .f-easter span{color:var(--a)}
+
+/* BOOKS — каталог книг с обложками на главной */
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.75rem;margin-top:1rem}
+@media(max-width:860px){.books-grid{grid-template-columns:1fr;gap:1.25rem}}
+.bk-card{display:grid;grid-template-columns:150px 1fr;gap:1.5rem;align-items:center;background:var(--bgc);
+  border:1px solid var(--br);border-radius:18px;padding:1.4rem;text-decoration:none;position:relative;overflow:hidden;
+  transition:border-color .3s,transform .3s var(--ease),box-shadow .3s}
+.bk-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 0% 50%,var(--ad),transparent 60%);opacity:.6;pointer-events:none}
+.bk-card:hover{border-color:rgba(255,208,0,.4);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.45)}
+@media(max-width:520px){.bk-card{grid-template-columns:1fr}}
+.bk-cover{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.06);position:relative;z-index:2}
+.bk-body{display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;position:relative;z-index:2}
+.bk-badge{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);
+  padding:.28rem .65rem;border:1px solid var(--br2);border-radius:999px}
+.bk-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--t)}
+.bk-desc{font-size:.85rem;color:var(--t2);line-height:1.6;margin:0}
+.bk-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:800;
+  color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
+  box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease)}
+.bk-card:hover .bk-cta{transform:translateX(4px)}
+section[id]{scroll-margin-top:76px}
 `;
 
 export const body = `
@@ -263,10 +284,11 @@ export const body = `
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
     <ul class="nav-links">
-      <li><a href="/consulting">Консалтинг</a></li>
+      <li><a href="/consulting">Внедрение</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
-      <li><a href="/book">Книга</a></li>
-      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
+      <li><a href="/book">Книги</a></li>
+      <li><a href="/blog">Блог</a></li>
+      <li><a href="/o-proekte">О проекте</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
@@ -301,11 +323,11 @@ export const body = `
     <div class="hero-right">
       <div class="product-cards">
         <a href="/consulting" class="pc pc-consulting" style="--c:#FFD000">
-          <div class="pc-icon">🏗️</div>
+          <div class="pc-icon">📦</div>
           <div class="pc-body">
-            <div class="pc-label">Консалтинг</div>
-            <div class="pc-title">2–3 месяца вместе</div>
-            <div class="pc-sub">Вхожу в команду, строю систему, передаю с документацией</div>
+            <div class="pc-label">Внедрение NCAi</div>
+            <div class="pc-title">Агентство за 30 дней</div>
+            <div class="pc-sub">Агентство в коробке: распаковка, AI-команда, система в панели</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -355,19 +377,19 @@ export const body = `
       <a href="/consulting" class="prod-card c1 rv">
         <div class="prod-stripe" style="--stripe:#FFD000"></div>
         <div class="prod-top">
-          <div class="prod-icon">🏗️</div>
-          <div class="prod-type">Консалтинг · B2B</div>
-          <div class="prod-title">Купите мои мозги на 2–3 месяца</div>
-          <p class="prod-desc">Вхожу в вашу команду — строю маркетинговую систему и AI-автоматизацию через лайф-кодинг. Каждое решение у вас на глазах. Ухожу — зависимости нет.</p>
+          <div class="prod-icon">📦</div>
+          <div class="prod-type">Внедрение NCAi · B2B</div>
+          <div class="prod-title">Агентство в коробке за 30 дней</div>
+          <p class="prod-desc">Внедряю рабочее NCAi-агентство в панели: AI-команда, отделы, задачи, база клиентов и аналитика. Распаковка за 60–90 минут, передача руля через 30 дней — зависимости нет.</p>
           <div class="prod-points">
-            <div class="prod-point"><div class="pp-dot"></div><span>Архитектура системы с нуля</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>Лайф-кодинг — никаких чёрных ящиков</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>Передача с документацией</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>1–2 проекта одновременно</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Распаковка: агентство готово с первой сессии</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>AI-команда 3–5 цифровых сотрудников</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Аналитика и финансы в панели 24/7</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Передача руля — клиент ведёт сам</span></div>
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>Длительность</span>2–3 месяца</div>
+          <div class="prod-price"><span>Длительность</span>30 дней</div>
           <div class="prod-link">Подробнее →</div>
         </div>
       </a>
@@ -556,8 +578,9 @@ export const body = `
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/consulting">Консалтинг</a></li>
+          <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
+          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>
         </ul>

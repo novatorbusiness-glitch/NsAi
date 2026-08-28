@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import ConsultingPage from "@/components/pages/ConsultingPage";
 
 export const metadata: Metadata = {
-	title: "NCAi — Архитектор систем · AI-консалтинг",
+	title: "NCAi — Внедрение агентства за 30 дней · Агентство в коробке",
 	description:
-		"Купите мои мозги на 2–3 месяца: вхожу в команду заказчика, строю маркетинговую систему и AI-автоматизацию через лайф-кодинг. Ухожу — зависимости нет.",
+		"Внедряю NCAi-агентство в коробке за 30 дней: распаковка 60–90 минут, AI-команда, отделы, задачи, база клиентов, аналитика и финансы в панели. Подписка от 2 900 ₽/мес. Передаю руль — зависимости нет.",
+	alternates: {
+		canonical: "/consulting",
+	},
 };
 
 export default function Page() {
