@@ -601,8 +601,9 @@ export const body = `
     </div>
     <div class="iz-stats">
       <div class="iz-stat rv"><div class="iz-n">160</div><div class="iz-l">Задачи выполнено</div></div>
-      <div class="iz-stat rv d1"><div class="iz-n">221</div><div class="iz-l">Запуска агентов</div></div>
-      <div class="iz-stat rv d2"><div class="iz-n"><small>$</small>8.37</div><div class="iz-l">Суммарный расход · весь период</div></div>
+      <div class="iz-stat rv d1"><div class="iz-n">219</div><div class="iz-l">Запусков · весь период</div></div>
+      <div class="iz-stat rv d2"><div class="iz-n"><small>$</small>29.53</div><div class="iz-l">Реальный расход · биллинг Hermes</div></div>
+      <div class="iz-stat rv d3"><div class="iz-n"><small>$</small>42</div><div class="iz-l">Вложено · <span class="st">$12.47 осталось</span></div></div>
     </div>
     <div class="iz-report rv d1">
       <div class="iz-rep-top">
@@ -616,7 +617,7 @@ export const body = `
         <div class="ln"><span class="ok">✔</span><span><span class="task">Напоминания клиентам о записи</span> — <span class="st">done</span></span></div>
         <hr class="iz-rep-div">
         <div class="ln"><span class="dim">→</span><span>Модели: <span class="st">GLM-5.2 · DeepSeek · Ollama</span> · токены контекста: <span class="st">84K</span></span></div>
-        <div class="ln"><span class="dim">→</span><span>Расход по задаче: <span class="st">$0.02</span> · всего: <span class="st">$8.37</span></span></div>
+        <div class="ln"><span class="dim">→</span><span>Средний расход по задаче: <span class="st">$0.13</span> · всего: <span class="st">$29.53</span> из $42</span></div>
       </div>
     </div>
     <div class="iz-bot rv d2">
