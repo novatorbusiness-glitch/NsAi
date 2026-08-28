@@ -375,7 +375,7 @@ export default function PromptsCatalog() {
 							<ul className="pb-card-list">
 								<li>{t("Промпт не подходит / устарел → правь текст в базе NCAi (prompts_store.py), затем перегенерируй страницу.", "A prompt is stale or wrong → edit the text in the NCAi base (prompts_store.py), then regenerate the page.")}</li>
 								<li>{t("Нет категории → добавь в каноничный список CATEGORIES в prompts_store.py.", "Missing category → add it to the canonical CATEGORIES list in prompts_store.py.")}</li>
-								<li>{t("Нулевые счётчики (финансы, базы, qa, услуги) → категории пополняются по роадмапу до 100+ промптов.", "Zero counts (finance, databases, qa, services) → categories are being filled per the roadmap to 100+ prompts.")}</li>
+								<li>{t("Счётчики обновляются автоматически при перегенерации данных (scripts/gen_prompts_data.py).", "Counters refresh automatically when data is regenerated (scripts/gen_prompts_data.py).")}</li>
 							</ul>
 						</div>
 						<div className="pb-card">
