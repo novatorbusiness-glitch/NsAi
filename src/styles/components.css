@@ -92,7 +92,7 @@ section {
 	transition: width 0.1s linear;
 }
 
-nav {
+nav#nav {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -109,7 +109,7 @@ nav {
 	transition: all 0.3s;
 }
 
-nav.sc {
+nav#nav.sc {
 	background: rgba(8, 8, 8, 0.97);
 	border-color: rgba(255, 255, 255, 0.08);
 	box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
@@ -4329,6 +4329,698 @@ footer {
 	}
 }
 
+/* ════════════════════════════════════════════════════════════════
+   Книга команды NCAi (/team-book) — команда под капотом
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Блок-заголовки внутри разделов ── */
+.tb-block-title {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: var(--fd);
+	font-size: 1.12rem;
+	font-weight: 800;
+	margin: 2.6rem 0 0.4rem;
+	letter-spacing: -0.01em;
+}
+
+.tb-block-title::before {
+	content: "";
+	width: 22px;
+	height: 2px;
+	background: var(--a);
+	border-radius: 2px;
+	opacity: 0.9;
+}
+
+.tb-block-title-2 {
+	margin-top: 3rem;
+}
+
+.tb-stats-head {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.tb-stats-note {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--t3);
+	letter-spacing: 0.04em;
+}
+
+/* ── Статы «Команда сейчас» ── */
+.tb-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 1rem;
+	margin: 1.2rem 0 0.8rem;
+}
+
+.tb-stat {
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 16px;
+	padding: 1.4rem 1.4rem 1.3rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.tb-stat::after {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 2px;
+	background: linear-gradient(90deg, var(--a), transparent);
+	opacity: 0.55;
+}
+
+.tb-stat-value {
+	font-family: var(--fd);
+	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	color: var(--t);
+	line-height: 1;
+	margin-bottom: 0.45rem;
+}
+
+.tb-stat-label {
+	font-family: var(--fd);
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--t2);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	margin-bottom: 0.2rem;
+}
+
+.tb-stat-sub {
+	font-size: 0.78rem;
+	color: var(--t3);
+	line-height: 1.45;
+}
+
+/* ── Полоса моделей ── */
+.tb-model-bar {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	margin: 0.4rem 0 0;
+}
+
+.tb-model-chip {
+	font-family: var(--fm);
+	font-size: 0.7rem;
+	color: var(--t2);
+	border: 1px solid var(--br2);
+	background: var(--bgc2);
+	border-radius: 999px;
+	padding: 0.3rem 0.8rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.tb-model-chip em {
+	font-style: normal;
+	color: var(--a);
+	font-weight: 500;
+}
+
+.tb-model-note {
+	font-family: var(--fm);
+	font-size: 0.64rem;
+	color: var(--t3);
+	margin-left: 0.3rem;
+}
+
+/* ── Оргструктура (пирамида) ── */
+.tb-orgline {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.8rem;
+	font-size: 0.9rem;
+	line-height: 1.6;
+	background: linear-gradient(90deg, rgba(255, 208, 0, 0.06), transparent 70%);
+	border: 1px solid var(--br);
+	border-left: 2px solid var(--a);
+	border-radius: 12px;
+	padding: 0.9rem 1.2rem;
+	margin: 0 0 2rem;
+	color: var(--t2);
+}
+
+.tb-orgline-k {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--a);
+	white-space: nowrap;
+	padding-top: 0.35rem;
+}
+
+/* ── Отделы ── */
+.tb-depts {
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+}
+
+.tb-dept {
+	border: 1px solid var(--br);
+	border-radius: 18px;
+	background: var(--bgc);
+	overflow: hidden;
+	transition: border-color 0.25s;
+}
+
+.tb-dept.is-open {
+	border-color: rgba(255, 208, 0, 0.35);
+}
+
+.tb-dept-head {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 1.2rem 1.4rem;
+	cursor: pointer;
+	text-align: left;
+	color: var(--t);
+	transition: background 0.2s;
+	font: inherit;
+}
+
+.tb-dept-head:hover {
+	background: rgba(255, 208, 0, 0.04);
+}
+
+.tb-dept-emoji {
+	font-size: 1.4rem;
+	line-height: 1;
+}
+
+.tb-dept-title {
+	font-family: var(--fd);
+	font-size: 1.15rem;
+	font-weight: 800;
+	flex: 1;
+}
+
+.tb-dept-count {
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	color: var(--a);
+	border: 1px solid rgba(255, 208, 0, 0.3);
+	border-radius: 999px;
+	padding: 0.18rem 0.7rem;
+	background: rgba(255, 208, 0, 0.05);
+}
+
+.tb-dept-body {
+	padding: 0 1.4rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+
+.tb-dept-desc {
+	font-size: 0.92rem;
+	color: var(--t2);
+	line-height: 1.65;
+	margin: 0;
+	max-width: 720px;
+}
+
+/* ── Карточки агентов ── */
+.tb-agents {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.tb-agent {
+	border: 1px solid var(--br);
+	border-radius: 14px;
+	background: var(--bgc2);
+	overflow: hidden;
+	transition: border-color 0.25s;
+}
+
+.tb-agent.is-open {
+	border-color: rgba(255, 208, 0, 0.3);
+}
+
+.tb-agent-head {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0.9rem 1.1rem;
+	cursor: pointer;
+	text-align: left;
+	color: var(--t);
+	transition: background 0.2s;
+	font: inherit;
+}
+
+.tb-agent-head:hover {
+	background: rgba(255, 208, 0, 0.04);
+}
+
+.tb-agent-avatar {
+	width: 46px;
+	height: 46px;
+	flex: 0 0 46px;
+	border-radius: 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.4rem;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.tb-agent-main {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	flex: 1;
+	min-width: 0;
+}
+
+.tb-agent-name {
+	font-family: var(--fd);
+	font-size: 1rem;
+	font-weight: 800;
+}
+
+.tb-agent-role {
+	font-size: 0.76rem;
+	color: var(--t2);
+	line-height: 1.4;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tb-agent-tag {
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	letter-spacing: 0.06em;
+	border-radius: 6px;
+	padding: 0.18rem 0.5rem;
+	white-space: nowrap;
+}
+
+.tb-agent-tag-владелец {
+	color: #ffd000;
+	border: 1px solid rgba(255, 208, 0, 0.4);
+	background: rgba(255, 208, 0, 0.08);
+}
+
+.tb-agent-tag-директор,
+.tb-agent-tag-менеджер {
+	color: #ffb347;
+	border: 1px solid rgba(255, 179, 71, 0.35);
+	background: rgba(255, 179, 71, 0.07);
+}
+
+.tb-agent-tag-специалист {
+	color: var(--t2);
+	border: 1px solid var(--br2);
+	background: var(--bgc);
+}
+
+.tb-agent-run {
+	color: #7bd88f;
+	border: 1px solid rgba(123, 216, 143, 0.3);
+	background: rgba(123, 216, 143, 0.06);
+}
+
+.tb-agent-human {
+	color: #e0c14d;
+	border: 1px solid rgba(224, 193, 77, 0.3);
+	background: rgba(224, 193, 77, 0.06);
+}
+
+.tb-agent-caret {
+	font-family: var(--fm);
+	color: var(--t3);
+	font-size: 0.95rem;
+	margin-left: 0.3rem;
+}
+
+.tb-agent-body {
+	padding: 0.2rem 1.1rem 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.tb-agent-desc {
+	font-size: 0.92rem;
+	color: var(--t2);
+	line-height: 1.7;
+	margin: 0;
+}
+
+.tb-agent-lead {
+	font-family: var(--fm);
+	font-size: 0.72rem;
+	color: var(--a);
+	margin: 0;
+}
+
+.tb-agent-col h4,
+.tb-agent-charge h4 {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--t3);
+	margin: 0 0 0.6rem;
+}
+
+.tb-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.tb-chip {
+	font-size: 0.76rem;
+	color: var(--t2);
+	border: 1px solid var(--br2);
+	background: var(--bgc);
+	border-radius: 999px;
+	padding: 0.28rem 0.7rem;
+}
+
+.tb-kb {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.tb-kb li {
+	position: relative;
+	padding-left: 1.05rem;
+	font-size: 0.82rem;
+	color: var(--t2);
+	line-height: 1.55;
+}
+
+.tb-kb li::before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: var(--a);
+}
+
+.tb-agent-foot {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	color: var(--t3);
+}
+
+.tb-agent-foot em {
+	font-style: normal;
+	color: var(--t3);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-size: 0.6rem;
+	margin-right: 0.25rem;
+}
+
+.tb-agent-model,
+.tb-agent-tier {
+	color: var(--t2);
+	border: 1px solid var(--br2);
+	border-radius: 6px;
+	padding: 0.2rem 0.5rem;
+	background: var(--bgc);
+}
+
+.tb-agent-hint {
+	color: var(--t3);
+	margin-left: auto;
+}
+
+.tb-agent-charge {
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-left: 2px solid var(--a);
+	border-radius: 10px;
+	padding: 0.9rem 1.1rem;
+}
+
+.tb-agent-charge p {
+	margin: 0;
+	font-size: 0.82rem;
+	color: var(--t2);
+	line-height: 1.7;
+	white-space: pre-wrap;
+}
+
+/* ── Механика: конвейер ── */
+.tb-pipe {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	margin: 1.5rem 0 0.5rem;
+}
+
+.tb-pipe-step {
+	display: flex;
+	gap: 1rem;
+	align-items: stretch;
+}
+
+.tb-pipe-num {
+	flex: 0 0 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+	font-family: var(--fm);
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--a);
+	position: relative;
+}
+
+.tb-pipe-num::before {
+	content: "";
+	width: 34px;
+	height: 34px;
+	border: 1px solid rgba(255, 208, 0, 0.35);
+	border-radius: 50%;
+	background: rgba(255, 208, 0, 0.05);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 34px;
+	text-align: center;
+}
+
+.tb-pipe-arrow {
+	color: var(--t3);
+	font-size: 0.8rem;
+	line-height: 1;
+}
+
+.tb-pipe-body {
+	flex: 1;
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 14px;
+	padding: 0.9rem 1.2rem;
+	margin-bottom: 0.3rem;
+}
+
+.tb-pipe-body h4 {
+	font-family: var(--fd);
+	font-size: 0.98rem;
+	font-weight: 800;
+	margin: 0 0 0.15rem;
+}
+
+.tb-pipe-who {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--a);
+	margin: 0 0 0.3rem;
+}
+
+.tb-pipe-desc {
+	font-size: 0.86rem;
+	color: var(--t2);
+	line-height: 1.6;
+	margin: 0;
+}
+
+.tb-sec-note {
+	font-size: 0.9rem;
+	color: var(--t3);
+	line-height: 1.6;
+	margin: 0 0 1.4rem;
+	max-width: 720px;
+}
+
+/* ── Механика: контекст ── */
+.tb-ctx-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 0.9rem;
+	margin: 0.4rem 0 0;
+}
+
+.tb-ctx {
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 14px;
+	padding: 1.1rem 1.2rem;
+}
+
+.tb-ctx-icon {
+	font-size: 1.3rem;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+.tb-ctx h4 {
+	font-family: var(--fd);
+	font-size: 0.9rem;
+	font-weight: 800;
+	margin: 0 0 0.3rem;
+}
+
+.tb-ctx p {
+	margin: 0;
+	font-size: 0.8rem;
+	color: var(--t2);
+	line-height: 1.6;
+}
+
+/* ── Механика: штрафы ── */
+.tb-pen {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	margin: 0.4rem 0 0;
+}
+
+.tb-pen-row {
+	display: grid;
+	grid-template-columns: 56px 1fr 1.1fr;
+	gap: 1rem;
+	align-items: center;
+	background: var(--bgc);
+	border: 1px solid var(--br);
+	border-radius: 12px;
+	padding: 0.8rem 1.1rem;
+}
+
+.tb-pen-level {
+	font-family: var(--fm);
+	font-size: 0.78rem;
+	font-weight: 600;
+	border: 1px solid;
+	border-radius: 8px;
+	padding: 0.2rem 0.5rem;
+	text-align: center;
+	width: fit-content;
+}
+
+.tb-pen-ex {
+	font-size: 0.84rem;
+	color: var(--t2);
+	line-height: 1.55;
+}
+
+.tb-pen-eff {
+	font-size: 0.84rem;
+	color: var(--t);
+	line-height: 1.55;
+}
+
+/* ── Приложения: управленцы ── */
+.tb-mgr-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+}
+
+.tb-mgr-list li {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 0.9rem;
+}
+
+.tb-mgr-e {
+	font-size: 1.1rem;
+}
+
+.tb-mgr-name {
+	font-family: var(--fd);
+	font-weight: 700;
+	color: var(--t);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+.tb-mgr-name:hover {
+	color: var(--a);
+}
+
+.tb-mgr-role {
+	font-size: 0.76rem;
+	color: var(--t3);
+}
+
+@media (max-width: 700px) {
+	.tb-pen-row {
+		grid-template-columns: 1fr;
+		gap: 0.4rem;
+	}
+	.tb-agent-head {
+		flex-wrap: wrap;
+	}
+	.tb-agent-tag {
+		order: 10;
+	}
+	.tb-agent-caret {
+		margin-left: auto;
+	}
+	.tb-pipe-num {
+		flex-basis: 2.4rem;
+	}
+}
+
 /* Book index page */
 .book-index-page {
 	padding-top: 120px;
@@ -5166,11 +5858,12 @@ footer {
 	.ntabs {
 		position: fixed;
 		bottom: 0;
+		top: auto;
 		left: 0;
 		right: 0;
 		z-index: 95;
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 		background: rgba(8, 8, 8, 0.94);
 		backdrop-filter: blur(20px) saturate(160%);
 		-webkit-backdrop-filter: blur(20px) saturate(160%);
