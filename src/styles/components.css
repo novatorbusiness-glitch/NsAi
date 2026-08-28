@@ -5863,7 +5863,7 @@ footer {
 		right: 0;
 		z-index: 95;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+		grid-template-columns: repeat(6, 1fr);
 		background: rgba(8, 8, 8, 0.94);
 		backdrop-filter: blur(20px) saturate(160%);
 		-webkit-backdrop-filter: blur(20px) saturate(160%);
