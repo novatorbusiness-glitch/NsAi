@@ -74,6 +74,9 @@ export default function Navigation() {
               <a href="/prompts">Промпты</a>
             </li>
             <li>
+              <a href="/team-book">Команда</a>
+            </li>
+            <li>
               <a href="/o-proekte">{t("nav.about")}</a>
             </li>
             <li>

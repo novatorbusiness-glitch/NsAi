@@ -23,6 +23,7 @@ export default function MobileTabs() {
     { label: "Книги", icon: "📖", href: "/book", active: isActive(["/book"]) },
     { label: "Блог", icon: "✍️", href: "/blog", active: isActive(["/blog"]) },
     { label: "Промпты", icon: "⚡", href: "/prompts", active: isActive(["/prompts"]) },
+    { label: "Команда", icon: "🛰️", href: "/team-book", active: isActive(["/team-book"]) },
     { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners", "/agency-in-a-box"]) },
   ];
 
