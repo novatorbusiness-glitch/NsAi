@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 840" width="600" height="840" role="img" aria-label="Обложка книги Нейро-Воронка, Илья Новицкий">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0c0c0e"/>
+      <stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd000"/>
+      <stop offset="1" stop-color="#e8a200"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.28" r="0.6">
+      <stop offset="0" stop-color="rgba(255,208,0,0.16)"/>
+      <stop offset="1" stop-color="rgba(255,208,0,0)"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="600" height="840" fill="url(#bg)"/>
+  <rect width="600" height="840" fill="url(#glow)"/>
+  <rect width="600" height="840" filter="url(#grain)" opacity="0.6"/>
+  <!-- тонкая рамка -->
+  <rect x="22" y="22" width="556" height="796" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+  <rect x="30" y="30" width="540" height="780" fill="none" stroke="rgba(255,208,0,0.28)" stroke-width="1.5"/>
+  <!-- воронка-спираль -->
+  <g transform="translate(300,350)" stroke="url(#gold)" fill="none" stroke-linecap="round" opacity="0.9">
+    <path d="M0,-150 C140,-150 180,0 0,0 C-170,0 -170,130 0,130 C150,130 165,80 120,50" stroke-width="2.5"/>
+    <path d="M0,-150 C140,-150 180,0 0,0 C-170,0 -170,130 0,130 C150,130 165,80 120,50" stroke-width="1.2" stroke-dasharray="2 6" opacity="0.5"/>
+  </g>
+  <g fill="#ffd000" opacity="0.9">
+    <circle cx="80" cy="250" r="3"/>
+    <circle cx="520" cy="520" r="2.5"/>
+    <circle cx="500" cy="190" r="2"/>
+    <circle cx="100" cy="600" r="2"/>
+  </g>
+  <!-- типографская рамка: часть / автор -->
+  <text x="48" y="70" font-family="'Space Mono','JetBrains Mono',monospace" font-size="15" letter-spacing="4" fill="rgba(255,255,255,0.45)">КНИГА · ЧАСТЬ 1</text>
+  <text x="48" y="782" font-family="'Space Mono','JetBrains Mono',monospace" font-size="15" letter-spacing="3" fill="rgba(255,255,255,0.45)">ИЛЬЯ НОВИЦКИЙ · 2026</text>
+  <!-- заголовок -->
+  <text x="48" y="655" font-family="'Space Grotesk','Syne',sans-serif" font-size="62" font-weight="800" letter-spacing="-1" fill="#f4f1e8">НЕЙРО-</text>
+  <text x="48" y="722" font-family="'Space Grotesk','Syne',sans-serif" font-size="62" font-weight="800" letter-spacing="-1" fill="url(#gold)">ВОРОНКА</text>
+  <!-- подзаголовок -->
+  <text x="48" y="640" font-family="'Manrope','Instrument Serif',sans-serif" font-size="17" fill="rgba(244,241,232,0.55)">инженерия систем продаж</text>
+  <text x="48" y="662" font-family="'Manrope','Instrument Serif',sans-serif" font-size="17" fill="rgba(244,241,232,0.55)">на стыке нейробиологии и AI</text>
+  <text x="48" y="690" font-family="'Manrope','Instrument Serif',sans-serif" font-size="17" fill="rgba(244,241,232,0.55)">6 глав · 30 подглав</text>
+  <!-- свободно -->
+  <rect x="480" y="92" width="74" height="26" rx="13" fill="none" stroke="#ffd000" stroke-width="1.5"/>
+  <text x="517" y="110" font-family="'Space Mono','JetBrains Mono',monospace" font-size="13" text-anchor="middle" fill="#ffd000">FREE</text>
+</svg>

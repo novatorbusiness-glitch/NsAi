@@ -1,68 +1,79 @@
-import { BOOK_CHAPTER_LINKS, BOOK_INTRO_LINKS } from "@/lib/book-data";
+"use client";
 
+import { useLang } from "@/lib/i18n";
+import LangSwitch from "./LangSwitch";
+
+// Подвал сайта: описание, колонки ссылок (Проект / Книги / Работа / Правовое), язык, копирайт.
 export default function Footer() {
-	return (
-		<footer>
-			<div className="fwm">NcAi</div>
-			<div className="w footer-inner">
-				<div className="fgrid">
-					<div>
-						<div className="flogo">NcAi</div>
-						<p className="ftag">
-							Архитектор систем. Нейромаркетинг, AI-автоматизация и системное мышление для тех,
-							кто строит бизнес серьезно.
-						</p>
-						<div className="fsoc">
-							<a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" className="fsi" aria-label="Telegram">
-								✈
-							</a>
-						</div>
-					</div>
+  const { t } = useLang();
 
-					<div>
-						<div className="fch">Книга</div>
-						<ul className="fls">
-							{BOOK_INTRO_LINKS.map((intro) => (
-								<li key={intro.slug}>
-									<a href={`/book/${intro.slug}`}>{intro.title}</a>
-								</li>
-							))}
-							{BOOK_CHAPTER_LINKS.map((chapter) => (
-								<li key={chapter.id}>
-									<a href={`/book/${chapter.entrySlug}`}>
-										{`Гл. ${chapter.id} - ${chapter.title}`}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
+  return (
+    <footer>
+      <div className="fwm">NcAi</div>
+      <div className="w footer-inner">
+        <div className="fgrid">
+          <div>
+            <div className="flogo">NcAi</div>
+            <p className="ftag">{t("footer.tagline")}</p>
+            <div className="fsoc">
+              <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" className="fsi" aria-label="Telegram">
+                ✈
+              </a>
+              <a href="mailto:ilya.novitskii@yandex.ru" className="fsi" aria-label="Email">
+                ✉
+              </a>
+            </div>
+          </div>
 
-					<div>
-						<div className="fch">Работа</div>
-						<ul className="fls">
-							<li>
-								<a href="#offer">Консалтинг</a>
-							</li>
-							<li>
-								<a href="#cases">Кейсы</a>
-							</li>
-							<li>
-								<a href="#mechanism">Метод</a>
-							</li>
-							<li>
-								<a href="/book">Книга бесплатно</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+          <div>
+            <div className="fch">{t("footer.colProject")}</div>
+            <ul className="fls">
+              <li><a href="/o-proekte">{t("footer.about")}</a></li>
+              <li><a href="/blog">{t("footer.blog")}</a></li>
+              <li><a href="/portfolio">{t("footer.cases")}</a></li>
+              <li><a href="/partners">Партнёры</a></li>
+            </ul>
+          </div>
 
-				<div className="fbot">
-					<span className="fcp">© 2025 NcAi. Все права защищены.</span>
-					<span className="fea">
-						Сделано через лайф-кодинг - <span>как обещано</span>
-					</span>
-				</div>
-			</div>
-		</footer>
-	);
+          <div>
+            <div className="fch">{t("footer.colBooks")}</div>
+            <ul className="fls">
+              <li><a href="/book">{t("nav.bookNeuro")}</a></li>
+              <li><a href="/agency-in-a-box">{t("nav.bookAgency")}</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="fch">{t("footer.colWork")}</div>
+            <ul className="fls">
+              <li><a href="/consulting">{t("footer.consulting")}</a></li>
+              <li><a href="/ai-training">{t("footer.aiTraining")}</a></li>
+              <li><a href="/consulting#cases">{t("footer.cases")}</a></li>
+              <li><a href="/consulting#mechanism">{t("footer.method")}</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="fch">{t("footer.colLegal")}</div>
+            <ul className="fls">
+              <li><a href="/privacy">{t("footer.privacy")}</a></li>
+              <li><a href="/offer">{t("footer.offer")}</a></li>
+              <li><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+              <li><a href="mailto:ilya.novitskii@yandex.ru">Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="fbot">
+          <span className="fcp">© {new Date().getFullYear()} NcAi · Илья Новицкий. {t("footer.rights")}</span>
+          <span className="fright">
+            <LangSwitch light />
+            <span className="fea">
+              {t("footer.easter")} <span>{t("footer.easter2")}</span>
+            </span>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
 }

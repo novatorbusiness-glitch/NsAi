@@ -67,3 +67,76 @@ export function getSubchapterTitle(slug: string): string {
 	return BOOK_SUBCHAPTER_TITLES[slug] ?? slug.replace(/-/g, " ");
 }
 
+// Подглавы по главам (для интерактивного оглавления на страницах книги).
+export interface BookChapterSub {
+	id: number;
+	title: string;
+	subs: { slug: string; title: string }[];
+}
+
+export const BOOK_CHAPTER_SUBS: BookChapterSub[] = [
+	{
+		id: 1,
+		title: "Нейромаркетинг",
+		subs: [
+			{ slug: "1-1-kognitivnye-lovushki", title: "Когнитивные ловушки" },
+			{ slug: "1-2-nejrokopiraiting", title: "Нейрокопирайтинг" },
+			{ slug: "1-3-lid-magnit", title: "Лид-магнит" },
+			{ slug: "1-4-vizualnye-stimuly", title: "Визуальные стимулы" },
+		],
+	},
+	{
+		id: 2,
+		title: "Инженерия систем",
+		subs: [
+			{ slug: "2-1-produktovaya-matrica", title: "Продуктовая матрица" },
+			{ slug: "2-2-anatomiya-voronki", title: "Анатомия воронки" },
+			{ slug: "2-3-arhitektura-voronki", title: "Архитектура воронки" },
+			{ slug: "2-4-finalnaya-sborka", title: "Финальная сборка" },
+		],
+	},
+	{
+		id: 3,
+		title: "Синтез доверия",
+		subs: [
+			{ slug: "3-1-fiziologiya-uderzhaniya", title: "Физиология удержания" },
+			{ slug: "3-2-chetyre-elementa-doveriya", title: "Четыре элемента доверия" },
+			{ slug: "3-3-cepochki-kasanij", title: "Цепочки касаний" },
+			{ slug: "3-4-usilenie-ohvatov", title: "Усиление охватов" },
+			{ slug: "3-5-ai-kopiraiter", title: "AI-копирайтер" },
+		],
+	},
+	{
+		id: 4,
+		title: "Трафик",
+		subs: [
+			{ slug: "4-1-anatomiya-kreativa", title: "Анатомия креатива" },
+			{ slug: "4-2-shest-stimulov", title: "Шесть стимулов" },
+			{ slug: "4-3-virusnaya-mehanika", title: "Вирусная механика" },
+			{ slug: "4-4-organicheskij-trafik", title: "Органический трафик" },
+			{ slug: "4-5-poisk-segmentaciya", title: "Поиск и сегментация" },
+			{ slug: "4-6-analitika-trafika", title: "Аналитика трафика" },
+			{ slug: "4-7-ai-kreativy", title: "AI-креативы" },
+		],
+	},
+	{
+		id: 5,
+		title: "Автоматизация",
+		subs: [
+			{ slug: "5-1-algoritm-vs-chelovek", title: "Алгоритм против человека" },
+			{ slug: "5-2-stek-avtomatizacii", title: "Стек автоматизации" },
+			{ slug: "5-3-vebinarnyj-dvigatel", title: "Вебинарный двигатель" },
+			{ slug: "5-4-audit-voronki", title: "Аудит воронки" },
+			{ slug: "5-5-ai-v-prodazhah", title: "AI в продажах" },
+		],
+	},
+	{
+		id: 6,
+		title: "Автономный разум",
+		subs: [
+			{ slug: "6-1-cifrovye-sotrudniki", title: "Цифровые сотрудники" },
+			{ slug: "6-2-razrabotka-bez-programmistov", title: "Разработка без программистов" },
+		],
+	},
+];
+
