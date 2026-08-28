@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import React from "react";
+import PageGuard from "@/lib/page-guard";
 
 export const metadata: Metadata = {
 	title: "Агентство в коробке — методология NCAi | NcAi",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "/agency-in-a-box",
 	},
+	robots: { index: false, follow: false },
 };
 
 /** Разбор inline-разметки: **жирный**, *курсив*, `код`. */
@@ -258,36 +260,38 @@ export default function AgencyInABoxPage() {
 	const { toc, nodes } = mdToReact(src);
 
 	return (
-		<main className="docs-page agency-page">
-			<div className="docs-shell">
-				<p className="docs-back">
-					<a href="/">← NcAi · на главную</a>
-					<span className="docs-back-sep">·</span>
-					<a href="/book">Книга «Нейро-Воронка»</a>
-				</p>
+		<PageGuard>
+			<main className="docs-page agency-page">
+				<div className="docs-shell">
+					<p className="docs-back">
+						<a href="/">← NcAi · на главную</a>
+						<span className="docs-back-sep">·</span>
+						<a href="/book">Книга «Нейро-Воронка»</a>
+					</p>
 
-				<h1 className="book-index-title">АГЕНТСТВО В КОРОБКЕ</h1>
-				<p className="book-index-subtitle">
-					NCAi — SaaS-платформа «Агентство в коробке». Методология продукта: мульти-аренда,
-					распаковка клиента, подписка и тарифы, автоматизация, ведение сети клиентов.
-				</p>
-				<p className="book-index-author">Автор: Илья Новицкий · NCAi · версия 2.0 · 27.08.2026</p>
+					<h1 className="book-index-title">АГЕНТСТВО В КОРОБКЕ</h1>
+					<p className="book-index-subtitle">
+						NCAi — SaaS-платформа «Агентство в коробке». Методология продукта: мульти-аренда,
+						распаковка клиента, подписка и тарифы, автоматизация, ведение сети клиентов.
+					</p>
+					<p className="book-index-author">Автор: Илья Новицкий · NCAi · версия 2.0 · 27.08.2026</p>
 
-				<div className="docs-toc">
-					<div className="docs-toc-label">Оглавление</div>
-					<ol className="docs-toc-list">
-						{toc.map((entry) => (
-							<li key={entry.id}>
-								<a href={`#${entry.id}`} className="docs-toc-link">
-									{entry.title}
-								</a>
-							</li>
-						))}
-					</ol>
+					<div className="docs-toc">
+						<div className="docs-toc-label">Оглавление</div>
+						<ol className="docs-toc-list">
+							{toc.map((entry) => (
+								<li key={entry.id}>
+									<a href={`#${entry.id}`} className="docs-toc-link">
+										{entry.title}
+									</a>
+								</li>
+							))}
+						</ol>
+					</div>
+
+					<div className="docs-body">{nodes}</div>
 				</div>
-
-				<div className="docs-body">{nodes}</div>
-			</div>
-		</main>
+			</main>
+		</PageGuard>
 	);
 }
