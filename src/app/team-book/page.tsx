@@ -1,25 +1,15 @@
 import type { Metadata } from "next";
-import TeamBook from "@/components/pages/TeamBook";
-import PageGuard from "@/lib/page-guard";
+import PasswordGate from "@/components/pages/PasswordGate";
 
 export const metadata: Metadata = {
-	title: "NCAi · команда под капотом — 17 сотрудников · 111 промптов",
-	description:
-		"Книга команды NCAi: 17 AI-сотрудников в 6 отделах (директор, разработка, маркетинг, контент и книга, финансы), 111 готовых промптов в 9 категориях, механика работы агентства под капотом. Карточки агентов, каталог промптов с копированием, поиск ⌘K.",
+	title: "NCAi · команда под капотом",
+	description: "Закрытый раздел NCAi. Доступ по паролю.",
 	alternates: { canonical: "/team-book" },
-	openGraph: {
-		type: "website",
-		title: "NCAi · команда под капотом",
-		description: "17 AI-сотрудников · 111 промптов · механика агентства. Как работает команда NCAi сама, 24/7.",
-		url: "https://ilya-novitsky.ru/team-book",
-	},
 	robots: { index: false, follow: false },
 };
 
 export default function Page() {
-	return (
-		<PageGuard>
-			<TeamBook />
-		</PageGuard>
-	);
+	// TeamBook рендерится ТОЛЬКО на клиенте после ввода пароля
+	// (dynamic ssr:false) — данные сотрудников и промптов не попадают в статический HTML.
+	return <PasswordGate kind="team" />;
 }
