@@ -285,6 +285,38 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
   color:#050505;-webkit-text-fill-color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
   box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease),box-shadow .2s}
 .bk-card:hover .bk-cta{transform:translateX(4px);box-shadow:0 10px 30px rgba(255,208,0,.3)}
+/* ИЗНАНКА · реальные цифры NCAi */
+#iznanka{padding:6rem 0;background:var(--bgc);position:relative;overflow:hidden}
+@media(max-width:640px){#iznanka{padding:4rem 0}}
+#iznanka::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 50% 0%,rgba(255,208,0,.05),transparent)}
+.iz-head{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:end;margin-bottom:3rem}
+@media(max-width:900px){.iz-head{grid-template-columns:1fr;gap:1.5rem}}
+.iz-tx{font-size:.98rem;color:#b8b3ac;line-height:1.8}
+.iz-tx strong{color:var(--t)}
+.iz-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem}
+@media(max-width:700px){.iz-stats{grid-template-columns:1fr 1fr}.iz-stats .iz-stat:last-child{grid-column:1/-1}}
+.iz-stat{background:var(--bgc2);border:1px solid var(--br2);border-radius:16px;padding:2rem 1.75rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
+.iz-stat:hover{border-color:rgba(255,208,0,.3);transform:translateY(-4px)}
+.iz-stat::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0;transition:opacity .3s}
+.iz-stat:hover::after{opacity:1}
+.iz-n{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.05em;color:var(--a);line-height:.95;margin-bottom:.5rem}
+.iz-n small{font-size:.45em;color:var(--t2);font-weight:700;letter-spacing:0}
+.iz-l{font-family:var(--fm);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--t3);line-height:1.5}
+.iz-report{background:#0c0c0c;border:1px solid var(--br2);border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.iz-rep-top{display:flex;align-items:center;gap:.5rem;padding:.8rem 1.1rem;border-bottom:1px solid var(--br);background:var(--bgc2)}
+.iz-dot{width:9px;height:9px;border-radius:50%;background:var(--br2);flex-shrink:0}
+.iz-dot:nth-child(1){background:#e84040}.iz-dot:nth-child(2){background:#FFD000}.iz-dot:nth-child(3){background:#2ecc71}
+.iz-rep-title{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;color:var(--t3);margin-left:.4rem}
+.iz-rep-body{font-family:var(--fm);font-size:.78rem;line-height:1.7;padding:1.5rem 1.6rem;color:var(--t2)}
+.iz-rep-body .ln{display:flex;gap:.75rem;align-items:flex-start}
+.iz-rep-body .ok{color:#2ecc71;flex-shrink:0}
+.iz-rep-body .task{color:var(--t)}
+.iz-rep-body .st{color:var(--a)}
+.iz-rep-body .dim{color:var(--t3)}
+.iz-rep-div{border:none;border-top:1px solid var(--br);margin:.9rem 0}
+.iz-bot{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.25rem}
+.iz-bot .tx{font-family:var(--fd);font-size:clamp(1rem,1.8vw,1.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;flex:1;min-width:240px}
+.iz-bot .tx span{color:var(--a)}
 section[id]{scroll-margin-top:76px}
 `;
 
@@ -553,6 +585,43 @@ export const body = `
       <span class="cl-pill">AI-Риелтор</span>
       <span class="cl-pill">Школа Трейдинга · 6.5M ₽</span>
       <span class="cl-pill">BBQ строительство</span>
+    </div>
+  </div>
+</section>
+
+<!-- ИЗНАНКА · реальные цифры NCAi -->
+<section id="iznanka">
+  <div class="wrap">
+    <div class="iz-head">
+      <div>
+        <span class="sec-tag rv">Изнанка · честные цифры</span>
+        <h2 class="sec-h2 rv d1">Команда уже работает.<br>Вот её изнанка.</h2>
+      </div>
+      <p class="iz-tx rv d2">Это не маркетинг и не «скоро». Это реальные отчёты NCAi: <strong>задачи выполнены, токены потрачены, расход — копейки</strong>. Агентская команда работает 24/7 и стоит меньше, чем один день живого отдела.</p>
+    </div>
+    <div class="iz-stats">
+      <div class="iz-stat rv"><div class="iz-n">163</div><div class="iz-l">Задачи выполнено</div></div>
+      <div class="iz-stat rv d1"><div class="iz-n">224</div><div class="iz-l">Запуска агентов</div></div>
+      <div class="iz-stat rv d2"><div class="iz-n"><small>$</small>12.46</div><div class="iz-l">Суммарный расход · весь период</div></div>
+    </div>
+    <div class="iz-report rv d1">
+      <div class="iz-rep-top">
+        <span class="iz-dot"></span><span class="iz-dot"></span><span class="iz-dot"></span>
+        <span class="iz-rep-title">NCAi · agent_stats · отчёт</span>
+      </div>
+      <div class="iz-rep-body">
+        <div class="ln"><span class="ok">✔</span><span><span class="task">Сформировать контент-план на неделю</span> — <span class="st">done</span></span></div>
+        <div class="ln"><span class="ok">✔</span><span><span class="task">Прогрев базы: 20 тёплых контактов</span> — <span class="st">done</span></span></div>
+        <div class="ln"><span class="ok">✔</span><span><span class="task">Финансовый отчёт за день</span> — <span class="st">done</span></span></div>
+        <div class="ln"><span class="ok">✔</span><span><span class="task">Напоминания клиентам о записи</span> — <span class="st">done</span></span></div>
+        <hr class="iz-rep-div">
+        <div class="ln"><span class="dim">→</span><span>Модели: <span class="st">GLM-5.2 · DeepSeek · Ollama</span> · токены контекста: <span class="st">84K</span></span></div>
+        <div class="ln"><span class="dim">→</span><span>Расход по задаче: <span class="st">$0.02</span> · всего: <span class="st">$12.46</span></span></div>
+      </div>
+    </div>
+    <div class="iz-bot rv d2">
+      <div class="tx">«Команда» за <span>копейки</span> — это уже не мечта, а отчёт.</div>
+      <a href="/consulting" class="bk-cta" style="font-size:.82rem;padding:.7rem 1.5rem">Хочу такую команду →</a>
     </div>
   </div>
 </section>

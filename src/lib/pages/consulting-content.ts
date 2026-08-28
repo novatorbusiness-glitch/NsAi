@@ -414,6 +414,47 @@ section[id]{scroll-margin-top:76px}
 .amp-ico{font-size:1.3rem;flex-shrink:0}
 .amp-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.35rem}
 .amp-x{font-size:.85rem;color:var(--t2);line-height:1.55}
+
+/* ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ */
+#roi{background:var(--bg2);position:relative;overflow:hidden}
+#roi::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,208,0,.045),transparent)}
+.roi-head{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
+@media(max-width:900px){.roi-head{grid-template-columns:1fr;gap:1.5rem}}
+.roi-tx{font-size:1.02rem;color:var(--t2);line-height:1.75;max-width:540px}
+.roi-tx strong{color:var(--t)}
+.roi-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3.5rem}
+@media(max-width:640px){.roi-stats{grid-template-columns:1fr 1fr}.roi-stats .roi-stat:last-child{grid-column:1/-1}}
+.roi-stat{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:1.75rem 1.5rem;position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
+.roi-stat:hover{border-color:rgba(255,208,0,.25);transform:translateY(-4px)}
+.roi-stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--a);opacity:.6}
+.roi-stat .n{font-family:var(--fd);font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;letter-spacing:-.04em;color:var(--a);line-height:1}
+.roi-stat .l{font-family:var(--fm);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--t3);margin-top:.55rem;line-height:1.5}
+.roi-vs{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:stretch}
+@media(max-width:800px){.roi-vs{grid-template-columns:1fr;gap:.75rem}}
+.roi-col{border-radius:14px;padding:2rem;position:relative;overflow:hidden}
+.roi-col.bad{background:var(--bgc);border:1px solid var(--br)}
+.roi-col.good{background:var(--bgc);border:1px solid rgba(255,208,0,.28)}
+.roi-col.good::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,208,0,.05),transparent)}
+.roi-col-head{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding-bottom:1.1rem;border-bottom:1px solid var(--br);margin-bottom:1rem}
+.roi-col-head .tag{font-family:var(--fd);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.roi-col.bad .tag{color:var(--t3)}
+.roi-col.good .tag{color:var(--a)}
+.roi-col-head .price{font-family:var(--fd);font-size:.76rem;font-weight:800;color:var(--t2);white-space:nowrap}
+.roi-col.good .price{color:var(--t)}
+.roi-col.good .price b{color:var(--a)}
+.roi-li{display:flex;gap:.7rem;padding:.55rem 0;font-size:.86rem;line-height:1.55;color:var(--t2);align-items:flex-start}
+.roi-li b{color:var(--t);font-weight:600}
+.roi-li .x{color:var(--red);font-weight:700;flex-shrink:0;width:16px;text-align:center}
+.roi-li .y{color:var(--a);font-weight:700;flex-shrink:0;width:16px;text-align:center}
+.roi-mid{align-self:center;font-family:var(--fd);font-weight:800;font-size:1.4rem;color:var(--br2);text-align:center}
+@media(max-width:800px){.roi-mid{transform:rotate(90deg);justify-self:center;padding:.25rem 0}}
+.roi-total{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--br);font-family:var(--fd);font-size:.95rem;font-weight:800;flex-wrap:wrap}
+.roi-total .lbl{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.roi-total.bad .v{color:var(--t3);text-decoration:line-through;text-decoration-color:rgba(232,64,64,.5)}
+.roi-total.good .v{color:var(--a);font-size:1.05rem}
+.roi-bottom{margin-top:3rem;padding:1.75rem 2.25rem;border:1px solid rgba(255,208,0,.2);border-radius:14px;background:var(--ad);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.roi-bottom .tx{font-family:var(--fd);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;flex:1;min-width:260px}
+.roi-bottom .tx span{color:var(--a)}
 `;
 
 export const body = `<div id="cd"></div><div id="cr"></div>
@@ -555,6 +596,48 @@ export const body = `<div id="cd"></div><div id="cr"></div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">
+
+<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
+<section id="roi">
+  <div class="w">
+    <div class="roi-head">
+      <div>
+        <span class="lb rv">Почему это окупается</span>
+        <h2 class="sh2 rv d1">250 000 ₽ — это не трата.<br>Это сэкономленные миллионы.</h2>
+      </div>
+      <p class="roi-tx rv d2">Вы платите не за «ботов в Telegram» и не за красивые консультации. Вы платите за то, чтобы <strong>ближайшие полгода не отдавать миллионы за зарплаты</strong> — и запускать свои продукты за <strong>дни, а не за месяцы</strong>. Это не расход. Это ROI.</p>
+    </div>
+    <div class="roi-stats">
+      <div class="roi-stat rv"><div class="n">до 10×</div><div class="l">Окупаемость внедрения за полгода</div></div>
+      <div class="roi-stat rv d1"><div class="n">2–3 млн ₽</div><div class="l">Не тратите на зарплаты команды в год</div></div>
+      <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
+    </div>
+    <div class="roi-vs">
+      <div class="roi-col bad rv">
+        <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">150–250к ₽ / мес</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>SMM + таргетолог + копирайтер — <b>150–250 тыс ₽ в месяц</b> на троих</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>За год — <b>≈ 2–3 млн ₽</b> только на зарплаты, без софта и налогов</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>Работают 9:00–18:00, болеют, увольняются, «не в настроении»</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>Новый запуск = месяцы на найм, онбординг и раскачку</span></div>
+        <div class="roi-total bad"><span class="lbl">Итог за год</span><span class="v">≈ 2–3 млн ₽</span></div>
+      </div>
+      <div class="roi-mid">VS</div>
+      <div class="roi-col good rv d1">
+        <div class="roi-col-head"><span class="tag">NCAi-агентство</span><span class="price"><b>250 000 ₽</b> разово</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Разовый чек за внедрение — <b>250 000 ₽</b>, потом подписка от 2 900 ₽/мес</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b>: не болеет, не увольняется, не просит прибавку</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Задача утром — <b>результат днём</b>. Запуск за дни, а не за месяцы</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Передача руля: система остаётся с вами, зависимость уходит</span></div>
+        <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">250 000 ₽ + подписка</span></div>
+      </div>
+    </div>
+    <div class="roi-bottom rv d2">
+      <div class="tx">Один раз заплатили за систему — <span>полгода не платите миллионы за людей.</span></div>
+      <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.88rem;padding:.85rem 1.9rem">Обсудить окупаемость <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </section>
