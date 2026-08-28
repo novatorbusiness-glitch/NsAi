@@ -367,7 +367,53 @@ section[id]{scroll-margin-top:76px}
 @media(max-width:640px){.tlcon{min-height:auto}}
 /* Внедрение NCAi за 30 дней: мелкие правки под новый контент */
 .tlcon{min-height:190px}
-@media(max-width:640px){.tlcon{min-height:auto}}`;
+@media(max-width:640px){.tlcon{min-height:auto}}
+/* NEW · 10-блочная продающая структура */
+.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+@media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
+.pr{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:2rem;position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
+.pr:hover{border-color:var(--trb);transform:translateY(-4px)}
+.pr-n{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tr);margin-bottom:.8rem}
+.pr-t{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.6rem}
+.pr-x{font-size:.87rem;color:var(--t2);line-height:1.62}
+.w-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start}
+@media(max-width:800px){.w-row{grid-template-columns:1fr}}
+.w-col{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:1.75rem 2rem}
+.w-col-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+.w-li{display:flex;gap:.85rem;padding:.65rem 0;font-size:.9rem;color:var(--t2);line-height:1.55;border-bottom:1px solid var(--br)}
+.w-li:last-child{border-bottom:none}
+.w-li b{color:var(--t);font-weight:600}
+.w-ico{flex-shrink:0;margin-top:.05rem;color:var(--tr);font-family:var(--fd);font-weight:700}
+.bigidea{margin-top:2.5rem;padding:2rem 2.25rem;border:1px solid var(--trb);border-radius:14px;background:var(--trd);position:relative}
+.bigidea-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--tr);margin-bottom:.7rem}
+.bigidea-tx{font-family:var(--fd);font-size:clamp(1.15rem,2.2vw,1.6rem);font-weight:800;line-height:1.3;letter-spacing:-.02em}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+@media(max-width:800px){.qgrid{grid-template-columns:1fr}}
+.qcard{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem 1.75rem;transition:border-color .25s}
+.qcard:hover{border-color:var(--trb)}
+.qtag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
+.qtag.e{color:var(--tr)}.qtag.l{color:var(--a)}
+.qq{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);line-height:1.35;margin-bottom:.5rem}
+.qa{font-size:.85rem;color:var(--t2);line-height:1.55}
+.obj{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.5rem 1.75rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);margin-top:1rem;transition:border-color .25s}
+.obj:hover{border-color:var(--trb)}
+@media(max-width:700px){.obj{grid-template-columns:1fr;gap:.6rem}}
+.obj-q{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);line-height:1.3}
+.obj-q::before{content:'«'}
+.obj-a{font-size:.9rem;color:var(--t2);line-height:1.6}
+.obj-a b{color:var(--t);font-weight:600}
+.meta4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+@media(max-width:640px){.meta4{grid-template-columns:1fr 1fr}}
+.m4{background:var(--bgc2);border:1px solid var(--br);border-radius:10px;padding:1rem 1.1rem}
+.m4-l{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.35rem}
+.m4-v{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.35}
+.amp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem}
+@media(max-width:640px){.amp-grid{grid-template-columns:1fr}}
+.amp{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.amp-ico{font-size:1.3rem;flex-shrink:0}
+.amp-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.35rem}
+.amp-x{font-size:.85rem;color:var(--t2);line-height:1.55}
+`;
 
 export const body = `<div id="cd"></div><div id="cr"></div>
 <div id="prog"></div>
@@ -386,15 +432,16 @@ export const body = `<div id="cd"></div><div id="cr"></div>
   </div>
 </nav>
 
+<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero">
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Внедрение NCAi-агентства · 30 дней</div>
-    <h1 class="hh1">Агентство<br>в коробке. <em>Распаковка за 30 дней.</em><span class="acc">Работает уже с первой сессии.</span></h1>
+    <h1 class="hh1">Ты не можешь масштабировать бизнес, потому что вся работа живёт <em>у тебя в голове</em> и руками.<span class="acc">Новый способ: агентство в коробке за 30 дней.</span></h1>
     <p class="hsub">Внедряю вам рабочее NCAi-агентство прямо в панели: AI-команда, отделы, задачи, база клиентов и аналитика. За 30 дней — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
     <div class="hacts">
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp">Обсудить внедрение <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="#unpack" class="bs">Как проходит внедрение</a>
+      <a href="#idea" class="bs">Почему это работает</a>
     </div>
     <div class="hstats">
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="30">0</span><span class="sfx">дней</span></div><div class="hstatl">От распаковки до передачи руля</div></div>
@@ -431,12 +478,58 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 </section>
 <hr class="dv">
 
-<section id="box">
+<!-- 1 · БОЛЬШАЯ ИДЕЯ -->
+<section id="idea">
+  <div class="w">
+    <span class="lb rv">Большая идея</span>
+    <h2 class="sh2 rv d1">Почему бизнес не растёт, хотя сил уходит всё больше</h2>
+    <p class="sl rv d2">Ты владелец малого бизнеса с живой операционкой: салон, клиника, магазин, услуги. Клиенты есть, рутина съедает день, а масштабироваться не получается.</p>
+    <div class="pr-grid">
+      <div class="pr rv d1">
+        <div class="pr-n">Проблема 1</div>
+        <div class="pr-t">Вся работа в твоей голове</div>
+        <div class="pr-x">Ты сам ставишь задачи, сам напоминаешь, сам считаешь. Пока ты болешь или отдыхаешь — бизнес стоит.</div>
+      </div>
+      <div class="pr rv d2">
+        <div class="pr-n">Проблема 2</div>
+        <div class="pr-t">Найм — дорого и ненадёжно</div>
+        <div class="pr-x">SMM, таргетолог, копирайтер — это 150–250 тыс ₽ в месяц. Плюс налоги, софт и риск, что человек уволится.</div>
+      </div>
+      <div class="pr rv d3">
+        <div class="pr-n">Проблема 3</div>
+        <div class="pr-t">Подрядчик — чёрный ящик</div>
+        <div class="pr-x">Агентство делает «что-то», отчитывается раз в месяц, а как это устроено — не знает никто. Ушёл подрядчик — встало всё.</div>
+      </div>
+    </div>
+    <div class="w-row">
+      <div class="w-col rv d2">
+        <div class="w-col-tag">Почему так происходит</div>
+        <div class="w-li"><span class="w-ico">1</span><span><b>Рутина не автоматизирована.</b> Ты платишь вниманием за то, что система должна делать сама.</span></div>
+        <div class="w-li"><span class="w-ico">2</span><span><b>Найм = риск, а не актив.</b> Люди болеют, увольняются и требуют управления.</span></div>
+        <div class="w-li"><span class="w-ico">3</span><span><b>Консалтинг продаёт слайды, а не систему.</b> «Стратегия» и отчёты не остаются работать после ухода консультанта.</span></div>
+      </div>
+      <div class="w-col rv d3">
+        <div class="w-col-tag">Истинные причины</div>
+        <div class="w-li"><span class="w-ico">1</span><span><b>Нет работающей системы</b> — есть героические усилия вручную.</span></div>
+        <div class="w-li"><span class="w-ico">2</span><span><b>Знания уходят вместе с людьми</b> — всё в головах, а не в панели.</span></div>
+        <div class="w-li"><span class="w-ico">3</span><span><b>Ты покупал услуги, а не актив</b> — результат не оставался с тобой.</span></div>
+      </div>
+    </div>
+    <div class="bigidea rv d2">
+      <div class="bigidea-tag">Big idea</div>
+      <div class="bigidea-tx">Купи не консультанта и не подрядчика — купи работающее агентство, распакованное под твой бизнес за 30 дней. Система остаётся, зависимость уходит.</div>
+    </div>
+  </div>
+</section>
+<hr class="dv">
+
+<!-- 2 · СУТЬ ИДЕИ -->
+<section id="box" style="background:var(--bg2)">
   <div class="w">
     <div class="uw">
       <div>
         <div class="ugh rv">01</div>
-        <span class="lb rv d1">Агентство в коробке</span>
+        <span class="lb rv d1">Суть идеи</span>
         <h2 class="uh2 rv d1">Покупаете не консультанта.<br>Покупаете агентство.<br>Уже распакованное.</h2>
         <p class="up rv d2">NCAi — SaaS-платформа, в которой у каждого клиента своё агентство в панели. Не «чат с нейросетью», а <strong>рабочее агентство</strong>: цифровые сотрудники с ролями и базой знаний, отделы, задачи, база клиентов, аналитика и финансы.</p>
         <p class="up rv d2">Обычный консалтинг длится 2–3 месяца и заканчивается презентацией. Внедрение NCAi длится 30 дней и заканчивается <strong>работающим агентством</strong>, в котором клиент сам ставит задачи и видит финансы.</p>
@@ -467,11 +560,12 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 </section>
 <hr class="dv">
 
-<section id="gets" style="background:var(--bg2)">
+<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
+<section id="gets">
   <div class="w">
-    <span class="lb rv">Что получаете</span>
-    <h2 class="sh2 rv d1">Распаковка. И у вас<br>рабочее агентство.</h2>
-    <p class="sl rv d2">За одну сессию 60–90 минут вы получаете то, что запускаете сразу. За 30 дней — систему, которая работает без вас.</p>
+    <span class="lb rv">Уникальный механизм</span>
+    <h2 class="sh2 rv d1">Что вы получаете<br>после распаковки</h2>
+    <p class="sl rv d2">За одну сессию 60–90 минут — то, что запускается сразу. За 30 дней — система, которая работает без вас.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nnum">01</div><div class="ntit">Workspace вашего бизнеса</div><p class="ntx">Не «Мой проект», а «Салон Анны». Кабинет агентства: команда, задачи, отчёты и деньги в одном месте.</p></div>
       <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-команда 3–5 сотрудников</div><p class="ntx">Цифровые сотрудники с ролями и базой знаний: маркетолог, копирайтер, администратор, финансист. Каждый — со зоной ответственности.</p></div>
@@ -484,11 +578,12 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 </section>
 <hr class="dv">
 
-<section id="unpack">
+<!-- 4 · МЕХАНИЗМ: 30 ДНЕЙ -->
+<section id="unpack" style="background:var(--bg2)">
   <div class="w">
     <div class="mhead">
-      <div><span class="lb rv">30 дней</span><h2 class="sh2 rv d1">Как проходит<br>внедрение</h2></div>
-      <div><p class="rv d1" style="font-size:1rem;color:var(--t2);line-height:1.75;padding-top:1.2rem">Не «мы над этим работаем». Четыре недели, каждый этап — с понятным результатом. Клиент двигается от распаковки к передаче руля.</p></div>
+      <div><span class="lb rv">Как проходит внедрение</span><h2 class="sh2 rv d1">30 дней<br>от коробки к рулю</h2></div>
+      <div><p class="rv d1" style="font-size:1rem;color:var(--t2);line-height:1.75;padding-top:1.2rem">Не «мы над этим работаем». Четыре недели, каждый этап — с понятным результатом. Вы двигаетесь от распаковки к передаче руля.</p></div>
     </div>
     <div class="tltrack rv d2">
       <div class="tlst act" data-s="0"><div class="tldt">01</div><div class="tlstit">Распаковка</div><div class="tldur">нед 1</div></div>
@@ -497,22 +592,23 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div class="tlst" data-s="3"><div class="tldt">04</div><div class="tlstit">Передача руля</div><div class="tldur">нед 4</div></div>
     </div>
     <div class="tlcon rv d3">
-      <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-команда 3–5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Клиент сам ставит первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
-      <div class="tlp"><div class="tlpdur">Неделя 2 · в работу</div><div class="tlptit">Клиент ведёт задачи сам</div><p class="tlptx">Ежедневные отчёты идут, клиент ставит задачи без подсказок. Созвон через 3 дня — разбираем первые вопросы. Сотрудники выполняют рутину, владелец принимает решения, а не тонет в операционке.</p><div class="tlpdel"><span>→</span> Первый реальный результат</div></div>
-      <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда клиент сам увидел пользу и попросил.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
-      <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Клиент самостоятелен</div><p class="tlptx">Клиент сам ставит задачи и смотрит финансы без участия внедренца. Знает, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся — зависимость уходит.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
+      <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-команда 3–5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Вы сами ставите первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 2 · в работу</div><div class="tlptit">Вы ведёте задачи сами</div><p class="tlptx">Ежедневные отчёты идут, вы ставите задачи без подсказок. Созвон через 3 дня — разбираем первые вопросы. Сотрудники выполняют рутину, владелец принимает решения, а не тонет в операционке.</p><div class="tlpdel"><span>→</span> Первый реальный результат</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда вы сами увидели пользу и попросили.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Вы самостоятельны</div><p class="tlptx">Вы сами ставите задачи и смотрите финансы без участия внедренца. Знаете, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся — зависимость уходит.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="steps" style="background:var(--bg2)">
+<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 МИН -->
+<section id="steps">
   <div class="w">
     <div class="wlay">
       <div>
         <span class="lb rv">Распаковка · сессия</span>
         <h2 class="sh2 rv d1">90 минут —<br>и агентство работает</h2>
-        <p class="sl rv d2" style="margin-bottom:0">Шесть шагов, за которые клиент получает агентство и понимает, как оно устроено. Нажмите на шаг.</p>
+        <p class="sl rv d2" style="margin-bottom:0">Шесть шагов, за которые вы получаете агентство и понимаете, как оно устроено. Нажмите на шаг.</p>
         <div class="funnelw rv d3">
           <svg viewBox="0 0 280 270" width="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -529,7 +625,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
             <text x="140" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.5)">База клиентов</text>
             <path d="M102 176 L178 176 L160 222 L120 222 Z" fill="url(#fl4)" stroke="rgba(255,208,0,.1)" stroke-width="1"/>
             <text x="140" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.4)">Аналитика · финансы</text>
-            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(255,255,255,.15)">в конце — клиент сам ставит задачу</text>
+            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(255,255,255,.15)">в конце — вы сами ставите задачу</text>
           </svg>
         </div>
       </div>
@@ -537,7 +633,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
         <div class="wi act"><div class="wico">📦</div><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет агентства с названием вашего бизнеса. Это не «Мой проект» — здесь живут сотрудники, задачи и деньги.</div></div></div>
         <div class="wi"><div class="wico">🧑‍💼</div><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">3–5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Не больше 5 ролей на старте — слабого выводим, а не терпим.</div></div></div>
         <div class="wi"><div class="wico">🏛️</div><div><div class="wtit">Шаг 3 · Отделы (10 мин)</div><div class="wtx">Разработка, маркетинг, контент, финансы. Раскладываем сотрудников по отделам, чтобы у каждого был «дом» и зона ответственности.</div></div></div>
-        <div class="wi"><div class="wico">✅</div><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Клиент сам ставит одну задачу — это его «экзамен» дня.</div></div></div>
+        <div class="wi"><div class="wico">✅</div><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
         <div class="wi"><div class="wico">📇</div><div><div class="wtit">Шаг 5 · База клиентов (15 мин)</div><div class="wtx">Подключаем базу: список, таблица или CRM. База — топливо системы. Нет базы — заводим 10 тёплых контактов для старта.</div></div></div>
         <div class="wi"><div class="wico">📊</div><div><div class="wtit">Шаг 6 · Аналитика и финансы (10 мин)</div><div class="wtx">Доход, расход, маржа, прибыль, расход токенов. «Контроль» — кто сегодня что делал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
       </div>
@@ -546,65 +642,50 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 </section>
 <hr class="dv">
 
-<section id="vsmarket">
+<!-- 6 · 10 ВОПРОСОВ -->
+<section id="questions" style="background:var(--bg2)">
   <div class="w">
-    <span class="lb rv">Сравнение</span>
-    <h2 class="sh2 rv d1">Как внедряют обычно.<br>Как внедряю я.</h2>
-    <div class="vstable-wrap rv d2">
-      <div class="vstable">
-        <div class="vshead"><div class="vsh cr">Критерий</div><div class="vsh th">Обычно</div><div class="vsh me2">→ NCAi</div></div>
-        <div class="vsrow"><div class="vsc cr">Срок</div><div class="vsc th">Консалтинг 2–3 месяца, агентство на аутсорсе</div><div class="vsc me">30 дней до работающего агентства</div></div>
-        <div class="vsrow"><div class="vsc cr">Результат</div><div class="vsc th">Презентация, рекомендации, отчёты</div><div class="vsc me">Система в панели: команда, задачи, финансы</div></div>
-        <div class="vsrow"><div class="vsc cr">Зависимость</div><div class="vsc th">Всё в голове подрядчика. Ушёл — встало</div><div class="vsc me">Передаём руль. Клиент сам ведёт задачи</div></div>
-        <div class="vsrow"><div class="vsc cr">Стоимость</div><div class="vsc th">Найм команды или чек агентства каждый месяц</div><div class="vsc me">Разовый чек за внедрение + подписка от 2 900 ₽</div></div>
-        <div class="vsrow"><div class="vsc cr">Прозрачность</div><div class="vsc th">Отчёт раз в месяц, «чёрный ящик» между ними</div><div class="vsc me">Панель 24/7: задачи, отчёты, аналитика, финансы</div></div>
-        <div class="vsrow"><div class="vsc cr">AI</div><div class="vsc th">ChatGPT для текстов — «AI-автоматизация» на словах</div><div class="vsc me">Цифровые сотрудники с ролями и правом на действие</div></div>
-      </div>
+    <span class="lb rv">10 вопросов</span>
+    <h2 class="sh2 rv d1">Ответьте себе честно</h2>
+    <p class="sl rv d2">Семь вопросов про эмоции и три про логику. Если на большинство ответите «да» — внедрение за 30 дней для вас.</p>
+    <div class="qgrid">
+      <div class="qcard rv"><span class="qtag e">Вопрос 1 · эмоции</span><div class="qq">Сколько часов в день вы тратите на рутину, которую должен делать кто-то другой?</div><div class="qa">Каждый такой час — это час, который не работает на рост бизнеса.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 2 · эмоции</span><div class="qq">Вам не страшно, что бизнес стоит, пока вы в отпуске или болеете?</div><div class="qa">Система не болеет, не увольняется и не «не в настроении».</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 3 · эмоции</span><div class="qq">Сколько денег вы уже отдали агентствам, после которых система так и не появилась?</div><div class="qa">Вы покупали услуги. Здесь вы покупаете актив, который остаётся.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 4 · эмоции</span><div class="qq">Что вы почувствуете, когда утром откроете панель и увидите, что всё сделано само?</div><div class="qa">Это и есть передача руля: вы управляете, а не тоните в операционке.</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 5 · эмоции</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
+      <div class="qcard rv d1"><span class="qtag e">Вопрос 6 · эмоции</span><div class="qq">Что будет с бизнесом через год, если вы продолжите работать руками, как сейчас?</div><div class="qa">Без системы масштаб упирается в ваше личное время.</div></div>
+      <div class="qcard rv"><span class="qtag e">Вопрос 7 · эмоции</span><div class="qq">Хотите ли вы, наконец, перестать быть единственным, кто всё держит в голове?</div><div class="qa">Агентство в коробке — это способ перестать быть «человеком-системой».</div></div>
+      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: найм 2–3 человек за 150–250 тыс ₽/мес или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это 2–5% от стоимости найма. Математика простая.</div></div>
+      <div class="qcard rv"><span class="qtag l">Вопрос 9 · логика</span><div class="qq">Сколько стоит один месяц простоя, пока вы «решаетесь»?</div><div class="qa">Месяц внедрения против месяца ожидания — разница в системе, которая уже работает.</div></div>
+      <div class="qcard rv d1"><span class="qtag l">Вопрос 10 · логика</span><div class="qq">Готовы ли вы выделить одну сессию 90 минут, чтобы получить рабочее агентство?</div><div class="qa">Это единственное усилие на старте. Дальше систему ведут сотрудники.</div></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
-<section id="how" style="background:var(--bg2)">
+<!-- 7 · ВОЗРАЖЕНИЯ -->
+<section id="objections">
   <div class="w">
-    <div class="hlay">
-      <div>
-        <span class="lb rv">Кому подходит</span>
-        <h2 class="sh2 rv d1">Кому внедрение<br>за 30 дней</h2>
-        <p class="sl rv d2" style="margin-bottom:2rem">Агентство в коробке — для действующего бизнеса, который хочет автоматизировать рутину, а не покупать лекции.</p>
-        <div class="hplist">
-          <div class="hpr rv"><div class="hptit">Система, а не услуга</div><p class="hptx">Вы платите за работающее агентство в панели, а не за часы консультанта. Результат остаётся с вами после 30 дней.</p></div>
-          <div class="hpr rv d1"><div class="hptit">Передача руля — цель</div><p class="hptx">Успех внедрения — когда вы сами ставите задачи и смотрите финансы без чьего-либо участия. Зависимость — провал, а не бизнес-модель.</p></div>
-          <div class="hpr rv d2"><div class="hptit">Цифровые сотрудники, не чат</div><p class="hptx">У каждого агента роль, память и право на действие. Команда внутри общего контекста агентства — контент, напоминания, отчёты.</p></div>
-          <div class="hpr rv d3"><div class="hptit">Ценность сначала, доплаты потом</div><p class="hptx">Ничего не продаём на распаковке. Расширение — только когда клиент увидел результат и сам попросил больше.</p></div>
-        </div>
-      </div>
-      <div class="hfor rv d2">
-        <div class="hfortit no">Кому не подойдёт</div>
-        <div class="hflist">
-          <div class="hfno">Хотите слайды и стратегию без системы</div>
-          <div class="hfno">Команды и рутины нет — автоматизировать нечего</div>
-          <div class="hfno">Ждёте результат без своей сессии распаковки</div>
-          <div class="hfno">Продукт ещё не проверен рынком</div>
-        </div>
-        <div class="hfortit yes">Кому подойдёт идеально</div>
-        <div class="hflist" style="margin-bottom:0">
-          <div class="hfyes"><span>✓</span>Есть действующий бизнес и повторяющаяся рутина</div>
-          <div class="hfyes"><span>✓</span>Есть база клиентов или контакты для старта</div>
-          <div class="hfyes"><span>✓</span>Хотите систему, а не зависимость от подрядчика</div>
-          <div class="hfyes"><span>✓</span>Готовы одну сессию поработать вместе</div>
-        </div>
-      </div>
-    </div>
+    <span class="lb rv">Возражения</span>
+    <h2 class="sh2 rv d1">«Да, но...» — и почему это не аргумент</h2>
+    <p class="sl rv d2">Самые частые сомнения перед внедрением. Разберём каждое по очереди.</p>
+    <div class="obj rv d1"><div class="obj-q">Это робот, я ему не доверяю</div><div class="obj-a">За системой стоит живой человек — архитектор, которому можно написать в любой момент. Цифровые сотрудники работают по вашему регламенту и под вашим контролем.</div></div>
+    <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">На распаковке заводим 10 тёплых контактов для старта. База — топливо системы, и её можно собрать за первую неделю.</div></div>
+    <div class="obj rv d1"><div class="obj-q">Я не технарь, панель не осилю</div><div class="obj-a">Панель — это Telegram Mini App: ставить задачи и смотреть финансы проще, чем вести таблицу в Excel. 90 минут на сессии вы во всём разберётесь.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Уже пробовали автоматизацию — не взлетело</div><div class="obj-a">Разница в подходе: не «подключили бота», а построили агентство с ролями, базой знаний и правом на действие. Плюс передача руля, а не зависимость.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм отдела — 150–250 тыс ₽/мес. Подписка — от 2 900 ₽. Это 2–5% от стоимости найма за команду, которая работает 24/7.</div></div>
+    <div class="obj rv d2"><div class="obj-q">А если мне не понравится?</div><div class="obj-a">14 дней trial после распаковки — вы видите продукт в действии до того, как платить за подписку. Решение принимаете по факту, а не по обещаниям.</div></div>
   </div>
 </section>
 <hr class="dv">
 
+<!-- 8 · ОФФЕР -->
 <section id="offer">
   <div class="w">
     <div class="ofin">
-      <span class="lb rv" style="justify-content:center">Внедрение · 30 дней</span>
-      <h2 class="ofh2 rv d1">Агентство в коробке.<br>Внедрение за 30 дней.</h2>
+      <span class="lb rv" style="justify-content:center">Оффер · внедрение 30 дней</span>
+      <h2 class="ofh2 rv d1">Всё, что вы получаете<br>в обмен на деньги</h2>
       <p class="ofsub rv d2">Разовый чек за внедрение (распаковку) + ежемесячная подписка на платформу. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит во внедрение</p>
@@ -614,7 +695,13 @@ export const body = `<div id="cd"></div><div id="cr"></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">30 дней внедрения <span>4 недели: распаковка → передача руля</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Ежедневное сопровождение <span>брифинг в 10:00, отчёт в 18:00, созвоны</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка от 2 900 ₽/мес <span>Standard · 5 мест · $15 AI-бюджета · 14 дней trial</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Передача руля <span>клиент сам ставит задачи и смотрит финансы</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Передача руля <span>вы сами ставите задачи и смотрите финансы</span></div></div>
+        </div>
+        <div class="meta4">
+          <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Агентство в панели, которое работает без вас</div></div>
+          <div class="m4"><div class="m4-l">Вероятность</div><div class="m4-v">Высокая: система видна с первой сессии</div></div>
+          <div class="m4"><div class="m4-l">Время до результата</div><div class="m4-v">30 дней, руль у вас уже в неделю 4</div></div>
+          <div class="m4"><div class="m4-l">Ваши усилия</div><div class="m4-v">Анкета + одна сессия 90 минут</div></div>
         </div>
         <div class="ofmeta">
           <div><div class="ofml">Формат</div><div class="ofmv">Сессия + панель</div></div>
@@ -627,6 +714,82 @@ export const body = `<div id="cd"></div><div id="cr"></div>
         <a href="/agency-in-a-box" class="bs">Читать «Агентство в коробке»</a>
       </div>
     </div>
+  </div>
+</section>
+<hr class="dv">
+
+<!-- 9 · УСИЛИТЕЛИ -->
+<section id="amp" style="background:var(--bg2)">
+  <div class="w">
+    <span class="lb rv">Почему сейчас</span>
+    <h2 class="sh2 rv d1">Дефицит и срочность</h2>
+    <p class="sl rv d2">Внедрение — это личная работа с каждым клиентом. Поэтому поток ограничен, и это честно.</p>
+    <div class="amp-grid">
+      <div class="amp rv d1"><div class="amp-ico">🎯</div><div><div class="amp-t">Несколько клиентов в месяц</div><div class="amp-x">Каждое внедрение ведётся лично 30 дней. Больше взять физически не могу — качество упадёт.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Места на месяц ограничены</div><div class="amp-x">Когда слоты заняты — старт переносится. Чем раньше напишете, тем раньше начнёте.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">14 дней trial</div><div class="amp-x">Платите за подписку только после того, как увидели продукт в действии. Риск — на мне, не на вас.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🔒</div><div><div class="amp-t">Тарифы зафиксированы</div><div class="amp-x">Цена подписки не растёт «потому что». Решение сегодня — те же условия, что и завтра.</div></div></div>
+    </div>
+  </div>
+</section>
+<hr class="dv">
+
+<!-- 10 · КЕЙСЫ / ПРИМЕР -->
+<section id="cases">
+  <div class="w">
+    <span class="lb rv">Как это работает</span>
+    <h2 class="sh2 rv d1">Примеры из разных ниш</h2>
+    <p class="sl rv d2">Агентство в коробке распаковывается под нишу клиента. Вот как это выглядит в четырёх типовых случаях.</p>
+    <div class="cgrid">
+      <div class="ccard rv" style="--cc:#FFD000">
+        <div class="ctag">Бьюти</div>
+        <div class="ctit">Салон / косметология / студия</div>
+        <div class="csub">Запись, контент, напоминания, возврат базы.</div>
+        <div class="cress">
+          <div class="cres"><strong>→</strong> Напоминания о записи за 24 и 2 часа</div>
+          <div class="cres"><strong>→</strong> Контент-план на неделю</div>
+          <div class="cres"><strong>→</strong> Отчёт по записи за день</div>
+        </div>
+      </div>
+      <div class="ccard rv d1" style="--cc:#4ECDC4">
+        <div class="ctag">Услуги</div>
+        <div class="ctit">Клиника / психолог / юрист / ремонт</div>
+        <div class="csub">Прогрев, отчёты, финансы, работа с базой.</div>
+        <div class="cress">
+          <div class="cres"><strong>→</strong> Скрипт первого касания</div>
+          <div class="cres"><strong>→</strong> 20 тёплых клиентов в работу</div>
+          <div class="cres"><strong>→</strong> Финансовый отчёт за месяц</div>
+        </div>
+      </div>
+      <div class="ccard rv d2" style="--cc:#FFD000">
+        <div class="ctag">Продажи</div>
+        <div class="ctit">Магазин / e-commerce / локальный бренд</div>
+        <div class="csub">Товарный контент, отчёты по заказам, финансы.</div>
+        <div class="cress">
+          <div class="cres"><strong>→</strong> Схема работы с заказом</div>
+          <div class="cres"><strong>→</strong> Автоотчёт по заказам</div>
+          <div class="cres"><strong>→</strong> Контроль запасов</div>
+        </div>
+      </div>
+    </div>
+    <div class="bigidea rv d2" style="margin-top:3rem">
+      <div class="bigidea-tag">Пример · как это происходит</div>
+      <div class="bigidea-tx" style="font-size:1.02rem;line-height:1.55">Салон Анны. На сессии распаковки за 90 минут создаём workspace «Салон Анны», команду из четырёх цифровых сотрудников, отделы, стартовые задачи и подключаем базу клиентов. К концу сессии Анна сама ставит первую задачу. Через неделю система напоминает клиентам о записях и готовит контент-план. Через месяц Анна смотрит финансы в панели и принимает решения, а не тонет в рутине.</div>
+    </div>
+  </div>
+</section>
+<hr class="dv">
+
+<!-- CTA -->
+<section id="final" style="position:relative;overflow:hidden">
+  <div class="ofin">
+    <h2 class="ofh2 rv">Хватит быть человеком-системой.<br>Получите <em style="font-style:normal;color:var(--a)">агентство в коробке.</em></h2>
+    <p class="ofsub rv d1">30 дней — и у вас рабочее агентство, которое не болеет и не увольняется. Передаю руль — зависимость уходит.</p>
+    <div class="ofcta rv d2">
+      <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="/ai-training" class="bs">Сравнить с обучением AI</a>
+    </div>
+    <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>
   </div>
 </section>
 
