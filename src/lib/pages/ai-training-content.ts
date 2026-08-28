@@ -295,7 +295,6 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <li><a href="/consulting">Внедрение</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
-      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
@@ -639,7 +638,6 @@ export const body = `<div id="cd"></div><div id="cr"></div>
         <ul class="f-links">
           <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
-          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>
         </ul>

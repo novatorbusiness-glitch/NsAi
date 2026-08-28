@@ -58,12 +58,6 @@ export default function Navigation() {
                       <span className="nl-drop-d">Нейробиология продаж · 6 глав</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="/agency-in-a-box" className="nl-drop-link">
-                      <span className="nl-drop-t">{t("nav.bookAgency")}</span>
-                      <span className="nl-drop-d">Методология NCAi · 6 глав</span>
-                    </a>
-                  </li>
                 </ul>
               )}
             </li>

@@ -426,7 +426,6 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <li><a href="/consulting">Внедрение</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
-      <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nc">Написать</a>
@@ -712,7 +711,6 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       </div>
       <div class="ofcta rv d3">
         <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a href="/agency-in-a-box" class="bs">Читать «Агентство в коробке»</a>
       </div>
     </div>
   </div>
@@ -819,7 +817,6 @@ export const body = `<div id="cd"></div><div id="cr"></div>
         <ul class="fls">
           <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
-          <li><a href="/agency-in-a-box">Агентство в коробке</a></li>
           <li><a href="/portfolio">Портфолио</a></li>
         </ul>
       </div>

@@ -19,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const baseRoutes: MetadataRoute.Sitemap = [
 		{ url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
 		{ url: `${SITE_URL}/book`, changeFrequency: "weekly", priority: 0.9 },
-		{ url: `${SITE_URL}/agency-in-a-box`, changeFrequency: "monthly", priority: 0.8 },
 		{ url: `${SITE_URL}/consulting`, changeFrequency: "monthly", priority: 0.9 },
 		{ url: `${SITE_URL}/ai-training`, changeFrequency: "monthly", priority: 0.9 },
 		{ url: `${SITE_URL}/portfolio`, changeFrequency: "monthly", priority: 0.8 },

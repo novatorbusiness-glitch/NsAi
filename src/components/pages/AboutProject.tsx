@@ -100,11 +100,7 @@ export default function AboutProject() {
 						<a href="/book" style={{ color: "var(--a)" }}>
 							«Нейро-Воронка»
 						</a>{" "}
-						{ru ? "и" : "and"}{" "}
-						<a href="/agency-in-a-box" style={{ color: "var(--a)" }}>
-							«Агентство в коробке»
-						</a>{" "}
-						— {ru ? "бесплатно, читаются прямо на сайте." : "free, read right on the site."}
+						— {ru ? "бесплатно, читается прямо на сайте." : "free, read right on the site."}
 					</li>
 					<li className="legal-li">
 						<strong>{ru ? "Внедрение:" : "Implementation:"}</strong>{" "}
