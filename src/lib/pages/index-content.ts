@@ -4,7 +4,7 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
   --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
   --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;

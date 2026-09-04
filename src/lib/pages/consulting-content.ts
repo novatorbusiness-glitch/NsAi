@@ -5,7 +5,7 @@ export const css = `
 :root{
   --bg:#080808;--bg2:#0d0d0d;--bgc:#111;--bgc2:#161616;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
   --a:#FFD000;--ad:rgba(255,208,0,.07);
   --red:#e84040;
   --metal:linear-gradient(135deg,#e8e8e8 0%,#c8c8c8 35%,#888 65%,#d4d4d4 100%);
