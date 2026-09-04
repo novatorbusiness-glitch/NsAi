@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
-import MobileTabs from "@/components/layout/MobileTabs";
 import "../styles/globals.css";
 
 const syne = Syne({
@@ -75,7 +74,6 @@ export default function RootLayout({
 		<html lang="ru" className={`${syne.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
 			<body>
 				<LangProvider>{children}</LangProvider>
-				<MobileTabs />
 			</body>
 		</html>
 	);
