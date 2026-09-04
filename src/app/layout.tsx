@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import "../styles/globals.css";
+import "../styles/home.css";
 
 const syne = Syne({
 	subsets: ["latin"],
