@@ -5,7 +5,7 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
   --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
   --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
@@ -38,7 +38,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .nav-cta{font-family:var(--fd);font-size:.72rem;font-weight:700;color:var(--a);-webkit-text-fill-color:var(--a);
   text-decoration:none;padding:.42rem 1.1rem;border:1px solid rgba(255,208,0,.28);border-radius:6px;transition:background .2s}
 .nav-cta:hover{background:var(--ad)}
-@media(max-width:640px){.nav-links{display:none}}
+@media(max-width:640px){.nav-links{display:none}.nav-cta{display:none}}
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:60px;text-align:center}
@@ -58,7 +58,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hero-name{font-family:var(--fd);font-size:clamp(2.4rem,5.5vw,5.25rem);font-weight:800;line-height:1.05;
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
 .hero-name .acc{display:block;color:var(--a);-webkit-text-fill-color:var(--a)}
-.hero-sub{font-size:clamp(.98rem,1.5vw,1.1rem);color:#b8b3ac;max-width:620px;line-height:1.8;
+.hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#b8b3ac;max-width:620px;line-height:1.75;
   margin:0 auto 2.5rem;animation:fup 1s .22s var(--ease) both}
 .hero-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fup 1s .34s var(--ease) both}
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;
@@ -172,11 +172,37 @@ export const body = `
       <li><a href="/consulting">Внедрение</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
+      <li><a href="/blog">Блог</a></li>
+      <li><a href="/o-proekte">О проекте</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="https://t.me/Ilya_novator" class="nav-cta">Обсудить проект</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- Мобильное меню (шторка) -->
+<div class="mnav" id="mnav">
+  <div class="mnav-backdrop" id="mnavBackdrop"></div>
+  <div class="mnav-panel">
+    <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
+    <div class="mnav-links">
+      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
+      <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
+      <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
+      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
+      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
+      <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
+      <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
+      <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
+    </div>
+    <div class="mnav-foot">
+      <a href="mailto:ilya.novitskii@yandex.ru" class="mnav-cta">Написать напрямую</a>
+      <div class="mnav-soc"><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a><a href="mailto:ilya.novitskii@yandex.ru">Email</a></div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -416,5 +442,11 @@ if(!('IntersectionObserver' in window)){
       if(r.top<innerHeight&&r.bottom>0)el.classList.add('on');
     });
   },1500);
+}
+// BURGER — мобильное меню
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+if(burger&&mnav){
+  burger.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+  mnav.querySelectorAll('.mnav-close,.mnav-backdrop,.mnav-links a').forEach(el=>el.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
 }
 `;

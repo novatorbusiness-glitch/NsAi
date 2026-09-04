@@ -5,7 +5,7 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#7c7870;--t3:#383430;
+  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
   --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --tr:#4ECDC4;--trd:rgba(78,205,196,.08);--trb:rgba(78,205,196,.28);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
@@ -39,7 +39,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .nav-cta{font-family:var(--fd);font-size:.72rem;font-weight:700;color:var(--a);-webkit-text-fill-color:var(--a);
   text-decoration:none;padding:.42rem 1.1rem;border:1px solid rgba(255,208,0,.28);border-radius:6px;transition:background .2s}
 .nav-cta:hover{background:var(--ad)}
-@media(max-width:640px){.nav-links{display:none}}
+@media(max-width:640px){.nav-links{display:none}.nav-cta{display:none}}
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:60px}
@@ -62,7 +62,7 @@ nav.sc{background:rgba(8,8,8,.97)}
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
 .hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-h1 .acc{display:block;color:var(--tr);-webkit-text-fill-color:var(--tr)}
-.hero-sub{font-size:1.05rem;line-height:1.78;color:#b8b3ac;max-width:480px;margin-bottom:2.5rem;animation:fup 1s .22s var(--ease) both}
+.hero-sub{font-size:1.15rem;line-height:1.75;color:#b8b3ac;max-width:520px;margin-bottom:2.5rem;animation:fup 1s .22s var(--ease) both}
 .hero-sub strong{color:var(--t);font-weight:600}
 .hero-acts{display:flex;gap:.875rem;flex-wrap:wrap;animation:fup 1s .32s var(--ease) both}
 .bp{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;letter-spacing:.01em;
@@ -295,11 +295,37 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <li><a href="/consulting">Внедрение</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
+      <li><a href="/blog">Блог</a></li>
+      <li><a href="/o-proekte">О проекте</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- Мобильное меню (шторка) -->
+<div class="mnav" id="mnav">
+  <div class="mnav-backdrop" id="mnavBackdrop"></div>
+  <div class="mnav-panel">
+    <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
+    <div class="mnav-links">
+      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
+      <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
+      <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
+      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
+      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
+      <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
+      <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
+      <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
+    </div>
+    <div class="mnav-foot">
+      <a href="mailto:ilya.novitskii@yandex.ru" class="mnav-cta">Написать напрямую</a>
+      <div class="mnav-soc"><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a><a href="mailto:ilya.novitskii@yandex.ru">Email</a></div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero">
@@ -696,4 +722,11 @@ if(cv){const ctx=cv.getContext('2d');let W,H;
   (function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(78,205,196,'+p.a+')';ctx.fill()});
   for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.beginPath();ctx.strokeStyle='rgba(78,205,196,'+(0.045*(1-d/100))+')';ctx.lineWidth=.4;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}}
   requestAnimationFrame(draw)})()}
+
+// BURGER — мобильное меню
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+if(burger&&mnav){
+  burger.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+  mnav.querySelectorAll('.mnav-close,.mnav-backdrop,.mnav-links a').forEach(el=>el.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+}
 `;
