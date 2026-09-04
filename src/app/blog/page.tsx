@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BlogIndex from "@/components/pages/BlogIndex";
+import "@/styles/blog.css";
 
 export const metadata: Metadata = {
 	title: "Блог — нейромаркетинг, воронки и AI",

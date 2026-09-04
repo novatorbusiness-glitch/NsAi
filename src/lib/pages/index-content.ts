@@ -24,11 +24,11 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;padding:0 2rem;
   background:rgba(8,8,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);transition:background .3s}
 nav.sc{background:rgba(8,8,8,.97)}
 .ni{max-width:var(--max);width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
+.logo{font-family:var(--fd);font-size:1.5rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
   background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .nav-links{display:flex;gap:1.75rem;list-style:none}
 .nav-links a{font-family:var(--fd);font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
@@ -40,7 +40,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 @media(max-width:640px){.nav-links{display:none}.nav-cta{display:none}}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:60px}
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px}
 .hero-grid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
   background-size:60px 60px;animation:gm 30s ease-in-out infinite alternate}

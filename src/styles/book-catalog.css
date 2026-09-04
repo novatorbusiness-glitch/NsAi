@@ -1,0 +1,278 @@
+/* ============================================================
+   NCAi · Презентация книги «Нейро-Воронка» (/book)
+   Скоуп-стили с префиксом .bkcat-* — не конфликтуют с globals.css /
+   components.css, которые параллельно правит другой разработчик.
+   Эталон структуры — exnihilo.life/kniga: обложка, мета, крупный
+   заголовок, теглайн, описание, автор, CTA, вступление, главы-карточки.
+   ============================================================ */
+
+.bkcat {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 72px 2rem 120px;
+}
+
+/* ── Герой: обложка слева + текст справа ── */
+.bkcat-hero {
+	display: grid;
+	grid-template-columns: 340px 1fr;
+	gap: clamp(2rem, 5vw, 4.5rem);
+	align-items: center;
+}
+
+.bkcat-cover img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--br2, #272727);
+	border-radius: 18px;
+	box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 208, 0, 0.12);
+	background: #0d0d0d;
+}
+
+.bkcat-meta {
+	font-family: var(--fm, "JetBrains Mono", monospace);
+	font-size: 0.68rem;
+	font-weight: 500;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--a, #ffd000);
+	margin: 0 0 1.1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.bkcat-meta::before {
+	content: "";
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--a, #ffd000);
+	flex-shrink: 0;
+}
+
+.bkcat-title {
+	margin: 0 0 1rem;
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: clamp(2.6rem, 6.4vw, 5.2rem);
+	font-weight: 800;
+	line-height: 0.95;
+	letter-spacing: -0.045em;
+	text-transform: uppercase;
+	color: var(--t, #edeae3);
+}
+
+.bkcat-tagline {
+	margin: 0 0 1.4rem;
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+	font-weight: 600;
+	line-height: 1.3;
+	letter-spacing: -0.015em;
+	color: #c9c5bd;
+}
+
+.bkcat-desc {
+	margin: 0 0 1.6rem;
+	max-width: 560px;
+	font-family: var(--fs, "Instrument Serif", serif);
+	font-size: 1.05rem;
+	line-height: 1.8;
+	color: var(--t2, #7c7870);
+}
+
+.bkcat-author {
+	margin: 0 0 1.8rem;
+	font-family: var(--fm, "JetBrains Mono", monospace);
+	font-size: 0.74rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--t2, #7c7870);
+}
+
+.bkcat-author strong {
+	color: var(--t, #edeae3);
+	font-weight: 500;
+}
+
+/* ── CTA-кнопки ── */
+.bkcat-cta {
+	display: flex;
+	gap: 0.85rem;
+	flex-wrap: wrap;
+}
+
+.bkcat-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.9rem 1.6rem;
+	border-radius: 11px;
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform 0.2s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.bkcat-btn:hover {
+	transform: translateY(-2px);
+}
+
+.bkcat-btn-read {
+	background: var(--a, #ffd000);
+	color: #0a0a0a;
+	box-shadow: 0 12px 30px rgba(255, 208, 0, 0.22);
+}
+
+.bkcat-btn-read:hover {
+	box-shadow: 0 18px 40px rgba(255, 208, 0, 0.32);
+}
+
+.bkcat-btn-tg {
+	background: transparent;
+	color: var(--t, #edeae3);
+	border: 1px solid var(--br2, #272727);
+}
+
+.bkcat-btn-tg:hover {
+	border-color: rgba(255, 208, 0, 0.5);
+}
+
+/* ── Вступление ── */
+.bkcat-intro {
+	max-width: 760px;
+	margin: clamp(3rem, 6vw, 5rem) 0 0;
+	padding-top: 2.5rem;
+	border-top: 1px solid var(--br, #1e1e1e);
+}
+
+.bkcat-intro p {
+	font-family: var(--fs, "Instrument Serif", serif);
+	font-size: 1.1rem;
+	line-height: 1.85;
+	color: #b8b3ac;
+	margin: 0 0 1.4rem;
+}
+
+.bkcat-intro p strong {
+	color: var(--t, #edeae3);
+	font-weight: 600;
+}
+
+/* ── Список глав карточками ── */
+.bkcat-chapters {
+	margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.bkcat-chapters-label {
+	font-family: var(--fm, "JetBrains Mono", monospace);
+	font-size: 0.68rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--a, #ffd000);
+	margin: 0 0 0.9rem;
+}
+
+.bkcat-chapters-title {
+	margin: 0 0 2.2rem;
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: clamp(1.6rem, 3vw, 2.2rem);
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	color: var(--t, #edeae3);
+	max-width: 640px;
+}
+
+.bkcat-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+}
+
+.bkcat-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	padding: 1.7rem 1.8rem;
+	background: var(--bgc, #111);
+	border: 1px solid var(--br, #1e1e1e);
+	border-radius: 14px;
+	text-decoration: none;
+	transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.bkcat-card:hover {
+	border-color: rgba(255, 208, 0, 0.4);
+	background: var(--bgc2, #161616);
+	transform: translateY(-3px);
+}
+
+.bkcat-card-num {
+	font-family: var(--fm, "JetBrains Mono", monospace);
+	font-size: 0.64rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--a, #ffd000);
+}
+
+.bkcat-card-title {
+	margin: 0;
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: 1.35rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.12;
+	color: var(--t, #edeae3);
+}
+
+.bkcat-card-desc {
+	margin: 0;
+	font-family: var(--fs, "Instrument Serif", serif);
+	font-size: 0.96rem;
+	line-height: 1.6;
+	color: var(--t2, #7c7870);
+	flex: 1;
+}
+
+.bkcat-card-cta {
+	font-family: var(--fd, "Syne", sans-serif);
+	font-size: 0.86rem;
+	font-weight: 700;
+	color: var(--t, #edeae3);
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.bkcat-card:hover .bkcat-card-cta {
+	color: var(--a, #ffd000);
+}
+
+/* ── Адаптив ── */
+@media (max-width: 860px) {
+	.bkcat-hero {
+		grid-template-columns: 1fr;
+	}
+
+	.bkcat-cover {
+		max-width: 300px;
+	}
+
+	.bkcat-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.bkcat {
+		padding: 48px 1.25rem 80px;
+	}
+
+	.bkcat-cover {
+		max-width: 240px;
+		margin: 0 auto;
+	}
+}

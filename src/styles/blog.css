@@ -1,0 +1,388 @@
+/* ============================================================
+   NCAi · Блог — каталог статей + светлая страница чтения.
+   Скоуп-стили только для /blog и /blog/[slug].
+   Свой префикс .nb-* — НЕ конфликтует с globals.css / components.css,
+   которые параллельно правит другой разработчик.
+   Гамма NCAi: тёмный #080808, жёлтый #FFD000, светлые секции #FAFAF8.
+   ============================================================ */
+
+/* ── Шапка блога ── */
+.nb-hero {
+	padding-bottom: 0.5rem;
+}
+
+/* ── Поиск ── */
+.nb-search {
+	margin: 0.5rem auto 2rem;
+}
+
+.nb-search-box {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	max-width: 640px;
+	padding: 0 1.1rem;
+	border: 1px solid var(--br2);
+	border-radius: 12px;
+	background: var(--bgc);
+	transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.nb-search-box:focus-within {
+	border-color: rgba(255, 208, 0, 0.45);
+	box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.08);
+}
+
+.nb-search-icon {
+	color: var(--t2);
+	font-size: 1.15rem;
+	line-height: 1;
+}
+
+.nb-search-input {
+	flex: 1;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--t);
+	font-family: var(--fs);
+	font-size: 1rem;
+	padding: 0.95rem 0;
+}
+
+.nb-search-input::placeholder {
+	color: var(--t3);
+}
+
+.nb-search-clear {
+	background: none;
+	border: none;
+	color: var(--t2);
+	cursor: pointer;
+	font-size: 0.9rem;
+	padding: 0.2rem 0.3rem;
+	transition: color 0.2s;
+}
+
+.nb-search-clear:hover {
+	color: var(--t);
+}
+
+.nb-search-hint {
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	letter-spacing: 0.08em;
+	color: var(--t3);
+	border: 1px solid var(--br2);
+	border-radius: 6px;
+	padding: 0.15rem 0.45rem;
+	white-space: nowrap;
+}
+
+/* ── Большие статы-цифры ── */
+.nb-stats {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	border: 1px solid var(--br);
+	border-radius: 16px;
+	background: var(--bgc);
+	overflow: hidden;
+	margin-bottom: 2rem;
+}
+
+.nb-stat {
+	padding: 1.5rem 1.25rem;
+	border-right: 1px solid var(--br);
+}
+
+.nb-stat:last-child {
+	border-right: none;
+}
+
+.nb-stat-val {
+	font-family: var(--fd);
+	font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+	font-weight: 800;
+	letter-spacing: -0.04em;
+	line-height: 1;
+	color: var(--a);
+	font-variant-numeric: tabular-nums;
+	margin-bottom: 0.5rem;
+}
+
+.nb-stat-label {
+	font-size: 0.72rem;
+	line-height: 1.35;
+	color: var(--t2);
+}
+
+/* ── Фильтры-категории (чипы) ── */
+.nb-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.nb-chip {
+	font-family: var(--fd);
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	padding: 0.55rem 1.15rem;
+	border-radius: 999px;
+	border: 1px solid var(--br2);
+	background: var(--bgc);
+	color: var(--t2);
+	cursor: pointer;
+	transition: border-color 0.2s var(--ease), background 0.2s, color 0.2s, transform 0.2s var(--ease);
+}
+
+.nb-chip:hover {
+	border-color: rgba(255, 208, 0, 0.45);
+	color: var(--t);
+	transform: translateY(-1px);
+}
+
+.nb-chip.act {
+	background: var(--a);
+	border-color: var(--a);
+	color: #050505;
+}
+
+/* ── Сетка карточек ── */
+.nb-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+	padding-bottom: 6rem;
+}
+
+.nb-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	padding: 1.7rem 1.8rem;
+	border: 1px solid var(--br);
+	border-radius: 16px;
+	background: var(--bgc);
+	text-decoration: none;
+	transition: border-color 0.25s var(--ease), transform 0.3s var(--ease), background 0.25s;
+}
+
+.nb-card:hover {
+	border-color: rgba(255, 208, 0, 0.4);
+	background: var(--bgc2);
+	transform: translateY(-3px);
+}
+
+.nb-card-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.nb-card-date {
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--t2);
+}
+
+.nb-badge {
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	background: var(--a);
+	color: #050505;
+	padding: 0.22rem 0.55rem;
+	border-radius: 999px;
+}
+
+.nb-card-title {
+	font-family: var(--fd);
+	font-size: clamp(1.15rem, 2vw, 1.45rem);
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+	margin: 0;
+	color: var(--t);
+}
+
+.nb-card-excerpt {
+	font-size: 0.94rem;
+	line-height: 1.65;
+	color: var(--t2);
+	margin: 0;
+}
+
+.nb-card-go {
+	font-family: var(--fd);
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: var(--a);
+}
+
+/* ── Пустое состояние ── */
+.nb-empty {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 4rem 1rem;
+}
+
+.nb-empty-title {
+	font-family: var(--fd);
+	font-size: 1.3rem;
+	font-weight: 800;
+	color: var(--t);
+	margin: 0 0 0.5rem;
+}
+
+.nb-empty-sub {
+	color: var(--t2);
+	margin: 0;
+}
+
+/* ── Светлая страница чтения статьи (как книга) ── */
+.nb-article-wrap {
+	background: #f8f9fa;
+	color: #16181d;
+	min-height: 60vh;
+}
+
+.nb-article {
+	max-width: 860px;
+	margin: 0 auto;
+	padding: clamp(3rem, 8vw, 5.5rem) 2rem 6rem;
+}
+
+.nb-article .lb {
+	color: #c99700;
+}
+
+.nb-article .lb::before {
+	background: #c99700;
+}
+
+.nb-article .blog-article-title {
+	color: #16181d;
+}
+
+.nb-article .blog-article-meta {
+	color: #6a6e75;
+}
+
+.nb-article .blog-article-meta-sep {
+	color: #c4c8cd;
+}
+
+.nb-article .blog-card-tag {
+	color: #6a6e75;
+	border-color: #d9dce1;
+}
+
+.nb-article .blog-article-body h2 {
+	color: #16181d;
+	border-top-color: #e7e9ec;
+}
+
+.nb-article .blog-article-body h3 {
+	color: #16181d;
+}
+
+.nb-article .blog-article-body p {
+	color: #3b3e44;
+}
+
+.nb-article .blog-article-body strong {
+	color: #141519;
+}
+
+.nb-article .blog-article-body li {
+	color: #3b3e44;
+}
+
+.nb-article .blog-article-body a {
+	color: #c99700;
+	border-bottom-color: rgba(201, 151, 0, 0.35);
+}
+
+.nb-article .blog-article-body a:hover {
+	border-color: #c99700;
+}
+
+.nb-article .blog-article-body blockquote {
+	background: rgba(201, 151, 0, 0.08);
+	border-left-color: #c99700;
+	color: #16181d;
+}
+
+.nb-article .blog-article-body code {
+	background: rgba(201, 151, 0, 0.12);
+	color: #8a6a00;
+}
+
+.nb-article .blog-article-body pre {
+	background: #ffffff;
+	border-color: #e7e9ec;
+}
+
+.nb-article .blog-article-body pre code {
+	color: #3b3e44;
+}
+
+.nb-article .blog-article-foot {
+	border-top-color: #e7e9ec;
+}
+
+/* ── Адаптив ── */
+@media (max-width: 900px) {
+	.nb-stats {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.nb-stat:nth-child(3) {
+		border-right: none;
+	}
+
+	.nb-stat:nth-child(4),
+	.nb-stat:nth-child(5) {
+		border-top: 1px solid var(--br);
+	}
+
+	.nb-stat:nth-child(4) {
+		border-right: 1px solid var(--br);
+	}
+}
+
+@media (max-width: 820px) {
+	.nb-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.nb-stats {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.nb-stat {
+		border-top: 1px solid var(--br);
+	}
+
+	.nb-stat:nth-child(1),
+	.nb-stat:nth-child(2) {
+		border-top: none;
+	}
+
+	.nb-stat:nth-child(odd) {
+		border-right: 1px solid var(--br);
+	}
+
+	.nb-stat:nth-child(even) {
+		border-right: none;
+	}
+}

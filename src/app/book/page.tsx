@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BookCatalog from "@/components/pages/BookCatalog";
+import "@/styles/book-catalog.css";
 
 export const metadata: Metadata = {
 	title: "Книга «Нейро-Воронка» — бесплатно",
