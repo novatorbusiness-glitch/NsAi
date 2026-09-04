@@ -24,8 +24,7 @@ export default function MobileTabs() {
     { label: "Главная", icon: "🏠", href: "/", active: pathname === "/" },
     { label: "Книги", icon: "📖", href: "/book", active: isActive(["/book"]) },
     { label: "Блог", icon: "✍️", href: "/blog", active: isActive(["/blog"]) },
-    { label: "Промпты", icon: "⚡", href: "/prompts", active: isActive(["/prompts"]) },
-    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners", "/team-book"]) },
+    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners"]) },
   ];
 
   const moreLinks = [
@@ -34,7 +33,6 @@ export default function MobileTabs() {
     { label: "О проекте", href: "/o-proekte" },
     { label: "Портфолио", href: "/portfolio" },
     { label: "Партнёры", href: "/partners" },
-    { label: "Команда", href: "/team-book" },
     { label: "Политика", href: "/privacy" },
     { label: "Оферта", href: "/offer" },
   ];

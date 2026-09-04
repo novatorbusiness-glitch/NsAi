@@ -14,8 +14,6 @@ const MENU_ITEMS: { href: string; label: string }[] = [
   { href: "/ai-training", label: "Обучение AI" },
   { href: "/book", label: "Книги" },
   { href: "/blog", label: "Блог" },
-  { href: "/prompts", label: "Промпты" },
-  { href: "/team-book", label: "Команда" },
   { href: "/o-proekte", label: "О проекте" },
   { href: "/portfolio", label: "Портфолио" },
   { href: "/partners", label: "Партнёры" },
@@ -97,12 +95,6 @@ export default function Navigation() {
             </li>
             <li>
               <a href="/blog" className={isActive("/blog") ? "act" : ""}>{t("nav.blog")}</a>
-            </li>
-            <li>
-              <a href="/prompts" className={isActive("/prompts") ? "act" : ""}>Промпты</a>
-            </li>
-            <li>
-              <a href="/team-book" className={isActive("/team-book") ? "act" : ""}>Команда</a>
             </li>
             <li>
               <a href="/o-proekte" className={isActive("/o-proekte") ? "act" : ""}>{t("nav.about")}</a>
