@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { getSubchapterTitle } from "@/lib/book-data";
+import { inlineVizSvg, VIZ_CSS } from "./book-viz";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Загрузка и нормализация глав книги «Нейро-Воронка».
@@ -79,7 +80,7 @@ function heightReporterScript(slug: string): string {
 }
 
 function normalizeChapterHtml(source: string, slug: string): string {
-	return source
+	return inlineVizSvg(source)
 		.replace(
 			/<link[^>]*fonts\.googleapis\.com[^>]*>/gi,
 			'<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">',
@@ -91,7 +92,7 @@ function normalizeChapterHtml(source: string, slug: string): string {
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*>)([\s\S]*?)(<\/a>)/gi, "$1NcAi$3")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/$2")
 		.replace(/(<a\b[^>]*class=["']nav-back["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/book$2")
-		.replace(/<\/head>/i, `<style id="ncai-light-reader">${READER_CSS}</style>${heightReporterScript(slug)}</head>`);
+		.replace(/<\/head>/i, `<style id="ncai-light-reader">${READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style>${heightReporterScript(slug)}</head>`);
 }
 
 export function buildReaderChapters(): ReaderChapter[] {
