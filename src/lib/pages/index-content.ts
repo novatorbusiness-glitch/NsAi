@@ -37,7 +37,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .nav-cta{font-family:var(--fd);font-size:.72rem;font-weight:700;color:var(--a);-webkit-text-fill-color:var(--a);
   text-decoration:none;padding:.42rem 1.1rem;border:1px solid rgba(255,208,0,.28);border-radius:6px;transition:background .2s}
 .nav-cta:hover{background:var(--ad)}
-@media(max-width:640px){.nav-links{display:none}}
+@media(max-width:640px){.nav-links{display:none}.nav-cta{display:none}}
 
 /* HERO */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:60px}
@@ -67,7 +67,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hero-role{font-family:var(--fm);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t2);
   margin-bottom:1.5rem;animation:fup 1s .18s var(--ease) both}
 .hero-role span{color:var(--a)}
-.hero-quote{font-family:var(--fs);font-style:italic;font-size:1.05rem;line-height:1.72;color:var(--t2);
+.hero-quote{font-family:var(--fs);font-style:italic;font-size:1.15rem;line-height:1.7;color:var(--t2);
   max-width:440px;margin-bottom:2rem;padding-left:1.25rem;border-left:2px solid rgba(255,208,0,.35);
   animation:fup 1s .28s var(--ease) both}
 .hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fup 1s .36s var(--ease) both}
@@ -97,7 +97,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .pc-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;
   margin-bottom:.28rem}
 .pc-title{font-family:var(--fd);font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.2rem}
-.pc-sub{font-size:.78rem;color:var(--t2);line-height:1.4}
+.pc-sub{font-size:.88rem;color:var(--t2);line-height:1.4}
 .pc-arr{color:var(--t3);font-size:.8rem;flex-shrink:0;transition:color .2s,transform .25s var(--ease)}
 .pc:hover .pc-arr{color:var(--a);transform:translateX(4px)}
 .pc-consulting .pc-label{color:#FFD000}
@@ -120,8 +120,8 @@ nav.sc{background:rgba(8,8,8,.97)}
 .sec-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;
   letter-spacing:.2em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:1rem}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
-.sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
-  line-height:1.05;margin-bottom:.75rem}
+.sec-h2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.04em;
+  line-height:1.05;margin-bottom:1.2rem}
 /* REVEAL — прогрессивное улучшение: без JS контент видим сразу,
    с JS — плавное появление при скролле (html.js ставит страница) */
 .rv{opacity:1;transform:none}
@@ -149,9 +149,9 @@ nav.sc{background:rgba(8,8,8,.97)}
 .c2 .prod-type{color:#4ECDC4}
 .c3 .prod-type{color:#B4A7D6}
 .prod-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:.85rem;line-height:1.15}
-.prod-desc{font-size:.92rem;color:var(--t2);line-height:1.72;margin-bottom:1.5rem}
+.prod-desc{font-size:1rem;color:var(--t2);line-height:1.72;margin-bottom:1.5rem}
 .prod-points{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.75rem}
-.prod-point{display:flex;align-items:flex-start;gap:.65rem;font-size:.84rem;color:var(--t2);line-height:1.45}
+.prod-point{display:flex;align-items:flex-start;gap:.65rem;font-size:.95rem;color:var(--t2);line-height:1.45}
 .pp-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:.5rem}
 .c1 .pp-dot{background:var(--a)}
 .c2 .pp-dot{background:#4ECDC4}
@@ -197,9 +197,9 @@ nav.sc{background:rgba(8,8,8,.97)}
 .acj-d{font-size:.78rem;color:var(--t2);line-height:1.55}
 
 .about-text{}
-.about-h2{font-family:var(--fd);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:800;letter-spacing:-.04em;
+.about-h2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:1.25rem}
-.p{font-size:.98rem;color:#b8b3ac;line-height:1.88;margin-bottom:1.2rem}
+.p{font-size:1.06rem;color:#b8b3ac;line-height:1.88;margin-bottom:1.2rem}
 .p strong{color:var(--t);font-weight:600}
 .about-alai{font-family:var(--fs);font-style:italic;font-size:1.05rem;line-height:1.75;color:var(--t);
   padding:1.5rem 1.75rem;background:var(--ad);border-left:3px solid rgba(255,208,0,.4);
@@ -230,7 +230,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .pj-icon{font-size:1.4rem;margin-bottom:.9rem}
 .pj-tag{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.4rem}
 .pj-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
-.pj-desc{font-size:.8rem;color:var(--t2);line-height:1.55}
+.pj-desc{font-size:.95rem;color:var(--t2);line-height:1.55}
 .pj-status{display:inline-block;font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;
   margin-top:.75rem;padding:.2rem .5rem;border-radius:3px;background:rgba(255,208,0,.08);
   border:1px solid rgba(255,208,0,.18);color:rgba(255,208,0,.6)}
@@ -244,7 +244,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 .f-logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;
   background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.85rem}
-.f-tagline{font-size:.88rem;color:var(--t2);line-height:1.65;max-width:280px;margin-bottom:1.25rem}
+.f-tagline{font-size:.95rem;color:var(--t2);line-height:1.65;max-width:280px;margin-bottom:1.25rem}
 .f-socials{display:flex;gap:.6rem}
 .f-soc{width:34px;height:34px;border:1px solid var(--br);border-radius:7px;display:flex;align-items:center;
   justify-content:center;font-size:.8rem;color:var(--t2);text-decoration:none;transition:border-color .2s,color .2s}
@@ -252,7 +252,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .f-col-title{font-family:var(--fd);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--t3);margin-bottom:1.1rem}
 .f-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.f-links a{font-size:.85rem;color:var(--t2);text-decoration:none;transition:color .2s}
+.f-links a{font-size:.95rem;color:var(--t2);text-decoration:none;transition:color .2s}
 .f-links a:hover{color:var(--t)}
 .f-bottom{display:flex;justify-content:space-between;align-items:center;
   padding-top:1.75rem;border-top:1px solid #0f0f0f;flex-wrap:wrap;gap:.75rem}
@@ -280,7 +280,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .bk-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--t)}
 .bk-author{font-family:var(--fm);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
 .bk-author span{color:var(--a)}
-.bk-desc{font-size:.85rem;color:var(--t2);line-height:1.6;margin:0}
+.bk-desc{font-size:.95rem;color:var(--t2);line-height:1.6;margin:0}
 .bk-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:800;
   color:#050505;-webkit-text-fill-color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
   box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease),box-shadow .2s}
@@ -291,7 +291,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 #iznanka::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 50% 0%,rgba(255,208,0,.05),transparent)}
 .iz-head{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:end;margin-bottom:3rem}
 @media(max-width:900px){.iz-head{grid-template-columns:1fr;gap:1.5rem}}
-.iz-tx{font-size:.98rem;color:#b8b3ac;line-height:1.8}
+.iz-tx{font-size:1.06rem;color:#b8b3ac;line-height:1.8}
 .iz-tx strong{color:var(--t)}
 .iz-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem}
 @media(max-width:700px){.iz-stats{grid-template-columns:1fr 1fr}.iz-stats .iz-stat:last-child{grid-column:1/-1}}
@@ -318,6 +318,17 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .iz-bot .tx{font-family:var(--fd);font-size:clamp(1rem,1.8vw,1.3rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;flex:1;min-width:240px}
 .iz-bot .tx span{color:var(--a)}
 section[id]{scroll-margin-top:76px}
+
+/* Светлые секции — ритмичное чередование (читаемость, контраст) */
+.sec-light{background:#FAFAF8 !important}
+.sec-light .sec-h2,.sec-light .about-h2{color:#111}
+.sec-light .sec-tag{color:#a37900;opacity:1}
+.sec-light .sec-tag::before{background:#a37900;opacity:.6}
+.sec-light .p{color:#2e2e2c}
+.sec-light .p strong{color:#000}
+.sec-light .sl{color:#2e2e2c}
+.sec-light .about-alai{color:#111;background:rgba(255,208,0,.16);border-left:3px solid rgba(170,115,0,.5)}
+.sec-light .an-n{color:#b8860b}
 `;
 
 export const body = `
@@ -336,8 +347,32 @@ export const body = `
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- Мобильное меню (шторка) -->
+<div class="mnav" id="mnav">
+  <div class="mnav-backdrop" id="mnavBackdrop"></div>
+  <div class="mnav-panel">
+    <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
+    <div class="mnav-links">
+      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
+      <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
+      <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
+      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
+      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
+      <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
+      <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
+      <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
+    </div>
+    <div class="mnav-foot">
+      <a href="mailto:ilya.novitskii@yandex.ru" class="mnav-cta">Написать напрямую</a>
+      <div class="mnav-soc"><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a><a href="mailto:ilya.novitskii@yandex.ru">Email</a></div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -354,7 +389,7 @@ export const body = `
       <div class="hero-meta">
         <div class="hm">Локация<span>Москва / удалённо</span></div>
         <div class="hm">Интересы<span>Web3 · HealthTech · AI</span></div>
-        <div class="hm">Условия<span>Fix от 200K ₽ + опцион</span></div>
+        <div class="hm">Формат<span>Fix + опцион · удалённо</span></div>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Проектов</div></div>
@@ -412,7 +447,7 @@ export const body = `
 </section>
 
 <!-- PRODUCTS -->
-<section id="products">
+<section id="products" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Чем занимаюсь</span>
     <h2 class="sec-h2 rv d1">Три направления.<br>Выбери своё.</h2>
@@ -504,7 +539,7 @@ export const body = `
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="sec-light">
   <div class="wrap">
     <div class="about-layout">
       <div class="about-visual rv">
@@ -513,7 +548,7 @@ export const body = `
             <div class="ac-ava">И</div>
             <div>
               <div class="ac-name">Илья Новицкий</div>
-              <div class="ac-role">AI-Powered Product Builder</div>
+              <div class="ac-role">Архитектор систем · NCAi</div>
             </div>
           </div>
           <div class="ac-stack">
@@ -528,7 +563,7 @@ export const body = `
               <div>
                 <div class="acj-p">2017–2023</div>
                 <div class="acj-t">Novator.vip</div>
-                <div class="acj-d">300+ проектов, 50M+ ₽ в запусках</div>
+                <div class="acj-d">Регулярные продажи · маркетинг и автоматизация</div>
               </div>
             </div>
             <div class="acj">
@@ -558,10 +593,10 @@ export const body = `
         <div class="about-alai">Это редкое сочетание: человек, который одновременно придумывает воронку и пишет код, который её обслуживает.</div>
         <p class="p">Баг, отказ рынка или неудачный тест — воспринимаю не как проблему, а как датасет для следующей итерации системы.</p>
         <div class="about-nums">
-          <div><span class="an-n">300+</span><span class="an-l">Проектов</span></div>
-          <div><span class="an-n">50M ₽</span><span class="an-l">В запусках</span></div>
           <div><span class="an-n">100K+</span><span class="an-l">Заявок</span></div>
-          <div><span class="an-n">1</span><span class="an-l">Книга</span></div>
+          <div><span class="an-n">3</span><span class="an-l">Продукта</span></div>
+          <div><span class="an-n">6 · 30</span><span class="an-l">Глав · подглав в книге</span></div>
+          <div><span class="an-n">4</span><span class="an-l">Соло-проекта</span></div>
         </div>
       </div>
     </div>
@@ -628,7 +663,7 @@ export const body = `
 </section>
 
 <!-- SOLO PROJECTS -->
-<section id="projects">
+<section id="projects" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Соло R&D</span>
     <h2 class="sec-h2 rv d1">Никого не нанимал.<br>Собрал сам.</h2>
@@ -674,8 +709,8 @@ export const body = `
         <div class="f-logo">NCAi</div>
         <p class="f-tagline">AI-Powered Product Builder. Соединяю продуктовое мышление с руками разработчика.</p>
         <div class="f-socials">
-          <a href="https://t.me/Ilya_novator" class="f-soc">✈</a>
-          <a href="#" class="f-soc">in</a>
+          <a href="https://t.me/ilya_novator" class="f-soc">✈</a>
+          <a href="mailto:ilya.novitskii@yandex.ru" class="f-soc">✉</a>
         </div>
       </div>
       <div>
@@ -701,7 +736,7 @@ export const body = `
       </div>
     </div>
     <div class="f-bottom">
-      <span class="f-copy">© 2025 NCAi · Илья Новицкий</span>
+      <span class="f-copy">© 2026 NCAi · Илья Новицкий</span>
       <span class="f-easter">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
@@ -779,4 +814,11 @@ if(cv){const ctx=cv.getContext('2d');let W,H;
   (function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(255,208,0,'+p.a+')';ctx.fill()});
   for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.beginPath();ctx.strokeStyle='rgba(255,208,0,'+(0.045*(1-d/100))+')';ctx.lineWidth=.4;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke()}}
   requestAnimationFrame(draw)})()}
+
+// BURGER — мобильное меню
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+if(burger&&mnav){
+  burger.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+  mnav.querySelectorAll('.mnav-close,.mnav-backdrop,.mnav-links a').forEach(el=>el.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+}
 `;

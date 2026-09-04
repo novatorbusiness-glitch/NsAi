@@ -4,19 +4,26 @@ import { useLang } from "@/lib/i18n";
 import LangSwitch from "./LangSwitch";
 
 // Подвал сайта: описание, колонки ссылок (Проект / Книги / Работа / Правовое), язык, копирайт.
+// Дизайн NCAi: тёмный фон, жёлтый акцент, аккуратная сетка, выровненный низ.
 export default function Footer() {
   const { t } = useLang();
 
   return (
     <footer>
-      <div className="fwm">NcAi</div>
+      <div className="fwm">NCAi</div>
       <div className="w footer-inner">
         <div className="fgrid">
-          <div>
-            <div className="flogo">NcAi</div>
+          <div className="fcol-brand">
+            <div className="flogo">NCAi</div>
             <p className="ftag">{t("footer.tagline")}</p>
             <div className="fsoc">
-              <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" className="fsi" aria-label="Telegram">
+              <a
+                href="https://t.me/ilya_novator"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="fsi"
+                aria-label="Telegram"
+              >
                 ✈
               </a>
               <a href="mailto:ilya.novitskii@yandex.ru" className="fsi" aria-label="Email">
@@ -66,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="fbot">
-          <span className="fcp">© {new Date().getFullYear()} NcAi · Илья Новицкий. {t("footer.rights")}</span>
+          <span className="fcp">© {new Date().getFullYear()} NCAi · Илья Новицкий. {t("footer.rights")}</span>
           <span className="fright">
             <LangSwitch light />
             <span className="fea">

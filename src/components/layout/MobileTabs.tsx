@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
-// Мобильная нижняя навигация (табы, как в приложении): Главная / Книги / Блог / Промпты / Ещё.
+// Мобильная нижняя навигация — быстрые действия (табы).
+// Основная навигация на мобильном — бургер в шапке (Navigation.tsx / inline-шапки),
+// здесь только самое частое: Главная / Книги / Блог / Промпты / Ещё.
 // Видна только на экранах ≤640px; на десктопе остаётся верхнее меню.
 // Дизайн-система NCAi: тёмная подложка + жёлтый акцент, mono-лейблы.
 export default function MobileTabs() {
@@ -23,8 +25,7 @@ export default function MobileTabs() {
     { label: "Книги", icon: "📖", href: "/book", active: isActive(["/book"]) },
     { label: "Блог", icon: "✍️", href: "/blog", active: isActive(["/blog"]) },
     { label: "Промпты", icon: "⚡", href: "/prompts", active: isActive(["/prompts"]) },
-    { label: "Команда", icon: "🛰️", href: "/team-book", active: isActive(["/team-book"]) },
-    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners"]) },
+    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners", "/team-book"]) },
   ];
 
   const moreLinks = [
@@ -33,6 +34,7 @@ export default function MobileTabs() {
     { label: "О проекте", href: "/o-proekte" },
     { label: "Портфолио", href: "/portfolio" },
     { label: "Партнёры", href: "/partners" },
+    { label: "Команда", href: "/team-book" },
     { label: "Политика", href: "/privacy" },
     { label: "Оферта", href: "/offer" },
   ];
@@ -40,7 +42,7 @@ export default function MobileTabs() {
   return (
     <>
       <div className="ntabs-spacer" aria-hidden="true" />
-      <nav className="ntabs" aria-label="Мобильная навигация">
+      <nav className="ntabs" aria-label="Быстрые действия">
         {tabs.map((tab) =>
           tab.href ? (
             <a key={tab.label} href={tab.href} className={`ntab${tab.active ? " on" : ""}`}>
