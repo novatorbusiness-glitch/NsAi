@@ -57,7 +57,7 @@ export const dict = {
     ru: "Практическое руководство по инженерии систем продаж на стыке нейробиологии, поведенческой психологии и AI.",
     en: "A practical guide to engineering sales systems at the intersection of neurobiology, behavioural psychology and AI.",
   },
-  "book.neuroBadge": { ru: "6 глав · 30 подглав · бесплатно", en: "6 chapters · 30 sections · free" },
+  "book.neuroBadge": { ru: "Книга · бесплатный подарок · 2026", en: "Book · free gift · 2026" },
   "book.agencyTitle": { ru: "Агентство в коробке", en: "Agency in a Box" },
   "book.agencySub": {
     ru: "Методология SaaS-платформы NCAi: мульти-аренда, распаковка клиента, подписка и тарифы, автоматизация.",
