@@ -6,7 +6,21 @@ export interface BlogPost {
 	dateLabel: string; // для отображения
 	excerpt: string;
 	tags: string[];
+	category: BlogCategory; // ключ категории для фильтра
+	chars: number; // знаков (с пробелами) в тексте статьи
+	words: number; // слов — для расчёта времени чтения
 }
+
+// Категории блога (чипы-фильтры). Ключ «all» — показывать всё.
+export type BlogCategory = "neyromarketing" | "voronki" | "doverie" | "ai";
+
+export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string }[] = [
+	{ key: "all", label: "Всё" },
+	{ key: "neyromarketing", label: "Нейромаркетинг" },
+	{ key: "voronki", label: "Воронки" },
+	{ key: "doverie", label: "Доверие" },
+	{ key: "ai", label: "AI" },
+];
 
 export const BLOG_POSTS: BlogPost[] = [
 	{
@@ -17,6 +31,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Никто не покупает у незнакомца. Разбираем, как из четырёх элементов доверия — экспертность, боль, трансформация, продукт — собирается цепочка касаний, которая ведёт клиента от первого «кто ты?» до готовности купить без давления.",
 		tags: ["доверие", "цепочки касаний", "прогрев"],
+		category: "doverie",
+		chars: 3787,
+		words: 563,
 	},
 	{
 		slug: "pochemu-klienty-ne-vozvrashhayutsya",
@@ -26,6 +43,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Клиент купил один раз и исчез, а вы снова тратите бюджет на привлечение. Разбираем три причины, по которым покупатели не возвращаются, и как достроить воронку так, чтобы повторные продажи шли сами.",
 		tags: ["удержание", "повторные продажи", "воронка"],
+		category: "voronki",
+		chars: 3645,
+		words: 526,
 	},
 	{
 		slug: "lid-magnit-kotoryj-zabirayut-sam",
@@ -35,6 +55,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"«Скачайте наш гайд» — и тишина. Почему бесплатные продукты не забирают, как работает химия «бесплатного» и три признака магнита, который приносит не мёртвую базу, а горячих лидов.",
 		tags: ["лид-магнит", "база", "бесплатный продукт"],
+		category: "voronki",
+		chars: 3450,
+		words: 517,
 	},
 	{
 		slug: "kryuchok-5-sekund",
@@ -44,6 +67,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Первичный мозг принимает решение за доли секунды и без единого слова. Разбираем три когнитивных ловушки, которые заставляют остановиться и прочитать — и почему «написать крючок» это не про красивый слоган.",
 		tags: ["нейромаркетинг", "крючок", "внимание"],
+		category: "neyromarketing",
+		chars: 2151,
+		words: 318,
 	},
 	{
 		slug: "bol-pokupatelya",
@@ -53,6 +79,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Продукт продают не характеристики, а снятие боли. Разбираем механику: страх потери, эффект упущенной выгоды, социальное доказательство и почему «боль» в оффере работает сильнее «выгоды».",
 		tags: ["оффер", "боль", "психология"],
+		category: "neyromarketing",
+		chars: 2227,
+		words: 339,
 	},
 	{
 		slug: "offer-bez-davleniya",
@@ -62,6 +91,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Жёсткие продажи встречают броню. Слабая воронка давит, сильная — снимает возражения заранее. Разбираем формулу оффера: якорь, гарантия, дедлайн и момент, когда мозг говорит «беру».",
 		tags: ["оффер", "воронка", "конверсия"],
+		category: "voronki",
+		chars: 2270,
+		words: 333,
 	},
 	{
 		slug: "ai-kopiraiter-neuro-voronka",
@@ -71,6 +103,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"ChatGPT не пишет «плохо» — вы даёте ему слабое задание. Разбираем, как скормить модели структуру нейро-воронки: крючок, боль, решение, оффер, CTA — и получить текст, который цепляет мозг, а не собирает рерайт.",
 		tags: ["AI", "копирайтинг", "промпты"],
+		category: "ai",
+		chars: 2623,
+		words: 385,
 	},
 	{
 		slug: "tri-oshibki-voronki",
@@ -80,6 +115,9 @@ export const BLOG_POSTS: BlogPost[] = [
 		excerpt:
 			"Размытый крючок, оффер «для всех» и CTA без причины. На реальных примерах показываю, как выглядят три самые дорогие ошибки воронки — и как их чинит система, а не «ещё один лендинг».",
 		tags: ["воронка", "ошибки", "аудит"],
+		category: "voronki",
+		chars: 2149,
+		words: 333,
 	},
 ];
 
@@ -93,3 +131,27 @@ export function getBlogSlugs(): string[] {
 
 // Сортировка: свежие сверху.
 export const BLOG_POSTS_SORTED = [...BLOG_POSTS].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+// Свежая статья — в пределах N дней (для метки NEW и счётчика «новых за 30 дней»).
+export function isWithinDays(dateISO: string, days: number): boolean {
+	const d = new Date(`${dateISO}T00:00:00`);
+	const now = new Date();
+	const diff = now.getTime() - d.getTime();
+	return diff >= 0 && diff <= days * 24 * 3600 * 1000;
+}
+
+export const NEW_DAYS = 30;
+
+// Количество страниц на сайте (статические маршруты: главная + разделы +
+// статьи блога + главы книги). Используется в блоке «статы» на /blog.
+export const SITE_PAGES = 53;
+
+// Сводные статы блога для шапки /blog.
+export const BLOG_STATS = {
+	materials: BLOG_POSTS.length,
+	chars: BLOG_POSTS.reduce((s, p) => s + p.chars, 0),
+	words: BLOG_POSTS.reduce((s, p) => s + p.words, 0),
+	readingMinutes: Math.max(1, Math.round(BLOG_POSTS.reduce((s, p) => s + p.words, 0) / 180)),
+	pages: SITE_PAGES,
+	newIn30: BLOG_POSTS.filter((p) => isWithinDays(p.date, NEW_DAYS)).length,
+};

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/i18n";
 import LangSwitch from "./LangSwitch";
 
@@ -22,8 +23,13 @@ const MENU_ITEMS: { href: string; label: string }[] = [
 
 export default function Navigation() {
   const { t } = useLang();
+  const pathname = usePathname() ?? "/";
   const [booksOpen, setBooksOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Активный пункт: совпадение по пути (без сдвига layout — только цвет + подчёркивание)
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
   useEffect(() => {
     const nav = document.getElementById("nav");
@@ -65,10 +71,10 @@ export default function Navigation() {
           </a>
           <ul className="nl">
             <li>
-              <a href="/consulting">{t("nav.consulting")}</a>
+              <a href="/consulting" className={isActive("/consulting") ? "act" : ""}>{t("nav.consulting")}</a>
             </li>
             <li>
-              <a href="/ai-training">{t("nav.aiTraining")}</a>
+              <a href="/ai-training" className={isActive("/ai-training") ? "act" : ""}>{t("nav.aiTraining")}</a>
             </li>
             <li
               className="nl-has-drop"
@@ -90,19 +96,19 @@ export default function Navigation() {
               )}
             </li>
             <li>
-              <a href="/blog">{t("nav.blog")}</a>
+              <a href="/blog" className={isActive("/blog") ? "act" : ""}>{t("nav.blog")}</a>
             </li>
             <li>
-              <a href="/prompts">Промпты</a>
+              <a href="/prompts" className={isActive("/prompts") ? "act" : ""}>Промпты</a>
             </li>
             <li>
-              <a href="/team-book">Команда</a>
+              <a href="/team-book" className={isActive("/team-book") ? "act" : ""}>Команда</a>
             </li>
             <li>
-              <a href="/o-proekte">{t("nav.about")}</a>
+              <a href="/o-proekte" className={isActive("/o-proekte") ? "act" : ""}>{t("nav.about")}</a>
             </li>
             <li>
-              <a href="/portfolio">{t("nav.portfolio")}</a>
+              <a href="/portfolio" className={isActive("/portfolio") ? "act" : ""}>{t("nav.portfolio")}</a>
             </li>
           </ul>
           <div className="nl-right">

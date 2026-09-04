@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { getBlogPost, getBlogSlugs } from "@/lib/blog";
 import PageShell from "@/components/layout/PageShell";
+import "@/styles/blog.css";
 
 export function generateStaticParams() {
 	return getBlogSlugs().map((slug) => ({ slug }));
@@ -43,8 +44,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 
 	return (
 		<PageShell>
-			<article className="w blog-article">
-				<header className="blog-article-head">
+			<div className="nb-article-wrap">
+				<article className="nb-article">
+					<header className="blog-article-head">
 					<p className="lb">Blog · {post.dateLabel}</p>
 					<h1 className="blog-article-title">{post.title}</h1>
 					<div className="blog-article-meta">
@@ -78,8 +80,9 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 					<a href="/book" className="bs">
 						Книга «Нейро-Воронка» — бесплатно
 					</a>
-				</footer>
-			</article>
-		</PageShell>
-	);
-}
+					</footer>
+					</article>
+				</div>
+				</PageShell>
+				);
+				}

@@ -295,3 +295,70 @@
 		width: 100%;
 	}
 }
+
+/* ── Сворачиваемый сайдбар (десктоп ≥769px) ── */
+.bkr-side-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.bkr-side-collapse {
+	display: none;
+	background: none;
+	border: none;
+	color: #9aa0a8;
+	font-size: 0.9rem;
+	cursor: pointer;
+	padding: 0.2rem 0.4rem;
+	transition: color 0.15s ease;
+}
+
+.bkr-side-collapse:hover {
+	color: #16181d;
+}
+
+@media (min-width: 769px) {
+	.bkr-side {
+		transition: width 0.28s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+			flex-basis 0.28s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+			padding 0.28s var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
+	}
+
+	.bkr-side.collapsed {
+		width: 0;
+		flex: 0 0 0;
+		padding: 0;
+		border-right: none;
+		overflow: hidden;
+	}
+
+	.bkr-side-collapse {
+		display: inline-flex;
+	}
+
+	.bkr-toggle.show {
+		display: inline-flex;
+		position: fixed;
+		top: 1rem;
+		left: 1rem;
+		bottom: auto;
+	}
+}
+
+/* ── Единая длинная страница чтения /book/read ── */
+.bkr-scroll {
+	height: 100vh;
+	overflow-y: auto;
+	background: #f8f9fa;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bkr-sec {
+	display: block;
+	scroll-margin-top: 0;
+}
+
+.bkr-sec + .bkr-sec {
+	border-top: 1px solid #e3e6ea;
+}

@@ -2,34 +2,53 @@
 
 import { useState } from "react";
 import { BOOK_CHAPTER_SUBS, BOOK_INTRO_LINKS } from "@/lib/book-data";
+import { useBookSidebarCollapsed } from "@/components/book/useBookSidebarState";
 
 // Светлый сайдбар-оглавление книги «Нейро-Воронка» (эталон exnihilo.life/metriki-mozga).
-// Десктоп: фиксированная колонка слева. Мобильный (≤768px): шторка + кнопка.
+// Десктоп: фиксированная колонка слева, сворачивается кнопкой «◀» (состояние хранится
+// в localStorage и переживает навигацию между подглавами). Мобильный (≤768px): шторка.
 // Все 30 подглав: 3 вводные + 27 по 6 главам. Активная подсвечена жёлтым NCAi.
 export default function BookSidebar({ current }: { current?: string }) {
-	const [open, setOpen] = useState(false);
-	const close = () => setOpen(false);
+	const [mobileOpen, setMobileOpen] = useState(false);
+	const [collapsed, setCollapsed] = useBookSidebarCollapsed();
+	const closeMobile = () => setMobileOpen(false);
 
 	return (
 		<>
 			<button
 				type="button"
-				className="bkr-toggle"
+				className={`bkr-toggle${collapsed ? " show" : ""}`}
 				aria-label="Открыть оглавление"
-				aria-expanded={open}
-				onClick={() => setOpen((v) => !v)}
+				aria-expanded={!collapsed}
+				onClick={() => {
+					setCollapsed(false);
+					setMobileOpen(true);
+				}}
 			>
 				<span>☰</span> Оглавление
 			</button>
 
-			<div className={`bkr-backdrop${open ? " show" : ""}`} onClick={close} aria-hidden="true" />
+			<div className={`bkr-backdrop${mobileOpen ? " show" : ""}`} onClick={closeMobile} aria-hidden="true" />
 
-			<aside className={`bkr-side${open ? " open" : ""}`} aria-label="Оглавление книги">
+			<aside
+				className={`bkr-side${mobileOpen ? " open" : ""}${collapsed ? " collapsed" : ""}`}
+				aria-label="Оглавление книги"
+			>
 				<div className="bkr-side-head">
 					<span className="bkr-side-title">Оглавление</span>
-					<button type="button" className="bkr-side-close" aria-label="Закрыть оглавление" onClick={close}>
-						✕
-					</button>
+					<div className="bkr-side-actions">
+						<button
+							type="button"
+							className="bkr-side-collapse"
+							aria-label="Свернуть оглавление"
+							onClick={() => setCollapsed(true)}
+						>
+							◀
+						</button>
+						<button type="button" className="bkr-side-close" aria-label="Закрыть оглавление" onClick={closeMobile}>
+							✕
+						</button>
+					</div>
 				</div>
 
 				<a href="/book" className="bkr-side-back">
@@ -42,7 +61,7 @@ export default function BookSidebar({ current }: { current?: string }) {
 						<a
 							key={intro.slug}
 							href={`/book/${intro.slug}`}
-							onClick={close}
+							onClick={closeMobile}
 							className={`bkr-link${current === intro.slug ? " active" : ""}`}
 						>
 							{intro.title}
@@ -58,7 +77,7 @@ export default function BookSidebar({ current }: { current?: string }) {
 								<a
 									key={sub.slug}
 									href={`/book/${sub.slug}`}
-									onClick={close}
+									onClick={closeMobile}
 									className={`bkr-link${current === sub.slug ? " active" : ""}`}
 								>
 									<span className="num">

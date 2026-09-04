@@ -144,7 +144,7 @@ nav#nav.sc {
 
 .logo {
 	font-family: var(--fd);
-	font-size: 1.9rem;
+	font-size: 1.5rem;
 	font-weight: 800;
 	letter-spacing: -0.045em;
 	text-decoration: none;
@@ -372,19 +372,20 @@ nav#nav.sc {
 	font-family: var(--fd);
 	font-size: 0.88rem;
 	font-weight: 700;
-	color: #d0cdc6;
+	color: #f0ede6;
 	padding: 0.9rem 2rem;
-	border: 1.5px solid #383838;
+	border: 1.5px solid #3a3a3a;
 	border-radius: 8px;
 	text-decoration: none;
-	background: rgba(255, 255, 255, 0.04);
-	transition: border-color 0.2s, background 0.2s, color 0.2s;
+	background: #161616;
+	transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s var(--ease);
 }
 
 .bs:hover {
-	border-color: #585858;
-	background: rgba(255, 255, 255, 0.07);
-	color: var(--t);
+	border-color: #ffd000;
+	background: #1d1d1d;
+	color: #ffd000;
+	transform: translateY(-1px);
 }
 
 .hstats {
@@ -6199,6 +6200,58 @@ footer {
 
 	.mnav-soc a:hover {
 		color: var(--a);
+	}
+}
+
+/* ── AUDIT-FIX · активный пункт меню (без сдвига layout), визуализации, контраст ── */
+.nl a,
+.nav-links a {
+	position: relative;
+}
+
+.nl a.act,
+.nav-links a.act {
+	color: var(--a);
+}
+
+.nl a.act::after,
+.nav-links a.act::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -7px;
+	height: 2px;
+	background: var(--a);
+	border-radius: 2px;
+}
+
+/* Крупные SVG-визуализации (public/viz/*) */
+.viz {
+	width: 100%;
+	margin: 0;
+}
+
+.viz-img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border: 1px solid rgba(255, 208, 0, 0.14);
+	border-radius: 16px;
+	background: #0d0d0d;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.sec-light .viz-img {
+	border-color: rgba(0, 0, 0, 0.08);
+	background: #ffffff;
+	box-shadow: 0 16px 44px rgba(0, 0, 0, 0.08);
+}
+
+/* Скрываем CTA в шапке на мобильном для inline-навигаций */
+@media (max-width: 640px) {
+	.ni > .nc {
+		display: none;
 	}
 }
 
