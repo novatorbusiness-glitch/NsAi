@@ -36,15 +36,15 @@ nav.sc{background:rgba(8,8,8,.97);border-color:rgba(255,255,255,.08);box-shadow:
 .nc{font-family:var(--fd);font-size:.76rem;font-weight:700;letter-spacing:.04em;color:var(--a);text-decoration:none;
   padding:.5rem 1.25rem;border:1px solid rgba(255,208,0,.3);border-radius:6px;transition:background .2s,border-color .25s}
 .nc:hover{background:var(--ad);border-color:rgba(255,208,0,.6)}
-@media(max-width:640px){.nl{display:none}}
+@media(max-width:640px){.nl{display:none}.nc{display:none}}
 .w{max-width:var(--max);margin:0 auto;padding:0 2rem}
 section{padding:clamp(5.5rem,11vw,9.5rem) 0}
 @media(max-width:640px){section{padding:3.5rem 0}}
 hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 .lb{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fm);font-size:.66rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--a);opacity:.85;margin-bottom:1rem}
 .lb::before{content:'';width:18px;height:1px;background:var(--a);opacity:.5}
-.sh2{font-family:var(--fd);font-size:clamp(1.85rem,3.4vw,3.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.07;margin-bottom:.8rem}
-.sl{font-size:1.03rem;color:var(--t2);max-width:500px;margin-bottom:3.5rem;line-height:1.72}
+.sh2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:1.2rem}
+.sl{font-size:clamp(1.375rem,2vw,1.5rem);color:#b8b3ac;max-width:640px;margin-bottom:3.5rem;line-height:1.55}
 .rv{opacity:1;transform:none}
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.on{opacity:1;transform:none}
@@ -75,7 +75,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 /* FIX: accent line — жёлтый строго через color, не fill-color (Safari mobile fix) */
 .hh1 .acc{display:block;color:var(--a) !important;-webkit-text-fill-color:var(--a) !important;background:none !important}
 /* FIX: subtitle — чуть светлее чем было (#9a9690 → #b0ada6) */
-.hsub{font-size:clamp(.95rem,1.6vw,1.1rem);color:#b0ada6;max-width:480px;line-height:1.8;margin-bottom:2.75rem;animation:fup 1s .2s var(--ease) both}
+.hsub{font-size:1.15rem;color:#b0ada6;max-width:480px;line-height:1.8;margin-bottom:2.75rem;animation:fup 1s .2s var(--ease) both}
 .hacts{display:flex;gap:.875rem;flex-wrap:wrap;animation:fup 1s .32s var(--ease) both}
 /* FIX: primary btn — чуть крупнее текст, box-shadow снизу для depth */
 .bp{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;letter-spacing:.01em;background:var(--a);color:#050505;-webkit-text-fill-color:#050505;padding:.95rem 2.1rem;border-radius:8px;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s;position:relative;overflow:hidden;box-shadow:0 3px 0 rgba(180,140,0,.5),0 8px 32px rgba(255,208,0,.18)}
@@ -126,8 +126,8 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 .uw{display:grid;grid-template-columns:1fr 1.05fr;gap:6rem;align-items:start}
 @media(max-width:900px){.uw{grid-template-columns:1fr;gap:3rem}}
 .ugh{font-family:var(--fd);font-size:clamp(6rem,16vw,13rem);font-weight:800;line-height:.88;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:1px rgba(255,208,0,.09);user-select:none;pointer-events:none;margin-bottom:-.4em;display:block}
-.uh2{font-family:var(--fd);font-size:clamp(1.85rem,3vw,2.9rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.4rem}
-.up{font-size:1rem;color:var(--t2);line-height:1.8;margin-bottom:1.2rem}
+.uh2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:1.4rem}
+.up{font-size:1.06rem;color:var(--t2);line-height:1.8;margin-bottom:1.2rem}
 .up strong{color:var(--t)}
 .ucmp{margin-top:2rem;border-radius:12px;overflow:hidden;outline:1px solid var(--br);background:var(--bgc)}
 .urow{display:grid;grid-template-columns:1fr 1fr}
@@ -198,7 +198,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 @media(max-width:900px){.elay{grid-template-columns:1fr;gap:3rem}}
 .ebig{font-family:var(--fd);font-size:clamp(2.6rem,5.5vw,5.5rem);font-weight:800;line-height:1.04;letter-spacing:-.04em;margin-bottom:1.5rem}
 .ebig .red{color:var(--red);text-shadow:0 0 80px rgba(232,64,64,.22)}
-.ep{font-size:1rem;color:var(--t2);line-height:1.78;margin-bottom:1rem}
+.ep{font-size:1.06rem;color:var(--t2);line-height:1.78;margin-bottom:1rem}
 .ep strong{color:var(--t)}
 .esyms{display:flex;flex-direction:column;gap:.6rem}
 .esym{display:flex;align-items:flex-start;gap:.9rem;padding:.95rem 1.2rem;background:var(--bgc);border:1px solid var(--br);border-radius:8px;transition:border-color .25s,background .25s}
@@ -218,7 +218,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 .ncard:hover::after{transform:scaleX(1)}
 .nnum{font-family:var(--fd);font-size:4rem;font-weight:800;letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1px var(--br2);margin-bottom:1.5rem;user-select:none}
 .ntit{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--t);margin-bottom:.7rem}
-.ntx{font-size:.87rem;color:var(--t2);line-height:1.68}
+.ntx{font-size:.95rem;color:var(--t2);line-height:1.68}
 .ntl{display:grid;grid-template-columns:repeat(4,1fr);margin-top:3rem;padding:2rem 1.5rem;background:var(--bgc);border:1px solid var(--br);border-radius:12px;position:relative}
 .ntl::before{content:'';position:absolute;top:calc(2rem + 16px);left:calc(12.5% + 16px);right:calc(12.5% + 16px);height:1px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.12));z-index:0}
 .ntli{text-align:center;position:relative;z-index:1}
@@ -269,7 +269,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 @keyframes slin{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
 .tlpdur{font-family:var(--fm);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.65rem}
 .tlptit{font-family:var(--fd);font-size:1.08rem;font-weight:700;color:var(--t);margin-bottom:.5rem}
-.tlptx{font-size:.92rem;color:var(--t2);line-height:1.66;margin-bottom:1rem}
+.tlptx{font-size:.98rem;color:var(--t2);line-height:1.66;margin-bottom:1rem}
 .tlpdel{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.7rem;color:var(--t3);padding:.48rem .85rem;background:var(--bg);border:1px solid var(--br);border-radius:5px}
 .tlpdel span{color:var(--a)}
 
@@ -313,7 +313,7 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 .ccard:hover{border-color:rgba(255,255,255,.1);transform:translateY(-6px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
 .ctag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.9rem}
 .ctit{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.5rem;line-height:1.3}
-.csub{font-size:.84rem;color:var(--t2);line-height:1.56;margin-bottom:1.5rem}
+.csub{font-size:.95rem;color:var(--t2);line-height:1.56;margin-bottom:1.5rem}
 .cress{display:flex;flex-direction:column;gap:.4rem}
 .cres{display:flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.7rem;color:var(--t2);padding:.38rem .65rem;background:rgba(255,255,255,.025);border-radius:4px}
 .cres strong{color:var(--a)}
@@ -326,8 +326,8 @@ hr.dv{border:none;border-top:1px solid var(--br);margin:0}
 #offer{position:relative;overflow:hidden}
 #offer::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 55% at 50% 108%,rgba(255,208,0,.06),transparent)}
 .ofin{max-width:860px;margin:0 auto;text-align:center;position:relative;z-index:2}
-.ofh2{font-family:var(--fd);font-size:clamp(2.3rem,5vw,4.8rem);font-weight:800;letter-spacing:-.045em;line-height:1.04;margin-bottom:1.25rem}
-.ofsub{font-size:1.02rem;color:var(--t2);margin-bottom:3rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.76}
+.ofh2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.045em;line-height:1.04;margin-bottom:1.25rem}
+.ofsub{font-size:clamp(1.375rem,2vw,1.5rem);color:#b8b3ac;margin-bottom:3rem;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.55}
 .ofcard{background:var(--bgc);border:1px solid rgba(255,208,0,.2);border-radius:18px;padding:2.75rem;margin-bottom:2.5rem;text-align:left;position:relative;overflow:hidden}
 .ofcard::before{content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;background:radial-gradient(ellipse 70% 45% at 50% 0%,rgba(255,208,0,.04),transparent)}
 .ofgrid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
@@ -348,14 +348,14 @@ footer{background:#040404;padding:4.5rem 0 2rem;border-top:1px solid var(--br);p
 @media(max-width:900px){.fgrid{grid-template-columns:1fr 1fr;gap:2.5rem}}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr}}
 .flogo{font-family:var(--fd);font-size:1.4rem;font-weight:800;letter-spacing:-.03em;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem}
-.ftag{font-size:.87rem;color:var(--t2);line-height:1.65;max-width:270px;margin-bottom:1.5rem}
+.ftag{font-size:.95rem;color:#a9a59e;line-height:1.7;max-width:320px;margin-bottom:1.5rem}
 .fsoc{display:flex;gap:.75rem}
 .fsi{width:34px;height:34px;border:1px solid var(--br);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:var(--t2);text-decoration:none;transition:border-color .2s,color .2s}
 .fsi:hover{border-color:rgba(255,208,0,.3);color:var(--a)}
-.fch{font-family:var(--fd);font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:1.2rem}
+.fch{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a857d;margin-bottom:1.2rem}
 .fls{list-style:none;display:flex;flex-direction:column;gap:.52rem}
-.fls a{font-size:.86rem;color:var(--t2);text-decoration:none;transition:color .2s}
-.fls a:hover{color:var(--t)}
+.fls a{font-size:.95rem;color:#a9a59e;text-decoration:none;transition:color .2s}
+.fls a:hover{color:var(--a)}
 .fbot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid #0f0f0f;flex-wrap:wrap;gap:.75rem}
 .fcp,.fea{font-family:var(--fm);font-size:.66rem;color:var(--t3);letter-spacing:.04em}
 .fea span{color:var(--a)}
@@ -376,7 +376,7 @@ section[id]{scroll-margin-top:76px}
 .pr:hover{border-color:var(--trb);transform:translateY(-4px)}
 .pr-n{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tr);margin-bottom:.8rem}
 .pr-t{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.6rem}
-.pr-x{font-size:.87rem;color:var(--t2);line-height:1.62}
+.pr-x{font-size:.95rem;color:var(--t2);line-height:1.62}
 .w-row{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;align-items:start}
 @media(max-width:800px){.w-row{grid-template-columns:1fr}}
 .w-col{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:1.75rem 2rem}
@@ -395,13 +395,13 @@ section[id]{scroll-margin-top:76px}
 .qtag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
 .qtag.e{color:var(--tr)}.qtag.l{color:var(--a)}
 .qq{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);line-height:1.35;margin-bottom:.5rem}
-.qa{font-size:.85rem;color:var(--t2);line-height:1.55}
+.qa{font-size:.95rem;color:var(--t2);line-height:1.55}
 .obj{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.5rem 1.75rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);margin-top:1rem;transition:border-color .25s}
 .obj:hover{border-color:var(--trb)}
 @media(max-width:700px){.obj{grid-template-columns:1fr;gap:.6rem}}
 .obj-q{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);line-height:1.3}
 .obj-q::before{content:'«'}
-.obj-a{font-size:.9rem;color:var(--t2);line-height:1.6}
+.obj-a{font-size:.98rem;color:var(--t2);line-height:1.6}
 .obj-a b{color:var(--t);font-weight:600}
 .meta4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
 @media(max-width:640px){.meta4{grid-template-columns:1fr 1fr}}
@@ -413,14 +413,14 @@ section[id]{scroll-margin-top:76px}
 .amp{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
 .amp-ico{font-size:1.3rem;flex-shrink:0}
 .amp-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.35rem}
-.amp-x{font-size:.85rem;color:var(--t2);line-height:1.55}
+.amp-x{font-size:.95rem;color:var(--t2);line-height:1.55}
 
 /* ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ */
 #roi{background:var(--bg2);position:relative;overflow:hidden}
 #roi::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(255,208,0,.045),transparent)}
 .roi-head{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:end;margin-bottom:3.5rem}
 @media(max-width:900px){.roi-head{grid-template-columns:1fr;gap:1.5rem}}
-.roi-tx{font-size:1.02rem;color:var(--t2);line-height:1.75;max-width:540px}
+.roi-tx{font-size:1.06rem;color:var(--t2);line-height:1.75;max-width:540px}
 .roi-tx strong{color:var(--t)}
 .roi-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3.5rem}
 @media(max-width:640px){.roi-stats{grid-template-columns:1fr 1fr}.roi-stats .roi-stat:last-child{grid-column:1/-1}}
@@ -455,6 +455,17 @@ section[id]{scroll-margin-top:76px}
 .roi-bottom{margin-top:3rem;padding:1.75rem 2.25rem;border:1px solid rgba(255,208,0,.2);border-radius:14px;background:var(--ad);display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .roi-bottom .tx{font-family:var(--fd);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:800;letter-spacing:-.02em;line-height:1.3;flex:1;min-width:260px}
 .roi-bottom .tx span{color:var(--a)}
+
+/* Светлые секции — ритмичное чередование (читаемость, контраст) */
+.sec-light{background:#FAFAF8 !important}
+.sec-light .sh2,.sec-light .uh2,.sec-light .ofh2{color:#111}
+.sec-light .lb{color:#a37900;opacity:1}
+.sec-light .lb::before{background:#a37900;opacity:.6}
+.sec-light .sl,.sec-light .up,.sec-light .ep,.sec-light .roi-tx{color:#2e2e2c}
+.sec-light .sl strong,.sec-light .up strong,.sec-light .ep strong,.sec-light .roi-tx strong{color:#000}
+.sec-light .bigidea{background:rgba(255,208,0,.14);border:1px solid rgba(170,115,0,.35)}
+.sec-light .bigidea-tag{color:#8a6d00}
+.sec-light .bigidea-tx{color:#111}
 `;
 
 export const body = `<div id="cd"></div><div id="cr"></div>
@@ -470,8 +481,32 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <li><a href="/portfolio">Портфолио</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nc">Написать</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<!-- Мобильное меню (шторка) -->
+<div class="mnav" id="mnav">
+  <div class="mnav-backdrop" id="mnavBackdrop"></div>
+  <div class="mnav-panel">
+    <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
+    <div class="mnav-links">
+      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
+      <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
+      <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
+      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
+      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
+      <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
+      <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
+      <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
+    </div>
+    <div class="mnav-foot">
+      <a href="mailto:ilya.novitskii@yandex.ru" class="mnav-cta">Написать напрямую</a>
+      <div class="mnav-soc"><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a><a href="mailto:ilya.novitskii@yandex.ru">Email</a></div>
+    </div>
+  </div>
+</div>
 
 <!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero">
@@ -520,7 +555,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <hr class="dv">
 
 <!-- 1 · БОЛЬШАЯ ИДЕЯ -->
-<section id="idea">
+<section id="idea" class="sec-light">
   <div class="w">
     <span class="lb rv">Большая идея</span>
     <h2 class="sh2 rv d1">Почему бизнес не растёт, хотя сил уходит всё больше</h2>
@@ -629,9 +664,9 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div class="roi-col good rv d1">
         <div class="roi-col-head"><span class="tag">NCAi-агентство</span><span class="price"><b>250 000 ₽</b> разово</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Разовый чек за внедрение — <b>250 000 ₽</b>, потом подписка от 2 900 ₽/мес</span></div>
-        <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b>: не болеет, не увольняется, не просит прибавку</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b> без больничных и «не в настроении»</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Задача утром — <b>результат днём</b>. Запуск за дни, а не за месяцы</span></div>
-        <div class="roi-li"><span class="y">✓</span><span>Передача руля: система остаётся с вами, зависимость уходит</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Передача руля: система остаётся с вами</span></div>
         <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">250 000 ₽ + подписка</span></div>
       </div>
     </div>
@@ -644,7 +679,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <hr class="dv">
 
 <!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
-<section id="gets">
+<section id="gets" class="sec-light">
   <div class="w">
     <span class="lb rv">Уникальный механизм</span>
     <h2 class="sh2 rv d1">Что вы получаете<br>после распаковки</h2>
@@ -678,14 +713,14 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-команда 3–5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Вы сами ставите первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 2 · в работу</div><div class="tlptit">Вы ведёте задачи сами</div><p class="tlptx">Ежедневные отчёты идут, вы ставите задачи без подсказок. Созвон через 3 дня — разбираем первые вопросы. Сотрудники выполняют рутину, владелец принимает решения, а не тонет в операционке.</p><div class="tlpdel"><span>→</span> Первый реальный результат</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда вы сами увидели пользу и попросили.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
-      <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Вы самостоятельны</div><p class="tlptx">Вы сами ставите задачи и смотрите финансы без участия внедренца. Знаете, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся — зависимость уходит.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
+      <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Вы самостоятельны</div><p class="tlptx">Вы сами ставите задачи и смотрите финансы без участия внедренца. Знаете, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся с вами.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
     </div>
   </div>
 </section>
 <hr class="dv">
 
 <!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 МИН -->
-<section id="steps">
+<section id="steps" class="sec-light">
   <div class="w">
     <div class="wlay">
       <div>
@@ -748,7 +783,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <hr class="dv">
 
 <!-- 7 · ВОЗРАЖЕНИЯ -->
-<section id="objections">
+<section id="objections" class="sec-light">
   <div class="w">
     <span class="lb rv">Возражения</span>
     <h2 class="sh2 rv d1">«Да, но...» — и почему это не аргумент</h2>
@@ -757,7 +792,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
     <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">На распаковке заводим 10 тёплых контактов для старта. База — топливо системы, и её можно собрать за первую неделю.</div></div>
     <div class="obj rv d1"><div class="obj-q">Я не технарь, панель не осилю</div><div class="obj-a">Панель — это Telegram Mini App: ставить задачи и смотреть финансы проще, чем вести таблицу в Excel. 90 минут на сессии вы во всём разберётесь.</div></div>
     <div class="obj rv d2"><div class="obj-q">Уже пробовали автоматизацию — не взлетело</div><div class="obj-a">Разница в подходе: не «подключили бота», а построили агентство с ролями, базой знаний и правом на действие. Плюс передача руля, а не зависимость.</div></div>
-    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм отдела — 150–250 тыс ₽/мес. Подписка — от 2 900 ₽. Это 2–5% от стоимости найма за команду, которая работает 24/7.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм отдела — 150–250 тыс ₽/мес. Подписка — от 2 900 ₽. Это 2–5% от стоимости найма за команду, которая работает круглосуточно.</div></div>
     <div class="obj rv d2"><div class="obj-q">А если мне не понравится?</div><div class="obj-a">14 дней trial после распаковки — вы видите продукт в действии до того, как платить за подписку. Решение принимаете по факту, а не по обещаниям.</div></div>
   </div>
 </section>
@@ -817,7 +852,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <hr class="dv">
 
 <!-- 10 · КЕЙСЫ / ПРИМЕР -->
-<section id="cases">
+<section id="cases" class="sec-light">
   <div class="w">
     <span class="lb rv">Как это работает</span>
     <h2 class="sh2 rv d1">Примеры из разных ниш</h2>
@@ -866,12 +901,12 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <section id="final" style="position:relative;overflow:hidden">
   <div class="ofin">
     <h2 class="ofh2 rv">Хватит быть человеком-системой.<br>Получите <em style="font-style:normal;color:var(--a)">агентство в коробке.</em></h2>
-    <p class="ofsub rv d1">30 дней — и у вас рабочее агентство, которое не болеет и не увольняется. Передаю руль — зависимость уходит.</p>
+    <p class="ofsub rv d1">30 дней — и у вас рабочее агентство, которое работает без вас. Передаю руль — и работаете сами.</p>
     <div class="ofcta rv d2">
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/ai-training" class="bs">Сравнить с обучением AI</a>
     </div>
-    <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>
+    <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>
   </div>
 </section>
 
@@ -882,7 +917,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div>
         <div class="flogo">NCAi</div>
         <p class="ftag">Архитектор систем. Нейромаркетинг, AI-автоматизация и агентства в коробке для тех, кто строит бизнес серьёзно.</p>
-        <div class="fsoc"><a href="https://t.me/Ilya_novator" class="fsi" target="_blank" rel="noopener noreferrer">✈</a><a href="mailto:ilya.novitskii@yandex.ru" class="fsi">✉</a></div>
+        <div class="fsoc"><a href="https://t.me/ilya_novator" class="fsi" target="_blank" rel="noopener noreferrer">✈</a><a href="mailto:ilya.novitskii@yandex.ru" class="fsi">✉</a></div>
       </div>
       <div>
         <div class="fch">Книга</div>
@@ -905,7 +940,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       </div>
     </div>
     <div class="fbot">
-      <span class="fcp">© 2025 NCAi. Все права защищены.</span>
+      <span class="fcp">© 2026 NCAi · Илья Новицкий. Все права защищены.</span>
       <span class="fea">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
@@ -943,4 +978,11 @@ tls.forEach(s=>s.addEventListener('click',()=>{const i=+s.dataset.s;tls.forEach(
 document.querySelectorAll('.wi').forEach(item=>item.addEventListener('click',()=>{document.querySelectorAll('.wi').forEach(x=>x.classList.remove('act'));item.classList.add('act')}));
 const hboxes=[document.getElementById('hb0'),document.getElementById('hb1'),document.getElementById('hb2'),document.getElementById('hb3'),document.getElementById('hb4'),document.getElementById('hb5')].filter(Boolean);
 let hbi=0;
-setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);`;
+setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);
+
+// BURGER — мобильное меню
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+if(burger&&mnav){
+  burger.addEventListener('click',()=>{mnav.classList.add('open');document.body.style.overflow='hidden'});
+  mnav.querySelectorAll('.mnav-close,.mnav-backdrop,.mnav-links a').forEach(el=>el.addEventListener('click',()=>{mnav.classList.remove('open');document.body.style.overflow=''}));
+}`;

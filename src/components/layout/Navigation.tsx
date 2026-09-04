@@ -5,9 +5,25 @@ import { useLang } from "@/lib/i18n";
 import LangSwitch from "./LangSwitch";
 
 // Шапка сайта: лого, навигация (с выпадающим «Книги»), переключатель языка, CTA.
+// На мобильном (≤640px) десктоп-меню скрывается, вместо него — бургер ☰,
+// открывающий выезжающую шторку со всеми пунктами (крупные тапы, свайп/крестик).
+const MENU_ITEMS: { href: string; label: string }[] = [
+  { href: "/", label: "Главная" },
+  { href: "/consulting", label: "Внедрение NCAi" },
+  { href: "/ai-training", label: "Обучение AI" },
+  { href: "/book", label: "Книги" },
+  { href: "/blog", label: "Блог" },
+  { href: "/prompts", label: "Промпты" },
+  { href: "/team-book", label: "Команда" },
+  { href: "/o-proekte", label: "О проекте" },
+  { href: "/portfolio", label: "Портфолио" },
+  { href: "/partners", label: "Партнёры" },
+];
+
 export default function Navigation() {
   const { t } = useLang();
   const [booksOpen, setBooksOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const nav = document.getElementById("nav");
@@ -27,13 +43,25 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Блокируем прокрутку фона, пока открыта шторка
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <div id="prog" />
       <nav id="nav">
         <div className="ni">
           <a href="/" className="logo">
-            NcAi
+            NCAi
           </a>
           <ul className="nl">
             <li>
@@ -82,9 +110,57 @@ export default function Navigation() {
             <a href="/consulting#offer" className="nc">
               {t("nav.cta")}
             </a>
+            <button
+              type="button"
+              className="burger"
+              aria-label="Открыть меню"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* Мобильная шторка-меню */}
+      <div className={`mnav${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
+        <div className="mnav-backdrop" onClick={() => setMenuOpen(false)} />
+        <div className="mnav-panel">
+          <div className="mnav-head">
+            <span className="mnav-logo">NCAi</span>
+            <button
+              type="button"
+              className="mnav-close"
+              aria-label="Закрыть меню"
+              onClick={() => setMenuOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+          <nav className="mnav-links">
+            {MENU_ITEMS.map((item) => (
+              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+                <span className="mnav-arrow">→</span>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div className="mnav-foot">
+            <a href="mailto:ilya.novitskii@yandex.ru" className="mnav-cta">
+              Написать напрямую
+            </a>
+            <div className="mnav-soc">
+              <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
+              <a href="mailto:ilya.novitskii@yandex.ru">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
