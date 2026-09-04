@@ -5,8 +5,8 @@ import type { ReactNode } from "react";
 import fs from "fs";
 import path from "path";
 import { getSubchapterTitle } from "@/lib/book-data";
-import Navigation from "@/components/layout/Navigation";
-import Footer from "@/components/layout/Footer";
+import BookSidebar from "@/components/book/BookSidebar";
+import "@/styles/book-reader.css";
 
 const LEGACY_SLUG_ALIASES: Record<string, string> = {
 	vvedenie: "00-vvedenie",
@@ -54,24 +54,45 @@ function stripFrontmatter(source: string): string {
 	return source.slice(endIndex + 5).trim();
 }
 
-function slugToTitle(slug: string): string {
-	return slug
-		.split("-")
-		.filter((part) => !/^\d+$/.test(part))
-		.join(" ");
-}
-
 function isFullHtmlDocument(source: string): boolean {
 	return source.trimStart().toLowerCase().startsWith("<!doctype html>");
 }
 
-function normalizeChapterHtmlFonts(source: string, slug: string): string {
-	const isPremiumChapter = slug === "00-a-znakomstvo" || slug === "00-b-prolog" || slug === "00-c-epilog";
-	const runtimeBrandingCss = ".logo{font-family:var(--fd)!important}.nav-chap{font-family:var(--fm)!important}.nav-back{font-family:var(--fd)!important}body::before{display:none!important;background-image:none!important;opacity:0!important;content:none!important}.chapter-nav{display:grid!important;grid-template-columns:1fr 1fr!important;gap:1rem!important}.cn-btn{border:1px solid var(--br)!important;background:rgba(255,255,255,.03)!important;border-radius:12px!important;padding:1.15rem 1.25rem!important;text-decoration:none!important;transition:border-color .2s ease,background .2s ease,transform .2s ease!important}.cn-btn:hover{border-color:rgba(255,208,0,.35)!important;background:rgba(255,255,255,.06)!important;transform:translateY(-2px)!important}.cn-btn .cn-dir{font-family:var(--fm)!important;font-size:.6rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--t3)!important;margin-bottom:.45rem!important}.cn-btn .cn-title{font-family:var(--fd)!important;font-size:1.02rem!important;font-weight:700!important;line-height:1.3!important;color:var(--t)!important}.cn-btn.next{border-color:var(--a)!important;background:var(--a)!important}.cn-btn.next:hover{border-color:var(--a)!important;background:#ffe04d!important}.cn-btn.next .cn-dir,.cn-btn.next .cn-title{color:#0a0a0a!important}@media(max-width:480px){.chapter-nav{grid-template-columns:1fr!important}}";
-	const premiumCss = isPremiumChapter
-		? ".hero-bg{background:radial-gradient(ellipse 75% 55% at 30% 0%,rgba(255,208,0,.075),transparent)!important}.hero-grid{opacity:.9}.stat-card,.silence-card,.road-item,.author-pivot,.conclusion-card,.tc,.pain-card,.blueprint,.lang-close,.hq,.ep-item,.trance-block{position:relative;overflow:hidden;transition:border-color .24s ease,transform .24s ease,box-shadow .24s ease,background-color .24s ease}.stat-card::after,.silence-card::after,.road-item::after,.author-pivot::after,.conclusion-card::after,.tc::after,.pain-card::after,.blueprint::after,.lang-close::after,.hq::after,.ep-item::after,.trance-block::after{content:'';position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,208,0,.06),transparent 52%);opacity:.5;pointer-events:none}.stat-card:hover,.silence-card:hover,.road-item:hover,.author-pivot:hover,.conclusion-card:hover,.tc:hover,.pain-card:hover,.blueprint:hover,.lang-close:hover,.hq:hover,.ep-item:hover,.trance-block:hover{border-color:rgba(255,208,0,.3)!important;box-shadow:0 10px 28px rgba(0,0,0,.23),0 0 16px rgba(255,208,0,.08)}.road-item:hover,.tc:hover,.pain-card:hover{transform:translateY(-2px)}.cn-btn:not(.next){background:rgba(255,255,255,.04)!important}.cn-btn:not(.next):hover{background:rgba(255,255,255,.08)!important}.cn-btn.next{box-shadow:0 8px 26px rgba(255,208,0,.25)!important}@media (prefers-reduced-motion:reduce){.stat-card,.silence-card,.road-item,.author-pivot,.conclusion-card,.tc,.pain-card,.blueprint,.lang-close,.hq,.ep-item,.trance-block,.cn-btn{transition:none!important;transform:none!important}}"
-		: "";
+// Светлая тема чтения (эталон exnihilo.life/metriki-mozga):
+// тёмная шапка-навигация остаётся, контент — светлый #f8f9fa, тёмный текст,
+// акцент — жёлтый NCAi. Внедряется внутрь iframe поверх inline-стилей главы.
+const LIGHT_READER_CSS = `
+:root{--bg:#f8f9fa!important;--bg2:#ffffff!important;--bgc:#ffffff!important;--bgc2:#f1f3f5!important;--br:#e7e9ec!important;--br2:#d9dce1!important;--t:#16181d!important;--t2:#55595f!important;--t3:#9aa0a8!important;--a:#c99700!important;--ad:rgba(255,208,0,.14)!important;--red:#d23b3b!important}
+body{background:var(--bg)!important;color:var(--t)!important}
+body::before{display:none!important;background-image:none!important;opacity:0!important;content:none!important}
+#cd,#cr{display:none!important}
+@media(pointer:fine){body{cursor:auto!important}}
+nav#nav{background:rgba(8,8,8,.94)!important;border-bottom:1px solid rgba(255,255,255,.07)!important}
+.nav-chap{color:#8b8e95!important}
+.nav-back{color:#c9cbd1!important}
+.nav-back:hover{color:#ffffff!important}
+.hero-h1 em{background:linear-gradient(135deg,#141519 0%,#4a4d55 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+.prose-p{color:#3b3e44!important}
+.prose-p em{color:#3b3e44!important}
+.prose-p strong{color:#141519!important}
+.prose-h2{color:#141519!important}
+.practice p{color:#3b3e44!important}
+.practice strong{color:#141519!important}
+.silence-card{background:#ffffff!important;border-color:#e7e9ec!important}
+.silence-day{color:#b0b4ba!important}
+.silence-word{color:#3a3d43!important}
+.tg-cta{background:#ffd000!important}
+.tg-cta-title{color:#0a0a0a!important}
+.tg-cta-text{color:rgba(0,0,0,.62)!important}
+.tg-cta-btn{background:#0a0a0a!important;color:#ffd000!important}
+.tg-sub{background:#ffffff!important;border-color:rgba(255,208,0,.35)!important}
+.tg-sub-btn{background:#ffd000!important;color:#0a0a0a!important}
+.cn-btn.next{background:#ffd000!important;border-color:#ffd000!important}
+.cn-btn.next .cn-dir,.cn-btn.next .cn-title{color:#0a0a0a!important}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
+`;
 
+function normalizeChapterHtmlFonts(source: string): string {
 	return source
 		.replace(
 			/<link[^>]*fonts\.googleapis\.com[^>]*>/gi,
@@ -84,10 +105,7 @@ function normalizeChapterHtmlFonts(source: string, slug: string): string {
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*>)([\s\S]*?)(<\/a>)/gi, "$1NcAi$3")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/$2")
 		.replace(/(<a\b[^>]*class=["']nav-back["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/book$2")
-		.replace(
-			/<\/head>/i,
-			`<style id="ncai-chapter-runtime-branding">${runtimeBrandingCss}${premiumCss}</style></head>`,
-		);
+		.replace(/<\/head>/i, `<style id="ncai-light-reader">${LIGHT_READER_CSS}</style></head>`);
 }
 
 interface ChapterPageProps {
@@ -191,7 +209,7 @@ export function generateMetadata({ params }: ChapterPageProps): Metadata {
 	const resolvedSlug = resolveChapterSlug(params.slug);
 	if (!slugs.includes(resolvedSlug)) {
 		return {
-			title: "Глава не найдена | NcAi",
+			title: "Глава не найдена | NCAi",
 			description: "Запрошенная глава книги не найдена.",
 		};
 	}
@@ -199,7 +217,7 @@ export function generateMetadata({ params }: ChapterPageProps): Metadata {
 	const chapterTitle = getSubchapterTitle(resolvedSlug);
 
 	return {
-		title: `${chapterTitle} — Нейро-воронка | NcAi`,
+		title: `${chapterTitle} — Нейро-воронка | NCAi`,
 		description: `${chapterTitle}. Глава книги «Нейро-воронка» Ильи Новицкого — инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI.`,
 		alternates: {
 			canonical: `/book/${resolvedSlug}`,
@@ -216,103 +234,52 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 		notFound();
 	}
 
-	const prevSlug = index > 0 ? slugs[index - 1] : null;
-	const nextSlug = index < slugs.length - 1 ? slugs[index + 1] : null;
 	const chapterSource = getChapterSource(resolvedSlug);
 	const chapterTitle = getSubchapterTitle(resolvedSlug);
 	const isFullHtml = isFullHtmlDocument(chapterSource);
-	const normalizedFullHtml = isFullHtml ? normalizeChapterHtmlFonts(chapterSource, resolvedSlug) : "";
+	const normalizedFullHtml = isFullHtml ? normalizeChapterHtmlFonts(chapterSource) : "";
 
 	return (
-		<>
-		{!isFullHtml ? <Navigation /> : null}
-		<main
-			className="w"
-			style={{
-				paddingTop: isFullHtml ? "0" : "120px",
-				paddingBottom: isFullHtml ? "0" : "80px",
-				maxWidth: isFullHtml ? "100%" : undefined,
-				paddingLeft: isFullHtml ? "0" : undefined,
-				paddingRight: isFullHtml ? "0" : undefined,
-			}}
-		>
-			{isFullHtml ? (
-				<iframe
-					title={chapterTitle}
-					srcDoc={normalizedFullHtml}
-					style={{
-						display: "block",
-						width: "100%",
-						height: "100vh",
-						border: "0",
-						background: "var(--bg)",
-						position: "relative",
-						zIndex: 9001,
-					}}
-				/>
-			) : null}
+		<div className="bkr">
+			<BookSidebar current={resolvedSlug} />
 
-			{!isFullHtml ? (
-				<>
-					<div className="chapter-topbar">
-						<p className="chapter-breadcrumb" style={{ marginTop: 0, marginBottom: 0 }}>
-							<a href="/book">Книги</a>
-							<span className="sep">·</span>
-							<a href="/book">Нейро-Воронка</a>
-							<span className="sep">→</span>
-							<span style={{ color: "var(--t)" }}>{chapterTitle}</span>
-						</p>
-					</div>
-				</>
-			) : null}
-
-			{!isFullHtml && !chapterSource.trimStart().startsWith("<") && !chapterSource.includes("# ") ? (
-				<h1 style={{ marginBottom: "12px" }}>{chapterTitle}</h1>
-			) : null}
-
-			{chapterSource && !isFullHtml ? (
-				<article className="book-article">
-					<MDXRemote
-						source={chapterSource}
-						components={{
-							KeyTakeaway,
-							ChapterCTA,
-							StatRow,
-							Stat,
-							MomentBlock,
-							ResultsFlow,
-							FlowStep,
-							FlowArrow,
-							LightCard,
-							RoadmapGrid,
-							RoadItem,
-						}}
+			<main className="bkr-main">
+				{isFullHtml ? (
+					<iframe
+						title={chapterTitle}
+						className="bkr-frame"
+						srcDoc={normalizedFullHtml}
 					/>
-				</article>
-			) : (
-				!isFullHtml && (
-					<p style={{ color: "var(--t2)", marginBottom: "24px" }}>
-					Эта глава пока пустая. Добавьте текст в файл {`${params.slug}.mdx`}.
-					</p>
-				)
-			)}
-
-			{!isFullHtml ? (
-				<div className="chapter-next-cta">
-					{prevSlug ? (
-						<a href={`/book/${prevSlug}`} className="chapter-prev-btn">
-							← {getSubchapterTitle(prevSlug)}
-						</a>
-					) : null}
-					{nextSlug ? (
-						<a href={`/book/${nextSlug}`} className="bp">
-							Дальше: {getSubchapterTitle(nextSlug)}
-						</a>
-					) : null}
-				</div>
-			) : null}
-		</main>
-		{!isFullHtml ? <Footer /> : null}
-		</>
+				) : (
+					<article className="bkr-prose">
+						<p style={{ marginTop: 0 }}>
+							<a href="/book" style={{ color: "#c99700" }}>
+								← Все книги
+							</a>
+						</p>
+						{chapterSource ? (
+							<MDXRemote
+								source={chapterSource}
+								components={{
+									KeyTakeaway,
+									ChapterCTA,
+									StatRow,
+									Stat,
+									MomentBlock,
+									ResultsFlow,
+									FlowStep,
+									FlowArrow,
+									LightCard,
+									RoadmapGrid,
+									RoadItem,
+								}}
+							/>
+						) : (
+							<p>Эта глава пока пустая. Добавьте текст в файл {`${params.slug}.mdx`}.</p>
+						)}
+					</article>
+				)}
+			</main>
+		</div>
 	);
 }

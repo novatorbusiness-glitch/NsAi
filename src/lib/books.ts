@@ -12,7 +12,7 @@ export interface BookMeta {
 export const BOOKS: BookMeta[] = [
 	{
 		slug: "neuro-voronka",
-		href: "/book",
+		href: "/book/00-a-znakomstvo",
 		cover: "/covers/neuro-voronka.svg",
 		titleKey: "book.neuroTitle",
 		subKey: "book.neuroSub",
