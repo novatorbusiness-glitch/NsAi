@@ -5,7 +5,7 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
+  --t:#edeae3;--t2:#c2bdb5;--t3:#8b867e;
   --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
   --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
@@ -25,7 +25,7 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;padding:0 2rem;
   background:rgba(8,8,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);transition:background .3s}
 nav.sc{background:rgba(8,8,8,.97)}
 .ni{max-width:var(--max);width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
@@ -41,7 +41,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 @media(max-width:640px){.nav-links{display:none}.nav-cta{display:none}}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:60px;text-align:center}
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px;text-align:center}
 .hero-grid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
   background-size:60px 60px;animation:gm 30s ease-in-out infinite alternate}
@@ -58,7 +58,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hero-name{font-family:var(--fd);font-size:clamp(2.4rem,5.5vw,5.25rem);font-weight:800;line-height:1.05;
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
 .hero-name .acc{display:block;color:var(--a);-webkit-text-fill-color:var(--a)}
-.hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#b8b3ac;max-width:620px;line-height:1.75;
+.hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#c2bdb5;max-width:620px;line-height:1.75;
   margin:0 auto 2.5rem;animation:fup 1s .22s var(--ease) both}
 .hero-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fup 1s .34s var(--ease) both}
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fd);font-size:.9rem;font-weight:800;
@@ -191,8 +191,6 @@ export const body = `
       <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
       <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
       <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
-      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
-      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
       <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
       <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
       <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
@@ -281,6 +279,7 @@ export const body = `
         <span class="pj-status">R&D</span>
       </div>
     </div>
+    <img src="/viz/mrr.svg" alt="Масштаб запусков — лестница MRR и экономика проектов" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 

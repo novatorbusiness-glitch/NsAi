@@ -4,7 +4,7 @@ export const css = `
 :root{
   --bg:#080808;--bgc:#111;--bgc2:#161616;--bgc3:#1a1a1a;
   --br:#1e1e1e;--br2:#272727;
-  --t:#edeae3;--t2:#b0aba3;--t3:#6e6a63;
+  --t:#edeae3;--t2:#c2bdb5;--t3:#8b867e;
   --a:#FFD000;--ad:rgba(255,208,0,.07);--ag:rgba(255,208,0,.14);
   --metal:linear-gradient(135deg,#e0e0e0 0%,#c0c0c0 40%,#888 65%,#d0d0d0 100%);
   --fd:var(--font-syne),sans-serif;--fs:var(--font-instrument-serif),serif;--fm:var(--font-jetbrains-mono),monospace;
@@ -120,7 +120,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .sec-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;
   letter-spacing:.2em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:1rem}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
-.sec-h2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.04em;
+.sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:1.2rem}
 /* REVEAL — прогрессивное улучшение: без JS контент видим сразу,
    с JS — плавное появление при скролле (html.js ставит страница) */
@@ -197,9 +197,9 @@ nav.sc{background:rgba(8,8,8,.97)}
 .acj-d{font-size:.78rem;color:var(--t2);line-height:1.55}
 
 .about-text{}
-.about-h2{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.04em;
+.about-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:1.25rem}
-.p{font-size:1.06rem;color:#b8b3ac;line-height:1.88;margin-bottom:1.2rem}
+.p{font-size:1.06rem;color:#c2bdb5;line-height:1.88;margin-bottom:1.2rem}
 .p strong{color:var(--t);font-weight:600}
 .about-alai{font-family:var(--fs);font-style:italic;font-size:1.05rem;line-height:1.75;color:var(--t);
   padding:1.5rem 1.75rem;background:var(--ad);border-left:3px solid rgba(255,208,0,.4);
@@ -291,7 +291,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 #iznanka::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 50% 0%,rgba(255,208,0,.05),transparent)}
 .iz-head{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:end;margin-bottom:3rem}
 @media(max-width:900px){.iz-head{grid-template-columns:1fr;gap:1.5rem}}
-.iz-tx{font-size:1.06rem;color:#b8b3ac;line-height:1.8}
+.iz-tx{font-size:1.06rem;color:#c2bdb5;line-height:1.8}
 .iz-tx strong{color:var(--t)}
 .iz-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:3rem}
 @media(max-width:700px){.iz-stats{grid-template-columns:1fr 1fr}.iz-stats .iz-stat:last-child{grid-column:1/-1}}
@@ -361,8 +361,6 @@ export const body = `
       <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
       <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
       <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
-      <a href="/prompts"><span class="mnav-arrow">→</span>Промпты</a>
-      <a href="/team-book"><span class="mnav-arrow">→</span>Команда</a>
       <a href="/o-proekte"><span class="mnav-arrow">→</span>О проекте</a>
       <a href="/portfolio"><span class="mnav-arrow">→</span>Портфолио</a>
       <a href="/partners"><span class="mnav-arrow">→</span>Партнёры</a>
@@ -514,6 +512,7 @@ export const body = `
       </a>
 
     </div>
+    <img src="/viz/matrica.svg" alt="Продуктовая матрица NCAi — лестница ценности" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 
@@ -525,7 +524,7 @@ export const body = `
     <p class="sl rv d2">Книга Ильи Новицкого — с механикой нейро-воронки, читается прямо на сайте.</p>
     <div class="books-grid">
       <a href="/book" class="bk-card rv d1">
-        <img src="/covers/neuro-voronka.svg" alt="Книга Нейро-Воронка — обложка" class="bk-cover" loading="lazy" />
+        <img src="/covers/neuro-voronka-cover.jpg" alt="Книга Нейро-Воронка — обложка" class="bk-cover" loading="lazy" />
         <div class="bk-body">
           <div class="bk-badge">Книга · Бесплатно</div>
           <div class="bk-title">Нейро-Воронка</div>

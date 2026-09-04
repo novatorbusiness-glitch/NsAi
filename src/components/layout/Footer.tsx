@@ -46,8 +46,6 @@ export default function Footer() {
             <div className="fch">{t("footer.colBooks")}</div>
             <ul className="fls">
               <li><a href="/book">{t("nav.bookNeuro")}</a></li>
-              <li><a href="/prompts">Промпты NCAi</a></li>
-              <li><a href="/team-book">Команда NCAi</a></li>
             </ul>
           </div>
 
