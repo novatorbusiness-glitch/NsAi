@@ -28,11 +28,11 @@
 
 	--metal: linear-gradient(135deg, #f0f0ec 0%, #cfcfca 35%, #8a8a86 65%, #d8d8d3 100%);
 
-	/* Типографика — Oswald (заголовки) / Jost (тело) / Courier Prime (моно),
-	   подключена через next/font в layout.tsx (переменные --font-oswald и т.д.) */
-	--font-display: var(--font-oswald), sans-serif;
-	--font-serif: var(--font-jost), sans-serif;
-	--font-mono: var(--font-courier-prime), monospace;
+	/* Типографика — Syne (заголовки) / Instrument Serif (тело) / JetBrains Mono (моно),
+	   подключена через next/font в layout.tsx (переменные --font-syne и т.д.) */
+	--font-display: var(--font-syne), sans-serif;
+	--font-serif: var(--font-instrument-serif), serif;
+	--font-mono: var(--font-jetbrains-mono), monospace;
 
 	/* Легаси-алиасы (используются по всему проекту) */
 	--fd: var(--font-display);

@@ -1,27 +1,28 @@
 import type { Metadata } from "next";
-import { Oswald, Jost, Courier_Prime } from "next/font/google";
+import { Syne, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import MobileTabs from "@/components/layout/MobileTabs";
 import "../styles/globals.css";
 
-const oswald = Oswald({
+const syne = Syne({
 	subsets: ["latin"],
-	weight: ["400", "500", "600", "700"],
-	variable: "--font-oswald",
+	weight: ["400", "600", "700", "800"],
+	variable: "--font-syne",
 	display: "swap",
 });
 
-const jost = Jost({
+const instrumentSerif = Instrument_Serif({
 	subsets: ["latin"],
-	weight: ["200", "300", "400", "500", "600"],
-	variable: "--font-jost",
+	weight: "400",
+	style: ["normal", "italic"],
+	variable: "--font-instrument-serif",
 	display: "swap",
 });
 
-const courierPrime = Courier_Prime({
+const jetbrainsMono = JetBrains_Mono({
 	subsets: ["latin"],
-	weight: ["400", "700"],
-	variable: "--font-courier-prime",
+	weight: ["400", "500"],
+	variable: "--font-jetbrains-mono",
 	display: "swap",
 });
 
@@ -71,7 +72,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="ru" className={`${oswald.variable} ${jost.variable} ${courierPrime.variable}`}>
+		<html lang="ru" className={`${syne.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
 			<body>
 				<LangProvider>{children}</LangProvider>
 				<MobileTabs />
