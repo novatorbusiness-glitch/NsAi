@@ -79,7 +79,7 @@
 	font-family: var(--fs, "Instrument Serif", serif);
 	font-size: 1.05rem;
 	line-height: 1.8;
-	color: var(--t2, #7c7870);
+	color: var(--t2, #b0aba3);
 }
 
 .bkcat-author {
@@ -88,7 +88,7 @@
 	font-size: 0.74rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: var(--t2, #7c7870);
+	color: var(--t2, #b0aba3);
 }
 
 .bkcat-author strong {
@@ -233,7 +233,7 @@
 	font-family: var(--fs, "Instrument Serif", serif);
 	font-size: 0.96rem;
 	line-height: 1.6;
-	color: var(--t2, #7c7870);
+	color: var(--t2, #b0aba3);
 	flex: 1;
 }
 
