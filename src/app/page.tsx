@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import IndexPage from "@/components/pages/IndexPage";
+import HomePage from "@/components/pages/HomePage";
 
 export const metadata: Metadata = {
 	title: "NCAi — Илья Новицкий · AI-Powered Product Builder",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-	return <IndexPage />;
+	return <HomePage />;
 }
