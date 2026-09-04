@@ -46,7 +46,7 @@ nav.sc{border-color:rgba(255,255,255,.07)}
 
 /* BASE */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.on{opacity:1;transform:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}.rv.d4{transition-delay:.44s}
 
@@ -302,6 +302,11 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 
 <article>
 <div class="wrap">
+<div class="rv d1" style="margin:0 0 3rem">
+<img src="/viz/doverie.svg" alt="Четыре элемента доверия" loading="lazy" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--br)">
+<div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);text-align:center;margin-top:.85rem">Четыре несущих элемента доверия</div>
+</div>
+
 
 <div class="rv"><p class="prose-p" style="margin-top:0">Каждый раз, когда ты делишься реальной пользой, состояние читателя меняется: тревога снижается, доверие растёт, человек становится заметно открытее к диалогу. Но что именно отдавать и в какой последовательности, чтобы не стрелять в пустоту и не терять темп прогрева? Экологичный прогрев не похож на шведский стол, где клиент предоставлен сам себе, — это спроектированное меню из четырёх блюд, которые подаются в строгой и психологически оправданной логике.</p></div>
 
@@ -410,9 +415,14 @@ window.addEventListener('scroll',()=>{
   nav.classList.toggle('sc',window.scrollY>40);
   prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
 },{passive:true});
-// REVEAL
-const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
-document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+// REVEAL (прогрессивное улучшение: без JS контент виден; fallback добивает неоткрытое)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));}
+else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
+}
 // SCROLL NAV dots
 const sections=['hero', 'e1', 'e3', 'matrix', 'dossier'];
 const dots=document.querySelectorAll('.sn-dot');
