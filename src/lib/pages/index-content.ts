@@ -80,30 +80,18 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hstat-l{font-family:var(--fm);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-top:.25rem}
 @media(max-width:480px){.hero-stats{flex-wrap:wrap;gap:1.25rem}.hstat{border-right:none;margin-right:0;padding-right:0}}
 
-/* HERO RIGHT — CARDS */
+/* HERO RIGHT — PATH (смысловой блок) */
 .hero-right{animation:fup 1s .3s var(--ease) both;min-width:0}
 @media(max-width:900px){.hero-right{display:none}}
-.product-cards{display:flex;flex-direction:column;gap:.75rem;min-width:0}
-.pc{display:flex;align-items:center;gap:1.25rem;padding:1.35rem 1.5rem;
-  background:var(--bgc);border:1px solid var(--br);border-radius:12px;text-decoration:none;
-  transition:border-color .25s,transform .3s var(--ease),background .25s;position:relative;overflow:hidden}
-.pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c,var(--a));
-  transform:scaleY(0);transform-origin:top;transition:transform .35s var(--ease)}
-.pc:hover{border-color:rgba(255,255,255,.08);background:var(--bgc2);transform:translateX(6px)}
-.pc:hover::before{transform:scaleY(1)}
-.pc-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;
-  font-size:1.15rem;flex-shrink:0;background:rgba(255,255,255,.04);border:1px solid var(--br)}
-.pc-body{flex:1;min-width:0}
-.pc-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;
-  margin-bottom:.28rem}
-.pc-title{font-family:var(--fd);font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.2rem}
-.pc-sub{font-size:.88rem;color:var(--t2);line-height:1.4}
-.pc-arr{color:var(--t3);font-size:.8rem;flex-shrink:0;transition:color .2s,transform .25s var(--ease)}
-.pc:hover .pc-arr{color:var(--a);transform:translateX(4px)}
-.pc-consulting .pc-label{color:#FFD000}
-.pc-training .pc-label{color:#4ECDC4}
-.pc-book .pc-label{color:#B4A7D6}
-.pc-portfolio .pc-label{color:#ff9d2e}
+.hero-path{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.hp-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.25rem 1.4rem;
+  background:var(--bgc);border:1px solid var(--br);border-radius:12px;
+  transition:border-color .25s,transform .3s var(--ease),background .25s}
+.hp-item:hover{border-color:rgba(255,208,0,.3);background:var(--bgc2);transform:translateX(6px)}
+.hp-num{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;color:var(--a);
+  flex-shrink:0;padding-top:.15rem}
+.hp-t{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.25rem}
+.hp-d{font-size:.9rem;color:var(--t2);line-height:1.55}
 
 /* SCROLL HINT */
 .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
@@ -396,45 +384,12 @@ export const body = `
         <div class="hstat"><div class="hstat-n">1</div><div class="hstat-l">Книга издана</div></div>
       </div>
     </div>
-    <!-- RIGHT — PRODUCT CARDS -->
+    <!-- RIGHT — смысловой блок: AI это будущее -->
     <div class="hero-right">
-      <div class="product-cards">
-        <a href="/consulting" class="pc pc-consulting" style="--c:#FFD000">
-          <div class="pc-icon">📦</div>
-          <div class="pc-body">
-            <div class="pc-label">Внедрение NCAi</div>
-            <div class="pc-title">Агентство за 30 дней</div>
-            <div class="pc-sub">Агентство в коробке: распаковка, AI-команда, система в панели</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-        <a href="/ai-training" class="pc pc-training" style="--c:#4ECDC4">
-          <div class="pc-icon">⚡</div>
-          <div class="pc-body">
-            <div class="pc-label">Обучение AI</div>
-            <div class="pc-title">1 месяц · 70–80к ₽</div>
-            <div class="pc-sub">5–6 сессий, создаёшь реальный продукт с нуля</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-        <a href="/book" class="pc pc-book" style="--c:#B4A7D6">
-          <div class="pc-icon">📖</div>
-          <div class="pc-body">
-            <div class="pc-label">Книга · Бесплатно</div>
-            <div class="pc-title">Нейро-воронка</div>
-            <div class="pc-sub">Нейробиология продаж и AI-автоматизация. 6 глав.</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
-          <div class="pc-icon">🎯</div>
-          <div class="pc-body">
-            <div class="pc-label">Портфолио · Найм</div>
-            <div class="pc-title">Tech Product Partner</div>
-            <div class="pc-sub">Fix от 200K + опцион. Web3, HealthTech, AI</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
+      <div class="hero-path">
+        <div class="hp-item"><span class="hp-num">01</span><div><div class="hp-t">AI экономит деньги</div><div class="hp-d">Заменяет рутину, а не людей: компания платит за результат, а не за штат</div></div></div>
+        <div class="hp-item"><span class="hp-num">02</span><div><div class="hp-t">AI экономит ресурсы</div><div class="hp-d">Задачи, на которые уходили дни, закрываются за минуты</div></div></div>
+        <div class="hp-item"><span class="hp-num">03</span><div><div class="hp-t">Новый навык — внедрение</div><div class="hp-d">Тот, кто умеет встраивать AI в бизнес, становится дефицитным</div></div></div>
       </div>
     </div>
   </div>
@@ -447,8 +402,8 @@ export const body = `
 <!-- PRODUCTS -->
 <section id="products" class="sec-light">
   <div class="wrap">
-    <span class="sec-tag rv">Чем занимаюсь</span>
-    <h2 class="sec-h2 rv d1">Три направления.<br>Выбери своё.</h2>
+    <span class="sec-tag rv">AI — это будущее</span>
+    <h2 class="sec-h2 rv d1">Три продукта.<br>Один смысл — внедрение.</h2>
     <div class="products-grid">
 
       <a href="/consulting" class="prod-card c1 rv">
@@ -568,17 +523,17 @@ export const body = `
             <div class="acj">
               <div class="acj-dot">02</div>
               <div>
-                <div class="acj-p">Точка перехода</div>
-                <div class="acj-t">Закрыл агентство</div>
-                <div class="acj-d">Ушёл в GenAI-разработку и live-кодинг</div>
+                <div class="acj-p">Переход</div>
+                <div class="acj-t">Ушёл в AI-разработку</div>
+                <div class="acj-d">GenAI, агенты, live-кодинг</div>
               </div>
             </div>
             <div class="acj">
               <div class="acj-dot now">03</div>
               <div>
                 <div class="acj-p">Сейчас · NCAi</div>
-                <div class="acj-t">Три продукта</div>
-                <div class="acj-d">Консалтинг · Обучение · Книга · Соло R&D</div>
+                <div class="acj-t">AI-агентство в коробке</div>
+                <div class="acj-d">Внедрение AI-команды в бизнес</div>
               </div>
             </div>
           </div>
@@ -623,40 +578,19 @@ export const body = `
   </div>
 </section>
 
-<!-- ИЗНАНКА · реальные цифры NCAi -->
+<!-- BIG IDEA · переход -->
 <section id="iznanka">
   <div class="wrap">
     <div class="iz-head">
       <div>
-        <span class="sec-tag rv">Изнанка · честные цифры</span>
-        <h2 class="sec-h2 rv d1">Команда уже работает.<br>Вот её изнанка.</h2>
+        <span class="sec-tag rv">Главная идея</span>
+        <h2 class="sec-h2 rv d1">Я создаю AI-системы,<br>которые работают за компанию.</h2>
       </div>
-      <p class="iz-tx rv d2">Это не маркетинг и не «скоро». Это реальные отчёты NCAi: <strong>задачи выполнены, токены потрачены, расход — копейки</strong>. Агентская команда работает 24/7 и стоит меньше, чем один день живого отдела.</p>
-    </div>
-    <div class="iz-stats">
-      <div class="iz-stat rv"><div class="iz-n">160</div><div class="iz-l">Задачи выполнено</div></div>
-      <div class="iz-stat rv d1"><div class="iz-n">219</div><div class="iz-l">Запусков · весь период</div></div>
-      <div class="iz-stat rv d2"><div class="iz-n"><small>$</small>29.53</div><div class="iz-l">Реальный расход · биллинг Hermes</div></div>
-      <div class="iz-stat rv d3"><div class="iz-n"><small>$</small>42</div><div class="iz-l">Вложено · <span class="st">$12.47 осталось</span></div></div>
-    </div>
-    <div class="iz-report rv d1">
-      <div class="iz-rep-top">
-        <span class="iz-dot"></span><span class="iz-dot"></span><span class="iz-dot"></span>
-        <span class="iz-rep-title">NCAi · agent_stats · отчёт</span>
-      </div>
-      <div class="iz-rep-body">
-        <div class="ln"><span class="ok">✔</span><span><span class="task">Сформировать контент-план на неделю</span> — <span class="st">done</span></span></div>
-        <div class="ln"><span class="ok">✔</span><span><span class="task">Прогрев базы: 20 тёплых контактов</span> — <span class="st">done</span></span></div>
-        <div class="ln"><span class="ok">✔</span><span><span class="task">Финансовый отчёт за день</span> — <span class="st">done</span></span></div>
-        <div class="ln"><span class="ok">✔</span><span><span class="task">Напоминания клиентам о записи</span> — <span class="st">done</span></span></div>
-        <hr class="iz-rep-div">
-        <div class="ln"><span class="dim">→</span><span>Модели: <span class="st">GLM-5.2 · DeepSeek · Ollama</span> · токены контекста: <span class="st">84K</span></span></div>
-        <div class="ln"><span class="dim">→</span><span>Средний расход по задаче: <span class="st">$0.13</span> · всего: <span class="st">$29.53</span> из $42</span></div>
-      </div>
+      <p class="iz-tx rv d2">Вся механика под капотом — <strong>команда из AI-сотрудников, отделы, задачи, аналитика</strong> — разобрана детально на странице «Внедрение». Здесь — суть: AI забирает рутину, а бизнес получает время и деньги.</p>
     </div>
     <div class="iz-bot rv d2">
-      <div class="tx">«Команда» за <span>копейки</span> — это уже не мечта, а отчёт.</div>
-      <a href="/consulting" class="bk-cta" style="font-size:.82rem;padding:.7rem 1.5rem">Хочу такую команду →</a>
+      <div class="tx">Хочешь увидеть, <span>как это устроено изнутри</span> — зайди на «Внедрение».</div>
+      <a href="/consulting" class="bk-cta" style="font-size:.82rem;padding:.7rem 1.5rem">Внедрение NCAi →</a>
     </div>
   </div>
 </section>
