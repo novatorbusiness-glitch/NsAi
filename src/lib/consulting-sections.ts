@@ -1,7 +1,7 @@
 // Секции consulting (HTML из consulting-content, разбито по ТЗ NCAI_SPEC).
 
 export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
-<section id="hero">
+<section id="hero-consulting">
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Внедрение NCAi-агентства · 30 дней</div>
