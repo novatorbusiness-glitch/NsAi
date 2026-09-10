@@ -237,6 +237,17 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:#0b0b0b;overflow-x:auto}
 .ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#cfcbc0;white-space:pre}
 .ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+.anatomy-vis{display:flex;align-items:stretch;gap:1rem;margin:2.2rem 0}
+@media(max-width:640px){.anatomy-vis{flex-direction:column}}
+.av-col{flex:1;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.av-col-h{font-family:var(--fm);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.2rem}
+.av-col-h span{display:block;font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);letter-spacing:0;text-transform:none;margin-top:.15rem}
+.av-arrow{display:flex;align-items:center;justify-content:center;color:var(--a);font-size:1.1rem;opacity:.5;padding-top:2.2rem}
+@media(max-width:640px){.av-arrow{transform:rotate(90deg);padding:.2rem 0}}
+.av-item{padding:.6rem .8rem;background:var(--bgc,#131313);border:1px solid var(--br);border-radius:8px;font-size:.82rem;color:var(--t2);
+  opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.av-item.on{opacity:1;transform:none}
+.av-item b{color:var(--a);font-weight:400;margin:0 .15rem}
 .emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
 .emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:#b0aca5;line-height:1.72}
 .emoji-list li .em{position:absolute;left:0;top:.45rem;font-size:1.05rem}
@@ -300,18 +311,28 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Три уровня архитектуры</h2>
 <p class="prose-p rv d1">Архитектура любой системы держится на трёх уровнях: <strong>элементы</strong> — базовые строительные единицы, <strong>страницы</strong> — функциональные блоки, собранные из элементов, а <strong>модель воронки</strong> — готовая конструкция целиком. Каждый уровень подчиняется одной и той же логике предиктивного кодирования: мозг постоянно предсказывает, что произойдёт дальше, и любое несоответствие ожиданию — разрыв в тексте, непонятная кнопка, неожиданный экран — создаёт когнитивное трение и обрывает движение клиента.</p>
 
-<div class="ascii rv">
-<div class="a-title">Анатомия воронки — от элемента к модели</div>
-<pre>
-  УРОВЕНЬ 1 · ЭЛЕМЕНТЫ            УРОВЕНЬ 2 · СТРАНИЦЫ        УРОВЕНЬ 3 · МОДЕЛЬ
-  ─────────────────────────────────────────────────────────────────────────────
-  Заголовок   → сигнал            Лид-магнит                 Захват внимания
-  Визуал      → якорь             ─────────────              ────────────────
-  Текст       → PAS-цепочка       Продающая                 Вовлечение
-  Кнопка      → снятие страха     ─────────────              ────────────────
-                                   Благодарность            Конверсия
-                                   (никогда не тупик)
-</pre>
+<div class="anatomy-vis rv" id="anatomyViz">
+  <div class="av-col">
+    <div class="av-col-h">Уровень 1<span>Элементы</span></div>
+    <div class="av-item">Заголовок <b>→</b> сигнал</div>
+    <div class="av-item">Визуал <b>→</b> якорь</div>
+    <div class="av-item">Текст <b>→</b> PAS-цепочка</div>
+    <div class="av-item">Кнопка <b>→</b> снятие страха</div>
+  </div>
+  <div class="av-arrow">→</div>
+  <div class="av-col">
+    <div class="av-col-h">Уровень 2<span>Страницы</span></div>
+    <div class="av-item">Лид-магнит</div>
+    <div class="av-item">Продающая</div>
+    <div class="av-item">Благодарность <b>·</b> никогда не тупик</div>
+  </div>
+  <div class="av-arrow">→</div>
+  <div class="av-col">
+    <div class="av-col-h">Уровень 3<span>Модель</span></div>
+    <div class="av-item">Захват внимания</div>
+    <div class="av-item">Вовлечение</div>
+    <div class="av-item">Конверсия</div>
+  </div>
 </div>
 
 <h2 class="prose-h2 rv">Уровень 1. Элементы: строительные единицы системы</h2>
@@ -458,6 +479,12 @@ if(meters.length){let done=false;
   new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
     meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
   }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+// ANATOMY stagger reveal
+const anatomyViz=document.getElementById('anatomyViz');
+if(anatomyViz){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    anatomyViz.querySelectorAll('.av-item').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},120+i*110));
+  }})},{threshold:.3}).observe(anatomyViz)}
 </script>
 </body>
 </html>
