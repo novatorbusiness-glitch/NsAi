@@ -85,6 +85,7 @@ section{padding:6rem 0}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
 .sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
+.sec-lead{font-size:1.05rem;color:var(--t2);max-width:620px;line-height:1.75;margin-bottom:2.5rem}
 .rv{opacity:1;transform:none}
 .js .rv{opacity:0;transform:translateY(22px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .rv.on{opacity:1;transform:none}
@@ -100,7 +101,7 @@ section{padding:6rem 0}
 .pj-icon{font-size:1.4rem;margin-bottom:.9rem}
 .pj-tag{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.4rem}
 .pj-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
-.pj-desc{font-size:.8rem;color:var(--t2);line-height:1.55}
+.pj-desc{font-size:1.05rem;color:var(--t2);line-height:1.6}
 .pj-status{display:inline-block;font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;
   margin-top:.75rem;padding:.2rem .5rem;border-radius:3px;background:rgba(255,208,0,.08);
   border:1px solid rgba(255,208,0,.18);color:rgba(255,208,0,.6)}
@@ -125,7 +126,7 @@ section{padding:6rem 0}
 .mtag{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin-bottom:1rem}
 .mtit{font-family:var(--fd);font-size:1.12rem;font-weight:800;letter-spacing:-.02em;color:var(--t);margin-bottom:.7rem}
 .mprice{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--a);margin-bottom:1rem}
-.mtx{font-size:.87rem;color:var(--t2);line-height:1.65}
+.mtx{font-size:1.05rem;color:var(--t2);line-height:1.65}
 .mmeta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--br)}
 .mch{font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--t3);padding:.3rem .7rem;border:1px solid var(--br);border-radius:999px}
 
@@ -151,7 +152,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .f-col-title{font-family:var(--fd);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--t3);margin-bottom:1.1rem}
 .f-links{list-style:none;display:flex;flex-direction:column;gap:.5rem}
-.f-links a{font-size:.85rem;color:var(--t2);text-decoration:none;transition:color .2s}
+.f-links a{font-size:1rem;color:var(--t2);text-decoration:none;transition:color .2s}
 .f-links a:hover{color:var(--t)}
 .f-bottom{display:flex;justify-content:space-between;align-items:center;
   padding-top:1.75rem;border-top:1px solid #0f0f0f;flex-wrap:wrap;gap:.75rem}
@@ -175,6 +176,7 @@ export const body = `
       <li><a href="/blog">Блог</a></li>
       <li><a href="/o-proekte">О проекте</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
+      <li><a href="/partners">Партнёры</a></li>
     </ul>
     <a href="https://t.me/Ilya_novator" class="nav-cta">Обсудить проект</a>
     <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
@@ -218,7 +220,7 @@ export const body = `
       <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">проектов</div></div>
       <div class="hstat"><div class="hstat-n">50M ₽</div><div class="hstat-l">в запусках</div></div>
       <div class="hstat"><div class="hstat-n">100K+</div><div class="hstat-l">заявок</div></div>
-      <div class="hstat"><div class="hstat-n">15</div><div class="hstat-l">специалистов</div></div>
+      <div class="hstat"><div class="hstat-n">7+</div><div class="hstat-l">лет</div></div>
     </div>
   </div>
 </section>
@@ -254,7 +256,7 @@ export const body = `
         <div class="pj-icon">🤖</div>
         <div class="pj-tag">AI-команда</div>
         <div class="pj-title">NCAi Agency</div>
-        <p class="pj-desc">4 отдела, 15 специалистов. Полная разработка и автоматизация</p>
+        <p class="pj-desc">4 отдела, 5 AI-сотрудников + AI-директор. Полная разработка и автоматизация</p>
         <span class="pj-status">200 000 ₽/мес</span>
       </div>
       <div class="pj rv d1">
@@ -308,29 +310,30 @@ export const body = `
 <!-- HIRE -->
 <section id="hire">
   <div class="wrap">
-    <span class="sec-tag rv">Найм</span>
-    <h2 class="sec-h2 rv d1">Наймите меня</h2>
+    <span class="sec-tag rv">Как работаем</span>
+    <h2 class="sec-h2 rv d1">Три способа начать</h2>
+    <p class="sec-lead rv d1">Я не продаю часы и не собираю тикеты в бэклог. Смотрю на задачу и сам предлагаю формат — вот три, которые чаще всего подходят.</p>
     <div class="mgrid">
       <div class="mcard rv">
         <div class="mtag">Fix / Спринт</div>
-        <div class="mtit">Фиксированная задача</div>
+        <div class="mtit">Есть чёткая задача — беру и делаю</div>
         <div class="mprice">от 200 000 ₽</div>
-        <p class="mtx">2–4 недели. Платите за результат, а не за часы. Чёткая задача — чёткий срок — готовый продукт.</p>
+        <p class="mtx">2–4 недели. Вы платите за готовый результат, а не за отчёт по часам. Обсуждаем задачу, срок и критерий готовности до старта — дальше я просто делаю.</p>
         <div class="mmeta"><span class="mch">2–4 недели</span><span class="mch">Результат, не часы</span></div>
       </div>
       <div class="mcard rv d1">
         <div class="mtag">Опцион / Доля</div>
-        <div class="mtit">Tech Co-Founder</div>
+        <div class="mtit">Верю в продукт — строю вместе</div>
         <div class="mprice">Доля / опцион</div>
-        <p class="mtx">Web3 / HealthTech / AI. Строю всю технику за долю в продукте. Когда строим вместе — риски общие.</p>
+        <p class="mtx">Web3 / HealthTech / AI. Беру на себя всю технику за долю в продукте, не за оклад. Раз риск общий — и мотивация довести до результата у нас одна на двоих.</p>
         <div class="mmeta"><span class="mch">Web3</span><span class="mch">HealthTech</span><span class="mch">AI</span></div>
       </div>
       <div class="mcard rv d2">
         <div class="mtag">Ретейнер / AI-команда</div>
-        <div class="mtit">AI-команда под ключ</div>
-        <div class="mprice">200 000 ₽ / мес</div>
-        <p class="mtx">15 специалистов + продюсер. 4 отдела, отчёт ежедневно. Полная разработка и автоматизация.</p>
-        <div class="mmeta"><span class="mch">15 специалистов</span><span class="mch">Отчёт ежедневно</span></div>
+        <div class="mtit">Нужен постоянный тех-партнёр</div>
+        <div class="mprice">от 200 000 ₽ / мес</div>
+        <p class="mtx">Разворачиваю у вас NCAi-агентство: 5 AI-сотрудников + AI-директор, 4 отдела, отчёт каждый день. Плюс я лично на связи как технический партнёр, а не подрядчик на телефоне.</p>
+        <div class="mmeta"><span class="mch">5 AI-сотрудников + директор</span><span class="mch">Отчёт ежедневно</span></div>
       </div>
     </div>
   </div>
@@ -351,7 +354,7 @@ export const body = `
       <div class="mcard rv d1">
         <div class="mico">🧩</div>
         <div class="mtag">White-label / Методология</div>
-        <div class="mtit">Система Петрова + «Нейро-Воронка»</div>
+        <div class="mtit">NCAi + «Нейро-Воронка» под вашим брендом</div>
         <p class="mtx">Готовая методология под ваш бренд. Продавайте систему и книгу как свою.</p>
       </div>
       <div class="mcard rv d2">
@@ -406,7 +409,7 @@ export const body = `
       </div>
     </div>
     <div class="f-bottom">
-      <span class="f-copy">© 2025 NCAi · Илья Новицкий</span>
+      <span class="f-copy">© 2026 NCAi · Илья Новицкий</span>
       <span class="f-easter">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
