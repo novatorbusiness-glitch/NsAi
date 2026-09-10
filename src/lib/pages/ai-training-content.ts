@@ -298,6 +298,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <li><a href="/blog">Блог</a></li>
       <li><a href="/o-proekte">О проекте</a></li>
       <li><a href="/portfolio">Портфолио</a></li>
+      <li><a href="/partners">Партнёры</a></li>
     </ul>
     <a href="mailto:ilya.novitskii@yandex.ru" class="nav-cta">Написать</a>
     <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
@@ -673,9 +674,16 @@ export const body = `<div id="cd"></div><div id="cr"></div>
           <li><a href="mailto:ilya.novitskii@yandex.ru">Email</a></li>
         </ul>
       </div>
+      <div>
+        <div class="f-col-title">Правовое</div>
+        <ul class="f-links">
+          <li><a href="/privacy">Политика конфиденциальности</a></li>
+          <li><a href="/offer">Публичная оферта</a></li>
+        </ul>
+      </div>
     </div>
     <div class="f-bottom">
-      <span class="f-copy">© 2025 NCAi · Илья Новицкий</span>
+      <span class="f-copy">© 2026 NCAi · Илья Новицкий</span>
       <span class="f-easter">Сделано через лайф-кодинг — <span>как обещано</span></span>
     </div>
   </div>
