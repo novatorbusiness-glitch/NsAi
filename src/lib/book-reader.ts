@@ -73,6 +73,13 @@ nav#nav{display:none!important}
 .cn-btn.next{background:#ffd000!important;border-color:#ffd000!important}
 .cn-btn.next .cn-dir,.cn-btn.next .cn-title{color:#0a0a0a!important}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
+/* Точечные «атмосферные» блоки глав захардкожены под тёмную тему: чёрный фон
+   + белый текст с заниженной непрозрачностью (rgba(240,237,230,.5) и т.п.).
+   В светлой читалке это превращается в нечитаемый бледный текст (или тёмный
+   var(--t) поверх чёрного фона). Возвращаем нормальный контраст. */
+.trance-section{background:var(--bg2)!important}
+.tc{border-color:var(--br)!important}
+.tc-text,.blueprint p,.dos-block-body p,.dos-block.win .dos-block-body p,.dos-close p,.gl-closer p,.lang-close p,.trance-block .prose-p,.warn-text,.bab-part p,.pain-card p{color:#3b3e44!important}
 `;
 
 // Скрипт, сообщающий родительской странице реальную высоту содержимого iframe,
