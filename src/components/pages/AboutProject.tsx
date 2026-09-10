@@ -36,7 +36,10 @@ export default function AboutProject() {
 	return (
 		<PageShell>
 			<div className="w page-hero">
-				<p className="lb">{ru ? "О проекте" : "About the project"}</p>
+				<p className="page-badge">
+					<span className="bdot" />
+					{ru ? "О проекте" : "About the project"}
+				</p>
 				<h1 className="page-h1">{ru ? "Проект NCAi" : "The NCAi project"}</h1>
 				<p className="page-sub">
 					{ru
