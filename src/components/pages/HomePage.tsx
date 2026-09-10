@@ -8,6 +8,7 @@ import ProductsSection from "@/components/home/sections/ProductsSection";
 import AboutSection from "@/components/home/sections/AboutSection";
 import ClientsSection from "@/components/home/sections/ClientsSection";
 import SoloSection from "@/components/home/sections/SoloSection";
+import ClosingSection from "@/components/home/sections/ClosingSection";
 
 /**
  * Главная — собранная из изолированных секций по ТЗ NCAI_SPEC:
@@ -84,6 +85,7 @@ export default function HomePage() {
 			<AboutSection />
 			<ClientsSection />
 			<SoloSection />
+			<ClosingSection />
 		</PageShell>
 	);
 }

@@ -335,7 +335,26 @@
 }
 
 .nb-article .blog-article-foot {
-	border-top-color: #e7e9ec;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+	margin-top: 3.5rem;
+	padding: 2rem 0 0;
+	background: transparent;
+	border-top: 1px solid #e7e9ec;
+}
+
+.nb-article .blog-article-foot .bs {
+	background: transparent;
+	color: #16181d;
+	border-color: #d9dce1;
+}
+
+.nb-article .blog-article-foot .bs:hover {
+	background: rgba(0, 0, 0, 0.03);
+	border-color: #16181d;
+	color: #16181d;
 }
 
 /* ── Адаптив ── */
