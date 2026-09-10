@@ -37,8 +37,20 @@ body {
 	max-width: 820px;
 	margin: 0 auto;
 }
+.docs-back {
+	display: inline-block;
+	font-family: var(--fm, "JetBrains Mono", monospace);
+	font-size: 0.8rem;
+	color: var(--t2, #c2bdb5);
+	text-decoration: none;
+	margin-bottom: 24px;
+	transition: color 0.2s;
+}
+.docs-back:hover {
+	color: var(--a, #ffd000);
+}
 .docs-h1 {
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 34px;
 	font-weight: 800;
 	line-height: 1.15;
@@ -46,7 +58,7 @@ body {
 	letter-spacing: -0.02em;
 }
 .docs-h2 {
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 24px;
 	font-weight: 700;
 	margin: 40px 0 14px;
@@ -54,7 +66,7 @@ body {
 	border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .docs-h3 {
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 18px;
 	font-weight: 600;
 	margin: 24px 0 10px;
@@ -100,7 +112,7 @@ body {
 }
 .docs-table th {
 	background: rgba(255, 208, 0, 0.1);
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-weight: 600;
 }
 .docs-table td {
@@ -126,7 +138,7 @@ body {
 	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 .docs-h4 {
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 17px;
 	font-weight: 600;
 	margin: 22px 0 10px;
@@ -166,7 +178,7 @@ body {
 }
 .docs-back {
 	margin: 0 0 18px;
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 0.82rem;
 	letter-spacing: 0.04em;
 }
@@ -207,7 +219,7 @@ body {
 	gap: 0.45rem;
 }
 .docs-toc-link {
-	font-family: "Space Grotesk", sans-serif;
+	font-family: var(--fd);
 	font-size: 0.98rem;
 	font-weight: 600;
 	color: var(--t);
