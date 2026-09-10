@@ -80,18 +80,21 @@ function heightReporterScript(slug: string): string {
 	return `<script>(function(){var slug=${slugJson};var tid=null;function post(){try{window.parent.postMessage({__ncaiBookH:document.documentElement.scrollHeight,slug:slug},"*")}catch(e){}}function start(){post();var n=0;tid=setInterval(function(){post();if(++n>12)clearInterval(tid)},500)}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",start)}else{start()}window.addEventListener("load",post);window.addEventListener("resize",post);if(window.ResizeObserver){try{new ResizeObserver(post).observe(document.documentElement)}catch(e){}}})();</script>`;
 }
 
+// Шрифты грузятся асинхронно (media=print → all при onload), чтобы медленная
+// или недоступная сеть до fonts.googleapis.com (нередко в РФ) не блокировала
+// рендер главы целиком — контент рисуется системным шрифтом сразу, шрифт
+// подменяется, когда (и если) догрузится.
+const FONT_LINKS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>`;
+
 function normalizeChapterHtml(source: string, slug: string): string {
 	return inlineVizSvg(source)
-		.replace(
-			/<link[^>]*fonts\.googleapis\.com[^>]*>/gi,
-			'<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">',
-		)
+		.replace(/<link[^>]*fonts\.googleapis\.com[^>]*>/gi, "")
 		.replace(/NCAi/g, "NcAi")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*>)([\s\S]*?)(<\/a>)/gi, "$1NcAi$3")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/$2")
 		.replace(/(<a\b[^>]*class=["']nav-back["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/book$2")
 		.replace(/<a\b(?![^>]*\btarget=)([^>]*\bhref=["']\/(?!\/)[^"']*["'])/gi, '<a target="_top"$1')
-		.replace(/<\/head>/i, `<style id="ncai-light-reader">${READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style>${heightReporterScript(slug)}</head>`);
+		.replace(/<\/head>/i, `${FONT_LINKS}<style id="ncai-light-reader">${READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style>${heightReporterScript(slug)}</head>`);
 }
 
 export function buildReaderChapters(): ReaderChapter[] {
