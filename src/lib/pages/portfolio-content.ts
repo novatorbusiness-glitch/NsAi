@@ -407,6 +407,13 @@ export const body = `
           <li><a href="mailto:ilya.novitskii@yandex.ru">Email</a></li>
         </ul>
       </div>
+      <div>
+        <div class="f-col-title">Правовое</div>
+        <ul class="f-links">
+          <li><a href="/privacy">Политика конфиденциальности</a></li>
+          <li><a href="/offer">Публичная оферта</a></li>
+        </ul>
+      </div>
     </div>
     <div class="f-bottom">
       <span class="f-copy">© 2026 NCAi · Илья Новицкий</span>
