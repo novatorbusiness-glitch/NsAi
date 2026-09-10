@@ -16,22 +16,56 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [collapsed, setCollapsed] = useBookSidebarCollapsed();
 
-	// Высоты iframe: каждая подглава сообщает свою реальную высоту через postMessage.
-	useEffect(() => {
-		function onMessage(event: MessageEvent) {
-			const d = event.data;
-			if (
-				d &&
-				typeof d === "object" &&
-				typeof d.__ncaiBookH === "number" &&
-				typeof d.slug === "string"
-			) {
-				const frame = frameRefs.current.get(d.slug);
-				if (frame) frame.style.height = `${d.__ncaiBookH}px`;
-			}
+	// Высота iframe: главы НЕ шлют postMessage с реальной высотой (это раньше
+	// ожидалось, но ни один из 30 HTML-файлов главы этого не делает), поэтому
+	// высота считалась по грубой оценке "длина HTML-строки × 0.05" и почти
+	// всегда была в 2-3 раза меньше реальной — при выключенном внутреннем
+	// скролле (scrolling="no") это обрезало большую часть каждой главы без
+	// возможности долистать. srcDoc-iframe — тот же источник, что и страница,
+	// поэтому меряем высоту напрямую через contentDocument, без postMessage.
+	const resizeObservers = useRef<Map<string, ResizeObserver>>(new Map());
+
+	const measureFrame = (slug: string, frame: HTMLIFrameElement) => {
+		const doc = frame.contentDocument;
+		if (!doc || !doc.documentElement) return;
+		const h = Math.max(
+			doc.documentElement.scrollHeight,
+			doc.body ? doc.body.scrollHeight : 0,
+		);
+		if (h > 0) frame.style.height = `${h}px`;
+	};
+
+	const onFrameLoad = (slug: string, frame: HTMLIFrameElement | null) => {
+		if (!frame) return;
+		measureFrame(slug, frame);
+		// Веб-шрифты и reveal-анимации дозагружаются после load — досчитываем высоту.
+		setTimeout(() => measureFrame(slug, frame), 300);
+		setTimeout(() => measureFrame(slug, frame), 1200);
+
+		const doc = frame.contentDocument;
+		if (doc?.body && typeof ResizeObserver !== "undefined") {
+			resizeObservers.current.get(slug)?.disconnect();
+			const ro = new ResizeObserver(() => measureFrame(slug, frame));
+			ro.observe(doc.body);
+			resizeObservers.current.set(slug, ro);
 		}
-		window.addEventListener("message", onMessage);
-		return () => window.removeEventListener("message", onMessage);
+	};
+
+	useEffect(() => {
+		const observers = resizeObservers.current;
+		return () => {
+			observers.forEach((ro) => ro.disconnect());
+			observers.clear();
+		};
+	}, []);
+
+	// На resize окна текст в iframe переносится иначе — досчитываем высоту всех глав.
+	useEffect(() => {
+		const onResize = () => {
+			frameRefs.current.forEach((frame, slug) => measureFrame(slug, frame));
+		};
+		window.addEventListener("resize", onResize, { passive: true });
+		return () => window.removeEventListener("resize", onResize);
 	}, []);
 
 	// Плавный скролл к секции + scroll-spy по активной подглаве.
@@ -201,7 +235,8 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 								className="bkr-frame"
 								srcDoc={c.html}
 								scrolling="no"
-								style={{ height: Math.max(800, Math.round(c.html.length * 0.05)) }}
+								style={{ height: 900 }}
+								onLoad={(e) => onFrameLoad(c.slug, e.currentTarget)}
 								ref={(el) => {
 									if (el) frameRefs.current.set(c.slug, el);
 									else frameRefs.current.delete(c.slug);
