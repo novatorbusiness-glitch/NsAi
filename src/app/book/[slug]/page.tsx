@@ -73,6 +73,8 @@ nav#nav{background:rgba(8,8,8,.94)!important;border-bottom:1px solid rgba(255,25
 .nav-back{color:#c9cbd1!important}
 .nav-back:hover{color:#ffffff!important}
 .hero-h1 em{background:linear-gradient(135deg,#141519 0%,#4a4d55 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+#hero{min-height:auto!important;align-items:flex-start!important;padding:calc(60px + 2.5rem) 0 3rem!important}
+.hero-bg,.hero-grid{display:none!important}
 .prose-p{color:#3b3e44!important}
 .prose-p em{color:#3b3e44!important}
 .prose-p strong{color:#141519!important}
