@@ -12,7 +12,10 @@ export default function PrivacyPage() {
 	return (
 		<PageShell>
 			<div className="w page-hero legal-shell">
-				<p className="lb">{ru ? "Правовое" : "Legal"}</p>
+				<p className="page-badge">
+					<span className="bdot" />
+					{ru ? "Правовое" : "Legal"}
+				</p>
 				<h1 className="page-h1">
 					{ru ? "Политика конфиденциальности" : "Privacy Policy"}
 				</h1>

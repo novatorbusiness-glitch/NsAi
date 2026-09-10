@@ -59,7 +59,10 @@ export default function BlogIndex() {
 	return (
 		<PageShell>
 			<div className="w page-hero nb-hero">
-				<p className="lb">{ru ? "Блог" : "Blog"}</p>
+				<p className="page-badge">
+					<span className="bdot" />
+					{ru ? "Нейромаркетинг · AI · Автоматизация" : "Neuromarketing · AI · Automation"}
+				</p>
 				<h1 className="page-h1">{ru ? "Блог" : "Blog"}</h1>
 				<p className="page-sub">
 					{ru

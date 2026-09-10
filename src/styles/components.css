@@ -2789,6 +2789,30 @@ footer {
 	margin: 0 0 1.2rem;
 }
 
+/* Единый пилюльный бейдж над заголовком — как на продуктовых страницах
+   (главная/consulting/ai-training/portfolio), теперь и на контентных. */
+.page-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--t2);
+	padding: 0.35rem 0.85rem;
+	border: 1px solid var(--br2);
+	border-radius: 999px;
+	margin-bottom: 1.5rem;
+}
+.page-badge .bdot {
+	width: 5px;
+	height: 5px;
+	background: var(--a);
+	border-radius: 50%;
+	animation: blink 2.5s ease-in-out infinite;
+}
+
 .page-sub {
 	font-size: clamp(0.95rem, 1.6vw, 1.1rem);
 	color: var(--t2);

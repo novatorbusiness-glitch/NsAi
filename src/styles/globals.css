@@ -38,7 +38,7 @@ body {
 	margin: 0 auto;
 }
 .docs-back {
-	display: inline-block;
+	display: block;
 	font-family: var(--fm, "JetBrains Mono", monospace);
 	font-size: 0.8rem;
 	color: var(--t2, #c2bdb5);
