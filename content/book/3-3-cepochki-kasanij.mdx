@@ -237,6 +237,31 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:#0b0b0b;overflow-x:auto}
 .ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#cfcbc0;white-space:pre}
 .ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+/* TIMELINE (touch-sequence chains) */
+.tl-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+.timeline-vis{display:flex;align-items:stretch;gap:.55rem;margin:2rem 0}
+@media(max-width:640px){.timeline-vis{flex-direction:column}}
+.tl-node{flex:1;min-width:0;padding:1rem .85rem;border-radius:10px;text-align:center;background:var(--bgc,#131313);border:1px solid var(--br2);
+  opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.tl-node.on{opacity:1;transform:none}
+.tl-node.hook{background:var(--ad);border-color:rgba(255,208,0,.35)}
+.tl-day{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.tl-node.hook .tl-day{color:var(--a)}
+.tl-stage{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--t);margin-bottom:.35rem}
+.tl-text{font-size:.68rem;color:var(--t2);line-height:1.45}
+.tl-arr{display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:.9rem;opacity:0;transition:opacity .4s;padding:0 .1rem}
+.tl-arr.on{opacity:.6}
+@media(max-width:640px){.tl-arr{transform:rotate(90deg);padding:.15rem 0}}
+/* SCENARIO COMPARE (заменяет табличную сводку) */
+.scenario-compare{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:2rem 0}
+@media(max-width:640px){.scenario-compare{grid-template-columns:1fr}}
+.sc-card{padding:1.1rem 1.2rem;border:1px solid var(--br2);border-radius:12px;background:var(--bgc,#131313);
+  opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.sc-card.on{opacity:1;transform:none}
+.sc-name{font-family:var(--fd);font-weight:700;font-size:.95rem;color:var(--a);margin-bottom:.55rem}
+.sc-row{display:flex;gap:.5rem;font-size:.76rem;line-height:1.5;margin-top:.4rem}
+.sc-row .sc-k{color:var(--t3);font-family:var(--fm);font-size:.56rem;letter-spacing:.06em;text-transform:uppercase;flex-shrink:0;min-width:5.4rem;padding-top:.15rem}
+.sc-row .sc-v{color:#b0aca5}
 .emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
 .emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:#b0aca5;line-height:1.72}
 .emoji-list li .em{position:absolute;left:0;top:.45rem;font-size:1.05rem}
@@ -305,33 +330,37 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Четыре проверенных сценария</h2>
 <p class="prose-p rv d1">Ниже показаны четыре проверенных практикой сценария — пошаговые последовательности, которые можно взять, адаптировать под свою нишу и внедрить сразу.</p>
 
-<div class="rv" style="margin:2.4rem 0">
-<img src="/viz/kasanija.svg" alt="Цепочка касаний: лид-магнит → экспертность → трансформация → проблема → хук → покупка" loading="lazy" style="width:100%;max-width:800px;height:auto;display:block;margin:0 auto;border:1px solid #2a2a2a;border-radius:16px;background:#080808;box-shadow:0 18px 40px rgba(0,0,0,.35)">
-</div>
-
-<div class="viz-wrap rv">
-<table class="viz-table">
-<tr><th>Сценарий</th><th>Задача</th><th>Ключевая психология</th><th>Идеально для</th></tr>
-<tr><td><strong>Запуск · 14 дней</strong></td><td>Создать ажиотаж за ограниченное время</td><td>Эго-стимул + страх потери + дефицит</td><td>Инфопродукты, закрытые клубы, премиум</td></tr>
-<tr><td><strong>Автоворонка · 7 дней</strong></td><td>Автономный поток продаж 24/7</td><td>Последовательное снятие барьеров доверия</td><td>Онлайн-школы, курсы, вечнозелёные продукты</td></tr>
-<tr><td><strong>Услуги · B2B</strong></td><td>Квалифицированная заявка на стратсессию</td><td>Авторитет + снятие риска + квалификация</td><td>Агентства, консалтинг, B2B</td></tr>
-<tr><td><strong>Быстрое доверие · 5 дней</strong></td><td>Первое физическое действие от холодного лида</td><td>Низкий порог + трипвайер + взаимность</td><td>Локальный бизнес, студии, офлайн</td></tr>
-</table>
+<div class="scenario-compare" id="scenarioCompare">
+<div class="sc-card"><div class="sc-name">Запуск · 14 дней</div>
+<div class="sc-row"><div class="sc-k">Задача</div><div class="sc-v">Создать ажиотаж за ограниченное время</div></div>
+<div class="sc-row"><div class="sc-k">Психология</div><div class="sc-v">Эго-стимул + страх потери + дефицит</div></div>
+<div class="sc-row"><div class="sc-k">Для кого</div><div class="sc-v">Инфопродукты, закрытые клубы, премиум</div></div></div>
+<div class="sc-card"><div class="sc-name">Автоворонка · 7 дней</div>
+<div class="sc-row"><div class="sc-k">Задача</div><div class="sc-v">Автономный поток продаж 24/7</div></div>
+<div class="sc-row"><div class="sc-k">Психология</div><div class="sc-v">Последовательное снятие барьеров доверия</div></div>
+<div class="sc-row"><div class="sc-k">Для кого</div><div class="sc-v">Онлайн-школы, курсы, вечнозелёные продукты</div></div></div>
+<div class="sc-card"><div class="sc-name">Услуги · B2B</div>
+<div class="sc-row"><div class="sc-k">Задача</div><div class="sc-v">Квалифицированная заявка на стратсессию</div></div>
+<div class="sc-row"><div class="sc-k">Психология</div><div class="sc-v">Авторитет + снятие риска + квалификация</div></div>
+<div class="sc-row"><div class="sc-k">Для кого</div><div class="sc-v">Агентства, консалтинг, B2B</div></div></div>
+<div class="sc-card"><div class="sc-name">Быстрое доверие · 5 дней</div>
+<div class="sc-row"><div class="sc-k">Задача</div><div class="sc-v">Первое физическое действие от холодного лида</div></div>
+<div class="sc-row"><div class="sc-k">Психология</div><div class="sc-v">Низкий порог + трипвайер + взаимность</div></div>
+<div class="sc-row"><div class="sc-k">Для кого</div><div class="sc-v">Локальный бизнес, студии, офлайн</div></div></div>
 </div>
 
 <h2 class="prose-h2 rv">Сценарий 1. Запуск закрытого инвестиционного клуба · 14 дней</h2>
 <p class="prose-p rv d1">Задача — нарастающий ажиотаж и максимум подписок за ограниченное время. В архитектуре второй главы это модель «Премьера» (Product Launch). Ключевые триггеры — желание войти в элитный круг и страх упустить выгодные сделки.</p>
 
-<div class="ascii rv">
-<div class="a-title">Четыре такта 14-дневного маршрута</div>
-<pre>
-  Дни 1–4          Дни 5–7         Дни 8–10           Дни 11–14
-  ───────────      ───────────     ─────────────      ─────────────
-  ПРОБЛЕМА         ЭКСПЕРТНОСТЬ    ТРАНСФОРМАЦИЯ      ПРОДУКТ + ХУК
-  «Почему новички  кейс резидента  «рынок летит вниз,  анонс клуба:
-  теряют деньги    +15% к         все паникуют, а    50 мест,
-  на бирже»        депозиту»      ты пьёшь кофе»     цена 48 часов
-</pre>
+<div class="tl-title rv">Четыре такта 14-дневного маршрута</div>
+<div class="timeline-vis" id="timeline1">
+<div class="tl-node"><div class="tl-day">Дни 1–4</div><div class="tl-stage">Проблема</div><div class="tl-text">«Почему новички теряют деньги на бирже»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">Дни 5–7</div><div class="tl-stage">Экспертность</div><div class="tl-text">кейс резидента +15% к депозиту</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">Дни 8–10</div><div class="tl-stage">Трансформация</div><div class="tl-text">«рынок летит вниз, все паникуют, а ты пьёшь кофе»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node hook"><div class="tl-day">Дни 11–14</div><div class="tl-stage">Продукт + хук</div><div class="tl-text">анонс клуба: 50 мест, цена 48 часов</div></div>
 </div>
 
 <p class="prose-p rv d1"><strong>Такт 1 (дни 1–4)</strong> — прогрев к проблеме: актуализируем боль и доказываем, что инвестировать в одиночку опасно для капитала. Разрыв фиксируется как значимый сигнал, страх ошибки и FOMO активируются. <strong>Такт 2 (дни 5–7)</strong> — прогрев к экспертности: детальный разбор кейса действующего участника «+15% к депозиту за месяц» перестраивает модель по связке «этот источник даёт проверенный результат». <strong>Такт 3 (дни 8–10)</strong> — прогрев к трансформации: «Представь: рынок летит вниз, все паникуют, а ты пьёшь кофе, портфель захеджирован и следующий шаг известен» — потребность в контроле и статусе. <strong>Такт 4 (дни 11–13)</strong> — прогрев к продукту: «Как устроен клуб изнутри: стоимость, что включено, кому не подойдёт» — страх неизвестности снижается. <strong>День 14 — правый хук:</strong> «Продажи открыты. 50 мест. Стартовая цена действует 48 часов».</p>
@@ -339,16 +368,17 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Сценарий 2. Автоворонка для инфобизнеса · 7 дней</h2>
 <p class="prose-p rv d1">Задача — автономно прогревать каждого нового подписчика сразу после скачивания лид-магнита и плавно подводить к покупке основного курса. Это классическая модель «Ценность в обмен на контакт»: каждый шаг — заранее запрограммированный «джеб», доставляемый через чат-бот или цепочку писем строго по дням.</p>
 
-<div class="ascii rv">
-<div class="a-title">7 дней автономного прогрева</div>
-<pre>
-  Д0             Д2             Д3             Д5           Д7
-  ─────────      ─────────      ──────────     ─────────    ─────────
-  ценность       экспертность   трансфор-      проблема     ХУК
-  «внедри один   «клиент        мация          «окно есть,  флагманский
-  приём из       получил        скриншот       но не вечно» курс
-  гайда»         +17% заявок»   выпускницы»
-</pre>
+<div class="tl-title rv">7 дней автономного прогрева</div>
+<div class="timeline-vis" id="timeline2">
+<div class="tl-node"><div class="tl-day">День 0</div><div class="tl-stage">Ценность</div><div class="tl-text">«внедри один приём из гайда»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 2</div><div class="tl-stage">Экспертность</div><div class="tl-text">«клиент получил +17% заявок»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 3</div><div class="tl-stage">Трансформация</div><div class="tl-text">скриншот выпускницы</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 5</div><div class="tl-stage">Проблема</div><div class="tl-text">«окно есть, но не вечно»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node hook"><div class="tl-day">День 7</div><div class="tl-stage">Хук</div><div class="tl-text">флагманский курс</div></div>
 </div>
 
 <p class="prose-p rv d1"><strong>День 0</strong> — немедленная ценность: лид-магнит, тёплое приветствие, призыв внедрить приём. <strong>День 2</strong> — экспертность: «Самый серьёзный приём из гайда — номер три. Один из наших клиентов, внедрив только его, получил стабильные +17% заявок». <strong>День 3</strong> — трансформация: скриншот выпускницы, ушедшей с нелюбимой работы. <strong>День 5</strong> — проблема: «Многие спрашивают, можно ли заработать на маркетинге при такой конкуренции?» — и три ниши с дефицитом кадров. <strong>День 7</strong> — хук: за шесть дней человек получил измеримую пользу, модель завершена, оффер считывается как следующий очевидный шаг.</p>
@@ -366,16 +396,17 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Сценарий 4. Локальная воронка для студии взгляда · 5 дней</h2>
 <p class="prose-p rv d1">Задача — конвертация холодного лида из геотаргетированной рекламы в реального клиента. Это воронка «Быстрое доверие»: трипвайер — первая услуга с комфортным оффером, снижающая барьер первого визита.</p>
 
-<div class="ascii rv">
-<div class="a-title">5 дней: от гео-рекламы до первого визита</div>
-<pre>
-  Д0             Д1             Д2             Д3           Д4
-  ─────────      ─────────      ──────────     ─────────    ─────────
-  лид-магнит     экспертность   трансфор-      проблема     ХУК
-  «3 секрета     видео: мастер  мация          ошибки       процедура
-  формы          укладывает     «до/после»     домашнего    −50% для
-  бровей»        брови гелем»   + отзыв        ухода»       подписчиц»
-</pre>
+<div class="tl-title rv">5 дней: от гео-рекламы до первого визита</div>
+<div class="timeline-vis" id="timeline4">
+<div class="tl-node"><div class="tl-day">День 0</div><div class="tl-stage">Лид-магнит</div><div class="tl-text">«3 секрета формы бровей»</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 1</div><div class="tl-stage">Экспертность</div><div class="tl-text">видео: мастер укладывает брови гелем</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 2</div><div class="tl-stage">Трансформация</div><div class="tl-text">«до/после» + отзыв</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node"><div class="tl-day">День 3</div><div class="tl-stage">Проблема</div><div class="tl-text">ошибки домашнего ухода</div></div>
+<div class="tl-arr">→</div>
+<div class="tl-node hook"><div class="tl-day">День 4</div><div class="tl-stage">Хук</div><div class="tl-text">процедура −50% для подписчиц</div></div>
 </div>
 
 <h2 class="prose-h2 rv">От сценария к состоянию когнитивной лёгкости</h2>
@@ -471,6 +502,21 @@ if(meters.length){let done=false;
   new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
     meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
   }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+// SCENARIO COMPARE stagger reveal
+const scenarioCompare=document.getElementById('scenarioCompare');
+if(scenarioCompare){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    scenarioCompare.querySelectorAll('.sc-card').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},150+i*140));
+  }})},{threshold:.2}).observe(scenarioCompare)}
+// TIMELINE stagger reveal (touch-sequence chains)
+['timeline1','timeline2','timeline4'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    el.querySelectorAll('.tl-node,.tl-arr').forEach((n,i)=>setTimeout(()=>{n.classList.add('on')},150+i*160));
+  }})},{threshold:.25}).observe(el);
+});
 </script>
 </body>
 </html>
