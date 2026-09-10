@@ -237,6 +237,31 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:#0b0b0b;overflow-x:auto}
 .ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#cfcbc0;white-space:pre}
 .ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+/* FILTER GATES */
+.gate-vis{display:flex;flex-direction:column;align-items:center;gap:0;margin:2.2rem 0}
+.gate-node{width:100%;max-width:420px;padding:.9rem 1.2rem;border:1px solid var(--br2);border-radius:10px;background:var(--bgc,#131313);text-align:center;
+  opacity:0;transform:translateY(10px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.gate-node.on{opacity:1;transform:none}
+.gate-node.signal{border-color:var(--br2);color:var(--t2);font-family:var(--fm);font-size:.72rem;letter-spacing:.06em}
+.gate-node.filter{border-color:rgba(255,208,0,.3)}
+.gate-name{font-family:var(--fd);font-size:.92rem;font-weight:700;color:var(--t)}
+.gate-sub{font-size:.78rem;color:var(--t2);margin-top:.3rem}
+.gate-out{font-family:var(--fm);font-size:.68rem;color:var(--a);margin-top:.4rem}
+.gate-out.block{color:var(--red)}
+.gate-arr{color:var(--t3);font-size:.9rem;padding:.35rem 0;opacity:0;transition:opacity .4s}
+.gate-arr.on{opacity:.6}
+/* JAB FLOW */
+.jab-flow{display:flex;align-items:stretch;gap:.6rem;margin:2.2rem 0}
+@media(max-width:640px){.jab-flow{flex-direction:column}}
+.jab-step{flex:1;min-width:0;padding:1.1rem .9rem;border-radius:10px;text-align:center;
+  opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.jab-step.on{opacity:1;transform:none}
+.jab-step.jab{background:var(--bgc,#131313);border:1px solid var(--br2)}
+.jab-step.hook{background:var(--ad);border:1px solid rgba(255,208,0,.35)}
+.jab-num{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.jab-step.hook .jab-num{color:var(--a)}
+.jab-title{font-family:var(--fd);font-size:.86rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.jab-result{font-size:.7rem;color:var(--t2)}
 .emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
 .emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:#b0aca5;line-height:1.72}
 .emoji-list li .em{position:absolute;left:0;top:.45rem;font-size:1.05rem}
@@ -300,36 +325,32 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Предиктивное кодирование: почему вкладка закрывается</h2>
 <p class="prose-p rv d1">Мозг не обрабатывает каждый входящий сигнал с нуля — он непрерывно строит предсказательные модели. Рекламный пост в ленте часто маркируется как «угроза ресурсам» раньше, чем человек осознанно прочитал первую строку, и в перегретом информационном поле этот прогноз повторяется в одном и том же виде: «реклама, ничего ценного». Когнитивный щит поднимается автоматически. Параллельно работает второй фильтр — Salience Network, сеть выявления значимости: из тысяч сигналов среды она пропускает дальше только те, что маркированы как потенциально важные. Поэтому любая попытка прямой продажи «в лоб» проходит через оба фильтра с минимальным шансом.</p>
 
-<div class="ascii rv">
-<div class="a-title">Два фильтра, через которые проходит сигнал</div>
-<pre>
-  ВХОДНОЙ СИГНАЛ (реклама)
-        │
-        ▼
-  ПРЕДИКТИВНЫЙ ФИЛЬТР        «реклама, ничего ценного» → вкладка закрыта
-  (предсказание угрозы)            │ проходит
-                                   ▼
-  SALIENCE NETWORK            значимость маркируется? → внимание
-  (сеть выявления значимости)     │ не маркируется
-                                   ▼
-                              фоновый шум, игнорирование
-</pre>
+<div class="gate-vis" id="gateViz">
+  <div class="gate-node signal">Входной сигнал (реклама)</div>
+  <div class="gate-arr">↓</div>
+  <div class="gate-node filter">
+    <div class="gate-name">Предиктивный фильтр</div>
+    <div class="gate-sub">предсказание угрозы</div>
+    <div class="gate-out block">«ничего ценного» → вкладка закрыта</div>
+  </div>
+  <div class="gate-arr">↓ проходит</div>
+  <div class="gate-node filter">
+    <div class="gate-name">Salience Network</div>
+    <div class="gate-sub">сеть выявления значимости</div>
+    <div class="gate-out">маркирован как важный? → внимание</div>
+  </div>
+  <div class="gate-arr">↓ не маркирован</div>
+  <div class="gate-node signal">Фоновый шум, игнорирование</div>
 </div>
 
 <h2 class="prose-h2 rv">Стратегия «Джеб, джеб, джеб, правый хук»</h2>
 <p class="prose-p rv d1">Один из самых удобных способов обойти щит описал Гэри Вайнерчук формулой «Джеб, джеб, джеб, правый хук». Представь боксёрский поединок: попытка нанести сразу один тяжёлый удар предсказуема — соперник его считает и уйдёт. Опытный боксёр действует иначе: сначала серия лёгких и точных касаний — «джебов», которые не решают бой сами по себе, но усыпляют защиту и готовят почву для главного удара.</p>
 
-<div class="ascii rv">
-<div class="a-title">Боксёрская механика прогрева</div>
-<pre>
-  ДЖЕБ 1         ДЖЕБ 2          ДЖЕБ 3            ПРАВЫЙ ХУК
-  полезный       точный          эмоциональный     продающее
-  контент        контент         контент           предложение
-    │              │                │                 │
-    ▼              ▼                ▼                 ▼
-  экспертиза    доверие         взаимный        готовность
-  доказана      выстроено       обмен            к покупке
-</pre>
+<div class="jab-flow" id="jabFlow">
+  <div class="jab-step jab"><div class="jab-num">Джеб 1</div><div class="jab-title">Полезный контент</div><div class="jab-result">экспертиза доказана</div></div>
+  <div class="jab-step jab"><div class="jab-num">Джеб 2</div><div class="jab-title">Точный контент</div><div class="jab-result">доверие выстроено</div></div>
+  <div class="jab-step jab"><div class="jab-num">Джеб 3</div><div class="jab-title">Эмоциональный контент</div><div class="jab-result">взаимный обмен</div></div>
+  <div class="jab-step hook"><div class="jab-num">Правый хук</div><div class="jab-title">Продающее предложение</div><div class="jab-result">готовность к покупке</div></div>
 </div>
 
 <p class="prose-p rv d1">В маркетинге «правый хук» — прямое продающее предложение купить, заказать или прийти на консультацию. «Джебы» — каждая единица ценного контента, которую ты отдаёшь аудитории. Каждый пост с прикладным советом, разобранный кейс и бесплатный чек-лист делает три важные вещи: <strong>доказывает экспертизу</strong> (ты демонстрируешь компетентность на практике, а не заявляешь о ней), <strong>строит доверие</strong> (каждый полезный материал — вклад в копилку лояльности) и <strong>запускает инстинкт взаимного обмена</strong> (отдавая ценность раз за разом, ты включаешь древний социальный механизм, и в момент «хука» отказаться психологически менее комфортно).</p>
@@ -436,6 +457,18 @@ if(meters.length){let done=false;
   new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
     meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
   }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+// GATE stagger reveal
+const gateViz=document.getElementById('gateViz');
+if(gateViz){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    gateViz.querySelectorAll('.gate-node,.gate-arr').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},150+i*220));
+  }})},{threshold:.3}).observe(gateViz)}
+// JAB stagger reveal
+const jabFlow=document.getElementById('jabFlow');
+if(jabFlow){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    jabFlow.querySelectorAll('.jab-step').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},150+i*180));
+  }})},{threshold:.3}).observe(jabFlow)}
 </script>
 </body>
 </html>
