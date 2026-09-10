@@ -53,9 +53,7 @@ export default function AboutProject() {
 				<div className="w">
 					<div className="hstats" style={{ animation: "none", opacity: 1, transform: "none" }}>
 						<div className="hstat">
-							<div className="hstatn">
-								300+<span className="sfx">+</span>
-							</div>
+							<div className="hstatn">300+</div>
 							<div className="hstatl">{ru ? "Проектов" : "Projects"}</div>
 						</div>
 						<div className="hstat">
