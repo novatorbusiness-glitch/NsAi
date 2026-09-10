@@ -106,6 +106,10 @@ export default function DocsPage() {
 				<a href="/" className="docs-back">
 					← На сайт NCAi
 				</a>
+				<p className="page-badge">
+					<span className="bdot" />
+					Внутренний документ
+				</p>
 				{mdToHtml(src)}
 			</div>
 		</main>
