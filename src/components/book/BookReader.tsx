@@ -23,7 +23,16 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 	// скролле (scrolling="no") это обрезало большую часть каждой главы без
 	// возможности долистать. srcDoc-iframe — тот же источник, что и страница,
 	// поэтому меряем высоту напрямую через contentDocument, без postMessage.
+	//
+	// На медленной сети/CPU (мобильный LTE) все 30 iframe грузятся и меряются
+	// одновременно и конкурируют за ресурсы — у поздних глав fixed-таймауты
+	// (300/1200мс) срабатывают до того, как шрифты и контент реально доехали,
+	// и глава застревает на дефолтной высоте почти без видимого текста.
+	// Подстраховка: IntersectionObserver форсирует свежий замер именно в
+	// момент, когда секция реально попадает в зону видимости — то есть прямо
+	// перед тем, как пользователь до неё долистает.
 	const resizeObservers = useRef<Map<string, ResizeObserver>>(new Map());
+	const visibilityObserver = useRef<IntersectionObserver | null>(null);
 
 	const measureFrame = (slug: string, frame: HTMLIFrameElement) => {
 		const doc = frame.contentDocument;
@@ -41,6 +50,7 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 		// Веб-шрифты и reveal-анимации дозагружаются после load — досчитываем высоту.
 		setTimeout(() => measureFrame(slug, frame), 300);
 		setTimeout(() => measureFrame(slug, frame), 1200);
+		setTimeout(() => measureFrame(slug, frame), 3000);
 
 		const doc = frame.contentDocument;
 		if (doc?.body && typeof ResizeObserver !== "undefined") {
@@ -50,6 +60,26 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 			resizeObservers.current.set(slug, ro);
 		}
 	};
+
+	useEffect(() => {
+		if (typeof IntersectionObserver === "undefined") return;
+		visibilityObserver.current = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (!entry.isIntersecting) return;
+					const slug = entry.target.id;
+					const frame = frameRefs.current.get(slug);
+					if (frame) {
+						measureFrame(slug, frame);
+						setTimeout(() => measureFrame(slug, frame), 400);
+					}
+				});
+			},
+			{ rootMargin: "600px 0px" },
+		);
+		sectionRefs.current.forEach((el) => visibilityObserver.current?.observe(el));
+		return () => visibilityObserver.current?.disconnect();
+	}, []);
 
 	useEffect(() => {
 		const observers = resizeObservers.current;
@@ -235,7 +265,7 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 								className="bkr-frame"
 								srcDoc={c.html}
 								scrolling="no"
-								style={{ height: 900 }}
+								style={{ height: 2200 }}
 								onLoad={(e) => onFrameLoad(c.slug, e.currentTarget)}
 								ref={(el) => {
 									if (el) frameRefs.current.set(c.slug, el);
