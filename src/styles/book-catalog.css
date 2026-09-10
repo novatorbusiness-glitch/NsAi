@@ -32,24 +32,28 @@
 
 .bkcat-meta {
 	font-family: var(--fm, "JetBrains Mono", monospace);
-	font-size: 0.68rem;
+	font-size: 0.6rem;
 	font-weight: 500;
-	letter-spacing: 0.16em;
+	letter-spacing: 0.18em;
 	text-transform: uppercase;
-	color: var(--a, #ffd000);
-	margin: 0 0 1.1rem;
-	display: flex;
+	color: var(--t2);
+	margin: 0 0 1.5rem;
+	display: inline-flex;
 	align-items: center;
-	gap: 0.6rem;
+	gap: 0.55rem;
+	padding: 0.35rem 0.85rem;
+	border: 1px solid var(--br2);
+	border-radius: 999px;
 }
 
 .bkcat-meta::before {
 	content: "";
-	width: 7px;
-	height: 7px;
+	width: 5px;
+	height: 5px;
 	border-radius: 50%;
 	background: var(--a, #ffd000);
 	flex-shrink: 0;
+	animation: blink 2.5s ease-in-out infinite;
 }
 
 .bkcat-title {

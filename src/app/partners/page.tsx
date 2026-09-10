@@ -31,7 +31,10 @@ export default function PartnersPage() {
 	return (
 		<PageShell>
 			<div className="w page-hero">
-				<p className="lb">Партнёры</p>
+				<p className="page-badge">
+					<span className="bdot" />
+					Экосистема NCAi
+				</p>
 				<h1 className="page-h1">Партнёры</h1>
 				<p className="page-sub">
 					Компании и сервисы, с которыми NCAi строит системы продаж и AI-автоматизации. Партнёрство — это не
