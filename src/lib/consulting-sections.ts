@@ -405,7 +405,7 @@ export const CTA_HTML = `<!-- CTA -->
 <section id="final" style="position:relative;overflow:hidden">
   <div class="ofin">
     <h2 class="ofh2 rv">Хватит быть человеком-системой.<br>Получите <em style="font-style:normal;color:var(--a)">агентство в коробке.</em></h2>
-    <p class="ofsub rv d1">30 дней — и у вас рабочее агентство, которое работает без вас. Передаю руль — и работаете сами.</p>
+    <p class="ofsub rv d1">30 дней — и у вас рабочее агентство, которое ведёт операционку без вас. Дальше руль в ваших руках: ставите задачи, смотрите результат.</p>
     <div class="ofcta rv d2">
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.92rem;padding:1rem 2.25rem">Написать напрямую <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/ai-training" class="bs">Сравнить с обучением AI</a>
