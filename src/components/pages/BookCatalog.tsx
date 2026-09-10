@@ -1,8 +1,19 @@
+import type { CSSProperties } from "react";
 import PageShell from "@/components/layout/PageShell";
 import { BOOK_CHAPTER_SUBS } from "@/lib/book-data";
 
 const COVER = "/covers/neuro-voronka-cover.jpg";
 const AUTHOR_TG = "https://t.me/ilya_novator";
+
+// Цвет, иконка и «крючок» каждой главы — чтобы карточки не были на одно лицо.
+const CHAPTER_META: Record<number, { color: string; icon: string; hook: string }> = {
+	1: { color: "#FFD000", icon: "🧠", hook: "Как говорить с мозгом, а не с кошельком" },
+	2: { color: "#4ECDC4", icon: "⚙️", hook: "Воронка, которая работает без тебя" },
+	3: { color: "#B4A7D6", icon: "🤝", hook: "Прогрев незнакомца до покупки без давления" },
+	4: { color: "#FF6B6B", icon: "📡", hook: "Поток нужных людей без хаотичного бюджета" },
+	5: { color: "#ff9d2e", icon: "🤖", hook: "Убери себя из операционки" },
+	6: { color: "#6ECFF6", icon: "🧬", hook: "AI-агенты с правом решений" },
+};
 
 // Презентация книги «Нейро-Воронка» (эталон структуры exnihilo.life/kniga):
 // обложка → мета → крупный заголовок → теглайн → описание → автор → CTA →
@@ -68,11 +79,13 @@ export default function BookCatalog() {
 							<a
 								key={chapter.id}
 								className="bkcat-card"
+								style={{ "--cc": CHAPTER_META[chapter.id].color } as CSSProperties}
 								href={`/book/read#${chapter.subs[0].slug}`}
 							>
-								<span className="bkcat-card-num">Глава {chapter.id}</span>
-								<h3 className="bkcat-card-title">{chapter.title}</h3>
-								<p className="bkcat-card-desc">{chapter.subs[0].title}</p>
+								<span className="bkcat-card-icon" aria-hidden="true">{CHAPTER_META[chapter.id].icon}</span>
+								<span className="bkcat-card-num">Глава {chapter.id} · {chapter.title}</span>
+								<h3 className="bkcat-card-title">«{CHAPTER_META[chapter.id].hook}»</h3>
+								<p className="bkcat-card-desc">{chapter.subs.length} подглав, начиная с «{chapter.subs[0].title}»</p>
 								<span className="bkcat-card-cta">Читать →</span>
 							</a>
 						))}
