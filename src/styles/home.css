@@ -67,6 +67,9 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .hero-right{animation:fup 1s .3s var(--ease) both;min-width:0}
 @media(max-width:900px){.hero-right{display:none}}
 .product-cards{display:flex;flex-direction:column;gap:.75rem;min-width:0}
+.pc-group-label{font-family:var(--fm);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--t3);margin:0 0 .6rem .1rem}
+.pc-group-label-alt{margin-top:1.5rem;color:#ff9d2e}
 .pc{display:flex;align-items:center;gap:1.25rem;padding:1.35rem 1.5rem;
   background:var(--bgc);border:1px solid var(--br);border-radius:12px;text-decoration:none;
   transition:border-color .25s,transform .3s var(--ease),background .25s;position:relative;overflow:hidden}
