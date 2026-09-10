@@ -1,7 +1,8 @@
 /* ── /raspakovka — трипвайр между книгой/каналом и полным внедрением ── */
 
 .rk-hero {
-	padding: clamp(4rem, 9vw, 6rem) 0 2rem;
+	padding-top: clamp(4rem, 9vw, 6rem);
+	padding-bottom: 2rem;
 }
 
 .rk-price-row {

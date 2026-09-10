@@ -2777,7 +2777,7 @@ footer {
 
 /* ── Общие заголовки страниц-разделов ── */
 .page-hero {
-	padding: clamp(4rem, 9vw, 7rem) 0 0;
+	padding-top: clamp(4rem, 9vw, 7rem);
 }
 
 .page-h1 {
