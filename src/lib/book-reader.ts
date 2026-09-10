@@ -52,6 +52,7 @@ nav#nav{display:none!important}
 .scroll-nav{display:none!important}
 @media(pointer:fine){body{cursor:auto!important}}
 .hero-h1 em{background:linear-gradient(135deg,#141519 0%,#4a4d55 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+:root{--fd:'Syne',sans-serif!important;--fs:'Instrument Serif',serif!important;--fm:'JetBrains Mono',monospace!important}
 .prose-p{color:#3b3e44!important}
 .prose-p em{color:#3b3e44!important}
 .prose-p strong{color:#141519!important}
@@ -83,15 +84,13 @@ function normalizeChapterHtml(source: string, slug: string): string {
 	return inlineVizSvg(source)
 		.replace(
 			/<link[^>]*fonts\.googleapis\.com[^>]*>/gi,
-			'<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">',
+			'<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">',
 		)
-		.replace(/--fd:\s*'Syne',\s*sans-serif;/g, "--fd:'Space Grotesk',sans-serif;")
-		.replace(/--fs:\s*'Instrument Serif',\s*serif;/g, "--fs:'Manrope',sans-serif;")
-		.replace(/--fm:\s*'JetBrains Mono',\s*monospace;/g, "--fm:'Space Mono',monospace;")
 		.replace(/NCAi/g, "NcAi")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*>)([\s\S]*?)(<\/a>)/gi, "$1NcAi$3")
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/$2")
 		.replace(/(<a\b[^>]*class=["']nav-back["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/book$2")
+		.replace(/<a\b(?![^>]*\btarget=)([^>]*\bhref=["']\/(?!\/)[^"']*["'])/gi, '<a target="_top"$1')
 		.replace(/<\/head>/i, `<style id="ncai-light-reader">${READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style>${heightReporterScript(slug)}</head>`);
 }
 
