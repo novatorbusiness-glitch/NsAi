@@ -92,7 +92,7 @@ section{padding:6rem 0}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.22s}.rv.d3{transition-delay:.34s}
 
 /* PORTFOLIO GRID */
-.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+.wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
 @media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.wgrid{grid-template-columns:1fr}}
 .pj{padding:1.6rem;background:var(--bgc2);border:1px solid var(--br);border-radius:12px;
@@ -115,7 +115,7 @@ section{padding:6rem 0}
 .cl-pill.stat{border-color:rgba(255,208,0,.18);color:rgba(255,208,0,.7)}
 
 /* HIRE + PARTNER CARDS */
-.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
 @media(max-width:900px){.mgrid{grid-template-columns:1fr}}
 .mcard{background:var(--bgc2);border:1px solid var(--br);border-radius:14px;padding:2.25rem 2rem;
   position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
