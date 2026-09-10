@@ -236,6 +236,15 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .viz-table .r{color:var(--red);font-family:var(--fm);font-size:.78rem;white-space:nowrap}
 .ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:#0b0b0b;overflow-x:auto}
 .ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#cfcbc0;white-space:pre}
+/* TRUST STAGES */
+.trust-stages{display:flex;flex-direction:column;gap:.7rem;margin:2.2rem 0}
+.trust-stage{display:grid;grid-template-columns:44px 1fr;gap:1rem;padding:1.1rem 1.2rem;border:1px solid var(--br2);border-radius:12px;background:var(--bgc,#131313);
+  opacity:0;transform:translateX(-14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.trust-stage.on{opacity:1;transform:none}
+.ts-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:800;font-size:1.1rem;color:#080808;background:var(--a)}
+.ts-name{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.ts-q{font-size:.86rem;color:var(--a);font-style:italic;margin-bottom:.4rem}
+.ts-tools{font-size:.8rem;color:var(--t2)}
 .ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
 .emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
 .emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:#b0aca5;line-height:1.72}
@@ -305,18 +314,11 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <h2 class="prose-h2 rv">Матрица четырёх элементов прогрева</h2>
 <p class="prose-p rv d1">Каждый из четырёх элементов — это ключевой смысл, который переводит человека из состояния скепсиса в состояние готовности к действию. Все четыре вытекают из «карты мозга» клиента, которую мы строили во второй главе: боли, страхи и желания аудитории становятся топливом для прогрева.</p>
 
-<div class="rv" style="margin:2.4rem 0">
-<img src="/viz/doverie.svg" alt="Четыре элемента доверия: экспертность, тема, трансформация, продукт" loading="lazy" style="width:100%;max-width:800px;height:auto;display:block;margin:0 auto;border:1px solid #2a2a2a;border-radius:16px;background:#080808;box-shadow:0 18px 40px rgba(0,0,0,.35)">
-</div>
-
-<div class="viz-wrap rv">
-<table class="viz-table">
-<tr><th>Элемент</th><th>Задача</th><th>Инструменты</th></tr>
-<tr><td><strong>1 · Экспертность</strong></td><td>«Почему я должен слушать именно тебя?»</td><td>Сторителлинг, кейсы с цифрами, авторская методология</td></tr>
-<tr><td><strong>2 · Тема / Проблема</strong></td><td>«Почему эта тема важна для меня сейчас?»</td><td>Разрушение мифов, статистика, формула PAS</td></tr>
-<tr><td><strong>3 · Трансформация</strong></td><td>«Какой результат я получу?»</td><td>Истории клиентов, визуализация будущего, Future Pacing</td></tr>
-<tr><td><strong>4 · Продукт</strong></td><td>«Как получить этот результат?»</td><td>Анонс через пользу, разбор возражений, демо изнутри</td></tr>
-</table>
+<div class="trust-stages" id="trustStages">
+  <div class="trust-stage"><div class="ts-num">1</div><div><div class="ts-name">Экспертность</div><div class="ts-q">«Почему я должен слушать именно тебя?»</div><div class="ts-tools">Сторителлинг, кейсы с цифрами, авторская методология</div></div></div>
+  <div class="trust-stage"><div class="ts-num">2</div><div><div class="ts-name">Тема / Проблема</div><div class="ts-q">«Почему эта тема важна для меня сейчас?»</div><div class="ts-tools">Разрушение мифов, статистика, формула PAS</div></div></div>
+  <div class="trust-stage"><div class="ts-num">3</div><div><div class="ts-name">Трансформация</div><div class="ts-q">«Какой результат я получу?»</div><div class="ts-tools">Истории клиентов, визуализация будущего, Future Pacing</div></div></div>
+  <div class="trust-stage"><div class="ts-num">4</div><div><div class="ts-name">Продукт</div><div class="ts-q">«Как получить этот результат?»</div><div class="ts-tools">Анонс через пользу, разбор возражений, демо изнутри</div></div></div>
 </div>
 
 <h2 class="prose-h2 rv">Элемент 1. Прогрев к экспертности</h2>
@@ -432,6 +434,12 @@ if(meters.length){let done=false;
   new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
     meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
   }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+// TRUST stages stagger reveal
+const trustStages=document.getElementById('trustStages');
+if(trustStages){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    trustStages.querySelectorAll('.trust-stage').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},150+i*180));
+  }})},{threshold:.3}).observe(trustStages)}
 </script>
 </body>
 </html>
