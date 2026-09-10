@@ -298,7 +298,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Оффер · внедрение 30 дней</span>
       <h2 class="ofh2 rv d1">Всё, что вы получаете<br>в обмен на деньги</h2>
-      <p class="ofsub rv d2">Разовый чек за внедрение (распаковку) + ежемесячная подписка на платформу. Прозрачно, без скрытых платежей.</p>
+      <p class="ofsub rv d2">Разовый чек за внедрение (распаковку) — <b>250 000 ₽</b> — плюс ежемесячная подписка на платформу от 2 900 ₽. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит во внедрение</p>
         <div class="ofgrid">
@@ -316,7 +316,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="m4"><div class="m4-l">Ваши усилия</div><div class="m4-v">Анкета + одна сессия 90 минут</div></div>
         </div>
         <div class="ofmeta">
-          <div><div class="ofml">Формат</div><div class="ofmv">Сессия + панель</div></div>
+          <div><div class="ofml">Внедрение</div><div class="ofmv">250 000 ₽</div></div>
           <div><div class="ofml">Длительность</div><div class="ofmv">30 дней</div></div>
           <div><div class="ofml">Подписка</div><div class="ofmv">от 2 900 ₽/мес</div></div>
         </div>
