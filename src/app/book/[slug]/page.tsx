@@ -99,6 +99,7 @@ nav#nav{background:rgba(8,8,8,.94)!important;border-bottom:1px solid rgba(255,25
    var(--t) поверх чёрного фона). Возвращаем нормальный контраст. */
 .trance-section{background:var(--bg2)!important}
 .tc{border-color:var(--br)!important}
+.trance-block,.lang-close{background:var(--bg2)!important;border-color:var(--br)!important}
 .tc-text,.blueprint p,.dos-block-body p,.dos-block.win .dos-block-body p,.dos-close p,.gl-closer p,.lang-close p,.trance-block .prose-p,.warn-text,.bab-part p,.pain-card p{color:#3b3e44!important}
 `;
 

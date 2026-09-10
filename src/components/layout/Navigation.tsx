@@ -11,6 +11,7 @@ import LangSwitch from "./LangSwitch";
 const MENU_ITEMS: { href: string; label: string }[] = [
   { href: "/", label: "Главная" },
   { href: "/consulting", label: "Внедрение NCAi" },
+  { href: "/raspakovka", label: "Сессия-распаковка" },
   { href: "/ai-training", label: "Обучение AI" },
   { href: "/book", label: "Книги" },
   { href: "/blog", label: "Блог" },

@@ -321,3 +321,35 @@ export const SOLO_HTML = `<!-- SOLO PROJECTS -->
     </div>
   </div>
 </section>`;
+
+export const CLOSING_HTML = `<!-- CLOSING CTA -->
+<section id="closing">
+  <div class="wrap">
+    <span class="sec-tag rv" style="justify-content:center">Готов начать</span>
+    <h2 class="closing-h2 rv d1">Дальше не разговор «про AI вообще» —<br>дальше конкретный первый шаг</h2>
+    <p class="closing-lead rv d1">Три способа начать — от бесплатного до полного внедрения. Всё ведёт в одну систему, ничего не платится дважды.</p>
+
+    <div class="closing-paths rv d2">
+      <a href="/book" class="closing-path">
+        <div class="cp-n">0</div>
+        <div class="cp-t">Прочитать книгу</div>
+        <div class="cp-s">Бесплатно · 30 подглав о механике продаж</div>
+      </a>
+      <a href="/raspakovka" class="closing-path cp-main">
+        <div class="cp-n">1</div>
+        <div class="cp-t">Сессия-распаковка</div>
+        <div class="cp-s">60–90 минут · 25 000 ₽ — входит в стоимость внедрения</div>
+      </a>
+      <a href="/consulting" class="closing-path">
+        <div class="cp-n">2</div>
+        <div class="cp-t">Полное внедрение</div>
+        <div class="cp-s">30 дней · 250 000 ₽ — агентство передано вам в руки</div>
+      </a>
+    </div>
+
+    <div class="closing-acts rv d3">
+      <a href="/consulting#offer" class="bp">Обсудить проект →</a>
+      <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Написать напрямую</a>
+    </div>
+  </div>
+</section>`;
