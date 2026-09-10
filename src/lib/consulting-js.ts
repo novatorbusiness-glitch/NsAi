@@ -27,7 +27,10 @@ document.querySelectorAll('.cnt').forEach(el=>{
 });
 const tls=document.querySelectorAll('.tlst'),tlps=document.querySelectorAll('.tlp');
 tls.forEach(s=>s.addEventListener('click',()=>{const i=+s.dataset.s;tls.forEach(x=>x.classList.remove('act'));tlps.forEach(x=>x.classList.remove('act'));s.classList.add('act');tlps[i].classList.add('act')}));
-document.querySelectorAll('.wi').forEach(item=>item.addEventListener('click',()=>{document.querySelectorAll('.wi').forEach(x=>x.classList.remove('act'));item.classList.add('act')}));
+const fzones=document.querySelectorAll('.fz');
+function setActiveZone(zone){fzones.forEach(z=>z.classList.toggle('fz-dim',z.id!=='fz'+zone))}
+document.querySelectorAll('.wi').forEach(item=>item.addEventListener('click',()=>{document.querySelectorAll('.wi').forEach(x=>x.classList.remove('act'));item.classList.add('act');if(fzones.length)setActiveZone(item.dataset.zone)}));
+if(fzones.length)setActiveZone(document.querySelector('.wi.act')?.dataset.zone||'1');
 const hboxes=[document.getElementById('hb0'),document.getElementById('hb1'),document.getElementById('hb2'),document.getElementById('hb3'),document.getElementById('hb4'),document.getElementById('hb5')].filter(Boolean);
 let hbi=0;
 setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);

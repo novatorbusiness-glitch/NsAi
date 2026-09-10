@@ -152,6 +152,8 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @media(max-width:900px){.wlay{grid-template-columns:1fr;gap:3rem}}
 .funnelw{margin-top:2.5rem;max-width:280px}
 @media(max-width:900px){.funnelw{max-width:220px;margin:2rem auto 0}}
+.fz{transition:opacity .35s var(--ease),filter .35s var(--ease)}
+.fz-dim{opacity:.3;filter:saturate(.4)}
 .wdiag{display:flex;flex-direction:column;gap:.7rem}
 .wi{display:flex;gap:1.2rem;padding:1.2rem 1.4rem;border:1px solid var(--br);border-radius:10px;background:var(--bgc);cursor:pointer;transition:border-color .25s,background .25s,box-shadow .25s;position:relative;overflow:hidden}
 .wi::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--a);transform:scaleY(0);transform-origin:top;transition:transform .3s var(--ease)}
