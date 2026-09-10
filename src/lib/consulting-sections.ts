@@ -143,7 +143,19 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <div class="roi-stat rv d1"><div class="n">≈3,8 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
       <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
     </div>
-    <img src="/viz/mrr.svg" alt="Экономика внедрения NCAi — лестница MRR" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-bottom:3rem" />
+    <div class="mrrviz rv d2">
+      <span class="mrrviz-badge">Агентство в коробке</span>
+      <h3 class="mrrviz-tit">Экономика · лестница MRR</h3>
+      <p class="mrrviz-sub">Предсказуемый ежемесячный доход — растёт с каждым клиентом, смесь Standard / Pro</p>
+      <div class="mrrviz-bars">
+        <div class="mrrviz-col"><div class="mrrviz-val">39 000 ₽/мес</div><div class="mrrviz-bar" style="--h:22%"></div><div class="mrrviz-lbl">10 клиентов</div></div>
+        <div class="mrrviz-arr">+20 клиентов →</div>
+        <div class="mrrviz-col"><div class="mrrviz-val">117 000 ₽/мес</div><div class="mrrviz-bar" style="--h:60%"></div><div class="mrrviz-lbl">30 клиентов</div></div>
+        <div class="mrrviz-arr">+20 клиентов →</div>
+        <div class="mrrviz-col"><div class="mrrviz-val">195 000 ₽/мес</div><div class="mrrviz-bar" style="--h:100%"></div><div class="mrrviz-lbl">50 клиентов</div></div>
+      </div>
+      <p class="mrrviz-note">Сверх MRR — внедрение, слоты, топ-апы AI, апгрейды. Маржу защищает kill-switch AI-бюджета.</p>
+    </div>
     <div class="roi-vs">
       <div class="roi-col bad rv">
         <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">≈343к ₽ / мес</span></div>
@@ -208,7 +220,6 @@ export const UNPACK_HTML = `<!-- 4 · МЕХАНИЗМ: 30 ДНЕЙ -->
       <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда вы сами увидели пользу и попросили.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Вы самостоятельны</div><p class="tlptx">Вы сами ставите задачи и смотрите финансы без участия внедренца. Знаете, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся с вами.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
     </div>
-    <img src="/viz/raspakovka.svg" alt="Шесть шагов распаковки NCAi-агентства" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 <hr class="dv">`;
@@ -229,25 +240,25 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
               <linearGradient id="fl3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFD000" stop-opacity=".32"/><stop offset="100%" stop-color="#FFD000" stop-opacity=".08"/></linearGradient>
               <linearGradient id="fl4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFD000" stop-opacity=".16"/><stop offset="100%" stop-color="#FFD000" stop-opacity=".04"/></linearGradient>
             </defs>
-            <path id="fz1" class="fz" d="M8 8 L272 8 L232 60 L48 60 Z" fill="url(#fl1)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
-            <text x="140" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.7)">Workspace · команда</text>
-            <path id="fz2" class="fz" d="M48 66 L232 66 L202 116 L78 116 Z" fill="url(#fl2)" stroke="rgba(255,208,0,.2)" stroke-width="1"/>
-            <text x="140" y="95" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.6)">Отделы · задачи</text>
-            <path id="fz3" class="fz" d="M78 122 L202 122 L178 170 L102 170 Z" fill="url(#fl3)" stroke="rgba(255,208,0,.15)" stroke-width="1"/>
-            <text x="140" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.5)">База клиентов</text>
-            <path id="fz4" class="fz" d="M102 176 L178 176 L160 222 L120 222 Z" fill="url(#fl4)" stroke="rgba(255,208,0,.1)" stroke-width="1"/>
-            <text x="140" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="rgba(255,208,0,.4)">Аналитика · финансы</text>
-            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(255,255,255,.15)">в конце — вы сами ставите задачу</text>
+            <path id="fz1" class="fz" d="M8 8 L272 8 L232 60 L48 60 Z" fill="url(#fl1)" stroke="rgba(180,130,0,.4)" stroke-width="1"/>
+            <text x="140" y="38" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#3b3e44">Workspace · команда</text>
+            <path id="fz2" class="fz" d="M48 66 L232 66 L202 116 L78 116 Z" fill="url(#fl2)" stroke="rgba(180,130,0,.3)" stroke-width="1"/>
+            <text x="140" y="95" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#3b3e44">Отделы · задачи</text>
+            <path id="fz3" class="fz" d="M78 122 L202 122 L178 170 L102 170 Z" fill="url(#fl3)" stroke="rgba(180,130,0,.25)" stroke-width="1"/>
+            <text x="140" y="150" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#3b3e44">База клиентов</text>
+            <path id="fz4" class="fz" d="M102 176 L178 176 L160 222 L120 222 Z" fill="url(#fl4)" stroke="rgba(180,130,0,.2)" stroke-width="1"/>
+            <text x="140" y="203" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#3b3e44">Аналитика · финансы</text>
+            <text x="140" y="250" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#8b867e">в конце — вы сами ставите задачу</text>
           </svg>
         </div>
       </div>
       <div class="wdiag rv d2">
-        <div class="wi act" data-zone="1"><div class="wico">📦</div><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет агентства с названием вашего бизнеса. Это не «Мой проект» — здесь живут сотрудники, задачи и деньги.</div></div></div>
-        <div class="wi" data-zone="1"><div class="wico">🧑‍💼</div><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">AI-директор и 5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Ровно столько, сколько реально нужно — без раздувания штата.</div></div></div>
-        <div class="wi" data-zone="2"><div class="wico">🏛️</div><div><div class="wtit">Шаг 3 · Отделы (10 мин)</div><div class="wtx">Разработка, маркетинг, контент, финансы. Раскладываем сотрудников по отделам, чтобы у каждого был «дом» и зона ответственности.</div></div></div>
-        <div class="wi" data-zone="2"><div class="wico">✅</div><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
-        <div class="wi" data-zone="3"><div class="wico">📇</div><div><div class="wtit">Шаг 5 · База клиентов (15 мин)</div><div class="wtx">Подключаем базу: список, таблица или CRM. База — топливо системы. Нет базы — заводим 10 тёплых контактов для старта.</div></div></div>
-        <div class="wi" data-zone="4"><div class="wico">📊</div><div><div class="wtit">Шаг 6 · Аналитика и финансы (10 мин)</div><div class="wtx">Доход, расход, маржа, прибыль, расход токенов. «Контроль» — кто сегодня что делал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
+        <div class="wi act" data-zone="1"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет агентства с названием вашего бизнеса. Это не «Мой проект» — здесь живут сотрудники, задачи и деньги.</div></div></div>
+        <div class="wi" data-zone="1"><div class="wico">🧑‍💼</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">AI-директор и 5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Ровно столько, сколько реально нужно — без раздувания штата.</div></div></div>
+        <div class="wi" data-zone="2"><div class="wico">🏛️</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Отделы (10 мин)</div><div class="wtx">Разработка, маркетинг, контент, финансы. Раскладываем сотрудников по отделам, чтобы у каждого был «дом» и зона ответственности.</div></div></div>
+        <div class="wi" data-zone="2"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
+        <div class="wi" data-zone="3"><div class="wico">📇</div><span class="wchev">▾</span><div><div class="wtit">Шаг 5 · База клиентов (15 мин)</div><div class="wtx">Подключаем базу: список, таблица или CRM. База — топливо системы. Нет базы — заводим 10 тёплых контактов для старта.</div></div></div>
+        <div class="wi" data-zone="4"><div class="wico">📊</div><span class="wchev">▾</span><div><div class="wtit">Шаг 6 · Аналитика и финансы (10 мин)</div><div class="wtx">Доход, расход, маржа, прибыль, расход токенов. «Контроль» — кто сегодня что делал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
         <p class="sl rv d3" style="margin-top:1.5rem;font-size:.92rem">Не готовы сразу на все 30 дней? Эту же сессию можно купить отдельно — <a href="/raspakovka" style="color:var(--a)">распаковка за 25 000 ₽</a>, зачитывается в стоимость внедрения, если продолжите.</p>
       </div>
     </div>
@@ -262,16 +273,16 @@ export const QUESTIONS_HTML = `<!-- 6 · 10 ВОПРОСОВ -->
     <h2 class="sh2 rv d1">Ответьте себе честно</h2>
     <p class="sl rv d2">Семь вопросов про эмоции и три про логику. Если на большинство ответите «да» — внедрение за 30 дней для вас.</p>
     <div class="qgrid">
-      <div class="qcard rv"><span class="qtag e">Вопрос 1 · эмоции</span><div class="qq">Сколько часов в день вы тратите на рутину, которую должен делать кто-то другой?</div><div class="qa">Каждый такой час — это час, который не работает на рост бизнеса.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 2 · эмоции</span><div class="qq">Вам не страшно, что бизнес стоит, пока вы в отпуске или болеете?</div><div class="qa">Система не болеет, не увольняется и не «не в настроении».</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 3 · эмоции</span><div class="qq">Сколько денег вы уже отдали агентствам, после которых система так и не появилась?</div><div class="qa">Вы покупали услуги. Здесь вы покупаете актив, который остаётся.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 4 · эмоции</span><div class="qq">Что вы почувствуете, когда утром откроете панель и увидите, что всё сделано само?</div><div class="qa">Это и есть передача руля: вы управляете, а не тоните в операционке.</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 5 · эмоции</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 6 · эмоции</span><div class="qq">Что будет с бизнесом через год, если вы продолжите работать руками, как сейчас?</div><div class="qa">Без системы масштаб упирается в ваше личное время.</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 7 · эмоции</span><div class="qq">Хотите ли вы, наконец, перестать быть единственным, кто всё держит в голове?</div><div class="qa">Агентство в коробке — это способ перестать быть «человеком-системой».</div></div>
-      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: найм команды за ≈343 тыс ₽/мес с налогами или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это меньше 1% от стоимости найма. Математика простая.</div></div>
-      <div class="qcard rv"><span class="qtag l">Вопрос 9 · логика</span><div class="qq">Сколько стоит один месяц простоя, пока вы «решаетесь»?</div><div class="qa">Месяц внедрения против месяца ожидания — разница в системе, которая уже работает.</div></div>
-      <div class="qcard rv d1"><span class="qtag l">Вопрос 10 · логика</span><div class="qq">Готовы ли вы выделить одну сессию 90 минут, чтобы получить рабочее агентство?</div><div class="qa">Это единственное усилие на старте. Дальше систему ведут сотрудники.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 1</span><div class="qq">Сколько часов в день вы тратите на рутину, которую должен делать кто-то другой?</div><div class="qa">Каждый такой час — это час, который не работает на рост бизнеса.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 2</span><div class="qq">Вам не страшно, что бизнес стоит, пока вы в отпуске или болеете?</div><div class="qa">Система не болеет, не увольняется и не «не в настроении».</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 3</span><div class="qq">Сколько денег вы уже отдали агентствам, после которых система так и не появилась?</div><div class="qa">Вы покупали услуги. Здесь вы покупаете актив, который остаётся.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 4</span><div class="qq">Что вы почувствуете, когда утром откроете панель и увидите, что всё сделано само?</div><div class="qa">Это и есть передача руля: вы управляете, а не тоните в операционке.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 5</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 6</span><div class="qq">Что будет с бизнесом через год, если вы продолжите работать руками, как сейчас?</div><div class="qa">Без системы масштаб упирается в ваше личное время.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 7</span><div class="qq">Хотите ли вы, наконец, перестать быть единственным, кто всё держит в голове?</div><div class="qa">Агентство в коробке — это способ перестать быть «человеком-системой».</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 8</span><div class="qq">Что дешевле: найм команды за ≈343 тыс ₽/мес с налогами или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это меньше 1% от стоимости найма. Математика простая.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 9</span><div class="qq">Сколько стоит один месяц простоя, пока вы «решаетесь»?</div><div class="qa">Месяц внедрения против месяца ожидания — разница в системе, которая уже работает.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 10</span><div class="qq">Готовы ли вы выделить одну сессию 90 минут, чтобы получить рабочее агентство?</div><div class="qa">Это единственное усилие на старте. Дальше систему ведут сотрудники.</div></div>
     </div>
   </div>
 </section>
