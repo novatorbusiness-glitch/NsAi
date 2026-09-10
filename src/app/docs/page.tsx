@@ -102,7 +102,12 @@ export default function DocsPage() {
 
 	return (
 		<main className="docs-page">
-			<div className="docs-shell">{mdToHtml(src)}</div>
+			<div className="docs-shell">
+				<a href="/" className="docs-back">
+					← На сайт NCAi
+				</a>
+				{mdToHtml(src)}
+			</div>
 		</main>
 	);
 }
