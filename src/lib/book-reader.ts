@@ -52,6 +52,8 @@ nav#nav{display:none!important}
 .scroll-nav{display:none!important}
 @media(pointer:fine){body{cursor:auto!important}}
 .hero-h1 em{background:linear-gradient(135deg,#141519 0%,#4a4d55 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
+#hero{min-height:auto!important;align-items:flex-start!important;padding:calc(60px + 2.5rem) 0 3rem!important}
+.hero-bg,.hero-grid{display:none!important}
 :root{--fd:'Syne',sans-serif!important;--fs:'Instrument Serif',serif!important;--fm:'JetBrains Mono',monospace!important}
 .prose-p{color:#3b3e44!important}
 .prose-p em{color:#3b3e44!important}
