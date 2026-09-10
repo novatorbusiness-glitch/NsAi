@@ -37,6 +37,15 @@ export const HERO_HTML = `<!-- HERO -->
           </div>
           <div class="pc-arr">→</div>
         </a>
+        <a href="/raspakovka" class="pc pc-raspakovka" style="--c:#8FD694">
+          <div class="pc-icon">🧩</div>
+          <div class="pc-body">
+            <div class="pc-label">Сессия-распаковка</div>
+            <div class="pc-title">Цифровой отдел за 1 сессию</div>
+            <div class="pc-sub">60–90 минут · 25 000 ₽, входит в стоимость внедрения</div>
+          </div>
+          <div class="pc-arr">→</div>
+        </a>
         <a href="/ai-training" class="pc pc-training" style="--c:#4ECDC4">
           <div class="pc-icon">⚡</div>
           <div class="pc-body">
