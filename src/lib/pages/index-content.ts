@@ -97,7 +97,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .pc-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;
   margin-bottom:.28rem}
 .pc-title{font-family:var(--fd);font-size:.88rem;font-weight:700;color:var(--t);margin-bottom:.2rem}
-.pc-sub{font-size:.88rem;color:var(--t2);line-height:1.4}
+.pc-sub{font-size:1.05rem;color:var(--t2);line-height:1.55}
 .pc-arr{color:var(--t3);font-size:.8rem;flex-shrink:0;transition:color .2s,transform .25s var(--ease)}
 .pc:hover .pc-arr{color:var(--a);transform:translateX(4px)}
 .pc-consulting .pc-label{color:#FFD000}
@@ -151,7 +151,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .prod-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:.85rem;line-height:1.15}
 .prod-desc{font-size:1rem;color:var(--t2);line-height:1.72;margin-bottom:1.5rem}
 .prod-points{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.75rem}
-.prod-point{display:flex;align-items:flex-start;gap:.65rem;font-size:.95rem;color:var(--t2);line-height:1.45}
+.prod-point{display:flex;align-items:flex-start;gap:.65rem;font-size:1.05rem;color:var(--t2);line-height:1.55}
 .pp-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:.5rem}
 .c1 .pp-dot{background:var(--a)}
 .c2 .pp-dot{background:#4ECDC4}
@@ -194,7 +194,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .acj-dot.now{background:var(--a);color:#050505;border-color:var(--a)}
 .acj-p{font-family:var(--fm);font-size:.54rem;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:.2rem}
 .acj-t{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--t);margin-bottom:.18rem}
-.acj-d{font-size:.78rem;color:var(--t2);line-height:1.55}
+.acj-d{font-size:1rem;color:var(--t2);line-height:1.6}
 
 .about-text{}
 .about-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.04em;
@@ -230,7 +230,7 @@ nav.sc{background:rgba(8,8,8,.97)}
 .pj-icon{font-size:1.4rem;margin-bottom:.9rem}
 .pj-tag{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.4rem}
 .pj-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
-.pj-desc{font-size:.95rem;color:var(--t2);line-height:1.55}
+.pj-desc{font-size:1.05rem;color:var(--t2);line-height:1.6}
 .pj-status{display:inline-block;font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;
   margin-top:.75rem;padding:.2rem .5rem;border-radius:3px;background:rgba(255,208,0,.08);
   border:1px solid rgba(255,208,0,.18);color:rgba(255,208,0,.6)}
@@ -280,7 +280,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 .bk-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.05;color:var(--t)}
 .bk-author{font-family:var(--fm);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
 .bk-author span{color:var(--a)}
-.bk-desc{font-size:.95rem;color:var(--t2);line-height:1.6;margin:0}
+.bk-desc{font-size:1.05rem;color:var(--t2);line-height:1.65;margin:0}
 .bk-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:800;
   color:#050505;-webkit-text-fill-color:#050505;background:var(--a);padding:.55rem 1.15rem;border-radius:8px;margin-top:.2rem;
   box-shadow:0 6px 22px rgba(0,0,0,.35);transition:transform .2s var(--ease),box-shadow .2s}
@@ -512,7 +512,6 @@ export const body = `
       </a>
 
     </div>
-    <img src="/viz/matrica.svg" alt="Продуктовая матрица NCAi — лестница ценности" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 

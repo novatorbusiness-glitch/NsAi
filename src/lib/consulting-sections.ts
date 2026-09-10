@@ -14,7 +14,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
     <div class="hstats">
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="30">0</span><span class="sfx">дней</span></div><div class="hstatl">От распаковки до передачи руля</div></div>
       <div class="hstat"><div class="hstatn">90<span class="sfx">мин</span></div><div class="hstatl">Сессия распаковки — агентство готово</div></div>
-      <div class="hstat"><div class="hstatn">3–5<span class="sfx">шт</span></div><div class="hstatl">AI-сотрудников в команде</div></div>
+      <div class="hstat"><div class="hstatn">5<span class="sfx">+1</span></div><div class="hstatl">AI-сотрудников + AI-директор</div></div>
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Прозрачность: всё в панели у вас</div></div>
     </div>
   </div>
@@ -25,7 +25,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
         <div class="hsys-row">
           <div class="hbox lit" id="hb0">Workspace<br>вашего бизнеса</div>
           <div class="harr">→</div>
-          <div class="hbox" id="hb1">AI-команда<br>3–5 сотрудников</div>
+          <div class="hbox" id="hb1">AI-директор<br>+ 5 сотрудников</div>
         </div>
         <div class="hsys-conn"><div class="hsys-line"></div></div>
         <div class="hsys-row">
@@ -61,7 +61,7 @@ export const IDEA_HTML = `<!-- 1 · БОЛЬШАЯ ИДЕЯ -->
       <div class="pr rv d2">
         <div class="pr-n">Проблема 2</div>
         <div class="pr-t">Найм — дорого и ненадёжно</div>
-        <div class="pr-x">SMM, таргетолог, копирайтер — это 150–250 тыс ₽ в месяц. Плюс налоги, софт и риск, что человек уволится.</div>
+        <div class="pr-x">Маркетолог, копирайтер, аналитик, администратор — это ≈240 тыс ₽ в месяц зарплат, а с налогами ≈343 тыс ₽. Плюс риск, что человек уволится через три месяца.</div>
       </div>
       <div class="pr rv d3">
         <div class="pr-n">Проблема 3</div>
@@ -139,19 +139,19 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <p class="roi-tx rv d2">Вы платите не за «ботов в Telegram» и не за красивые консультации. Вы платите за то, чтобы <strong>ближайшие полгода не отдавать миллионы за зарплаты</strong> — и запускать свои продукты за <strong>дни, а не за месяцы</strong>. Это не расход. Это ROI.</p>
     </div>
     <div class="roi-stats">
-      <div class="roi-stat rv"><div class="n">до 10×</div><div class="l">Окупаемость внедрения за полгода</div></div>
-      <div class="roi-stat rv d1"><div class="n">2–3 млн ₽</div><div class="l">Не тратите на зарплаты команды в год</div></div>
+      <div class="roi-stat rv"><div class="n">до 14×</div><div class="l">Окупаемость внедрения за год</div></div>
+      <div class="roi-stat rv d1"><div class="n">≈3,8 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
       <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
     </div>
     <img src="/viz/mrr.svg" alt="Экономика внедрения NCAi — лестница MRR" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-bottom:3rem" />
     <div class="roi-vs">
       <div class="roi-col bad rv">
-        <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">150–250к ₽ / мес</span></div>
-        <div class="roi-li"><span class="x">✕</span><span>SMM + таргетолог + копирайтер — <b>150–250 тыс ₽ в месяц</b> на троих</span></div>
-        <div class="roi-li"><span class="x">✕</span><span>За год — <b>≈ 2–3 млн ₽</b> только на зарплаты, без софта и налогов</span></div>
+        <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">≈343к ₽ / мес</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>Маркетолог + копирайтер + аналитик + администратор — <b>≈240 тыс ₽/мес</b> зарплат</span></div>
+        <div class="roi-li"><span class="x">✕</span><span>Плюс налоги ≈43% — <b>≈343 тыс ₽/мес</b>, за год — <b>≈4,1 млн ₽</b></span></div>
         <div class="roi-li"><span class="x">✕</span><span>Работают 9:00–18:00, болеют, увольняются, «не в настроении»</span></div>
         <div class="roi-li"><span class="x">✕</span><span>Новый запуск = месяцы на найм, онбординг и раскачку</span></div>
-        <div class="roi-total bad"><span class="lbl">Итог за год</span><span class="v">≈ 2–3 млн ₽</span></div>
+        <div class="roi-total bad"><span class="lbl">Итог за год</span><span class="v">≈ 4,1 млн ₽</span></div>
       </div>
       <div class="roi-mid">VS</div>
       <div class="roi-col good rv d1">
@@ -160,11 +160,11 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
         <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b> без больничных и «не в настроении»</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Задача утром — <b>результат днём</b>. Запуск за дни, а не за месяцы</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Передача руля: система остаётся с вами</span></div>
-        <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">250 000 ₽ + подписка</span></div>
+        <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">≈ 285 000 ₽</span></div>
       </div>
     </div>
     <div class="roi-bottom rv d2">
-      <div class="tx">Один раз заплатили за систему — <span>полгода не платите миллионы за людей.</span></div>
+      <div class="tx">Один раз заплатили за систему — <span>экономия ≈3,8 млн ₽ в год, и внедрение окупается в первый месяц.</span></div>
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.88rem;padding:.85rem 1.9rem">Обсудить окупаемость <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -179,7 +179,7 @@ export const GETS_HTML = `<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
     <p class="sl rv d2">За одну сессию 60–90 минут — то, что запускается сразу. За 30 дней — система, которая работает без вас.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nnum">01</div><div class="ntit">Workspace вашего бизнеса</div><p class="ntx">Не «Мой проект», а «Салон Анны». Кабинет агентства: команда, задачи, отчёты и деньги в одном месте.</p></div>
-      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-команда 3–5 сотрудников</div><p class="ntx">Цифровые сотрудники с ролями и базой знаний: маркетолог, копирайтер, администратор, финансист. Каждый — со зоной ответственности.</p></div>
+      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-директор + 5 сотрудников</div><p class="ntx">Цифровые сотрудники с ролями и базой знаний: разработчик, маркетолог, копирайтер, контент-редактор, финансист — под управлением AI-директора. Каждый со своей зоной ответственности.</p></div>
       <div class="ncard rv d2"><div class="nnum">03</div><div class="ntit">Отделы под вашу нишу</div><p class="ntx">Разработка, маркетинг, контент, финансы. Не меню, а структура ответственности — у каждого сотрудника есть «дом».</p></div>
       <div class="ncard rv"><div class="nnum">04</div><div class="ntit">3–5 стартовых задач</div><p class="ntx">Реальные задачи из вашей анкеты: номер, срок, ответственный. До конца сессии вы сами ставите первую задачу.</p></div>
       <div class="ncard rv d1"><div class="nnum">05</div><div class="ntit">База клиентов в системе</div><p class="ntx">Ваша база — топливо агентства. Подключаем список, таблицу или CRM. Нет базы — заводим 10 тёплых контактов для старта.</p></div>
@@ -203,7 +203,7 @@ export const UNPACK_HTML = `<!-- 4 · МЕХАНИЗМ: 30 ДНЕЙ -->
       <div class="tlst" data-s="3"><div class="tldt">04</div><div class="tlstit">Передача руля</div><div class="tldur">нед 4</div></div>
     </div>
     <div class="tlcon rv d3">
-      <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-команда 3–5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Вы сами ставите первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
+      <div class="tlp act"><div class="tlpdur">Неделя 1 · распаковка</div><div class="tlptit">Сессия 60–90 минут — агентство готово</div><p class="tlptx">Workspace, AI-директор и 5 сотрудников, отделы, стартовые задачи, база клиентов, аналитика и финансы. Вы сами ставите первую задачу до конца сессии. Всю первую неделю — ежедневное сопровождение: брифинг в 10:00, отчёт в 18:00.</p><div class="tlpdel"><span>→</span> Рабочее агентство в панели</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 2 · в работу</div><div class="tlptit">Вы ведёте задачи сами</div><p class="tlptx">Ежедневные отчёты идут, вы ставите задачи без подсказок. Созвон через 3 дня — разбираем первые вопросы. Сотрудники выполняют рутину, владелец принимает решения, а не тонет в операционке.</p><div class="tlpdel"><span>→</span> Первый реальный результат</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 3 · автоматизация</div><div class="tlptit">Цифровые сотрудники берут рутину</div><p class="tlptx">Контент по базе знаний, автоматические напоминания клиентам, отчёты и аналитика. Видно, кто сегодня что делал и сколько времени. Расширения — только когда вы сами увидели пользу и попросили.</p><div class="tlpdel"><span>→</span> Рутина уходит в агентов</div></div>
       <div class="tlp"><div class="tlpdur">Неделя 4 · передача руля</div><div class="tlptit">Вы самостоятельны</div><p class="tlptx">Вы сами ставите задачи и смотрите финансы без участия внедренца. Знаете, куда писать при проблеме. Цель — передать руль, а не держать за руку. Система остаётся с вами.</p><div class="tlpdel"><span>→</span> Агентство работает без вас</div></div>
@@ -243,7 +243,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
       </div>
       <div class="wdiag rv d2">
         <div class="wi act"><div class="wico">📦</div><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет агентства с названием вашего бизнеса. Это не «Мой проект» — здесь живут сотрудники, задачи и деньги.</div></div></div>
-        <div class="wi"><div class="wico">🧑‍💼</div><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">3–5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Не больше 5 ролей на старте — слабого выводим, а не терпим.</div></div></div>
+        <div class="wi"><div class="wico">🧑‍💼</div><div><div class="wtit">Шаг 2 · Сотрудники и роли (15 мин)</div><div class="wtx">AI-директор и 5 цифровых сотрудников по шаблону ниши: имя, роль, отдел, база знаний. Ровно столько, сколько реально нужно — без раздувания штата.</div></div></div>
         <div class="wi"><div class="wico">🏛️</div><div><div class="wtit">Шаг 3 · Отделы (10 мин)</div><div class="wtx">Разработка, маркетинг, контент, финансы. Раскладываем сотрудников по отделам, чтобы у каждого был «дом» и зона ответственности.</div></div></div>
         <div class="wi"><div class="wico">✅</div><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, есть номер, срок и стоимость. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
         <div class="wi"><div class="wico">📇</div><div><div class="wtit">Шаг 5 · База клиентов (15 мин)</div><div class="wtx">Подключаем базу: список, таблица или CRM. База — топливо системы. Нет базы — заводим 10 тёплых контактов для старта.</div></div></div>
@@ -268,7 +268,7 @@ export const QUESTIONS_HTML = `<!-- 6 · 10 ВОПРОСОВ -->
       <div class="qcard rv"><span class="qtag e">Вопрос 5 · эмоции</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
       <div class="qcard rv d1"><span class="qtag e">Вопрос 6 · эмоции</span><div class="qq">Что будет с бизнесом через год, если вы продолжите работать руками, как сейчас?</div><div class="qa">Без системы масштаб упирается в ваше личное время.</div></div>
       <div class="qcard rv"><span class="qtag e">Вопрос 7 · эмоции</span><div class="qq">Хотите ли вы, наконец, перестать быть единственным, кто всё держит в голове?</div><div class="qa">Агентство в коробке — это способ перестать быть «человеком-системой».</div></div>
-      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: найм 2–3 человек за 150–250 тыс ₽/мес или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это 2–5% от стоимости найма. Математика простая.</div></div>
+      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: найм команды за ≈343 тыс ₽/мес с налогами или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это меньше 1% от стоимости найма. Математика простая.</div></div>
       <div class="qcard rv"><span class="qtag l">Вопрос 9 · логика</span><div class="qq">Сколько стоит один месяц простоя, пока вы «решаетесь»?</div><div class="qa">Месяц внедрения против месяца ожидания — разница в системе, которая уже работает.</div></div>
       <div class="qcard rv d1"><span class="qtag l">Вопрос 10 · логика</span><div class="qq">Готовы ли вы выделить одну сессию 90 минут, чтобы получить рабочее агентство?</div><div class="qa">Это единственное усилие на старте. Дальше систему ведут сотрудники.</div></div>
     </div>
@@ -286,7 +286,7 @@ export const OBJECTIONS_HTML = `<!-- 7 · ВОЗРАЖЕНИЯ -->
     <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">На распаковке заводим 10 тёплых контактов для старта. База — топливо системы, и её можно собрать за первую неделю.</div></div>
     <div class="obj rv d1"><div class="obj-q">Я не технарь, панель не осилю</div><div class="obj-a">Панель — это Telegram Mini App: ставить задачи и смотреть финансы проще, чем вести таблицу в Excel. 90 минут на сессии вы во всём разберётесь.</div></div>
     <div class="obj rv d2"><div class="obj-q">Уже пробовали автоматизацию — не взлетело</div><div class="obj-a">Разница в подходе: не «подключили бота», а построили агентство с ролями, базой знаний и правом на действие. Плюс передача руля, а не зависимость.</div></div>
-    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм отдела — 150–250 тыс ₽/мес. Подписка — от 2 900 ₽. Это 2–5% от стоимости найма за команду, которая работает круглосуточно.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм команды — ≈343 тыс ₽/мес с налогами. Подписка — от 2 900 ₽. Меньше 1% от стоимости найма за команду, которая работает круглосуточно.</div></div>
     <div class="obj rv d2"><div class="obj-q">А если мне не понравится?</div><div class="obj-a">14 дней trial после распаковки — вы видите продукт в действии до того, как платить за подписку. Решение принимаете по факту, а не по обещаниям.</div></div>
   </div>
 </section>
@@ -303,7 +303,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит во внедрение</p>
         <div class="ofgrid">
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Распаковка 60–90 минут <span>workspace, команда, отделы, задачи, база, аналитика</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-команда 3–5 сотрудников <span>с ролями и базами знаний под вашу нишу</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-директор + 5 сотрудников <span>с ролями и базами знаний под вашу нишу</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">30 дней внедрения <span>4 недели: распаковка → передача руля</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Ежедневное сопровождение <span>брифинг в 10:00, отчёт в 18:00, созвоны</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка от 2 900 ₽/мес <span>Standard · 5 мест · $15 AI-бюджета · 14 дней trial</span></div></div>
@@ -333,12 +333,12 @@ export const AMP_HTML = `<!-- 9 · УСИЛИТЕЛИ -->
 <section id="amp" style="background:var(--bg2)">
   <div class="w">
     <span class="lb rv">Почему сейчас</span>
-    <h2 class="sh2 rv d1">Дефицит и срочность</h2>
-    <p class="sl rv d2">Внедрение — это личная работа с каждым клиентом. Поэтому поток ограничен, и это честно.</p>
+    <h2 class="sh2 rv d1">Стандартный процесс, а не очередь на подряд</h2>
+    <p class="sl rv d2">Внедрение идёт по одному и тому же проверенному плану на 30 дней — не собирается с нуля под каждого клиента. Условия ниже одинаковы для всех.</p>
     <div class="amp-grid">
-      <div class="amp rv d1"><div class="amp-ico">🎯</div><div><div class="amp-t">Несколько клиентов в месяц</div><div class="amp-x">Каждое внедрение ведётся лично 30 дней. Больше взять физически не могу — качество упадёт.</div></div></div>
-      <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Места на месяц ограничены</div><div class="amp-x">Когда слоты заняты — старт переносится. Чем раньше напишете, тем раньше начнёте.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">14 дней trial</div><div class="amp-x">Платите за подписку только после того, как увидели продукт в действии. Риск — на мне, не на вас.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">📦</div><div><div class="amp-t">Один стандарт внедрения</div><div class="amp-x">Один и тот же процесс на 30 дней для любой ниши — распаковка, шаблон команды, передача руля. Не «пилотный проект», а повторяемая процедура.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Ограниченный набор на месяц</div><div class="amp-x">Новые внедрения стартуют потоками, чтобы у каждого клиента было полноценное сопровождение первую неделю. Когда набор закрыт — следующий старт по графику.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">14 дней trial</div><div class="amp-x">Платите за подписку только после того, как увидели продукт в действии. Риск — на нас, не на вас.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">🔒</div><div><div class="amp-t">Тарифы зафиксированы</div><div class="amp-x">Цена подписки не растёт «потому что». Решение сегодня — те же условия, что и завтра.</div></div></div>
     </div>
   </div>
@@ -382,10 +382,20 @@ export const CASES_HTML = `<!-- 10 · КЕЙСЫ / ПРИМЕР -->
           <div class="cres"><strong>→</strong> Контроль запасов</div>
         </div>
       </div>
+      <div class="ccard rv d3" style="--cc:#ff9d2e">
+        <div class="ctag">Эксперты и школы</div>
+        <div class="ctit">Онлайн-школа / эксперт / курс</div>
+        <div class="csub">Воронка вебинаров, база учеников, контент-план.</div>
+        <div class="cress">
+          <div class="cres"><strong>→</strong> Серия прогревных писем автоматически</div>
+          <div class="cres"><strong>→</strong> Контент-план на месяц</div>
+          <div class="cres"><strong>→</strong> Отчёт по базе учеников</div>
+        </div>
+      </div>
     </div>
     <div class="bigidea rv d2" style="margin-top:3rem">
       <div class="bigidea-tag">Пример · как это происходит</div>
-      <div class="bigidea-tx" style="font-size:1.02rem;line-height:1.55">Салон Анны. На сессии распаковки за 90 минут создаём workspace «Салон Анны», команду из четырёх цифровых сотрудников, отделы, стартовые задачи и подключаем базу клиентов. К концу сессии Анна сама ставит первую задачу. Через неделю система напоминает клиентам о записях и готовит контент-план. Через месяц Анна смотрит финансы в панели и принимает решения, а не тонет в рутине.</div>
+      <div class="bigidea-tx" style="font-size:1.02rem;line-height:1.55">Салон Анны. На сессии распаковки за 90 минут создаём workspace «Салон Анны», AI-директора и команду из 5 цифровых сотрудников, отделы, стартовые задачи и подключаем базу клиентов. К концу сессии Анна сама ставит первую задачу. Через неделю система напоминает клиентам о записях и готовит контент-план. Через месяц Анна смотрит финансы в панели и принимает решения, а не тонет в рутине.</div>
     </div>
   </div>
 </section>
