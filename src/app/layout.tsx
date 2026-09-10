@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Syne, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Unbounded, PT_Serif, JetBrains_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import "../styles/globals.css";
 import "../styles/home.css";
 import "../styles/consulting.css";
 
-const syne = Syne({
-	subsets: ["latin"],
+const syne = Unbounded({
+	subsets: ["latin", "cyrillic"],
 	weight: ["400", "600", "700", "800"],
 	variable: "--font-syne",
 	display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
-	subsets: ["latin"],
+const instrumentSerif = PT_Serif({
+	subsets: ["latin", "cyrillic"],
 	weight: "400",
 	style: ["normal", "italic"],
 	variable: "--font-instrument-serif",
@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 const jetbrainsMono = JetBrains_Mono({
-	subsets: ["latin"],
+	subsets: ["latin", "cyrillic"],
 	weight: ["400", "500"],
 	variable: "--font-jetbrains-mono",
 	display: "swap",

@@ -16,6 +16,16 @@ body {
 	box-sizing: border-box;
 }
 
+/* Unbounded (кириллица) шире Syne по метрике — длинные слова в заголовках
+   могут не влезать в строку на мобильных. Без переноса они бы обрезались
+   невидимо из-за overflow-x:hidden на body. */
+h1,
+h2,
+h3 {
+	overflow-wrap: break-word;
+	word-break: break-word;
+}
+
 body {
 	background: var(--bg);
 	color: #c2bdb5;
