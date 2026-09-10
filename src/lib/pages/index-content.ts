@@ -512,7 +512,6 @@ export const body = `
       </a>
 
     </div>
-    <img src="/viz/matrica.svg" alt="Продуктовая матрица NCAi — лестница ценности" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 
