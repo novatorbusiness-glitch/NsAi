@@ -58,7 +58,7 @@ nav.sc{background:rgba(8,8,8,.97)}
   text-transform:uppercase;color:var(--t2);padding:.35rem .85rem;border:1px solid var(--br2);border-radius:999px;
   margin-bottom:2rem;animation:fup .8s var(--ease) both}
 .bdot{width:5px;height:5px;background:var(--tr);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
-.hero-h1{font-family:var(--fd);font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:800;line-height:.98;
+.hero-h1{font-family:var(--fd);font-size:clamp(1.85rem,4.6vw,3.4rem);font-weight:800;line-height:.98;
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
 .hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-h1 .acc{display:block;color:var(--tr);-webkit-text-fill-color:var(--tr)}

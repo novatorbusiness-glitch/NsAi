@@ -22,7 +22,7 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 #prog{position:fixed;top:68px;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.45));z-index:200;width:0;pointer-events:none;transition:width .1s linear}
 /* HERO */
 #hero-consulting{min-height:calc(100vh - 68px);display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;gap:4rem}
-@media(max-width:900px){#hero-consulting{grid-template-columns:1fr;min-height:auto;padding:4rem 0}}
+@media(max-width:900px){#hero-consulting{grid-template-columns:1fr;min-height:auto;padding:2rem 0 3rem}}
 .hgrid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(255,208,0,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.022) 1px,transparent 1px);
   background-size:76px 76px;
@@ -40,7 +40,7 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
 @keyframes fup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 /* FIX: h1 — достаточно светлый на тёмном фоне, accent без webkit-fill на мобиле */
-.hh1{font-family:var(--fd);font-size:clamp(2.2rem,4.6vw,3.4rem);font-weight:800;line-height:.97;letter-spacing:-.04em;margin-bottom:1.75rem;animation:fup .9s .1s var(--ease) both;color:#f5f2eb}
+.hh1{font-family:var(--fd);font-size:clamp(1.85rem,4.6vw,3.4rem);font-weight:800;line-height:.97;letter-spacing:-.04em;margin-bottom:1.75rem;animation:fup .9s .1s var(--ease) both;color:#f5f2eb}
 .hh1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 /* FIX: accent line — жёлтый строго через color, не fill-color (Safari mobile fix) */
 .hh1 .acc{display:block;color:var(--a) !important;-webkit-text-fill-color:var(--a) !important;background:none !important}
