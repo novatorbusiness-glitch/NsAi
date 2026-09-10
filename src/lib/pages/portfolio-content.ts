@@ -210,8 +210,8 @@ export const body = `
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="hero-name">Наймите меня в проект.<br><span class="acc">Или станьте партнёром.</span></h1>
-    <p class="hero-sub">Не агентство и не фриланс. Я вхожу в продукт как технический партнёр: проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ за задачу — или доля/опцион, если строим вместе.</p>
+    <h1 class="hero-name">Технический партнёр для продукта,<br><span class="acc">который иначе не взлетит.</span></h1>
+    <p class="hero-sub">Не агентство и не фриланс. Вхожу в проект руками: проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ за задачу — или доля/опцион, если строим вместе.</p>
     <div class="hero-acts">
       <a href="https://t.me/Ilya_novator" class="btn btn-p">Обсудить проект →</a>
       <a href="#work" class="btn btn-s">Портфолио ↓</a>
@@ -343,7 +343,7 @@ export const body = `
 <section id="partner">
   <div class="wrap">
     <span class="sec-tag rv">Партнёрство</span>
-    <h2 class="sec-h2 rv d1">Партнёрство</h2>
+    <h2 class="sec-h2 rv d1">Три формата сотрудничества</h2>
     <div class="mgrid">
       <div class="mcard rv">
         <div class="mico">🤝</div>
