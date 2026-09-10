@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import PageShell from "@/components/layout/PageShell";
 import HeroSection from "@/components/home/sections/HeroSection";
+import MechanismSection from "@/components/home/sections/MechanismSection";
 import ProductsSection from "@/components/home/sections/ProductsSection";
 import AboutSection from "@/components/home/sections/AboutSection";
 import ClientsSection from "@/components/home/sections/ClientsSection";
@@ -10,7 +11,7 @@ import SoloSection from "@/components/home/sections/SoloSection";
 
 /**
  * Главная — собранная из изолированных секций по ТЗ NCAI_SPEC:
- * Hero (4 карточки) → Три продукта → О себе → Работал с → Соло R&D.
+ * Hero (4 карточки) → Как устроено (схема потока) → Три продукта → О себе → Работал с → Соло R&D.
  * Общая шапка и подвал — из PageShell (Navigation + Footer).
  */
 export default function HomePage() {
@@ -78,6 +79,7 @@ export default function HomePage() {
 		<PageShell>
 			<div id="cd" /><div id="cr" />
 			<HeroSection />
+			<MechanismSection />
 			<ProductsSection />
 			<AboutSection />
 			<ClientsSection />

@@ -233,3 +233,31 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .sec-light .sl{color:#2e2e2c}
 .sec-light .about-alai{color:#111;background:rgba(255,208,0,.16);border-left:3px solid rgba(170,115,0,.5)}
 .sec-light .an-n{color:#b8860b}
+
+/* MECHANISM — Ты → AI-директор → отделы → результат (анимированная схема потока) */
+.mech-lead{max-width:620px;margin:0 auto 3rem;text-align:center;font-size:1.02rem;line-height:1.75}
+.mech-flow{max-width:520px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.mech-node{width:100%;background:var(--bgc);border:1px solid var(--br2);border-radius:14px;padding:1.3rem 1.5rem;text-align:center}
+.mech-node-ico{font-size:1.4rem;margin-bottom:.5rem}
+.mech-node-t{font-family:var(--fd);font-weight:800;font-size:1.05rem;color:var(--t);letter-spacing:-.01em}
+.mech-node-s{font-size:.82rem;color:var(--t2);margin-top:.3rem}
+.mech-node-a{border-color:rgba(255,208,0,.4);background:var(--bgc);box-shadow:inset 0 1px 0 rgba(255,208,0,.15),0 0 32px rgba(255,208,0,.08)}
+.mech-node-a .mech-node-t{color:var(--a)}
+.mech-node-r{border-color:rgba(255,208,0,.4)}
+
+.mech-line{position:relative;width:1px;height:44px;flex-shrink:0;background:linear-gradient(to bottom,var(--br2),rgba(255,208,0,.45),var(--br2))}
+.mech-pulse{position:absolute;left:50%;top:0;width:6px;height:6px;margin-left:-3px;border-radius:50%;
+  background:var(--a);box-shadow:0 0 8px rgba(255,208,0,.85);animation:mechFlow 2.4s ease-in-out infinite}
+@keyframes mechFlow{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:100%;opacity:0}}
+
+.mech-depts{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+@media(max-width:640px){.mech-depts{grid-template-columns:1fr 1fr}}
+.mech-dept{background:var(--bgc);border:1px solid var(--br2);border-radius:12px;padding:1rem .6rem;text-align:center;
+  animation:mechGlow 6.4s ease-in-out infinite;animation-delay:calc(var(--i) * .8s)}
+.mech-dept-ico{font-size:1.15rem;margin-bottom:.4rem}
+.mech-dept-t{font-family:var(--fm);font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--t2)}
+@keyframes mechGlow{
+  0%,90%,100%{border-color:var(--br2);box-shadow:none}
+  8%{border-color:rgba(255,208,0,.55);box-shadow:0 0 16px rgba(255,208,0,.2)}
+}
+@media(prefers-reduced-motion:reduce){.mech-pulse,.mech-dept{animation:none}}

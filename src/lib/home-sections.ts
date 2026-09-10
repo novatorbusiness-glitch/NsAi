@@ -85,6 +85,48 @@ export const HERO_HTML = `<!-- HERO -->
   </div>
 </section>`;
 
+export const MECHANISM_HTML = `<!-- MECHANISM: как устроена система -->
+<section id="mechanism" class="sec-light">
+  <div class="wrap">
+    <span class="sec-tag rv">Как это устроено</span>
+    <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в систему —<br>результат выходит из панели</h2>
+    <p class="p mech-lead rv d1">Не абстрактный «AI-помощник» и не чат с ботом. Рабочая цепочка: ты формулируешь задачу, AI-директор распределяет её между цифровыми сотрудниками по отделам, результат собирается в одной панели — не в переписке.</p>
+
+    <div class="mech-flow">
+      <div class="mech-node rv d2">
+        <div class="mech-node-ico">🧑‍💻</div>
+        <div class="mech-node-t">Ты</div>
+        <div class="mech-node-s">Формулируешь задачу</div>
+      </div>
+
+      <div class="mech-line rv d2"><i class="mech-pulse"></i></div>
+
+      <div class="mech-node mech-node-a rv d2">
+        <div class="mech-node-ico">🧭</div>
+        <div class="mech-node-t">AI-директор</div>
+        <div class="mech-node-s">Распределяет по отделам</div>
+      </div>
+
+      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
+
+      <div class="mech-depts rv d3">
+        <div class="mech-dept" style="--i:0"><div class="mech-dept-ico">💻</div><div class="mech-dept-t">Разработка</div></div>
+        <div class="mech-dept" style="--i:1"><div class="mech-dept-ico">📣</div><div class="mech-dept-t">Маркетинг</div></div>
+        <div class="mech-dept" style="--i:2"><div class="mech-dept-ico">✍️</div><div class="mech-dept-t">Контент</div></div>
+        <div class="mech-dept" style="--i:3"><div class="mech-dept-ico">💰</div><div class="mech-dept-t">Финансы</div></div>
+      </div>
+
+      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
+
+      <div class="mech-node mech-node-r rv d3">
+        <div class="mech-node-ico">📊</div>
+        <div class="mech-node-t">Результат в панели</div>
+        <div class="mech-node-s">Прозрачно, 24/7</div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 export const PRODUCTS_HTML = `<!-- PRODUCTS -->
 <section id="products" class="sec-light">
   <div class="wrap">
