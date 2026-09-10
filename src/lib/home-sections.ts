@@ -8,14 +8,14 @@ export const HERO_HTML = `<!-- HERO -->
   <div class="hero-inner">
     <!-- LEFT -->
     <div>
-      <div class="hero-badge"><span class="bdot"></span>AI-Powered Product Builder</div>
+      <div class="hero-badge"><span class="bdot"></span>Архитектор систем · NCAi</div>
       <h1 class="hero-name"><em>Илья</em><span class="acc">Новицкий</span></h1>
-      <div class="hero-role">NCAi · <span>Архитектор систем</span></div>
+      <div class="hero-role">Бизнесу — рабочее AI-агентство. Стартапам — технический партнёр</div>
       <p class="hero-quote">«Соединяю продуктовое мышление предпринимателя с руками разработчика — на выходе рабочий продукт, а не питч-дек»</p>
       <div class="hero-meta">
         <div class="hm">Локация<span>Москва / удалённо</span></div>
-        <div class="hm">Интересы<span>Web3 · HealthTech · AI</span></div>
-        <div class="hm">Формат<span>Fix + опцион · удалённо</span></div>
+        <div class="hm">Для бизнеса<span>Внедрение NCAi · обучение AI</span></div>
+        <div class="hm">Для стартапов<span>Tech-партнёрство · Web3 · HealthTech</span></div>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Проектов</div></div>
@@ -26,6 +26,7 @@ export const HERO_HTML = `<!-- HERO -->
     </div>
     <!-- RIGHT — PRODUCT CARDS -->
     <div class="hero-right">
+      <div class="pc-group-label">Для бизнеса</div>
       <div class="product-cards">
         <a href="/consulting" class="pc pc-consulting" style="--c:#FFD000">
           <div class="pc-icon">📦</div>
@@ -54,6 +55,9 @@ export const HERO_HTML = `<!-- HERO -->
           </div>
           <div class="pc-arr">→</div>
         </a>
+      </div>
+      <div class="pc-group-label pc-group-label-alt">Ищете тех-партнёра</div>
+      <div class="product-cards">
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">🎯</div>
           <div class="pc-body">
