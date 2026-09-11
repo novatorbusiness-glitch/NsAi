@@ -191,9 +191,10 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .ncard:hover{border-color:rgba(255,208,0,.3);transform:translateY(-5px)}
 .ncard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--a);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .ncard:hover::after{transform:scaleX(1)}
-.nnum{font-family:var(--fd);font-size:4rem;font-weight:800;letter-spacing:-.06em;line-height:1;color:transparent;-webkit-text-stroke:1px var(--br2);margin-bottom:1.5rem;user-select:none}
-.ntit{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--t);margin-bottom:.7rem}
-.ntx{font-size:1.06rem;color:var(--t2);line-height:1.7}
+.nbadge{width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid rgba(255,208,0,.35);background:var(--ad);color:var(--a);font-family:var(--fm);font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
+.ntit{font-family:var(--fd);font-size:1.05rem;font-weight:800;color:var(--t);margin-bottom:.7rem;letter-spacing:-.01em}
+.ntx{font-size:1.02rem;color:var(--t2);line-height:1.7}
+.ntx b{color:var(--t);font-weight:600}
 .ntl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:3rem;padding:2rem 1.5rem;background:var(--bgc);border:1px solid var(--br);border-radius:12px;position:relative}
 
 /* REALWORK — карусель по нишам */
