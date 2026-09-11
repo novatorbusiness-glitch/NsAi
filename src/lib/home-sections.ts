@@ -28,21 +28,12 @@ export const HERO_HTML = `<!-- HERO -->
     <div class="hero-right">
       <div class="pc-group-label">Для бизнеса</div>
       <div class="product-cards">
-        <a href="/consulting" class="pc pc-consulting" style="--c:#FFD000">
+        <a href="/raspakovka" class="pc pc-consulting" style="--c:#FFD000">
           <div class="pc-icon">📦</div>
           <div class="pc-body">
-            <div class="pc-label">Внедрение NCAi</div>
-            <div class="pc-title">Агентство за 30 дней</div>
-            <div class="pc-sub">Агентство в коробке: распаковка, AI-команда, система в панели</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-        <a href="/raspakovka" class="pc pc-raspakovka" style="--c:#8FD694">
-          <div class="pc-icon">🧩</div>
-          <div class="pc-body">
-            <div class="pc-label">Сессия-распаковка</div>
+            <div class="pc-label">Распаковка агентства</div>
             <div class="pc-title">Цифровой отдел за 1 сессию</div>
-            <div class="pc-sub">60–90 минут · 25 000 ₽, входит в стоимость внедрения</div>
+            <div class="pc-sub">60–90 минут · AI-команда, отделы, задачи, руль сразу у вас · 25 000 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -206,22 +197,22 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
     <h2 class="sec-h2 rv d1">Три направления.<br>Выбери своё.</h2>
     <div class="products-grid">
 
-      <a href="/consulting" class="prod-card c1 rv">
+      <a href="/raspakovka" class="prod-card c1 rv">
         <div class="prod-stripe" style="--stripe:#FFD000"></div>
         <div class="prod-top">
           <div class="prod-icon">📦</div>
-          <div class="prod-type">Внедрение NCAi · B2B</div>
-          <div class="prod-title">Агентство в коробке за 30 дней</div>
-          <p class="prod-desc">Внедряю рабочее NCAi-агентство в панели: AI-команда, отделы, задачи, база клиентов и аналитика. Распаковка за 60–90 минут, передача руля через 30 дней — зависимости нет.</p>
+          <div class="prod-type">Распаковка агентства · B2B</div>
+          <div class="prod-title">Агентство в коробке за одну сессию</div>
+          <p class="prod-desc">Разворачиваю рабочее NCAi-агентство в панели: AI-команда, отделы, задачи, база клиентов и аналитика. Сессия 60–90 минут — руль сразу у вас, зависимости нет.</p>
           <div class="prod-points">
-            <div class="prod-point"><div class="pp-dot"></div><span>Распаковка: агентство готово с первой сессии</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Агентство готово с первой сессии</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>AI-команда 3–5 цифровых сотрудников</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Аналитика и финансы в панели 24/7</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>Передача руля — клиент ведёт сам</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Руль сразу у вас — ведёте сами</span></div>
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>Длительность</span>30 дней</div>
+          <div class="prod-price"><span>Разово</span>25 000 ₽</div>
           <div class="prod-link">Подробнее →</div>
         </div>
       </a>
@@ -451,7 +442,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
   <div class="wrap">
     <span class="sec-tag rv" style="justify-content:center">Готов начать</span>
     <h2 class="closing-h2 rv d1">Дальше не разговор «про AI вообще» —<br>дальше конкретный первый шаг</h2>
-    <p class="closing-lead rv d1">Три способа начать — от бесплатного до полного внедрения. Всё ведёт в одну систему, ничего не платится дважды.</p>
+    <p class="closing-lead rv d1">Два способа начать — от бесплатного до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
 
     <div class="closing-paths rv d2">
       <a href="/book" class="closing-path">
@@ -461,18 +452,13 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
       </a>
       <a href="/raspakovka" class="closing-path cp-main">
         <div class="cp-n">1</div>
-        <div class="cp-t">Сессия-распаковка</div>
-        <div class="cp-s">60–90 минут · 25 000 ₽ — входит в стоимость внедрения</div>
-      </a>
-      <a href="/consulting" class="closing-path">
-        <div class="cp-n">2</div>
-        <div class="cp-t">Полное внедрение</div>
-        <div class="cp-s">30 дней · 250 000 ₽ — агентство передано вам в руки</div>
+        <div class="cp-t">Распаковка агентства</div>
+        <div class="cp-s">60–90 минут · 25 000 ₽ — руль сразу у вас</div>
       </a>
     </div>
 
     <div class="closing-acts rv d3">
-      <a href="/consulting#offer" class="bp">Обсудить проект →</a>
+      <a href="/raspakovka#offer" class="bp">Обсудить проект →</a>
       <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Написать напрямую</a>
     </div>
   </div>

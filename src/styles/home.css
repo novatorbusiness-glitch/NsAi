@@ -87,7 +87,6 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .pc-arr{color:var(--t3);font-size:.8rem;flex-shrink:0;transition:color .2s,transform .25s var(--ease)}
 .pc:hover .pc-arr{color:var(--a);transform:translateX(4px)}
 .pc-consulting .pc-label{color:#FFD000}
-.pc-raspakovka .pc-label{color:#8FD694}
 .pc-training .pc-label{color:#4ECDC4}
 .pc-book .pc-label{color:#B4A7D6}
 .pc-portfolio .pc-label{color:#ff9d2e}

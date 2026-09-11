@@ -24,11 +24,11 @@ export default function MobileTabs() {
     { label: "Главная", icon: "🏠", href: "/", active: pathname === "/" },
     { label: "Книги", icon: "📖", href: "/book", active: isActive(["/book"]) },
     { label: "Блог", icon: "✍️", href: "/blog", active: isActive(["/blog"]) },
-    { label: "Ещё", icon: "☰", href: null, active: isActive(["/consulting", "/ai-training", "/o-proekte", "/portfolio", "/partners"]) },
+    { label: "Ещё", icon: "☰", href: null, active: isActive(["/raspakovka", "/ai-training", "/o-proekte", "/portfolio", "/partners"]) },
   ];
 
   const moreLinks = [
-    { label: "Внедрение NCAi", href: "/consulting" },
+    { label: "Распаковка агентства", href: "/raspakovka" },
     { label: "Обучение AI", href: "/ai-training" },
     { label: "О проекте", href: "/o-proekte" },
     { label: "Портфолио", href: "/portfolio" },
