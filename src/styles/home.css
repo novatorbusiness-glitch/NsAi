@@ -293,3 +293,46 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .jrn-mark .jrn-t{color:#c23a3a}
 .jrn-now .jrn-t{color:#8a6a00}
 @media(max-width:640px){.jrn{padding-left:1.7rem}.jrn-dot{left:-1.35rem}}
+
+/* PHOTO PLACEHOLDER — переиспользуемый блок-заглушка под реальные фото (см. ТЗ п.8) */
+.photo-ph{position:relative;aspect-ratio:4/5;border:1.5px dashed var(--br2);border-radius:14px;
+  background:repeating-linear-gradient(135deg,var(--bgc) 0 12px,var(--bgc2) 12px 24px);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:1.5rem;overflow:hidden}
+.photo-ph-inner{display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.photo-ph-icon{font-size:1.6rem;opacity:.5}
+.photo-ph-label{font-family:var(--fm);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);line-height:1.6}
+.photo-ph.wide{aspect-ratio:16/10}
+.photo-ph.square{aspect-ratio:1/1}
+.sec-light .photo-ph{background:repeating-linear-gradient(135deg,#fff 0 12px,#f0f0ec 12px 24px);border-color:#d9dce1}
+.sec-light .photo-ph-label{color:#8a8a86}
+
+/* VIDEO SECTION — плейсхолдер под личное видео-обращение (см. ТЗ п.6) */
+#video-intro{padding:clamp(4rem,8vw,6rem) 0}
+.video-wrap{max-width:900px;margin:0 auto;text-align:center}
+.video-eyebrow{font-size:1.05rem;color:var(--t2);font-style:italic;font-family:var(--fs);margin-bottom:2rem;line-height:1.6}
+.video-ph{position:relative;aspect-ratio:16/9;border-radius:18px;border:1.5px dashed var(--br2);
+  background:repeating-linear-gradient(135deg,var(--bgc) 0 14px,var(--bgc2) 14px 28px);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.video-ph-play{width:72px;height:72px;border-radius:50%;background:rgba(255,208,0,.1);border:1.5px solid rgba(255,208,0,.4);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--a);margin-bottom:1rem;
+  transition:transform .25s var(--ease),background .25s}
+.video-ph:hover .video-ph-play{transform:scale(1.08);background:rgba(255,208,0,.18)}
+.video-ph-inner{display:flex;flex-direction:column;align-items:center}
+.video-ph-label{font-family:var(--fm);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.video-ph-sub{font-size:.8rem;color:var(--t3);margin-top:.4rem;max-width:320px}
+
+/* PRINCIPLES — «Как я думаю» */
+.princ-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:2.5rem 0}
+@media(max-width:900px){.princ-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.princ-grid{grid-template-columns:1fr}}
+.princ{background:var(--bgc);border:1px solid var(--br2);border-radius:12px;padding:1.4rem 1.3rem}
+.princ-n{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;color:var(--a);opacity:.7;margin-bottom:.6rem}
+.princ-t{font-family:var(--fd);font-weight:700;font-size:.95rem;color:var(--t);line-height:1.4}
+.princ-manifest{font-family:var(--fs);font-style:italic;font-size:1.15rem;color:#2e2e2c;text-align:center;
+  max-width:640px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid #e7e9ec;line-height:1.6}
+
+/* PERSONAL LAYER — фото-плейсхолдеры */
+.pers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
+@media(max-width:900px){.pers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.pers-grid{grid-template-columns:1fr}}
+.pers-cap{font-size:.82rem;color:var(--t2);margin-top:.8rem;line-height:1.5}
