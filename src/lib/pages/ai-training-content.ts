@@ -291,7 +291,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
     <ul class="nav-links">
-      <li><a href="/consulting">Внедрение</a></li>
+      <li><a href="/raspakovka">Распаковка</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
       <li><a href="/blog">Блог</a></li>
@@ -310,7 +310,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
   <div class="mnav-panel">
     <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
     <div class="mnav-links">
-      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/raspakovka"><span class="mnav-arrow">→</span>Распаковка агентства</a>
       <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
       <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
       <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
@@ -639,7 +639,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
     <p class="final-sub rv d1">Месяц, твой проект, 1 на 1. Уходишь с продуктом и навыком, который остаётся.</p>
     <div class="final-acts rv d2">
       <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="/consulting" class="bs">Сравнить с внедрением NCAi</a>
+      <a href="/raspakovka" class="bs">Сравнить с распаковкой NCAi</a>
     </div>
     <div class="final-alt rv d3">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a></div>
   </div>
@@ -660,7 +660,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
+          <li><a href="/raspakovka">Распаковка агентства · 25 000 ₽</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>

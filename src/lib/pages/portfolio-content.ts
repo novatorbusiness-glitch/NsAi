@@ -170,7 +170,7 @@ export const body = `
   <div class="ni">
     <a href="/" class="logo">NCAi</a>
     <ul class="nav-links">
-      <li><a href="/consulting">Внедрение</a></li>
+      <li><a href="/raspakovka">Распаковка</a></li>
       <li><a href="/ai-training">Обучение AI</a></li>
       <li><a href="/book">Книга</a></li>
       <li><a href="/blog">Блог</a></li>
@@ -189,7 +189,7 @@ export const body = `
   <div class="mnav-panel">
     <div class="mnav-head"><span class="mnav-logo">NCAi</span><button class="mnav-close" id="mnavClose" aria-label="Закрыть">✕</button></div>
     <div class="mnav-links">
-      <a href="/consulting"><span class="mnav-arrow">→</span>Внедрение NCAi</a>
+      <a href="/raspakovka"><span class="mnav-arrow">→</span>Распаковка агентства</a>
       <a href="/ai-training"><span class="mnav-arrow">→</span>Обучение AI</a>
       <a href="/book"><span class="mnav-arrow">→</span>Книги</a>
       <a href="/blog"><span class="mnav-arrow">→</span>Блог</a>
@@ -394,7 +394,7 @@ export const body = `
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/consulting">Внедрение NCAi · 30 дней</a></li>
+          <li><a href="/raspakovka">Распаковка агентства · 25 000 ₽</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>

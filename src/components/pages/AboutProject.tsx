@@ -104,9 +104,9 @@ export default function AboutProject() {
 						— {ru ? "бесплатно, читается прямо на сайте." : "free, read right on the site."}
 					</li>
 					<li className="legal-li">
-						<strong>{ru ? "Внедрение:" : "Implementation:"}</strong>{" "}
-						<a href="/consulting" style={{ color: "var(--a)" }}>
-							NCAi-агентство за 30 дней
+						<strong>{ru ? "Распаковка:" : "Unboxing:"}</strong>{" "}
+						<a href="/raspakovka" style={{ color: "var(--a)" }}>
+							NCAi-агентство за одну сессию
 						</a>{" "}
 						— {ru ? "система продаж и AI-команда в панели." : "a sales system and AI team in a dashboard."}
 					</li>

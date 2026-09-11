@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import ConsultingPage from "@/components/pages/ConsultingPage";
+import ConsultingRedirect from "@/components/pages/ConsultingRedirect";
 
 export const metadata: Metadata = {
-	title: "Внедрение NCAi-агентства за 30 дней · Агентство в коробке",
-	description:
-		"Купи не консультанта — купи работающее агентство. Распаковка за 60–90 минут: AI-команда, отделы, задачи, база клиентов, аналитика и финансы в панели. 30 дней до передачи руля. Подписка от 2 900 ₽/мес.",
-	alternates: {
-		canonical: "/consulting",
-	},
+	title: "Распаковка NCAi · Архитектура твоего цифрового отдела",
+	description: "Страница переехала — актуальный оффер теперь на /raspakovka.",
+	robots: { index: false, follow: true },
+	alternates: { canonical: "/raspakovka" },
 };
 
 export default function Page() {
-	return <ConsultingPage />;
+	return <ConsultingRedirect />;
 }

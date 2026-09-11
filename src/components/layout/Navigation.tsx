@@ -10,8 +10,7 @@ import LangSwitch from "./LangSwitch";
 // открывающий выезжающую шторку со всеми пунктами (крупные тапы, свайп/крестик).
 const MENU_ITEMS: { href: string; label: string }[] = [
   { href: "/", label: "Главная" },
-  { href: "/consulting", label: "Внедрение NCAi" },
-  { href: "/raspakovka", label: "Сессия-распаковка" },
+  { href: "/raspakovka", label: "Распаковка агентства" },
   { href: "/ai-training", label: "Обучение AI" },
   { href: "/book", label: "Книги" },
   { href: "/blog", label: "Блог" },
@@ -70,7 +69,7 @@ export default function Navigation() {
           </a>
           <ul className="nl">
             <li>
-              <a href="/consulting" className={isActive("/consulting") ? "act" : ""}>{t("nav.consulting")}</a>
+              <a href="/raspakovka" className={isActive("/raspakovka") ? "act" : ""}>{t("nav.consulting")}</a>
             </li>
             <li>
               <a href="/ai-training" className={isActive("/ai-training") ? "act" : ""}>{t("nav.aiTraining")}</a>
@@ -106,7 +105,7 @@ export default function Navigation() {
           </ul>
           <div className="nl-right">
             <LangSwitch />
-            <a href="/consulting#offer" className="nc">
+            <a href="/raspakovka#offer" className="nc">
               {t("nav.cta")}
             </a>
             <button
