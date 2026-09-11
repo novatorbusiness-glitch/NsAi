@@ -25,7 +25,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
         <div class="hsys-row">
           <div class="hbox lit" id="hb0">Workspace<br>вашего бизнеса</div>
           <div class="harr">→</div>
-          <div class="hbox" id="hb1">AI-агенты<br>под ваши задачи</div>
+          <div class="hbox" id="hb1">AI-директор<br>+ агенты</div>
         </div>
         <div class="hsys-conn"><div class="hsys-line"></div></div>
         <div class="hsys-row">
@@ -55,32 +55,27 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
     <div class="panelmock rv d2">
       <div class="pm-bar"><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-url">ncai · панель</span></div>
       <div class="pm-tabs">
-        <span class="pm-tab act">Команда</span><span class="pm-tab">Задачи</span><span class="pm-tab">Расходы</span>
+        <span class="pm-tab act">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab">Проекты</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
       </div>
       <div class="pm-body">
         <div class="pm-block">
-          <div class="pm-block-h">Ваши AI-агенты</div>
-          <div class="pm-team">
-            <div class="pm-agent"><span class="pm-agent-ico">🧭</span><div><div class="pm-agent-n">Директор</div><div class="pm-agent-r">Управление</div></div></div>
-            <div class="pm-agent"><span class="pm-agent-ico">💻</span><div><div class="pm-agent-n">Разработчик</div><div class="pm-agent-r">Разработка</div></div></div>
-            <div class="pm-agent"><span class="pm-agent-ico">✍️</span><div><div class="pm-agent-n">Копирайтер</div><div class="pm-agent-r">Контент</div></div></div>
-          </div>
+          <div class="pm-block-h">💰 Деньги</div>
+          <div class="pm-money-row"><span>Вложено</span><b>45 000 ₽</b></div>
+          <div class="pm-money-row"><span>Остаток AI-бюджета</span><b>$8,40</b></div>
+          <div class="pm-money-row"><span>Потрачено</span><b>$6,60</b></div>
         </div>
         <div class="pm-block">
-          <div class="pm-block-h">Доска задач — делегируете сами</div>
-          <div class="pm-board">
-            <div class="pm-col"><div class="pm-col-h">К выполнению</div><div class="pm-card">Написать пост о запуске</div></div>
-            <div class="pm-col"><div class="pm-col-h">В работе</div><div class="pm-card pm-card-act">Собрать лендинг</div></div>
-            <div class="pm-col"><div class="pm-col-h">Готово</div><div class="pm-card pm-card-done">Отчёт за неделю ✓</div></div>
-          </div>
+          <div class="pm-block-h">📋 Сегодня</div>
+          <div class="pm-today">3 задачи · 2,5 часа</div>
         </div>
         <div class="pm-block">
-          <div class="pm-block-h">Контроль расходов на AI</div>
-          <div class="pm-cost">
-            <div class="pm-cost-row"><span class="pm-cost-l">Разработчик</span><div class="pm-cost-bar"><i style="--w:70%"></i></div><span class="pm-cost-v">$9,80</span></div>
-            <div class="pm-cost-row"><span class="pm-cost-l">Копирайтер</span><div class="pm-cost-bar"><i style="--w:35%"></i></div><span class="pm-cost-v">$3,20</span></div>
-            <div class="pm-cost-note">Бюджет $15 · осталось $2,00 — kill-switch остановит агентов раньше, чем случится перерасход</div>
+          <div class="pm-block-h">👥 Команда</div>
+          <div class="pm-tline">
+            <div class="pm-tl"><span class="pm-tl-ico">🧭</span><span class="pm-tl-n">Директор</span><span class="pm-tl-v">1 задача</span></div>
+            <div class="pm-tl"><span class="pm-tl-ico">💻</span><span class="pm-tl-n">Разработчик</span><span class="pm-tl-v">2 задачи</span></div>
+            <div class="pm-tl"><span class="pm-tl-ico">✍️</span><span class="pm-tl-n">Копирайтер</span><span class="pm-tl-v">1 задача</span></div>
           </div>
+          <div class="pm-cost-note">Пишете директору одну задачу — он сам решает, кому из команды её передать.</div>
         </div>
       </div>
     </div>
@@ -233,7 +228,7 @@ export const GETS_HTML = `<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
     <p class="sl rv d2">За одну сессию 60–90 минут — то, что запускается сразу и работает без вас с первого дня.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nnum">01</div><div class="ntit">Workspace вашего бизнеса</div><p class="ntx">Не «Мой проект», а «Салон Анны». Кабинет: агенты, задачи и расходы на AI в одном месте.</p></div>
-      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-агенты под ваши задачи</div><p class="ntx">Настраиваю живьём под вашу нишу — от одного агента до полноценной команды с ролями: разработка, тексты, контент, аналитика. Ровно столько, сколько реально нужно.</p></div>
+      <div class="ncard rv d1"><div class="nnum">02</div><div class="ntit">AI-директор + агенты</div><p class="ntx">Настраиваю живьём под вашу нишу — от одного агента до полноценной команды с ролями: разработка, тексты, контент, аналитика. Директору можно написать одну задачу — он сам решит, кому из команды её передать.</p></div>
       <div class="ncard rv d2"><div class="nnum">03</div><div class="ntit">Роли и зона ответственности</div><p class="ntx">У каждого агента понятная роль — не безликий «AI-помощник». Вы всегда знаете, кому делегировать конкретную задачу.</p></div>
       <div class="ncard rv"><div class="nnum">04</div><div class="ntit">3–5 стартовых задач</div><p class="ntx">Реальные задачи из вашей анкеты: номер, срок, ответственный агент. До конца сессии вы сами ставите первую задачу.</p></div>
       <div class="ncard rv d1"><div class="nnum">05</div><div class="ntit">Контроль расходов на AI</div><p class="ntx">Расход по каждому агенту и модели, бюджет и kill-switch — не спишет больше лимита. Прозрачно, без сюрпризов в конце месяца.</p></div>
@@ -273,7 +268,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
       </div>
       <div class="wdiag rv d2">
         <div class="wi act" data-zone="1"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет с названием вашего бизнеса. Это не «Мой проект» — здесь живут агенты, задачи и расходы на AI.</div></div></div>
-        <div class="wi" data-zone="1"><div class="wico">🧑‍💼</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Агенты и роли (15 мин)</div><div class="wtx">Настраиваю от одного до пяти AI-агентов под ваши задачи: имя, роль, зона ответственности, база знаний. Ровно столько, сколько реально нужно — без раздувания штата.</div></div></div>
+        <div class="wi" data-zone="1"><div class="wico">🧑‍💼</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Директор и агенты (15 мин)</div><div class="wtx">Настраиваю AI-директора и от одного до пяти агентов под ваши задачи: имя, роль, зона ответственности, база знаний. Директору можно написать одну задачу — дальше он сам решает, кому её передать.</div></div></div>
         <div class="wi" data-zone="2"><div class="wico">🏛️</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Роли (10 мин)</div><div class="wtx">Раскладываем агентов по ролям, чтобы у каждого была понятная зона ответственности — не безликий помощник, а конкретный специалист, которому вы делегируете.</div></div></div>
         <div class="wi" data-zone="2"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, понятно, кому она делегирована. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
         <div class="wi" data-zone="3"><div class="wico">💳</div><span class="wchev">▾</span><div><div class="wtit">Шаг 5 · Контроль расходов (15 мин)</div><div class="wtx">Настраиваем бюджет на AI и kill-switch — лимит, после которого агенты сами останавливаются. Видно, кто сколько тратит.</div></div></div>
@@ -334,7 +329,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в распаковку</p>
         <div class="ofgrid">
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Сессия 60–90 минут <span>workspace, агенты, доска задач, контроль расходов на AI</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">1–5 AI-агентов <span>с ролями и базами знаний под вашу нишу</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-директор + до 5 агентов <span>с ролями и базами знаний под вашу нишу</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Руль сразу у вас <span>ставите задачи и смотрите расход на AI с первого дня</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка от 2 900 ₽/мес <span>Standard · 5 мест · $15 AI-бюджета · 14 дней trial</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Поддержка на связи <span>вопросы и донастройка — в Telegram, когда нужно</span></div></div>
