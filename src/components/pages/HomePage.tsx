@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import PageShell from "@/components/layout/PageShell";
 import HeroSection from "@/components/home/sections/HeroSection";
+import JourneySection from "@/components/home/sections/JourneySection";
 import MechanismSection from "@/components/home/sections/MechanismSection";
 import ProductsSection from "@/components/home/sections/ProductsSection";
 import AboutSection from "@/components/home/sections/AboutSection";
@@ -80,6 +81,7 @@ export default function HomePage() {
 		<PageShell>
 			<div id="cd" /><div id="cr" />
 			<HeroSection />
+			<JourneySection />
 			<MechanismSection />
 			<ProductsSection />
 			<AboutSection />

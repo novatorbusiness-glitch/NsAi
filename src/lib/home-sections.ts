@@ -85,6 +85,58 @@ export const HERO_HTML = `<!-- HERO -->
   </div>
 </section>`;
 
+export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
+<section id="journey" class="sec-light">
+  <div class="wrap">
+    <span class="sec-tag rv">Мой путь</span>
+    <h2 class="sec-h2 rv d1">С 2016 года — шаг за шагом</h2>
+    <p class="p journey-lead rv d1">Компетентность не появилась однажды. Она собиралась годами: от первых продаж до архитектуры AI-систем.</p>
+
+    <div class="jrn">
+      <div class="jrn-item rv">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">2016</div><div class="jrn-t">Решение стать предпринимателем</div><div class="jrn-x">Отправная точка. Первые продажи — товары из Китая.</div></div>
+      </div>
+      <div class="jrn-item rv d1">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">2016–2017</div><div class="jrn-t">Первые навыки</div><div class="jrn-x">Чтобы продавать, пришлось освоить сайты, Яндекс Директ, маркетинг, упаковку, аналитику. Один навык тянул за собой следующий.</div></div>
+      </div>
+      <div class="jrn-item rv d2">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">2017–2022</div><div class="jrn-t">Проекты, партнёрства, запуски</div><div class="jrn-x">Успехи и провалы. Каждый — датасет для следующей итерации, а не повод остановиться.</div></div>
+      </div>
+      <div class="jrn-item rv">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">300+ проектов</div><div class="jrn-t">Большой практический опыт</div><div class="jrn-x">Не теория — сотни реальных запусков в разных нишах.</div></div>
+      </div>
+      <div class="jrn-item rv d1">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">5 лет</div><div class="jrn-t">Агентство Novator.vip</div><div class="jrn-x">Команда, клиенты, загрузка — работающий бизнес снаружи. Изнутри модель перестала нормально развиваться: крутишь педали, но бежишь по беговой дорожке.</div></div>
+      </div>
+      <div class="jrn-item rv d2">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">Переосмысление</div><div class="jrn-t">Усиление старой системы не решит проблему</div><div class="jrn-x">Загрузил сотни рабочих диалогов в AI и посмотрел на собственное поведение со стороны. Увидел повторяющиеся паттерны.</div></div>
+      </div>
+      <div class="jrn-item rv jrn-mark">
+        <div class="jrn-dot jrn-dot-mark"></div>
+        <div class="jrn-body"><div class="jrn-y">7 ноября 2025</div><div class="jrn-t">Выход из бизнеса</div><div class="jrn-x">Не «сильнее давить на систему», а признать: она больше не работает. Решение, а не срыв.</div></div>
+      </div>
+      <div class="jrn-item rv d1">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">AI</div><div class="jrn-t">Новый инструмент того же принципа</div><div class="jrn-x">В 2020 уже объяснял клиентам CRM, ботов, автоматизацию. AI — следующий этап той же идеи, только инструмент стал мощнее.</div></div>
+      </div>
+      <div class="jrn-item rv d2">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">Разработка · R&D</div><div class="jrn-t">Собираю сам, из интереса</div><div class="jrn-x">Neuroflow, Vlinx, Nezha_Quest, Gaze Architecture — не всегда ради продажи, а чтобы проверить, возможно ли это.</div></div>
+      </div>
+      <div class="jrn-item rv jrn-now">
+        <div class="jrn-dot jrn-dot-now"></div>
+        <div class="jrn-body"><div class="jrn-y">Сейчас · NCAi</div><div class="jrn-t">Предпринимательство + продукт + разработка + AI</div><div class="jrn-x">Строю собственную систему — не для того, чтобы один раз продать, а чтобы она работала сама.</div></div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 export const MECHANISM_HTML = `<!-- MECHANISM: как устроена система -->
 <section id="mechanism" class="sec-light">
   <div class="wrap">
