@@ -6,7 +6,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
     <h1 class="hh1">Ты не можешь масштабировать бизнес, потому что вся работа живёт <em>у тебя в голове</em> и руками.<span class="acc">Новый способ: агентство в коробке за одну сессию.</span></h1>
-    <p class="hsub">Разворачиваю вам рабочую AI-команду прямо в панели: агенты под ваши задачи, доска задач, контроль расходов на AI. За одну сессию — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
+    <p class="hsub">Разворачиваю вам не «доступ к нейросети», а готовую систему: методология внедрения, обкатанная на 300+ проектах, роли и регламенты команды, доска задач и контроль расходов. AI внутри — просто исполнитель по регламенту, а не то, за что вы платите. За одну сессию — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
     <div class="hacts">
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#idea" class="bs">Почему это работает</a>
@@ -180,19 +180,6 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <div class="roi-stat rv d1"><div class="n">≈4 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
       <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
     </div>
-    <div class="mrrviz rv d2">
-      <span class="mrrviz-badge">Агентство в коробке</span>
-      <h3 class="mrrviz-tit">Экономика · лестница MRR</h3>
-      <p class="mrrviz-sub">Предсказуемый ежемесячный доход — растёт с каждым клиентом, единая подписка 4 900 ₽/мес</p>
-      <div class="mrrviz-bars">
-        <div class="mrrviz-col"><div class="mrrviz-val">49 000 ₽/мес</div><div class="mrrviz-bar" style="--h:20%"></div><div class="mrrviz-lbl">10 клиентов</div></div>
-        <div class="mrrviz-arr">+20 клиентов →</div>
-        <div class="mrrviz-col"><div class="mrrviz-val">147 000 ₽/мес</div><div class="mrrviz-bar" style="--h:60%"></div><div class="mrrviz-lbl">30 клиентов</div></div>
-        <div class="mrrviz-arr">+20 клиентов →</div>
-        <div class="mrrviz-col"><div class="mrrviz-val">245 000 ₽/мес</div><div class="mrrviz-bar" style="--h:100%"></div><div class="mrrviz-lbl">50 клиентов</div></div>
-      </div>
-      <p class="mrrviz-note">Сверх MRR — внедрение, слоты, топ-апы AI, апгрейды. Маржу защищает kill-switch AI-бюджета.</p>
-    </div>
     <div class="roi-vs">
       <div class="roi-col bad rv">
         <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">≈343к ₽ / мес</span></div>
@@ -309,7 +296,7 @@ export const OBJECTIONS_HTML = `<!-- 7 · ВОЗРАЖЕНИЯ -->
     <h2 class="sh2 rv d1">«Да, но...» — и почему это не аргумент</h2>
     <p class="sl rv d2">Самые частые сомнения перед внедрением. Разберём каждое по очереди.</p>
     <div class="obj rv d1"><div class="obj-q">Это робот, я ему не доверяю</div><div class="obj-a">За системой стоит живой человек — архитектор, которому можно написать в любой момент. Цифровые сотрудники работают по вашему регламенту и под вашим контролем.</div></div>
-    <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">На распаковке заводим 10 тёплых контактов для старта. База — топливо системы, и её можно собрать за первую неделю.</div></div>
+    <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">Панель — не CRM, она не хранит и не ведёт вашу базу. Команда выполняет задачи: контент, отчёты, финансы. Если клиентов пока мало, первые задачи — на привлечение: контент-план и скрипты для первых обращений.</div></div>
     <div class="obj rv d1"><div class="obj-q">Я не технарь, панель не осилю</div><div class="obj-a">Панель — это Telegram Mini App: ставить задачи и смотреть расход на AI проще, чем вести таблицу в Excel. 90 минут на сессии вы во всём разберётесь.</div></div>
     <div class="obj rv d2"><div class="obj-q">Уже пробовали автоматизацию — не взлетело</div><div class="obj-a">Разница в подходе: не «подключили бота», а построили агентство с ролями, базой знаний и правом на действие. Плюс передача руля, а не зависимость.</div></div>
     <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм команды — ≈343 тыс ₽/мес с налогами. Подписка — 4 900 ₽. Около 1,5% от стоимости найма за команду, которая работает круглосуточно.</div></div>

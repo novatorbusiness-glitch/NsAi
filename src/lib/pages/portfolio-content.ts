@@ -236,7 +236,7 @@ export const body = `
         <div class="pj-tag">Маркетинг · Автоматизация</div>
         <div class="pj-title">Novator.vip</div>
         <p class="pj-desc">Агентство маркетинга и автоматизации: 300+ проектов, 50M+ ₽ в запусках</p>
-        <span class="pj-status">2017–2023</span>
+        <span class="pj-status">2020–2025</span>
       </div>
       <div class="pj rv d1">
         <div class="pj-icon">✨</div>
