@@ -172,16 +172,24 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
   <div class="wrap">
     <span class="sec-tag rv">То, что я в итоге построил</span>
     <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в панель —<br>результат выходит из неё</h2>
-    <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы формулируете задачу, делегируете её нужному агенту по роли, результат и расход на AI собираются в одной панели — не в переписке.</p>
+    <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели — не в переписке.</p>
 
     <div class="mech-flow">
       <div class="mech-node rv d2">
         <div class="mech-node-ico">🧑‍💻</div>
         <div class="mech-node-t">Вы</div>
-        <div class="mech-node-s">Формулируете и делегируете задачу</div>
+        <div class="mech-node-s">Формулируете задачу</div>
       </div>
 
       <div class="mech-line rv d2"><i class="mech-pulse"></i></div>
+
+      <div class="mech-node mech-node-a rv d2">
+        <div class="mech-node-ico">🧭</div>
+        <div class="mech-node-t">AI-директор</div>
+        <div class="mech-node-s">Решает, кому передать</div>
+      </div>
+
+      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
 
       <div class="mech-depts rv d3">
         <div class="mech-dept" style="--i:0"><div class="mech-dept-ico">💻</div><div class="mech-dept-t">Разработка</div></div>
