@@ -85,6 +85,22 @@ export const HERO_HTML = `<!-- HERO -->
   </div>
 </section>`;
 
+export const VIDEO_HTML = `<!-- VIDEO: личное обращение Ильи (ТЗ п.6) -->
+<section id="video-intro">
+  <div class="wrap">
+    <div class="video-wrap">
+      <p class="video-eyebrow rv">«Если хотите понять, кто я и чем занимаюсь — расскажу за две минуты»</p>
+      <div class="video-ph rv d1">
+        <div class="video-ph-inner">
+          <div class="video-ph-play">▶</div>
+          <div class="video-ph-label">Видео — личное обращение Ильи</div>
+          <div class="video-ph-sub">60–120 секунд · скоро здесь</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 <section id="journey" class="sec-light">
   <div class="wrap">
@@ -369,6 +385,58 @@ export const SOLO_HTML = `<!-- SOLO PROJECTS -->
         <div class="pj-title">Gaze Architecture</div>
         <p class="pj-desc">Многостраничный сайт под ключ для бьюти-сферы — витрина, которая продаёт мастера</p>
         <span class="pj-status">Запущен</span>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+export const PRINCIPLES_HTML = `<!-- PRINCIPLES: как я думаю (ТЗ п.32) -->
+<section id="principles" class="sec-light">
+  <div class="wrap">
+    <span class="sec-tag rv">Как я думаю</span>
+    <h2 class="sec-h2 rv d1">Несколько принципов, на которых всё держится</h2>
+    <div class="princ-grid">
+      <div class="princ rv"><div class="princ-n">01</div><div class="princ-t">Интерес — тоже метрика</div></div>
+      <div class="princ rv d1"><div class="princ-n">02</div><div class="princ-t">Ошибка — это данные</div></div>
+      <div class="princ rv d2"><div class="princ-n">03</div><div class="princ-t">Система важнее усилия</div></div>
+      <div class="princ rv"><div class="princ-n">04</div><div class="princ-t">Генерировать и строить — разные вещи</div></div>
+      <div class="princ rv d1"><div class="princ-n">05</div><div class="princ-t">AI сокращает путь от идеи до результата</div></div>
+      <div class="princ rv d2"><div class="princ-n">06</div><div class="princ-t">Хорошая система работает без постоянного ручного управления</div></div>
+      <div class="princ rv"><div class="princ-n">07</div><div class="princ-t">Чем доступнее AI, тем важнее человек, который умеет думать</div></div>
+    </div>
+    <div class="princ-manifest rv d2">Я оцениваю свои действия по уровню интереса в процессе, а не по финальному результату.</div>
+  </div>
+</section>`;
+
+export const PERSONAL_HTML = `<!-- PERSONAL LAYER: фото-плейсхолдеры (ТЗ п.7-9, 14-16, 48) -->
+<section id="personal">
+  <div class="wrap">
+    <span class="sec-tag rv">Помимо работы</span>
+    <h2 class="sec-h2 rv d1">За системами и продуктами — обычная жизнь</h2>
+    <div class="pers-grid">
+      <div class="pers-item rv">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">💻</div><div class="photo-ph-label">[ФОТО — ИЛЬЯ ЗА РАБОТОЙ]</div></div></div>
+        <p class="pers-cap">R&D — ноутбук, код, эксперимент</p>
+      </div>
+      <div class="pers-item rv d1">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">🥊</div><div class="photo-ph-label">[ФОТО — СПОРТ]</div></div></div>
+        <p class="pers-cap">Бег · бокс · плавание · ходьба</p>
+      </div>
+      <div class="pers-item rv d2">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">🚗</div><div class="photo-ph-label">[ФОТО — АЛТАЙ]</div></div></div>
+        <p class="pers-cap">≈9000 км Москва → Алтай, 25+ городов</p>
+      </div>
+      <div class="pers-item rv">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">👨‍👩‍👦</div><div class="photo-ph-label">[ФОТО — СЕМЬЯ]</div></div></div>
+        <p class="pers-cap">Женат, сын, два кота. За семью, за своих.</p>
+      </div>
+      <div class="pers-item rv d1">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">🎤</div><div class="photo-ph-label">[ФОТО — ВЫСТУПЛЕНИЕ]</div></div></div>
+        <p class="pers-cap">Сцена, аудитория</p>
+      </div>
+      <div class="pers-item rv d2">
+        <div class="photo-ph"><div class="photo-ph-inner"><div class="photo-ph-icon">📦</div><div class="photo-ph-label">[ФОТО — ПРОДУКТ]</div></div></div>
+        <p class="pers-cap">Рядом с тем, что собрал сам</p>
       </div>
     </div>
   </div>
