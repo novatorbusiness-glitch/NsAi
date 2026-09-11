@@ -16,7 +16,7 @@ export const LANG_STORAGE_KEY = "ncai-lang";
 export const dict = {
   // ── Навигация ──
   "nav.home": { ru: "Главная", en: "Home" },
-  "nav.consulting": { ru: "Внедрение", en: "Consulting" },
+  "nav.consulting": { ru: "Распаковка", en: "Unboxing" },
   "nav.aiTraining": { ru: "Обучение AI", en: "AI Training" },
   "nav.books": { ru: "Книги", en: "Books" },
   "nav.bookNeuro": { ru: "Нейро-Воронка", en: "Neuro-Funnel" },
@@ -36,7 +36,7 @@ export const dict = {
   "footer.colWork": { ru: "Работа", en: "Work" },
   "footer.colLegal": { ru: "Правовое", en: "Legal" },
   "footer.contact": { ru: "Контакт", en: "Contact" },
-  "footer.consulting": { ru: "Консалтинг", en: "Consulting" },
+  "footer.consulting": { ru: "Распаковка", en: "Unboxing" },
   "footer.cases": { ru: "Кейсы", en: "Cases" },
   "footer.method": { ru: "Метод", en: "Method" },
   "footer.freeBook": { ru: "Книга бесплатно", en: "Free book" },
