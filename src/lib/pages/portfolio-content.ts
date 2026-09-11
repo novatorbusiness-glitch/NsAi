@@ -257,7 +257,7 @@ export const body = `
         <div class="pj-tag">AI-команда</div>
         <div class="pj-title">NCAi Agency</div>
         <p class="pj-desc">4 отдела, 5 AI-сотрудников + AI-директор. Полная разработка и автоматизация</p>
-        <span class="pj-status">200 000 ₽/мес</span>
+        <span class="pj-status">Ретейнер</span>
       </div>
       <div class="pj rv d1">
         <div class="pj-icon">🧠</div>
