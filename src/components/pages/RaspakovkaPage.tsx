@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import PageShell from "@/components/layout/PageShell";
 import { consultingJs } from "@/lib/consulting-js";
 import ConsultingHero from "@/components/consulting/sections/ConsultingHero";
+import PanelSection from "@/components/consulting/sections/PanelSection";
 import IdeaSection from "@/components/consulting/sections/IdeaSection";
 import BoxSection from "@/components/consulting/sections/BoxSection";
 import RoiSection from "@/components/consulting/sections/RoiSection";
@@ -41,6 +42,7 @@ export default function RaspakovkaPage() {
 		<PageShell>
 			<div id="cd" /><div id="cr" />
 			<ConsultingHero />
+			<PanelSection />
 			<IdeaSection />
 			<BoxSection />
 			<RoiSection />
