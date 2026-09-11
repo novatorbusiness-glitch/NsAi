@@ -33,7 +33,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Распаковка агентства</div>
             <div class="pc-title">Цифровой отдел за 1 сессию</div>
-            <div class="pc-sub">60–90 минут · AI-команда, отделы, задачи, руль сразу у вас · 25 000 ₽</div>
+            <div class="pc-sub">60–90 минут · свои AI-агенты, доска задач, руль сразу у вас · 25 000 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -170,26 +170,18 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 export const MECHANISM_HTML = `<!-- MECHANISM: как устроена система -->
 <section id="mechanism" class="sec-light">
   <div class="wrap">
-    <span class="sec-tag rv">Как это устроено</span>
-    <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в систему —<br>результат выходит из панели</h2>
-    <p class="p mech-lead rv d1">Не абстрактный «AI-помощник» и не чат с ботом. Рабочая цепочка: ты формулируешь задачу, AI-директор распределяет её между цифровыми сотрудниками по отделам, результат собирается в одной панели — не в переписке.</p>
+    <span class="sec-tag rv">То, что я в итоге построил</span>
+    <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в панель —<br>результат выходит из неё</h2>
+    <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы формулируете задачу, делегируете её нужному агенту по роли, результат и расход на AI собираются в одной панели — не в переписке.</p>
 
     <div class="mech-flow">
       <div class="mech-node rv d2">
         <div class="mech-node-ico">🧑‍💻</div>
-        <div class="mech-node-t">Ты</div>
-        <div class="mech-node-s">Формулируешь задачу</div>
+        <div class="mech-node-t">Вы</div>
+        <div class="mech-node-s">Формулируете и делегируете задачу</div>
       </div>
 
       <div class="mech-line rv d2"><i class="mech-pulse"></i></div>
-
-      <div class="mech-node mech-node-a rv d2">
-        <div class="mech-node-ico">🧭</div>
-        <div class="mech-node-t">AI-директор</div>
-        <div class="mech-node-s">Распределяет по отделам</div>
-      </div>
-
-      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
 
       <div class="mech-depts rv d3">
         <div class="mech-dept" style="--i:0"><div class="mech-dept-ico">💻</div><div class="mech-dept-t">Разработка</div></div>
@@ -222,11 +214,11 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
           <div class="prod-icon">📦</div>
           <div class="prod-type">Распаковка агентства · B2B</div>
           <div class="prod-title">Агентство в коробке за одну сессию</div>
-          <p class="prod-desc">Разворачиваю рабочее NCAi-агентство в панели: AI-команда, отделы, задачи, база клиентов и аналитика. Сессия 60–90 минут — руль сразу у вас, зависимости нет.</p>
+          <p class="prod-desc">Разворачиваю рабочих AI-агентов в панели: под ваши задачи, с доской задач и контролем расходов на AI. Сессия 60–90 минут — руль сразу у вас, зависимости нет.</p>
           <div class="prod-points">
-            <div class="prod-point"><div class="pp-dot"></div><span>Агентство готово с первой сессии</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>AI-команда 3–5 цифровых сотрудников</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>Аналитика и финансы в панели 24/7</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Агенты готовы с первой сессии</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>1–5 AI-агентов под ваши задачи</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Контроль расходов на AI в панели 24/7</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Руль сразу у вас — ведёте сами</span></div>
           </div>
         </div>
