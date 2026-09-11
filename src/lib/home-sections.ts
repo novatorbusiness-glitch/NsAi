@@ -119,7 +119,11 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
       </div>
       <div class="jrn-item rv d2">
         <div class="jrn-dot"></div>
-        <div class="jrn-body"><div class="jrn-y">2017–2022</div><div class="jrn-t">Проекты, партнёрства, запуски</div><div class="jrn-x">Успехи и провалы. Каждый — датасет для следующей итерации, а не повод остановиться.</div></div>
+        <div class="jrn-body"><div class="jrn-y">2017–2018</div><div class="jrn-t">Первая автоворонка</div><div class="jrn-x">Собрал первую автоворонку и заработал 1 млн ₽+.</div></div>
+      </div>
+      <div class="jrn-item rv d2">
+        <div class="jrn-dot"></div>
+        <div class="jrn-body"><div class="jrn-y">2018–2022</div><div class="jrn-t">Проекты, партнёрства, запуски</div><div class="jrn-x">Успехи и провалы. Каждый — датасет для следующей итерации, а не повод остановиться.</div></div>
       </div>
       <div class="jrn-item rv">
         <div class="jrn-dot"></div>
@@ -131,7 +135,7 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
       </div>
       <div class="jrn-item rv d2">
         <div class="jrn-dot"></div>
-        <div class="jrn-body"><div class="jrn-y">Переосмысление</div><div class="jrn-t">Усиление старой системы не решит проблему</div><div class="jrn-x">Загрузил сотни рабочих диалогов в AI и посмотрел на собственное поведение со стороны. Увидел повторяющиеся паттерны.</div></div>
+        <div class="jrn-body"><div class="jrn-y">Переосмысление</div><div class="jrn-t">Усиление старой системы не решит проблему</div><div class="jrn-x">Модель перестала расти уже давно. Стало ясно: чинить себя ради возврата в старую систему — не выход.</div></div>
       </div>
       <div class="jrn-item rv jrn-mark">
         <div class="jrn-dot jrn-dot-mark"></div>
