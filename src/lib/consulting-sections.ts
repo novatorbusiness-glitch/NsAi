@@ -55,7 +55,7 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
     <div class="panelmock rv d2">
       <div class="pm-bar"><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-url">ncai · панель</span></div>
       <div class="pm-tabs">
-        <span class="pm-tab act">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab">Проекты</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
+        <span class="pm-tab act">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab">Проекты</span><span class="pm-tab">Услуги</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
       </div>
       <div class="pm-body">
         <div class="pm-block">
@@ -156,7 +156,7 @@ export const BOX_HTML = `<!-- 2 · СУТЬ ИДЕИ -->
           </div>
           <div class="urow">
             <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Агентство на аутсорсе — чек каждый месяц</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>25 000 ₽ разово, дальше подписка от 2 900 ₽/мес</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>25 000 ₽ разово (первый месяц подписки включён), дальше 4 900 ₽/мес</div>
           </div>
         </div>
       </div>
@@ -176,20 +176,20 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <p class="roi-tx rv d2">Вы платите не за «ботов в Telegram» и не за красивые консультации. Вы платите за то, чтобы <strong>ближайшие полгода не отдавать миллионы за зарплаты</strong> — и запускать свои продукты за <strong>дни, а не за месяцы</strong>. Это не расход. Это ROI.</p>
     </div>
     <div class="roi-stats">
-      <div class="roi-stat rv"><div class="n">до 60×</div><div class="l">Окупаемость распаковки за год</div></div>
-      <div class="roi-stat rv d1"><div class="n">≈3,8 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
+      <div class="roi-stat rv"><div class="n">до 50×</div><div class="l">Окупаемость распаковки за год</div></div>
+      <div class="roi-stat rv d1"><div class="n">≈4 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
       <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
     </div>
     <div class="mrrviz rv d2">
       <span class="mrrviz-badge">Агентство в коробке</span>
       <h3 class="mrrviz-tit">Экономика · лестница MRR</h3>
-      <p class="mrrviz-sub">Предсказуемый ежемесячный доход — растёт с каждым клиентом, смесь Standard / Pro</p>
+      <p class="mrrviz-sub">Предсказуемый ежемесячный доход — растёт с каждым клиентом, единая подписка 4 900 ₽/мес</p>
       <div class="mrrviz-bars">
-        <div class="mrrviz-col"><div class="mrrviz-val">39 000 ₽/мес</div><div class="mrrviz-bar" style="--h:22%"></div><div class="mrrviz-lbl">10 клиентов</div></div>
+        <div class="mrrviz-col"><div class="mrrviz-val">49 000 ₽/мес</div><div class="mrrviz-bar" style="--h:20%"></div><div class="mrrviz-lbl">10 клиентов</div></div>
         <div class="mrrviz-arr">+20 клиентов →</div>
-        <div class="mrrviz-col"><div class="mrrviz-val">117 000 ₽/мес</div><div class="mrrviz-bar" style="--h:60%"></div><div class="mrrviz-lbl">30 клиентов</div></div>
+        <div class="mrrviz-col"><div class="mrrviz-val">147 000 ₽/мес</div><div class="mrrviz-bar" style="--h:60%"></div><div class="mrrviz-lbl">30 клиентов</div></div>
         <div class="mrrviz-arr">+20 клиентов →</div>
-        <div class="mrrviz-col"><div class="mrrviz-val">195 000 ₽/мес</div><div class="mrrviz-bar" style="--h:100%"></div><div class="mrrviz-lbl">50 клиентов</div></div>
+        <div class="mrrviz-col"><div class="mrrviz-val">245 000 ₽/мес</div><div class="mrrviz-bar" style="--h:100%"></div><div class="mrrviz-lbl">50 клиентов</div></div>
       </div>
       <p class="mrrviz-note">Сверх MRR — внедрение, слоты, топ-апы AI, апгрейды. Маржу защищает kill-switch AI-бюджета.</p>
     </div>
@@ -205,15 +205,15 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <div class="roi-mid">VS</div>
       <div class="roi-col good rv d1">
         <div class="roi-col-head"><span class="tag">NCAi-агентство</span><span class="price"><b>25 000 ₽</b> разово</span></div>
-        <div class="roi-li"><span class="y">✓</span><span>Разовая сессия распаковки — <b>25 000 ₽</b>, дальше подписка от 2 900 ₽/мес</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Разовая сессия распаковки — <b>25 000 ₽</b> (первый месяц подписки включён), дальше 4 900 ₽/мес</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b> без больничных и «не в настроении»</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Задача утром — <b>результат днём</b>. Запуск за дни, а не за месяцы</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Руль сразу у вас: система остаётся с вами</span></div>
-        <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">≈ 60 000 ₽</span></div>
+        <div class="roi-total good"><span class="lbl">Итог за год</span><span class="v">≈ 79 000 ₽</span></div>
       </div>
     </div>
     <div class="roi-bottom rv d2">
-      <div class="tx">Один раз заплатили за систему — <span>экономия ≈3,8 млн ₽ в год, и распаковка окупается в первый месяц.</span></div>
+      <div class="tx">Один раз заплатили за систему — <span>экономия ≈4 млн ₽ в год, и распаковка окупается в первый месяц.</span></div>
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp" style="font-size:.88rem;padding:.85rem 1.9rem">Обсудить окупаемость <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -273,7 +273,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
         <div class="wi" data-zone="2"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, понятно, кому она делегирована. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
         <div class="wi" data-zone="3"><div class="wico">💳</div><span class="wchev">▾</span><div><div class="wtit">Шаг 5 · Контроль расходов (15 мин)</div><div class="wtx">Настраиваем бюджет на AI и kill-switch — лимит, после которого агенты сами останавливаются. Видно, кто сколько тратит.</div></div></div>
         <div class="wi" data-zone="4"><div class="wico">📊</div><span class="wchev">▾</span><div><div class="wtit">Шаг 6 · Доска задач и отчёты (10 мин)</div><div class="wtx">Что в работе, что готово, какой агент что сделал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
-        <p class="sl rv d3" style="margin-top:1.5rem;font-size:.92rem">После сессии рабочее агентство остаётся с вами. Дальше платите только за платформу — подписка от 2 900 ₽/мес.</p>
+        <p class="sl rv d3" style="margin-top:1.5rem;font-size:.92rem">После сессии рабочее агентство остаётся с вами. Первый месяц подписки уже включён в оплату распаковки, дальше — 4 900 ₽/мес.</p>
       </div>
     </div>
   </div>
@@ -294,7 +294,7 @@ export const QUESTIONS_HTML = `<!-- 6 · 10 ВОПРОСОВ -->
       <div class="qcard rv"><span class="qtag">Вопрос 5</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
       <div class="qcard rv d1"><span class="qtag">Вопрос 6</span><div class="qq">Что будет с бизнесом через год, если вы продолжите работать руками, как сейчас?</div><div class="qa">Без системы масштаб упирается в ваше личное время.</div></div>
       <div class="qcard rv"><span class="qtag">Вопрос 7</span><div class="qq">Хотите ли вы, наконец, перестать быть единственным, кто всё держит в голове?</div><div class="qa">Агентство в коробке — это способ перестать быть «человеком-системой».</div></div>
-      <div class="qcard rv d1"><span class="qtag">Вопрос 8</span><div class="qq">Что дешевле: найм команды за ≈343 тыс ₽/мес с налогами или подписка от 2 900 ₽/мес?</div><div class="qa">Подписка — это меньше 1% от стоимости найма. Математика простая.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 8</span><div class="qq">Что дешевле: найм команды за ≈343 тыс ₽/мес с налогами или подписка 4 900 ₽/мес?</div><div class="qa">Подписка — это ≈1,5% от стоимости найма. Математика простая.</div></div>
       <div class="qcard rv"><span class="qtag">Вопрос 9</span><div class="qq">Сколько стоит один месяц простоя, пока вы «решаетесь»?</div><div class="qa">Месяц внедрения против месяца ожидания — разница в системе, которая уже работает.</div></div>
       <div class="qcard rv d1"><span class="qtag">Вопрос 10</span><div class="qq">Готовы ли вы выделить одну сессию 90 минут, чтобы получить рабочее агентство?</div><div class="qa">Это единственное усилие на старте. Дальше систему ведут сотрудники.</div></div>
     </div>
@@ -312,8 +312,9 @@ export const OBJECTIONS_HTML = `<!-- 7 · ВОЗРАЖЕНИЯ -->
     <div class="obj rv d1"><div class="obj-q">У меня нет базы клиентов</div><div class="obj-a">На распаковке заводим 10 тёплых контактов для старта. База — топливо системы, и её можно собрать за первую неделю.</div></div>
     <div class="obj rv d1"><div class="obj-q">Я не технарь, панель не осилю</div><div class="obj-a">Панель — это Telegram Mini App: ставить задачи и смотреть расход на AI проще, чем вести таблицу в Excel. 90 минут на сессии вы во всём разберётесь.</div></div>
     <div class="obj rv d2"><div class="obj-q">Уже пробовали автоматизацию — не взлетело</div><div class="obj-a">Разница в подходе: не «подключили бота», а построили агентство с ролями, базой знаний и правом на действие. Плюс передача руля, а не зависимость.</div></div>
-    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм команды — ≈343 тыс ₽/мес с налогами. Подписка — от 2 900 ₽. Меньше 1% от стоимости найма за команду, которая работает круглосуточно.</div></div>
-    <div class="obj rv d2"><div class="obj-q">А если мне не понравится?</div><div class="obj-a">14 дней trial после распаковки — вы видите продукт в действии до того, как платить за подписку. Решение принимаете по факту, а не по обещаниям.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Дорого, это же подписка каждый месяц</div><div class="obj-a">Сравните: найм команды — ≈343 тыс ₽/мес с налогами. Подписка — 4 900 ₽. Около 1,5% от стоимости найма за команду, которая работает круглосуточно.</div></div>
+    <div class="obj rv d2"><div class="obj-q">А если мне не понравится?</div><div class="obj-a">Первый месяц подписки уже включён в стоимость распаковки — вы пользуетесь продуктом в реальной работе, прежде чем платить за него отдельно. Решение принимаете по факту, а не по обещаниям.</div></div>
+    <div class="obj rv d2"><div class="obj-q">Это же просто открытая программа, я могу поставить её сам бесплатно</div><div class="obj-a">Да, движок под капотом (Hermes) — open source, это не секрет. Но вы платите не за доступ к нему: вы платите за готовую команду ролей с базой знаний под вашу нишу, за дисциплину директора, который проверяет результат, а не просто раздаёт задачи, за методологию из 13 готовых процессов внедрения, за постоянно работающий сервер — и за то, что всё это собирается за 90 минут, а не за недели самостоятельной настройки.</div></div>
   </div>
 </section>
 <hr class="dv">`;
@@ -324,14 +325,14 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Оффер · распаковка</span>
       <h2 class="ofh2 rv d1">Всё, что вы получаете<br>в обмен на деньги</h2>
-      <p class="ofsub rv d2">Разовый чек за сессию распаковки — <b>25 000 ₽</b> — плюс ежемесячная подписка на платформу от 2 900 ₽. Прозрачно, без скрытых платежей.</p>
+      <p class="ofsub rv d2">Разовый чек за сессию распаковки — <b>25 000 ₽</b> (первый месяц подписки включён), дальше — 4 900 ₽/мес. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в распаковку</p>
         <div class="ofgrid">
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Сессия 60–90 минут <span>workspace, агенты, доска задач, контроль расходов на AI</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-директор + до 5 агентов <span>с ролями и базами знаний под вашу нишу</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Руль сразу у вас <span>ставите задачи и смотрите расход на AI с первого дня</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка от 2 900 ₽/мес <span>Standard · 5 мест · $15 AI-бюджета · 14 дней trial</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка 4 900 ₽/мес <span>15 мест · $40 AI-бюджета · первый месяц включён в распаковку</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Поддержка на связи <span>вопросы и донастройка — в Telegram, когда нужно</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Рост без пересборки <span>добавляете агентов и роли по мере роста бизнеса</span></div></div>
         </div>
@@ -344,7 +345,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
         <div class="ofmeta">
           <div><div class="ofml">Распаковка</div><div class="ofmv">25 000 ₽</div></div>
           <div><div class="ofml">Длительность</div><div class="ofmv">60–90 минут</div></div>
-          <div><div class="ofml">Подписка</div><div class="ofmv">от 2 900 ₽/мес</div></div>
+          <div><div class="ofml">Подписка</div><div class="ofmv">4 900 ₽/мес</div></div>
         </div>
       </div>
       <div class="ofcta rv d3">
@@ -364,7 +365,7 @@ export const AMP_HTML = `<!-- 9 · УСИЛИТЕЛИ -->
     <div class="amp-grid">
       <div class="amp rv d1"><div class="amp-ico">📦</div><div><div class="amp-t">Один стандарт распаковки</div><div class="amp-x">Один и тот же процесс для любой ниши — workspace, шаблон команды, роли, руль сразу у вас. Не «пилотный проект», а повторяемая процедура.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Ограниченное число сессий в неделю</div><div class="amp-x">Провожу распаковку лично, поэтому беру ограниченное количество сессий — чтобы каждая была полноценной, а не на бегу.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">14 дней trial</div><div class="amp-x">Платите за подписку только после того, как увидели продукт в действии. Риск — на нас, не на вас.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">Первый месяц включён</div><div class="amp-x">Подписка на первый месяц уже входит в оплату распаковки — вы работаете в системе до того, как платите за неё отдельно.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">🔒</div><div><div class="amp-t">Тарифы зафиксированы</div><div class="amp-x">Цена подписки не растёт «потому что». Решение сегодня — те же условия, что и завтра.</div></div></div>
     </div>
   </div>
