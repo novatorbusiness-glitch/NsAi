@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import PageShell from "@/components/layout/PageShell";
 import HeroSection from "@/components/home/sections/HeroSection";
+import IntroSection from "@/components/home/sections/IntroSection";
 import VideoSection from "@/components/home/sections/VideoSection";
 import JourneySection from "@/components/home/sections/JourneySection";
 import MechanismSection from "@/components/home/sections/MechanismSection";
@@ -10,6 +11,7 @@ import ProductsSection from "@/components/home/sections/ProductsSection";
 import AboutSection from "@/components/home/sections/AboutSection";
 import ClientsSection from "@/components/home/sections/ClientsSection";
 import SoloSection from "@/components/home/sections/SoloSection";
+import RdStoriesSection from "@/components/home/sections/RdStoriesSection";
 import PrinciplesSection from "@/components/home/sections/PrinciplesSection";
 import PersonalSection from "@/components/home/sections/PersonalSection";
 import ClosingSection from "@/components/home/sections/ClosingSection";
@@ -84,6 +86,7 @@ export default function HomePage() {
 		<PageShell>
 			<div id="cd" /><div id="cr" />
 			<HeroSection />
+			<IntroSection />
 			<VideoSection />
 			<JourneySection />
 			<MechanismSection />
@@ -91,6 +94,7 @@ export default function HomePage() {
 			<AboutSection />
 			<ClientsSection />
 			<SoloSection />
+			<RdStoriesSection />
 			<PrinciplesSection />
 			<PersonalSection />
 			<ClosingSection />
