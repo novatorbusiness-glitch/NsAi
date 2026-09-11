@@ -9,6 +9,7 @@ import IdeaSection from "@/components/consulting/sections/IdeaSection";
 import BoxSection from "@/components/consulting/sections/BoxSection";
 import RoiSection from "@/components/consulting/sections/RoiSection";
 import GetsSection from "@/components/consulting/sections/GetsSection";
+import RealWorkSection from "@/components/consulting/sections/RealWorkSection";
 import StepsSection from "@/components/consulting/sections/StepsSection";
 import QuestionsSection from "@/components/consulting/sections/QuestionsSection";
 import ObjectionsSection from "@/components/consulting/sections/ObjectionsSection";
@@ -47,6 +48,7 @@ export default function RaspakovkaPage() {
 			<BoxSection />
 			<RoiSection />
 			<GetsSection />
+			<RealWorkSection />
 			<StepsSection />
 			<QuestionsSection />
 			<ObjectionsSection />

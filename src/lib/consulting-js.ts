@@ -35,6 +35,30 @@ const hboxes=[document.getElementById('hb0'),document.getElementById('hb1'),docu
 let hbi=0;
 setInterval(()=>{hboxes.forEach(b=>b.classList.remove('lit'));hboxes[hbi%hboxes.length].classList.add('lit');hbi++},1100);
 
+// REALWORK — карусель по нишам
+const ncarousel=document.getElementById('ncarousel');
+if(ncarousel){
+  const cards=Array.from(ncarousel.children);
+  const dotsWrap=document.getElementById('ncDots');
+  const dots=cards.map((_,i)=>{
+    const d=document.createElement('span');
+    d.className='ncdot'+(i===0?' act':'');
+    d.addEventListener('click',()=>cards[i].scrollIntoView({behavior:'smooth',inline:'start',block:'nearest'}));
+    dotsWrap.appendChild(d);
+    return d;
+  });
+  function syncDots(){
+    const left=ncarousel.scrollLeft;
+    let closest=0,min=Infinity;
+    cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-ncarousel.offsetLeft-left);if(d<min){min=d;closest=i}});
+    dots.forEach((d,i)=>d.classList.toggle('act',i===closest));
+  }
+  ncarousel.addEventListener('scroll',()=>requestAnimationFrame(syncDots),{passive:true});
+  const prevBtn=document.getElementById('ncPrev'),nextBtn=document.getElementById('ncNext');
+  if(prevBtn)prevBtn.addEventListener('click',()=>ncarousel.scrollBy({left:-360,behavior:'smooth'}));
+  if(nextBtn)nextBtn.addEventListener('click',()=>ncarousel.scrollBy({left:360,behavior:'smooth'}));
+}
+
 // BURGER — мобильное меню
 const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
 if(burger&&mnav){

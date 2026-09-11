@@ -6,7 +6,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
     <h1 class="hh1">Ты не можешь масштабировать бизнес, потому что вся работа живёт <em>у тебя в голове</em> и руками.<span class="acc">Новый способ: агентство в коробке за одну сессию.</span></h1>
-    <p class="hsub">Разворачиваю вам не «доступ к нейросети», а готовую систему: методология внедрения, обкатанная на 300+ проектах, роли и регламенты команды, доска задач и контроль расходов. AI внутри — просто исполнитель по регламенту, а не то, за что вы платите. За одну сессию — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
+    <p class="hsub">Разворачиваю вам не «доступ к нейросети», а готовую систему: методология внедрения, роли и регламенты команды, доска задач и контроль расходов. AI внутри — просто исполнитель по регламенту, а не то, за что вы платите. За одну сессию — без найма команды, без дорогого агентства и без зависимости от подрядчика.</p>
     <div class="hacts">
       <a href="mailto:ilya.novitskii@yandex.ru" class="bp">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#idea" class="bs">Почему это работает</a>
@@ -221,6 +221,72 @@ export const GETS_HTML = `<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -->
       <div class="ncard rv d1"><div class="nnum">05</div><div class="ntit">Контроль расходов на AI</div><p class="ntx">Расход по каждому агенту и модели, бюджет и kill-switch — не спишет больше лимита. Прозрачно, без сюрпризов в конце месяца.</p></div>
       <div class="ncard rv d2"><div class="nnum">06</div><div class="ntit">Доска задач и отчёты</div><p class="ntx">Что в работе, что готово, какой агент что сделал. Каждый вечер в 18:00 — отчёт дня. Вы видите картину целиком, а не догадываетесь.</p></div>
     </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА САМОМ ДЕЛЕ: КАРУСЕЛЬ ПО НИШАМ -->
+<section id="realwork" class="sec-light">
+  <div class="w">
+    <span class="lb rv">Как это работает на самом деле</span>
+    <h2 class="sh2 rv d1">Не абстракция — конкретные задачи для вашей ниши</h2>
+    <p class="sl rv d2">Под каждую нишу — свой шаблон: отделы, роли и первые задачи, которые реально ставятся в первую неделю. Не «представьте, что…», а то, что настраивается прямо на сессии.</p>
+    <div class="ncw rv d2">
+      <button class="nc-arr nc-prev" id="ncPrev" aria-label="Предыдущая ниша">‹</button>
+      <div class="ncarousel" id="ncarousel">
+        <div class="nccard">
+          <div class="ncico">💇</div>
+          <div class="nctag">Бьюти · салон, косметология, студии</div>
+          <div class="ncrow"><span class="ncl">Проблема</span><p>Запись срывается, контент выходит от случая к случаю, база клиентов молчит между визитами.</p></div>
+          <div class="ncrow"><span class="ncl">Команда</span><p>Маркетолог, SMM-агент, администратор, финансист</p></div>
+          <div class="nctasks">
+            <div class="nctask">Собрать прайс услуг</div>
+            <div class="nctask">Контент-план на неделю</div>
+            <div class="nctask">Отчёт по записи за день</div>
+          </div>
+          <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Запись и напоминания идут сами, контент выходит по графику — а не когда вспомнили. Видно в панели, а не на словах.</p></div>
+        </div>
+        <div class="nccard">
+          <div class="ncico">🧰</div>
+          <div class="nctag">Услуги · клиники, психологи, юристы, ремонт</div>
+          <div class="ncrow"><span class="ncl">Проблема</span><p>Заявки приходят, но нет системы прогрева и повторных касаний — клиент разово купил и пропал.</p></div>
+          <div class="ncrow"><span class="ncl">Команда</span><p>Менеджер по продажам, копирайтер, аналитик</p></div>
+          <div class="nctasks">
+            <div class="nctask">Скрипт первого касания</div>
+            <div class="nctask">Список из 20 тёплых клиентов</div>
+            <div class="nctask">Финансовый отчёт за месяц</div>
+          </div>
+          <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Тёплая база не забывается между визитами — за ней следят системно. Финансовый отчёт готов без ручного труда каждый месяц.</p></div>
+        </div>
+        <div class="nccard">
+          <div class="ncico">🛍️</div>
+          <div class="nctag">Продажи · магазины, e-commerce, опт</div>
+          <div class="ncrow"><span class="ncl">Проблема</span><p>Заказы теряются между чатами и таблицами, товарный контент делается вручную и редко.</p></div>
+          <div class="ncrow"><span class="ncl">Команда</span><p>Менеджер, бэкенд-разработчик, финансист</p></div>
+          <div class="nctasks">
+            <div class="nctask">Схема работы с заказом</div>
+            <div class="nctask">Автоотчёт по заказам</div>
+            <div class="nctask">Контроль запасов</div>
+          </div>
+          <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Заказ виден на каждом этапе в одном месте, остатки под контролем — меньше потерянных заказов и ручной сверки в таблицах.</p></div>
+        </div>
+        <div class="nccard">
+          <div class="ncico">🎬</div>
+          <div class="nctag">Контент · блогеры, эксперты, онлайн-школы</div>
+          <div class="ncrow"><span class="ncl">Проблема</span><p>Контент-план держится на разовом вдохновении, вовлечённость никто не считает системно.</p></div>
+          <div class="ncrow"><span class="ncl">Команда</span><p>Редактор, копирайтер, дизайнер, финансист</p></div>
+          <div class="nctasks">
+            <div class="nctask">Контент-план на 7 дней</div>
+            <div class="nctask">Пост-анонс запуска</div>
+            <div class="nctask">Отчёт по вовлечённости</div>
+          </div>
+          <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Контент выходит по плану каждую неделю, а не по вдохновению — и видно, что реально работает, а не кажется.</p></div>
+        </div>
+      </div>
+      <button class="nc-arr nc-next" id="ncNext" aria-label="Следующая ниша">›</button>
+    </div>
+    <div class="ncdots" id="ncDots"></div>
+    <p class="sl rv d3" style="margin-top:1.5rem;font-size:.88rem">Шаблон — отправная точка, а не догма: отделы и роли меняем под вас прямо во время распаковки.</p>
   </div>
 </section>
 <hr class="dv">`;
