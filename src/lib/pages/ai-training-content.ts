@@ -112,7 +112,7 @@ section{padding:6rem 0}
 .alt{background:var(--bgc)}
 
 /* WHO — для кого */
-.fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.fit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 @media(max-width:900px){.fit-grid{grid-template-columns:1fr}}
 .fit-card{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:2rem;position:relative;overflow:hidden;
   transition:border-color .25s,transform .3s var(--ease)}
@@ -135,7 +135,7 @@ section{padding:6rem 0}
 .ba-after .ba-line{color:var(--t)}
 .ba-x{color:#e84040;flex-shrink:0;margin-top:.12rem;font-family:var(--fd);font-weight:700}
 .ba-ok{color:var(--tr);flex-shrink:0;margin-top:.12rem;font-family:var(--fd);font-weight:700}
-.out-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.out-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
 @media(max-width:900px){.out-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.out-grid{grid-template-columns:1fr}}
 .out-item{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem;transition:border-color .25s}
@@ -163,7 +163,7 @@ section{padding:6rem 0}
 .tl-d{font-size:1rem;color:var(--t2);line-height:1.62}
 
 /* TOOLS — инструменты */
-.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.tools-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
 @media(max-width:900px){.tools-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.tools-grid{grid-template-columns:1fr}}
 .tool{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:1.75rem;transition:border-color .25s,transform .3s var(--ease)}
@@ -173,7 +173,7 @@ section{padding:6rem 0}
 .tool-tx{font-size:.98rem;color:var(--t2);line-height:1.6}
 
 /* BUILD — что можно собрать */
-.build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.build-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 @media(max-width:900px){.build-grid{grid-template-columns:1fr}}
 .build-card{background:var(--bgc);border:1px solid var(--br);border-radius:16px;padding:2rem;position:relative;overflow:hidden;
   transition:border-color .3s,transform .3s var(--ease)}
@@ -239,7 +239,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--br);background:#050505;pos
 section[id]{scroll-margin-top:76px}
 
 /* NEW · 10-блочная продающая структура */
-.pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
 @media(max-width:900px){.pr-grid{grid-template-columns:1fr}}
 .pr{background:var(--bgc);border:1px solid var(--br);border-radius:14px;padding:2rem;position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
 .pr:hover{border-color:var(--trb);transform:translateY(-4px)}
@@ -261,8 +261,7 @@ section[id]{scroll-margin-top:76px}
 @media(max-width:800px){.qgrid{grid-template-columns:1fr}}
 .qcard{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem 1.75rem;transition:border-color .25s}
 .qcard:hover{border-color:var(--trb)}
-.qtag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem}
-.qtag.e{color:var(--tr)}.qtag.l{color:var(--a)}
+.qtag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem;color:var(--tr)}
 .qq{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);line-height:1.35;margin-bottom:.5rem}
 .qa{font-size:.98rem;color:var(--t2);line-height:1.6}
 .obj{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;padding:1.5rem 1.75rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);margin-top:1rem;transition:border-color .25s}
@@ -272,12 +271,12 @@ section[id]{scroll-margin-top:76px}
 .obj-q::before{content:'«'}
 .obj-a{font-size:1rem;color:var(--t2);line-height:1.62}
 .obj-a b{color:var(--t);font-weight:600}
-.meta4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
-@media(max-width:640px){.meta4{grid-template-columns:1fr 1fr}}
+.meta4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-bottom:2rem}
+@media(max-width:640px){.meta4{grid-template-columns:1fr}}
 .m4{background:var(--bgc2);border:1px solid var(--br);border-radius:10px;padding:1rem 1.1rem}
 .m4-l{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.35rem}
 .m4-v{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.35}
-.amp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:2rem}
+.amp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;margin-top:2rem}
 @media(max-width:640px){.amp-grid{grid-template-columns:1fr}}
 .amp{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
 .amp-ico{font-size:1.3rem;flex-shrink:0}
@@ -518,16 +517,16 @@ export const body = `<div id="cd"></div><div id="cr"></div>
     <h2 class="sec-h2 rv d1">Ответь себе честно</h2>
     <p class="sl rv d2">Семь вопросов про эмоции и три про логику. Если на большинство ответишь «да» — этот месяц для тебя.</p>
     <div class="qgrid">
-      <div class="qcard rv"><span class="qtag e">Вопрос 1 · эмоции</span><div class="qq">Сколько ещё ты будешь откладывать свой продукт «на потом»?</div><div class="qa">Каждый месяц отсрочки — это месяц, который твои конкуренты уже работают.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 2 · эмоции</span><div class="qq">Тебе не надоело платить подрядчикам за то, что можно собрать самому за месяц?</div><div class="qa">Навык остаётся с тобой, а не в голове подрядчика.</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 3 · эмоции</span><div class="qq">Что ты почувствуешь, когда твой сайт, книга или автоматизация наконец заработают?</div><div class="qa">Ощущение «я могу» не даёт ни один сертификат.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 4 · эмоции</span><div class="qq">Ты уверен, что «потом разберусь» не превращается в «никогда»?</div><div class="qa">Через год ты будешь в той же точке, только с большим опытом откладывания.</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 5 · эмоции</span><div class="qq">Сколько уже денег ты потратил на курсы и ролики, после которых продукта нет?</div><div class="qa">Инвестиция в ролики не вернулась. Инвестиция в продукт возвращается.</div></div>
-      <div class="qcard rv d1"><span class="qtag e">Вопрос 6 · эмоции</span><div class="qq">Тебе не тревожно, что конкуренты собирают AI-продукты, пока ты смотришь?</div><div class="qa">Отставание на год начинается с месяца бездействия.</div></div>
-      <div class="qcard rv"><span class="qtag e">Вопрос 7 · эмоции</span><div class="qq">Что бы изменилось, если бы через месяц у тебя был работающий продукт?</div><div class="qa">Изменился бы не только продукт — изменилась бы твоя уверенность.</div></div>
-      <div class="qcard rv d1"><span class="qtag l">Вопрос 8 · логика</span><div class="qq">Что дешевле: собрать самому за 70–80к или нанять команду за 300–500к, когда заявок ещё нет?</div><div class="qa">Математика в пользу навыка: платишь один раз, а умение остаётся навсегда.</div></div>
-      <div class="qcard rv"><span class="qtag l">Вопрос 9 · логика</span><div class="qq">Сколько времени ты готов потратить, чтобы навык остался с тобой навсегда?</div><div class="qa">Один месяц. Записи остаются у тебя. Это не разовая услуга.</div></div>
-      <div class="qcard rv d1"><span class="qtag l">Вопрос 10 · логика</span><div class="qq">Что для тебя дороже: потерять 70–80к на месяце работы или потерять год на ожидании «удобного момента»?</div><div class="qa">Цена месяца — это цена одной ошибки на найме. Год ожидания стоит дороже.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 1</span><div class="qq">Сколько ещё ты будешь откладывать свой продукт «на потом»?</div><div class="qa">Каждый месяц отсрочки — это месяц, который твои конкуренты уже работают.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 2</span><div class="qq">Тебе не надоело платить подрядчикам за то, что можно собрать самому за месяц?</div><div class="qa">Навык остаётся с тобой, а не в голове подрядчика.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 3</span><div class="qq">Что ты почувствуешь, когда твой сайт, книга или автоматизация наконец заработают?</div><div class="qa">Ощущение «я могу» не даёт ни один сертификат.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 4</span><div class="qq">Ты уверен, что «потом разберусь» не превращается в «никогда»?</div><div class="qa">Через год ты будешь в той же точке, только с большим опытом откладывания.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 5</span><div class="qq">Сколько уже денег ты потратил на курсы и ролики, после которых продукта нет?</div><div class="qa">Инвестиция в ролики не вернулась. Инвестиция в продукт возвращается.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 6</span><div class="qq">Тебе не тревожно, что конкуренты собирают AI-продукты, пока ты смотришь?</div><div class="qa">Отставание на год начинается с месяца бездействия.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 7</span><div class="qq">Что бы изменилось, если бы через месяц у тебя был работающий продукт?</div><div class="qa">Изменился бы не только продукт — изменилась бы твоя уверенность.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 8</span><div class="qq">Что дешевле: собрать самому за 70–80к или нанять команду за 300–500к, когда заявок ещё нет?</div><div class="qa">Математика в пользу навыка: платишь один раз, а умение остаётся навсегда.</div></div>
+      <div class="qcard rv"><span class="qtag">Вопрос 9</span><div class="qq">Сколько времени ты готов потратить, чтобы навык остался с тобой навсегда?</div><div class="qa">Один месяц. Записи остаются у тебя. Это не разовая услуга.</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 10</span><div class="qq">Что для тебя дороже: потерять 70–80к на месяце работы или потерять год на ожидании «удобного момента»?</div><div class="qa">Цена месяца — это цена одной ошибки на найме. Год ожидания стоит дороже.</div></div>
     </div>
   </div>
 </section>
@@ -592,7 +591,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <section id="amp">
   <div class="wrap">
     <span class="sec-tag rv">Почему сейчас</span>
-    <h2 class="sec-h2 rv d1">Дефицит и срочность</h2>
+    <h2 class="sec-h2 rv d1">Почему мест так мало</h2>
     <p class="sl rv d2">Месяц работы с тобой лично нельзя растянуть на поток. Поэтому мест мало — и это честно, а не маркетинг.</p>
     <div class="amp-grid">
       <div class="amp rv d1"><div class="amp-ico">🎯</div><div><div class="amp-t">1–2 человека в месяц</div><div class="amp-x">Не поток, а личная работа. Именно поэтому результат — продукт, а не «посмотрел вебинар».</div></div></div>
