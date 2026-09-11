@@ -190,7 +190,7 @@ function mdToReact(src: string): { toc: TocEntry[]; nodes: React.ReactNode[] } {
 			list.items.push(
 				<span className="docs-check">
 					<span className="docs-check-box">☐</span>
-					{inline(rest)}
+					<span className="docs-check-text">{inline(rest)}</span>
 				</span>,
 			);
 		} else if (/^[-*]\s+/.test(trimmed)) {
@@ -264,7 +264,7 @@ export default function AgencyInABoxContent() {
 					NCAi — SaaS-платформа «Агентство в коробке». Методология продукта: мульти-аренда,
 					распаковка клиента, подписка и тарифы, автоматизация, ведение сети клиентов.
 				</p>
-				<p className="book-index-author">Автор: Илья Новицкий · NCAi · версия 2.0 · 27.08.2026</p>
+				<p className="book-index-author">Автор: Илья Новицкий · NCAi · версия 2.1 · 04.09.2026</p>
 
 				<div className="docs-toc">
 					<div className="docs-toc-label">Оглавление</div>

@@ -549,8 +549,8 @@ export default function TeamBook() {
 					<h2 className="pb-h2">{t("Механика: как команда выполняет задачи", "Mechanics: how the team does the work")}</h2>
 					<p className="pb-sec-sub">
 						{t(
-							"Жизненный цикл задачи — конвейер без человека в петле. Оператор даёт доступы и материалы, команда делает остальное.",
-							"The task lifecycle — a pipeline without a human in the loop. The operator gives access and materials, the team does the rest.",
+							"Жизненный цикл задачи — конвейер, где рутину ведёт команда, а каждый результат перед закрытием проверяет человек. Оператор даёт доступы и материалы, дальше команда делает основную работу — но не в обход проверки.",
+							"The task lifecycle — a pipeline where the team handles the routine, but a human checks every result before it's closed. The operator gives access and materials, the team does the main work — review isn't skipped.",
 						)}
 					</p>
 
