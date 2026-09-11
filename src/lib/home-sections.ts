@@ -42,7 +42,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Обучение AI</div>
             <div class="pc-title">1 месяц · 70–80к ₽</div>
-            <div class="pc-sub">5–6 сессий, создаёшь реальный продукт с нуля</div>
+            <div class="pc-sub">2 сессии + распаковка агентства, создаёшь реальный продукт с нуля</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -238,11 +238,11 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
           <div class="prod-icon">⚡</div>
           <div class="prod-type">Обучение AI · B2C</div>
           <div class="prod-title">Научись работать с AI руками за месяц</div>
-          <p class="prod-desc">5–6 сессий 1 на 1. Никакой теории в пустоту — берём твой реальный проект и собираем его вместе. Уходишь с работающим продуктом и навыком.</p>
+          <p class="prod-desc">2 сессии 1 на 1 + распаковка агентства NCAi. Никакой теории в пустоту — берём твой реальный проект и собираем его вместе. Уходишь с работающим продуктом, навыком и своим AI-агентством.</p>
           <div class="prod-points">
             <div class="prod-point"><div class="pp-dot"></div><span>Claude, Gemini, ChatGPT, Cursor — когда что</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Создаёшь сайт, книгу, автоматизацию</span></div>
-            <div class="prod-point"><div class="pp-dot"></div><span>Запись каждого занятия остаётся</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Месяц на связи + 111 промптов в подарок</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Онлайн · 1–2 человека одновременно</span></div>
           </div>
         </div>
@@ -317,7 +317,7 @@ export const ABOUT_HTML = `<!-- ABOUT -->
               <div>
                 <div class="acj-p">Сейчас · NCAi</div>
                 <div class="acj-t">Три продукта</div>
-                <div class="acj-d">Консалтинг · Обучение · Книга · Соло R&D</div>
+                <div class="acj-d">Распаковка · Обучение · Книга · Соло R&D</div>
               </div>
             </div>
           </div>
