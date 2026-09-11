@@ -56,7 +56,7 @@ nav.sc{background:rgba(8,8,8,.97)}
   margin-bottom:2rem;animation:fup .8s var(--ease) both}
 .bdot{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
 .hero-name{font-family:var(--fd);font-size:clamp(2.4rem,5.5vw,5.25rem);font-weight:800;line-height:1.05;
-  letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
+  letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both;word-break:normal;overflow-wrap:normal}
 .hero-name .acc{display:block;color:var(--a);-webkit-text-fill-color:var(--a)}
 .hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#c2bdb5;max-width:620px;line-height:1.75;
   margin:0 auto 2.5rem;animation:fup 1s .22s var(--ease) both}
