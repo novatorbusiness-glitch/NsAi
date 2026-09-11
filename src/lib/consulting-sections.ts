@@ -396,10 +396,10 @@ export const CASES_HTML = `<!-- 10 · РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ -->
         <div class="cress"><div class="cres"><strong>→</strong> 2 недели вместо месяцев с командой найма</div></div>
       </div>
       <div class="ccard rv d2" style="--cc:#FFD000">
-        <div class="ctag">Gaze Architecture</div>
-        <div class="ctit">Сайт под ключ для бьюти-ниши</div>
-        <div class="csub">5 AI-агентов, распределённая команда с ролями</div>
-        <div class="cress"><div class="cres"><strong>→</strong> 15 000+ строк кода</div></div>
+        <div class="ctag">GAZE</div>
+        <div class="ctit">SaaS-платформа для бьюти-мастеров</div>
+        <div class="csub">CRM клиентов, аналитика дохода, обучение — на Supabase</div>
+        <div class="cress"><div class="cres"><strong>→</strong> 26 000+ строк кода, 25 экранов</div></div>
       </div>
       <div class="ccard rv d3" style="--cc:#ff9d2e">
         <div class="ctag">Neuroflow</div>

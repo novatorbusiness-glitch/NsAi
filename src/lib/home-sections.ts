@@ -387,9 +387,9 @@ export const SOLO_HTML = `<!-- SOLO PROJECTS -->
       </div>
       <div class="pj rv d3">
         <div class="pj-icon">✨</div>
-        <div class="pj-tag">Beauty · Web</div>
-        <div class="pj-title">Gaze Architecture</div>
-        <p class="pj-desc">Многостраничный сайт под ключ для бьюти-сферы — витрина, которая продаёт мастера</p>
+        <div class="pj-tag">Beauty · SaaS</div>
+        <div class="pj-title">GAZE</div>
+        <p class="pj-desc">SaaS-платформа для бьюти-мастеров: клиентская база, аналитика дохода, обучение и сертификаты</p>
         <span class="pj-status">Запущен</span>
       </div>
     </div>
@@ -409,10 +409,10 @@ export const RD_STORIES_HTML = `<!-- RD STORIES: сцена → поворот �
         <div class="rds-row"><span class="rds-l">Вывод</span><p>AI не думает за тебя — он снимает ограничение по рукам. Архитектура и решения остаются твоими.</p></div>
       </div>
       <div class="rds rv d1">
-        <div class="rds-tag">Gaze Architecture · Beauty</div>
-        <div class="rds-row"><span class="rds-l">Сцена</span><p>Нужен был сайт под ключ для бьюти-мастера — витрина, которая реально продаёт.</p></div>
-        <div class="rds-row"><span class="rds-l">Поворот</span><p>Собрал <b>5 AI-агентов</b>, которые вместе написали <b>15 000+ строк</b> — не один чат-бот, а распределённая команда с ролями.</p></div>
-        <div class="rds-row"><span class="rds-l">Вывод</span><p>Это и был прототип того же принципа, который лёг в основу NCAi: не один универсальный AI, а команда с зонами ответственности.</p></div>
+        <div class="rds-tag">GAZE · Beauty SaaS</div>
+        <div class="rds-row"><span class="rds-l">Сцена</span><p>Нужен был не сайт-визитка, а рабочий инструмент для бьюти-мастеров: клиентская база, аналитика дохода, обучение.</p></div>
+        <div class="rds-row"><span class="rds-l">Поворот</span><p>Выросло в полноценную SaaS-платформу: <b>26 000+ строк кода</b>, 25 экранов, своя база данных с изоляцией по мастеру — не прототип, а работающий продукт с подпиской.</p></div>
+        <div class="rds-row"><span class="rds-l">Вывод</span><p>Один человек с AI может построить то, для чего раньше нужна была бы команда разработки на месяцы.</p></div>
       </div>
       <div class="rds rv d2">
         <div class="rds-tag">Эксперимент за $22</div>
