@@ -334,15 +334,15 @@ export const body = `<div id="cd"></div><div id="cr"></div>
     <div>
       <div class="hero-badge"><span class="bdot"></span>Обучение AI · 1 на 1 · 1 месяц</div>
       <h1 class="hero-h1">Ты не можешь собрать свой продукт с помощью AI, потому что тебя учили <em>смотреть,</em> а не <em>делать.</em><span class="acc">Новый способ: твой проект. Месяц. 1 на 1.</span></h1>
-      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> — сайт, книгу или автоматизацию — и собираем его вместе на 5–6 сессиях. Уходишь не с сертификатом, а с работающим продуктом и навыком, который остаётся с тобой.</p>
+      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> — сайт, книгу или автоматизацию — и собираем его на 2 живых сессиях. Плюс разворачиваю тебе рабочее AI-агентство (распаковка NCAi), на месяц остаюсь на связи и дарю книгу из 111 промптов NCAi.</p>
       <div class="hero-acts">
         <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#idea" class="bs">Почему это работает</a>
       </div>
       <div class="hero-meta">
-        <div class="hm">Формат<span>5–6 сессий · 1 на 1</span></div>
-        <div class="hm">Длительность<span>1 месяц</span></div>
-        <div class="hm">Цена<span>70–80к ₽ / мес</span></div>
+        <div class="hm">Формат<span>2 сессии + распаковка</span></div>
+        <div class="hm">Длительность<span>1 месяц на связи</span></div>
+        <div class="hm">Цена<span>70–80к ₽</span></div>
         <div class="hm">Группа<span>1–2 человека</span></div>
       </div>
     </div>
@@ -357,15 +357,15 @@ export const body = `<div id="cd"></div><div id="cr"></div>
           </div>
           <div class="hsys-conn"><div class="hsys-line"></div></div>
           <div class="hsys-row">
-            <div class="hbox">5–6 сессий<br>live-кодинг</div>
+            <div class="hbox">2 сессии<br>live-кодинг</div>
             <div class="harr">→</div>
             <div class="hbox lit">Работающий<br>продукт</div>
           </div>
           <div class="hsys-conn"><div class="hsys-line"></div></div>
           <div class="hsys-row">
-            <div class="hbox">Записи занятий<br>+ навык</div>
+            <div class="hbox">Распаковка<br>агентства</div>
             <div class="harr">→</div>
-            <div class="hbox">План дальше<br>без зависимости</div>
+            <div class="hbox">Месяц на связи<br>+ 111 промптов</div>
           </div>
         </div>
         <div class="hcap">learning by building<span style="animation:blink 1.1s ease-in-out infinite">▌</span></div>
@@ -455,22 +455,22 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       </div>
       <div class="step rv d2">
         <div class="step-num">02</div>
-        <div><div class="step-tit">5–6 сессий 1 на 1</div><div class="step-tx">Живой лайф-кодинг на твоём проекте: я показываю каждое решение, ты собираешь вместе со мной. Работаем в моменте, а не «потом посмотришь».</div></div>
+        <div><div class="step-tit">2 сессии 1 на 1</div><div class="step-tx">Живой лайф-кодинг на твоём проекте: я показываю каждое решение, ты собираешь вместе со мной. Работаем в моменте, а не «потом посмотришь».</div></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">03</div>
-        <div><div class="step-tit">Практика между сессиями</div><div class="step-tx">Между встречами применяешь сам. Застреваешь — разбираем на следующей сессии. Это часть процесса, а не провал.</div></div>
+        <div><div class="step-tit">Распаковка агентства NCAi</div><div class="step-tx">Отдельно разворачиваю тебе рабочее AI-агентство: команда цифровых сотрудников, доска задач, контроль расходов на AI — та же распаковка, что продаю отдельным продуктом за 25 000 ₽, входит в месяц.</div></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">04</div>
-        <div><div class="step-tit">Передача</div><div class="step-tx">Запись каждого занятия + готовая система. Дальше развиваешь сам или с кем угодно — без зависимости от меня.</div></div>
+        <div><div class="step-tit">Месяц на связи</div><div class="step-tx">Не пропадаю после сессий: весь месяц отвечаю на вопросы и помогаю застрять поменьше. Плюс книга из 111 промптов NCAi в подарок.</div></div>
       </div>
     </div>
     <div class="out-grid rv d3" style="margin-top:3rem">
-      <div class="out-item"><div class="out-num">1</div><div class="out-tx">Твой проект, а не учебный пример</div></div>
-      <div class="out-item"><div class="out-num">4</div><div class="out-tx">Инструмента в деле: Claude, Gemini, ChatGPT, Cursor</div></div>
-      <div class="out-item"><div class="out-num">100%</div><div class="out-tx">Запись каждого занятия остаётся у тебя</div></div>
-      <div class="out-item"><div class="out-num">0</div><div class="out-tx">Зависимости от меня после месяца</div></div>
+      <div class="out-item"><div class="out-num">2</div><div class="out-tx">Живые сессии 1 на 1, лайф-кодинг на твоём проекте</div></div>
+      <div class="out-item"><div class="out-num">1</div><div class="out-tx">Рабочее AI-агентство — распаковка NCAi входит в месяц</div></div>
+      <div class="out-item"><div class="out-num">111</div><div class="out-tx">Промптов NCAi в подарок</div></div>
+      <div class="out-item"><div class="out-num">1 мес</div><div class="out-tx">На связи после сессий, а не «до свидания»</div></div>
     </div>
   </div>
 </section>
@@ -480,31 +480,23 @@ export const body = `<div id="cd"></div><div id="cr"></div>
   <div class="wrap">
     <span class="sec-tag rv">Программа</span>
     <h2 class="sec-h2 rv d1">Как выглядит твой месяц</h2>
-    <p class="sl rv d2">Маршрут гибкий — под твой проект, но логика всегда одна: от идеи к работающему продукту.</p>
+    <p class="sl rv d2">Маршрут гибкий — под твой проект, но логика всегда одна: от идеи к работающему продукту и своему AI-агентству.</p>
     <div class="tl">
       <div class="tl-item rv d1">
         <div><div class="tl-n">Сессия 1</div><div class="tl-t">Разбор проекта и карта решения</div></div>
-        <div class="tl-d">Определяем, что именно собираем (сайт / книга / автоматизация) и каким стеком. Фиксируем точку А.</div>
+        <div class="tl-d">Определяем, что именно собираем (сайт / книга / автоматизация), каким стеком, и с чего начнём в моменте. Фиксируем точку А.</div>
       </div>
       <div class="tl-item rv d1">
-        <div><div class="tl-n">Сессия 2</div><div class="tl-t">Инструменты: когда что брать</div></div>
-        <div class="tl-d">Claude, Gemini, ChatGPT, Cursor — разбираем на практике, какой инструмент решает какую задачу.</div>
+        <div><div class="tl-n">Сессия 2</div><div class="tl-t">Собираем и доводим до рабочего состояния</div></div>
+        <div class="tl-d">Основная работа: каркас продукта, инструменты (Claude, Gemini, ChatGPT, Cursor) на практике, доделываем и тестируем. Продукт должен реально работать, а не «быть почти готов».</div>
       </div>
       <div class="tl-item rv d2">
-        <div><div class="tl-n">Сессия 3</div><div class="tl-t">Собираем ядро продукта</div></div>
-        <div class="tl-d">Основная работа: каркас сайта, структура книги или логика автоматизации. Лайф-кодинг вместе.</div>
-      </div>
-      <div class="tl-item rv d2">
-        <div><div class="tl-n">Сессия 4</div><div class="tl-t">Доводим до рабочего состояния</div></div>
-        <div class="tl-d">Доделываем, тестируем, запускаем. Продукт должен реально работать, а не «быть почти готов».</div>
+        <div><div class="tl-n">Распаковка</div><div class="tl-t">Разворачиваю тебе агентство NCAi</div></div>
+        <div class="tl-d">Отдельная сессия 60–90 минут: рабочая AI-команда в панели — агенты под твои задачи, доска задач, контроль расходов на AI. Входит в месяц, не доплачиваешь отдельно.</div>
       </div>
       <div class="tl-item rv d3">
-        <div><div class="tl-n">Сессия 5</div><div class="tl-t">Упаковка и передача</div></div>
-        <div class="tl-d">Собираем записи, фиксируем, что и как устроено, чертим план развития без меня.</div>
-      </div>
-      <div class="tl-item rv d3">
-        <div><div class="tl-n">Сессия 6 · запасная</div><div class="tl-t">По твоему запросу</div></div>
-        <div class="tl-d">Если что-то не успели или хочешь глубже в одну из тем — используем запасную сессию.</div>
+        <div><div class="tl-n">Весь месяц</div><div class="tl-t">На связи + 111 промптов в подарок</div></div>
+        <div class="tl-d">Пишешь в Telegram, если застрял — отвечаю. В конце месяца — план развития без меня и книга из 111 готовых промптов NCAi.</div>
       </div>
     </div>
   </div>
@@ -560,22 +552,22 @@ export const body = `<div id="cd"></div><div id="cr"></div>
         </div>
         <div>
           <div class="price-label">Формат</div>
-          <div class="price-val" style="font-size:1.3rem">5–6 сессий</div>
+          <div class="price-val" style="font-size:1.3rem">2 сессии + распаковка</div>
           <div class="price-note">онлайн · 1–2 человека одновременно</div>
         </div>
       </div>
       <div class="inc-grid">
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">5–6 индивидуальных сессий 1 на 1</span></div>
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Твой реальный проект как основа обучения</span></div>
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Запись каждого занятия остаётся у тебя</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">2 индивидуальные сессии 1 на 1 — live-кодинг на твоём проекте</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Распаковка агентства NCAi входит в месяц (отдельно стоит 25 000 ₽)</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Месяц на связи в Telegram после сессий</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Книга из 111 промптов NCAi в подарок</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Твой реальный проект как основа, не учебный пример</span></div>
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Claude, Gemini, ChatGPT, Cursor — на практике</span></div>
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">На выходе — работающий продукт и навык</span></div>
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">План развития без меня после месяца</span></div>
       </div>
       <div class="meta4">
-        <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Работающий продукт + навык без зависимости</div></div>
+        <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Работающий продукт + своё AI-агентство без зависимости</div></div>
         <div class="m4"><div class="m4-l">Вероятность</div><div class="m4-v">Высокая: твой проект, лайф-кодинг, шаг за шагом</div></div>
-        <div class="m4"><div class="m4-l">Время до результата</div><div class="m4-v">1 месяц, 5–6 сессий</div></div>
+        <div class="m4"><div class="m4-l">Время до результата</div><div class="m4-v">1 месяц: 2 сессии + распаковка</div></div>
         <div class="m4"><div class="m4-l">Твои усилия</div><div class="m4-v">Диагностика + практика между сессиями</div></div>
       </div>
       <div class="price-cta">

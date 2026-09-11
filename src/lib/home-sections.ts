@@ -20,7 +20,7 @@ export const HERO_HTML = `<!-- HERO -->
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Проектов</div></div>
         <div class="hstat"><div class="hstat-n">50M ₽</div><div class="hstat-l">В запусках</div></div>
-        <div class="hstat"><div class="hstat-n">3+</div><div class="hstat-l">Года агентства</div></div>
+        <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Лет агентства</div></div>
         <div class="hstat"><div class="hstat-n">1</div><div class="hstat-l">Книга издана</div></div>
       </div>
     </div>
@@ -80,7 +80,7 @@ export const INTRO_HTML = `<!-- INTRO: коротко кто я + Илья ≠ N
 <section id="intro">
   <div class="wrap intro-wrap">
     <span class="sec-tag rv">Коротко: кто я</span>
-    <p class="p intro-lead rv d1">Предприниматель и разработчик. Больше трёх лет строил и вёл своё агентство, вышел из бизнеса 7 ноября 2025 — и с тех пор собираю системы на AI сам, от идеи до кода.</p>
+    <p class="p intro-lead rv d1">Предприниматель и разработчик. Пять лет строил и вёл своё агентство (2020–2025), вышел из бизнеса 7 ноября 2025 — и с тех пор собираю системы на AI сам, от идеи до кода.</p>
     <div class="intro-split rv d2">
       <div class="intro-half">
         <div class="intro-split-tag">Илья Новицкий</div>
@@ -174,36 +174,32 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
     <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в панель —<br>результат выходит из неё</h2>
     <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели — не в переписке.</p>
 
-    <div class="mech-flow">
-      <div class="mech-node rv d2">
-        <div class="mech-node-ico">🧑‍💻</div>
-        <div class="mech-node-t">Вы</div>
-        <div class="mech-node-s">Формулируете задачу</div>
+    <div class="panelmock rv d2">
+      <div class="pm-bar"><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-url">ncai · панель</span></div>
+      <div class="pm-tabs">
+        <span class="pm-tab">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab act">Проекты</span><span class="pm-tab">Услуги</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
       </div>
-
-      <div class="mech-line rv d2"><i class="mech-pulse"></i></div>
-
-      <div class="mech-node mech-node-a rv d2">
-        <div class="mech-node-ico">🧭</div>
-        <div class="mech-node-t">AI-директор</div>
-        <div class="mech-node-s">Решает, кому передать</div>
-      </div>
-
-      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
-
-      <div class="mech-depts rv d3">
-        <div class="mech-dept" style="--i:0"><div class="mech-dept-ico">💻</div><div class="mech-dept-t">Разработка</div></div>
-        <div class="mech-dept" style="--i:1"><div class="mech-dept-ico">📣</div><div class="mech-dept-t">Маркетинг</div></div>
-        <div class="mech-dept" style="--i:2"><div class="mech-dept-ico">✍️</div><div class="mech-dept-t">Контент</div></div>
-        <div class="mech-dept" style="--i:3"><div class="mech-dept-ico">💰</div><div class="mech-dept-t">Финансы</div></div>
-      </div>
-
-      <div class="mech-line rv d3"><i class="mech-pulse"></i></div>
-
-      <div class="mech-node mech-node-r rv d3">
-        <div class="mech-node-ico">📊</div>
-        <div class="mech-node-t">Результат в панели</div>
-        <div class="mech-node-s">Прозрачно, 24/7</div>
+      <div class="pm-body">
+        <div class="mech-task-flow">
+          <div class="mech-task-card">
+            <div class="mech-task-h">Входящая задача</div>
+            <div class="mech-task-t">«Собрать прайс на неделю»</div>
+          </div>
+          <div class="mech-task-arrow">→</div>
+          <div class="mech-task-card director">
+            <div class="mech-task-h">🧭 Директор</div>
+            <div class="mech-task-t">Разбивает на подзадачи, назначает роль</div>
+          </div>
+          <div class="mech-task-arrow">→</div>
+          <div class="mech-task-card">
+            <div class="mech-task-h">💻 Разработчик</div>
+            <div class="mech-task-t">Статус: <b>в работе</b> → отчёт директору</div>
+          </div>
+        </div>
+        <div class="pm-tline">
+          <div class="pm-tl"><span class="pm-tl-ico">✅</span><span class="pm-tl-n">Готово — директор проверил результат</span><span class="pm-tl-v">закрыто</span></div>
+        </div>
+        <div class="pm-cost-note">Директор не запускает задачи в обход проверки: разбивает, назначает роль и закрывает только после того, как сверил результат с критерием готовности. Расход на AI по каждому шагу — в той же панели.</div>
       </div>
     </div>
   </div>
@@ -303,7 +299,7 @@ export const ABOUT_HTML = `<!-- ABOUT -->
             <div class="acj">
               <div class="acj-dot">01</div>
               <div>
-                <div class="acj-p">2017–2023</div>
+                <div class="acj-p">2020–2025</div>
                 <div class="acj-t">Novator.vip</div>
                 <div class="acj-d">Регулярные продажи · маркетинг и автоматизация</div>
               </div>
@@ -330,7 +326,7 @@ export const ABOUT_HTML = `<!-- ABOUT -->
       <div class="rv d1">
         <span class="sec-tag">О себе</span>
         <h2 class="about-h2">От идеи до кода —<br>без посредников</h2>
-        <p class="p">Предприниматель с системным подходом: больше трёх лет руководил собственным агентством, выстроил регулярную модель продаж и довёл до результата 300+ проектов в автоматизации и маркетинге.</p>
+        <p class="p">Предприниматель с системным подходом: пять лет руководил собственным агентством, выстроил регулярную модель продаж и довёл до результата 300+ проектов в автоматизации и маркетинге.</p>
         <p class="p">Сегодня фокус сместился в IT-разработку. С помощью генеративного AI самостоятельно проектирую и собираю функциональные цифровые продукты — <strong>без раздутой команды на старте</strong>.</p>
         <div class="about-alai">Это редкое сочетание: человек, который одновременно придумывает воронку и пишет код, который её обслуживает.</div>
         <p class="p">Баг, отказ рынка или неудачный тест — воспринимаю не как проблему, а как датасет для следующей итерации системы.</p>
