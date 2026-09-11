@@ -335,3 +335,24 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @media(max-width:900px){.pers-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.pers-grid{grid-template-columns:1fr}}
 .pers-cap{font-size:.82rem;color:var(--t2);margin-top:.8rem;line-height:1.5}
+
+/* INTRO — «Коротко: кто я» + Илья ≠ NCAi */
+.intro-wrap{max-width:760px}
+.intro-lead{font-size:1.05rem;color:var(--t2);line-height:1.75;max-width:640px;margin-top:1rem}
+.intro-split{display:flex;align-items:stretch;gap:1.2rem;margin-top:2.2rem}
+.intro-half{flex:1;background:var(--bgc);border:1px solid var(--br2);border-radius:12px;padding:1.3rem 1.4rem}
+.intro-split-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);margin-bottom:.6rem}
+.intro-split-x{font-size:.88rem;color:var(--t2);line-height:1.6}
+.intro-arr{display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:1.1rem;color:var(--t3)}
+@media(max-width:640px){.intro-split{flex-direction:column}.intro-arr{transform:rotate(90deg);padding:.2rem 0}}
+
+/* RD STORIES — сцена → поворот → вывод */
+.rds-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
+@media(max-width:900px){.rds-grid{grid-template-columns:1fr}}
+.rds{background:var(--bgc);border:1px solid var(--br2);border-radius:12px;padding:1.6rem 1.5rem}
+.rds-tag{font-family:var(--fm);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin-bottom:1.1rem}
+.rds-row{margin-bottom:1rem}
+.rds-row:last-child{margin-bottom:0}
+.rds-row p{font-size:.88rem;color:var(--t2);line-height:1.6;margin-top:.3rem}
+.rds-l{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+.rds-note{font-style:italic;color:var(--t3)!important}

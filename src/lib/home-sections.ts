@@ -76,6 +76,25 @@ export const HERO_HTML = `<!-- HERO -->
   </div>
 </section>`;
 
+export const INTRO_HTML = `<!-- INTRO: коротко кто я + Илья ≠ NCAi -->
+<section id="intro">
+  <div class="wrap intro-wrap">
+    <span class="sec-tag rv">Коротко: кто я</span>
+    <p class="p intro-lead rv d1">Предприниматель и разработчик. Больше трёх лет строил и вёл своё агентство, вышел из бизнеса 7 ноября 2025 — и с тех пор собираю системы на AI сам, от идеи до кода.</p>
+    <div class="intro-split rv d2">
+      <div class="intro-half">
+        <div class="intro-split-tag">Илья Новицкий</div>
+        <div class="intro-split-x">Человек. Предприниматель, разработчик, архитектор систем. Пишет книгу, ведёт R&D-проекты, выступает.</div>
+      </div>
+      <div class="intro-arr">≠</div>
+      <div class="intro-half">
+        <div class="intro-split-tag">NCAi</div>
+        <div class="intro-split-x">Продукт. Платформа «агентство в коробке», которую Илья строит и продаёт — а не он сам.</div>
+      </div>
+    </div>
+  </div>
+</section>`;
+
 export const VIDEO_HTML = `<!-- VIDEO: личное обращение Ильи (ТЗ п.6) -->
 <section id="video-intro">
   <div class="wrap">
@@ -380,6 +399,34 @@ export const SOLO_HTML = `<!-- SOLO PROJECTS -->
         <div class="pj-title">Gaze Architecture</div>
         <p class="pj-desc">Многостраничный сайт под ключ для бьюти-сферы — витрина, которая продаёт мастера</p>
         <span class="pj-status">Запущен</span>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+export const RD_STORIES_HTML = `<!-- RD STORIES: сцена → поворот → вывод -->
+<section id="rd-stories">
+  <div class="wrap">
+    <span class="sec-tag rv">Истории R&D</span>
+    <h2 class="sec-h2 rv d1">Не кейсы для портфолио —<br>эксперименты для себя</h2>
+    <div class="rds-grid">
+      <div class="rds rv">
+        <div class="rds-tag">Neuroflow · HealthTech</div>
+        <div class="rds-row"><span class="rds-l">Сцена</span><p>Один, без команды, взялся собрать измерение пульса и ВСР через камеру телефона.</p></div>
+        <div class="rds-row"><span class="rds-l">Поворот</span><p>Проект вырос до <b>30 000+ строк кода</b> — объём, для которого раньше нанимали бы команду на месяцы.</p></div>
+        <div class="rds-row"><span class="rds-l">Вывод</span><p>AI не думает за тебя — он снимает ограничение по рукам. Архитектура и решения остаются твоими.</p></div>
+      </div>
+      <div class="rds rv d1">
+        <div class="rds-tag">Gaze Architecture · Beauty</div>
+        <div class="rds-row"><span class="rds-l">Сцена</span><p>Нужен был сайт под ключ для бьюти-мастера — витрина, которая реально продаёт.</p></div>
+        <div class="rds-row"><span class="rds-l">Поворот</span><p>Собрал <b>5 AI-агентов</b>, которые вместе написали <b>15 000+ строк</b> — не один чат-бот, а распределённая команда с ролями.</p></div>
+        <div class="rds-row"><span class="rds-l">Вывод</span><p>Это и был прототип того же принципа, который лёг в основу NCAi: не один универсальный AI, а команда с зонами ответственности.</p></div>
+      </div>
+      <div class="rds rv d2">
+        <div class="rds-tag">Эксперимент за $22</div>
+        <div class="rds-row"><span class="rds-l">Сцена</span><p>Прежде чем что-то обещать клиентам, проверяю гипотезы сам — на свои деньги, на своих проектах.</p></div>
+        <div class="rds-row"><span class="rds-l">Поворот</span><p>Одна из проверок обошлась в <b>$22</b> — и дала ответ быстрее, чем любая теоретическая дискуссия.</p></div>
+        <div class="rds-row"><span class="rds-l">Вывод</span><p class="rds-note">Внутренний эксперимент NCAi, а не универсальное обещание клиенту.</p></div>
       </div>
     </div>
   </div>
