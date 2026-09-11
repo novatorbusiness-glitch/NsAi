@@ -160,7 +160,9 @@ body {
 	color: #ffe57a;
 	padding: 0.1em 0.35em;
 	border-radius: 5px;
-	white-space: nowrap;
+	white-space: normal;
+	overflow-wrap: break-word;
+	word-break: break-word;
 }
 .docs-pre {
 	background: #0d0d0d;
@@ -178,9 +180,12 @@ body {
 	white-space: pre;
 }
 .docs-check {
-	display: inline-flex;
+	display: flex;
 	gap: 0.5rem;
-	align-items: baseline;
+	align-items: flex-start;
+}
+.docs-check-text {
+	min-width: 0;
 }
 .docs-check-box {
 	color: var(--a);
