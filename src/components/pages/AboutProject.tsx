@@ -43,8 +43,8 @@ export default function AboutProject() {
 				<h1 className="page-h1">{ru ? "Проект NCAi" : "The NCAi project"}</h1>
 				<p className="page-sub">
 					{ru
-						? "NCAi — это Илья Новицкий: предприниматель, который проектирует воронки и сам пишет код, который их обслуживает. Проект объединяет три продукта: внедрение AI-систем, обучение AI 1 на 1 и книги по нейромаркетингу."
-						: "NCAi is Ilya Novitsky: an entrepreneur who designs sales funnels and writes the code that runs them. The project brings together three products: AI implementation, 1-on-1 AI training and books on neuromarketing."}
+						? "NCAi — это Илья Новицкий: предприниматель, который проектирует воронки и сам пишет код, который их обслуживает. Проект объединяет три продукта: распаковку AI-агентства, обучение AI 1 на 1 и книгу по нейромаркетингу."
+						: "NCAi is Ilya Novitsky: an entrepreneur who designs sales funnels and writes the code that runs them. The project brings together three products: AI agency unboxing, 1-on-1 AI training and a book on neuromarketing."}
 				</p>
 			</div>
 
@@ -106,7 +106,7 @@ export default function AboutProject() {
 					<li className="legal-li">
 						<strong>{ru ? "Распаковка:" : "Unboxing:"}</strong>{" "}
 						<a href="/raspakovka" style={{ color: "var(--a)" }}>
-							NCAi-агентство за одну сессию
+							NCAi-агентство за 4 шага
 						</a>{" "}
 						— {ru ? "система продаж и AI-команда в панели." : "a sales system and AI team in a dashboard."}
 					</li>
