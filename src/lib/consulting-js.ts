@@ -59,6 +59,18 @@ if(ncarousel){
   if(nextBtn)nextBtn.addEventListener('click',()=>ncarousel.scrollBy({left:360,behavior:'smooth'}));
 }
 
+// RMOCK — переключение экранов мокапа мини-аппа (серия реальных скринов)
+document.querySelectorAll('[data-rmock-tabs]').forEach(tabsWrap=>{
+  const root=tabsWrap.closest('.rmock');if(!root)return;
+  const tabs=tabsWrap.querySelectorAll('.rmock-tab');
+  const screens=root.querySelectorAll('[data-rmock-body] .rmock-screen');
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{
+    const s=tab.dataset.screen;
+    tabs.forEach(t=>t.classList.toggle('act',t===tab));
+    screens.forEach(sc=>sc.classList.toggle('act',sc.dataset.screen===s));
+  }));
+});
+
 // BURGER — мобильное меню
 const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
 if(burger&&mnav){
