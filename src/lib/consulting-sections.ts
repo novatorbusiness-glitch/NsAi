@@ -349,7 +349,8 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
       <div>
         <span class="lb rv">Распаковка · сессия</span>
         <h2 class="sh2 rv d1">90 минут —<br>и агентство работает</h2>
-        <p class="sl rv d2" style="margin-bottom:0">Шесть шагов, за которые вы получаете агентство и понимаете, как оно устроено. Нажмите на шаг.</p>
+        <p class="sl rv d2" style="margin-bottom:.75rem">За 2–3 дня до сессии вы заполняете короткую анкету: чем занимается бизнес, кто в команде, кто владелец, а кто ведёт операционку, какие задачи отдать в первую очередь. Без анкеты сессия превращается в показ кнопок — поэтому начинаем только с ней на руках. По нише я беру готовый шаблон команды и процессов (см. примеры выше) — не собираю агентство с нуля на сессии.</p>
+        <p class="sl rv d2" style="margin-bottom:0">Дальше — шесть шагов самой сессии, за которые вы получаете агентство и понимаете, как оно устроено. Нажмите на шаг.</p>
         <div class="funnelw rv d3">
           <svg viewBox="0 0 280 270" width="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -371,9 +372,9 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА 90 �
         </div>
       </div>
       <div class="wdiag rv d2">
-        <div class="wi act" data-zone="1"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Создаём кабинет с названием вашего бизнеса. Это не «Мой проект» — здесь живут агенты, задачи и расходы на AI.</div></div></div>
+        <div class="wi act" data-zone="1"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Workspace (10 мин)</div><div class="wtx">Разворачиваю ваш личный кабинет — Telegram Mini App с названием вашего бизнеса, а не «Мой проект». Открывается из того же Telegram-бота, который потом принимает от вас задачи и текстом, без захода в панель.</div></div></div>
         <div class="wi" data-zone="1"><div class="wico">🧑‍💼</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Директор и агенты (15 мин)</div><div class="wtx">Настраиваю AI-директора и от одного до пяти агентов под ваши задачи: имя, роль, зона ответственности, база знаний. Директору можно написать одну задачу — дальше он сам решает, кому её передать.</div></div></div>
-        <div class="wi" data-zone="2"><div class="wico">🏛️</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Роли (10 мин)</div><div class="wtx">Раскладываем агентов по ролям, чтобы у каждого была понятная зона ответственности — не безликий помощник, а конкретный специалист, которому вы делегируете.</div></div></div>
+        <div class="wi" data-zone="2"><div class="wico">🏛️</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Роли (10 мин)</div><div class="wtx">Раскладываем агентов по ролям из готового шаблона под вашу нишу — не собираю процессы с нуля на сессии, беру один из проверенных наборов и адаптирую под вас. У каждого — понятная зона ответственности, не безликий помощник.</div></div></div>
         <div class="wi" data-zone="2"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Стартовые задачи (15 мин)</div><div class="wtx">3–5 реальных задач из анкеты: одна задача — одна строка, понятно, кому она делегирована. Вы сами ставите одну задачу — это ваш «экзамен» дня.</div></div></div>
         <div class="wi" data-zone="3"><div class="wico">💳</div><span class="wchev">▾</span><div><div class="wtit">Шаг 5 · Контроль расходов (15 мин)</div><div class="wtx">Настраиваем бюджет на AI и kill-switch — лимит, после которого агенты сами останавливаются. Видно, кто сколько тратит.</div></div></div>
         <div class="wi" data-zone="4"><div class="wico">📊</div><span class="wchev">▾</span><div><div class="wtit">Шаг 6 · Доска задач и отчёты (10 мин)</div><div class="wtx">Что в работе, что готово, какой агент что сделал. Каждый вечер в 18:00 приходит отчёт дня.</div></div></div>
@@ -486,7 +487,7 @@ export const CASES_HTML = `<!-- 10 · РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ -->
       <div class="ccard rv" style="--cc:#FFD000">
         <div class="ctag">Книга</div>
         <div class="ctit">«Нейро-Воронка»</div>
-        <div class="csub">30 глав о нейромаркетинге и AI-автоматизации</div>
+        <div class="csub">6 глав · 30 подглав о нейромаркетинге и AI-автоматизации</div>
         <div class="cress"><div class="cres"><strong>→</strong> Написана за 7 дней с AI-агентами</div></div>
       </div>
       <div class="ccard rv d1" style="--cc:#4ECDC4">
