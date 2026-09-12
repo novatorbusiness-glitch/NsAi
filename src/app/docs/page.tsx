@@ -4,18 +4,27 @@ import path from "path";
 import React from "react";
 
 export const metadata: Metadata = {
-	title: "Книга внедрения NCAi",
-	description: "Полное руководство по внедрению AI-агентства NCAi в бизнес: установка, настройка, обучение оператора.",
+	title: "Книга NCAi — руководство по управлению агентством",
+	description: "Бонус-руководство для клиентов NCAi: как управлять уже готовым AI-агентством — задачи, отчёты, финансы, частые вопросы.",
 	robots: { index: false, follow: false }, // скрыть от поисковиков
 };
 
-/** Простой парсер markdown → React (заголовки, списки, таблицы, жирный). */
+/** Инлайн-markdown: **жирный** → <strong>, `код` → <code>. */
+function inline(s: string): string {
+	return s
+		.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+		.replace(/`(.+?)`/g, '<code class="docs-code">$1</code>');
+}
+
+/** Простой парсер markdown → React (заголовки, списки, таблицы, жирный, блоки кода). */
 function mdToHtml(src: string): React.ReactNode[] {
 	const lines = src.split("\n");
 	const out: React.ReactNode[] = [];
 	let list: string[] = [];
 	let table: string[][] = [];
 	let inTable = false;
+	let inCode = false;
+	let codeLines: string[] = [];
 	let key = 0;
 
 	const flushList = () => {
@@ -53,8 +62,28 @@ function mdToHtml(src: string): React.ReactNode[] {
 
 	for (const raw of lines) {
 		const line = raw.trimEnd();
+		if (line.trim().startsWith("```")) {
+			if (!inCode) {
+				flushList();
+				if (inTable) flushTable();
+				inCode = true;
+				codeLines = [];
+			} else {
+				out.push(
+					<pre key={key++} className="docs-pre">
+						<code>{codeLines.join("\n")}</code>
+					</pre>,
+				);
+				inCode = false;
+			}
+			continue;
+		}
+		if (inCode) {
+			codeLines.push(raw);
+			continue;
+		}
 		if (line.startsWith("|")) {
-			const cells = line.split("|").slice(1, -1).map((c) => c.trim());
+			const cells = line.split("|").slice(1, -1).map((c) => inline(c.trim()));
 			if (!inTable) {
 				table = [];
 				inTable = true;
@@ -65,18 +94,18 @@ function mdToHtml(src: string): React.ReactNode[] {
 		if (inTable) flushTable();
 		if (line.startsWith("### ")) {
 			flushList();
-			out.push(<h3 key={key++} className="docs-h3">{line.slice(4)}</h3>);
+			out.push(<h3 key={key++} className="docs-h3" dangerouslySetInnerHTML={{ __html: inline(line.slice(4)) }} />);
 		} else if (line.startsWith("## ")) {
 			flushList();
-			out.push(<h2 key={key++} className="docs-h2">{line.slice(3)}</h2>);
+			out.push(<h2 key={key++} className="docs-h2" dangerouslySetInnerHTML={{ __html: inline(line.slice(3)) }} />);
 		} else if (line.startsWith("# ")) {
 			flushList();
-			out.push(<h1 key={key++} className="docs-h1">{line.slice(2)}</h1>);
+			out.push(<h1 key={key++} className="docs-h1" dangerouslySetInnerHTML={{ __html: inline(line.slice(2)) }} />);
 		} else if (line.startsWith("- ")) {
-			list.push(line.slice(2));
+			list.push(inline(line.slice(2)));
 		} else if (line.startsWith("> ")) {
 			flushList();
-			out.push(<blockquote key={key++} className="docs-quote" dangerouslySetInnerHTML={{ __html: line.slice(2) }} />);
+			out.push(<blockquote key={key++} className="docs-quote" dangerouslySetInnerHTML={{ __html: inline(line.slice(2)) }} />);
 		} else if (line.trim() === "---") {
 			flushList();
 			out.push(<hr key={key++} className="docs-hr" />);
@@ -84,7 +113,7 @@ function mdToHtml(src: string): React.ReactNode[] {
 			flushList();
 		} else {
 			flushList();
-			out.push(<p key={key++} className="docs-p" dangerouslySetInnerHTML={{ __html: line }} />);
+			out.push(<p key={key++} className="docs-p" dangerouslySetInnerHTML={{ __html: inline(line) }} />);
 		}
 	}
 	flushList();
