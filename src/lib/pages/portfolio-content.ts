@@ -210,7 +210,7 @@ export const body = `
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="hero-name">Технический партнёр для продукта,<br><span class="acc">который иначе не взлетит.</span></h1>
+    <h1 class="hero-name">Большинство тех-партнёров продают часы.<br><span class="acc">Я довожу продукт до релиза.</span></h1>
     <p class="hero-sub">Не агентство и не фриланс. Вхожу в проект руками: проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ за задачу — или доля/опцион, если строим вместе.</p>
     <div class="hero-acts">
       <a href="https://t.me/Ilya_novator" class="btn btn-p">Обсудить проект →</a>
@@ -312,21 +312,21 @@ export const body = `
   <div class="wrap">
     <span class="sec-tag rv">Как работаем</span>
     <h2 class="sec-h2 rv d1">Три способа начать</h2>
-    <p class="sec-lead rv d1">Я не продаю часы и не собираю тикеты в бэклог. Смотрю на задачу и сам предлагаю формат — вот три, которые чаще всего подходят.</p>
+    <p class="sec-lead rv d1">Я не продаю часы и не собираю тикеты в бэклог. Смотрю на задачу и сам предлагаю формат — вот три, которые чаще всего подходят. Партнёрство за долю — отдельно, ниже.</p>
     <div class="mgrid">
       <div class="mcard rv">
+        <div class="mtag">Аудит / Консультация</div>
+        <div class="mtit">Не уверены, что чинить — разберёмся вместе</div>
+        <div class="mprice">от 30 000 ₽</div>
+        <p class="mtx">Разбор продукта или кода + звонок. На выходе — письменный план: что менять в первую очередь и почему. Дальше решаете сами: чинить своей командой, звать меня или кого-то ещё.</p>
+        <div class="mmeta"><span class="mch">1–3 дня</span><span class="mch">Письменный план</span></div>
+      </div>
+      <div class="mcard rv d1">
         <div class="mtag">Fix / Спринт</div>
         <div class="mtit">Есть чёткая задача — беру и делаю</div>
         <div class="mprice">от 200 000 ₽</div>
         <p class="mtx">2–4 недели. Вы платите за готовый результат, а не за отчёт по часам. Обсуждаем задачу, срок и критерий готовности до старта — дальше я просто делаю.</p>
         <div class="mmeta"><span class="mch">2–4 недели</span><span class="mch">Результат, не часы</span></div>
-      </div>
-      <div class="mcard rv d1">
-        <div class="mtag">Опцион / Доля</div>
-        <div class="mtit">Верю в продукт — строю вместе</div>
-        <div class="mprice">Доля / опцион</div>
-        <p class="mtx">Web3 / HealthTech / AI. Беру на себя всю технику за долю в продукте, не за оклад. Раз риск общий — и мотивация довести до результата у нас одна на двоих.</p>
-        <div class="mmeta"><span class="mch">Web3</span><span class="mch">HealthTech</span><span class="mch">AI</span></div>
       </div>
       <div class="mcard rv d2">
         <div class="mtag">Ретейнер / AI-команда</div>

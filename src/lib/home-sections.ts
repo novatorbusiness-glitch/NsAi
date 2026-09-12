@@ -496,7 +496,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
       <a href="/raspakovka" class="closing-path cp-main">
         <div class="cp-n">1</div>
         <div class="cp-t">Распаковка агентства</div>
-        <div class="cp-s">60–90 минут · 25 000 ₽ — руль сразу у вас</div>
+        <div class="cp-s">Распаковка в боте · 25 000 ₽ — руль сразу у вас</div>
       </a>
     </div>
 
