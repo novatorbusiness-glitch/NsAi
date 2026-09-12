@@ -71,9 +71,9 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
         <div class="rmock-screen act" data-screen="dash">
           <div class="rmock-label">💰 Деньги</div>
           <div class="rmock-metrics">
-            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (750₽)</span></div><div class="rmock-mlab">Остаток</div></div>
-            <div class="rmock-metric"><div class="rmock-mnum">$31,60<span class="rmock-u"> (2840₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
-            <div class="rmock-metric"><div class="rmock-mnum">$40,00<span class="rmock-u"> (3600₽)</span></div><div class="rmock-mlab">Вложено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$3,60<span class="rmock-u"> (324₽)</span></div><div class="rmock-mlab">Остаток</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (756₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$12,00<span class="rmock-u"> (1080₽)</span></div><div class="rmock-mlab">Вложено</div></div>
           </div>
           <div class="rmock-label">📋 Сегодня</div>
           <div class="rmock-hero">
@@ -100,17 +100,17 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
         <div class="rmock-screen" data-screen="finance">
           <div class="rmock-label">💰 Деньги</div>
           <div class="rmock-metrics">
-            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (750₽)</span></div><div class="rmock-mlab">Остаток</div></div>
-            <div class="rmock-metric"><div class="rmock-mnum">$31,60<span class="rmock-u"> (2840₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
-            <div class="rmock-metric"><div class="rmock-mnum">$40,00<span class="rmock-u"> (3600₽)</span></div><div class="rmock-mlab">Вложено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$3,60<span class="rmock-u"> (324₽)</span></div><div class="rmock-mlab">Остаток</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (756₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$12,00<span class="rmock-u"> (1080₽)</span></div><div class="rmock-mlab">Вложено</div></div>
           </div>
           <div class="rmock-label">💳 Моя подписка</div>
           <div class="rmock-rows">
-            <div class="rmock-row"><span class="rmock-rname">План</span><span class="rmock-rval">Premium · 15 мест</span></div>
+            <div class="rmock-row"><span class="rmock-rname">План</span><span class="rmock-rval">Premium</span></div>
             <div class="rmock-row"><span class="rmock-rname">Статус</span><span class="rmock-rval">active</span></div>
             <div class="rmock-row"><span class="rmock-rname">Продление</span><span class="rmock-rval">05.10.2026</span></div>
           </div>
-          <div class="rmock-note">Бюджет $40 включён в подписку. Kill-switch остановит агентов, если лимит исчерпан — сюрпризов в конце месяца не бывает.</div>
+          <div class="rmock-note">AI-бюджет включён в подписку. Kill-switch остановит агентов, если лимит исчерпан — сюрпризов в конце месяца не бывает.</div>
         </div>
 
         <div class="rmock-screen" data-screen="projects">
@@ -372,7 +372,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА -->
         </div>
       </div>
       <div class="wdiag rv d2">
-        <div class="wi act" data-zone="1"><div class="wico">💬</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Распаковка в боте (30–40 мин)</div><div class="wtx">Сразу после оплаты бот ведёт вас по методологии: чем занимается бизнес, кто в команде, кто владелец, а кто ведёт операционку, какие задачи отдать в первую очередь. Не анкета для галочки — разбор вашей реальной ситуации.<div class="wres"><span class="ncl">Результат</span><p>Система понимает ваш бизнес и знает, какое агентство под него собрать.</p></div></div></div></div>
+        <div class="wi act" data-zone="1"><div class="wico">💬</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Распаковка в боте</div><div class="wtx">Сразу после оплаты бот ведёт вас по методологии: чем занимается бизнес, кто в команде, кто владелец, а кто ведёт операционку, какие задачи отдать в первую очередь. Не анкета для галочки — разбор вашей реальной ситуации.<div class="wres"><span class="ncl">Результат</span><p>Система понимает ваш бизнес и знает, какое агентство под него собрать.</p></div></div></div></div>
         <div class="wi" data-zone="2"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Кабинет разворачивается (автоматически)</div><div class="wtx">По итогам распаковки система сама создаёт ваш личный кабинет — Telegram Mini App с названием бизнеса: AI-директор, агенты, роли и стартовые задачи по шаблону вашей ниши. Без ручной сборки и без ожидания.<div class="wres"><span class="ncl">Результат</span><p>Рабочее агентство уже существует и ждёт вас в Telegram.</p></div></div></div></div>
         <div class="wi" data-zone="3"><div class="wico">📖</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Обучение по инструкции</div><div class="wtx">Пошаговая инструкция: как подключить AI-бюджет, куда заходить, как ставить задачи директору и читать отчёты. Разбираетесь в своём темпе, без звонков и без «ловите на лету».<div class="wres"><span class="ncl">Результат</span><p>Вы уверенно пользуетесь панелью сами.</p></div></div></div></div>
         <div class="wi" data-zone="4"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Первые задачи — работа</div><div class="wtx">Ставите директору первую реальную задачу. Он распределяет её между агентами, проверяет результат перед закрытием и присылает вам отчёт каждый вечер в 18:00.<div class="wres"><span class="ncl">Результат</span><p>Агентство работает на вас — а не вы объясняете ему, что делать.</p></div></div></div></div>
@@ -438,7 +438,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Распаковка в боте <span>workspace, агенты, доска задач, контроль расходов на AI — разворачиваются по итогам</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">AI-директор + до 5 агентов <span>с ролями и базами знаний под вашу нишу</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Руль сразу у вас <span>ставите задачи и смотрите расход на AI с первого дня</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка 4 900 ₽/мес <span>15 мест · $40 AI-бюджета · первый месяц включён в распаковку</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка 4 900 ₽/мес <span>первый месяц включён в распаковку</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Поддержка на связи <span>вопросы и донастройка — в Telegram, когда нужно</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Рост без пересборки <span>добавляете агентов и роли по мере роста бизнеса</span></div></div>
         </div>
@@ -530,3 +530,81 @@ export const CTA_HTML = `<!-- CTA -->
     <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>
   </div>
 </section>`;
+
+export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT/Codex -->
+<section id="vs-ai">
+  <div class="w">
+    <span class="lb rv">Отличие от чат-ботов</span>
+    <h2 class="sh2 rv d1">Claude и GPT — инструменты.<br>Распаковка NCAi — команда.</h2>
+    <p class="sl rv d2">Claude и GPT отвечают на запрос здесь и сейчас, но не помнят ваш бизнес, не проверяют свою работу и не работают, пока вы не открыли чат. Распаковка NCAi — готовая команда ролей с памятью о вашей нише, директором, который проверяет результат, и доской задач, а не окно диалога, которое нужно каждый раз собирать заново.</p>
+    <div class="vstable-wrap rv d2">
+      <div class="vstable">
+        <div class="vshead">
+          <div class="vsh cr">Критерий</div>
+          <div class="vsh th">Claude / GPT / Codex</div>
+          <div class="vsh me2">→ Распаковка NCAi</div>
+        </div>
+        <div class="vsrow">
+          <div class="vsc cr">Что это</div>
+          <div class="vsc th">Инструмент: отвечает на запрос здесь и сейчас</div>
+          <div class="vsc me">Команда: роли + память + доска + отчёты</div>
+        </div>
+        <div class="vsrow">
+          <div class="vsc cr">Память о бизнесе</div>
+          <div class="vsc th">Не помнит нишу и вчерашние задачи</div>
+          <div class="vsc me">Держит нишу и историю задач</div>
+        </div>
+        <div class="vsrow">
+          <div class="vsc cr">Проверка результата</div>
+          <div class="vsc th">Проверяете сами, вручную</div>
+          <div class="vsc me">Директор проверяет перед закрытием</div>
+        </div>
+        <div class="vsrow">
+          <div class="vsc cr">Работа без вас</div>
+          <div class="vsc th">Не работает, пока не открыли чат</div>
+          <div class="vsc me">Работает 24/7, отчёт вечером</div>
+        </div>
+        <div class="vsrow">
+          <div class="vsc cr">Управление</div>
+          <div class="vsc th">Каждый раз собираете диалог заново</div>
+          <div class="vsc me">Ставите задачу директору — дальше сам</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const UNDER_HOOD_HTML = `<!-- 7 · ЧТО ПОД КАПОТОМ -->
+<section id="under-hood" style="background:var(--bg2)">
+  <div class="w">
+    <span class="lb rv">Что под капотом</span>
+    <h2 class="sh2 rv d1">Что под капотом NCAi</h2>
+    <p class="sl rv d2">Не «подключили ChatGPT», а движок, изоляция и контроль бюджета. Вот из чего собрано агентство.</p>
+    <div class="amp-grid">
+      <div class="amp rv d1"><div class="amp-ico">⚙️</div><div><div class="amp-t">Hermes</div><div class="amp-x">Open-source движок, на котором Илья сам управляет своей командой. Тот же код — под капотом вашего агентства.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">🧱</div><div><div class="amp-t">Мульти-аренда</div><div class="amp-x">Один продукт, у каждого клиента изолированный workspace: свои агенты, задачи, финансы. Чужие данные недоступны.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🛑</div><div><div class="amp-t">Kill-switch</div><div class="amp-x">Бюджет на AI не даёт потратить больше лимита — сюрпризов в конце месяца нет.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🗂️</div><div><div class="amp-t">Шаблоны под ниши</div><div class="amp-x">Бьюти, услуги, продажи, контент — каждая со своими ролями и стартовыми задачами.</div></div></div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const FEATURES_HTML = `<!-- 8 · ФИЧИ ПАНЕЛИ -->
+<section id="features" class="sec-light">
+  <div class="w">
+    <span class="lb rv">Фичи панели</span>
+    <h2 class="sh2 rv d1">Что вы видите в панели</h2>
+    <p class="sl rv d2">Не обещания — конкретные вкладки рабочего кабинета, которые работают с первого дня.</p>
+    <div class="ngrid">
+      <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Доска задач</div><p class="ntx">Номер, срок, исполнитель, статус. Каждая задача — одна строка, всегда видно, что в работе и что готово.</p></div>
+      <div class="ncard rv d1"><div class="nbadge">02</div><div class="ntit">Команда</div><p class="ntx">Роли, статусы (online / busy / idle), базы знаний. Не безликий «AI-помощник», а сотрудники с зонами ответственности.</p></div>
+      <div class="ncard rv d2"><div class="nbadge">03</div><div class="ntit">Финансы</div><p class="ntx">Вложено / остаток / потрачено — реальные деньги, а не «виртуальные кредиты».</p></div>
+      <div class="ncard rv"><div class="nbadge">04</div><div class="ntit">Контроль расходов на AI</div><p class="ntx">Бюджет + kill-switch: агенты сами останавливаются на лимите. Счёт в конце месяца не удивляет.</p></div>
+      <div class="ncard rv d1"><div class="nbadge">05</div><div class="ntit">Аналитика</div><p class="ntx">P&L-прогноз, рейтинг, отчёты. Видно, что приносит деньги, а что просто горит.</p></div>
+      <div class="ncard rv d2"><div class="nbadge">06</div><div class="ntit">Отчёт в 18:00</div><p class="ntx">Каждый вечер — что сделано, кто что делал. Не спрашиваете «как дела», а открываете панель.</p></div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;

@@ -7,8 +7,11 @@ import ConsultingHero from "@/components/consulting/sections/ConsultingHero";
 import PanelSection from "@/components/consulting/sections/PanelSection";
 import IdeaSection from "@/components/consulting/sections/IdeaSection";
 import BoxSection from "@/components/consulting/sections/BoxSection";
+import VsAiSection from "@/components/consulting/sections/VsAiSection";
 import RoiSection from "@/components/consulting/sections/RoiSection";
 import GetsSection from "@/components/consulting/sections/GetsSection";
+import UnderTheHoodSection from "@/components/consulting/sections/UnderTheHoodSection";
+import FeaturesSection from "@/components/consulting/sections/FeaturesSection";
 import RealWorkSection from "@/components/consulting/sections/RealWorkSection";
 import StepsSection from "@/components/consulting/sections/StepsSection";
 import QuestionsSection from "@/components/consulting/sections/QuestionsSection";
@@ -19,9 +22,10 @@ import CasesSection from "@/components/consulting/sections/CasesSection";
 import CtaSection from "@/components/consulting/sections/CtaSection";
 
 /**
- * Распаковка — единственный оффер: разовая сессия 25 000 ₽, разворачивающая
- * рабочее агентство целиком, плюс подписка на платформу. Собрана из секций,
- * ранее живших на /consulting — тот роут теперь редиректит сюда.
+ * Распаковка — единственный оффер: автоматическая распаковка в боте по
+ * методологии за 25 000 ₽, разворачивающая рабочее агентство целиком, плюс
+ * подписка на платформу. Собрана из секций, ранее живших на /consulting —
+ * тот роут теперь редиректит сюда.
  */
 export default function RaspakovkaPage() {
 	useEffect(() => {
@@ -43,13 +47,16 @@ export default function RaspakovkaPage() {
 		<PageShell>
 			<div id="cd" /><div id="cr" />
 			<ConsultingHero />
-			<PanelSection />
 			<IdeaSection />
 			<BoxSection />
-			<RoiSection />
-			<GetsSection />
-			<RealWorkSection />
+			<VsAiSection />
+			<PanelSection />
 			<StepsSection />
+			<GetsSection />
+			<UnderTheHoodSection />
+			<FeaturesSection />
+			<RoiSection />
+			<RealWorkSection />
 			<QuestionsSection />
 			<ObjectionsSection />
 			<OfferSection />
