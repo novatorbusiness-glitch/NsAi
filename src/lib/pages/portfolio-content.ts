@@ -74,6 +74,19 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hstat-n{font-family:var(--fd);font-size:clamp(1.7rem,3vw,2.1rem);font-weight:800;letter-spacing:-.04em;color:var(--a);line-height:1}
 .hstat-l{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-top:.35rem}
 @media(max-width:480px){.hero-stats{gap:1.5rem}}
+/* Сигнатурный hero-визуал этой страницы — терминал, а не мокап панели
+   (тот — на /raspakovka) или таймлайн (тот — на /ai-training). Аудитория
+   здесь техническая, метафора «я пишу код» ей ближе. */
+.hero-term{max-width:480px;margin:2.75rem auto 0;text-align:left;background:var(--bgc);border:1px solid var(--br2);
+  border-radius:12px;overflow:hidden;animation:fup 1s .4s var(--ease) both;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.term-bar{display:flex;align-items:center;gap:.4rem;padding:.6rem .9rem;background:var(--bgc2);border-bottom:1px solid var(--br)}
+.term-dot{width:8px;height:8px;border-radius:50%;background:var(--br2)}
+.term-path{margin-left:.5rem;font-family:var(--fm);font-size:.6rem;color:var(--t3)}
+.term-body{padding:1rem 1.1rem;font-family:var(--fm);font-size:.72rem;line-height:1.85}
+.term-prompt{color:var(--a);margin-right:.5rem}
+.term-line{color:var(--t2)}
+.term-out{color:var(--t3);padding-left:1.15rem}
+.term-cursor{color:var(--a);animation:blink 1.1s ease-in-out infinite}
 
 /* SECTIONS */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
@@ -215,6 +228,16 @@ export const body = `
     <div class="hero-acts">
       <a href="https://t.me/Ilya_novator" class="btn btn-p">Обсудить проект →</a>
       <a href="#work" class="btn btn-s">Портфолио ↓</a>
+    </div>
+    <div class="hero-term rv">
+      <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-path">~/проект-клиента</span></div>
+      <div class="term-body">
+        <div class="term-line"><span class="term-prompt">$</span>git log --oneline -3</div>
+        <div class="term-out">a3f21c9 feat: рабочий продукт, не прототип</div>
+        <div class="term-out">e91b402 fix: то, что реально ломалось</div>
+        <div class="term-out">7c88d31 deploy: production ✓</div>
+        <div class="term-line"><span class="term-prompt">$</span><span class="term-cursor">▌</span></div>
+      </div>
     </div>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">проектов</div></div>
