@@ -87,14 +87,19 @@ nav.sc{background:rgba(8,8,8,.97)}
 .hcdot{width:8px;height:8px;border-radius:50%;background:var(--tr);box-shadow:0 0 12px rgba(78,205,196,.5);animation:blink 2s ease-in-out infinite}
 .hctitle{font-family:var(--fm);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t2)}
 .hctitle span{color:var(--tr)}
-.hsys{display:flex;flex-direction:column;gap:.6rem}
-.hsys-row{display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;gap:.4rem}
-.hbox{padding:.7rem 1rem;border-radius:9px;font-family:var(--fm);font-size:.63rem;color:var(--t2);line-height:1.4;border:1px solid var(--br);background:var(--bgc2)}
-.hbox.lit{border-color:var(--trb);color:var(--tr);background:var(--trd)}
-.harr{text-align:center;color:var(--br2);font-size:.7rem}
-.hsys-conn{display:flex;justify-content:center;padding:.1rem 0}
-.hsys-line{width:1px;height:12px;background:linear-gradient(to bottom,rgba(78,205,196,.35),transparent)}
 .hcap{margin-top:1.4rem;padding-top:1.25rem;border-top:1px solid var(--br);font-family:var(--fm);font-size:.63rem;color:var(--t3);letter-spacing:.04em}
+/* Сигнатурный hero-визуал этой страницы — вертикальный таймлайн месяца,
+   а не флоу-диаграмма задачи (та — на /raspakovka), чтобы страницы не
+   выглядели перекрашенным клоном друг друга. */
+.htl{display:flex;flex-direction:column}
+.htl-item{display:grid;grid-template-columns:28px 1fr;gap:.9rem;position:relative;padding-bottom:1.3rem}
+.htl-item:last-child{padding-bottom:0}
+.htl-item::before{content:'';position:absolute;left:13px;top:26px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--br2),transparent)}
+.htl-item:last-child::before{display:none}
+.htl-n{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.6rem;font-weight:700;border:1px solid var(--br2);background:var(--bgc2);color:var(--t3);z-index:1}
+.htl-item.lit .htl-n{border-color:var(--trb);color:var(--tr);background:var(--trd);box-shadow:0 0 14px rgba(78,205,196,.25)}
+.htl-t{font-family:var(--fd);font-size:.86rem;font-weight:700;color:var(--t);margin-bottom:.15rem}
+.htl-x{font-size:.78rem;color:var(--t3);line-height:1.4}
 
 /* SECTION BASE */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
@@ -349,24 +354,23 @@ export const body = `<div id="cd"></div><div id="cr"></div>
     </div>
     <div class="hero-right">
       <div class="hcard">
-        <div class="hctop"><div class="hcdot"></div><div class="hctitle">NCAi · <span>обучение AI</span></div></div>
-        <div class="hsys">
-          <div class="hsys-row">
-            <div class="hbox lit">Твой проект<br>+ идея</div>
-            <div class="harr">→</div>
-            <div class="hbox">Диагностика<br>и карта решения</div>
+        <div class="hctop"><div class="hcdot"></div><div class="hctitle">NCAi · <span>твой месяц</span></div></div>
+        <div class="htl">
+          <div class="htl-item lit">
+            <div class="htl-n">1</div>
+            <div class="htl-body"><div class="htl-t">Диагностика</div><div class="htl-x">Разбираем проект, фиксируем точку А и карту решения</div></div>
           </div>
-          <div class="hsys-conn"><div class="hsys-line"></div></div>
-          <div class="hsys-row">
-            <div class="hbox">2 сессии<br>live-кодинг</div>
-            <div class="harr">→</div>
-            <div class="hbox lit">Работающий<br>продукт</div>
+          <div class="htl-item">
+            <div class="htl-n">2</div>
+            <div class="htl-body"><div class="htl-t">2 сессии — собираем</div><div class="htl-x">Live-кодинг на твоём проекте, а не запись вебинара</div></div>
           </div>
-          <div class="hsys-conn"><div class="hsys-line"></div></div>
-          <div class="hsys-row">
-            <div class="hbox">Распаковка<br>агентства</div>
-            <div class="harr">→</div>
-            <div class="hbox">Месяц на связи<br>+ 111 промптов</div>
+          <div class="htl-item">
+            <div class="htl-n">+1</div>
+            <div class="htl-body"><div class="htl-t">Распаковка агентства</div><div class="htl-x">Рабочая AI-команда в панели, входит в месяц</div></div>
+          </div>
+          <div class="htl-item">
+            <div class="htl-n">30</div>
+            <div class="htl-body"><div class="htl-t">Месяц на связи</div><div class="htl-x">+ книга из 111 промптов NCAi в подарок</div></div>
           </div>
         </div>
         <div class="hcap">learning by building<span style="animation:blink 1.1s ease-in-out infinite">▌</span></div>
