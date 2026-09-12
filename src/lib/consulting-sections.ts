@@ -46,37 +46,88 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 </section>
 <hr class="dv">`;
 
-export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит продукт -->
+export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит продукт: точная копия реального интерфейса -->
 <section id="panel-preview" class="sec-light">
   <div class="w">
     <span class="lb rv">Как это выглядит</span>
     <h2 class="sh2 rv d1">Не абстракция —<br>рабочая панель</h2>
-    <p class="sl rv d2">Тот же Hermes, которым я управляю своей командой, — под капотом NCAi. Вот что видите вы после распаковки.</p>
-    <div class="panelmock rv d2">
-      <div class="pm-bar"><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-url">ncai · панель</span></div>
-      <div class="pm-tabs">
-        <span class="pm-tab act">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab">Проекты</span><span class="pm-tab">Услуги</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
+    <p class="sl rv d2">Тот же Hermes, которым я управляю своей командой, — под капотом NCAi. Ниже — реальный интерфейс, не макет: те же вкладки, те же карточки, что видите вы после распаковки. Переключайте вкладки.</p>
+    <div class="rmock rv d2">
+      <div class="rmock-head">
+        <div class="rmock-brand">NCAi <span class="rmock-dot">AGENCY</span></div>
+        <div class="rmock-sub">Салон Анны · агентство в панели</div>
       </div>
-      <div class="pm-body">
-        <div class="pm-block">
-          <div class="pm-block-h">💰 Деньги</div>
-          <div class="pm-money-row"><span>Вложено</span><b>45 000 ₽</b></div>
-          <div class="pm-money-row"><span>Остаток AI-бюджета</span><b>$8,40</b></div>
-          <div class="pm-money-row"><span>Потрачено</span><b>$6,60</b></div>
+      <div class="rmock-tabswrap">
+        <div class="rmock-tabs" data-rmock-tabs>
+          <div class="rmock-tab act" data-screen="dash"><span class="rmock-tic">📊</span>Главная</div>
+          <div class="rmock-tab" data-screen="agents"><span class="rmock-tic">👥</span>Команда</div>
+          <div class="rmock-tab" data-screen="finance"><span class="rmock-tic">💰</span>Финансы</div>
+          <div class="rmock-tab" data-screen="projects"><span class="rmock-tic">🗂️</span>Проекты</div>
         </div>
-        <div class="pm-block">
-          <div class="pm-block-h">📋 Сегодня</div>
-          <div class="pm-today">3 задачи · 2,5 часа</div>
-        </div>
-        <div class="pm-block">
-          <div class="pm-block-h">👥 Команда</div>
-          <div class="pm-tline">
-            <div class="pm-tl"><span class="pm-tl-ico">🧭</span><span class="pm-tl-n">Директор</span><span class="pm-tl-v">1 задача</span></div>
-            <div class="pm-tl"><span class="pm-tl-ico">💻</span><span class="pm-tl-n">Разработчик</span><span class="pm-tl-v">2 задачи</span></div>
-            <div class="pm-tl"><span class="pm-tl-ico">✍️</span><span class="pm-tl-n">Копирайтер</span><span class="pm-tl-v">1 задача</span></div>
+        <div class="rmock-fade"></div>
+      </div>
+      <div class="rmock-body" data-rmock-body>
+
+        <div class="rmock-screen act" data-screen="dash">
+          <div class="rmock-label">💰 Деньги</div>
+          <div class="rmock-metrics">
+            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (750₽)</span></div><div class="rmock-mlab">Остаток</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$31,60<span class="rmock-u"> (2840₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$40,00<span class="rmock-u"> (3600₽)</span></div><div class="rmock-mlab">Вложено</div></div>
           </div>
-          <div class="pm-cost-note">Пишете директору одну задачу — он сам решает, кому из команды её передать.</div>
+          <div class="rmock-label">📋 Сегодня</div>
+          <div class="rmock-hero">
+            <div class="rmock-ch"><div class="rmock-ch-num">4</div><div class="rmock-ch-lab">Задач сегодня</div></div>
+            <div class="rmock-ch"><div class="rmock-ch-num">2ч 15м</div><div class="rmock-ch-lab">Часов работы</div></div>
+          </div>
+          <div class="rmock-label">👥 Команда</div>
+          <div class="rmock-rows">
+            <div class="rmock-row"><span class="rmock-rname">🎯 Директор</span><span class="rmock-rval">1 задача · 12м</span></div>
+            <div class="rmock-row"><span class="rmock-rname">⚙️ Разработчик</span><span class="rmock-rval">2 задачи · 1ч 40м</span></div>
+            <div class="rmock-row"><span class="rmock-rname">📈 Маркетолог</span><span class="rmock-rval">1 задача · 23м</span></div>
+          </div>
         </div>
+
+        <div class="rmock-screen" data-screen="agents">
+          <div class="rmock-label">👥 Команда — 4 сотрудника</div>
+          <div class="rmock-agent"><span class="rmock-aico">🎯</span><div class="rmock-abody"><div class="rmock-aname">Директор</div><div class="rmock-arole">Управление · разбирает и проверяет задачи</div></div><span class="rmock-badge live">в работе</span></div>
+          <div class="rmock-agent"><span class="rmock-aico">⚙️</span><div class="rmock-abody"><div class="rmock-aname">Иван</div><div class="rmock-arole">Разработчик</div></div><span class="rmock-badge on">online</span></div>
+          <div class="rmock-agent"><span class="rmock-aico">📈</span><div class="rmock-abody"><div class="rmock-aname">Мария</div><div class="rmock-arole">Маркетолог</div></div><span class="rmock-badge busy">занят</span></div>
+          <div class="rmock-agent"><span class="rmock-aico">💰</span><div class="rmock-abody"><div class="rmock-aname">Финансист</div><div class="rmock-arole">Финансы · юнит-экономика, отчёты</div></div><span class="rmock-badge on">online</span></div>
+          <div class="rmock-note">У каждого — понятная роль и зона ответственности. Не безликий «AI-помощник».</div>
+        </div>
+
+        <div class="rmock-screen" data-screen="finance">
+          <div class="rmock-label">💰 Деньги</div>
+          <div class="rmock-metrics">
+            <div class="rmock-metric"><div class="rmock-mnum">$8,40<span class="rmock-u"> (750₽)</span></div><div class="rmock-mlab">Остаток</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$31,60<span class="rmock-u"> (2840₽)</span></div><div class="rmock-mlab">Потрачено</div></div>
+            <div class="rmock-metric"><div class="rmock-mnum">$40,00<span class="rmock-u"> (3600₽)</span></div><div class="rmock-mlab">Вложено</div></div>
+          </div>
+          <div class="rmock-label">💳 Моя подписка</div>
+          <div class="rmock-rows">
+            <div class="rmock-row"><span class="rmock-rname">План</span><span class="rmock-rval">Premium · 15 мест</span></div>
+            <div class="rmock-row"><span class="rmock-rname">Статус</span><span class="rmock-rval">active</span></div>
+            <div class="rmock-row"><span class="rmock-rname">Продление</span><span class="rmock-rval">05.10.2026</span></div>
+          </div>
+          <div class="rmock-note">Бюджет $40 включён в подписку. Kill-switch остановит агентов, если лимит исчерпан — сюрпризов в конце месяца не бывает.</div>
+        </div>
+
+        <div class="rmock-screen" data-screen="projects">
+          <div class="rmock-label">🗂️ Проекты</div>
+          <div class="rmock-tflow">
+            <div class="rmock-tcard"><div class="rmock-th">Входящая задача</div><div class="rmock-tt">«Собрать прайс на неделю»</div></div>
+            <div class="rmock-tarr">→</div>
+            <div class="rmock-tcard dir"><div class="rmock-th">🎯 Директор</div><div class="rmock-tt">Разбивает на подзадачи, назначает роль</div></div>
+            <div class="rmock-tarr">→</div>
+            <div class="rmock-tcard"><div class="rmock-th">⚙️ Разработчик</div><div class="rmock-tt">Статус: <b>в работе</b> → отчёт директору</div></div>
+          </div>
+          <div class="rmock-rows" style="margin-top:.8rem">
+            <div class="rmock-row"><span class="rmock-rname">✅ Готово — директор проверил результат</span><span class="rmock-rval">закрыто</span></div>
+          </div>
+          <div class="rmock-note">Директор не запускает задачи в обход проверки: закрывает только после того, как сверил результат с критерием готовности.</div>
+        </div>
+
       </div>
     </div>
   </div>
