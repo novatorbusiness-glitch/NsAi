@@ -32,8 +32,8 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-icon">📦</div>
           <div class="pc-body">
             <div class="pc-label">Распаковка агентства</div>
-            <div class="pc-title">Цифровой отдел за 1 сессию</div>
-            <div class="pc-sub">60–90 минут · свои AI-агенты, доска задач, руль сразу у вас · 25 000 ₽</div>
+            <div class="pc-title">Цифровой отдел за 4 шага</div>
+            <div class="pc-sub">Распаковка в боте · свои AI-агенты, доска задач, руль сразу у вас · 25 000 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -217,10 +217,10 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
         <div class="prod-top">
           <div class="prod-icon">📦</div>
           <div class="prod-type">Распаковка агентства · B2B</div>
-          <div class="prod-title">Агентство в коробке за одну сессию</div>
-          <p class="prod-desc">Разворачиваю рабочих AI-агентов в панели: под ваши задачи, с доской задач и контролем расходов на AI. Сессия 60–90 минут — руль сразу у вас, зависимости нет.</p>
+          <div class="prod-title">Агентство в коробке за 4 шага</div>
+          <p class="prod-desc">Разворачиваю рабочих AI-агентов в панели: под ваши задачи, с доской задач и контролем расходов на AI. Распаковка в боте — руль сразу у вас, зависимости нет.</p>
           <div class="prod-points">
-            <div class="prod-point"><div class="pp-dot"></div><span>Агенты готовы с первой сессии</span></div>
+            <div class="prod-point"><div class="pp-dot"></div><span>Агенты готовы с первого шага</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>1–5 AI-агентов под ваши задачи</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Контроль расходов на AI в панели 24/7</span></div>
             <div class="prod-point"><div class="pp-dot"></div><span>Руль сразу у вас — ведёте сами</span></div>
