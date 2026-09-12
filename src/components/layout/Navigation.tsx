@@ -147,8 +147,8 @@ export default function Navigation() {
             ))}
           </nav>
           <div className="mnav-foot">
-            <a href="mailto:ilya.novitskii@yandex.ru" className="mnav-cta">
-              Написать напрямую
+            <a href="/raspakovka#offer" className="mnav-cta" onClick={() => setMenuOpen(false)}>
+              {t("nav.cta")}
             </a>
             <div className="mnav-soc">
               <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">
