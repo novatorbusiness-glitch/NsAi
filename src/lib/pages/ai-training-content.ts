@@ -58,9 +58,9 @@ nav.sc{background:rgba(8,8,8,.97)}
   text-transform:uppercase;color:var(--t2);padding:.35rem .85rem;border:1px solid var(--br2);border-radius:999px;
   margin-bottom:2rem;animation:fup .8s var(--ease) both}
 .bdot{width:5px;height:5px;background:var(--tr);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
-.hero-h1{font-family:var(--fd);font-size:clamp(1.85rem,4.6vw,3.4rem);font-weight:800;line-height:.98;
+.hero-h1{font-family:var(--fd);font-size:clamp(1.8rem,3.6vw,3rem);font-weight:800;line-height:.98;
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both;word-break:normal;overflow-wrap:normal}
-@media(min-width:901px) and (max-width:1500px){.hero-h1{font-size:clamp(1.85rem,4vw,2.7rem)}}
+@media(min-width:901px) and (max-width:1500px){.hero-h1{font-size:clamp(1.8rem,3.2vw,2.75rem)}}
 .hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-h1 .acc{display:block;color:var(--tr);-webkit-text-fill-color:var(--tr)}
 .hero-sub{font-size:1.15rem;line-height:1.75;color:#c2bdb5;max-width:520px;margin-bottom:2.5rem;animation:fup 1s .22s var(--ease) both}
@@ -108,7 +108,7 @@ section{padding:6rem 0}
 .sec-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;
   letter-spacing:.2em;text-transform:uppercase;color:var(--tr);opacity:.9;margin-bottom:1rem}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--tr);opacity:.5}
-.sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.04em;
+.sec-h2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
 .sl{font-size:1.06rem;color:var(--t2);max-width:540px;margin-bottom:3rem;line-height:1.75}
 .rv{opacity:1;transform:none}
@@ -211,7 +211,7 @@ section{padding:6rem 0}
 #final::before{content:'';position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 80% 55% at 50% 108%,rgba(78,205,196,.07),transparent)}
 .final-in{max-width:760px;margin:0 auto;text-align:center;position:relative;z-index:2}
-.final-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.045em;line-height:1.05;margin-bottom:1.25rem}
+.final-h2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.045em;line-height:1.05;margin-bottom:1.25rem}
 .final-h2 em{font-style:normal;color:var(--tr)}
 .final-sub{font-size:1.06rem;color:var(--t2);margin-bottom:2.5rem;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.75}
 .final-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -339,8 +339,8 @@ export const body = `<div id="cd"></div><div id="cr"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-badge"><span class="bdot"></span>Обучение AI · 1 на 1 · 1 месяц</div>
-      <h1 class="hero-h1">Ты не можешь собрать свой продукт с помощью AI, потому что тебя учили <em>смотреть,</em> а не <em>делать.</em><span class="acc">Новый способ: твой проект. Месяц. 1 на 1.</span></h1>
-      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> — сайт, книгу или автоматизацию — и собираем его на 2 живых сессиях. Плюс разворачиваю тебе рабочее AI-агентство (распаковка NCAi), на месяц остаюсь на связи и дарю книгу из 111 промптов NCAi.</p>
+      <h1 class="hero-h1">Тебя учили <em>смотреть</em>.<span class="acc">Здесь ты делаешь.</span></h1>
+      <p class="hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> и собираем его на 2 живых сессиях. Плюс разворачиваю рабочее AI-агентство, месяц остаюсь на связи, книга из 111 промптов — в подарок.</p>
       <div class="hero-acts">
         <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#idea" class="bs">Почему это работает</a>
@@ -383,7 +383,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <section id="idea" class="alt">
   <div class="wrap">
     <span class="sec-tag rv">Большая идея</span>
-    <h2 class="sec-h2 rv d1">Почему у тебя до сих пор нет своего продукта</h2>
+    <h2 class="sec-h2 rv d1">Почему у тебя нет своего продукта</h2>
     <p class="sl rv d2">Дело не в лени и не в отсутствии времени. Дело в том, как тебя учили. Ты владелец бизнеса или эксперт: идеи есть, задачи ясны — а продукт так и не собрался.</p>
     <div class="pr-grid">
       <div class="pr rv d1">
@@ -451,7 +451,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <section id="mechanism" class="alt">
   <div class="wrap">
     <span class="sec-tag rv">Уникальный механизм</span>
-    <h2 class="sec-h2 rv d1">Learning by building — единственный способ, который оставляет навык</h2>
+    <h2 class="sec-h2 rv d1">Learning by building: навык остаётся</h2>
     <p class="sl rv d2">Не «смотри запись». Мы собираем твой проект вместе, в моменте. Ты не слушаешь — ты строишь.</p>
     <div class="steps">
       <div class="step rv d1">
@@ -603,7 +603,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
 <section id="cases" class="alt">
   <div class="wrap">
     <span class="sec-tag rv">Как это работает</span>
-    <h2 class="sec-h2 rv d1">Три истории, которые случаются с каждым учеником</h2>
+    <h2 class="sec-h2 rv d1">Три истории, которые повторяются</h2>
     <p class="sl rv d2">Один месяц, один проект, один навык. Вот что чаще всего собирают ученики.</p>
     <div class="build-grid">
       <div class="build-card rv d1">

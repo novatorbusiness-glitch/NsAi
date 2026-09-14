@@ -40,7 +40,7 @@ export default function AboutProject() {
 					<span className="bdot" />
 					{ru ? "О проекте" : "About the project"}
 				</p>
-				<h1 className="page-h1">{ru ? "Проект NCAi" : "The NCAi project"}</h1>
+				<h1 className="page-h1">{ru ? "NCAi: система вместо стратегии" : "NCAi: a system, not a strategy"}</h1>
 				<p className="page-sub">
 					{ru
 						? "NCAi — это Илья Новицкий: предприниматель, который проектирует воронки и сам пишет код, который их обслуживает. Проект объединяет три продукта: распаковку AI-агентства, обучение AI 1 на 1 и книгу по нейромаркетингу."

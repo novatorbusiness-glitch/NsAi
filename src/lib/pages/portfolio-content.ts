@@ -55,7 +55,7 @@ nav.sc{background:rgba(8,8,8,.97)}
   text-transform:uppercase;color:var(--t2);padding:.35rem .85rem;border:1px solid var(--br2);border-radius:999px;
   margin-bottom:2rem;animation:fup .8s var(--ease) both}
 .bdot{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
-.hero-name{font-family:var(--fd);font-size:clamp(2.4rem,5.5vw,5.25rem);font-weight:800;line-height:1.05;
+.hero-name{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,4.5rem);font-weight:800;line-height:1.05;
   letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both;word-break:normal;overflow-wrap:normal}
 .hero-name .acc{display:block;color:var(--a);-webkit-text-fill-color:var(--a)}
 .hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#c2bdb5;max-width:620px;line-height:1.75;
@@ -96,7 +96,7 @@ section{padding:6rem 0}
 .sec-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fm);font-size:.6rem;
   letter-spacing:.2em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:1rem}
 .sec-tag::before{content:'';width:14px;height:1px;background:var(--a);opacity:.5}
-.sec-h2{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.04em;
+.sec-h2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.04em;
   line-height:1.05;margin-bottom:.75rem}
 .sec-lead{font-size:1.05rem;color:var(--t2);max-width:620px;line-height:1.75;margin-bottom:2.5rem}
 .rv{opacity:1;transform:none}
@@ -144,7 +144,7 @@ section{padding:6rem 0}
 .mch{font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--t3);padding:.3rem .7rem;border:1px solid var(--br);border-radius:999px}
 
 /* CONTACT */
-.ch2{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1rem}
+.ch2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1rem}
 .csub{font-size:1rem;color:var(--t2);max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
 .cacts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
@@ -223,7 +223,7 @@ export const body = `
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="hero-name">Большинство тех-партнёров продают часы.<br><span class="acc">Я довожу продукт до релиза.</span></h1>
+    <h1 class="hero-name">Большинство тех-партнёров продают часы.<br><span class="acc">Я довожу до релиза.</span></h1>
     <p class="hero-sub">Не агентство и не фриланс. Вхожу в проект руками: проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ за задачу — или доля/опцион, если строим вместе.</p>
     <div class="hero-acts">
       <a href="https://t.me/Ilya_novator" class="btn btn-p">Обсудить проект →</a>

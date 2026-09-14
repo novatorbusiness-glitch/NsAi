@@ -25,7 +25,7 @@ export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string }[] = [
 export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "doverie-za-7-kasanij",
-		title: "Как построить доверие за 7 касаний: цепочка, которая продаёт без уговоров",
+		title: "Доверие за 7 касаний: цепочка без уговоров",
 		date: "2026-08-27",
 		dateLabel: "27 августа 2026",
 		excerpt:
