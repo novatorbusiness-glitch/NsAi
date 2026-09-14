@@ -108,7 +108,7 @@ export default function Navigation() {
           </ul>
           <div className="nl-right">
             <LangSwitch />
-            <a href="/raspakovka#offer" className="nc">
+            <a href="https://t.me/NCAi_Agency_bot" target="_blank" rel="noopener noreferrer" className="nc">
               {t("nav.cta")}
             </a>
             <button
