@@ -5,7 +5,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
-    <h1 class="hh1">Вся работа — <em>в голове</em>.<span class="acc">Забираем в агентство.</span></h1>
+    <h1 class="hh1">Работа в вашей голове.<span class="acc">Забираем в агентство.</span></h1>
     <p class="hsub">Не «доступ к нейросети», а готовая система: методология внедрения, роли и регламенты команды, доска задач и контроль расходов. AI внутри — исполнитель по регламенту. Руль сразу у вас — без найма команды и без зависимости от подрядчика.</p>
     <div class="hacts">
       <a href="https://t.me/FunnelsBot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
