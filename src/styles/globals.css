@@ -61,7 +61,7 @@ body {
 }
 .docs-h1 {
 	font-family: var(--fd);
-	font-size: 34px;
+	font-size: 29px;
 	font-weight: 800;
 	line-height: 1.15;
 	margin: 8px 0 24px;
@@ -69,7 +69,7 @@ body {
 }
 .docs-h2 {
 	font-family: var(--fd);
-	font-size: 24px;
+	font-size: 21px;
 	font-weight: 700;
 	margin: 40px 0 14px;
 	padding-top: 18px;
@@ -77,7 +77,7 @@ body {
 }
 .docs-h3 {
 	font-family: var(--fd);
-	font-size: 18px;
+	font-size: 17px;
 	font-weight: 600;
 	margin: 24px 0 10px;
 }

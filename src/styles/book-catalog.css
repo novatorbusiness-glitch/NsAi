@@ -59,7 +59,7 @@
 .bkcat-title {
 	margin: 0 0 1rem;
 	font-family: var(--fd, "Syne", sans-serif);
-	font-size: clamp(2.6rem, 6.4vw, 5.2rem);
+	font-size: clamp(2.4rem, 5.2vw, 4.2rem);
 	font-weight: 800;
 	line-height: 0.95;
 	letter-spacing: -0.045em;

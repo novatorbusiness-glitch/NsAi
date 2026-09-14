@@ -11,7 +11,7 @@ export const HERO_HTML = `<!-- HERO -->
       <div class="hero-badge"><span class="bdot"></span>Архитектор систем · NCAi</div>
       <h1 class="hero-name"><em>Илья</em><span class="acc">Новицкий</span></h1>
       <div class="hero-role">Бизнесу — рабочее AI-агентство. Стартапам — технический партнёр</div>
-      <p class="hero-quote">«Соединяю продуктовое мышление предпринимателя с руками разработчика — на выходе рабочий продукт, а не обещание на бумаге»</p>
+      <p class="hero-quote">«Продуктовое мышление предпринимателя + руки разработчика. На выходе — рабочий продукт, а не обещание»</p>
       <div class="hero-meta">
         <div class="hm">Локация<span>Москва / удалённо</span></div>
         <div class="hm">Для бизнеса<span>Внедрение NCAi · обучение AI</span></div>
@@ -115,7 +115,7 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 <section id="journey" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Мой путь</span>
-    <h2 class="sec-h2 rv d1">С 2016 года — шаг за шагом</h2>
+    <h2 class="sec-h2 rv d1">С 2016 года: от продаж до AI-систем</h2>
     <p class="p journey-lead rv d1">Компетентность не появилась однажды. Она собиралась годами: от первых продаж до архитектуры AI-систем.</p>
 
     <div class="jrn">
@@ -171,7 +171,7 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
 <section id="mechanism" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">То, что я в итоге построил</span>
-    <h2 class="sec-h2 rv d1" style="text-align:center">Задача попадает в панель —<br>результат выходит из неё</h2>
+    <h2 class="sec-h2 rv d1" style="text-align:center">Пишете задачу —<br>получаете результат</h2>
     <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели — не в переписке.</p>
 
     <div class="panelmock rv d2">
@@ -432,7 +432,7 @@ export const PRINCIPLES_HTML = `<!-- PRINCIPLES: как я думаю (ТЗ п.3
 <section id="principles" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Как я думаю</span>
-    <h2 class="sec-h2 rv d1">Несколько принципов, на которых всё держится</h2>
+    <h2 class="sec-h2 rv d1">Семь принципов, на которых всё держится</h2>
     <div class="princ-grid">
       <div class="princ rv"><div class="princ-n">01</div><div class="princ-t">Интерес — тоже метрика</div></div>
       <div class="princ rv d1"><div class="princ-n">02</div><div class="princ-t">Ошибка — это данные</div></div>
@@ -484,7 +484,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
 <section id="closing">
   <div class="wrap">
     <span class="sec-tag rv" style="justify-content:center">Готов начать</span>
-    <h2 class="closing-h2 rv d1">Дальше не разговор «про AI вообще» —<br>дальше конкретный первый шаг</h2>
+    <h2 class="closing-h2 rv d1">Не разговор «про AI вообще» —<br>конкретный первый шаг</h2>
     <p class="closing-lead rv d1">Два способа начать — от бесплатного до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
 
     <div class="closing-paths rv d2">
