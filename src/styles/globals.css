@@ -10,6 +10,21 @@ body {
 	width: 100%;
 	height: 100%;
 	scroll-behavior: smooth;
+	color-scheme: dark;
+	cursor: url("/cursors/cursor-light.svg") 4 2, auto;
+}
+
+/* Курсор адаптируется под фон секции — кастомный SVG (браузер не даёт
+   перекрашивать системную стрелку через CSS, поэтому свой курсор):
+   тёмный фон #080808 (по умолчанию) → светлая стрелка cursor-light.svg,
+   светлые секции .sec-light (#FAFAF8) → тёмная стрелка cursor-dark.svg.
+   color-scheme дополнительно подстраивает скроллбар/формы. (Илья 14.09) */
+.sec-light {
+	color-scheme: light;
+	cursor: url("/cursors/cursor-dark.svg") 4 2, auto;
+}
+.sec-light * {
+	cursor: url("/cursors/cursor-dark.svg") 4 2, auto;
 }
 
 * {
