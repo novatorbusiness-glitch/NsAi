@@ -102,6 +102,9 @@ export default function Navigation() {
             <li>
               <a href="/portfolio" className={isActive("/portfolio") ? "act" : ""}>{t("nav.portfolio")}</a>
             </li>
+            <li>
+              <a href="/partners" className={isActive("/partners") ? "act" : ""}>{t("nav.partners")}</a>
+            </li>
           </ul>
           <div className="nl-right">
             <LangSwitch />

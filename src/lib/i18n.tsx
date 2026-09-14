@@ -24,6 +24,7 @@ export const dict = {
   "nav.blog": { ru: "Блог", en: "Blog" },
   "nav.about": { ru: "О проекте", en: "About" },
   "nav.portfolio": { ru: "Портфолио", en: "Portfolio" },
+  "nav.partners": { ru: "Партнёры", en: "Partners" },
   "nav.cta": { ru: "Обсудить проект", en: "Discuss a project" },
 
   // ── Подвал ──
