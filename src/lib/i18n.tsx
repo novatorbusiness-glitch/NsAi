@@ -25,6 +25,7 @@ export const dict = {
   "nav.about": { ru: "О проекте", en: "About" },
   "nav.portfolio": { ru: "Портфолио", en: "Portfolio" },
   "nav.partners": { ru: "Партнёры", en: "Partners" },
+  "nav.b24u": { ru: "B24U чат-бот", en: "B24U chatbot" },
   "nav.cta": { ru: "Обсудить проект", en: "Discuss a project" },
 
   // ── Подвал ──
