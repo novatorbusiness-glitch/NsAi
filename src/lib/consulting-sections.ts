@@ -13,7 +13,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
     </div>
     <div class="hstats">
       <div class="hstat"><div class="hstatn">4<span class="sfx">шага</span></div><div class="hstatl">Распаковка — агентство готово</div></div>
-      <div class="hstat"><div class="hstatn">25 000<span class="sfx">₽</span></div><div class="hstatl">Разово за распаковку, дальше — подписка</div></div>
+      <div class="hstat"><div class="hstatn">19 900<span class="sfx">₽</span></div><div class="hstatl">Разово за распаковку, дальше — подписка</div></div>
       <div class="hstat"><div class="hstatn">1<span class="sfx">–5</span></div><div class="hstatl">AI-агентов под ваши задачи</div></div>
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Прозрачность: всё в панели у вас</div></div>
     </div>
@@ -207,7 +207,7 @@ export const BOX_HTML = `<!-- 2 · СУТЬ ИДЕИ -->
           </div>
           <div class="urow">
             <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>Агентство на аутсорсе — чек каждый месяц</div>
-            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>25 000 ₽ разово (первый месяц подписки включён), дальше 4 900 ₽/мес</div>
+            <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>19 900 ₽ разово (первый месяц подписки включён), дальше 4 900 ₽/мес</div>
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
     <div class="roi-head">
       <div>
         <span class="lb rv">Почему это окупается</span>
-        <h2 class="sh2 rv d1">25 000 ₽ — не трата.<br>Это экономия миллионов.</h2>
+        <h2 class="sh2 rv d1">19 900 ₽ — не трата.<br>Это экономия миллионов.</h2>
       </div>
       <p class="roi-tx rv d2">Вы платите не за «ботов в Telegram» и не за красивые консультации. Вы платите за то, чтобы <strong>ближайшие полгода не отдавать миллионы за зарплаты</strong> — и запускать свои продукты за <strong>дни, а не за месяцы</strong>. Это не расход. Это ROI.</p>
     </div>
@@ -242,8 +242,8 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       </div>
       <div class="roi-mid">VS</div>
       <div class="roi-col good rv d1">
-        <div class="roi-col-head"><span class="tag">NCAi-агентство</span><span class="price"><b>25 000 ₽</b> разово</span></div>
-        <div class="roi-li"><span class="y">✓</span><span>Разовая распаковка — <b>25 000 ₽</b> (первый месяц подписки включён), дальше 4 900 ₽/мес</span></div>
+        <div class="roi-col-head"><span class="tag">NCAi-агентство</span><span class="price"><b>19 900 ₽</b> разово</span></div>
+        <div class="roi-li"><span class="y">✓</span><span>Разовая распаковка — <b>19 900 ₽</b> (первый месяц подписки включён), дальше 4 900 ₽/мес</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Работает <b>24/7</b> без больничных и «не в настроении»</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Задача утром — <b>результат днём</b>. Запуск за дни, а не за месяцы</span></div>
         <div class="roi-li"><span class="y">✓</span><span>Руль сразу у вас: система остаётся с вами</span></div>
@@ -430,8 +430,8 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
   <div class="w">
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Оффер · распаковка</span>
-      <h2 class="ofh2 rv d1">Что вы получаете<br>за 25 000 ₽</h2>
-      <p class="ofsub rv d2">Разовый чек за распаковку — <b>25 000 ₽</b> (первый месяц подписки включён), дальше — 4 900 ₽/мес. Прозрачно, без скрытых платежей.</p>
+      <h2 class="ofh2 rv d1">Что вы получаете<br>за 19 900 ₽</h2>
+      <p class="ofsub rv d2">Разовый чек за распаковку — <b>19 900 ₽</b> (первый месяц подписки включён), дальше — 4 900 ₽/мес. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в распаковку</p>
         <div class="ofgrid">
@@ -449,7 +449,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="m4"><div class="m4-l">Ваши усилия</div><div class="m4-v">Распаковка в боте — дальше система разворачивает всё сама</div></div>
         </div>
         <div class="ofmeta">
-          <div><div class="ofml">Распаковка</div><div class="ofmv">25 000 ₽</div></div>
+          <div><div class="ofml">Распаковка</div><div class="ofmv">19 900 ₽</div></div>
           <div><div class="ofml">Формат</div><div class="ofmv">4 шага, от бота до работы</div></div>
           <div><div class="ofml">Подписка</div><div class="ofmv">4 900 ₽/мес</div></div>
         </div>
