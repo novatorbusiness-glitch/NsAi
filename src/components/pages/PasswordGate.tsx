@@ -20,11 +20,14 @@ const AgencyContent = dynamic(() => import("@/components/pages/AgencyInABoxConte
 const TeamBookContent = dynamic(() => import("@/components/pages/TeamBook"), {
 	ssr: false,
 });
+const DbOverviewContent = dynamic(() => import("@/components/pages/DbOverview"), {
+	ssr: false,
+});
 
 const PASSWORD = process.env.NEXT_PUBLIC_PROTECTED_PAGE_PASSWORD || "1111";
 const STORAGE_KEY = "ncai_page_unlocked";
 
-export default function PasswordGate({ kind }: { kind: "agency" | "team" }) {
+export default function PasswordGate({ kind }: { kind: "agency" | "team" | "db" }) {
 	const [unlocked, setUnlocked] = useState(false);
 	const [value, setValue] = useState("");
 	const [error, setError] = useState(false);
@@ -38,6 +41,7 @@ export default function PasswordGate({ kind }: { kind: "agency" | "team" }) {
 	}, []);
 
 	if (unlocked) {
+		if (kind === "db") return <DbOverviewContent />;
 		return kind === "agency" ? <AgencyContent /> : <TeamBookContent />;
 	}
 
