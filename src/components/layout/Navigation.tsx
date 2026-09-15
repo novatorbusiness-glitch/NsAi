@@ -17,6 +17,7 @@ const MENU_ITEMS: { href: string; label: string }[] = [
   { href: "/o-proekte", label: "О проекте" },
   { href: "/portfolio", label: "Портфолио" },
   { href: "/partners", label: "Партнёры" },
+  { href: "/b24u", label: "B24U — чат-бот для сайта" },
 ];
 
 export default function Navigation() {
@@ -104,6 +105,9 @@ export default function Navigation() {
             </li>
             <li>
               <a href="/partners" className={isActive("/partners") ? "act" : ""}>{t("nav.partners")}</a>
+            </li>
+            <li>
+              <a href="/b24u" className={isActive("/b24u") ? "act" : ""}>{t("nav.b24u")}</a>
             </li>
           </ul>
           <div className="nl-right">
