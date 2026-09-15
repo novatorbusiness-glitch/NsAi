@@ -464,7 +464,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">03</div>
-        <div><div class="step-tit">Распаковка агентства NCAi</div><div class="step-tx">Отдельно разворачиваю тебе рабочее AI-агентство: команда цифровых сотрудников, доска задач, контроль расходов на AI — та же распаковка, что продаю отдельным продуктом за 25 000 ₽, входит в месяц.</div></div>
+        <div><div class="step-tit">Распаковка агентства NCAi</div><div class="step-tx">Отдельно разворачиваю тебе рабочее AI-агентство: команда цифровых сотрудников, доска задач, контроль расходов на AI — та же распаковка, что продаю отдельным продуктом за 19 900 ₽, входит в месяц.</div></div>
       </div>
       <div class="step rv d3">
         <div class="step-num">04</div>
@@ -563,7 +563,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       </div>
       <div class="inc-grid">
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">2 индивидуальные сессии 1 на 1 — live-кодинг на твоём проекте</span></div>
-        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Распаковка агентства NCAi входит в месяц (отдельно стоит 25 000 ₽)</span></div>
+        <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Распаковка агентства NCAi входит в месяц (отдельно стоит 19 900 ₽)</span></div>
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Месяц на связи в Telegram после сессий</span></div>
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Книга из 111 промптов NCAi в подарок</span></div>
         <div class="inc"><span class="inc-ck">✓</span><span class="inc-tx">Твой реальный проект как основа, не учебный пример</span></div>
@@ -657,7 +657,7 @@ export const body = `<div id="cd"></div><div id="cr"></div>
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/raspakovka">Распаковка агентства · 25 000 ₽</a></li>
+          <li><a href="/raspakovka">Распаковка агентства · 19 900 ₽</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>

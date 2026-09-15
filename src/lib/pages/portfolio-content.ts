@@ -417,7 +417,7 @@ export const body = `
       <div>
         <div class="f-col-title">Продукты</div>
         <ul class="f-links">
-          <li><a href="/raspakovka">Распаковка агентства · 25 000 ₽</a></li>
+          <li><a href="/raspakovka">Распаковка агентства · 19 900 ₽</a></li>
           <li><a href="/ai-training">Обучение AI</a></li>
           <li><a href="/book">Книга</a></li>
           <li><a href="/portfolio">Портфолио</a></li>

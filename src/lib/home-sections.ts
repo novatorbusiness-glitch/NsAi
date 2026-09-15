@@ -33,7 +33,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Распаковка агентства</div>
             <div class="pc-title">Цифровой отдел за 4 шага</div>
-            <div class="pc-sub">Распаковка в боте · свои AI-агенты, доска задач, руль сразу у вас · 25 000 ₽</div>
+            <div class="pc-sub">Распаковка в боте · свои AI-агенты, доска задач, руль сразу у вас · 19 900 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -227,7 +227,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>Разово</span>25 000 ₽</div>
+          <div class="prod-price"><span>Разово</span>19 900 ₽</div>
           <div class="prod-link">Подробнее →</div>
         </div>
       </a>
@@ -496,7 +496,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
       <a href="/raspakovka" class="closing-path cp-main">
         <div class="cp-n">1</div>
         <div class="cp-t">Распаковка агентства</div>
-        <div class="cp-s">Распаковка в боте · 25 000 ₽ — руль сразу у вас</div>
+        <div class="cp-s">Распаковка в боте · 19 900 ₽ — руль сразу у вас</div>
       </a>
     </div>
 
