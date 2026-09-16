@@ -133,6 +133,20 @@ def main() -> None:
         biz("social-proof-ilya", "Соцдоказательство и история Ильи"),
     ]
 
+    # Спецификация системы (knowledge_sources id='spec-system-architecture')
+    snapshot["spec"] = {
+        "id": "spec-system-architecture",
+        "title": "Спецификация системы NCAi",
+        "content": q_text("SELECT content FROM knowledge_sources WHERE id = 'spec-system-architecture'"),
+    }
+
+    # Каталог механизмов (knowledge_sources id='spec-mechanisms-catalog')
+    snapshot["mechanisms"] = {
+        "id": "spec-mechanisms-catalog",
+        "title": "Каталог механизмов NCAi",
+        "content": q_text("SELECT content FROM knowledge_sources WHERE id = 'spec-mechanisms-catalog'"),
+    }
+
     # ── Прогоны (agent_runs) ──
     snapshot["runs"] = {
         "by_status": q_json(

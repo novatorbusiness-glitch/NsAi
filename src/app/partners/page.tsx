@@ -14,16 +14,18 @@ interface Partner {
 	badge: string;
 	logo: string;
 	desc: string;
+	internal?: boolean;
 }
 
 const PARTNERS: Partner[] = [
 	{
 		name: "b24u.com",
-		url: "https://b24u.com",
+		url: "/b24u",
 		badge: "Официальный партнёр",
 		logo: "b24",
 		desc:
 			"b24u.com — чат-бот с ИИ для сайта с конверсией более 60%. Отвечает клиентам круглосуточно и помогает вернуть лиды, которые вы теряете, пока никого нет онлайн.",
+		internal: true,
 	},
 	{
 		name: "AmoCRM",
@@ -69,7 +71,13 @@ export default function PartnersPage() {
 			<div className="w">
 				<div className="partners-grid">
 					{PARTNERS.map((p) => (
-						<a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer" className="partner-card">
+						<a
+							key={p.name}
+							href={p.url}
+							target={p.internal ? undefined : "_blank"}
+							rel={p.internal ? undefined : "noopener noreferrer"}
+							className="partner-card"
+						>
 							<div className="partner-card-top">
 								<div className="partner-logo">{p.logo}</div>
 								<div>
@@ -78,7 +86,7 @@ export default function PartnersPage() {
 								</div>
 							</div>
 							<p className="partner-desc">{p.desc}</p>
-							<span className="partner-go">{p.url.replace("https://", "")} →</span>
+							<span className="partner-go">{p.internal ? "Страница партнёра" : p.url.replace("https://", "")} →</span>
 						</a>
 					))}
 				</div>

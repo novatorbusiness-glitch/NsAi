@@ -79,6 +79,8 @@ interface DbSnapshot {
   goals: { id: string; title: string; content: string };
   lessons: LessonRow[];
   business: BizBlock[];
+  spec: { id: string; title: string; content: string };
+  mechanisms: { id: string; title: string; content: string };
   runs: {
     by_status: CountRow[];
     by_agent: CountRow[];
@@ -317,6 +319,107 @@ function renderMd(src: string): React.ReactNode {
   return out;
 }
 
+/* ── Спецификация системы: разбор markdown на секции + статус ок/не ок ── */
+
+interface SpecSection {
+  heading: string;
+  body: string;
+  tone: "ok" | "bad" | "neutral";
+}
+
+function classifySpecTone(heading: string): "ok" | "bad" | "neutral" {
+  if (/проблем|не ок|чинится|сломан|баг/i.test(heading)) return "bad";
+  if (/roadmap|что такое|введение/i.test(heading)) return "neutral";
+  return "ok";
+}
+
+function parseSpec(content: string): SpecSection[] {
+  const sections: SpecSection[] = [];
+  let cur: SpecSection | null = null;
+  for (const raw of content.split("\n")) {
+    const m = raw.match(/^##\s+(.+)$/);
+    if (m) {
+      cur = { heading: m[1].trim(), body: "", tone: classifySpecTone(m[1].trim()) };
+      sections.push(cur);
+    } else if (cur) {
+      cur.body += raw.trimEnd() + "\n";
+    }
+    // строки до первого «##» (H1-заголовок документа) игнорируем
+  }
+  return sections;
+}
+
+function specProblems(sections: SpecSection[]): string[] {
+  const out: string[] = [];
+  for (const s of sections) {
+    if (s.tone !== "bad") continue;
+    for (const line of s.body.split("\n")) {
+      const t = line.trim();
+      if (/^[-*]\s+/.test(t)) out.push(t.replace(/^[-*]\s+/, ""));
+    }
+  }
+  return out;
+}
+
+const specSections = parseSpec(data.spec.content);
+const specOkTitles = specSections
+  .filter((s) => s.tone === "ok")
+  .map((s) => s.heading.replace(/^\d+\.\s*/, ""));
+const specBadItems = specProblems(specSections);
+
+/* ── Каталог механизмов: разбор markdown на группы + карточки (название/как/за что) ── */
+
+interface MechItem {
+  name: string;
+  how: string;
+  what_for: string;
+}
+
+interface MechGroup {
+  group: string;
+  items: MechItem[];
+}
+
+function stripDot(s: string): string {
+  return s.replace(/[.\s]+$/, "");
+}
+
+function parseMechanisms(content: string): MechGroup[] {
+  const groups: MechGroup[] = [];
+  let cur: MechGroup | null = null;
+  for (const raw of content.split("\n")) {
+    const t = raw.trim();
+    if (!t) continue;
+    if (t.startsWith("# ")) continue; // H1-заголовок документа
+    const h = t.match(/^##\s+(.+)$/);
+    if (h) {
+      cur = { group: h[1].trim(), items: [] };
+      groups.push(cur);
+      continue;
+    }
+    if (cur && /^[-*]\s+\*\*/.test(t)) {
+      const line = t.replace(/^[-*]\s+/, "");
+      const m = line.match(/^\*\*(.+?)\*\*\s*[—–-]\s*(.*)$/);
+      if (!m) continue;
+      const name = m[1].trim();
+      let how = m[2].trim();
+      let what_for = "";
+      const z = how.split("За что:");
+      if (z.length > 1) {
+        how = stripDot(z[0].trim());
+        what_for = stripDot(z[1].trim());
+      } else {
+        how = stripDot(how);
+      }
+      cur.items.push({ name, how, what_for });
+    }
+  }
+  return groups.filter((g) => g.items.length > 0);
+}
+
+const mechGroups = parseMechanisms(data.mechanisms.content);
+const mechCount = mechGroups.reduce((n, g) => n + g.items.length, 0);
+
 /* ── Мини-компоненты ── */
 
 function Bar({ label, value, max }: { label: string; value: number; max: number }) {
@@ -409,6 +512,83 @@ export default function DbOverview() {
           <StatCard num={String(s.runs_total)} label="Прогонов агентов" />
           <StatCard num={`$${s.runs_cost_usd}`} label="Расход на модели" />
         </div>
+
+        {/* ── Спецификация системы ── */}
+        <Section id="spec" title="Спецификация системы" note="срез состояния · что ок / что не ок">
+          {specSections.length === 0 ? (
+            <div className="db-card">
+              <p className="db-md-p">Спецификация системы не найдена в БД (knowledge_sources id=spec-system-architecture).</p>
+            </div>
+          ) : (
+            <>
+              <div className="db-spec-summary">
+                <div className="db-card db-spec-summary-ok">
+                  <h3 className="db-h3">Что ок · работает</h3>
+                  <ul className="db-spec-list">
+                    {specOkTitles.map((t) => (
+                      <li key={t} className="db-spec-item-ok">
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="db-card db-spec-summary-bad">
+                  <h3 className="db-h3">Что не ок · чинится</h3>
+                  <ul className="db-spec-list">
+                    {specBadItems.map((p) => (
+                      <li key={p} className="db-spec-item-bad">
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {specSections.map((sec) => (
+                <div key={sec.heading} className={`db-card db-spec-section db-spec-${sec.tone}`}>
+                  <div className="db-spec-head">
+                    <h3 className="db-spec-h3">{sec.heading}</h3>
+                    {sec.tone === "ok" && <ToneBadge tone="ok">ок</ToneBadge>}
+                    {sec.tone === "bad" && <ToneBadge tone="bad">не ок</ToneBadge>}
+                    {sec.tone === "neutral" && <ToneBadge tone="mut">справка</ToneBadge>}
+                  </div>
+                  <div className="db-md">{renderMd(sec.body)}</div>
+                </div>
+              ))}
+            </>
+          )}
+        </Section>
+
+        {/* ── Механизмы системы ── */}
+        <Section id="mechanisms" title="Механизмы системы" note={`${mechCount} механизмов · ${mechGroups.length} групп`}>
+          {mechGroups.length === 0 ? (
+            <div className="db-card">
+              <p className="db-md-p">Каталог механизмов не найден в БД (knowledge_sources id=spec-mechanisms-catalog).</p>
+            </div>
+          ) : (
+            <div className="db-mech">
+              {mechGroups.map((g) => (
+                <div key={g.group} className="db-mech-group">
+                  <h3 className="db-mech-group-h">{g.group}</h3>
+                  <div className="db-mech-grid">
+                    {g.items.map((m) => (
+                      <div key={m.name} className="db-mech-card">
+                        <div className="db-mech-name">{m.name}</div>
+                        <div className="db-mech-how">{m.how}</div>
+                        {m.what_for && (
+                          <div className="db-mech-for">
+                            <span className="db-mech-for-label">за что</span>
+                            <span className="db-mech-for-text">{m.what_for}</span>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </Section>
 
         {/* ── Задачи ── */}
         <Section id="tasks" title="Задачи" note={`всего ${s.tasks_total} · готово ${s.tasks_done} (${Math.round((s.tasks_done / s.tasks_total) * 100)}%)`}>

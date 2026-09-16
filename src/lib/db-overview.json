@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-09-15T16:07:39.208102+03:00",
+  "generated_at": "2026-09-16T00:21:09.369061+03:00",
   "source": "Postgres ncai-postgres / db=ncai / schema=public (read-only)",
   "tasks": {
     "by_status": [
       {
         "status": "done",
-        "count": 64
+        "count": 76
       },
       {
         "status": "todo",
-        "count": 45
-      },
-      {
-        "status": "review",
-        "count": 7
+        "count": 44
       },
       {
         "status": "in_progress",
-        "count": 7
+        "count": 20
+      },
+      {
+        "status": "review",
+        "count": 16
       },
       {
         "status": "needs_revision",
-        "count": 4
+        "count": 5
       },
       {
         "status": "blocked",
@@ -31,7 +31,7 @@
     "by_project": [
       {
         "project": "Агентство в коробке v2 — коробочный продукт (аренда по подписке)",
-        "count": 126
+        "count": 160
       },
       {
         "project": "Заказы",
@@ -39,175 +39,187 @@
       },
       {
         "project": "Входящие",
-        "count": 1
+        "count": 2
       }
     ],
     "by_priority": [
       {
         "priority": "normal",
-        "count": 127
+        "count": 142
       },
       {
         "priority": "high",
-        "count": 2
+        "count": 21
       }
     ],
     "by_size": [
       {
         "size": "M",
-        "count": 129
+        "count": 148
+      },
+      {
+        "size": "L",
+        "count": 9
+      },
+      {
+        "size": "S",
+        "count": 5
+      },
+      {
+        "size": "XL",
+        "count": 1
       }
     ],
     "recent": [
       {
-        "id": "fix-long-task-failures",
-        "title": "Починить падения задач на долгих прогонах (marketer 7мин, developer 19мин)",
+        "id": "spec-mechanisms-packaging",
+        "title": "Упаковать каталог механизмов в страницу «Под капотом NCAi»",
         "status": "in_progress",
-        "assigned_to": "developer",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T12:45:58.788495+00:00"
-      },
-      {
-        "id": "site-db-viewer-page",
-        "title": "Закрытая страница-обзор БД на сайте (пароль 1111) — «что под капотом»",
-        "status": "in_progress",
-        "assigned_to": "developer2",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T12:45:58.694904+00:00"
-      },
-      {
-        "id": "petrov-a1-a2-b4",
-        "title": "Внедрить Петров A1+A2+B4: рестейт до старта + план до кода + измеримый done_when",
-        "status": "todo",
-        "assigned_to": "",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T12:37:31.044495+00:00"
-      },
-      {
-        "id": "db-single-source-of-truth",
-        "title": "Аудит: БД = единственная правда (убрать .md/.json как источник, всё в Postgres)",
-        "status": "todo",
-        "assigned_to": "",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T12:30:22.496079+00:00"
-      },
-      {
-        "id": "platform-agency-pulse",
-        "title": "Платформа = пульт агентства: карточки клиентов + MRR + воронка + действия + журнал",
-        "status": "in_progress",
-        "assigned_to": "developer2",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T12:15:04.443278+00:00"
-      },
-      {
-        "id": "methodology-qualification-questions",
-        "title": "Написать 3-5 вопросов квалификации (с кнопками) на каждую методологию",
-        "status": "review",
         "assigned_to": "marketer",
         "priority": "normal",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T12:12:41.453772+00:00"
+        "sort_key": "2026-09-15T21:15:11.81298+00:00"
       },
       {
-        "id": "methodologies-invoke-flow",
-        "title": "Методологии: «Вызвать» → задача в планер → бот 3-5 вопросов → директор переписывает → делегирует",
+        "id": "task-solution-learning",
+        "title": "Механика обучения на задачах: решения/ошибки/правки → в БД",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "high",
+        "size": "L",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T21:13:11.270486+00:00"
+      },
+      {
+        "id": "petrov-report-human-voice",
+        "title": "Разбор Петрова — человеческим языком (не канцелярит)",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "normal",
+        "size": "S",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T21:10:41.569013+00:00"
+      },
+      {
+        "id": "funnel-reset-button",
+        "title": "Кнопка «Сброс воронки» в мини-аппе (Платформа)",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "normal",
+        "size": "S",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T21:07:30.195688+00:00"
+      },
+      {
+        "id": "services-brand-restyle",
+        "title": "Услуги: крупная кнопка + описания в фирменном стиле (voice-ilya)",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "normal",
+        "size": "S",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T21:02:36.311533+00:00"
+      },
+      {
+        "id": "analytics-remove-salary-rating",
+        "title": "Аналитика: убрать виртуальную зарплату и рейтинг-баллы (не функционал)",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "normal",
+        "size": "S",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T20:58:41.793157+00:00"
+      },
+      {
+        "id": "fix-xp-honest-levels",
+        "title": "Честный XP и уровень сотрудников (сейчас 0/100 у всех)",
         "status": "todo",
         "assigned_to": "",
         "priority": "normal",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T12:12:41.347507+00:00"
+        "sort_key": "2026-09-15T20:56:35.626636+00:00"
       },
       {
-        "id": "home-entrepreneur-dashboard",
-        "title": "Главная = пульт предпринимателя: деньги/команда/работа/точность/действия/рост",
-        "status": "review",
-        "assigned_to": "developer2",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T11:45:06.334565+00:00"
-      },
-      {
-        "id": "razbor-language-simple",
-        "title": "Язык разбора Петрова: точечно, концептуально, по-человечески, блок «Точки роста»",
+        "id": "project-create-manage",
+        "title": "Управление проектами: создавать проекты и распределять задачи",
         "status": "todo",
         "assigned_to": "",
         "priority": "normal",
-        "size": "M",
+        "size": "L",
         "revision_count": 0,
-        "sort_key": "2026-09-15T11:36:46.5964+00:00"
+        "sort_key": "2026-09-15T20:51:06.570002+00:00"
       },
       {
-        "id": "razbor-pdf-branded",
-        "title": "PDF-разбор: фирменный стиль (лого+палитра+шрифты) + сегментированная подводка к Распаковке",
-        "status": "review",
-        "assigned_to": "designer",
-        "priority": "normal",
+        "id": "deepseek-balance-snapshot",
+        "title": "Точный расход из DeepSeek API: снапшот баланса + дельта",
+        "status": "in_progress",
+        "assigned_to": "developer",
+        "priority": "high",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T11:35:43.722912+00:00"
+        "sort_key": "2026-09-15T20:46:13.83277+00:00"
       },
       {
-        "id": "funnel-warmup-stops",
-        "title": "Баг: после разбора воронка останавливается на 1-м сообщении прогрева (нет оффера/CTA)",
-        "status": "todo",
-        "assigned_to": "",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T11:31:04.065105+00:00"
-      },
-      {
-        "id": "accuracy-metric-powerful",
-        "title": "Мощная метрика точности: глубина правок + время закрытия + причины + тренд",
-        "status": "todo",
-        "assigned_to": "",
-        "priority": "normal",
-        "size": "M",
-        "revision_count": 0,
-        "sort_key": "2026-09-15T10:08:08.385631+00:00"
-      },
-      {
-        "id": "update-price-19900",
-        "title": "Сменить цену Распаковки 25 000 -> 19 900 ₽ везде (код + БД + сайт)",
+        "id": "home-tab-cleanup",
+        "title": "Чистка Главной: убрать лишнее + точный расход из DeepSeek API",
         "status": "review",
         "assigned_to": "developer",
-        "priority": "normal",
+        "priority": "high",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T09:57:33.80001+00:00"
+        "sort_key": "2026-09-15T20:43:16.386386+00:00"
       },
       {
-        "id": "fix-funnel-stats-404",
-        "title": "Баг: «Аналитика воронки» 404 — двойной «?» в query (app.js)",
-        "status": "done",
-        "assigned_to": "developer",
+        "id": "dashboard-quality-triad",
+        "title": "Два показателя на Главную: Скорость + Надёжность (рядом с точностью)",
+        "status": "todo",
+        "assigned_to": "",
         "priority": "normal",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T02:24:49.085453+00:00"
+        "sort_key": "2026-09-15T20:35:27.996143+00:00"
       },
       {
-        "id": "friendly-status-messages",
-        "title": "Дружелюбные статус-сообщения на русском для клиента (без техжаргона)",
-        "status": "done",
+        "id": "delegation-circuit-breaker",
+        "title": "Деlegation circuit-breaker: не гонять задачу по кругу, откладывать неясные",
+        "status": "review",
         "assigned_to": "developer",
+        "priority": "high",
+        "size": "M",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T20:18:46.794076+00:00"
+      },
+      {
+        "id": "funnel-smoke-test",
+        "title": "Авто-смоук-тест воронки (симуляция прохода клиента)",
+        "status": "todo",
+        "assigned_to": "",
         "priority": "normal",
         "size": "M",
         "revision_count": 0,
-        "sort_key": "2026-09-15T02:20:14.55362+00:00"
+        "sort_key": "2026-09-15T19:21:00.747144+00:00"
+      },
+      {
+        "id": "funnel-restart-command",
+        "title": "Команда /restart в воронке (принудительный сброс)",
+        "status": "review",
+        "assigned_to": "developer",
+        "priority": "high",
+        "size": "S",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T19:21:00.630645+00:00"
+      },
+      {
+        "id": "acceptance-peer-review-2-check",
+        "title": "Пир-ревью гейт: 2 проверки другими агентами перед done",
+        "status": "todo",
+        "assigned_to": "",
+        "priority": "high",
+        "size": "L",
+        "revision_count": 0,
+        "sort_key": "2026-09-15T19:17:18.392051+00:00"
       }
     ]
   },
@@ -225,6 +237,20 @@
       "model_tier": "n/a",
       "can_run": false,
       "petrov_level": "владелец"
+    },
+    {
+      "id": "alysha",
+      "name": "Алёша",
+      "role": "Консультант · Помогает разобраться в продуктах NCAi",
+      "department": "Маркетинг",
+      "lead_of": "",
+      "emoji": "💬",
+      "avatar_color": "#4ecdc4",
+      "status": "idle",
+      "model": "deepseek/deepseek-v4-pro",
+      "model_tier": "complex",
+      "can_run": true,
+      "petrov_level": "специалист"
     },
     {
       "id": "copywriter",
@@ -340,8 +366,8 @@
     },
     {
       "id": "director",
-      "name": "Пётр",
-      "role": "Директор · Продюсер / Управляющий",
+      "name": "Директор",
+      "role": "Директор · Управляющий агентством",
       "department": "Управление",
       "lead_of": "Все отделы",
       "emoji": "🎯",
@@ -354,8 +380,8 @@
     },
     {
       "id": "director",
-      "name": "Директор",
-      "role": "Директор · Управляющий агентством",
+      "name": "Пётр",
+      "role": "Директор · Продюсер / Управляющий",
       "department": "Управление",
       "lead_of": "Все отделы",
       "emoji": "🎯",
@@ -417,11 +443,15 @@
       },
       {
         "category": "lessons",
-        "count": 13
+        "count": 19
       },
       {
         "category": "methodology",
         "count": 13
+      },
+      {
+        "category": "spec",
+        "count": 11
       },
       {
         "category": "agent-memory",
@@ -432,15 +462,23 @@
         "count": 8
       },
       {
-        "category": "spec",
+        "category": "operations",
+        "count": 7
+      },
+      {
+        "category": "regulations",
         "count": 6
       },
       {
-        "category": "operations",
-        "count": 5
+        "category": "funnel",
+        "count": 4
       },
       {
         "category": "onboarding",
+        "count": 4
+      },
+      {
+        "category": "prompts",
         "count": 4
       },
       {
@@ -448,11 +486,11 @@
         "count": 3
       },
       {
-        "category": "prompts",
-        "count": 3
+        "category": "architecture",
+        "count": 2
       },
       {
-        "category": "architecture",
+        "category": "checklist",
         "count": 2
       },
       {
@@ -469,10 +507,6 @@
       },
       {
         "category": "brief",
-        "count": 1
-      },
-      {
-        "category": "checklist",
         "count": 1
       },
       {
@@ -500,15 +534,11 @@
         "count": 1
       },
       {
-        "category": "regulations",
-        "count": 1
-      },
-      {
         "category": "reports",
         "count": 1
       }
     ],
-    "total": 209
+    "total": 233
   },
   "goals": {
     "id": "goals-2026-q4",
@@ -516,6 +546,12 @@
     "content": "# ЦЕЛИ NCAi (Илья, 15.09.2026)\n\n## Цель 1 — СЕНТЯБРЬ 2026 (до конца месяца): выход на рынок\nЗапустить воронку (@NCAi_Agency_bot) и настроить трафик (реклама).\nЧто значит «сделано»: воронка работает от /start до оплаты (разбор + дожим + консультант), на неё идёт платный трафик, идут первые реальные люди.\n\n## Цель 2 — ОКТЯБРЬ 2026: 2-3 проданных Распаковки (MVP)\nПродать 2-3 распаковки (19 900₽ + 4 900₽/мес) реальным клиентам.\nЧто значит «сделано»: 2-3 платящих клиента прошли весь путь (разбор → распаковка-квалификация → кабинет), распаковка доставлена.\n\n## Приоритет на эти цели (вывод из разбора Петрова)\n- До запуска трафика: дожать wow-разбор (главный мост к 25к) + доделать распаковку (не продавать пустую комнату).\n- Первая продажа и проверка разбора живым человеком — зона ответственности Ильи (не делегировать).\n- Соцдоказательство — только реальные цифры, убрать неподтверждённое."
   },
   "lessons": [
+    {
+      "id": "lessons-backend-hang-event-loop",
+      "title": "Урок: backend виснет от синхронных сетевых вызовов (to_thread + кэш)",
+      "agent_id": "",
+      "updated_at": "2026-09-15 13:47"
+    },
     {
       "id": "lessons-delegation-partial-work",
       "title": "lessons-delegation-partial-work",
@@ -539,6 +575,12 @@
       "title": "lessons-director-rules",
       "agent_id": "",
       "updated_at": "2026-09-14 21:35"
+    },
+    {
+      "id": "lessons-dont-declare-done-on-superficial-checks",
+      "title": "Урок: не объявлять «работает» по поверхностным проверкам (curl 200/рендер), проверять ДАННЫЕ и реальный кейс",
+      "agent_id": "",
+      "updated_at": "2026-09-15 16:50"
     },
     {
       "id": "lessons-finance-source-of-truth",
@@ -571,6 +613,18 @@
       "updated_at": "2026-09-14 20:30"
     },
     {
+      "id": "lessons-initdata-token-launchd",
+      "title": "Урок: initData-токен терялся при launchd-рестарте (пустой экран мини-аппа)",
+      "agent_id": "",
+      "updated_at": "2026-09-15 16:09"
+    },
+    {
+      "id": "lessons-menu-button-chat-override",
+      "title": "Урок: menu_button chat-specific override бьёт default — проверять с chat_id",
+      "agent_id": "",
+      "updated_at": "2026-09-15 17:50"
+    },
+    {
       "id": "lessons-site-deploy-not-local",
       "title": "Урок: локальные файлы ≠ сделанная задача по сайту (нужен push)",
       "agent_id": "",
@@ -583,6 +637,12 @@
       "updated_at": "2026-09-14 23:29"
     },
     {
+      "id": "lessons-telegram-menu-button-cache",
+      "title": "Урок: Telegram кэширует menu_button — слать свежую inline-кнопку",
+      "agent_id": "",
+      "updated_at": "2026-09-15 17:36"
+    },
+    {
       "id": "lessons-webview-cache",
       "title": "Урок: Telegram WebView кэширует мини-апп (нужен ?v=)",
       "agent_id": "",
@@ -593,6 +653,12 @@
       "title": "Принцип: каждый элемент решает проблему, а не картинка",
       "agent_id": "",
       "updated_at": "2026-09-15 11:40"
+    },
+    {
+      "id": "quality-revision-baseline",
+      "title": "Базлайн правок: ~15 реальных, зафиксировано 3 — метрика точности занижает",
+      "agent_id": "",
+      "updated_at": "2026-09-15 19:11"
     }
   ],
   "business": [
@@ -617,15 +683,25 @@
       "content": "# СОЦДОКАЗАТЕЛЬСТВО И ИСТОРИЯ ИЛЬИ (реальные, с сайта ilya-novitsky.ru)\n\n## Позиционирование (решение 15.09)\nВоронку и питч подавать ОТ ИМЕНИ ИЛЬИ НОВИЦКОГО (личный бренд), а не безликого «NCAi агентства». Использовать ТОЛЬКО реальные цифры и историю ниже. Убрать выдуманное «300+ систем, 50 млн ₽» — реально это «300+ проектов».\n\n## Личная история (Мой путь)\n- 2016: решение стать предпринимателем (первые продажи, товары из Китая).\n- 2016–2017: освоил сайты, Яндекс Директ, маркетинг, упаковку, аналитику.\n- 2017–2018: собрал первую автоворонку, заработал 1 млн ₽+.\n- 2018–2022: проекты, партнёрства, запуски (успехи и провалы — датасет для итераций).\n- 2020–2025: агентство Novator.vip (5 лет: команда, клиенты, регулярные продажи).\n- 7 ноября 2025: вышел из бизнеса (модель перестала расти — решение, а не срыв).\n- Сейчас: NCAi — «агентство в коробке», собираю системы на AI сам, от идеи до кода.\n\n## Реальные цифры (соцдоказательство)\n- 300+ проектов в автоматизации и маркетинге (за годы).\n- 100K+ заявок.\n- 5 лет собственного агентства.\n- 1 млн ₽+ — первая автоворонка (2017).\n\n## Реальные клиенты (с кем работал)\nШкола Юлии Высоцкой · Школа Лео Шевченко · Фонд «Алёша» · Госпрограмма «Дальневосточный Гектар» · Школа WB (100M ₽/год) · «Aromath» (17M ₽ на запуске) · NeuroSpace · Университет Ельницкого · Клуб Здоровья · AI-Риелтор · Школа Трейдинга (6.5M ₽) · BBQ строительство.\n\n## Правило\nСоцдоказательство в воронке/питче/на сайте — ТОЛЬКО эти реальные факты. Не придумывать цифры (фейк ловится при первой проверке и убивает доверие). Личный бренд: «я, Илья, 300+ проектов, 5 лет агентство — теперь собираю то же самое под ваш бизнес»."
     }
   ],
+  "spec": {
+    "id": "spec-system-architecture",
+    "title": "Спецификация системы NCAi",
+    "content": "# СПЕЦИФИКАЦИЯ СИСТЕМЫ NCAi (срез 15.09.2026)\n\n## 1. Что такое NCAi\nЦифровое агентство в коробке: AI-директор + команда ИИ-сотрудников ведут бизнес по воронке (книга → квиз → диагноз → разбор → распаковка → кабинет клиента). Всё состояние — в единой Postgres-БД (единственная правда).\n\n## 2. Архитектура\n- БД: Postgres (OrbStack/Docker, контейнер ncai-postgres, localhost:5432, db ncai) + pgvector.\n- Backend: backend.py (aiohttp, порт 8787, launchd com.ncai.hermes-miniapp-backend).\n- Мини-апп: static/ (index.html, app.js), тёмный премиум (#050505/#FFD000/#4ECDC4), 6 вкладок пульта (Пульт, Проекты/планер, Команда, Аналитика, Услуги, Платформа).\n- Воронка: funnel_bot.py (@NCAi_Agency_bot).\n- Сайт: ilya-novitsky.ru (Next.js, GitHub Pages, ветка main).\n- Туннель: Tailscale Funnel --bg → https://macbook-air-air.tail04ba02.ts.net → 127.0.0.1:8787.\n- Директор: Hermes (deepseek-v4-pro), регламент читает из БД (producer-regulations, lessons-director-rules).\n\n## 3. Таблицы БД\ntasks, agents, agent_runs (журнал прогонов), knowledge_sources (210+, pgvector-эмбеддинги), book_chapters + book_subchapters (книга, 128 глав), prompts (111), leads, workspaces + members, ai_topups, task_revisions (правки с причиной), task_events, artifact_feedback (пустая — фидбек по бизнес-результату), agent_skill_events + agent_skill_levels (XP).\n\n## 4. Делегирование\nPOST /api/project/delegate → run_agent_task → спавн hermes -z (start_new_session=True, вывод в файлы) → журнал agent_runs. 8 ролей: owner, director, developer, developer2, marketer, designer, financier, petrov. Тиры моделей: complex → deepseek-v4-pro, routine → Ollama (designer), premium (Claude) — опция.\n\n## 5. Автоматика (cron/дозор)\n- Авто-дозор задач: ncai_task_watch.py, cron каждые 5 мин → отчёт о сдаче/падении задач.\n- Утренний отчёт: cron 11:00 MSK (9caa4f7c9746) + в панель 6:00 MSK (e69c53e1b610).\n- Регрессия: cron каждые 30 мин → regression_check.py (сайт + мини-апп, мобильные).\n- Ночной драйвер: ncai_night_driver.py (4 линии делегирования) — на паузе, ручной режим.\n\n## 6. Механика приёмки (точность)\ntask_intake (raw → discussing → concept_agreed → planned → delegated → closed) + авто-гейт приёмки (py_compile + grep-критерии «Проверка:») + task_revisions (правки с причиной) + revision_count. Точность = % done-задач, закрытых с первого раза (без правок).\n\n## 7. Воронка (продукт)\nКнига «Нейро-Воронка» → квиз → диагноз → прогрев → трипваер 190₽ → авто-разбор (15 вопросов) → оффер Распаковка 19 900₽ + 4 900₽/мес → кабинет клиента + BYOK (клиентский API-ключ).\n\n## 8. Финансы\nИсточник правды: баланс DeepSeek API (остаток) + Hermes state.db session_model_usage (расход). read_unified_finance → spent_usd/remaining_usd/invested_usd.\n\n## 9. Что работает (ок, проверено 15.09)\n- БД = единая правда: Postgres + pgvector, все данные (задачи/агенты/знания/книга/промпты) в ней, файлы-дубли зачищены.\n- Мини-апп: туннель Tailscale (persistent), кнопка меню, авторизация initData, цифры ownership и cost.\n- Делегирование: 8 ролей, журнал agent_runs, спавн hermes -z (start_new_session=True).\n- Воронка до 190₽: книга → квиз → разбор — готовы.\n- Книга «Нейро-Воронка»: 128 глав в БД.\n- Автоматика: авто-дозор 5 мин, отчёты cron 6:00/11:00, регрессия 30 мин.\n- Финансы: источник правды DeepSeek API + state.db (read_unified_finance), итог сходится с реальным.\n\n## 10. Известные проблемы (срез 15.09)\n- Финансы в мини-аппе фейк: /api/finance (эвристика agent_runs) расходится с /api/status (реальным источником) — чинится.\n- Воронка после оплаты 19 900₽ — дыра: деплой кабинета/клиентский вид = todo.\n- Точность 98.6% завышена: revision_count инкрементится не во всех путях правок.\n- Механика приёмки (task_intake) из БД не реализована — таблицы нет, backend её не использует.\n- Баг «hermes -z не найден» — частично жив (watchdog ищет процесс).\n- Рефакторинг: 1/3 (слой данных) done, 2/3 backend.py + 3/3 funnel_bot/фронт = todo.\n- Vision сломан (локальная llama3.2-vision не грузится на 8ГБ RAM).\n\n## 11. Roadmap (Q4)\nСентябрь: запуск воронки + трафик. Октябрь: 2–3 Распаковки MVP. Механика приёмки из БД → рефакторинг → честная точность → BYOK/интеграции (Метрика, Telegram-канал)."
+  },
+  "mechanisms": {
+    "id": "spec-mechanisms-catalog",
+    "title": "Каталог механизмов NCAi",
+    "content": "# Каталог механизмов NCAi — что за что отвечает\n\n## АВТОНОМНЫЙ ПРОГОН (ночь)\n- **Ночной драйвер** — сам берёт задачи из очереди и делегирует сотрудникам по линиям (каждые 10 мин). За что: команда работает, пока Илья спит.\n- **Circuit-breaker** — защита от зацикливания: 3 неудачных попытки → задача блокируется и ждёт владельца. За что: не жечь бюджет на безнадёжные задачи.\n- **Авто-дозор** — раз в 5 мин проверяет, что бот/бэкенд живы, задачи не зависли. За что: система не падает незамеченной.\n- **Регрессия** — раз в 30 мин проверяет мини-апп (все вкладки грузятся). За что: сломанное ловится сразу.\n- **Снапшот баланса** — снимает баланс DeepSeek API и считает расход по дельте. За что: точные деньги, не оценка.\n\n## КАЧЕСТВО И ПРИЁМКА\n- **Приёмка задач (intake→gate)** — задача не идёт в работу, пока не согласована концептуально. За что: не делаем лишнего.\n- **Пир-ревью (2 проверки)** — задача не сдаётся, пока 2 других агента не проверят. За что: меньше «сдал, а сломано».\n- **Атомарные правки** — каждая правка фиксируется (причина + кто) и влияет на точность. За что: честная точность, не 100% враки.\n- **Обучение на задачах** — решения/ошибки/правки складываются в БД и подтягиваются к похожим задачам. За что: не наступаем на те же грабли.\n\n## ОТЧЁТЫ (cron)\n- **Брифинг 10:00** — план дня команде. За что: команда с утра знает, что делать.\n- **Утренний отчёт 11:00** — сводка за ночь (что сдано, что буксует). За что: ночной прогресс виден сразу.\n- **Вечерний отчёт 18:00** — Петров: задача→номер→время→расход. За что: итоги дня фиксируются, ничего не теряется.\n- **Отчёт в панель 6:00** — цифры в мини-апп. За что: к утру панель уже с цифрами.\n\n## ЗНАНИЯ\n- **База знаний + RAG** — все знания/уроки в Postgres с embedding, агенты подтягивают по смыслу. За что: единая правда, не «на память».\n- **Уроки** — каждая ошибка/грабля записывается уроком (категория lessons). За что: на одни грабли не наступаем дважды.\n\n## ВОРОНКА\n- **Воронка-бот** — /start → книга → квиз → прогрев → разбор 190₽ → распаковка 19 900₽. За что: клиент проходит путь сам.\n- **Смоук-тест** — авто-проход тест-клиента по воронке, проверка кнопок/задержек. За что: сломанная воронка ловится до клиента.\n\n## ДЕЛЕГИРОВАНИЕ\n- **run_agent_task / POST /api/project/delegate** — единственный способ дать задачу сотруднику. За что: всё логируется (agent_runs, XP, расход).\n- **Тиры моделей** — complex-задачи → pro-модель, routine → лёгкая (Ollama). За что: не платим pro за ерунду.\n\n## ФИНАНСЫ\n- **Единые финансы** — баланс DeepSeek API + state.db, один источник. За что: цифры сходятся с реальностью.\n\n## КОМАНДА\n- **XP/уровни** — XP растёт от сданных задач, правки снижают. За что: видно, кто реально сильный.\n- **Quality_rules** — штрафы L1-L4 за косяки. За что: ошибки имеют цену.\n- **Мотивация** — размеры задач S/M/L/XL = объём оплаты. За что: сотрудник мотивирован брать большие задачи."
+  },
   "runs": {
     "by_status": [
       {
         "status": "done",
-        "count": 304
+        "count": 342
       },
       {
         "status": "error",
-        "count": 105
+        "count": 108
       },
       {
         "status": "timeout",
@@ -655,19 +731,19 @@
       },
       {
         "agent_id": "director",
-        "count": 96
+        "count": 98
       },
       {
         "agent_id": "developer",
-        "count": 75
+        "count": 95
       },
       {
         "agent_id": "developer2",
-        "count": 19
+        "count": 29
       },
       {
         "agent_id": "marketer",
-        "count": 16
+        "count": 24
       },
       {
         "agent_id": "financier",
@@ -679,7 +755,7 @@
       },
       {
         "agent_id": "petrov",
-        "count": 6
+        "count": 7
       },
       {
         "agent_id": "seller",
@@ -690,17 +766,17 @@
         "count": 1
       }
     ],
-    "total": 443,
-    "error_count": 135,
-    "cost_usd": 37.07,
-    "duration_sec": 234603
+    "total": 484,
+    "error_count": 138,
+    "cost_usd": 14.6,
+    "duration_sec": 258411
   },
   "summary": {
-    "tasks_total": 129,
-    "tasks_done": 64,
-    "agents_total": 14,
-    "knowledge_total": 209,
-    "runs_total": 443,
-    "runs_cost_usd": 37.07
+    "tasks_total": 163,
+    "tasks_done": 76,
+    "agents_total": 15,
+    "knowledge_total": 233,
+    "runs_total": 484,
+    "runs_cost_usd": 14.6
   }
 }
