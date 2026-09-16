@@ -10,12 +10,12 @@ export const HERO_HTML = `<!-- HERO -->
     <div>
       <div class="hero-badge"><span class="bdot"></span>Архитектор систем · NCAi</div>
       <h1 class="hero-name"><em>Илья</em><span class="acc">Новицкий</span></h1>
-      <div class="hero-role">Бизнесу — рабочее AI-агентство. Стартапам — технический партнёр</div>
+      <div class="hero-role">Бизнесу — готовое AI-агентство. Специалисту — своя AI-команда</div>
       <p class="hero-quote">«Продуктовое мышление предпринимателя + руки разработчика. На выходе — рабочий продукт, а не обещание»</p>
       <div class="hero-meta">
         <div class="hm">Локация<span>Москва / удалённо</span></div>
-        <div class="hm">Для бизнеса<span>Внедрение NCAi · обучение AI</span></div>
-        <div class="hm">Для стартапов<span>Tech-партнёрство · Web3 · HealthTech</span></div>
+        <div class="hm">Для бизнеса<span>Распаковка агентства · обучение AI</span></div>
+        <div class="hm">Для специалистов<span>AI-отдел под рукой · выше чек</span></div>
       </div>
       <div class="hero-stats">
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Проектов</div></div>
@@ -172,12 +172,12 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
   <div class="wrap">
     <span class="sec-tag rv">То, что я в итоге построил</span>
     <h2 class="sec-h2 rv d1" style="text-align:center">Пишете задачу —<br>получаете результат</h2>
-    <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели — не в переписке.</p>
+    <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели. Подходит и владельцу бизнеса, и специалисту, который собирает себе AI-отдел.</p>
 
     <div class="panelmock rv d2">
       <div class="pm-bar"><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-dot"></span><span class="pm-url">ncai · панель</span></div>
       <div class="pm-tabs">
-        <span class="pm-tab">Главная</span><span class="pm-tab">Команда</span><span class="pm-tab act">Проекты</span><span class="pm-tab">Услуги</span><span class="pm-tab">Финансы</span><span class="pm-tab">Аналитика</span>
+        <span class="pm-tab">Главная</span><span class="pm-tab act">Проекты</span><span class="pm-tab">Команда</span><span class="pm-tab">Аналитика</span><span class="pm-tab">Услуги</span>
       </div>
       <div class="pm-body">
         <div class="mech-task-flow">
@@ -199,7 +199,7 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
         <div class="pm-tline">
           <div class="pm-tl"><span class="pm-tl-ico">✅</span><span class="pm-tl-n">Готово — директор проверил результат</span><span class="pm-tl-v">закрыто</span></div>
         </div>
-        <div class="pm-cost-note">Директор не запускает задачи в обход проверки: разбивает, назначает роль и закрывает только после того, как сверил результат с критерием готовности. Расход на AI по каждому шагу — в той же панели.</div>
+        <div class="pm-cost-note">Это не «чат с нейросетью», а конвейер: задача проходит приёмку, выполняется нужной ролью и закрывается только после пир-ревью — двух проверок других агентов. Ночью задачи разбирает драйвер (24/7), память и база знаний подтягиваются по смыслу (RAG), а сложные задачи идут на сильную модель, рутина — на лёгкую. Расход на AI по каждому шагу — в той же панели. <a href="/raspakovka#screens" style="color:var(--a);text-decoration:none;border-bottom:1px solid var(--a)">Живые скрины системы →</a></div>
       </div>
     </div>
   </div>
@@ -216,7 +216,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
         <div class="prod-stripe" style="--stripe:#FFD000"></div>
         <div class="prod-top">
           <div class="prod-icon">📦</div>
-          <div class="prod-type">Распаковка агентства · B2B</div>
+          <div class="prod-type">Распаковка агентства · бизнес + специалисты</div>
           <div class="prod-title">Агентство в коробке за 4 шага</div>
           <p class="prod-desc">Разворачиваю рабочих AI-агентов в панели: под ваши задачи, с доской задач и контролем расходов на AI. Распаковка в боте — руль сразу у вас, зависимости нет.</p>
           <div class="prod-points">
