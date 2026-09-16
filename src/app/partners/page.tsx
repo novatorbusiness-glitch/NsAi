@@ -49,14 +49,6 @@ const PARTNERS: Partner[] = [
 		desc:
 			"Wazzup — интеграция WhatsApp и Telegram с CRM: вся переписка с клиентом в одном окне, без переключений между мессенджерами.",
 	},
-	{
-		name: "Callgear",
-		url: "https://callgear.ru",
-		badge: "Партнёр",
-		logo: "☎",
-		desc:
-			"Callgear — коллтрекинг и IP-телефония: отслеживание источника каждого звонка, запись разговоров, интеграция с CRM и аналитикой.",
-	},
 ];
 
 export default function PartnersPage() {
