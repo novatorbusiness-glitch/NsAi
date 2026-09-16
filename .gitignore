@@ -6,3 +6,5 @@ out
 .claude/
 .env*
 *.tsbuildinfo
+__pycache__/
+*.pyc
