@@ -6,7 +6,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
     <h1 class="hh1">Работа в вашей голове.<span class="acc">Забираем в агентство.</span></h1>
-    <p class="hsub">Не «доступ к нейросети», а готовая система: методология внедрения, роли и регламенты команды, доска задач и контроль расходов. AI внутри — исполнитель по регламенту. Руль сразу у вас — без найма команды и без зависимости от подрядчика.</p>
+    <p class="hsub">Не «доступ к нейросети», а настоящий движок: приёмка задач, пир-ревью, ночной драйвер 24/7. Готовая AI-команда с ролями, доской задач и контролем расходов. Руль сразу у вас — для владельца бизнеса и для новой профессии менеджера AI-агентства.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#idea" class="bs">Почему это работает</a>
@@ -41,6 +41,44 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
         </div>
       </div>
       <div class="hccap">unpacking agency.workspace<span class="cur">▌</span></div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const WHO_HTML = `<!-- ДЛЯ КОГО · две равные ветки: бизнес + новая профессия -->
+<section id="who" class="sec-light">
+  <div class="w">
+    <span class="lb rv">Для кого</span>
+    <h2 class="sh2 rv d1">Две равные ветки.<br>Один продукт.</h2>
+    <p class="sl rv d2">Распаковка — не «бизнес плюс приписка про профессию». Это два одинаково сильных сценария: владелец бизнеса отдаёт операционку команде, специалист собирает себе AI-отдел и поднимает чек.</p>
+    <div class="who-grid">
+      <div class="who rv d1">
+        <div class="who-ico">🏢</div>
+        <div class="who-tag">Ветка 1 · Владелец бизнеса</div>
+        <div class="who-t">Отдаёте операционку —<br>растите бизнес</div>
+        <p class="who-x">Салон, клиника, магазин, услуги, онлайн-школа. Рутина съедает день, найм дорогой, подрядчик — чёрный ящик. Получаете AI-команду, которая ведёт операционку 24/7.</p>
+        <div class="who-li">✓ Директор + до 5 агентов под вашу нишу</div>
+        <div class="who-li">✓ Доска задач и контроль расходов на AI</div>
+        <div class="who-li">✓ Отчёт каждый вечер в 18:00 — без «как дела?»</div>
+        <div class="who-ex">
+          <div class="who-ex-tag">Пример</div>
+          <p>Салон красоты. Запись, напоминания, контент-план и отчёт по выручке делает команда. Владелица ставит одну задачу в день — вечером читает отчёт.</p>
+        </div>
+      </div>
+      <div class="who rv d2">
+        <div class="who-ico">🧭</div>
+        <div class="who-tag">Ветка 2 · Новая профессия</div>
+        <div class="who-t">Менеджер AI-агентства —<br>свой отдел под рукой</div>
+        <p class="who-x">Чатботеры, маркетологи, руководители, фрилансеры. Осваиваете роль менеджера AI-агентства: оказываете свои услуги быстрее, качественнее и с большим чеком.</p>
+        <div class="who-li">✓ Готовая AI-команда — как собственный отдел</div>
+        <div class="who-li">✓ Свои услуги клиентам — быстрее и дороже</div>
+        <div class="who-li">✓ Методология распаковки — применяете к своим клиентам</div>
+        <div class="who-ex">
+          <div class="who-ex-tag">Пример</div>
+          <p>Маркетолог ведёт пять клиентов. Вместо ручных постов и отчётов его AI-команда собирает контент-план и отчёт за час — он продаёт это клиенту как услугу и поднимает чек.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -134,12 +172,45 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
 </section>
 <hr class="dv">`;
 
+export const SCREENS_HTML = `<!-- СКРИНЫ · реальный интерфейс системы (не макет, не сток) -->
+<section id="screens" class="sec-light">
+  <div class="w">
+    <span class="lb rv">Скрины · живая система</span>
+    <h2 class="sh2 rv d1">Вот как это выглядит<br>изнутри</h2>
+    <p class="sl rv d2">Реальные скрины рабочего кабинета NCAi: пульт, команда, доска задач, аналитика и отчёт. Снято с живой системы — не макет.</p>
+    <div class="screens">
+      <figure class="scr rv d1">
+        <div class="scr-frame"><div class="scr-chrome"><span class="scr-dot"></span>NCAi · live</div><img src="/screens/panel.png" alt="Пульт NCAi — деньги, команда, задачи за сегодня" /></div>
+        <figcaption class="scr-cap">Пульт — <span>деньги, команда, задачи за сегодня</span></figcaption>
+      </figure>
+      <figure class="scr rv d1">
+        <div class="scr-frame"><div class="scr-chrome"><span class="scr-dot"></span>NCAi · live</div><img src="/screens/team.png" alt="Команда NCAi — роли, статусы, точность каждого" /></div>
+        <figcaption class="scr-cap">Команда — <span>роли, статусы и точность каждого</span></figcaption>
+      </figure>
+      <figure class="scr rv d2">
+        <div class="scr-frame"><div class="scr-chrome"><span class="scr-dot"></span>NCAi · live</div><img src="/screens/kanban.png" alt="Доска задач NCAi — от «не начато» до «готово»" /></div>
+        <figcaption class="scr-cap">Доска задач — <span>от «не начато» до «готово»</span></figcaption>
+      </figure>
+      <figure class="scr rv d2">
+        <div class="scr-frame"><div class="scr-chrome"><span class="scr-dot"></span>NCAi · live</div><img src="/screens/analytics.png" alt="Аналитика NCAi — расход AI и рейтинг сотрудников" /></div>
+        <figcaption class="scr-cap">Аналитика — <span>расход AI и рейтинг сотрудников</span></figcaption>
+      </figure>
+      <figure class="scr rv d3">
+        <div class="scr-frame"><div class="scr-chrome"><span class="scr-dot"></span>NCAi · live</div><img src="/screens/report.png" alt="Отчёт NCAi — точность, задачи, что сдано и что буксует" /></div>
+        <figcaption class="scr-cap">Отчёт — <span>точность, что сдано и что буксует</span></figcaption>
+      </figure>
+    </div>
+    <p class="sl rv d3" style="margin-top:1.75rem;font-size:.9rem">Один скрин — один результат. Так панель выглядит у каждого клиента после распаковки: свой workspace, своя команда, свои цифры.</p>
+  </div>
+</section>
+<hr class="dv">`;
+
 export const IDEA_HTML = `<!-- 1 · БОЛЬШАЯ ИДЕЯ -->
 <section id="idea" class="sec-light">
   <div class="w">
     <span class="lb rv">Большая идея</span>
     <h2 class="sh2 rv d1">Больше усилий —<br>тот же потолок</h2>
-    <p class="sl rv d2">Ты владелец малого бизнеса с живой операционкой: салон, клиника, магазин, услуги. Клиенты есть, рутина съедает день, а масштабироваться не получается.</p>
+    <p class="sl rv d2">Ты владелец малого бизнеса с живой операционкой: салон, клиника, магазин, услуги. Клиенты есть, рутина съедает день, а масштабироваться не получается. Или ты специалист, который осваивает роль менеджера AI-агентства — и упирается в тот же потолок: всё руками, роста нет.</p>
     <div class="pr-grid">
       <div class="pr rv d1">
         <div class="pr-n">Проблема 1</div>
@@ -575,17 +646,19 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
 </section>
 <hr class="dv">`;
 
-export const UNDER_HOOD_HTML = `<!-- 7 · ЧТО ПОД КАПОТОМ -->
+export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система принимает, проверяет и доводит задачи -->
 <section id="under-hood" style="background:var(--bg2)">
   <div class="w">
-    <span class="lb rv">Что под капотом</span>
-    <h2 class="sh2 rv d1">Что под капотом NCAi</h2>
-    <p class="sl rv d2">Не «подключили ChatGPT», а движок, изоляция и контроль бюджета. Вот из чего собрано агентство.</p>
+    <span class="lb rv">Движок</span>
+    <h2 class="sh2 rv d1">Не «доступ к нейросети».<br>Настоящий движок приёмки и проверки.</h2>
+    <p class="sl rv d2">Под капотом — не чат с моделью, а конвейер: задача проходит приёмку, двойную проверку и только потом закрывается. Поэтому «сдано» в NCAi означает «проверено», а не «написано».</p>
     <div class="amp-grid">
-      <div class="amp rv d1"><div class="amp-ico">⚙️</div><div><div class="amp-t">Hermes</div><div class="amp-x">Open-source движок, на котором Илья сам управляет своей командой. Тот же код — под капотом вашего агентства.</div></div></div>
-      <div class="amp rv d1"><div class="amp-ico">🧱</div><div><div class="amp-t">Мульти-аренда</div><div class="amp-x">Один продукт, у каждого клиента изолированный workspace: свои агенты, задачи, финансы. Чужие данные недоступны.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">🛑</div><div><div class="amp-t">Kill-switch</div><div class="amp-x">Бюджет на AI не даёт потратить больше лимита — сюрпризов в конце месяца нет.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">🗂️</div><div><div class="amp-t">Шаблоны под ниши</div><div class="amp-x">Бьюти, услуги, продажи, контент — каждая со своими ролями и стартовыми задачами.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">🚪</div><div><div class="amp-t">Приёмка задач — гейт</div><div class="amp-x">Задача не уходит в работу, пока концепция не согласована. Не делаем лишнего и не жжём бюджет на безнадёжные задачи.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">👀</div><div><div class="amp-t">Пир-ревью и факт-чек</div><div class="amp-x">Задача не сдаётся, пока её не проверят два других агента. Директор сверяет результат с критерием готовности — не верит слову «готово».</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🎯</div><div><div class="amp-t">Честная точность</div><div class="amp-x">Точность — это % задач, сданных с первого раза, без правок. Каждая правка фиксируется и снижает метрику. Поэтому цифра настоящая.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">🌙</div><div><div class="amp-t">Ночной драйвер 24/7</div><div class="amp-x">Сам берёт задачи из очереди и делегирует по линиям, пока вы спите. Circuit-breaker гасит зациклившуюся задачу — бюджет не горит.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">🧠</div><div><div class="amp-t">Память и обучение (RAG)</div><div class="amp-x">Три уровня памяти: короткая держит текущую задачу, долгая помнит уроки, база знаний подтягивает нужное по смыслу. На одни грабли не наступаем дважды.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">⚡</div><div><div class="amp-t">Тиры моделей</div><div class="amp-x">Сложные задачи идут на сильную модель, рутина — на лёгкую. Не платим «про» за ерунду — и скорость выше.</div></div></div>
     </div>
   </div>
 </section>
