@@ -1,7 +1,8 @@
 "use client";
 
-import { ABOUT_HTML } from "@/lib/home-sections";
+import { ABOUT_HTML, ABOUT_HTML_EN } from "@/lib/home-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function AboutSection() {
-	return <div dangerouslySetInnerHTML={{ __html: ABOUT_HTML }} />;
+	return <Bilingual ru={ABOUT_HTML} en={ABOUT_HTML_EN} />;
 }

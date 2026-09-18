@@ -1,7 +1,8 @@
 "use client";
 
-import { PERSONAL_HTML } from "@/lib/home-sections";
+import { PERSONAL_HTML, PERSONAL_HTML_EN } from "@/lib/home-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function PersonalSection() {
-	return <div dangerouslySetInnerHTML={{ __html: PERSONAL_HTML }} />;
+	return <Bilingual ru={PERSONAL_HTML} en={PERSONAL_HTML_EN} />;
 }
