@@ -5,7 +5,6 @@ export const HERO_HTML = `<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <canvas id="cvs"></canvas>
   <div class="hero-inner">
     <!-- LEFT -->
     <div>
