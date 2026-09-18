@@ -485,7 +485,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
   <div class="wrap">
     <span class="sec-tag rv" style="justify-content:center">Готов начать</span>
     <h2 class="closing-h2 rv d1">Не разговор «про AI вообще» —<br>конкретный первый шаг</h2>
-    <p class="closing-lead rv d1">Два способа начать — от бесплатного до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
+    <p class="closing-lead rv d1">Три шага — от разбора за 190 ₽ до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
 
     <div class="closing-paths rv d2">
       <a href="/book" class="closing-path">
@@ -496,7 +496,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
       <a href="/raspakovka" class="closing-path cp-main">
         <div class="cp-n">1</div>
         <div class="cp-t">Распаковка агентства</div>
-        <div class="cp-s">Распаковка в боте · 19 900 ₽ — руль сразу у вас</div>
+        <div class="cp-s">Разбор 190 ₽ → распаковка 19 900 ₽ — руль сразу у вас</div>
       </a>
     </div>
 

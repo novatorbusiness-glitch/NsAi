@@ -502,7 +502,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Оффер · распаковка</span>
       <h2 class="ofh2 rv d1">Что вы получаете<br>за 19 900 ₽</h2>
-      <p class="ofsub rv d2">Разовый чек за распаковку — <b>19 900 ₽</b> (первый месяц подписки включён), дальше — 4 900 ₽/мес. Прозрачно, без скрытых платежей.</p>
+      <p class="ofsub rv d2">Лестница входа: <b>разбор 190 ₽</b> (квиз в боте, без риска) → <b>распаковка 19 900 ₽</b> (первый месяц подписки включён) → <b>подписка 4 900 ₽/мес</b>. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в распаковку</p>
         <div class="ofgrid">
@@ -520,10 +520,15 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="m4"><div class="m4-l">Ваши усилия</div><div class="m4-v">Распаковка в боте — дальше система разворачивает всё сама</div></div>
         </div>
         <div class="ofmeta">
+          <div><div class="ofml">Разбор</div><div class="ofmv">190 ₽</div></div>
           <div><div class="ofml">Распаковка</div><div class="ofmv">19 900 ₽</div></div>
-          <div><div class="ofml">Формат</div><div class="ofmv">4 шага, от бота до работы</div></div>
           <div><div class="ofml">Подписка</div><div class="ofmv">4 900 ₽/мес</div></div>
+          <div><div class="ofml">Годовая</div><div class="ofmv">49 000 ₽</div></div>
         </div>
+      </div>
+      <div class="rv d3" style="margin-top:1.5rem;padding:1.1rem 1.25rem;border:1px solid var(--br2);border-radius:14px;background:rgba(255,208,0,.06)">
+        <div style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem">Оплата без разового удара</div>
+        <p style="font-size:.92rem;color:var(--t2);line-height:1.6;margin:0">Распаковку <b>19 900 ₽</b> можно разбить на части — рассрочка через Prodamus. Годовая подписка — <b>49 000 ₽</b> вместо 58 800 помесячно: два месяца в подарок.</p>
       </div>
       <div class="ofcta rv d3">
         <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Начать распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>

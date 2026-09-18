@@ -4,7 +4,7 @@ import PageShell from "@/components/layout/PageShell";
 export const metadata: Metadata = {
 	title: "Партнёры",
 	description:
-		"Партнёры NCAi — компании и сервисы, с которыми Илья Новицкий строит системы продаж и AI-автоматизации. Первый партнёр — b24u.com: автоматизация бизнеса на базе Битрикс24.",
+		"Партнёры NCAi — компании и сервисы, с которыми Илья Новицкий строит системы продаж и AI-автоматизации: b24u.com (автоматизация на Битрикс24) и Prodamus (приём платежей и рассрочек).",
 	alternates: { canonical: "/partners" },
 };
 
@@ -28,28 +28,12 @@ const PARTNERS: Partner[] = [
 		internal: true,
 	},
 	{
-		name: "AmoCRM",
-		url: "https://www.amocrm.ru",
-		badge: "Партнёр",
-		logo: "CRM",
-		desc:
-			"AmoCRM — CRM-система для отдела продаж: сделки, воронки, автоматизация коммуникаций с клиентом от первого касания до оплаты.",
-	},
-	{
 		name: "Prodamus",
 		url: "https://prodamus.ru",
 		badge: "Партнёр",
 		logo: "₽",
 		desc:
 			"Prodamus — приём онлайн-платежей и рассрочек: платёжные ссылки, интеграция с CRM и автоворонками, автоматизация продаж курсов и услуг.",
-	},
-	{
-		name: "Wazzup",
-		url: "https://wazzup24.ru",
-		badge: "Партнёр",
-		logo: "WA",
-		desc:
-			"Wazzup — интеграция WhatsApp и Telegram с CRM: вся переписка с клиентом в одном окне, без переключений между мессенджерами.",
 	},
 ];
 
