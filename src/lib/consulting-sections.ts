@@ -1,4 +1,5 @@
 // Секции consulting (HTML из consulting-content, разбито по ТЗ NCAI_SPEC).
+import { icon } from "./icons";
 
 export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero-consulting">
@@ -54,7 +55,7 @@ export const WHO_HTML = `<!-- ДЛЯ КОГО · две равные ветки:
     <p class="sl rv d2">Распаковка — не «бизнес плюс приписка про профессию». Это два одинаково сильных сценария: владелец бизнеса отдаёт операционку команде, специалист собирает себе AI-отдел и поднимает чек.</p>
     <div class="who-grid">
       <div class="who rv d1">
-        <div class="who-ico">🏢</div>
+        <div class="who-ico">${icon("building")}</div>
         <div class="who-tag">Ветка 1 · Владелец бизнеса</div>
         <div class="who-t">Отдаёте операционку —<br>растите бизнес</div>
         <p class="who-x">Салон, клиника, магазин, услуги, онлайн-школа. Рутина съедает день, найм дорогой, подрядчик — чёрный ящик. Получаете AI-команду, которая ведёт операционку 24/7.</p>
@@ -63,11 +64,11 @@ export const WHO_HTML = `<!-- ДЛЯ КОГО · две равные ветки:
         <div class="who-li">✓ Отчёт каждый вечер в 18:00 — без «как дела?»</div>
         <div class="who-ex">
           <div class="who-ex-tag">Пример</div>
-          <p>Салон красоты. Запись, напоминания, контент-план и отчёт по выручке делает команда. Владелица ставит одну задачу в день — вечером читает отчёт.</p>
+          <p>Салон красоты. Запись, напоминания, контент-план и отчёт по выручке делает команда. Владелица пишет задачу коротко, своими словами — если что-то непонятно, директор сам переспросит детали, прежде чем передавать в работу. Вечером читает отчёт.</p>
         </div>
       </div>
       <div class="who rv d2">
-        <div class="who-ico">🧭</div>
+        <div class="who-ico">${icon("compass")}</div>
         <div class="who-tag">Ветка 2 · Новая профессия</div>
         <div class="who-t">Менеджер AI-агентства —<br>свой отдел под рукой</div>
         <p class="who-x">Чатботеры, маркетологи, руководители, фрилансеры. Осваиваете роль менеджера AI-агентства: оказываете свои услуги быстрее, качественнее и с большим чеком.</p>
@@ -357,7 +358,7 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
       <button class="nc-arr nc-prev" id="ncPrev" aria-label="Предыдущая ниша">‹</button>
       <div class="ncarousel" id="ncarousel">
         <div class="nccard">
-          <div class="ncico">💇</div>
+          <div class="ncico">${icon("sparkle")}</div>
           <div class="nctag">Бьюти · салон, косметология, студии</div>
           <div class="ncrow"><span class="ncl">Проблема</span><p>Запись срывается, контент выходит от случая к случаю, база клиентов молчит между визитами.</p></div>
           <div class="ncrow"><span class="ncl">Команда</span><p>Маркетолог, SMM-агент, администратор, финансист</p></div>
@@ -369,7 +370,7 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
           <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Запись и напоминания идут сами, контент выходит по графику — а не когда вспомнили. Видно в панели, а не на словах.</p></div>
         </div>
         <div class="nccard">
-          <div class="ncico">🧰</div>
+          <div class="ncico">${icon("toolbox")}</div>
           <div class="nctag">Услуги · клиники, психологи, юристы, ремонт</div>
           <div class="ncrow"><span class="ncl">Проблема</span><p>Заявки приходят, но нет системы прогрева и повторных касаний — клиент разово купил и пропал.</p></div>
           <div class="ncrow"><span class="ncl">Команда</span><p>Менеджер по продажам, копирайтер, аналитик</p></div>
@@ -381,7 +382,7 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
           <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Тёплая база не забывается между визитами — за ней следят системно. Финансовый отчёт готов без ручного труда каждый месяц.</p></div>
         </div>
         <div class="nccard">
-          <div class="ncico">🛍️</div>
+          <div class="ncico">${icon("shop")}</div>
           <div class="nctag">Продажи · магазины, e-commerce, опт</div>
           <div class="ncrow"><span class="ncl">Проблема</span><p>Заказы теряются между чатами и таблицами, товарный контент делается вручную и редко.</p></div>
           <div class="ncrow"><span class="ncl">Команда</span><p>Менеджер, бэкенд-разработчик, финансист</p></div>
@@ -393,7 +394,7 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
           <div class="ncrow ncresult"><span class="ncl">Результат</span><p>Заказ виден на каждом этапе в одном месте, остатки под контролем — меньше потерянных заказов и ручной сверки в таблицах.</p></div>
         </div>
         <div class="nccard">
-          <div class="ncico">🎬</div>
+          <div class="ncico">${icon("clapper")}</div>
           <div class="nctag">Контент · блогеры, эксперты, онлайн-школы</div>
           <div class="ncrow"><span class="ncl">Проблема</span><p>Контент-план держится на разовом вдохновении, вовлечённость никто не считает системно.</p></div>
           <div class="ncrow"><span class="ncl">Команда</span><p>Редактор, копирайтер, дизайнер, финансист</p></div>
@@ -443,9 +444,9 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА -->
         </div>
       </div>
       <div class="wdiag rv d2">
-        <div class="wi act" data-zone="1"><div class="wico">💬</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Распаковка в боте</div><div class="wtx">Сразу после оплаты бот ведёт вас по методологии: чем занимается бизнес, кто в команде, кто владелец, а кто ведёт операционку, какие задачи отдать в первую очередь. Не анкета для галочки — разбор вашей реальной ситуации.<div class="wres"><span class="ncl">Результат</span><p>Система понимает ваш бизнес и знает, какое агентство под него собрать.</p></div></div></div></div>
-        <div class="wi" data-zone="2"><div class="wico">📦</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Кабинет разворачивается (автоматически)</div><div class="wtx">По итогам распаковки система сама создаёт ваш личный кабинет — Telegram Mini App с названием бизнеса: AI-директор, агенты, роли и стартовые задачи по шаблону вашей ниши. Без ручной сборки и без ожидания.<div class="wres"><span class="ncl">Результат</span><p>Рабочее агентство уже существует и ждёт вас в Telegram.</p></div></div></div></div>
-        <div class="wi" data-zone="3"><div class="wico">📖</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Обучение по инструкции</div><div class="wtx">Пошаговая инструкция: как подключить AI-бюджет, куда заходить, как ставить задачи директору и читать отчёты. Разбираетесь в своём темпе, без звонков и без «ловите на лету».<div class="wres"><span class="ncl">Результат</span><p>Вы уверенно пользуетесь панелью сами.</p></div></div></div></div>
+        <div class="wi act" data-zone="1"><div class="wico">${icon("chat")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Распаковка в боте</div><div class="wtx">Сразу после оплаты бот ведёт вас по методологии: чем занимается бизнес, кто в команде, кто владелец, а кто ведёт операционку, какие задачи отдать в первую очередь. Не анкета для галочки — разбор вашей реальной ситуации.<div class="wres"><span class="ncl">Результат</span><p>Система понимает ваш бизнес и знает, какое агентство под него собрать.</p></div></div></div></div>
+        <div class="wi" data-zone="2"><div class="wico">${icon("box")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Кабинет разворачивается (автоматически)</div><div class="wtx">По итогам распаковки система сама создаёт ваш личный кабинет — Telegram Mini App с названием бизнеса: AI-директор, агенты, роли и стартовые задачи по шаблону вашей ниши. Без ручной сборки и без ожидания.<div class="wres"><span class="ncl">Результат</span><p>Рабочее агентство уже существует и ждёт вас в Telegram.</p></div></div></div></div>
+        <div class="wi" data-zone="3"><div class="wico">${icon("book")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Обучение по инструкции</div><div class="wtx">Пошаговая инструкция: как подключить AI-бюджет, куда заходить, как ставить задачи директору и читать отчёты. Разбираетесь в своём темпе, без звонков и без «ловите на лету».<div class="wres"><span class="ncl">Результат</span><p>Вы уверенно пользуетесь панелью сами.</p></div></div></div></div>
         <div class="wi" data-zone="4"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Первые задачи — работа</div><div class="wtx">Ставите директору первую реальную задачу. Он распределяет её между агентами, проверяет результат перед закрытием и присылает вам отчёт каждый вечер в 18:00.<div class="wres"><span class="ncl">Результат</span><p>Агентство работает на вас — а не вы объясняете ему, что делать.</p></div></div></div></div>
         <p class="sl rv d3" style="margin-top:1.5rem;font-size:.92rem">Рабочее агентство остаётся с вами. Первый месяц подписки уже включён в оплату распаковки, дальше — 4 900 ₽/мес.</p>
       </div>
@@ -511,7 +512,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Руль сразу у вас <span>ставите задачи и смотрите расход на AI с первого дня</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Подписка 4 900 ₽/мес <span>первый месяц включён в распаковку</span></div></div>
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Поддержка на связи <span>вопросы и донастройка — в Telegram, когда нужно</span></div></div>
-          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Рост без пересборки <span>добавляете агентов и роли по мере роста бизнеса</span></div></div>
+          <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Рост без пересборки <span>добавляете агентов по мере роста бизнеса — доп. сотрудник 1 000 ₽/мес</span></div></div>
         </div>
         <div class="meta4">
           <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Агентство в панели, которое работает без вас</div></div>
@@ -545,10 +546,10 @@ export const AMP_HTML = `<!-- 9 · УСИЛИТЕЛИ -->
     <h2 class="sh2 rv d1">Стандартный процесс, а не очередь на подряд</h2>
     <p class="sl rv d2">Распаковка идёт по одному и тому же проверенному сценарию — не собирается с нуля под каждого клиента. Условия ниже одинаковы для всех.</p>
     <div class="amp-grid">
-      <div class="amp rv d1"><div class="amp-ico">📦</div><div><div class="amp-t">Один стандарт распаковки</div><div class="amp-x">Один и тот же процесс для любой ниши — workspace, шаблон команды, роли, руль сразу у вас. Не «пилотный проект», а повторяемая процедура.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">${icon("box")}</div><div><div class="amp-t">Один стандарт распаковки</div><div class="amp-x">Один и тот же процесс для любой ниши — workspace, шаблон команды, роли, руль сразу у вас. Не «пилотный проект», а повторяемая процедура.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">⏳</div><div><div class="amp-t">Личный контроль каждой распаковки</div><div class="amp-x">Бот ведёт распаковку автоматически, но каждую оплату вижу лично и проверяю, что кабинет настроен верно — беру ограниченное число новых клиентов в неделю, чтобы успевать.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">📅</div><div><div class="amp-t">Первый месяц включён</div><div class="amp-x">Подписка на первый месяц уже входит в оплату распаковки — вы работаете в системе до того, как платите за неё отдельно.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">🔒</div><div><div class="amp-t">Тарифы зафиксированы</div><div class="amp-x">Цена подписки не растёт «потому что». Решение сегодня — те же условия, что и завтра.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("calendar")}</div><div><div class="amp-t">Первый месяц включён</div><div class="amp-x">Подписка на первый месяц уже входит в оплату распаковки — вы работаете в системе до того, как платите за неё отдельно.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("lock")}</div><div><div class="amp-t">Тарифы зафиксированы</div><div class="amp-x">Цена подписки не растёт «потому что». Решение сегодня — те же условия, что и завтра.</div></div></div>
     </div>
   </div>
 </section>
@@ -658,12 +659,12 @@ export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система пр�
     <h2 class="sh2 rv d1">Не «доступ к нейросети».<br>Настоящий движок приёмки и проверки.</h2>
     <p class="sl rv d2">Под капотом — не чат с моделью, а конвейер: задача проходит приёмку, двойную проверку и только потом закрывается. Поэтому «сдано» в NCAi означает «проверено», а не «написано».</p>
     <div class="amp-grid">
-      <div class="amp rv d1"><div class="amp-ico">🚪</div><div><div class="amp-t">Приёмка задач — гейт</div><div class="amp-x">Задача не уходит в работу, пока концепция не согласована. Не делаем лишнего и не жжём бюджет на безнадёжные задачи.</div></div></div>
-      <div class="amp rv d1"><div class="amp-ico">👀</div><div><div class="amp-t">Пир-ревью и факт-чек</div><div class="amp-x">Задача не сдаётся, пока её не проверят два других агента. Директор сверяет результат с критерием готовности — не верит слову «готово».</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">🎯</div><div><div class="amp-t">Честная точность</div><div class="amp-x">Точность — это % задач, сданных с первого раза, без правок. Каждая правка фиксируется и снижает метрику. Поэтому цифра настоящая.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">🌙</div><div><div class="amp-t">Ночной драйвер 24/7</div><div class="amp-x">Сам берёт задачи из очереди и делегирует по линиям, пока вы спите. Circuit-breaker гасит зациклившуюся задачу — бюджет не горит.</div></div></div>
-      <div class="amp rv d1"><div class="amp-ico">🧠</div><div><div class="amp-t">Память и обучение (RAG)</div><div class="amp-x">Три уровня памяти: короткая держит текущую задачу, долгая помнит уроки, база знаний подтягивает нужное по смыслу. На одни грабли не наступаем дважды.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">⚡</div><div><div class="amp-t">Тиры моделей</div><div class="amp-x">Сложные задачи идут на сильную модель, рутина — на лёгкую. Не платим «про» за ерунду — и скорость выше.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">${icon("door")}</div><div><div class="amp-t">Задачу сначала согласовывают</div><div class="amp-x">Работа не начинается, пока концепция не согласована. Не делаем лишнего и не тратим ваш AI-бюджет на задачи, которые всё равно переделывать.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">${icon("eye")}</div><div><div class="amp-t">Каждую задачу проверяют дважды</div><div class="amp-x">Прежде чем закрыть задачу, её смотрят два других агента, и только потом — директор. «Готово» — это проверенный результат, а не слово на веру.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("target")}</div><div><div class="amp-t">Сдаём с первого раза — или честно говорим</div><div class="amp-x">Перед тем как показать вам «готово», систему саму проверяют: компиляция, тесты, соответствие критериям — слово сотрудника не принимается на веру. И да, мы сами поймали момент, когда эта цифра была завышена, и пересчитали как есть — честная цифра лучше красивой.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("moon")}</div><div><div class="amp-t">Работает, пока вы спите</div><div class="amp-x">Сама берёт задачи из очереди и распределяет по команде ночью. Если задача зависает — система сама её останавливает и присылает вам уведомление, бюджет не сгорает.</div></div></div>
+      <div class="amp rv d1"><div class="amp-ico">${icon("brain")}</div><div><div class="amp-t">Помнит вашу нишу и не повторяет ошибок</div><div class="amp-x">Держит в голове текущую задачу, помнит прошлые уроки и подтягивает нужные факты из базы знаний вашего бизнеса. На одни грабли дважды не наступает.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("bolt")}</div><div><div class="amp-t">Платите за задачу, а не за мощность</div><div class="amp-x">Сложные решения — через сильную модель, рутина — через быструю и дешёвую. Экономия считается автоматически, вам не нужно в этом разбираться.</div></div></div>
     </div>
   </div>
 </section>
@@ -676,12 +677,12 @@ export const FEATURES_HTML = `<!-- 8 · ФИЧИ ПАНЕЛИ -->
     <h2 class="sh2 rv d1">Шесть вкладок панели —<br>работают с первого дня</h2>
     <p class="sl rv d2">Не обещания — конкретные вкладки рабочего кабинета, которые работают с первого дня.</p>
     <div class="ngrid">
-      <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Доска задач</div><p class="ntx">Номер, срок, исполнитель, статус. Каждая задача — одна строка, всегда видно, что в работе и что готово.</p></div>
+      <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Доска задач</div><p class="ntx">Номер, срок, исполнитель, статус. Закрытой задача становится только после вашего «Утвердил» — статус сотрудника «готово» до этого лишь гипотеза.</p></div>
       <div class="ncard rv d1"><div class="nbadge">02</div><div class="ntit">Команда</div><p class="ntx">Роли, статусы (online / busy / idle), базы знаний. Не безликий «AI-помощник», а сотрудники с зонами ответственности.</p></div>
-      <div class="ncard rv d2"><div class="nbadge">03</div><div class="ntit">Финансы</div><p class="ntx">Вложено / остаток / потрачено — реальные деньги, а не «виртуальные кредиты».</p></div>
-      <div class="ncard rv"><div class="nbadge">04</div><div class="ntit">Контроль расходов на AI</div><p class="ntx">Бюджет + kill-switch: агенты сами останавливаются на лимите. Счёт в конце месяца не удивляет.</p></div>
+      <div class="ncard rv d2"><div class="nbadge">03</div><div class="ntit">Финансы</div><p class="ntx">Вложено / остаток / потрачено — реальные деньги с точностью до цента, а не «виртуальные кредиты».</p></div>
+      <div class="ncard rv"><div class="nbadge">04</div><div class="ntit">Контроль расходов на AI</div><p class="ntx">Kill-switch блокирует запуск ДО того, как потрачены деньги, а не после. Счёт в конце месяца не удивляет.</p></div>
       <div class="ncard rv d1"><div class="nbadge">05</div><div class="ntit">Аналитика</div><p class="ntx">P&L-прогноз, рейтинг, отчёты. Видно, что приносит деньги, а что просто горит.</p></div>
-      <div class="ncard rv d2"><div class="nbadge">06</div><div class="ntit">Отчёт в 18:00</div><p class="ntx">Каждый вечер — что сделано, кто что делал. Не спрашиваете «как дела», а открываете панель.</p></div>
+      <div class="ncard rv d2"><div class="nbadge">06</div><div class="ntit">Отчёты</div><p class="ntx">Утром — план на день, вечером в 18:00 — итог, по пятницам — полный отчёт за неделю документом. Отдельно каждый день перепроверяем, что «сдано» — правда сдано.</p></div>
     </div>
   </div>
 </section>
