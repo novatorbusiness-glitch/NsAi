@@ -630,6 +630,7 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
         </div>
       </div>
     </div>
+    <p class="vstable-hint">← смахните, чтобы увидеть сравнение с NCAi →</p>
   </div>
 </section>
 <hr class="dv">`;
@@ -1303,6 +1304,7 @@ export const VS_AI_HTML_EN = `<!-- HOW IT'S DIFFERENT FROM Claude/GPT/Codex -->
         </div>
       </div>
     </div>
+    <p class="vstable-hint">← swipe to see the NCAi comparison →</p>
   </div>
 </section>
 <hr class="dv">`;

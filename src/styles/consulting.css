@@ -273,7 +273,7 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 
 /* BLOCK 9 */
 #vsmarket{background:var(--bg2)}
-.vstable-wrap{margin-top:3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--br)}
+.vstable-wrap{position:relative;margin-top:3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--br)}
 .vstable{min-width:520px;border-radius:0;overflow:hidden}
 .vshead{display:grid;grid-template-columns:1.2fr 1fr 1.1fr;background:var(--bgc2);border-bottom:1px solid var(--br)}
 .vsh{padding:.85rem 1rem;font-family:var(--fd);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
@@ -285,6 +285,14 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .vsc.cr{font-family:var(--fd);font-size:.76rem;font-weight:700;color:var(--t2);border-right:1px solid var(--br)}
 .vsc.th{color:var(--t3);border-right:1px solid var(--br)}
 .vsc.me{color:var(--t)}
+.vstable-hint{display:none}
+/* Мобильный скролл таблицы сравнения не был виден пользователю — третья
+   (главная) колонка «→ NCAi» полностью пряталась за краем экрана без
+   подсказки. Добавляем затемнение справа + текстовую подсказку. */
+@media (max-width:640px){
+  .vstable-wrap{box-shadow:inset -28px 0 20px -20px rgba(0,0,0,.6)}
+  .vstable-hint{display:block;text-align:center;font-family:var(--fm);font-size:.7rem;color:var(--t3);margin-top:.6rem}
+}
 
 /* BLOCK 10 */
 .hlay{display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:start}
