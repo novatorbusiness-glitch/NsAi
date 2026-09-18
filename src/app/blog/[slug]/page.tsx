@@ -26,7 +26,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 			description: post.excerpt,
 			publishedTime: post.date,
 			authors: ["Илья Новицкий"],
+			images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
 		},
+		twitter: { card: "summary_large_image", title: post.title, description: post.excerpt },
 	};
 }
 
