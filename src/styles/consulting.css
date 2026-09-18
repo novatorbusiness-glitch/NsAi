@@ -11,12 +11,11 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:17px;line-height:1.85;overflow-x:hidden}
-@media(pointer:fine){body{cursor:none}}
-#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
-@media(pointer:fine){#cd,#cr{display:block}}
-#cd{width:5px;height:5px;background:var(--a);border-radius:50%}
-#cr{z-index:9998;width:28px;height:28px;border:1px solid rgba(255,208,0,.4);border-radius:50%;transition:width .3s var(--ease),height .3s var(--ease),opacity .3s}
-#cr.ex{width:50px;height:50px;opacity:.3}
+/* Кастомный курсор убран (Илья, премиум-редизайн): /b24u — наш эталон
+   премиум-стиля — курсор не трогает, это читалось как «флэши-хакерская»
+   деталь, не премиум. #cd/#cr divs и их JS в *-js.ts безвредно остаются
+   (двигают невидимые элементы), но здесь визуально скрыты навсегда. */
+#cd,#cr{display:none}
 body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
 #prog{position:fixed;top:68px;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.45));z-index:200;width:0;pointer-events:none;transition:width .1s linear}
