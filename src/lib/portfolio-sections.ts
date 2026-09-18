@@ -156,25 +156,25 @@ export const PARTNER_HTML = `<!-- PARTNERSHIP -->
 <section id="port-partner">
   <div class="w">
     <span class="sec-tag rv">Партнёрство</span>
-    <h2 class="sec-h2 rv d1">Партнёрство: доля, white-label, комиссия</h2>
+    <h2 class="sec-h2 rv d1">Партнёрство: что получает ваш бизнес</h2>
     <div class="port-mgrid">
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
         <div class="port-mtag">Совместный продукт</div>
-        <div class="port-mtit">Строим вместе</div>
-        <p class="port-mtx">Вхожу техническим партнёром за долю или опцион. Проектирую, пишу код, вывожу на рынок.</p>
+        <div class="port-mtit">Тех-партнёр, а не подрядчик на удержании</div>
+        <p class="port-mtx">Получаете проектирование, код и запуск без найма CTO и без риска текучки. Работаю за долю или опцион — значит, лично заинтересован в росте продукта, а не в закрытии тикетов.</p>
       </div>
       <div class="port-mcard rv d1">
         <div class="port-mico">${icon("puzzle")}</div>
         <div class="port-mtag">White-label / Методология</div>
-        <div class="port-mtit">NCAi + «Нейро-Воронка» под вашим брендом</div>
-        <p class="port-mtx">Готовая методология под ваш бренд. Продавайте систему и книгу как свою.</p>
+        <div class="port-mtit">Готовая система под вашим брендом — без месяцев разработки</div>
+        <p class="port-mtx">Методология NCAi и книга «Нейро-Воронка» уже проверены на реальных клиентах. Продаёте как свою, экономите R&D и выходите на рынок сразу — без стадии «а вдруг не взлетит».</p>
       </div>
       <div class="port-mcard rv d2">
         <div class="port-mico">${icon("link")}</div>
         <div class="port-mtag">Рефералка</div>
-        <div class="port-mtit">Комиссия за клиента</div>
-        <p class="port-mtx">Приводите клиентов — получаете комиссию. Простая и прозрачная схема.</p>
+        <div class="port-mtit">Доход с клиента без дополнительной работы</div>
+        <p class="port-mtx">Знакомите — я сам закрываю задачу: распаковку, обучение или разработку. Простая и прозрачная комиссия за каждого пришедшего клиента.</p>
       </div>
     </div>
   </div>
@@ -350,25 +350,25 @@ export const PARTNER_HTML_EN = `<!-- PARTNERSHIP -->
 <section id="port-partner">
   <div class="w">
     <span class="sec-tag rv">Partnership</span>
-    <h2 class="sec-h2 rv d1">Partnership: equity, white-label, commission</h2>
+    <h2 class="sec-h2 rv d1">Partnership: what your business gets</h2>
     <div class="port-mgrid">
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
         <div class="port-mtag">Joint product</div>
-        <div class="port-mtit">Building it together</div>
-        <p class="port-mtx">I join as a technical partner for equity or an option. I design it, write the code, take it to market.</p>
+        <div class="port-mtit">A tech partner, not a contractor on retainer</div>
+        <p class="port-mtx">You get design, code and a launch without hiring a CTO or risking turnover. I work for equity or an option — so I'm personally invested in the product's growth, not in closing tickets.</p>
       </div>
       <div class="port-mcard rv d1">
         <div class="port-mico">${icon("puzzle")}</div>
         <div class="port-mtag">White-label / Methodology</div>
-        <div class="port-mtit">NCAi + "Neuro-Funnel" under your brand</div>
-        <p class="port-mtx">A ready methodology under your brand. Sell the system and the book as your own.</p>
+        <div class="port-mtit">A ready system under your brand — no months of development</div>
+        <p class="port-mtx">NCAi's methodology and the "Neuro-Funnel" book are already proven on real clients. Sell them as your own, skip the R&D, and go to market right away — no "will this even work" stage.</p>
       </div>
       <div class="port-mcard rv d2">
         <div class="port-mico">${icon("link")}</div>
         <div class="port-mtag">Referrals</div>
-        <div class="port-mtit">A commission per client</div>
-        <p class="port-mtx">Bring in clients — earn a commission. A simple, transparent arrangement.</p>
+        <div class="port-mtit">Income per client, no extra work</div>
+        <p class="port-mtx">You make the introduction — I handle the work myself: unboxing, training, or development. A simple, transparent commission for every client who comes through you.</p>
       </div>
     </div>
   </div>

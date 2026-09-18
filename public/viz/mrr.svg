@@ -20,7 +20,7 @@
   <text x="230" y="94" text-anchor="middle" font-family="'Space Mono',monospace" font-size="20" letter-spacing="2" fill="#FFD000">АГЕНТСТВО В КОРОБКЕ</text>
 
   <text x="80" y="196" font-family="'Space Grotesk',sans-serif" font-weight="800" font-size="62" letter-spacing="-1" fill="#f0ede6">ЭКОНОМИКА · ЛЕСТНИЦА MRR</text>
-  <text x="84" y="248" font-family="'Space Mono',monospace" font-size="24" letter-spacing="1" fill="#7a7670">предсказуемый ежемесячный доход · растёт с каждым клиентом · единый тариф 4 900 ₽</text>
+  <text x="84" y="248" font-family="monospace" font-size="18" letter-spacing="0" fill="#7a7670">предсказуемый ежемесячный доход · растёт с каждым клиентом · единый тариф 4 900 ₽</text>
 
   <!-- базис -->
   <line x1="240" y1="820" x2="1320" y2="820" stroke="#2a2a2a" stroke-width="3"/>
@@ -49,5 +49,5 @@
   <text x="966" y="448" font-family="'Space Mono',monospace" font-size="20" fill="rgba(255,208,0,.7)">+20 клиентов</text>
 
   <!-- подпись -->
-  <text x="80" y="902" font-family="'Space Mono',monospace" font-size="18" letter-spacing="1" fill="#555">сверх MRR — внедрение, слоты, топ-апы AI · маржу защищает kill-switch AI-бюджета</text>
+  <text x="80" y="902" font-family="monospace" font-size="15" letter-spacing="0" fill="#555">сверх MRR — внедрение, слоты, топ-апы AI · маржу защищает kill-switch AI-бюджета</text>
 </svg>
