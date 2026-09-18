@@ -107,7 +107,7 @@ nav#nav{background:rgba(8,8,8,.94)!important;border-bottom:1px solid rgba(255,25
 // или недоступная сеть до fonts.googleapis.com (нередко в РФ) не блокировала
 // рендер главы целиком — контент рисуется системным шрифтом сразу, шрифт
 // подменяется, когда (и если) догрузится.
-const FONT_LINKS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>`;
+const FONT_LINKS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>`;
 
 function normalizeChapterHtmlFonts(source: string): string {
 	return inlineVizSvg(source)
@@ -117,7 +117,7 @@ function normalizeChapterHtmlFonts(source: string): string {
 		.replace(/(<a\b[^>]*class=["']logo["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/$2")
 		.replace(/(<a\b[^>]*class=["']nav-back["'][^>]*href=["'])[^"']*(["'][^>]*>)/gi, "$1/book$2")
 		.replace(/<a\b(?![^>]*\btarget=)([^>]*\bhref=["']\/(?!\/)[^"']*["'])/gi, '<a target="_top"$1')
-		.replace(/<\/head>/i, `${FONT_LINKS}<style id="ncai-light-reader">${LIGHT_READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style><style id="ncai-book-fonts">:root{--fd:'Syne',sans-serif!important;--fs:'Instrument Serif',serif!important;--fm:'JetBrains Mono',monospace!important}</style></head>`);
+		.replace(/<\/head>/i, `${FONT_LINKS}<style id="ncai-light-reader">${LIGHT_READER_CSS}</style><style id="ncai-book-viz">${VIZ_CSS}</style><style id="ncai-book-fonts">:root{--fd:'Unbounded',sans-serif!important;--fs:'PT Serif',serif!important;--fm:'JetBrains Mono',monospace!important}</style></head>`);
 }
 
 interface ChapterPageProps {
