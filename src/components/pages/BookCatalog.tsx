@@ -73,7 +73,7 @@ export default function BookCatalog() {
 
 				<section className="bkcat-chapters">
 					<p className="bkcat-chapters-label">Содержание</p>
-					<h2 className="bkcat-chapters-title">Шесть глав — от внимания до автономного контура</h2>
+					<h2 className="bkcat-chapters-title">6 глав, 30 подглав — от захвата внимания до воронки, которая работает сама</h2>
 					<div className="bkcat-grid">
 						{BOOK_CHAPTER_SUBS.map((chapter) => (
 							<a

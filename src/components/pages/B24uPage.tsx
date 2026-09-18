@@ -195,7 +195,7 @@ export default function B24uPage() {
 				{/* ── РЕШЕНИЕ ── */}
 				<section className="b24u-sec b24u-sec-solution">
 					<div className="b24u-inner">
-						<h2 className="b24u-h2">Решение — AI-чатбот, который отвечает за сайт</h2>
+						<h2 className="b24u-h2">AI-чатбот, обученный на вашем сайте, — до 72% диалогов в лид</h2>
 						<p className="b24u-lead">
 							B24U — это интеллектуальный виджет чата, который понимает посетителя, отвечает по
 							базе знаний вашего сайта и ведёт его к заявке. Вы получаете лиды, а не тишину.
@@ -242,7 +242,7 @@ export default function B24uPage() {
 				{/* ── КАК РАБОТАЕТ ── */}
 				<section className="b24u-sec b24u-sec-solution">
 					<div className="b24u-inner">
-						<h2 className="b24u-h2">Как это работает — 3 шага</h2>
+						<h2 className="b24u-h2">Подключение за 15 минут: скан сайта → настройка → продажи</h2>
 						<div className="b24u-steps">
 							{STEPS.map((s) => (
 								<div key={s.n} className="b24u-step">
@@ -258,7 +258,7 @@ export default function B24uPage() {
 				{/* ── ТАРИФЫ ── */}
 				<section className="b24u-sec">
 					<div className="b24u-inner">
-						<h2 className="b24u-h2">Тарифы B24U</h2>
+						<h2 className="b24u-h2">Тарифы B24U — первые 7 дней бесплатно</h2>
 						<p className="b24u-lead">
 							Лицензия — по тарифам вендора (цены уточняются при подключении). Настройка под ключ
 							— от 15 000 ₽ разово, включает базу знаний, промпты, кнопки и обучение.
