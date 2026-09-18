@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	title: TITLE,
 	description: DESCRIPTION,
 	alternates: { canonical: "/privacy" },
-	openGraph: { title: TITLE, description: DESCRIPTION, url: "/privacy", type: "website" },
+	openGraph: { title: TITLE, description: DESCRIPTION, url: "/privacy", type: "website", images: [{ url: "/images/og/default.png", width: 1200, height: 630 }] },
 };
 
 export default function Page() {

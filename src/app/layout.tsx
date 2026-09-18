@@ -60,6 +60,11 @@ export const metadata: Metadata = {
 		title: "Илья Новицкий · NCAi — архитектор систем",
 		description:
 			"Нейромаркетинг, AI-автоматизация, системное мышление. Бесплатная книга «Нейро-Воронка», распаковка AI-агентства для бизнеса и специалистов, обучение AI 1 на 1.",
+		images: [{ url: "/images/og/default.png", width: 1200, height: 630, alt: "NCAi — агентство в коробке" }],
+	},
+	twitter: {
+		card: "summary_large_image",
+		images: ["/images/og/default.png"],
 	},
 	robots: {
 		index: true,
