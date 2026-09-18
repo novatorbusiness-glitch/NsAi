@@ -7,7 +7,6 @@ import ConsultingHero from "@/components/consulting/sections/ConsultingHero";
 import IdeaSection from "@/components/consulting/sections/IdeaSection";
 import UnderTheHoodSection from "@/components/consulting/sections/UnderTheHoodSection";
 import ScreensSection from "@/components/consulting/sections/ScreensSection";
-import GetsSection from "@/components/consulting/sections/GetsSection";
 import WhoSection from "@/components/consulting/sections/WhoSection";
 import BoxSection from "@/components/consulting/sections/BoxSection";
 import VsAiSection from "@/components/consulting/sections/VsAiSection";
@@ -54,7 +53,6 @@ export default function RaspakovkaPage() {
 			<IdeaSection />
 			<UnderTheHoodSection />
 			<ScreensSection />
-			<GetsSection />
 			<WhoSection />
 			<BoxSection />
 			<VsAiSection />
