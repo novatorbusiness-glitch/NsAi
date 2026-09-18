@@ -1,7 +1,8 @@
 "use client";
 
-import { WHO_HTML } from "@/lib/consulting-sections";
+import { WHO_HTML, WHO_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function WhoSection() {
-	return <div dangerouslySetInnerHTML={{ __html: WHO_HTML }} />;
+	return <Bilingual ru={WHO_HTML} en={WHO_HTML_EN} />;
 }

@@ -1,7 +1,8 @@
 "use client";
 
-import { CASES_HTML } from "@/lib/consulting-sections";
+import { CASES_HTML, CASES_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function CasesSection() {
-	return <div dangerouslySetInnerHTML={{ __html: CASES_HTML }} />;
+	return <Bilingual ru={CASES_HTML} en={CASES_HTML_EN} />;
 }
