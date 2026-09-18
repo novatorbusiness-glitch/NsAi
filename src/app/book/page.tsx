@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 		title: "Книга «Нейро-Воронка» — бесплатный подарок",
 		description: "Практическое руководство по нейромаркетингу и AI-автоматизации. Читается бесплатно на сайте.",
 		url: "https://ilya-novitsky.ru/book",
+		images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
 	},
 };
 

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 		title: "NCAi · книга промптов",
 		description: "111 готовых промптов из базы NCAi: воронки, креативы, доверие, AI-агенты, разработка. Каталог по категориям, поиск и копирование.",
 		url: "https://ilya-novitsky.ru/prompts",
+		images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
 	},
 };
 
