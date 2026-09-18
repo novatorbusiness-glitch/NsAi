@@ -31,7 +31,6 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 @keyframes gmove{0%{background-position:0 0}100%{background-position:38px 38px}}
 .hgl{position:absolute;width:900px;height:900px;background:radial-gradient(circle,rgba(255,208,0,.055) 0%,transparent 62%);top:50%;left:28%;transform:translate(-50%,-54%);pointer-events:none;animation:hbr 11s ease-in-out infinite}
 @keyframes hbr{0%,100%{opacity:.5;transform:translate(-50%,-54%) scale(1)}50%{opacity:1;transform:translate(-50%,-54%) scale(1.08)}}
-#pcanvas{position:absolute;inset:0;pointer-events:none}
 .hleft{position:relative;z-index:2;padding:0 2rem 0 max(2rem,calc((100vw - var(--max))/2 + 2rem))}
 @media(max-width:900px){.hleft{padding:0 2rem}}
 .hew{display:inline-flex;align-items:center;gap:.65rem;font-family:var(--fm);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--t2);margin-bottom:2.5rem;padding:.42rem .95rem;border:1px solid var(--br2);border-radius:999px;animation:fup .8s var(--ease) both}

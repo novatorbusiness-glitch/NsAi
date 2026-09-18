@@ -7,7 +7,6 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="ait-hero">
   <div class="ait-hero-grid"></div>
   <div class="ait-hero-glow"></div>
-  <canvas id="ait-cvs"></canvas>
   <div class="ait-hero-inner">
     <div>
       <div class="ait-hero-badge"><span class="ait-bdot"></span>Обучение AI · 1 на 1 · 1 месяц</div>
