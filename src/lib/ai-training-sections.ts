@@ -127,26 +127,8 @@ export const MECHANISM_HTML = `<!-- 3 · УНИКАЛЬНЫЙ МЕХАНИЗМ -
   <div class="w">
     <span class="ait-sec-tag rv">Уникальный механизм</span>
     <h2 class="ait-sec-h2 rv d1">Learning by building: навык остаётся</h2>
-    <p class="ait-sl rv d2">Не «смотри запись». Мы собираем твой проект вместе, в моменте. Ты не слушаешь — ты строишь.</p>
-    <div class="ait-steps">
-      <div class="ait-step rv d1">
-        <div class="ait-step-num">01</div>
-        <div><div class="ait-step-tit">Диагностика</div><div class="ait-step-tx">Разбираем твой проект, фиксируем точку А и карту решения. Становится ясно, что собираем и каким стеком.</div></div>
-      </div>
-      <div class="ait-step rv d2">
-        <div class="ait-step-num">02</div>
-        <div><div class="ait-step-tit">2 сессии 1 на 1</div><div class="ait-step-tx">Живой лайф-кодинг на твоём проекте: я показываю каждое решение, ты собираешь вместе со мной. Работаем в моменте, а не «потом посмотришь».</div></div>
-      </div>
-      <div class="ait-step rv d3">
-        <div class="ait-step-num">03</div>
-        <div><div class="ait-step-tit">Распаковка агентства NCAi</div><div class="ait-step-tx">Отдельно разворачиваю тебе рабочее AI-агентство: команда цифровых сотрудников, доска задач, контроль расходов на AI — та же распаковка, что продаю отдельным продуктом за 19 900 ₽, входит в месяц.</div></div>
-      </div>
-      <div class="ait-step rv d3">
-        <div class="ait-step-num">04</div>
-        <div><div class="ait-step-tit">Месяц на связи</div><div class="ait-step-tx">Не пропадаю после сессий: весь месяц отвечаю на вопросы и помогаю застрять поменьше. Плюс книга из 111 промптов NCAi в подарок.</div></div>
-      </div>
-    </div>
-    <div class="ait-out-grid rv d3" style="margin-top:3rem">
+    <p class="ait-sl rv d2">Не «смотри запись». Мы собираем твой проект вместе, в моменте. Ты не слушаешь — ты строишь. Как именно расписан месяц по сессиям — в следующем блоке.</p>
+    <div class="ait-out-grid rv d3">
       <div class="ait-out-item"><div class="ait-out-num">2</div><div class="ait-out-tx">Живые сессии 1 на 1, лайф-кодинг на твоём проекте</div></div>
       <div class="ait-out-item"><div class="ait-out-num">1</div><div class="ait-out-tx">Рабочее AI-агентство — распаковка NCAi входит в месяц</div></div>
       <div class="ait-out-item"><div class="ait-out-num">111</div><div class="ait-out-tx">Промптов NCAi в подарок</div></div>
