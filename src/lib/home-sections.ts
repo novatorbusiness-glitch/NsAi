@@ -115,7 +115,7 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 <section id="journey" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Мой путь</span>
-    <h2 class="sec-h2 rv d1">С 2016 года: от продаж до AI-систем</h2>
+    <h2 class="sec-h2 rv d1">300+ проектов с 2016 года — практика, а не теория</h2>
     <p class="p journey-lead rv d1">Компетентность не появилась однажды. Она собиралась годами: от первых продаж до архитектуры AI-систем.</p>
 
     <div class="jrn">
@@ -171,7 +171,7 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
 <section id="mechanism" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">То, что я в итоге построил</span>
-    <h2 class="sec-h2 rv d1" style="text-align:center">Пишете задачу —<br>получаете результат</h2>
+    <h2 class="sec-h2 rv d1" style="text-align:center">Пишете задачу —<br>вечером готовый результат в панели</h2>
     <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели. Подходит и владельцу бизнеса, и специалисту, который собирает себе AI-отдел.</p>
 
     <div class="panelmock rv d2">
@@ -209,7 +209,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
 <section id="products" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Чем занимаюсь</span>
-    <h2 class="sec-h2 rv d1">Три направления.<br>Выбери своё.</h2>
+    <h2 class="sec-h2 rv d1">От бесплатной книги —<br>до готового AI-агентства за 19 900 ₽</h2>
     <div class="products-grid">
 
       <a href="/raspakovka" class="prod-card c1 rv">

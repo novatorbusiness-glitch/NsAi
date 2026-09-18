@@ -5,7 +5,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
-    <h1 class="hh1">Работа в вашей голове.<span class="acc">Забираем в агентство.</span></h1>
+    <h1 class="hh1">Работа в вашей голове.<span class="acc">Забираем в агентство за 19 900 ₽.</span></h1>
     <p class="hsub">Не «доступ к нейросети», а настоящий движок: приёмка задач, пир-ревью, ночной драйвер 24/7. Готовая AI-команда с ролями, доской задач и контролем расходов. Руль сразу у вас — для владельца бизнеса и для новой профессии менеджера AI-агентства.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -50,7 +50,7 @@ export const WHO_HTML = `<!-- ДЛЯ КОГО · две равные ветки:
 <section id="who" class="sec-light">
   <div class="w">
     <span class="lb rv">Для кого</span>
-    <h2 class="sh2 rv d1">Две равные ветки.<br>Один продукт.</h2>
+    <h2 class="sh2 rv d1">Бизнесу — операционка на AI-команде 24/7.<br>Специалисту — свой AI-отдел и выше чек.</h2>
     <p class="sl rv d2">Распаковка — не «бизнес плюс приписка про профессию». Это два одинаково сильных сценария: владелец бизнеса отдаёт операционку команде, специалист собирает себе AI-отдел и поднимает чек.</p>
     <div class="who-grid">
       <div class="who rv d1">
@@ -176,7 +176,7 @@ export const SCREENS_HTML = `<!-- СКРИНЫ · реальный интерф�
 <section id="screens" class="sec-light">
   <div class="w">
     <span class="lb rv">Скрины · живая система</span>
-    <h2 class="sh2 rv d1">Вот как это выглядит<br>изнутри</h2>
+    <h2 class="sh2 rv d1">Пять живых экранов:<br>деньги, команда, задачи, аналитика, отчёт</h2>
     <p class="sl rv d2">Реальные скрины рабочего кабинета NCAi: пульт, команда, доска задач, аналитика и отчёт. Снято с живой системы — не макет.</p>
     <div class="screens">
       <figure class="scr rv d1">
@@ -333,7 +333,7 @@ export const GETS_HTML = `<!-- 3 · ЧТО РЕАЛЬНО МЕНЯЕТСЯ -->
 <section id="gets" class="sec-light">
   <div class="w">
     <span class="lb rv">Уникальный механизм</span>
-    <h2 class="sh2 rv d1">Что реально меняется<br>после распаковки</h2>
+    <h2 class="sh2 rv d1">С первого дня — не через месяц:<br>агенты, задачи и отчёт в 18:00</h2>
     <p class="sl rv d2">Не абстрактные фичи — конкретные перемены, которые вы почувствуете с первого дня, а не через месяц настройки.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Своё с первого дня</div><p class="ntx"><b>Кабинет с названием вашего бизнеса работает сразу</b> — не демо-версия «Мой проект». Агенты, задачи и расходы на AI в одном месте, а не в пяти вкладках и переписках.</p></div>
@@ -351,7 +351,7 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
 <section id="realwork" class="sec-light">
   <div class="w">
     <span class="lb rv">Как это работает на самом деле</span>
-    <h2 class="sh2 rv d1">Конкретные задачи для вашей ниши</h2>
+    <h2 class="sh2 rv d1">Готовые задачи для 4 ниш:<br>бьюти, услуги, продажи, контент</h2>
     <p class="sl rv d2">Под каждую нишу — свой шаблон: отделы, роли и первые задачи, которые реально ставятся в первую неделю. Не «представьте, что…», а то, что уже готово в кабинете по итогам распаковки.</p>
     <div class="ncw rv d2">
       <button class="nc-arr nc-prev" id="ncPrev" aria-label="Предыдущая ниша">‹</button>
@@ -668,7 +668,7 @@ export const FEATURES_HTML = `<!-- 8 · ФИЧИ ПАНЕЛИ -->
 <section id="features" class="sec-light">
   <div class="w">
     <span class="lb rv">Фичи панели</span>
-    <h2 class="sh2 rv d1">Что вы видите в панели</h2>
+    <h2 class="sh2 rv d1">Шесть вкладок панели —<br>работают с первого дня</h2>
     <p class="sl rv d2">Не обещания — конкретные вкладки рабочего кабинета, которые работают с первого дня.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Доска задач</div><p class="ntx">Номер, срок, исполнитель, статус. Каждая задача — одна строка, всегда видно, что в работе и что готово.</p></div>
