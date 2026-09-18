@@ -1,31 +1,58 @@
 "use client";
 
 import { useEffect } from "react";
-import { css, body, js } from "@/lib/pages/ai-training-content";
+import PageShell from "@/components/layout/PageShell";
+import { aiTrainingJs } from "@/lib/ai-training-js";
+import HeroSection from "@/components/ai-training/sections/HeroSection";
+import IdeaSection from "@/components/ai-training/sections/IdeaSection";
+import SutSection from "@/components/ai-training/sections/SutSection";
+import MechanismSection from "@/components/ai-training/sections/MechanismSection";
+import ProgramSection from "@/components/ai-training/sections/ProgramSection";
+import QuestionsSection from "@/components/ai-training/sections/QuestionsSection";
+import ObjectionsSection from "@/components/ai-training/sections/ObjectionsSection";
+import OfferSection from "@/components/ai-training/sections/OfferSection";
+import AmpSection from "@/components/ai-training/sections/AmpSection";
+import CasesSection from "@/components/ai-training/sections/CasesSection";
+import FinalSection from "@/components/ai-training/sections/FinalSection";
 
 /**
  * Страница «Обучение AI»: оффер 1 на 1, 1 месяц, 70–80к ₽.
- * CSS/разметка самодостаточны (как consulting-content), интерактив
- * (курсор, nav scroll, reveal, particles) — в useEffect.
+ * Разобрана на секции по паттерну RaspakovkaPage — использует общий
+ * PageShell (Navigation/Footer), свой интерактив (курсор, reveal, canvas-
+ * частицы в hero) подключается через useEffect, как на /raspakovka.
  */
 export default function AiTrainingPage() {
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const w = window as unknown as { __ncaiTrainingInited?: boolean };
-    if (w.__ncaiTrainingInited) return;
-    w.__ncaiTrainingInited = true;
-    try {
-      // Статичный, доверенный скрипт страницы
-      new Function(js)();
-    } catch (err) {
-      console.error("NCAi ai-training page script error:", err);
-    }
-  }, [js]);
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const w = window as unknown as { __ncaiTrainingInited?: boolean };
+		if (w.__ncaiTrainingInited) return;
+		w.__ncaiTrainingInited = true;
+		document.documentElement.classList.add("js");
+		if (!("IntersectionObserver" in window)) {
+			document.querySelectorAll(".rv").forEach((el) => el.classList.add("on"));
+		}
+		try {
+			new Function(aiTrainingJs)();
+		} catch (err) {
+			console.error("NCAi ai-training page script error:", err);
+		}
+	}, []);
 
-  return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: css }} />
-      <div dangerouslySetInnerHTML={{ __html: body }} />
-    </>
-  );
+	return (
+		<PageShell>
+			<div id="cd" />
+			<div id="cr" />
+			<HeroSection />
+			<IdeaSection />
+			<SutSection />
+			<MechanismSection />
+			<ProgramSection />
+			<QuestionsSection />
+			<ObjectionsSection />
+			<OfferSection />
+			<AmpSection />
+			<CasesSection />
+			<FinalSection />
+		</PageShell>
+	);
 }
