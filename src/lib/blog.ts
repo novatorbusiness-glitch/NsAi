@@ -2,9 +2,11 @@
 export interface BlogPost {
 	slug: string;
 	title: string;
+	titleEn: string;
 	date: string; // ISO
 	dateLabel: string; // для отображения
 	excerpt: string;
+	excerptEn: string;
 	tags: string[];
 	category: BlogCategory; // ключ категории для фильтра
 	chars: number; // знаков (с пробелами) в тексте статьи
@@ -14,22 +16,25 @@ export interface BlogPost {
 // Категории блога (чипы-фильтры). Ключ «all» — показывать всё.
 export type BlogCategory = "neyromarketing" | "voronki" | "doverie" | "ai";
 
-export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string }[] = [
-	{ key: "all", label: "Всё" },
-	{ key: "neyromarketing", label: "Нейромаркетинг" },
-	{ key: "voronki", label: "Воронки" },
-	{ key: "doverie", label: "Доверие" },
-	{ key: "ai", label: "AI" },
+export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string; labelEn: string }[] = [
+	{ key: "all", label: "Всё", labelEn: "All" },
+	{ key: "neyromarketing", label: "Нейромаркетинг", labelEn: "Neuromarketing" },
+	{ key: "voronki", label: "Воронки", labelEn: "Funnels" },
+	{ key: "doverie", label: "Доверие", labelEn: "Trust" },
+	{ key: "ai", label: "AI", labelEn: "AI" },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "doverie-za-7-kasanij",
 		title: "Доверие за 7 касаний: цепочка без уговоров",
+		titleEn: "Trust in 7 touches: a sequence with no arm-twisting",
 		date: "2026-08-27",
 		dateLabel: "27 августа 2026",
 		excerpt:
 			"Никто не покупает у незнакомца. Разбираем, как из четырёх элементов доверия — экспертность, боль, трансформация, продукт — собирается цепочка касаний, которая ведёт клиента от первого «кто ты?» до готовности купить без давления.",
+		excerptEn:
+			"No one buys from a stranger. We break down how a touch sequence is built from four elements of trust — expertise, pain, transformation, product — carrying a client from the first \"who are you?\" to a purchase with no pressure.",
 		tags: ["доверие", "цепочки касаний", "прогрев"],
 		category: "doverie",
 		chars: 3787,
@@ -38,10 +43,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "pochemu-klienty-ne-vozvrashhayutsya",
 		title: "Почему клиенты не возвращаются и что с этим делать",
+		titleEn: "Why clients don't come back — and what to do about it",
 		date: "2026-08-24",
 		dateLabel: "24 августа 2026",
 		excerpt:
 			"Клиент купил один раз и исчез, а вы снова тратите бюджет на привлечение. Разбираем три причины, по которым покупатели не возвращаются, и как достроить воронку так, чтобы повторные продажи шли сами.",
+		excerptEn:
+			"A client buys once and vanishes, and you're spending budget on acquisition again. We break down three reasons buyers don't return, and how to complete the funnel so repeat sales happen on their own.",
 		tags: ["удержание", "повторные продажи", "воронка"],
 		category: "voronki",
 		chars: 3645,
@@ -50,10 +58,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "lid-magnit-kotoryj-zabirayut-sam",
 		title: "Лид-магнит, который забирают сами: бесплатный продукт, собирающий базу",
+		titleEn: "A lead magnet people actually grab: a free product that builds your list",
 		date: "2026-08-22",
 		dateLabel: "22 августа 2026",
 		excerpt:
 			"«Скачайте наш гайд» — и тишина. Почему бесплатные продукты не забирают, как работает химия «бесплатного» и три признака магнита, который приносит не мёртвую базу, а горячих лидов.",
+		excerptEn:
+			"\"Download our guide\" — then silence. Why free products go unclaimed, how the psychology of \"free\" works, and three signs of a magnet that brings in hot leads, not a dead list.",
 		tags: ["лид-магнит", "база", "бесплатный продукт"],
 		category: "voronki",
 		chars: 3450,
@@ -62,10 +73,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "kryuchok-5-sekund",
 		title: "Крючок, который цепляет: как завладеть вниманием за 5 секунд",
+		titleEn: "A hook that lands: how to grab attention in 5 seconds",
 		date: "2026-08-20",
 		dateLabel: "20 августа 2026",
 		excerpt:
 			"Первичный мозг принимает решение за доли секунды и без единого слова. Разбираем три когнитивных ловушки, которые заставляют остановиться и прочитать — и почему «написать крючок» это не про красивый слоган.",
+		excerptEn:
+			"The primal brain decides in a fraction of a second, without a single word. We break down three cognitive traps that make someone stop and read — and why \"writing a hook\" isn't about a clever tagline.",
 		tags: ["нейромаркетинг", "крючок", "внимание"],
 		category: "neyromarketing",
 		chars: 2151,
@@ -74,10 +88,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "bol-pokupatelya",
 		title: "Боль клиента: почему люди покупают не решение, а избавление",
+		titleEn: "Customer pain: why people buy relief, not a solution",
 		date: "2026-08-14",
 		dateLabel: "14 августа 2026",
 		excerpt:
 			"Продукт продают не характеристики, а снятие боли. Разбираем механику: страх потери, эффект упущенной выгоды, социальное доказательство и почему «боль» в оффере работает сильнее «выгоды».",
+		excerptEn:
+			"A product isn't sold on its features — it's sold on removing pain. We break down the mechanics: loss aversion, FOMO, social proof, and why \"pain\" in an offer outperforms \"benefit.\"",
 		tags: ["оффер", "боль", "психология"],
 		category: "neyromarketing",
 		chars: 2227,
@@ -86,10 +103,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "offer-bez-davleniya",
 		title: "Оффер, который продаёт без давления: структура, снимающая сопротивление",
+		titleEn: "An offer that sells with no pressure: a structure that dissolves resistance",
 		date: "2026-08-08",
 		dateLabel: "8 августа 2026",
 		excerpt:
 			"Жёсткие продажи встречают броню. Слабая воронка давит, сильная — снимает возражения заранее. Разбираем формулу оффера: якорь, гарантия, дедлайн и момент, когда мозг говорит «беру».",
+		excerptEn:
+			"Hard selling meets armor. A weak funnel pushes; a strong one removes objections in advance. We break down the offer formula: anchor, guarantee, deadline, and the moment the brain says \"I'll take it.\"",
 		tags: ["оффер", "воронка", "конверсия"],
 		category: "voronki",
 		chars: 2270,
@@ -98,10 +118,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "ai-kopiraiter-neuro-voronka",
 		title: "AI-копирайтер по правилам нейро-воронки: промпт, который пишет",
+		titleEn: "An AI copywriter that follows neuro-funnel rules: a prompt that actually writes",
 		date: "2026-07-30",
 		dateLabel: "30 июля 2026",
 		excerpt:
 			"ChatGPT не пишет «плохо» — вы даёте ему слабое задание. Разбираем, как скормить модели структуру нейро-воронки: крючок, боль, решение, оффер, CTA — и получить текст, который цепляет мозг, а не собирает рерайт.",
+		excerptEn:
+			"ChatGPT doesn't write \"badly\" — you're giving it a weak brief. We break down how to feed the model a neuro-funnel structure: hook, pain, solution, offer, CTA — and get copy that hooks the brain instead of a rewrite.",
 		tags: ["AI", "копирайтинг", "промпты"],
 		category: "ai",
 		chars: 2623,
@@ -110,10 +133,13 @@ export const BLOG_POSTS: BlogPost[] = [
 	{
 		slug: "tri-oshibki-voronki",
 		title: "Три ошибки в воронке, которые убивают конверсию",
+		titleEn: "Three funnel mistakes that kill conversion",
 		date: "2026-07-22",
 		dateLabel: "22 июля 2026",
 		excerpt:
 			"Размытый крючок, оффер «для всех» и CTA без причины. На реальных примерах показываю, как выглядят три самые дорогие ошибки воронки — и как их чинит система, а не «ещё один лендинг».",
+		excerptEn:
+			"A vague hook, an offer \"for everyone,\" and a CTA with no reason. Using real examples, I show what the three most expensive funnel mistakes look like — and how a system fixes them, not \"one more landing page.\"",
 		tags: ["воронка", "ошибки", "аудит"],
 		category: "voronki",
 		chars: 2149,

@@ -41,7 +41,7 @@ export default function BlogIndex() {
 		return BLOG_POSTS_SORTED.filter((post) => {
 			if (cat !== "all" && post.category !== cat) return false;
 			if (!q) return true;
-			const hay = `${post.title} ${post.excerpt} ${post.tags.join(" ")}`.toLowerCase();
+			const hay = `${post.title} ${post.titleEn} ${post.excerpt} ${post.excerptEn} ${post.tags.join(" ")}`.toLowerCase();
 			return hay.includes(q);
 		});
 	}, [query, cat]);
@@ -122,7 +122,7 @@ export default function BlogIndex() {
 						className={`nb-chip${cat === c.key ? " act" : ""}`}
 						onClick={() => setCat(c.key)}
 					>
-						{c.label}
+						{ru ? c.label : c.labelEn}
 					</button>
 				))}
 			</div>
@@ -140,8 +140,8 @@ export default function BlogIndex() {
 									</time>
 									{isNew && <span className="nb-badge">NEW</span>}
 								</div>
-								<h2 className="nb-card-title">{post.title}</h2>
-								<p className="nb-card-excerpt">{post.excerpt}</p>
+								<h2 className="nb-card-title">{ru ? post.title : post.titleEn}</h2>
+								<p className="nb-card-excerpt">{ru ? post.excerpt : post.excerptEn}</p>
 								<span className="nb-card-go">{ru ? "Читать →" : "Read →"}</span>
 							</a>
 						);
