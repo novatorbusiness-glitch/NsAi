@@ -1,4 +1,5 @@
 // Секции главной (HTML из index-content, разбито по ТЗ NCAI_SPEC).
+import { icon } from "./icons";
 
 export const HERO_HTML = `<!-- HERO -->
 <section id="hero">
@@ -29,7 +30,7 @@ export const HERO_HTML = `<!-- HERO -->
       <div class="pc-group-label">Для бизнеса</div>
       <div class="product-cards">
         <a href="/raspakovka" class="pc pc-consulting" style="--c:#FFD000">
-          <div class="pc-icon">📦</div>
+          <div class="pc-icon">${icon("box", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">Распаковка агентства</div>
             <div class="pc-title">Цифровой отдел за 4 шага</div>
@@ -38,7 +39,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-arr">→</div>
         </a>
         <a href="/ai-training" class="pc pc-training" style="--c:#4ECDC4">
-          <div class="pc-icon">⚡</div>
+          <div class="pc-icon">${icon("bolt", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">Обучение AI</div>
             <div class="pc-title">1 месяц · 70–80к ₽</div>
@@ -47,7 +48,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-arr">→</div>
         </a>
         <a href="/book" class="pc pc-book" style="--c:#B4A7D6">
-          <div class="pc-icon">📖</div>
+          <div class="pc-icon">${icon("book", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">Книга · Бесплатно</div>
             <div class="pc-title">Нейро-воронка</div>
@@ -59,7 +60,7 @@ export const HERO_HTML = `<!-- HERO -->
       <div class="pc-group-label pc-group-label-alt">Ищете тех-партнёра</div>
       <div class="product-cards">
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
-          <div class="pc-icon">🎯</div>
+          <div class="pc-icon">${icon("target", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">Портфолио · Найм</div>
             <div class="pc-title">Tech Product Partner</div>
@@ -187,17 +188,17 @@ export const MECHANISM_HTML = `<!-- MECHANISM: как устроена сист�
           </div>
           <div class="mech-task-arrow">→</div>
           <div class="mech-task-card director">
-            <div class="mech-task-h">🧭 Директор</div>
+            <div class="mech-task-h">${icon("compass", "currentColor")} Директор</div>
             <div class="mech-task-t">Разбивает на подзадачи, назначает роль</div>
           </div>
           <div class="mech-task-arrow">→</div>
           <div class="mech-task-card">
-            <div class="mech-task-h">💻 Разработчик</div>
+            <div class="mech-task-h">${icon("code", "currentColor")} Разработчик</div>
             <div class="mech-task-t">Статус: <b>в работе</b> → отчёт директору</div>
           </div>
         </div>
         <div class="pm-tline">
-          <div class="pm-tl"><span class="pm-tl-ico">✅</span><span class="pm-tl-n">Готово — директор проверил результат</span><span class="pm-tl-v">закрыто</span></div>
+          <div class="pm-tl"><span class="pm-tl-ico">${icon("check", "var(--a)")}</span><span class="pm-tl-n">Готово — директор проверил результат</span><span class="pm-tl-v">закрыто</span></div>
         </div>
         <div class="pm-cost-note">Это не «чат с нейросетью», а конвейер: задача проходит приёмку, выполняется нужной ролью и закрывается только после пир-ревью — двух проверок других агентов. Ночью задачи разбирает драйвер (24/7), память и база знаний подтягиваются по смыслу (RAG), а сложные задачи идут на сильную модель, рутина — на лёгкую. Расход на AI по каждому шагу — в той же панели. <a href="/raspakovka#screens" style="color:var(--a);text-decoration:none;border-bottom:1px solid var(--a)">Живые скрины системы →</a></div>
       </div>
@@ -215,7 +216,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
       <a href="/raspakovka" class="prod-card c1 rv">
         <div class="prod-stripe" style="--stripe:#FFD000"></div>
         <div class="prod-top">
-          <div class="prod-icon">📦</div>
+          <div class="prod-icon">${icon("box", "var(--stripe)")}</div>
           <div class="prod-type">Распаковка агентства · бизнес + специалисты</div>
           <div class="prod-title">Агентство в коробке за 4 шага</div>
           <p class="prod-desc">Разворачиваю рабочих AI-агентов в панели: под ваши задачи, с доской задач и контролем расходов на AI. Распаковка в боте — руль сразу у вас, зависимости нет.</p>
@@ -235,7 +236,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
       <a href="/ai-training" class="prod-card c2 rv d1">
         <div class="prod-stripe" style="--stripe:#4ECDC4"></div>
         <div class="prod-top">
-          <div class="prod-icon">⚡</div>
+          <div class="prod-icon">${icon("bolt", "var(--stripe)")}</div>
           <div class="prod-type">Обучение AI · B2C</div>
           <div class="prod-title">Научись работать с AI руками за месяц</div>
           <p class="prod-desc">2 сессии 1 на 1 + распаковка агентства NCAi. Никакой теории в пустоту — берём твой реальный проект и собираем его вместе. Уходишь с работающим продуктом, навыком и своим AI-агентством.</p>
@@ -255,7 +256,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
       <a href="/book" class="prod-card c3 rv d2">
         <div class="prod-stripe" style="--stripe:#B4A7D6"></div>
         <div class="prod-top">
-          <div class="prod-icon">📖</div>
+          <div class="prod-icon">${icon("book", "var(--stripe)")}</div>
           <div class="prod-type">Книга · Бесплатно</div>
           <div class="prod-title">Нейро-воронка</div>
           <p class="prod-desc">Практическое руководство по инженерии систем продаж. Нейробиология, поведенческая психология и AI — без воды, с визуализациями, 30 подглав.</p>
@@ -369,28 +370,28 @@ export const SOLO_HTML = `<!-- SOLO PROJECTS -->
     <h2 class="sec-h2 rv d1">Никого не нанимал.<br>Собрал сам.</h2>
     <div class="proj-grid">
       <div class="pj rv">
-        <div class="pj-icon">🧠</div>
+        <div class="pj-icon">${icon("brain")}</div>
         <div class="pj-tag">HealthTech · AI</div>
         <div class="pj-title">Neuroflow</div>
         <p class="pj-desc">PPG-измерение через камеру телефона: ВСР, показатели нервной системы, интеграция с гаджетами</p>
         <span class="pj-status">R&D</span>
       </div>
       <div class="pj rv d1">
-        <div class="pj-icon">⚔️</div>
+        <div class="pj-icon">${icon("sword")}</div>
         <div class="pj-tag">Продуктивность</div>
         <div class="pj-title">Vlinx</div>
         <p class="pj-desc">Трекер дисциплины и привычек — каждая вредная привычка как «босс», которого нужно одолеть</p>
         <span class="pj-status">Тестирование</span>
       </div>
       <div class="pj rv d2">
-        <div class="pj-icon">🎮</div>
+        <div class="pj-icon">${icon("gamepad")}</div>
         <div class="pj-tag">EdTech · Дети</div>
         <div class="pj-title">Nezha_Quest</div>
         <p class="pj-desc">Трекер дисциплины ребёнка с системой последствий. Связка ребёнок–родитель</p>
         <span class="pj-status">R&D</span>
       </div>
       <div class="pj rv d3">
-        <div class="pj-icon">✨</div>
+        <div class="pj-icon">${icon("sparkle")}</div>
         <div class="pj-tag">Beauty · SaaS</div>
         <div class="pj-title">GAZE</div>
         <p class="pj-desc">SaaS-платформа для бьюти-мастеров: клиентская база, аналитика дохода, обучение и сертификаты</p>
