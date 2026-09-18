@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${SITE_URL}/o-proekte`, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${SITE_URL}/partners`, changeFrequency: "monthly", priority: 0.6 },
 		{ url: `${SITE_URL}/b24u`, changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${SITE_URL}/prompts`, changeFrequency: "monthly", priority: 0.6 },
 		{ url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
 		{ url: `${SITE_URL}/offer`, changeFrequency: "yearly", priority: 0.3 },
 	];
