@@ -1,7 +1,8 @@
 "use client";
 
-import { FINAL_HTML } from "@/lib/ai-training-sections";
+import { FINAL_HTML, FINAL_HTML_EN } from "@/lib/ai-training-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function FinalSection() {
-	return <div dangerouslySetInnerHTML={{ __html: FINAL_HTML }} />;
+	return <Bilingual ru={FINAL_HTML} en={FINAL_HTML_EN} />;
 }

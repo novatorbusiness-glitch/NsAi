@@ -1,7 +1,8 @@
 "use client";
 
-import { OFFER_HTML } from "@/lib/ai-training-sections";
+import { OFFER_HTML, OFFER_HTML_EN } from "@/lib/ai-training-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function OfferSection() {
-	return <div dangerouslySetInnerHTML={{ __html: OFFER_HTML }} />;
+	return <Bilingual ru={OFFER_HTML} en={OFFER_HTML_EN} />;
 }
