@@ -1,7 +1,8 @@
 "use client";
 
-import { PARTNER_HTML } from "@/lib/portfolio-sections";
+import { PARTNER_HTML, PARTNER_HTML_EN } from "@/lib/portfolio-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function PartnerSection() {
-	return <div dangerouslySetInnerHTML={{ __html: PARTNER_HTML }} />;
+	return <Bilingual ru={PARTNER_HTML} en={PARTNER_HTML_EN} />;
 }

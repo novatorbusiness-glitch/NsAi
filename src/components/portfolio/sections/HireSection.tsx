@@ -1,7 +1,8 @@
 "use client";
 
-import { HIRE_HTML } from "@/lib/portfolio-sections";
+import { HIRE_HTML, HIRE_HTML_EN } from "@/lib/portfolio-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function HireSection() {
-	return <div dangerouslySetInnerHTML={{ __html: HIRE_HTML }} />;
+	return <Bilingual ru={HIRE_HTML} en={HIRE_HTML_EN} />;
 }
