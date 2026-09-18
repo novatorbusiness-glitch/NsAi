@@ -1,7 +1,8 @@
 "use client";
 
-import { IDEA_HTML } from "@/lib/ai-training-sections";
+import { IDEA_HTML, IDEA_HTML_EN } from "@/lib/ai-training-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function IdeaSection() {
-	return <div dangerouslySetInnerHTML={{ __html: IDEA_HTML }} />;
+	return <Bilingual ru={IDEA_HTML} en={IDEA_HTML_EN} />;
 }
