@@ -1,7 +1,8 @@
 "use client";
 
-import { CONTACT_HTML } from "@/lib/portfolio-sections";
+import { CONTACT_HTML, CONTACT_HTML_EN } from "@/lib/portfolio-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function ContactSection() {
-	return <div dangerouslySetInnerHTML={{ __html: CONTACT_HTML }} />;
+	return <Bilingual ru={CONTACT_HTML} en={CONTACT_HTML_EN} />;
 }

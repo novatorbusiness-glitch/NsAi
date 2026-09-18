@@ -1,7 +1,8 @@
 "use client";
 
-import { HERO_HTML } from "@/lib/portfolio-sections";
+import { HERO_HTML, HERO_HTML_EN } from "@/lib/portfolio-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function HeroSection() {
-	return <div dangerouslySetInnerHTML={{ __html: HERO_HTML }} />;
+	return <Bilingual ru={HERO_HTML} en={HERO_HTML_EN} />;
 }

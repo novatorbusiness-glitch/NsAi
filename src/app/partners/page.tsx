@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 interface Partner {
 	name: string;
 	url: string;
+	displayUrl?: string;
 	badge: string;
 	logo: string;
 	desc: string;
@@ -34,7 +35,8 @@ const PARTNERS: Partner[] = [
 	},
 	{
 		name: "Prodamus",
-		url: "https://prodamus.ru",
+		url: "https://connect.prodamus.ru/?ref=NSAI&c=T2w",
+		displayUrl: "prodamus.ru",
 		badge: "Партнёр",
 		logo: "₽",
 		desc:
@@ -75,7 +77,7 @@ export default function PartnersPage() {
 								</div>
 							</div>
 							<p className="partner-desc">{p.desc}</p>
-							<span className="partner-go">{p.internal ? "Страница партнёра" : p.url.replace("https://", "")} →</span>
+							<span className="partner-go">{p.internal ? "Страница партнёра" : p.displayUrl ?? p.url.replace("https://", "")} →</span>
 						</a>
 					))}
 				</div>
