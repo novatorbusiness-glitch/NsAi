@@ -13,6 +13,31 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "Обучение AI 1 на 1",
+  description: DESCRIPTION,
+  provider: { "@type": "Organization", name: "NCAi", url: "https://ilya-novitsky.ru" },
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: "online",
+    courseWorkload: "P1M",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "70000",
+    priceCurrency: "RUB",
+    url: "https://ilya-novitsky.ru/ai-training",
+    availability: "https://schema.org/InStock",
+  },
+};
+
 export default function Page() {
-  return <AiTrainingPage />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+      <AiTrainingPage />
+    </>
+  );
 }

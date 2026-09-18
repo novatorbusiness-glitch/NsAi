@@ -87,6 +87,40 @@ export const metadata: Metadata = {
 	},
 };
 
+const JSON_LD = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Person",
+			"@id": `${SITE_URL}/#person`,
+			name: "Илья Новицкий",
+			alternateName: "Ilya Novitsky",
+			url: SITE_URL,
+			image: `${SITE_URL}/images/og/default.png`,
+			jobTitle: "Архитектор систем",
+			worksFor: { "@id": `${SITE_URL}/#organization` },
+			sameAs: ["https://t.me/Ilya_novator"],
+		},
+		{
+			"@type": "Organization",
+			"@id": `${SITE_URL}/#organization`,
+			name: "NCAi",
+			url: SITE_URL,
+			logo: `${SITE_URL}/images/og/default.png`,
+			founder: { "@id": `${SITE_URL}/#person` },
+			sameAs: ["https://t.me/Ilya_novator", "https://t.me/NCAi_Agency_bot"],
+		},
+		{
+			"@type": "WebSite",
+			"@id": `${SITE_URL}/#website`,
+			url: SITE_URL,
+			name: "NCAi · Илья Новицкий",
+			publisher: { "@id": `${SITE_URL}/#organization` },
+			inLanguage: ["ru-RU", "en-US"],
+		},
+	],
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -96,6 +130,7 @@ export default function RootLayout({
 		<html lang="ru" className={`${syne.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
 			<body>
 				<LangProvider>{children}</LangProvider>
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
 				<Script id="yandex-metrika" strategy="afterInteractive">
 					{`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112582890','ym');ym(112582890,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
 document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a'):null;if(!a)return;var g=a.getAttribute('data-goal');if(g){ym(112582890,'reachGoal',g);return;}var h=a.getAttribute('href')||'';if(h.indexOf('t.me')!==-1){ym(112582890,'reachGoal','telegram');return;}if(a.classList&&(a.classList.contains('nc')||a.classList.contains('mnav-cta')||a.classList.contains('bp'))){ym(112582890,'reachGoal','cta');}});`}
