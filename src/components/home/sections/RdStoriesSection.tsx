@@ -1,7 +1,8 @@
 "use client";
 
-import { RD_STORIES_HTML } from "@/lib/home-sections";
+import { RD_STORIES_HTML, RD_STORIES_HTML_EN } from "@/lib/home-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function RdStoriesSection() {
-	return <div dangerouslySetInnerHTML={{ __html: RD_STORIES_HTML }} />;
+	return <Bilingual ru={RD_STORIES_HTML} en={RD_STORIES_HTML_EN} />;
 }

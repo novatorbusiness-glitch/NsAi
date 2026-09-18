@@ -1,7 +1,8 @@
 "use client";
 
-import { CLOSING_HTML } from "@/lib/home-sections";
+import { CLOSING_HTML, CLOSING_HTML_EN } from "@/lib/home-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function ClosingSection() {
-	return <div dangerouslySetInnerHTML={{ __html: CLOSING_HTML }} />;
+	return <Bilingual ru={CLOSING_HTML} en={CLOSING_HTML_EN} />;
 }

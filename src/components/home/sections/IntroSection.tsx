@@ -1,7 +1,8 @@
 "use client";
 
-import { INTRO_HTML } from "@/lib/home-sections";
+import { INTRO_HTML, INTRO_HTML_EN } from "@/lib/home-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function IntroSection() {
-	return <div dangerouslySetInnerHTML={{ __html: INTRO_HTML }} />;
+	return <Bilingual ru={INTRO_HTML} en={INTRO_HTML_EN} />;
 }
