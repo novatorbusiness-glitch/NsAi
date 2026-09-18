@@ -26,6 +26,66 @@ export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string; labelE
 
 export const BLOG_POSTS: BlogPost[] = [
 	{
+		slug: "chto-takoe-ncai",
+		title: "Что такое NCAi на самом деле — агентство, которое не нанимает людей",
+		titleEn: "What NCAi Actually Is — an Agency That Doesn't Hire People",
+		date: "2026-09-19",
+		dateLabel: "19 сентября 2026",
+		excerpt:
+			"Пять лет я руководил агентством, потом закрыл его и собрал NCAi с нуля. Рассказываю, что это на самом деле: не «ещё один AI-инструмент», а готовая команда агентов, которая разворачивается за несколько шагов — и кому это подходит.",
+		excerptEn:
+			"I ran an agency for five years, then closed it and built NCAi from scratch. Here's what it actually is — not \"another AI tool,\" but a ready agent team that deploys in a few steps — and who it's for.",
+		tags: ["NCAi", "агентство в коробке", "о продукте"],
+		category: "ai",
+		chars: 2788,
+		words: 443,
+	},
+	{
+		slug: "cenovoy-yakor",
+		title: "Ценовой якорь: почему дорогой тариф продаёт дешёвый",
+		titleEn: "The Price Anchor: Why an Expensive Tier Sells the Cheap One",
+		date: "2026-09-16",
+		dateLabel: "16 сентября 2026",
+		excerpt:
+			"Одинаковые тарифы заставляют сравнивать цену. Разная лестница цен заставляет сравнивать ценность. Разбираем механику ценового якоря — и почему без него даже сильный продукт продаёт хуже, чем мог бы.",
+		excerptEn:
+			"Identical prices make people compare cost. A price ladder makes them compare value. We break down the anchoring effect — and why without it, even a strong product sells worse than it could.",
+		tags: ["ценовой якорь", "нейромаркетинг", "оффер"],
+		category: "neyromarketing",
+		chars: 2840,
+		words: 467,
+	},
+	{
+		slug: "sotrudnik-kotoryy-ne-spit",
+		title: "Сотрудник, который не спит: сколько на самом деле стоит рутина",
+		titleEn: "The Employee Who Never Sleeps: What Routine Really Costs",
+		date: "2026-09-12",
+		dateLabel: "12 сентября 2026",
+		excerpt:
+			"Найм команды — это ≈4,1 млн ₽ в год и риск, что человек уйдёт через три месяца. Считаем, во сколько на самом деле обходится рутина — и что меняется, когда её забирает AI-команда, которая не болеет и не увольняется.",
+		excerptEn:
+			"Hiring a team costs about 4.1M ₽ a year — with the risk someone quits in three months. We do the math on what routine actually costs, and what changes when an AI team that never gets sick or quits takes it over.",
+		tags: ["AI-команда", "экономика", "найм"],
+		category: "ai",
+		chars: 2617,
+		words: 413,
+	},
+	{
+		slug: "menedzher-ai-agentstva",
+		title: "Менеджер AI-агентства: профессия, которой не было два года назад",
+		titleEn: "AI-Agency Manager: a Job That Didn't Exist Two Years Ago",
+		date: "2026-09-08",
+		dateLabel: "8 сентября 2026",
+		excerpt:
+			"Два года назад такой профессии не было в резюме. Сегодня «менеджер AI-агентства» — это человек, который управляет цифровой командой и поднимает свой чек за счёт скорости, а не новых часов работы.",
+		excerptEn:
+			"Two years ago, this job title didn't exist. Today, an \"AI-agency manager\" is someone who runs a digital team and raises their rate through speed, not extra hours worked.",
+		tags: ["новая профессия", "AI-агентство", "обучение AI"],
+		category: "ai",
+		chars: 2669,
+		words: 405,
+	},
+	{
 		slug: "doverie-za-7-kasanij",
 		title: "Доверие за 7 касаний: цепочка без уговоров",
 		titleEn: "Trust in 7 touches: a sequence with no arm-twisting",
