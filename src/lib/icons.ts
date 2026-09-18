@@ -34,6 +34,14 @@ export const ICONS: Record<string, string> = {
 	code: s(`<path d="M9 18 3 12l6-6M15 6l6 6-6 6"/>`),
 	sword: s(`<path d="M14.5 3 21 9.5 11 19.5 4.5 13z"/><path d="M4.5 13 3 21l8-1.5"/><path d="M17 6.5 20 3.5"/>`),
 	gamepad: s(`<rect x="2" y="8" width="20" height="10" rx="5"/><path d="M7 11v4M5 13h4"/><circle cx="16" cy="11.5" r="1"/><circle cx="18.5" cy="14" r="1"/>`),
+	monitor: s(`<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>`),
+	phone: s(`<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/>`),
+	handshake: s(`<path d="M2 12h4l3-3 3 3 3-3 3 3h4"/><path d="M8 9v6M16 9v6"/><path d="M2 12v3l4 3M22 12v3l-4 3"/>`),
+	puzzle: s(`<path d="M9 3h4v2a2 2 0 1 0 4 0V3h4v4h-2a2 2 0 1 0 0 4h2v4h-4v-2a2 2 0 1 0-4 0v2H9v-4H7a2 2 0 1 1 0-4h2z"/>`),
+	link: s(`<path d="M9 15 15 9"/><path d="M11 6l1.5-1.5a4 4 0 0 1 5.7 5.7L16.5 12"/><path d="M13 18l-1.5 1.5a4 4 0 0 1-5.7-5.7L7.5 12"/>`),
+	rocket: s(`<path d="M13.5 2.5c3 1 5 3 5.5 6.5-3-.5-5.5.5-7 2-1.5 1.5-2.5 4-2 7-3.5-.5-5.5-2.5-6.5-5.5 1-4 6-9 10-10z"/><circle cx="14" cy="10" r="1.5"/><path d="M8 15l-2 5 5-2M5 12 3 13l1 3"/>`),
+	robot: s(`<rect x="4" y="9" width="16" height="11" rx="2"/><circle cx="9" cy="14.5" r="1.3"/><circle cx="15" cy="14.5" r="1.3"/><path d="M12 5v4M9 5h6"/><circle cx="12" cy="4" r="1"/>`),
+	hourglass: s(`<path d="M6 2h12M6 22h12"/><path d="M7 2c0 5 4 6 5 8-1 2-5 3-5 8M17 2c0 5-4 6-5 8 1 2 5 3 5 8"/>`),
 };
 
 export function icon(name: keyof typeof ICONS, color = "var(--a)"): string {

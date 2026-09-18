@@ -1,6 +1,7 @@
 // Секции страницы /portfolio — по паттерну consulting-sections.ts.
 // Nav/mobile-menu/footer больше не дублируются здесь — страница использует
 // общий PageShell (см. src/components/pages/PortfolioPage.tsx).
+import { icon } from "./icons";
 
 export const HERO_HTML = `<!-- HERO -->
 <section id="port-hero">
@@ -41,49 +42,49 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
     <h2 class="sec-h2 rv d1">Проекты, которые<br>уже работают</h2>
     <div class="port-wgrid">
       <div class="port-pj rv">
-        <div class="port-pj-icon">🚀</div>
+        <div class="port-pj-icon">${icon("rocket")}</div>
         <div class="port-pj-tag">Маркетинг · Автоматизация</div>
         <div class="port-pj-title">Novator.vip</div>
         <p class="port-pj-desc">Агентство маркетинга и автоматизации: 300+ проектов, 50M+ ₽ в запусках</p>
         <span class="port-pj-status">2020–2025</span>
       </div>
       <div class="port-pj rv d1">
-        <div class="port-pj-icon">✨</div>
+        <div class="port-pj-icon">${icon("sparkle")}</div>
         <div class="port-pj-tag">Beauty · Mini App</div>
         <div class="port-pj-title">Gaze Architecture</div>
         <p class="port-pj-desc">Telegram Mini App + сайт для бьюти-сферы. Подписка 990 ₽/мес</p>
         <span class="port-pj-status">Запущен</span>
       </div>
       <div class="port-pj rv d2">
-        <div class="port-pj-icon">📖</div>
+        <div class="port-pj-icon">${icon("book")}</div>
         <div class="port-pj-tag">Книга · Методология</div>
         <div class="port-pj-title">«Нейро-Воронка»</div>
         <p class="port-pj-desc">6 глав, 30 подглав. Нейробиология продаж и AI-автоматизация</p>
         <span class="port-pj-status">Бесплатно</span>
       </div>
       <div class="port-pj rv">
-        <div class="port-pj-icon">🤖</div>
+        <div class="port-pj-icon">${icon("robot")}</div>
         <div class="port-pj-tag">AI-команда</div>
         <div class="port-pj-title">NCAi Agency</div>
         <p class="port-pj-desc">4 отдела, 5 AI-сотрудников + AI-директор. Полная разработка и автоматизация</p>
         <span class="port-pj-status">Ретейнер</span>
       </div>
       <div class="port-pj rv d1">
-        <div class="port-pj-icon">🧠</div>
+        <div class="port-pj-icon">${icon("brain")}</div>
         <div class="port-pj-tag">HealthTech · AI</div>
         <div class="port-pj-title">Neuroflow</div>
         <p class="port-pj-desc">PPG-измерение через камеру телефона: ВСР, показатели нервной системы</p>
         <span class="port-pj-status">R&D</span>
       </div>
       <div class="port-pj rv d2">
-        <div class="port-pj-icon">⚔️</div>
+        <div class="port-pj-icon">${icon("sword")}</div>
         <div class="port-pj-tag">Продуктивность</div>
         <div class="port-pj-title">Vlinx</div>
         <p class="port-pj-desc">Трекер привычек — каждая вредная привычка как «босс», которого нужно одолеть</p>
         <span class="port-pj-status">Тестирование</span>
       </div>
       <div class="port-pj rv d3">
-        <div class="port-pj-icon">🎮</div>
+        <div class="port-pj-icon">${icon("gamepad")}</div>
         <div class="port-pj-tag">EdTech · Дети</div>
         <div class="port-pj-title">Nezha_Quest</div>
         <p class="port-pj-desc">Трекер дисциплины ребёнка с системой последствий. Связка ребёнок–родитель</p>
@@ -158,19 +159,19 @@ export const PARTNER_HTML = `<!-- PARTNERSHIP -->
     <h2 class="sec-h2 rv d1">Партнёрство: доля, white-label, комиссия</h2>
     <div class="port-mgrid">
       <div class="port-mcard rv">
-        <div class="port-mico">🤝</div>
+        <div class="port-mico">${icon("handshake")}</div>
         <div class="port-mtag">Совместный продукт</div>
         <div class="port-mtit">Строим вместе</div>
         <p class="port-mtx">Вхожу техническим партнёром за долю или опцион. Проектирую, пишу код, вывожу на рынок.</p>
       </div>
       <div class="port-mcard rv d1">
-        <div class="port-mico">🧩</div>
+        <div class="port-mico">${icon("puzzle")}</div>
         <div class="port-mtag">White-label / Методология</div>
         <div class="port-mtit">NCAi + «Нейро-Воронка» под вашим брендом</div>
         <p class="port-mtx">Готовая методология под ваш бренд. Продавайте систему и книгу как свою.</p>
       </div>
       <div class="port-mcard rv d2">
-        <div class="port-mico">🔗</div>
+        <div class="port-mico">${icon("link")}</div>
         <div class="port-mtag">Рефералка</div>
         <div class="port-mtit">Комиссия за клиента</div>
         <p class="port-mtx">Приводите клиентов — получаете комиссию. Простая и прозрачная схема.</p>

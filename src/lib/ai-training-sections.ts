@@ -1,6 +1,7 @@
 // Секции страницы /ai-training — по паттерну consulting-sections.ts.
 // Nav/mobile-menu/footer больше не дублируются здесь — страница использует
 // общий PageShell (см. src/components/pages/AiTrainingPage.tsx).
+import { icon } from "./icons";
 
 export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="ait-hero">
@@ -270,10 +271,10 @@ export const AMP_HTML = `<!-- 8 · УСИЛИТЕЛИ -->
     <h2 class="ait-sec-h2 rv d1">Почему мест так мало</h2>
     <p class="ait-sl rv d2">Месяц работы с тобой лично нельзя растянуть на поток. Поэтому мест мало — и это честно, а не маркетинг.</p>
     <div class="ait-amp-grid">
-      <div class="ait-amp rv d1"><div class="ait-amp-ico">🎯</div><div><div class="ait-amp-t">1–2 человека в месяц</div><div class="ait-amp-x">Не поток, а личная работа. Именно поэтому результат — продукт, а не «посмотрел вебинар».</div></div></div>
-      <div class="ait-amp rv d1"><div class="ait-amp-ico">⏳</div><div><div class="ait-amp-t">Мест всего два</div><div class="ait-amp-x">Когда места заняты — встаёшь в лист ожидания на следующий месяц.</div></div></div>
-      <div class="ait-amp rv d2"><div class="ait-amp-ico">📅</div><div><div class="ait-amp-t">Старт в ближайшие недели</div><div class="ait-amp-x">Чем раньше начнёшь — тем раньше продукт начнёт работать на тебя.</div></div></div>
-      <div class="ait-amp rv d2"><div class="ait-amp-ico">🔒</div><div><div class="ait-amp-t">Цена фиксирована</div><div class="ait-amp-x">Стоимость не растёт, пока ты думаешь. Решение сегодня — та же цена, что и завтра.</div></div></div>
+      <div class="ait-amp rv d1"><div class="ait-amp-ico">${icon("target")}</div><div><div class="ait-amp-t">1–2 человека в месяц</div><div class="ait-amp-x">Не поток, а личная работа. Именно поэтому результат — продукт, а не «посмотрел вебинар».</div></div></div>
+      <div class="ait-amp rv d1"><div class="ait-amp-ico">${icon("hourglass")}</div><div><div class="ait-amp-t">Мест всего два</div><div class="ait-amp-x">Когда места заняты — встаёшь в лист ожидания на следующий месяц.</div></div></div>
+      <div class="ait-amp rv d2"><div class="ait-amp-ico">${icon("calendar")}</div><div><div class="ait-amp-t">Старт в ближайшие недели</div><div class="ait-amp-x">Чем раньше начнёшь — тем раньше продукт начнёт работать на тебя.</div></div></div>
+      <div class="ait-amp rv d2"><div class="ait-amp-ico">${icon("lock")}</div><div><div class="ait-amp-t">Цена фиксирована</div><div class="ait-amp-x">Стоимость не растёт, пока ты думаешь. Решение сегодня — та же цена, что и завтра.</div></div></div>
     </div>
   </div>
 </section>
@@ -287,22 +288,22 @@ export const CASES_HTML = `<!-- 9 · КЕЙСЫ / ПРИМЕР -->
     <p class="ait-sl rv d2">Один месяц, один проект, один навык. Вот конкретно что чаще всего собирают ученики — не абстрактная «автоматизация», а вещь, которую можно потрогать и показать.</p>
     <div class="ait-build-grid">
       <div class="ait-build-card rv d1">
-        <div class="ait-build-ico">🖥️</div>
+        <div class="ait-build-ico">${icon("monitor")}</div>
         <div class="ait-build-tit">Сайт / лендинг</div>
         <div class="ait-build-tx">Витрина, которая продаёт: от структуры и текстов до рабочей страницы, которую можно запускать.</div>
       </div>
       <div class="ait-build-card rv d2">
-        <div class="ait-build-ico">📖</div>
+        <div class="ait-build-ico">${icon("book")}</div>
         <div class="ait-build-tit">Книга</div>
         <div class="ait-build-tx">Экспертный материал: структура, главы, воронка чтения — от идеи до готовой рукописи в твоём голосе.</div>
       </div>
       <div class="ait-build-card rv d3">
-        <div class="ait-build-ico">⚙️</div>
+        <div class="ait-build-ico">${icon("gear")}</div>
         <div class="ait-build-tit">SaaS-продукт</div>
         <div class="ait-build-tx">Рабочий сервис по подписке: от идеи до первой платящей когорты — интерфейс, логика, оплата.</div>
       </div>
       <div class="ait-build-card rv d3">
-        <div class="ait-build-ico">📱</div>
+        <div class="ait-build-ico">${icon("phone")}</div>
         <div class="ait-build-tit">Приложение</div>
         <div class="ait-build-tx">Telegram Mini App или веб-приложение: то, что открывает клиент и реально им пользуется.</div>
       </div>
