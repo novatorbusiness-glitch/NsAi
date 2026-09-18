@@ -1,0 +1,92 @@
+/* Стили страницы /portfolio — классы с префиксом port- (кроме .bp/.bs/.wrap/.rv/
+   .sec-tag/.sec-h2, общих для всего сайта). Reset, курсор, зерно, nav/footer —
+   общие, задаются глобально (layout.tsx импортирует consulting.css). */
+
+/* HERO */
+#port-hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:68px;text-align:center}
+.port-hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
+  background-size:60px 60px;animation:gm 30s ease-in-out infinite alternate}
+@keyframes gm{from{background-position:0 0}to{background-position:30px 30px}}
+.port-hero-glow{position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,208,0,.055) 0%,transparent 62%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.port-hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:0 2rem;width:100%;
+  display:flex;flex-direction:column;align-items:center}
+.port-hero-badge{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--t2);padding:.35rem .85rem;border:1px solid var(--br2);border-radius:999px;
+  margin-bottom:2rem;animation:fup .8s var(--ease) both}
+.port-bdot{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+.port-hero-name{font-family:var(--fd);font-size:clamp(2.2rem,4.5vw,4.5rem);font-weight:800;line-height:1.05;
+  letter-spacing:-.045em;margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both;word-break:normal;overflow-wrap:normal}
+.port-hero-name .port-acc{display:block;color:var(--a);-webkit-text-fill-color:var(--a)}
+.port-hero-sub{font-size:clamp(1.05rem,1.5vw,1.2rem);color:#c2bdb5;max-width:620px;line-height:1.75;
+  margin:0 auto 2.5rem;animation:fup 1s .22s var(--ease) both}
+.port-hero-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fup 1s .34s var(--ease) both}
+.port-hero-stats{display:flex;gap:3rem;justify-content:center;border-top:1px solid var(--br);padding-top:2rem;
+  margin-top:3.5rem;flex-wrap:wrap;animation:fup 1s .46s var(--ease) both}
+.port-hstat{text-align:center}
+.port-hstat-n{font-family:var(--fd);font-size:clamp(1.7rem,3vw,2.1rem);font-weight:800;letter-spacing:-.04em;color:var(--a);line-height:1}
+.port-hstat-l{font-family:var(--fm);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-top:.35rem}
+@media(max-width:480px){.port-hero-stats{gap:1.5rem}}
+/* Сигнатурный hero-визуал этой страницы — терминал, а не мокап панели
+   (тот — на /raspakovka) или таймлайн (тот — на /ai-training). Аудитория
+   здесь техническая, метафора «я пишу код» ей ближе. */
+.port-hero-term{max-width:480px;margin:2.75rem auto 0;text-align:left;background:var(--bgc);border:1px solid var(--br2);
+  border-radius:12px;overflow:hidden;animation:fup 1s .4s var(--ease) both;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.port-term-bar{display:flex;align-items:center;gap:.4rem;padding:.6rem .9rem;background:var(--bgc2);border-bottom:1px solid var(--br)}
+.port-term-dot{width:8px;height:8px;border-radius:50%;background:var(--br2)}
+.port-term-path{margin-left:.5rem;font-family:var(--fm);font-size:.6rem;color:var(--t3)}
+.port-term-body{padding:1rem 1.1rem;font-family:var(--fm);font-size:.72rem;line-height:1.85}
+.port-term-prompt{color:var(--a);margin-right:.5rem}
+.port-term-line{color:var(--t2)}
+.port-term-out{color:var(--t3);padding-left:1.15rem}
+.port-term-cursor{color:var(--a);animation:blink 1.1s ease-in-out infinite}
+
+/* SECTIONS */
+#port-clients,#port-partner{background:var(--bgc)}
+.port-sec-lead{font-size:1.05rem;color:var(--t2);max-width:620px;line-height:1.75;margin-bottom:2.5rem}
+
+/* PORTFOLIO GRID */
+.port-wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
+@media(max-width:900px){.port-wgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.port-wgrid{grid-template-columns:1fr}}
+.port-pj{padding:1.6rem;background:var(--bgc2);border:1px solid var(--br);border-radius:12px;
+  transition:border-color .25s,transform .3s var(--ease)}
+.port-pj:hover{border-color:rgba(255,208,0,.22);transform:translateY(-4px)}
+.port-pj-icon{font-size:1.4rem;margin-bottom:.9rem}
+.port-pj-tag{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.4rem}
+.port-pj-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
+.port-pj-desc{font-size:1.05rem;color:var(--t2);line-height:1.6}
+.port-pj-status{display:inline-block;font-family:var(--fm);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;
+  margin-top:.75rem;padding:.2rem .5rem;border-radius:3px;background:rgba(255,208,0,.08);
+  border:1px solid rgba(255,208,0,.18);color:rgba(255,208,0,.6)}
+
+/* CLIENTS */
+.port-clients-wrap{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.port-cl-pill{font-family:var(--fm);font-size:.65rem;letter-spacing:.06em;padding:.5rem .95rem;
+  background:var(--bgc);border:1px solid var(--br);border-radius:6px;color:var(--t2);
+  transition:border-color .2s,color .2s}
+.port-cl-pill:hover{border-color:rgba(255,208,0,.25);color:var(--t)}
+.port-cl-pill.stat{border-color:rgba(255,208,0,.18);color:rgba(255,208,0,.7)}
+
+/* HIRE + PARTNER CARDS */
+.port-mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}
+@media(max-width:900px){.port-mgrid{grid-template-columns:1fr}}
+.port-mcard{background:var(--bgc2);border:1px solid var(--br);border-radius:14px;padding:2.25rem 2rem;
+  position:relative;overflow:hidden;transition:border-color .25s,transform .3s var(--ease)}
+.port-mcard::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--a),transparent);opacity:0;transition:opacity .3s}
+.port-mcard:hover{border-color:rgba(255,208,0,.22);transform:translateY(-4px)}
+.port-mcard:hover::after{opacity:1}
+.port-mico{font-size:1.5rem;margin-bottom:1rem}
+.port-mtag{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin-bottom:1rem}
+.port-mtit{font-family:var(--fd);font-size:1.12rem;font-weight:800;letter-spacing:-.02em;color:var(--t);margin-bottom:.7rem}
+.port-mprice{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--a);margin-bottom:1rem}
+.port-mtx{font-size:1.05rem;color:var(--t2);line-height:1.65}
+.port-mmeta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--br)}
+.port-mch{font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--t3);padding:.3rem .7rem;border:1px solid var(--br);border-radius:999px}
+
+/* CONTACT */
+.port-ch2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1rem}
+.port-csub{font-size:1rem;color:var(--t2);max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
+.port-cacts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}

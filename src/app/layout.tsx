@@ -5,6 +5,8 @@ import { LangProvider } from "@/lib/i18n";
 import "../styles/globals.css";
 import "../styles/home.css";
 import "../styles/consulting.css";
+import "../styles/ai-training.css";
+import "../styles/portfolio.css";
 
 const syne = Unbounded({
 	subsets: ["latin", "cyrillic"],
