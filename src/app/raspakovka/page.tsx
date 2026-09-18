@@ -15,6 +15,28 @@ export const metadata: Metadata = {
 	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
+const JSON_LD = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	name: "Агентство в коробке — распаковка NCAi",
+	description: DESCRIPTION,
+	provider: { "@type": "Organization", name: "NCAi", url: "https://ilya-novitsky.ru" },
+	areaServed: "RU",
+	url: "https://ilya-novitsky.ru/raspakovka",
+	offers: {
+		"@type": "Offer",
+		price: "19900",
+		priceCurrency: "RUB",
+		url: "https://ilya-novitsky.ru/raspakovka",
+		availability: "https://schema.org/InStock",
+	},
+};
+
 export default function Page() {
-	return <RaspakovkaPage />;
+	return (
+		<>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+			<RaspakovkaPage />
+		</>
+	);
 }

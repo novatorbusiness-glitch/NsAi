@@ -13,6 +13,28 @@ export const metadata: Metadata = {
 	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
+const JSON_LD = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	name: "Tech Product Partner — найм и партнёрство",
+	description: DESCRIPTION,
+	provider: { "@type": "Person", name: "Илья Новицкий", url: "https://ilya-novitsky.ru" },
+	areaServed: "Worldwide",
+	url: "https://ilya-novitsky.ru/portfolio",
+	offers: {
+		"@type": "Offer",
+		price: "200000",
+		priceCurrency: "RUB",
+		url: "https://ilya-novitsky.ru/portfolio",
+		availability: "https://schema.org/InStock",
+	},
+};
+
 export default function Page() {
-	return <PortfolioPage />;
+	return (
+		<>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
+			<PortfolioPage />
+		</>
+	);
 }
