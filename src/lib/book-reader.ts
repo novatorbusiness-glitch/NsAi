@@ -54,7 +54,7 @@ nav#nav{display:none!important}
 .hero-h1 em{background:linear-gradient(135deg,#141519 0%,#4a4d55 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important}
 #hero{min-height:auto!important;align-items:flex-start!important;padding:calc(60px + 2.5rem) 0 3rem!important}
 .hero-bg,.hero-grid{display:none!important}
-:root{--fd:'Syne',sans-serif!important;--fs:'Instrument Serif',serif!important;--fm:'JetBrains Mono',monospace!important}
+:root{--fd:'Unbounded',sans-serif!important;--fs:'PT Serif',serif!important;--fm:'JetBrains Mono',monospace!important}
 .prose-p{color:#3b3e44!important}
 .prose-p em{color:#3b3e44!important}
 .prose-p strong{color:#141519!important}
@@ -94,7 +94,7 @@ function heightReporterScript(slug: string): string {
 // или недоступная сеть до fonts.googleapis.com (нередко в РФ) не блокировала
 // рендер главы целиком — контент рисуется системным шрифтом сразу, шрифт
 // подменяется, когда (и если) догрузится.
-const FONT_LINKS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>`;
+const FONT_LINKS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700;800&family=PT+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>`;
 
 function normalizeChapterHtml(source: string, slug: string): string {
 	return inlineVizSvg(source)
