@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>1.4 Визуальные стимулы — Нейро-воронка · NcAi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -15,7 +15,7 @@
   --a:#FFD000;--ad:rgba(255,208,0,.08);
   --red:#e84040;
   --metal:linear-gradient(135deg,#e8e8e8 0%,#c8c8c8 35%,#888 65%,#d4d4d4 100%);
-  --fd:'Space Grotesk',sans-serif;--fs:'Manrope',sans-serif;--fm:'Space Mono',monospace;
+  --fd:'Unbounded',sans-serif;--fs:'PT Serif',serif;--fm:'JetBrains Mono',monospace;
   --ease:cubic-bezier(.16,1,.3,1);--max:800px;
 }
 html{scroll-behavior:smooth}
@@ -83,12 +83,12 @@ nav.sc{border-color:rgba(255,255,255,.07)}
 article{padding:5rem 0}
 .prose-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;
   color:var(--t);margin:4.5rem 0 1.4rem}
-.prose-p{font-size:1.02rem;color:#b0aca5;line-height:1.85;margin-bottom:1.35rem}
+.prose-p{font-size:1.02rem;color:var(--t2);line-height:1.85;margin-bottom:1.35rem}
 .prose-p strong{color:var(--t);font-weight:600}
 hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
 
 /* ─── MECHANISMS SECTION ─── */
-.mech-section{background:#060608;border-top:1px solid var(--br);border-bottom:1px solid var(--br);padding:5rem 0}
+.mech-section{background:var(--bg);border-top:1px solid var(--br);border-bottom:1px solid var(--br);padding:5rem 0}
 .ms-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.45);margin-bottom:.8rem}
 .ms-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;color:var(--t);margin-bottom:.85rem}
 .ms-sub{font-size:.95rem;color:var(--t2);line-height:1.75;max-width:600px;margin-bottom:2.5rem}
@@ -223,7 +223,7 @@ hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
 .practice-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);
   opacity:.8;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .practice-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a);opacity:.6;flex-shrink:0}
-.practice p{font-size:.92rem;color:#b8b4ad;line-height:1.75}
+.practice p{font-size:.92rem;color:var(--t2);line-height:1.75}
 .practice strong{color:var(--t)}
 
 /* KEY INSIGHT */
@@ -268,7 +268,7 @@ hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
 .ef-q::before{content:'?';font-family:var(--fd);font-size:1.05rem;font-weight:800;color:#8B7355;opacity:.5;flex-shrink:0}
 
 /* ─── DOSSIER ─── */
-.dossier-section{background:#050505;border-top:1px solid var(--br);border-bottom:1px solid var(--br);padding:5rem 0;margin:5rem 0 0}
+.dossier-section{background:var(--bg);border-top:1px solid var(--br);border-bottom:1px solid var(--br);padding:5rem 0;margin:5rem 0 0}
 .dos-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.5);margin-bottom:.8rem}
 .dos-h2{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:2.5rem;line-height:1.1}
 .dos-pills{display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:2.5rem}
@@ -297,7 +297,7 @@ hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
 .dos-close p:last-child{margin-bottom:0}
 
 /* ─── GLOSSARY SECTION ─── */
-.gloss-section{background:#050507;border-top:1px solid var(--br);padding:5rem 0}
+.gloss-section{background:var(--bg);border-top:1px solid var(--br);padding:5rem 0}
 .gl-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.45);margin-bottom:.8rem}
 .gl-h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:2rem;line-height:1.1}
 .gloss-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:3rem}
