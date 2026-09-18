@@ -1,7 +1,8 @@
 "use client";
 
-import { ROI_HTML } from "@/lib/consulting-sections";
+import { ROI_HTML, ROI_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function RoiSection() {
-	return <div dangerouslySetInnerHTML={{ __html: ROI_HTML }} />;
+	return <Bilingual ru={ROI_HTML} en={ROI_HTML_EN} />;
 }

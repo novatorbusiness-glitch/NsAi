@@ -1,7 +1,8 @@
 "use client";
 
-import { PANEL_HTML } from "@/lib/consulting-sections";
+import { PANEL_HTML, PANEL_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function PanelSection() {
-	return <div dangerouslySetInnerHTML={{ __html: PANEL_HTML }} />;
+	return <Bilingual ru={PANEL_HTML} en={PANEL_HTML_EN} />;
 }

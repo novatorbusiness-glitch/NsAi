@@ -1,7 +1,8 @@
 "use client";
 
-import { FEATURES_HTML } from "@/lib/consulting-sections";
+import { FEATURES_HTML, FEATURES_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function FeaturesSection() {
-	return <div dangerouslySetInnerHTML={{ __html: FEATURES_HTML }} />;
+	return <Bilingual ru={FEATURES_HTML} en={FEATURES_HTML_EN} />;
 }

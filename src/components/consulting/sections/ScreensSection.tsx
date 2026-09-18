@@ -1,7 +1,8 @@
 "use client";
 
-import { SCREENS_HTML } from "@/lib/consulting-sections";
+import { SCREENS_HTML, SCREENS_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function ScreensSection() {
-	return <div dangerouslySetInnerHTML={{ __html: SCREENS_HTML }} />;
+	return <Bilingual ru={SCREENS_HTML} en={SCREENS_HTML_EN} />;
 }

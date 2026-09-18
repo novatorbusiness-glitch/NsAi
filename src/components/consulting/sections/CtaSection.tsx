@@ -1,7 +1,8 @@
 "use client";
 
-import { CTA_HTML } from "@/lib/consulting-sections";
+import { CTA_HTML, CTA_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function CtaSection() {
-	return <div dangerouslySetInnerHTML={{ __html: CTA_HTML }} />;
+	return <Bilingual ru={CTA_HTML} en={CTA_HTML_EN} />;
 }

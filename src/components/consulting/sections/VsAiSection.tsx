@@ -1,7 +1,8 @@
 "use client";
 
-import { VS_AI_HTML } from "@/lib/consulting-sections";
+import { VS_AI_HTML, VS_AI_HTML_EN } from "@/lib/consulting-sections";
+import Bilingual from "@/components/layout/Bilingual";
 
 export default function VsAiSection() {
-	return <div dangerouslySetInnerHTML={{ __html: VS_AI_HTML }} />;
+	return <Bilingual ru={VS_AI_HTML} en={VS_AI_HTML_EN} />;
 }
