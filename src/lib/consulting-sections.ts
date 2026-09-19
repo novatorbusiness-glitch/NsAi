@@ -236,7 +236,7 @@ export const IDEA_HTML = `<!-- 1 · БОЛЬШАЯ ИДЕЯ -->
         <div class="w-col-tag">Почему так происходит</div>
         <div class="w-li"><span class="w-ico">1</span><span><b>Рутина не автоматизирована.</b> Ты платишь вниманием за то, что система должна делать сама.</span></div>
         <div class="w-li"><span class="w-ico">2</span><span><b>Найм = риск, а не актив.</b> Люди болеют, увольняются и требуют управления.</span></div>
-        <div class="w-li"><span class="w-ico">3</span><span><b>Консалтинг продаёт слайды, а не систему.</b> «Стратегия» и отчёты не остаются работать после ухода консультанта.</span></div>
+        <div class="w-li"><span class="w-ico">3</span><span><b>Стратегии продают слайды, а не систему.</b> «Стратегия» и отчёты не остаются работать после ухода консультанта.</span></div>
       </div>
       <div class="w-col rv d3">
         <div class="w-col-tag">Истинные причины</div>
@@ -262,11 +262,11 @@ export const BOX_HTML = `<!-- 2 · СУТЬ ИДЕИ -->
         <span class="lb rv d1">Суть идеи</span>
         <h2 class="uh2 rv d1">Покупаете не консультанта.<br>Покупаете агентство.</h2>
         <p class="up rv d2">NCAi — платформа, в которой у каждого клиента своя команда AI-агентов в панели. Не «чат с нейросетью», а <strong>рабочая команда</strong>: агенты с ролями и базой знаний, доска задач, контроль расходов на AI.</p>
-        <p class="up rv d2">Обычный консалтинг длится 2–3 месяца и заканчивается презентацией. Распаковка NCAi — несколько понятных шагов от оплаты до <strong>работающей AI-команды</strong>, в которой клиент сам ставит задачи и видит расход на AI.</p>
+        <p class="up rv d2">Обычный разбор со стороны длится 2–3 месяца и заканчивается презентацией. Распаковка NCAi — несколько понятных шагов от оплаты до <strong>работающей AI-команды</strong>, в которой клиент сам ставит задачи и видит расход на AI.</p>
       </div>
       <div class="rv d2">
         <div class="ucmp">
-          <div class="urow"><div class="uchead bad">Обычный консалтинг</div><div class="uchead good">NCAi · распаковка</div></div>
+          <div class="urow"><div class="uchead bad">Разбор со стороны</div><div class="uchead good">NCAi · распаковка</div></div>
           <div class="urow">
             <div class="uc bad"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1l9 9M10 1L1 10" stroke="#e84040" stroke-width="1.5" stroke-linecap="round"/></svg>2–3 месяца работы. Результат «в конце»</div>
             <div class="uc good"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 5.5l3 3L10 2" stroke="#FFD000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Рабочее агентство — с первого шага</div>
@@ -429,7 +429,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА -->
       </div>
       <div class="wdiag rv d2">
         <div class="wi act" data-zone="1"><div class="wico">${icon("chat")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 1 · Распаковка в боте</div><div class="wtx">Бот не спрашивает «расскажите о своём бизнесе» для галочки — он выясняет, где реально горит: кто тянет операционку, какие задачи съедают день, что отдать в первую очередь. Пять минут вашего времени вместо недель брифов с агентством.<div class="wres"><span class="ncl">Результат</span><p>Система знает ваш бизнес и уже понимает, какую команду под него собрать — не шаблон «для всех».</p></div></div></div></div>
-        <div class="wi" data-zone="2"><div class="wico">${icon("box")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Кабинет разворачивается — без вас</div><div class="wtx">Пока в других агентствах готовят коммерческое предложение, у вас уже разворачивается рабочий кабинет: AI-директор, агенты под роли, стартовые задачи под вашу нишу. Автоматически — без «ждите, подготовим смету».<div class="wres"><span class="ncl">Результат</span><p>Агентство физически существует и ждёт в Telegram — не через месяц, а сразу после оплаты.</p></div></div></div></div>
+        <div class="wi" data-zone="2"><div class="wico">${icon("box")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 2 · Кабинет разворачивается сам</div><div class="wtx">Пока в других агентствах готовят коммерческое предложение, у вас уже разворачивается рабочий кабинет: AI-директор, агенты под роли, стартовые задачи под вашу нишу. Автоматически — без «ждите, подготовим смету».<div class="wres"><span class="ncl">Результат</span><p>Агентство физически существует и ждёт в Telegram — не через месяц, а сразу после оплаты.</p></div></div></div></div>
         <div class="wi" data-zone="3"><div class="wico">${icon("book")}</div><span class="wchev">▾</span><div><div class="wtit">Шаг 3 · Обучение — в своём темпе, без созвонов</div><div class="wtx">Пошаговая инструкция вместо часового звонка с продавцом: как подключить AI-бюджет, куда заходить, как ставить задачи и читать отчёты. Разбираетесь тогда, когда удобно вам — а не когда свободен менеджер.<div class="wres"><span class="ncl">Результат</span><p>Пользуетесь панелью уверенно сами — без зависимости от чьего-то графика.</p></div></div></div></div>
         <div class="wi" data-zone="4"><div class="wico">✅</div><span class="wchev">▾</span><div><div class="wtit">Шаг 4 · Первая задача — и агентство поехало</div><div class="wtx">Ставите директору реальную задачу — не тестовую. Он распределяет её между агентами, проверяет результат перед закрытием и в 18:00 присылает отчёт, который читается за минуту.<div class="wres"><span class="ncl">Результат</span><p>Агентство работает на вас с первого дня — а не вы тратите неделю на его настройку.</p></div></div></div></div>
         <p class="sl rv d3" style="margin-top:1.5rem;font-size:.92rem">Рабочее агентство остаётся с вами. Первый месяц подписки уже включён в оплату распаковки, дальше — 4 900 ₽/мес.</p>
@@ -447,7 +447,7 @@ export const QUESTIONS_HTML = `<!-- 6 · 10 ВОПРОСОВ -->
     <p class="sl rv d2">Семь вопросов про эмоции и три про логику. Если на большинство ответите «да» — распаковка для вас.</p>
     <div class="qgrid">
       <div class="qcard rv"><span class="qtag">Вопрос 1</span><div class="qq">Сколько часов в день вы тратите на рутину, которую должен делать кто-то другой?</div><div class="qa">Каждый такой час — это час, который не работает на рост бизнеса.</div></div>
-      <div class="qcard rv d1"><span class="qtag">Вопрос 2</span><div class="qq">Вам не страшно, что бизнес стоит, пока вы в отпуске или болеете?</div><div class="qa">Система не болеет, не увольняется и не «не в настроении».</div></div>
+      <div class="qcard rv d1"><span class="qtag">Вопрос 2</span><div class="qq">Что будет с задачами, пока я в отпуске или болею?</div><div class="qa">Система не болеет, не увольняется и не «не в настроении».</div></div>
       <div class="qcard rv"><span class="qtag">Вопрос 3</span><div class="qq">Сколько денег вы уже отдали агентствам, после которых система так и не появилась?</div><div class="qa">Вы покупали услуги. Здесь вы покупаете актив, который остаётся.</div></div>
       <div class="qcard rv d1"><span class="qtag">Вопрос 4</span><div class="qq">Что вы почувствуете, когда утром откроете панель и увидите, что всё сделано само?</div><div class="qa">Это и есть передача руля: вы управляете, а не тоните в операционке.</div></div>
       <div class="qcard rv"><span class="qtag">Вопрос 5</span><div class="qq">Вас не бесит, что подрядчик — чёрный ящик, и вы не знаете, что происходит?</div><div class="qa">Прозрачность — это когда всё в панели, а не в голове консультанта.</div></div>
@@ -499,7 +499,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
           <div class="ofit"><span class="ofck">✓</span><div class="ofitx">Рост без пересборки <span>добавляете агентов по мере роста бизнеса — доп. сотрудник 1 000 ₽/мес</span></div></div>
         </div>
         <div class="meta4">
-          <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Агентство в панели, которое работает без вас</div></div>
+          <div class="m4"><div class="m4-l">Результат мечты</div><div class="m4-v">Агентство в панели, которое держит рутину на себе</div></div>
           <div class="m4"><div class="m4-l">Вероятность</div><div class="m4-v">Высокая: система видна с первого шага</div></div>
           <div class="m4"><div class="m4-l">Время до результата</div><div class="m4-v">4 шага, руль у вас сразу</div></div>
           <div class="m4"><div class="m4-l">Ваши усилия</div><div class="m4-v">Распаковка в боте — дальше система разворачивает всё сама</div></div>
@@ -583,7 +583,7 @@ export const CTA_HTML = `<!-- CTA -->
 <section id="final" style="position:relative;overflow:hidden">
   <div class="ofin">
     <h2 class="ofh2 rv">Хватит быть человеком-системой.<br>Получите <em style="font-style:normal;color:var(--a)">агентство в коробке.</em></h2>
-    <p class="ofsub rv d1">Несколько шагов — и у вас рабочее агентство, которое ведёт операционку без вас. Дальше руль в ваших руках: ставите задачи, смотрите результат.</p>
+    <p class="ofsub rv d1">Несколько шагов — и у вас рабочее агентство, которое снимает с вас операционку. Дальше руль в ваших руках: ставите задачи, смотрите результат.</p>
     <div class="ofcta rv d2">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/ai-training" class="bs">Сравнить с обучением AI</a>

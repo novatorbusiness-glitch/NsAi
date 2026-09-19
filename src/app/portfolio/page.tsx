@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PortfolioPage from "@/components/pages/PortfolioPage";
 
-const TITLE = "NCAi — Tech Product Partner · Найм и партнёрство";
+const TITLE = "NCAi — вход в бизнес на месяц · работа со мной";
 const DESCRIPTION =
-	"Технический партнёр для продукта: Web3, HealthTech, AI. Проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ или доля/опцион. 300+ проектов, 50M ₽ в запусках.";
+	"Сначала бесплатно показываю результат на вашей задаче: исследование и готовые артефакты. Зашло — захожу в проект на месяц: внедряю метод, обучаю вашего человека им управлять и работаю рядом. От 200 000 ₽.";
 
 export const metadata: Metadata = {
 	title: TITLE,
