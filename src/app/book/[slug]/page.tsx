@@ -7,6 +7,7 @@ import path from "path";
 import { getSubchapterTitle } from "@/lib/book-data";
 import { inlineVizSvg, VIZ_CSS } from "@/lib/book-viz";
 import BookSidebar from "@/components/book/BookSidebar";
+import BookChapterFrame from "@/components/book/BookChapterFrame";
 import "@/styles/book-reader.css";
 
 const LEGACY_SLUG_ALIASES: Record<string, string> = {
@@ -24,7 +25,7 @@ function getBookSlugs(): string[] {
 
 	return fs
 		.readdirSync(dir)
-		.filter((f) => f.endsWith(".mdx"))
+		.filter((f) => f.endsWith(".mdx") && !f.endsWith(".en.mdx"))
 		.map((f) => f.replace(/\.mdx$/, ""))
 		.sort((a, b) => a.localeCompare(b, "ru"));
 }
@@ -35,12 +36,12 @@ export function generateStaticParams() {
 	return [...canonical, ...legacy].map((slug) => ({ slug }));
 }
 
-function getChapterFilePath(slug: string): string {
-	return path.join(process.cwd(), "content/book", `${slug}.mdx`);
+function getChapterFilePath(slug: string, variant: "" | ".en" = ""): string {
+	return path.join(process.cwd(), "content/book", `${slug}${variant}.mdx`);
 }
 
-function getChapterSource(slug: string): string {
-	const filePath = getChapterFilePath(slug);
+function getChapterSource(slug: string, variant: "" | ".en" = ""): string {
+	const filePath = getChapterFilePath(slug, variant);
 	if (!fs.existsSync(filePath)) return "";
 	const source = fs.readFileSync(filePath, "utf8").trim();
 	return stripFrontmatter(source);
@@ -247,9 +248,11 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 	}
 
 	const chapterSource = getChapterSource(resolvedSlug);
+	const chapterSourceEn = getChapterSource(resolvedSlug, ".en");
 	const chapterTitle = getSubchapterTitle(resolvedSlug);
 	const isFullHtml = isFullHtmlDocument(chapterSource);
 	const normalizedFullHtml = isFullHtml ? normalizeChapterHtmlFonts(chapterSource) : "";
+	const normalizedFullHtmlEn = isFullHtml && chapterSourceEn ? normalizeChapterHtmlFonts(chapterSourceEn) : null;
 
 	return (
 		<div className="bkr">
@@ -257,10 +260,11 @@ export default function ChapterPage({ params }: ChapterPageProps) {
 
 			<main className="bkr-main">
 				{isFullHtml ? (
-					<iframe
-						title={chapterTitle}
-						className="bkr-frame"
-						srcDoc={normalizedFullHtml}
+					<BookChapterFrame
+						titleRu={chapterTitle}
+						titleEn={chapterTitle}
+						htmlRu={normalizedFullHtml}
+						htmlEn={normalizedFullHtmlEn}
 					/>
 				) : (
 					<article className="bkr-prose">

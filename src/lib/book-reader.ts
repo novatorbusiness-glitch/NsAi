@@ -21,7 +21,7 @@ export function getBookSlugs(): string[] {
 
 	return fs
 		.readdirSync(dir)
-		.filter((f) => f.endsWith(".mdx"))
+		.filter((f) => f.endsWith(".mdx") && !f.endsWith(".en.mdx"))
 		.map((f) => f.replace(/\.mdx$/, ""))
 		.sort((a, b) => a.localeCompare(b, "ru"));
 }
