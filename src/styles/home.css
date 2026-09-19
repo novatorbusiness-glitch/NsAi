@@ -249,7 +249,9 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .mech-task-card.director .mech-task-h{color:var(--a)}
 .mech-task-t{font-size:.85rem;color:var(--t);line-height:1.45}
 .mech-task-arrow{display:flex;align-items:center;justify-content:center;color:var(--br2);font-size:1.1rem}
-@media(max-width:760px){.mech-task-arrow{transform:rotate(90deg);padding:.1rem 0}}
+/* Та же причина, что у .intro-arr: в одноколоночной сетке элемент растянут
+   на ширину колонки, поэтому justify-self:center — до поворота, а не после. */
+@media(max-width:760px){.mech-task-arrow{justify-self:center;width:auto;height:1.5rem;padding:0;transform:rotate(90deg)}}
 
 .pm-tline{display:flex;flex-direction:column;gap:.5rem}
 .pm-tl{display:flex;align-items:center;gap:.5rem;background:var(--bgc2);border:1px solid var(--br2);border-radius:10px;padding:.55rem .7rem;font-size:.8rem}
@@ -341,7 +343,10 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .intro-split-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);margin-bottom:.6rem}
 .intro-split-x{font-size:.88rem;color:var(--t2);line-height:1.6}
 .intro-arr{display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:1.1rem;color:var(--t3)}
-@media(max-width:640px){.intro-split{flex-direction:column}.intro-arr{transform:rotate(90deg);padding:.2rem 0}}
+/* При колонке стрелку нельзя просто повернуть: как flex-элемент она растянута
+   на всю ширину, и rotate(90deg) превращает её в высокую полосу поверх карточек.
+   align-self:center снимает растяжение — поворачивается компактный глиф. */
+@media(max-width:640px){.intro-split{flex-direction:column}.intro-arr{align-self:center;width:auto;height:1.5rem;padding:0;transform:rotate(90deg)}}
 
 /* RD STORIES — сцена → поворот → вывод */
 .rds-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;margin-top:2.5rem}

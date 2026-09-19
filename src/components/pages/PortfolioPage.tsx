@@ -7,7 +7,6 @@ import HeroSection from "@/components/portfolio/sections/HeroSection";
 import WorkSection from "@/components/portfolio/sections/WorkSection";
 import ClientsSection from "@/components/portfolio/sections/ClientsSection";
 import HireSection from "@/components/portfolio/sections/HireSection";
-import PartnerSection from "@/components/portfolio/sections/PartnerSection";
 import ContactSection from "@/components/portfolio/sections/ContactSection";
 
 /**
@@ -41,7 +40,6 @@ export default function PortfolioPage() {
 			<WorkSection />
 			<ClientsSection />
 			<HireSection />
-			<PartnerSection />
 			<ContactSection />
 		</PageShell>
 	);
