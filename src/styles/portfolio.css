@@ -101,6 +101,31 @@
 .port-case-quote{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--br);font-family:var(--fs);font-style:italic;font-size:1.05rem;color:var(--t)}
 .port-case-quote span{display:block;margin-top:.5rem;font-family:var(--fm);font-style:normal;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
 
+/* ЧТО ВХОДИТ В МЕСЯЦ — ориентиры по основному продукту */
+.port-month{margin-top:3rem;border:1px solid var(--br2);border-radius:16px;overflow:hidden;background:var(--bgc)}
+.port-month-head{padding:1.5rem 1.75rem;background:var(--bgc2);border-bottom:1px solid var(--br)}
+.port-month-tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin-bottom:.5rem}
+.port-month-h{font-family:var(--fd);font-size:1.15rem;font-weight:800;letter-spacing:-.02em;color:var(--t)}
+.port-weeks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.port-weeks{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.port-weeks{grid-template-columns:1fr}}
+.port-week{padding:1.5rem 1.4rem;border-right:1px solid var(--br)}
+.port-week:last-child{border-right:none}
+@media(max-width:900px){.port-week{border-bottom:1px solid var(--br)}.port-week:nth-child(2n){border-right:none}}
+@media(max-width:560px){.port-week{border-right:none}}
+.port-week-n{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.6rem}
+.port-week-t{font-family:var(--fd);font-size:.92rem;font-weight:700;color:var(--t);margin-bottom:.5rem}
+.port-week-x{font-size:.85rem;color:var(--t2);line-height:1.55}
+.port-week.is-last .port-week-t{color:var(--a)}
+/* Как считаем результат */
+.port-metrics{border-top:1px solid var(--br);padding:1.5rem 1.75rem;background:var(--bg2)}
+.port-metrics-h{font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+.port-mlist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-bottom:1.1rem}
+@media(max-width:760px){.port-mlist{grid-template-columns:1fr}}
+.port-m-t{font-family:var(--fd);font-size:.88rem;font-weight:700;color:var(--a);margin-bottom:.35rem}
+.port-m-x{font-size:.83rem;color:var(--t2);line-height:1.5}
+.port-metrics-note{font-size:.83rem;color:var(--t3);line-height:1.6;border-top:1px solid var(--br);padding-top:1rem}
+
 /* CONTACT */
 .port-ch2{font-family:var(--fd);font-size:clamp(1.7rem,2.6vw,2.25rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1rem}
 .port-csub{font-size:1rem;color:var(--t2);max-width:480px;margin:0 auto 2.5rem;line-height:1.7}
