@@ -15,6 +15,7 @@ import RdStoriesSection from "@/components/home/sections/RdStoriesSection";
 import PrinciplesSection from "@/components/home/sections/PrinciplesSection";
 import PersonalSection from "@/components/home/sections/PersonalSection";
 import ClosingSection from "@/components/home/sections/ClosingSection";
+import { initOdometer } from "@/lib/odometer";
 
 /**
  * Главная — собранная из изолированных секций по ТЗ NCAI_SPEC:
@@ -30,6 +31,7 @@ export default function HomePage() {
 
 		// Reveal — прогрессивно: без JS контент виден, с JS плавно появляется
 		document.documentElement.classList.add("js");
+		initOdometer(".hstat-n");
 		if (!("IntersectionObserver" in window)) {
 			document.querySelectorAll(".rv").forEach((el) => el.classList.add("on"));
 		} else {

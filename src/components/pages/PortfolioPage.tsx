@@ -8,6 +8,7 @@ import WorkSection from "@/components/portfolio/sections/WorkSection";
 import ClientsSection from "@/components/portfolio/sections/ClientsSection";
 import HireSection from "@/components/portfolio/sections/HireSection";
 import ContactSection from "@/components/portfolio/sections/ContactSection";
+import { initOdometer } from "@/lib/odometer";
 
 /**
  * Страница /portfolio — «Tech Product Partner»: найм и партнёрство.
@@ -22,6 +23,7 @@ export default function PortfolioPage() {
 		if (w.__ncaiPortfolioInited) return;
 		w.__ncaiPortfolioInited = true;
 		document.documentElement.classList.add("js");
+		initOdometer(".port-hstat-n");
 		if (!("IntersectionObserver" in window)) {
 			document.querySelectorAll(".rv").forEach((el) => el.classList.add("on"));
 		}
