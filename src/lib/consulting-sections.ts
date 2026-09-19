@@ -596,6 +596,36 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
     <span class="lb rv">Отличие от чат-ботов</span>
     <h2 class="sh2 rv d1">Claude и GPT — инструменты.<br>Распаковка NCAi — команда.</h2>
     <p class="sl rv d2">Claude и GPT отвечают на запрос здесь и сейчас, но не помнят ваш бизнес, не проверяют свою работу и не работают, пока вы не открыли чат. Распаковка NCAi — готовая команда ролей с памятью о вашей нише, директором, который проверяет результат, и доской задач, а не окно диалога, которое нужно каждый раз собирать заново.</p>
+    <div class="vz vz-status rv d2" role="img" aria-label="Путь одной задачи: принята, назначена роль, проверена директором, согласована">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>AI-директор ведёт задачу</span>
+        <span class="vz-note">Одна задача от постановки до «согласовано» — без вашего участия в середине</span>
+      </div>
+      <div class="vz-st-card">
+        <div class="vz-st-task">
+          <span class="vz-st-id">#1043</span>
+          <span class="vz-st-title">Собрать прайс услуг на неделю</span>
+        </div>
+        <ol class="vz-st-steps">
+          <li class="vz-st-step" style="--i:0">
+            <span class="vz-st-time">09:14</span>
+            <span class="vz-st-txt">Принял задачу и уточнил недостающие детали</span>
+          </li>
+          <li class="vz-st-step" style="--i:1">
+            <span class="vz-st-time">09:16</span>
+            <span class="vz-st-txt">Назначил исполнителя: специалист по трафику и воронкам</span>
+          </li>
+          <li class="vz-st-step" style="--i:2">
+            <span class="vz-st-time">09:41</span>
+            <span class="vz-st-txt">Результат ушёл на проверку — сверка с критериями задачи</span>
+          </li>
+          <li class="vz-st-step is-final" style="--i:3">
+            <span class="vz-st-time">09:48</span>
+            <span class="vz-st-txt">Согласовано. У вас на руках готовый прайс</span>
+          </li>
+        </ol>
+      </div>
+    </div>
     <div class="vstable-wrap rv d2">
       <div class="vstable">
         <div class="vshead">
@@ -1307,6 +1337,36 @@ export const VS_AI_HTML_EN = `<!-- HOW IT'S DIFFERENT FROM Claude/GPT/Codex -->
     <span class="lb rv">Different from chatbots</span>
     <h2 class="sh2 rv d1">Claude and GPT are tools.<br>NCAi unboxing is a team.</h2>
     <p class="sl rv d2">Claude and GPT answer a request here and now, but don't remember your business, don't check their own work, and don't work unless you've opened the chat. NCAi unboxing is a ready team of roles with memory of your niche, a director who checks the result, and a task board — not a dialog window you have to rebuild from scratch every time.</p>
+    <div class="vz vz-status rv d2" role="img" aria-label="One task's path: accepted, role assigned, checked by the director, approved">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>The AI director runs the task</span>
+        <span class="vz-note">One task from brief to "approved" — with no input from you in the middle</span>
+      </div>
+      <div class="vz-st-card">
+        <div class="vz-st-task">
+          <span class="vz-st-id">#1043</span>
+          <span class="vz-st-title">Put together this week's service pricing</span>
+        </div>
+        <ol class="vz-st-steps">
+          <li class="vz-st-step" style="--i:0">
+            <span class="vz-st-time">09:14</span>
+            <span class="vz-st-txt">Accepted the task and asked for the missing details</span>
+          </li>
+          <li class="vz-st-step" style="--i:1">
+            <span class="vz-st-time">09:16</span>
+            <span class="vz-st-txt">Assigned it to the traffic and funnels specialist</span>
+          </li>
+          <li class="vz-st-step" style="--i:2">
+            <span class="vz-st-time">09:41</span>
+            <span class="vz-st-txt">Result went for review — checked against the task's criteria</span>
+          </li>
+          <li class="vz-st-step is-final" style="--i:3">
+            <span class="vz-st-time">09:48</span>
+            <span class="vz-st-txt">Approved. The finished pricing is in your hands</span>
+          </li>
+        </ol>
+      </div>
+    </div>
     <div class="vstable-wrap rv d2">
       <div class="vstable">
         <div class="vshead">
