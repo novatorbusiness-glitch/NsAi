@@ -258,6 +258,23 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
 .tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
 
+/* ─── AVC-COMPARE (bespoke 5.1: человек vs система по 3 параметрам) ─── */
+.avc-compare{margin:2.5rem 0;padding:1.75rem 2rem 2rem;border:1px solid var(--br);border-radius:16px;background:var(--bgc)}
+.avc-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.6);margin-bottom:1.5rem}
+.avc-row{margin-bottom:1.5rem}
+.avc-row:last-child{margin-bottom:0}
+.avc-dim{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.7rem}
+.avc-bars{display:flex;flex-direction:column;gap:.5rem}
+.avc-bar{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:.8rem}
+.avc-bar-lbl{font-family:var(--fm);font-size:.6rem;color:var(--t3);text-transform:uppercase;letter-spacing:.04em}
+.avc-track{height:22px;background:var(--bg);border:1px solid var(--br2);border-radius:6px;overflow:hidden;position:relative}
+.avc-fill{height:100%;width:0;border-radius:5px;transition:width 1.1s var(--ease);display:flex;align-items:center;padding:0 .6rem}
+.avc-bar.human .avc-fill{background:#3a3a3a}
+.avc-bar.sys .avc-fill{background:var(--a)}
+.avc-fill span{font-family:var(--fm);font-size:.65rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.avc-bar.human .avc-fill span{color:var(--t2)}
+.avc-bar.sys .avc-fill span{color:#080808;font-weight:700}
+
 </style>
 </head>
 <body>
@@ -295,7 +312,34 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <article>
 <div class="wrap">
 
-<div class="rv"><p class="prose-p" style="margin-top:0">Для большинства этот шаг психологически самый трудный. Мозг цепляется за ручной контроль: «Никто не сделает лучше, чем я сам». Здесь работает когнитивное искажение — <strong>отклонение в сторону статус-кво</strong>: мозг предпочитает знакомый, пусть и неэффективный порядок, потому что изменение требует энергии и несёт неопределённость. Но если убрать эмоциональный фон, выясняется: грамотно настроенная система во многих участках пути продаёт стабильнее человека — не потому что «умнее», а потому что лишена усталости, рассеянности, перепадов настроения и сбоев дисциплины.</p></div><h2 class="prose-h2 rv">Три ключевых преимущества автоматизации</h2><div class="cards rv">
+<div class="rv"><p class="prose-p" style="margin-top:0">Для большинства этот шаг психологически самый трудный. Мозг цепляется за ручной контроль: «Никто не сделает лучше, чем я сам». Здесь работает когнитивное искажение — <strong>отклонение в сторону статус-кво</strong>: мозг предпочитает знакомый, пусть и неэффективный порядок, потому что изменение требует энергии и несёт неопределённость. Но если убрать эмоциональный фон, выясняется: грамотно настроенная система во многих участках пути продаёт стабильнее человека — не потому что «умнее», а потому что лишена усталости, рассеянности, перепадов настроения и сбоев дисциплины.</p></div>
+
+<div class="avc-compare rv" id="avcCompare">
+  <div class="avc-label">Человек vs Система · по трём параметрам</div>
+  <div class="avc-row">
+    <div class="avc-dim">Последовательность</div>
+    <div class="avc-bars" data-fill-group>
+      <div class="avc-bar human"><span class="avc-bar-lbl">Человек</span><div class="avc-track"><div class="avc-fill" data-w="42"><span>тон меняется от настроения</span></div></div></div>
+      <div class="avc-bar sys"><span class="avc-bar-lbl">Система</span><div class="avc-track"><div class="avc-fill" data-w="97"><span>каждый раз одинаково</span></div></div></div>
+    </div>
+  </div>
+  <div class="avc-row">
+    <div class="avc-dim">Скорость реакции</div>
+    <div class="avc-bars" data-fill-group>
+      <div class="avc-bar human"><span class="avc-bar-lbl">Человек</span><div class="avc-track"><div class="avc-fill" data-w="35"><span>часы, если занят</span></div></div></div>
+      <div class="avc-bar sys"><span class="avc-bar-lbl">Система</span><div class="avc-track"><div class="avc-fill" data-w="99"><span>секунды, всегда</span></div></div></div>
+    </div>
+  </div>
+  <div class="avc-row">
+    <div class="avc-dim">Персонализация в масштабе</div>
+    <div class="avc-bars" data-fill-group>
+      <div class="avc-bar human"><span class="avc-bar-lbl">Человек</span><div class="avc-track"><div class="avc-fill" data-w="50"><span>помнит десятки клиентов</span></div></div></div>
+      <div class="avc-bar sys"><span class="avc-bar-lbl">Система</span><div class="avc-track"><div class="avc-fill" data-w="90"><span>логика для тысяч</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<h2 class="prose-h2 rv">Три ключевых преимущества автоматизации</h2><div class="cards rv">
 <div class="card"><div class="c-num">01</div><div class="c-title">Последовательность без сбоев</div><div class="c-text">Система не забывает письмо, не пропускает заявку, не меняет тон из-за плохого дня и не выдаёт клиенту разные версии одного ответа в зависимости от настроения менеджера. Каждый получает одинаково собранный маршрут. Предсказуемость снижает тревогу: мозг считывает последовательность как надёжность, а непоследовательность рождает фоновое недоверие, даже необъяснимое логически. Особенно сильна в повторяющихся касаниях: выдача лид-магнита, приглашение на вебинар, напоминание, запись на консультацию, ответы на типовые вопросы.</div></div>
 <div class="card"><div class="c-num">02</div><div class="c-title">Мгновенная реакция</div><div class="c-text">После заявки, вопроса или запроса материала у клиента на короткое время возникает пик внимания — он максимально включён в контакт. Если система отвечает сразу — выдаёт файл, присылает ссылку, подтверждает — человек получает эмоциональное подтверждение: «здесь всё работает». Если между действием и реакцией проходят часы, пиковое состояние распадается: внимание остывает, появляется пространство для сомнений и конкурентов. Особенно эффективна там, где критична скорость первого ответа.</div></div>
 <div class="card"><div class="c-num">03</div><div class="c-title">Персонализация в масштабе</div><div class="c-text">Живой человек помнит детали десятков клиентов, алгоритм — логику для тысяч. Скачал один магнит, не открыл письмо — один сценарий; ответил в боте — другой. Сообщение, совпадающее с контекстом, воспринимается как более личное.</div></div>
@@ -366,6 +410,12 @@ else{
   document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
   setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
 }
+// AVC-COMPARE fill animation
+const avcCompare=document.getElementById('avcCompare');
+if(avcCompare){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    avcCompare.querySelectorAll('.avc-fill').forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.w+'%'},150+i*140));
+  }})},{threshold:.3}).observe(avcCompare)}
 // SCROLL NAV dots
 const sections=['hero', 'adv', 'limits', 'dossier'];
 const dots=document.querySelectorAll('.sn-dot');
