@@ -3657,7 +3657,9 @@ footer {
 /* ── О проекте ── */
 .about-blocks {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	/* auto-fill резервирует пустые колонки: на 1280px выходило 4 трека под
+	   3 карточки и ~309px пустоты справа. auto-fit схлопывает лишние. */
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 1.25rem;
 	margin: 1.5rem 0 2rem;
 }
