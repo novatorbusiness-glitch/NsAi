@@ -226,6 +226,98 @@ export const CONTACT_HTML = `<!-- CONTACT -->
   </div>
 </section>`;
 
+
+export const DEMO_HTML = `<!-- ДЕМОНСТРАЦИЯ -->
+<section id="port-demo">
+  <div class="w">
+    <span class="sec-tag rv">Первый шаг · бесплатно</span>
+    <h2 class="sec-h2 rv d1">Что вы получаете<br>до того, как заплатили</h2>
+    <p class="port-sec-lead rv d1">Вы даёте реальную задачу бизнеса. Я забираю её и возвращаю готовые артефакты — то, что можно открыть и использовать, даже если дальше мы не сработаемся.</p>
+    <div class="port-mgrid">
+      <div class="port-mcard rv">
+        <div class="port-mtag">Что делаю</div>
+        <div class="port-mtit">Разбираюсь в задаче и приношу разбор</div>
+        <p class="port-mtx">Исследую рынок и конкурентов, разбираю ваш сайт или продукт, собираю воронку и контент-план. Набор зависит от задачи — не бывает одинаковых.</p>
+        <div class="port-mmeta"><span class="port-mch">1–3 дня</span><span class="port-mch">Без предоплаты</span></div>
+      </div>
+      <div class="port-mcard rv d1">
+        <div class="port-mtag">Что нужно от вас</div>
+        <div class="port-mtit">Задача и полчаса разговора</div>
+        <p class="port-mtx">Рассказать, что болит и что уже пробовали. Доступы и внутренние данные на этом шаге не нужны — работаю с тем, что видно снаружи.</p>
+        <div class="port-mmeta"><span class="port-mch">30 минут</span><span class="port-mch">Без доступов</span></div>
+      </div>
+      <div class="port-mcard rv d2">
+        <div class="port-mtag">Чем это не является</div>
+        <div class="port-mtit">Это не презентация обо мне</div>
+        <p class="port-mtx">Не питч, не смета и не «давайте созвонимся обсудить». Артефакты остаются у вас в любом случае: не зашло — расходимся, и вы ничего не должны.</p>
+        <div class="port-mmeta"><span class="port-mch">Артефакты ваши</span><span class="port-mch">Без обязательств</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const FIT_HTML = `<!-- КОМУ ПОДХОДИТ -->
+<section id="port-fit">
+  <div class="w">
+    <span class="sec-tag rv">Честно</span>
+    <h2 class="sec-h2 rv d1">Кому это подходит,<br>а кому — нет</h2>
+    <p class="port-sec-lead rv d1">Месяц работы даёт результат не всем. Лучше разойтись на входе, чем через три недели выяснить, что мы решали разные задачи.</p>
+    <div class="port-fit-grid">
+      <div class="port-fit-col is-yes rv">
+        <div class="port-fit-h">Подходит, если</div>
+        <ul class="port-fit-list">
+          <li>Есть конкретная задача бизнеса, а не желание «внедрить AI».</li>
+          <li>Есть человек, которого можно научить вести это дальше — вы сами или сотрудник.</li>
+          <li>Готовы участвовать: ставить задачи и смотреть результат, а не получить систему под ключ и забыть.</li>
+          <li>Нужен не исполнитель на поток задач, а метод, который останется у вас.</li>
+        </ul>
+      </div>
+      <div class="port-fit-col is-no rv d1">
+        <div class="port-fit-h">Не подходит, если</div>
+        <ul class="port-fit-list">
+          <li>Ждёте, что всё будет работать само и без вашего участия. Так не будет — в чате нужно сидеть и ставить задачи.</li>
+          <li>Некому передавать: если человека у руля не появится, через месяц система встанет.</li>
+          <li>Нужен подрядчик на поток мелких задач по часам — это другая услуга и другие деньги.</li>
+          <li>Задача — разово сделать один сайт или лендинг. Для этого месяц избыточен.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const FAQ_HTML = `<!-- ВОПРОСЫ -->
+<section id="port-faq">
+  <div class="w">
+    <span class="sec-tag rv">Вопросы</span>
+    <h2 class="sec-h2 rv d1">То, что спрашивают<br>перед началом</h2>
+    <div class="port-faq">
+      <div class="port-qa rv">
+        <div class="port-q">Почему первый шаг бесплатный? В чём подвох</div>
+        <div class="port-a">Подвоха нет, есть расчёт. Мне дешевле один раз показать результат, чем убеждать словами, — а вам не нужно рисковать деньгами на незнакомом человеке. Если не зайдёт, я потерял вечер, вы не потеряли ничего.</div>
+      </div>
+      <div class="port-qa rv d1">
+        <div class="port-q">Чем это отличается от агентства</div>
+        <div class="port-a">Агентство продаёт процесс и оставляет вас зависимым: уходит команда — уходит всё. Здесь наоборот: цель месяца в том, чтобы к его концу у руля стоял ваш человек, а не я. Поэтому я и работаю рядом с ним, а не вместо него.</div>
+      </div>
+      <div class="port-qa rv">
+        <div class="port-q">Нужно ли мне самому разбираться в AI</div>
+        <div class="port-a">Нет. Но участвовать придётся: задачи ставите вы, и в чате с командой сидеть тоже вам. Я не продаю «оно само» — это было бы враньём. Я делаю так, чтобы участие занимало минуты, а не дни.</div>
+      </div>
+      <div class="port-qa rv d1">
+        <div class="port-q">Что будет после месяца</div>
+        <div class="port-a">Система и обученный человек остаются у вас, без привязки ко мне. Следующий цикл — только если есть задачи под него. Не будет задач — не будет и цикла, навязывать продление не стану.</div>
+      </div>
+      <div class="port-qa rv">
+        <div class="port-q">Откуда вилка «от 200 000 ₽»</div>
+        <div class="port-a">Зависит от объёма задач на месяц и от того, сколько людей нужно обучить. После демонстрации я вижу реальный масштаб и называю цифру до старта — она не меняется по ходу.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
 // ─────────────────────────────────────────────────────────────────────────────
 // EN — английские версии секций (для переключателя языка, см. Bilingual.tsx)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -451,3 +543,94 @@ export const CONTACT_HTML_EN = `<!-- CONTACT -->
     </div>
   </div>
 </section>`;
+
+export const DEMO_HTML_EN = `<!-- DEMONSTRATION -->
+<section id="port-demo">
+  <div class="w">
+    <span class="sec-tag rv">First step · free</span>
+    <h2 class="sec-h2 rv d1">What you get<br>before you've paid</h2>
+    <p class="port-sec-lead rv d1">You hand me a real business task. I take it and hand back finished artifacts — things you can open and use, even if we don't end up working together.</p>
+    <div class="port-mgrid">
+      <div class="port-mcard rv">
+        <div class="port-mtag">What I do</div>
+        <div class="port-mtit">Dig into the task and bring back a teardown</div>
+        <p class="port-mtx">I research the market and competitors, take apart your site or product, put together a funnel and a content plan. The set depends on the task — no two are alike.</p>
+        <div class="port-mmeta"><span class="port-mch">1–3 days</span><span class="port-mch">No upfront payment</span></div>
+      </div>
+      <div class="port-mcard rv d1">
+        <div class="port-mtag">What I need from you</div>
+        <div class="port-mtit">A task and half an hour of talking</div>
+        <p class="port-mtx">Tell me what hurts and what you've already tried. No access or internal data needed at this stage — I work with what's visible from outside.</p>
+        <div class="port-mmeta"><span class="port-mch">30 minutes</span><span class="port-mch">No access needed</span></div>
+      </div>
+      <div class="port-mcard rv d2">
+        <div class="port-mtag">What it isn't</div>
+        <div class="port-mtit">It isn't a presentation about me</div>
+        <p class="port-mtx">Not a pitch, not a quote, not "let's hop on a call to discuss." The artifacts are yours either way: if it doesn't land, we part and you owe nothing.</p>
+        <div class="port-mmeta"><span class="port-mch">Artifacts are yours</span><span class="port-mch">No strings</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const FIT_HTML_EN = `<!-- WHO IT FITS -->
+<section id="port-fit">
+  <div class="w">
+    <span class="sec-tag rv">Straight talk</span>
+    <h2 class="sec-h2 rv d1">Who this fits,<br>and who it doesn't</h2>
+    <p class="port-sec-lead rv d1">A month of work doesn't pay off for everyone. Better to part at the start than to discover three weeks in that we were solving different problems.</p>
+    <div class="port-fit-grid">
+      <div class="port-fit-col is-yes rv">
+        <div class="port-fit-h">It fits if</div>
+        <ul class="port-fit-list">
+          <li>You have a concrete business task, not a wish to "adopt AI".</li>
+          <li>There's someone who can be trained to run it — you or an employee.</li>
+          <li>You're ready to take part: set tasks and review results, not receive a turnkey system and forget it.</li>
+          <li>You want a method that stays with you, not a contractor on tap.</li>
+        </ul>
+      </div>
+      <div class="port-fit-col is-no rv d1">
+        <div class="port-fit-h">It doesn't fit if</div>
+        <ul class="port-fit-list">
+          <li>You expect it to run itself with no involvement. It won't — someone has to sit in the chat and set tasks.</li>
+          <li>There's nobody to hand over to: with no one at the wheel, the system stalls within a month.</li>
+          <li>You need a contractor for a stream of small hourly tasks — that's a different service and different money.</li>
+          <li>The job is a one-off site or landing page. A month is overkill for that.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;
+
+export const FAQ_HTML_EN = `<!-- QUESTIONS -->
+<section id="port-faq">
+  <div class="w">
+    <span class="sec-tag rv">Questions</span>
+    <h2 class="sec-h2 rv d1">What people ask<br>before starting</h2>
+    <div class="port-faq">
+      <div class="port-qa rv">
+        <div class="port-q">Why is the first step free? What's the catch</div>
+        <div class="port-a">No catch, just arithmetic. It's cheaper for me to show a result once than to argue for it in words — and you don't have to risk money on a stranger. If it doesn't land, I lost an evening and you lost nothing.</div>
+      </div>
+      <div class="port-qa rv d1">
+        <div class="port-q">How is this different from an agency</div>
+        <div class="port-a">An agency sells process and leaves you dependent: the team leaves, everything leaves with it. Here it's the opposite — the point of the month is that by the end your person is at the wheel, not me. That's why I work beside them rather than instead of them.</div>
+      </div>
+      <div class="port-qa rv">
+        <div class="port-q">Do I need to understand AI myself</div>
+        <div class="port-a">No. But you do have to take part: you set the tasks, and sitting in the chat with the team is on you too. I'm not selling "it runs itself" — that would be a lie. I make sure taking part costs minutes, not days.</div>
+      </div>
+      <div class="port-qa rv d1">
+        <div class="port-q">What happens after the month</div>
+        <div class="port-a">The system and a trained person stay with you, with no tie to me. Another cycle only if there's work for one. No work, no cycle — I won't push a renewal.</div>
+      </div>
+      <div class="port-qa rv">
+        <div class="port-q">Where does "from 200,000 ₽" come from</div>
+        <div class="port-a">It depends on the month's workload and how many people need training. After the demonstration I can see the real scope and name the figure before we start — it doesn't move mid-way.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="dv">`;

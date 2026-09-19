@@ -5,7 +5,10 @@ import PageShell from "@/components/layout/PageShell";
 import { portfolioJs } from "@/lib/portfolio-js";
 import HeroSection from "@/components/portfolio/sections/HeroSection";
 import WorkSection from "@/components/portfolio/sections/WorkSection";
+import DemoSection from "@/components/portfolio/sections/DemoSection";
 import ClientsSection from "@/components/portfolio/sections/ClientsSection";
+import FitSection from "@/components/portfolio/sections/FitSection";
+import FaqSection from "@/components/portfolio/sections/FaqSection";
 import HireSection from "@/components/portfolio/sections/HireSection";
 import ContactSection from "@/components/portfolio/sections/ContactSection";
 import { initOdometer } from "@/lib/odometer";
@@ -39,9 +42,12 @@ export default function PortfolioPage() {
 			<div id="cd" />
 			<div id="cr" />
 			<HeroSection />
+			<DemoSection />
 			<WorkSection />
 			<ClientsSection />
 			<HireSection />
+			<FitSection />
+			<FaqSection />
 			<ContactSection />
 		</PageShell>
 	);
