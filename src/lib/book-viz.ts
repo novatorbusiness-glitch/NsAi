@@ -59,8 +59,8 @@ function stimuly(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="1040" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="1040" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="260" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="210" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 4 · НЕЙРО-ТРАФИК</text>
+  <rect x="80" y="66" width="320" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="240" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 4 · НЕЙРО-ТРАФИК</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ШЕСТЬ СТИМУЛОВ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">на что мозг реагирует раньше, чем включается анализ</text>
 
@@ -158,8 +158,8 @@ function matrica(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="280" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="220" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <rect x="80" y="66" width="372" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="266" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ПРОДУКТОВАЯ МАТРИЦА</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">лестница ценности · техника «нога в двери» · каждое «да» делает следующее проще</text>
   ${barRows}
@@ -171,7 +171,7 @@ function matrica(id: string): string {
   <text x="70" y="766" text-anchor="middle" font-family="${FM}" font-size="20" fill="${C.gold}">▲</text>
   <text x="70" y="586" text-anchor="middle" font-family="${FM}" font-size="20" fill="${C.gold}">▲</text>
   <text x="70" y="406" text-anchor="middle" font-family="${FM}" font-size="20" fill="${C.gold}">▲</text>
-  <text x="80" y="942" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">не пытайся продать дорогое холодному контакту · выстраивай плавную лестницу</text>
+  <text x="80" y="952" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">не пытайся продать дорогое холодному контакту · выстраивай плавную лестницу</text>
 </svg>`;
 }
 
@@ -179,23 +179,25 @@ function matrica(id: string): string {
 // 3.2 — Четыре элемента доверия (1600×800)
 // ─────────────────────────────────────────────────────────────
 function doverie(id: string): string {
+	// Сетка: 4 колонки по 364 с зазором 24 внутри панели (36…1564), внутренний отступ 26.
+	// Полезная ширина строки — 326px: подписи ниже подобраны так, чтобы в неё влезать
+	// (раньше вопрос второй карточки уезжал на 60px в соседнюю — отсюда «налезание»).
 	const cards = [
-		{ x: 40, n: "1", t: "ЭКСПЕРТНОСТЬ", q: "«Почему я должен слушать тебя?»", l1: "сторителлинг, кейсы с цифрами,", l2: "авторская методология", f: "надежный проводник" },
-		{ x: 420, n: "2", t: "ТЕМА / ПРОБЛЕМА", q: "«Почему это важно для меня сейчас?»", l1: "разрушение мифов, статистика,", l2: "формула PAS", f: "управляемый диссонанс" },
-		{ x: 800, n: "3", t: "ТРАНСФОРМАЦИЯ", q: "«Какой результат я получу?»", l1: "истории клиентов, Future Pacing,", l2: "визуализация будущего", f: "предвкушение награды" },
-		{ x: 1180, n: "4", t: "ПРОДУКТ", q: "«Как получить этот результат?»", l1: "анонс через пользу, разбор", l2: "возражений, демо изнутри", f: "мост к решению" },
+		{ x: 36, n: "1", t: "ЭКСПЕРТНОСТЬ", q: "«Почему я должен верить тебе?»", l1: "сторителлинг, кейсы с цифрами,", l2: "авторская методология", f: "надежный проводник" },
+		{ x: 424, n: "2", t: "ТЕМА / ПРОБЛЕМА", q: "«Почему это важно мне сейчас?»", l1: "разрушение мифов, статистика,", l2: "формула PAS", f: "управляемый диссонанс" },
+		{ x: 812, n: "3", t: "ТРАНСФОРМАЦИЯ", q: "«Какой результат я получу?»", l1: "истории клиентов, Future Pacing,", l2: "визуализация будущего", f: "предвкушение награды" },
+		{ x: 1200, n: "4", t: "ПРОДУКТ", q: "«Как получить этот результат?»", l1: "анонс через пользу, разбор", l2: "возражений, демо изнутри", f: "мост к решению" },
 	];
 	const rows = cards
 		.map((c) => {
-			const w = c.x === 1180 ? 380 : 360;
 			return `<g class="vz-card">
-    <rect x="${c.x}" y="310" width="${w}" height="300" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="${c.x + 32}" y="378" font-family="${FG}" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">${c.n}</text>
-    <text x="${c.x + 32}" y="442" font-family="${FG}" font-weight="800" font-size="30" fill="${C.gold}">${c.t}</text>
-    <text x="${c.x + 32}" y="486" font-family="${FM}" font-size="19" fill="${C.label}">${c.q}</text>
-    <text x="${c.x + 32}" y="530" font-family="${FS}" font-size="21" fill="${C.ink3}">${c.l1}</text>
-    <text x="${c.x + 32}" y="562" font-family="${FS}" font-size="21" fill="${C.ink3}">${c.l2}</text>
-    <text x="${c.x + 32}" y="600" font-family="${FM}" font-size="17" fill="${C.goldDeep}">${c.f}</text>
+    <rect x="${c.x}" y="310" width="364" height="300" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="${c.x + 26}" y="378" font-family="${FG}" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">${c.n}</text>
+    <text x="${c.x + 26}" y="442" font-family="${FG}" font-weight="800" font-size="30" fill="${C.gold}">${c.t}</text>
+    <text x="${c.x + 26}" y="486" font-family="${FM}" font-size="18" fill="${C.label}">${c.q}</text>
+    <text x="${c.x + 26}" y="530" font-family="${FS}" font-size="20" fill="${C.ink3}">${c.l1}</text>
+    <text x="${c.x + 26}" y="562" font-family="${FS}" font-size="20" fill="${C.ink3}">${c.l2}</text>
+    <text x="${c.x + 26}" y="600" font-family="${FM}" font-size="17" fill="${C.goldDeep}">${c.f}</text>
   </g>`;
 		})
 		.join("\n");
@@ -211,17 +213,17 @@ function doverie(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <rect x="80" y="66" width="344" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="252" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ЧЕТЫРЕ ЭЛЕМЕНТА ДОВЕРИЯ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">прогрев: спроектированное меню из четырёх блюд · от скепсиса к готовности действовать</text>
   ${rows}
   <g stroke="${C.gold}" stroke-width="4" fill="none" stroke-linecap="round">
-    <path d="M405,460 l14,-10 m-14,10 l14,10"/>
-    <path d="M785,460 l14,-10 m-14,10 l14,10"/>
-    <path d="M1165,460 l14,-10 m-14,10 l14,10"/>
+    <path d="M406,460 l14,-10 m-14,10 l14,10"/>
+    <path d="M794,460 l14,-10 m-14,10 l14,10"/>
+    <path d="M1182,460 l14,-10 m-14,10 l14,10"/>
   </g>
-  <text x="220" y="660" text-anchor="middle" font-family="${FM}" font-size="21" letter-spacing="1" fill="${C.ink2}">порядок подачи строг: каждый элемент готовит следующий шаг</text>
+  <text x="800" y="664" text-anchor="middle" font-family="${FM}" font-size="21" letter-spacing="1" fill="${C.ink2}">порядок подачи строг: каждый элемент готовит следующий шаг</text>
   <text x="80" y="744" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">к моменту открытия продаж все четыре опоры должны быть выстроены</text>
 </svg>`;
 }
@@ -232,7 +234,7 @@ function doverie(id: string): string {
 function kasanija(id: string): string {
 	const steps = [
 		{ x: 200, d: "Д0", t: "ЛИД-МАГНИТ", l1: "ценность в обмен", l2: "на контакт", f: "«внедри один приём»" },
-		{ x: 440, d: "Д2", t: "ЭКСПЕРТНОСТЬ", l1: "кейс с цифрами", l2: "+17% заявок", f: "«этот источник даёт результат»" },
+		{ x: 440, d: "Д2", t: "ЭКСПЕРТНОСТЬ", l1: "кейс с цифрами", l2: "+17% заявок", f: "«источник даёт результат»" },
 		{ x: 680, d: "Д3", t: "ТРАНСФОРМАЦИЯ", l1: "скриншот выпускницы,", l2: "Future Pacing", f: "мозг проживает результат" },
 		{ x: 920, d: "Д5", t: "ПРОБЛЕМА", l1: "«окно есть,", l2: "но не вечно»", f: "дефицит + FOMO" },
 		{ x: 1160, d: "Д7", t: "ХУК", l1: "флагманский курс,", l2: "модель завершена", f: "оффер = следующий шаг" },
@@ -241,11 +243,11 @@ function kasanija(id: string): string {
 		.map((s) => {
 			return `<g class="vz-dot">
     <circle cx="${s.x}" cy="400" r="16" fill="${C.yellow}"/>
-    <text x="${s.x}" y="330" text-anchor="middle" font-family="${FM}" font-size="22" fill="${C.gold}">${s.d}</text>
-    <text x="${s.x}" y="300" text-anchor="middle" font-family="${FG}" font-weight="800" font-size="26" fill="${C.ink}">${s.t}</text>
+    <text x="${s.x}" y="330" text-anchor="middle" font-family="${FM}" font-size="16" fill="${C.gold}">${s.d}</text>
+    <text x="${s.x}" y="300" text-anchor="middle" font-family="${FG}" font-weight="800" font-size="18" fill="${C.ink}">${s.t}</text>
     <text x="${s.x}" y="450" text-anchor="middle" font-family="${FS}" font-size="19" fill="${C.ink2}">${s.l1}</text>
     <text x="${s.x}" y="478" text-anchor="middle" font-family="${FS}" font-size="19" fill="${C.ink2}">${s.l2}</text>
-    <text x="${s.x}" y="512" text-anchor="middle" font-family="${FM}" font-size="16" fill="${C.goldDeep}">${s.f}</text>
+    <text x="${s.x}" y="514" text-anchor="middle" font-family="${FM}" font-size="15" fill="${C.goldDeep}">${s.f}</text>
   </g>`;
 		})
 		.join("\n");
@@ -261,8 +263,8 @@ function kasanija(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <rect x="80" y="66" width="344" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="252" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ЦЕПОЧКА КАСАНИЙ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">каждый «джеб» снимает один барьер и готовит следующий шаг · 24/7, автоматически</text>
   <line x1="200" y1="400" x2="1400" y2="400" stroke="rgba(255,208,0,.35)" stroke-width="3"/>
@@ -273,7 +275,7 @@ function kasanija(id: string): string {
     <text x="1400" y="300" text-anchor="middle" font-family="${FG}" font-weight="800" font-size="26" fill="${C.ink}">ПОКУПКА</text>
     <text x="1400" y="450" text-anchor="middle" font-family="${FS}" font-size="19" fill="${C.ink2}">решение стало</text>
     <text x="1400" y="478" text-anchor="middle" font-family="${FS}" font-size="19" fill="${C.ink2}">очевидным</text>
-    <text x="1400" y="512" text-anchor="middle" font-family="${FM}" font-size="16" fill="${C.goldDeep}">когнитивная лёгкость</text>
+    <text x="1400" y="514" text-anchor="middle" font-family="${FM}" font-size="15" fill="${C.goldDeep}">когнитивная лёгкость</text>
   </g>
   <text x="80" y="676" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">последовательность снимает барьеры доверия · каждый джеб бьёт в реальную боль сегмента</text>
 </svg>`;
@@ -293,19 +295,21 @@ function anatomiya(id: string): string {
 			const items = c.items
 				.map(
 					(it, i) =>
-						`<rect x="${c.x}" y="${300 + i * 74}" width="460" height="58" rx="10" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="${c.x + 24}" y="${338 + i * 74}" font-family="${FS}" font-size="21" fill="${C.ink2}">${it}</text>`,
+						`<rect x="${c.x}" y="${320 + i * 74}" width="460" height="58" rx="10" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="${c.x + 24}" y="${358 + i * 74}" font-family="${FS}" font-size="21" fill="${C.ink2}">${it}</text>`,
 				)
 				.join("\n");
 			return `<g class="vz-card">
-    <rect x="${c.x}" y="220" width="460" height="56" rx="12" fill="rgba(255,208,0,.1)" stroke="rgba(255,208,0,.3)"/>
-    <text x="${c.x + 24}" y="256" font-family="${FM}" font-size="20" letter-spacing="1" fill="${C.gold}">${c.n} · ${c.t}</text>
+    <rect x="${c.x}" y="240" width="460" height="56" rx="12" fill="rgba(255,208,0,.1)" stroke="rgba(255,208,0,.3)"/>
+    <text x="${c.x + 24}" y="276" font-family="${FM}" font-size="20" letter-spacing="1" fill="${C.gold}">${c.n} · ${c.t}</text>
     ${items}
-  </g>${ci < 2 ? `<text x="${c.x + 500}" y="440" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">→</text>` : ""}`;
+  </g>${ci < 2 ? `<text x="${c.x + 500}" y="460" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">→</text>` : ""}`;
 		})
 		.join("\n");
 
-	return `<svg class="nz-viz" viewBox="0 0 1600 980" role="img" aria-label="Анатомия воронки: элементы, страницы, модель">
+	// Высота панели подрезана под реальный контент: колонки кончаются на y=600,
+	// раньше viewBox тянулся до 980 и под схемой зияла пустая полоса в ~340px.
+	return `<svg class="nz-viz" viewBox="0 0 1600 720" role="img" aria-label="Анатомия воронки: элементы, страницы, модель">
   <defs>
     <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
@@ -314,13 +318,13 @@ function anatomiya(id: string): string {
       <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect x="20" y="20" width="1560" height="940" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
-  <rect x="20" y="20" width="1560" height="940" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <rect x="20" y="20" width="1560" height="680" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="680" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="372" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="266" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="58" letter-spacing="-1" fill="${C.ink}">АНАТОМИЯ ВОРОНКИ</text>
   ${colBlocks}
-  <text x="80" y="922" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">элемент — сигнал · страница — функция · модель — маршрут без ручного вмешательства</text>
+  <text x="80" y="664" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">элемент — сигнал · страница — функция · модель — маршрут без ручного вмешательства</text>
 </svg>`;
 }
 
@@ -356,11 +360,11 @@ function arhitektura(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <rect x="80" y="66" width="372" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="266" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="54" letter-spacing="-1" fill="${C.ink}">ВЫБОР АРХИТЕКТУРЫ</text>
   <text x="84" y="240" font-family="${FM}" font-size="22" letter-spacing="1" fill="${C.ink3}">вес продукта × температура аудитории — 15 моделей на пересечении</text>
-  <line x1="800" y1="240" x2="800" y2="840" stroke="rgba(255,208,0,.2)" stroke-width="2"/>
+  <line x1="800" y1="272" x2="800" y2="840" stroke="rgba(255,208,0,.2)" stroke-width="2"/>
   <line x1="100" y1="530" x2="1500" y2="530" stroke="rgba(255,208,0,.2)" stroke-width="2"/>
   ${quadBlocks}
 </svg>`;
@@ -370,20 +374,24 @@ function arhitektura(id: string): string {
 // 2.4 — Полный маршрут Tripwire (1600×640)
 // ─────────────────────────────────────────────────────────────
 function sborka(id: string): string {
+	// Карточки шириной 280 с шагом 300: стрелка ставится в зазор (s.x+281), раньше
+	// она рисовалась ровно по левому краю следующей карточки (s.x+300) и лежала внутри неё.
+	// Заголовок третьего шага укорочен — «БЛАГОДАРНОСТЬ + ОФФЕР» при 22px занимал 286px
+	// при полезной ширине 250 и вылезал на соседнюю карточку.
 	const steps = [
-		{ x: 80, t: "ТРАФИК", d: "холодный контакт" },
-		{ x: 380, t: "ЛИД-МАГНИТ", d: "«7 дыр в бюджете»" },
-		{ x: 680, t: "БЛАГОДАРНОСТЬ + ОФФЕР", d: "таймер 490₽ вместо 2990₽" },
-		{ x: 980, t: "МИКРО-ПОКУПКА", d: "нога в двери" },
-		{ x: 1280, t: "EMAIL-ПРОГРЕВ", d: "советы + истории" },
+		{ x: 60, t: "ТРАФИК", d: "холодный контакт" },
+		{ x: 360, t: "ЛИД-МАГНИТ", d: "«7 дыр в бюджете»" },
+		{ x: 660, t: "БЛАГОДАРНОСТЬ", d: "оффер 490 ₽ вместо 2990 ₽" },
+		{ x: 960, t: "МИКРО-ПОКУПКА", d: "нога в двери" },
+		{ x: 1260, t: "EMAIL-ПРОГРЕВ", d: "советы + истории" },
 	];
 	const nodes = steps
 		.map(
 			(s, i) => `<g class="vz-dot">
-    <rect x="${s.x}" y="340" width="260" height="90" rx="14" fill="${C.card}" stroke="${i === steps.length - 1 ? "rgba(255,208,0,.4)" : C.cardBorder}"/>
+    <rect x="${s.x}" y="340" width="280" height="90" rx="14" fill="${C.card}" stroke="${i === steps.length - 1 ? "rgba(255,208,0,.4)" : C.cardBorder}"/>
     <text x="${s.x + 20}" y="378" font-family="${FG}" font-weight="800" font-size="22" fill="${C.ink}">${s.t}</text>
     <text x="${s.x + 20}" y="408" font-family="${FM}" font-size="16" fill="${C.ink3}">${s.d}</text>
-  </g>${i < steps.length - 1 ? `<text x="${s.x + 300}" y="392" font-family="${FG}" font-size="28" fill="${C.gold}">→</text>` : ""}`,
+  </g>${i < steps.length - 1 ? `<text x="${s.x + 281}" y="392" font-family="${FG}" font-size="28" fill="${C.gold}">→</text>` : ""}`,
 		)
 		.join("\n");
 
@@ -398,12 +406,12 @@ function sborka(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="600" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="600" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <rect x="80" y="66" width="372" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="266" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="54" letter-spacing="-1" fill="${C.ink}">ФИНАЛЬНАЯ СБОРКА</text>
   <text x="84" y="240" font-family="${FM}" font-size="22" letter-spacing="1" fill="${C.ink3}">полный маршрут Tripwire на живом примере</text>
   ${nodes}
-  <text x="1280" y="470" font-family="${FM}" font-size="17" fill="${C.goldDeep}">→ основной продукт, 30 000 ₽</text>
+  <text x="1260" y="470" font-family="${FM}" font-size="17" fill="${C.goldDeep}">→ основной продукт, 30 000 ₽</text>
   <text x="80" y="576" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">каждый следующий шаг — не прыжок, а логичное продолжение предыдущего</text>
 </svg>`;
 }
@@ -424,7 +432,7 @@ function uderzhanie(id: string): string {
     <text x="${j.x + 24}" y="368" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.gold}">${j.t}</text>
     <text x="${j.x + 24}" y="404" font-family="${FG}" font-weight="700" font-size="21" fill="${C.ink}">${j.t2 || j.d}</text>
     <text x="${j.x + 24}" y="436" font-family="${FM}" font-size="16" fill="${C.ink3}">${j.f}</text>
-  </g>${i < 2 ? `<text x="${j.x + 320}" y="410" font-family="${FG}" font-size="26" fill="${C.gold}">+</text>` : ""}`,
+  </g>${i < 2 ? `<text x="${j.x + 300}" y="410" font-family="${FG}" font-size="26" fill="${C.gold}">+</text>` : ""}`,
 		)
 		.join("\n");
 
@@ -439,8 +447,8 @@ function uderzhanie(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="580" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="580" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="260" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="210" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <rect x="80" y="66" width="344" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="252" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="52" letter-spacing="-1" fill="${C.ink}">ФИЗИОЛОГИЯ УДЕРЖАНИЯ</text>
   <text x="84" y="240" font-family="${FM}" font-size="21" letter-spacing="1" fill="${C.ink3}">джеб, джеб, джеб — правый хук</text>
   ${jabBlocks}
@@ -488,8 +496,8 @@ function ohvaty(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="820" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="820" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <rect x="80" y="66" width="344" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="252" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="54" letter-spacing="-1" fill="${C.ink}">15 ЧИТ-КОДОВ</text>
   <text x="84" y="240" font-family="${FM}" font-size="21" letter-spacing="1" fill="${C.ink3}">усиление охватов: один материал работает на нескольких площадках</text>
   ${groupBlocks}
@@ -505,7 +513,10 @@ function kopirajter(id: string): string {
 	const rows = (arr: string[], x: number) =>
 		arr.map((t, i) => `<text x="${x}" y="${376 + i * 46}" font-family="${FS}" font-size="21" fill="${C.ink2}">${t}</text>`).join("\n");
 
-	return `<svg class="nz-viz" viewBox="0 0 1600 560" role="img" aria-label="Человек и AI: разделение ролей в создании контента">
+	// Четвёртая строка списка имеет базовую линию на y=514: при высоте карточки 250
+	// (низ 520) её выносные элементы упирались в рамку. Карточка поднята до 280,
+	// панель и viewBox — соответственно.
+	return `<svg class="nz-viz" viewBox="0 0 1600 600" role="img" aria-label="Человек и AI: разделение ролей в создании контента">
   <defs>
     <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
@@ -514,19 +525,19 @@ function kopirajter(id: string): string {
       <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
     </pattern>
   </defs>
-  <rect x="20" y="20" width="1560" height="520" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
-  <rect x="20" y="20" width="1560" height="520" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
-  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <rect x="20" y="20" width="1560" height="560" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="560" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="344" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="252" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="52" letter-spacing="-1" fill="${C.ink}">AI КАК КОПИРАЙТЕР</text>
   <g class="vz-card">
-    <rect x="80" y="270" width="640" height="250" rx="18" fill="${C.card}" stroke="rgba(255,208,0,.3)"/>
+    <rect x="80" y="270" width="640" height="280" rx="18" fill="${C.card}" stroke="rgba(255,208,0,.3)"/>
     <text x="112" y="316" font-family="${FG}" font-weight="800" font-size="28" fill="${C.gold}">ТЫ — СТРАТЕГ</text>
     ${rows(you, 112)}
   </g>
-  <text x="800" y="410" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">×</text>
+  <text x="800" y="425" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">×</text>
   <g class="vz-card">
-    <rect x="880" y="270" width="640" height="250" rx="18" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <rect x="880" y="270" width="640" height="280" rx="18" fill="${C.card}" stroke="${C.cardBorder}"/>
     <text x="912" y="316" font-family="${FG}" font-weight="800" font-size="28" fill="${C.ink3}">AI — ИСПОЛНИТЕЛЬ</text>
     ${rows(ai, 912)}
   </g>
