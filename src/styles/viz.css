@@ -265,12 +265,145 @@
 	}
 }
 
+/* ── Живой статус AI-директора (/raspakovka · «Отличие от чат-ботов») ──
+   Концепт №4: посетитель видит систему в работе, а не обещание.
+   Показываем путь ОДНОЙ задачи до «согласовано» — это иллюстрация
+   последовательности с отметками времени, а не фейковый live-счётчик. */
+
+.vz-st-card {
+	background: var(--bg2);
+	border: 1px solid var(--br);
+	border-radius: var(--r-md);
+	padding: 1.25rem 1.35rem;
+}
+
+.vz-st-task {
+	display: flex;
+	align-items: baseline;
+	gap: 0.7rem;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--br);
+	flex-wrap: wrap;
+}
+
+.vz-st-id {
+	font-family: var(--fm);
+	font-size: 0.66rem;
+	color: var(--a);
+	background: var(--ad);
+	border: 1px solid rgba(255, 208, 0, 0.25);
+	border-radius: var(--r-sm);
+	padding: 0.2rem 0.5rem;
+	flex-shrink: 0;
+}
+
+.vz-st-title {
+	font-family: var(--fd);
+	font-weight: 700;
+	font-size: 0.98rem;
+	color: var(--t);
+	min-width: 0;
+}
+
+.vz-st-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.9rem;
+}
+
+.vz-st-step {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	align-items: baseline;
+	gap: 0.75rem;
+	/* Шаги проявляются по очереди и цикл повторяется — ощущение идущей работы */
+	animation: vz-st-in 8s ease-in-out infinite;
+	animation-delay: calc(var(--i) * 0.9s);
+	opacity: 0.25;
+}
+
+@keyframes vz-st-in {
+
+	0%,
+	4% {
+		opacity: 0.25;
+	}
+
+	10%,
+	86% {
+		opacity: 1;
+	}
+
+	96%,
+	100% {
+		opacity: 0.25;
+	}
+}
+
+/* Точка-маркер шага */
+.vz-st-step::before {
+	content: "";
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--br2);
+	transform: translateY(-2px);
+}
+
+.vz-st-step.is-final::before {
+	background: var(--a);
+}
+
+.vz-st-time {
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	color: var(--t3);
+	font-variant-numeric: tabular-nums;
+}
+
+.vz-st-txt {
+	font-size: 0.88rem;
+	color: var(--t2);
+	line-height: 1.5;
+	min-width: 0;
+}
+
+.vz-st-step.is-final .vz-st-txt {
+	color: var(--a);
+	font-weight: 600;
+}
+
+@media (max-width: 560px) {
+	.vz-st-step {
+		grid-template-columns: auto 1fr;
+		row-gap: 0.15rem;
+	}
+
+	/* Время уходит на свою строку, чтобы текст не сжимался в столбик */
+	.vz-st-time {
+		grid-column: 2;
+	}
+
+	.vz-st-txt {
+		grid-column: 2;
+	}
+}
+
 @media (prefers-reduced-motion: reduce) {
 
 	.vz-pulse,
 	.vz-rail-pulse,
-	.vz-step::before {
+	.vz-step::before,
+	.vz-st-step {
 		animation: none;
+	}
+
+	.vz-st-step {
+		opacity: 1;
 	}
 
 	.vz-rail-pulse {
