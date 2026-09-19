@@ -2,9 +2,11 @@
 // Nav/mobile-menu/footer больше не дублируются здесь — страница использует
 // общий PageShell (см. src/components/pages/AiTrainingPage.tsx).
 import { icon } from "./icons";
+import { FLOW_HTML } from "./flow";
 
 export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="ait-hero">
+  ${FLOW_HTML}
   <div class="ait-hero-grid"></div>
   <div class="ait-hero-glow"></div>
   <div class="ait-hero-inner">
@@ -316,6 +318,7 @@ export const FINAL_HTML = `<!-- 10 · CTA -->
 
 export const HERO_HTML_EN = `<!-- HERO -->
 <section id="ait-hero">
+  ${FLOW_HTML}
   <div class="ait-hero-grid"></div>
   <div class="ait-hero-glow"></div>
   <div class="ait-hero-inner">

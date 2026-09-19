@@ -1,8 +1,10 @@
 // Секции consulting (HTML из consulting-content, разбито по ТЗ NCAI_SPEC).
 import { icon } from "./icons";
+import { FLOW_HTML } from "./flow";
 
 export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
 <section id="hero-consulting">
+  ${FLOW_HTML}
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
@@ -744,6 +746,7 @@ export const FEATURES_HTML = `<!-- 8 · ФИЧИ ПАНЕЛИ -->
 
 export const HERO_HTML_EN = `<!-- HERO -->
 <section id="hero-consulting">
+  ${FLOW_HTML}
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Agency in a box · unboxing + subscription</div>

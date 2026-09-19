@@ -2,14 +2,16 @@
 // Nav/mobile-menu/footer больше не дублируются здесь — страница использует
 // общий PageShell (см. src/components/pages/PortfolioPage.tsx).
 import { icon } from "./icons";
+import { FLOW_HTML } from "./flow";
 
 export const HERO_HTML = `<!-- HERO -->
 <section id="port-hero">
   <div class="port-hero-grid"></div>
   <div class="port-hero-glow"></div>
+  ${FLOW_HTML}
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="port-hero-name">Захожу в проект, показываю результат.<br><span class="port-acc">Заходит — довожу до конца.</span></h1>
+    <h1 class="port-hero-name">Сначала показываю результат.<br><span class="port-acc">Заходит — работаем месяц вместе.</span></h1>
     <p class="port-hero-sub">Не продаю часы и не обещаю. Беру вашу задачу, провожу исследование и отдаю готовые артефакты — бесплатно. Зашло — захожу в проект на месяц: внедряю метод, обучаю вашего человека им управлять и работаю рядом с ним. От 200 000 ₽.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Обсудить проект →</a>
@@ -232,9 +234,10 @@ export const HERO_HTML_EN = `<!-- HERO -->
 <section id="port-hero">
   <div class="port-hero-grid"></div>
   <div class="port-hero-glow"></div>
+  ${FLOW_HTML}
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="port-hero-name">I join the project, I show the result.<br><span class="port-acc">If it lands, I carry it through.</span></h1>
+    <h1 class="port-hero-name">First I show you a result.<br><span class="port-acc">If it lands, we work a month together.</span></h1>
     <p class="port-hero-sub">I don't sell hours and I don't promise. I take your task, do the research and hand over finished artifacts — free. If it lands, I join the project for a month: I bring in the method, train the person who'll run it, and work alongside them. From 200,000 ₽.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Discuss a project →</a>
