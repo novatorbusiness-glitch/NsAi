@@ -280,6 +280,93 @@ function kasanija(id: string): string {
 }
 
 // ─────────────────────────────────────────────────────────────
+// 2.2 — Анатомия воронки: три уровня (1600×980)
+// ─────────────────────────────────────────────────────────────
+function anatomiya(id: string): string {
+	const cols = [
+		{ x: 60, n: "УР. 1", t: "ЭЛЕМЕНТЫ", items: ["Заголовок → сигнал", "Визуал → якорь", "Текст → PAS-цепочка", "Кнопка → снятие страха"] },
+		{ x: 580, n: "УР. 2", t: "СТРАНИЦЫ", items: ["Лид-магнит", "Продающая", "Благодарность · не тупик"] },
+		{ x: 1100, n: "УР. 3", t: "МОДЕЛЬ", items: ["Захват внимания", "Вовлечение", "Конверсия"] },
+	];
+	const colBlocks = cols
+		.map((c, ci) => {
+			const items = c.items
+				.map(
+					(it, i) =>
+						`<rect x="${c.x}" y="${300 + i * 74}" width="460" height="58" rx="10" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="${c.x + 24}" y="${338 + i * 74}" font-family="${FS}" font-size="21" fill="${C.ink2}">${it}</text>`,
+				)
+				.join("\n");
+			return `<g class="vz-card">
+    <rect x="${c.x}" y="220" width="460" height="56" rx="12" fill="rgba(255,208,0,.1)" stroke="rgba(255,208,0,.3)"/>
+    <text x="${c.x + 24}" y="256" font-family="${FM}" font-size="20" letter-spacing="1" fill="${C.gold}">${c.n} · ${c.t}</text>
+    ${items}
+  </g>${ci < 2 ? `<text x="${c.x + 500}" y="440" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">→</text>` : ""}`;
+		})
+		.join("\n");
+
+	return `<svg class="nz-viz" viewBox="0 0 1600 980" role="img" aria-label="Анатомия воронки: элементы, страницы, модель">
+  <defs>
+    <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
+    </linearGradient>
+    <pattern id="${id}-grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="940" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="940" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="58" letter-spacing="-1" fill="${C.ink}">АНАТОМИЯ ВОРОНКИ</text>
+  ${colBlocks}
+  <text x="80" y="922" font-family="${FM}" font-size="18" letter-spacing="1" fill="${C.muted}">элемент — сигнал · страница — функция · модель — маршрут без ручного вмешательства</text>
+</svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// 2.3 — Матрица выбора архитектуры: вес × температура (1600×900)
+// ─────────────────────────────────────────────────────────────
+function arhitektura(id: string): string {
+	const quads = [
+		{ x: 100, y: 260, t: "ЛЁГКИЙ × ХОЛОДНАЯ", d: "Короткая динамичная воронка", m: "Squeeze · Lead Magnet" },
+		{ x: 820, y: 260, t: "ТЯЖЁЛЫЙ × ХОЛОДНАЯ", d: "Поэтапный прогрев, доверие", m: "Lead Magnet → Webinar" },
+		{ x: 100, y: 560, t: "ЛЁГКИЙ × ТЁПЛАЯ", d: "Tripwire + быстрый переход", m: "Tripwire · Invisible" },
+		{ x: 820, y: 560, t: "ТЯЖЁЛЫЙ × ТЁПЛАЯ", d: "Событие или личный отбор", m: "Webinar · Launch · Application" },
+	];
+	const quadBlocks = quads
+		.map(
+			(q) => `<g class="vz-card">
+    <rect x="${q.x}" y="${q.y}" width="680" height="260" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="${q.x + 32}" y="${q.y + 56}" font-family="${FM}" font-size="19" letter-spacing="1" fill="${C.gold}">${q.t}</text>
+    <text x="${q.x + 32}" y="${q.y + 116}" font-family="${FG}" font-weight="800" font-size="30" fill="${C.ink}">${q.d}</text>
+    <text x="${q.x + 32}" y="${q.y + 168}" font-family="${FM}" font-size="19" fill="${C.ink2}">${q.m}</text>
+  </g>`,
+		)
+		.join("\n");
+
+	return `<svg class="nz-viz" viewBox="0 0 1600 900" role="img" aria-label="Матрица выбора архитектуры воронки: вес продукта × температура аудитории">
+  <defs>
+    <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
+    </linearGradient>
+    <pattern id="${id}-grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
+  <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="54" letter-spacing="-1" fill="${C.ink}">ВЫБОР АРХИТЕКТУРЫ</text>
+  <text x="84" y="240" font-family="${FM}" font-size="22" letter-spacing="1" fill="${C.ink3}">вес продукта × температура аудитории — 15 моделей на пересечении</text>
+  <line x1="800" y1="240" x2="800" y2="840" stroke="rgba(255,208,0,.2)" stroke-width="2"/>
+  <line x1="100" y1="530" x2="1500" y2="530" stroke="rgba(255,208,0,.2)" stroke-width="2"/>
+  ${quadBlocks}
+</svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────
 // Замена <img src="/viz/*.svg"> на инлайн-SVG
 // ─────────────────────────────────────────────────────────────
 const VIZ: Record<string, (id: string) => string> = {
@@ -287,11 +374,13 @@ const VIZ: Record<string, (id: string) => string> = {
 	matrica,
 	doverie,
 	kasanija,
+	anatomiya,
+	arhitektura,
 };
 
 export function inlineVizSvg(html: string): string {
 	return html.replace(
-		/<img\b[^>]*src=["']\/viz\/(stimuly|matrica|doverie|kasanija)\.svg["'][^>]*\/?>/gi,
+		/<img\b[^>]*src=["']\/viz\/(stimuly|matrica|doverie|kasanija|anatomiya|arhitektura)\.svg["'][^>]*\/?>/gi,
 		(match, name: string) => {
 			const fn = VIZ[name.toLowerCase()];
 			if (!fn) return match;
