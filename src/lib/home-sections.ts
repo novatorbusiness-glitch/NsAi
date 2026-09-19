@@ -61,9 +61,9 @@ export const HERO_HTML = `<!-- HERO -->
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">${icon("target", "var(--c)")}</div>
           <div class="pc-body">
-            <div class="pc-label">Портфолио · Найм</div>
-            <div class="pc-title">Tech Product Partner</div>
-            <div class="pc-sub">Fix от 200K + опцион. Web3, HealthTech, AI</div>
+            <div class="pc-label">Основное · Вход в бизнес</div>
+            <div class="pc-title">Месяц работы вместе</div>
+            <div class="pc-sub">Сначала бесплатно показываю результат на вашей задаче. Зашло — захожу на месяц: от 200 000 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -576,9 +576,9 @@ export const HERO_HTML_EN = `<!-- HERO -->
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">${icon("target", "var(--c)")}</div>
           <div class="pc-body">
-            <div class="pc-label">Portfolio · Hire</div>
-            <div class="pc-title">Tech Product Partner</div>
-            <div class="pc-sub">Fixed fee from 200K + equity option. Web3, HealthTech, AI</div>
+            <div class="pc-label">Main · Joining your business</div>
+            <div class="pc-title">A month of work together</div>
+            <div class="pc-sub">First I show a result on your task for free. If it lands, I join for a month: from 200,000 ₽</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
