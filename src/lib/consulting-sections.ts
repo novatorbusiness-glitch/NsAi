@@ -305,6 +305,19 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
       <div class="roi-stat rv d1"><div class="n">≈4 млн ₽</div><div class="l">Экономия на ФОТ в год</div></div>
       <div class="roi-stat rv d2"><div class="n">месяцы → дни</div><div class="l">Сокращение цикла запуска продукта</div></div>
     </div>
+    <div class="vz-bars rv d1">
+      <div class="vz-bar-col is-bad">
+        <div class="vz-bar-v">≈ 4,1 млн ₽</div>
+        <div class="vz-bar" style="--h:200px"></div>
+        <div class="vz-bar-l">Найм команды — за год</div>
+      </div>
+      <div class="vz-bar-col is-good">
+        <div class="vz-bar-v">≈ 79 000 ₽</div>
+        <div class="vz-bar" style="--h:4px"></div>
+        <div class="vz-bar-l">NCAi-агентство — за год</div>
+      </div>
+    </div>
+    <p class="vz-bars-note rv d2">Бары в одном масштабе. Второй почти не виден — это не ошибка вёрстки, а разница в 52 раза. Цифры те же, что в таблице выше.</p>
     <div class="roi-vs">
       <div class="roi-col bad rv">
         <div class="roi-col-head"><span class="tag">Найм команды</span><span class="price">≈343к ₽ / мес</span></div>
@@ -1047,6 +1060,19 @@ export const ROI_HTML_EN = `<!-- ROI -->
       <div class="roi-stat rv d1"><div class="n">≈4M ₽</div><div class="l">Payroll savings per year</div></div>
       <div class="roi-stat rv d2"><div class="n">months → days</div><div class="l">Shorter product launch cycle</div></div>
     </div>
+    <div class="vz-bars rv d1">
+      <div class="vz-bar-col is-bad">
+        <div class="vz-bar-v">≈ 4.1M ₽</div>
+        <div class="vz-bar" style="--h:200px"></div>
+        <div class="vz-bar-l">Hiring a team — per year</div>
+      </div>
+      <div class="vz-bar-col is-good">
+        <div class="vz-bar-v">≈ 79,000 ₽</div>
+        <div class="vz-bar" style="--h:4px"></div>
+        <div class="vz-bar-l">NCAi agency — per year</div>
+      </div>
+    </div>
+    <p class="vz-bars-note rv d2">Both bars share one scale. The second is barely visible — that isn't a layout bug, it's a 52× difference. Same figures as the table above.</p>
     <div class="roi-vs">
       <div class="roi-col bad rv">
         <div class="roi-col-head"><span class="tag">Hiring a team</span><span class="price">≈343K ₽ / mo</span></div>
