@@ -334,8 +334,8 @@ export const REALWORK_HTML = `<!-- 4 · КАК ЭТО РАБОТАЕТ НА СА
 <section id="realwork" class="sec-light">
   <div class="w">
     <span class="lb rv">Что меняется в вашей нише</span>
-    <h2 class="sh2 rv d1">Уже в первую неделю рутина<br>едет без вас — в вашей нише</h2>
-    <p class="sl rv d2">Контент выходит по графику, заявки не теряются, отчёт собирается сам. Ниже — что конкретно меняется в бьюти, услугах, продажах и контенте: команда под нишу уже собрана, первые задачи уже стоят в кабинете. Не «представьте, что…», а то, что готово по итогам распаковки.</p>
+    <h2 class="sh2 rv d1">Что реально закрывается<br>за первую неделю</h2>
+    <p class="sl rv d2">Вы ставите задачи в чате директору — он разбирает их на подзадачи и раздаёт ролям. Ниже — что конкретно снимается с вас в бьюти, услугах, продажах и контенте: сколько рутины уходит с ваших рук и за что больше не нужно платить подрядчику. Не «представьте, что…», а то, что готово по итогам распаковки.</p>
     <div class="ncw rv d2">
       <button class="nc-arr nc-prev" id="ncPrev" aria-label="Предыдущая ниша">‹</button>
       <div class="ncarousel" id="ncarousel">
@@ -599,7 +599,7 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
     <div class="vz vz-status rv d2" role="img" aria-label="Путь одной задачи: принята, назначена роль, проверена директором, согласована">
       <div class="vz-head">
         <span class="vz-badge"><span class="vz-pulse"></span>AI-директор ведёт задачу</span>
-        <span class="vz-note">Одна задача от постановки до «согласовано» — без вашего участия в середине</span>
+        <span class="vz-note">Вы ставите задачу в чате — дальше видно каждый шаг и кто что проверил</span>
       </div>
       <div class="vz-st-card">
         <div class="vz-st-task">
@@ -649,9 +649,9 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
           <div class="vsc me">Директор проверяет перед закрытием</div>
         </div>
         <div class="vsrow">
-          <div class="vsc cr">Работа без вас</div>
-          <div class="vsc th">Не работает, пока не открыли чат</div>
-          <div class="vsc me">Работает 24/7, отчёт вечером</div>
+          <div class="vsc cr">Что происходит между вашими заходами</div>
+          <div class="vsc th">Ничего: закрыли чат — работа встала</div>
+          <div class="vsc me">Поставленные задачи продолжают идти, вечером отчёт</div>
         </div>
         <div class="vsrow">
           <div class="vsc cr">Управление</div>
@@ -712,7 +712,7 @@ export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система пр�
       <div class="amp rv d1"><div class="amp-ico">${icon("door")}</div><div><div class="amp-t">Задачу сначала согласовывают</div><div class="amp-x">Работа не начинается, пока концепция не согласована. Не делаем лишнего и не тратим ваш AI-бюджет на задачи, которые всё равно переделывать.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("eye")}</div><div><div class="amp-t">Каждую задачу проверяют дважды</div><div class="amp-x">Прежде чем закрыть задачу, её смотрят два других агента, и только потом — директор. «Готово» — это проверенный результат, а не слово на веру.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">${icon("target")}</div><div><div class="amp-t">Сдаём с первого раза — или честно говорим</div><div class="amp-x">Перед тем как показать вам «готово», систему саму проверяют: компиляция, тесты, соответствие критериям — слово сотрудника не принимается на веру. И да, мы сами поймали момент, когда эта цифра была завышена, и пересчитали как есть — честная цифра лучше красивой.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">${icon("moon")}</div><div><div class="amp-t">Работает, пока вы спите</div><div class="amp-x">Сама берёт задачи из очереди и распределяет по команде ночью. Если задача зависает — система сама её останавливает и присылает вам уведомление, бюджет не сгорает.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("moon")}</div><div><div class="amp-t">Поставленные задачи идут и ночью</div><div class="amp-x">Задачи ставите вы — дальше очередь разбирается ночью и к утру у вас результат, а не список дел на завтра. Если задача зависает, система останавливает её сама и присылает уведомление, бюджет не сгорает.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("brain")}</div><div><div class="amp-t">Помнит вашу нишу и не повторяет ошибок</div><div class="amp-x">Держит в голове текущую задачу, помнит прошлые уроки и подтягивает нужные факты из базы знаний вашего бизнеса. На одни грабли дважды не наступает.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">${icon("bolt")}</div><div><div class="amp-t">Платите за задачу, а не за мощность</div><div class="amp-x">Сложные решения — через сильную модель, рутина — через быструю и дешёвую. Экономия считается автоматически, вам не нужно в этом разбираться.</div></div></div>
     </div>
@@ -1340,7 +1340,7 @@ export const VS_AI_HTML_EN = `<!-- HOW IT'S DIFFERENT FROM Claude/GPT/Codex -->
     <div class="vz vz-status rv d2" role="img" aria-label="One task's path: accepted, role assigned, checked by the director, approved">
       <div class="vz-head">
         <span class="vz-badge"><span class="vz-pulse"></span>The AI director runs the task</span>
-        <span class="vz-note">One task from brief to "approved" — with no input from you in the middle</span>
+        <span class="vz-note">You set the task in chat — then every step and every check is visible</span>
       </div>
       <div class="vz-st-card">
         <div class="vz-st-task">
@@ -1415,7 +1415,7 @@ export const UNDER_HOOD_HTML_EN = `<!-- THE ENGINE -->
     <div class="vz vz-pipe rv d2" role="img" aria-label="Task intake pipeline: approval, execution, review by two agents, director, closed">
       <div class="vz-head">
         <span class="vz-badge"><span class="vz-pulse"></span>Intake pipeline</span>
-        <span class="vz-note">A task doesn't close until it clears all five nodes</span>
+        <span class="vz-note">A task doesn't close until it clears all five nodes — and you see each one</span>
       </div>
       <ol class="vz-track">
         <svg class="vz-rail" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true" focusable="false">
@@ -1453,7 +1453,7 @@ export const UNDER_HOOD_HTML_EN = `<!-- THE ENGINE -->
       <div class="amp rv d1"><div class="amp-ico">${icon("door")}</div><div><div class="amp-t">A task gets approved first</div><div class="amp-x">Work doesn't start until the concept is signed off. We don't do unnecessary work or burn your AI budget on tasks that will just get redone.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("eye")}</div><div><div class="amp-t">Every task gets checked twice</div><div class="amp-x">Before a task closes, two other agents review it, and only then the director. "Done" is a checked result, not just a claim taken on faith.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">${icon("target")}</div><div><div class="amp-t">We ship it right the first time — or say so honestly</div><div class="amp-x">Before showing you "done," the system checks itself: compilation, tests, matching the acceptance criteria — an agent's word isn't taken on faith. And yes, we caught the moment this very number was overstated, and recalculated it as it actually is — an honest number beats a flattering one.</div></div></div>
-      <div class="amp rv d2"><div class="amp-ico">${icon("moon")}</div><div><div class="amp-t">Keeps working while you sleep</div><div class="amp-x">It pulls tasks from the queue and distributes them across the team overnight on its own. If a task stalls, the system stops it and sends you a notification — the budget doesn't burn away unnoticed.</div></div></div>
+      <div class="amp rv d2"><div class="amp-ico">${icon("moon")}</div><div><div class="amp-t">The tasks you set keep moving overnight</div><div class="amp-x">You set the tasks — then the queue gets worked through overnight, so by morning you have results rather than a to-do list. If a task stalls, the system stops it itself and sends a notification — the budget doesn't burn away unnoticed.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("brain")}</div><div><div class="amp-t">Remembers your niche and doesn't repeat mistakes</div><div class="amp-x">It keeps the current task in mind, remembers past lessons, and pulls the right facts from your business's knowledge base. It doesn't trip over the same thing twice.</div></div></div>
       <div class="amp rv d2"><div class="amp-ico">${icon("bolt")}</div><div><div class="amp-t">You pay for the task, not for raw power</div><div class="amp-x">Hard decisions go through a strong model, routine work through a fast, cheap one. The savings are calculated automatically — you don't need to figure it out yourself.</div></div></div>
     </div>
