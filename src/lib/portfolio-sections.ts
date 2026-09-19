@@ -162,6 +162,52 @@ export const HIRE_HTML = `<!-- HIRE -->
         <div class="port-mmeta"><span class="port-mch">Без привязки</span><span class="port-mch">Следующий цикл — по желанию</span></div>
       </div>
     </div>
+    <div class="port-month rv d2">
+      <div class="port-month-head">
+        <div class="port-month-tag">Ориентиры · что входит в месяц</div>
+        <div class="port-month-h">Как проходит месяц от 200 000 ₽</div>
+      </div>
+      <div class="port-weeks">
+        <div class="port-week">
+          <div class="port-week-n">Неделя 1</div>
+          <div class="port-week-t">Разбираем, что снимать</div>
+          <div class="port-week-x">Смотрим, на чём лично у вас висит рутина. Разворачиваю систему под ваш бизнес и фиксирую точку отсчёта: сколько часов и на что уходит сейчас.</div>
+        </div>
+        <div class="port-week">
+          <div class="port-week-n">Недели 2–3</div>
+          <div class="port-week-t">Работаем циклами</div>
+          <div class="port-week-x">Ставим задачи, разбираем результат, правим подход. Я делаю вместе с вашим человеком, а не вместо него — он учится вести систему на реальных задачах.</div>
+        </div>
+        <div class="port-week">
+          <div class="port-week-n">Неделя 4</div>
+          <div class="port-week-t">Передаю управление</div>
+          <div class="port-week-x">Ваш человек ведёт сам, я рядом и подстраховываю. Разбираем, что ломается, и закрываем это до моего выхода.</div>
+        </div>
+        <div class="port-week is-last">
+          <div class="port-week-n">На выходе</div>
+          <div class="port-week-t">Система и человек у руля</div>
+          <div class="port-week-x">Остаётся работающая система и сотрудник, который умеет ей управлять. Плюс сравнение с точкой отсчёта первой недели.</div>
+        </div>
+      </div>
+      <div class="port-metrics">
+        <div class="port-metrics-h">Чем меряем результат</div>
+        <div class="port-mlist">
+          <div class="port-m">
+            <div class="port-m-t">Часы на рутине</div>
+            <div class="port-m-x">Сколько времени в неделю снято лично с вас и с команды.</div>
+          </div>
+          <div class="port-m">
+            <div class="port-m-t">Деньги подрядчикам</div>
+            <div class="port-m-x">За какие работы вы больше не платите на стороне.</div>
+          </div>
+          <div class="port-m">
+            <div class="port-m-t">Закрытые задачи</div>
+            <div class="port-m-x">Что реально сделано за месяц и чем это подтверждено.</div>
+          </div>
+        </div>
+        <p class="port-metrics-note">Точку отсчёта фиксируем в первую неделю и сравниваем с ней в конце — иначе «стало лучше» проверить нечем. Конкретные цифры заранее не обещаю: они зависят от того, сколько рутины у вас сейчас и какие задачи возьмём. Что показываю сразу — работу системы изнутри, а не слайд с обещаниями.</p>
+      </div>
+    </div>
   </div>
 </section>
 <hr class="dv">`;
@@ -339,6 +385,52 @@ export const HIRE_HTML_EN = `<!-- HIRE -->
         <div class="port-mprice">Your person at the wheel</div>
         <p class="port-mtx">By the end of the month it's your employee running this, not a contractor: they set the tasks and read the reports themselves. Another cycle only if there's work for it.</p>
         <div class="port-mmeta"><span class="port-mch">No lock-in</span><span class="port-mch">Next cycle optional</span></div>
+      </div>
+    </div>
+    <div class="port-month rv d2">
+      <div class="port-month-head">
+        <div class="port-month-tag">What the month includes</div>
+        <div class="port-month-h">How a month from 200,000 ₽ runs</div>
+      </div>
+      <div class="port-weeks">
+        <div class="port-week">
+          <div class="port-week-n">Week 1</div>
+          <div class="port-week-t">Work out what to take off you</div>
+          <div class="port-week-x">We look at where the routine actually sits. I deploy the system for your business and fix a baseline: how many hours go where today.</div>
+        </div>
+        <div class="port-week">
+          <div class="port-week-n">Weeks 2–3</div>
+          <div class="port-week-t">Working in cycles</div>
+          <div class="port-week-x">We set tasks, review results, adjust the approach. I work alongside your person rather than instead of them — they learn on real tasks.</div>
+        </div>
+        <div class="port-week">
+          <div class="port-week-n">Week 4</div>
+          <div class="port-week-t">Handing over</div>
+          <div class="port-week-x">Your person runs it while I'm still there as backup. We find what breaks and close it before I step out.</div>
+        </div>
+        <div class="port-week is-last">
+          <div class="port-week-n">What you're left with</div>
+          <div class="port-week-t">A system and someone running it</div>
+          <div class="port-week-x">A working system plus an employee who can operate it — and a comparison against week one's baseline.</div>
+        </div>
+      </div>
+      <div class="port-metrics">
+        <div class="port-metrics-h">How we measure the result</div>
+        <div class="port-mlist">
+          <div class="port-m">
+            <div class="port-m-t">Hours on routine</div>
+            <div class="port-m-x">How much weekly time came off you and your team.</div>
+          </div>
+          <div class="port-m">
+            <div class="port-m-t">Money to contractors</div>
+            <div class="port-m-x">Which work you no longer pay for outside.</div>
+          </div>
+          <div class="port-m">
+            <div class="port-m-t">Tasks closed</div>
+            <div class="port-m-x">What actually got done in the month, and what backs it up.</div>
+          </div>
+        </div>
+        <p class="port-metrics-note">We fix the baseline in week one and compare against it at the end — otherwise "it got better" can't be checked. I don't promise specific numbers up front: they depend on how much routine you have now and which tasks we take. What I do show immediately is the system working from the inside, not a slide full of promises.</p>
       </div>
     </div>
   </div>
