@@ -9,8 +9,8 @@ export const HERO_HTML = `<!-- HERO -->
   <div class="port-hero-glow"></div>
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="port-hero-name">Большинство тех-партнёров продают часы.<br><span class="port-acc">Я довожу до релиза.</span></h1>
-    <p class="port-hero-sub">Не агентство и не фриланс. Вхожу в проект руками: проектирую, пишу код, вывожу на рынок. Фикс от 200 000 ₽ за задачу — или доля/опцион, если строим вместе.</p>
+    <h1 class="port-hero-name">Захожу в проект, показываю результат.<br><span class="port-acc">Заходит — довожу до конца.</span></h1>
+    <p class="port-hero-sub">Не продаю часы и не обещаю. Беру вашу задачу и показываю готовый результат — исследование, разбор, рабочий прототип. Заходит — довожу до релиза: фикс от 200 000 ₽, или доля/опцион, если строим вместе.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Обсудить проект →</a>
       <a href="#port-work" class="bs">Портфолио ↓</a>
@@ -40,6 +40,28 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
   <div class="w">
     <span class="sec-tag rv">Портфолио</span>
     <h2 class="sec-h2 rv d1">Проекты, которые<br>уже работают</h2>
+    <div class="port-case-feature rv">
+      <div class="port-case-badge">Живой кейс · ~80 ₽ (~$1) → готовые артефакты</div>
+      <div class="port-case-grid">
+        <div class="port-case-step">
+          <div class="port-case-label">Задача</div>
+          <div class="port-case-text">Костя (ex NIHILO) — нужно понять, что показать рынку и как упаковать продукт.</div>
+        </div>
+        <div class="port-case-step">
+          <div class="port-case-label">Показал</div>
+          <div class="port-case-text">Исследование, разбор сайта, презентацию на 27 слайдов, воронку и контент-план.</div>
+        </div>
+        <div class="port-case-step">
+          <div class="port-case-label">Довёл до конца</div>
+          <div class="port-case-text">Весь комплект — за один вечер, ~80 ₽ (~$1) в токенах AI.</div>
+        </div>
+        <div class="port-case-step port-case-result">
+          <div class="port-case-label">Получил бизнес</div>
+          <div class="port-case-text">Готовые артефакты вместо обещаний.</div>
+        </div>
+      </div>
+      <p class="port-case-quote">«Заебись, чётко»<span>Костя, ex NIHILO — реакция на присланный комплект</span></p>
+    </div>
     <div class="port-wgrid">
       <div class="port-pj rv">
         <div class="port-pj-icon">${icon("rocket")}</div>
@@ -123,25 +145,25 @@ export const HIRE_HTML = `<!-- HIRE -->
 <section id="port-hire">
   <div class="w">
     <span class="sec-tag rv">Как работаем</span>
-    <h2 class="sec-h2 rv d1">Три формата: аудит от 30 000 ₽,<br>фикс от 200 000 ₽, ретейнер</h2>
-    <p class="port-sec-lead rv d1">Я не продаю часы и не собираю тикеты в бэклог. Смотрю на задачу и сам предлагаю формат — вот три, которые чаще всего подходят. Партнёрство за долю — отдельно, ниже.</p>
+    <h2 class="sec-h2 rv d1">Демонстрация → Партнёрство → Ретейнер</h2>
+    <p class="port-sec-lead rv d1">Сначала показываю результат на вашей задаче — без предоплаты и без часового отчёта. Заходит — довожу до релиза. Дальше, если нужно, остаюсь рядом на постоянной основе.</p>
     <div class="port-mgrid">
       <div class="port-mcard rv">
-        <div class="port-mtag">Аудит / Консультация</div>
-        <div class="port-mtit">Не уверены, что чинить — разберёмся вместе</div>
-        <div class="port-mprice">от 30 000 ₽</div>
-        <p class="port-mtx">Разбор продукта или кода + звонок. На выходе — письменный план: что менять в первую очередь и почему. Дальше решаете сами: чинить своей командой, звать меня или кого-то ещё.</p>
-        <div class="port-mmeta"><span class="port-mch">1–3 дня</span><span class="port-mch">Письменный план</span></div>
+        <div class="port-mtag">Демонстрация</div>
+        <div class="port-mtit">Не уверены, что я вам подхожу — посмотрите на результате</div>
+        <div class="port-mprice">от 0 ₽</div>
+        <p class="port-mtx">Даёте задачу — присылаю рабочий артефакт: разбор, прототип, план. Не питч и не смета, а то, что можно посмотреть и потрогать. Дальше решаете сами: продолжать со мной или нет.</p>
+        <div class="port-mmeta"><span class="port-mch">1–3 дня</span><span class="port-mch">Готовый артефакт</span></div>
       </div>
       <div class="port-mcard rv d1">
-        <div class="port-mtag">Fix / Спринт</div>
-        <div class="port-mtit">Есть чёткая задача — беру и делаю</div>
+        <div class="port-mtag">Партнёрство / довожу до релиза</div>
+        <div class="port-mtit">Демонстрация зашла — довожу задачу до конца</div>
         <div class="port-mprice">от 200 000 ₽</div>
-        <p class="port-mtx">2–4 недели. Вы платите за готовый результат, а не за отчёт по часам. Обсуждаем задачу, срок и критерий готовности до старта — дальше я просто делаю.</p>
+        <p class="port-mtx">Фикс за результат или доля/опцион, если строим вместе. Обсуждаем задачу, срок и критерий готовности до старта — дальше я просто делаю, без отчётов по часам.</p>
         <div class="port-mmeta"><span class="port-mch">2–4 недели</span><span class="port-mch">Результат, не часы</span></div>
       </div>
       <div class="port-mcard rv d2">
-        <div class="port-mtag">Ретейнер / AI-команда</div>
+        <div class="port-mtag">Ретейнер</div>
         <div class="port-mtit">Нужен постоянный тех-партнёр</div>
         <div class="port-mprice">от 200 000 ₽ / мес</div>
         <p class="port-mtx">Разворачиваю у вас NCAi-агентство: 5 AI-сотрудников + AI-директор, 4 отдела, отчёт каждый день. Плюс я лично на связи как технический партнёр, а не подрядчик на телефоне.</p>
@@ -161,8 +183,8 @@ export const PARTNER_HTML = `<!-- PARTNERSHIP -->
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
         <div class="port-mtag">Совместный продукт</div>
-        <div class="port-mtit">Тех-партнёр, а не подрядчик на удержании</div>
-        <p class="port-mtx">Получаете проектирование, код и запуск без найма CTO и без риска текучки. Работаю за долю или опцион — значит, лично заинтересован в росте продукта, а не в закрытии тикетов.</p>
+        <div class="port-mtit">Вхожу руками, а не подрядчик на удержании</div>
+        <p class="port-mtx">Прежде чем говорить о доле — показываю результат на вашей задаче. Заходит — проектирую, пишу код, вывожу на рынок за долю или опцион. Лично заинтересован в росте продукта, а не в закрытии тикетов.</p>
       </div>
       <div class="port-mcard rv d1">
         <div class="port-mico">${icon("puzzle")}</div>
@@ -203,8 +225,8 @@ export const HERO_HTML_EN = `<!-- HERO -->
   <div class="port-hero-glow"></div>
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
-    <h1 class="port-hero-name">Most tech partners sell hours.<br><span class="port-acc">I carry it to release.</span></h1>
-    <p class="port-hero-sub">Not an agency, not freelance. I join the project hands-on: I design it, write the code, and take it to market. A fixed fee from 200,000 ₽ per task — or equity/an option if we build it together.</p>
+    <h1 class="port-hero-name">I join the project, I show the result.<br><span class="port-acc">If it lands, I carry it through.</span></h1>
+    <p class="port-hero-sub">I don't sell hours and I don't promise. I take your task and show a finished result — a research report, a teardown, a working prototype. If it lands, I carry it to release: a fixed fee from 200,000 ₽, or equity/an option if we build it together.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Discuss a project →</a>
       <a href="#port-work" class="bs">Portfolio ↓</a>
@@ -234,6 +256,28 @@ export const WORK_HTML_EN = `<!-- PORTFOLIO -->
   <div class="w">
     <span class="sec-tag rv">Portfolio</span>
     <h2 class="sec-h2 rv d1">Projects that<br>are already running</h2>
+    <div class="port-case-feature rv">
+      <div class="port-case-badge">Live case · ~$1 → finished artifacts</div>
+      <div class="port-case-grid">
+        <div class="port-case-step">
+          <div class="port-case-label">Task</div>
+          <div class="port-case-text">Kostya (ex NIHILO) — needed to figure out what to show the market and how to package the product.</div>
+        </div>
+        <div class="port-case-step">
+          <div class="port-case-label">Showed</div>
+          <div class="port-case-text">A research report, a site teardown, a 27-slide deck, a funnel, and a content plan.</div>
+        </div>
+        <div class="port-case-step">
+          <div class="port-case-label">Carried through</div>
+          <div class="port-case-text">The whole set — in one evening, ~$1 in AI tokens.</div>
+        </div>
+        <div class="port-case-step port-case-result">
+          <div class="port-case-label">The business got</div>
+          <div class="port-case-text">Finished artifacts instead of promises.</div>
+        </div>
+      </div>
+      <p class="port-case-quote">"Hell yeah, that's sharp"<span>Kostya, ex NIHILO — reaction to the delivered set</span></p>
+    </div>
     <div class="port-wgrid">
       <div class="port-pj rv">
         <div class="port-pj-icon">${icon("rocket")}</div>
@@ -317,25 +361,25 @@ export const HIRE_HTML_EN = `<!-- HIRE -->
 <section id="port-hire">
   <div class="w">
     <span class="sec-tag rv">How we work</span>
-    <h2 class="sec-h2 rv d1">Three formats: an audit from 30,000 ₽,<br>a fixed fee from 200,000 ₽, or a retainer</h2>
-    <p class="port-sec-lead rv d1">I don't sell hours or collect tickets into a backlog. I look at the task and propose the format myself — here are the three that fit most often. Equity partnership is separate, below.</p>
+    <h2 class="sec-h2 rv d1">Demonstration → Partnership → Retainer</h2>
+    <p class="port-sec-lead rv d1">First I show a result on your actual task — no upfront payment, no hourly report. If it lands, I carry it to release. After that, if you need it, I stay on as a standing partner.</p>
     <div class="port-mgrid">
       <div class="port-mcard rv">
-        <div class="port-mtag">Audit / Consultation</div>
-        <div class="port-mtit">Not sure what to fix — let's figure it out together</div>
-        <div class="port-mprice">from 30,000 ₽</div>
-        <p class="port-mtx">A review of the product or code + a call. The output is a written plan: what to change first and why. From there you decide: fix it with your own team, call me, or someone else.</p>
-        <div class="port-mmeta"><span class="port-mch">1–3 days</span><span class="port-mch">Written plan</span></div>
+        <div class="port-mtag">Demonstration</div>
+        <div class="port-mtit">Not sure I'm the right fit — judge me by a result</div>
+        <div class="port-mprice">from $0</div>
+        <p class="port-mtx">Give me a task — I send back a working artifact: a teardown, a prototype, a plan. Not a pitch or a quote, something you can actually look at and use. Then you decide whether to continue.</p>
+        <div class="port-mmeta"><span class="port-mch">1–3 days</span><span class="port-mch">Finished artifact</span></div>
       </div>
       <div class="port-mcard rv d1">
-        <div class="port-mtag">Fix / Sprint</div>
-        <div class="port-mtit">You have a clear task — I take it and do it</div>
+        <div class="port-mtag">Partnership / carried to release</div>
+        <div class="port-mtit">The demo landed — now I carry the task through</div>
         <div class="port-mprice">from 200,000 ₽</div>
-        <p class="port-mtx">2–4 weeks. You pay for a finished result, not an hourly report. We agree on the task, timeline and acceptance criteria before starting — then I just get it done.</p>
+        <p class="port-mtx">A fixed fee for the result, or equity/an option if we build it together. We agree on the task, timeline and acceptance criteria before starting — then I just get it done, no hourly reports.</p>
         <div class="port-mmeta"><span class="port-mch">2–4 weeks</span><span class="port-mch">A result, not hours</span></div>
       </div>
       <div class="port-mcard rv d2">
-        <div class="port-mtag">Retainer / AI team</div>
+        <div class="port-mtag">Retainer</div>
         <div class="port-mtit">You need a standing tech partner</div>
         <div class="port-mprice">from 200,000 ₽ / mo</div>
         <p class="port-mtx">I deploy an NCAi agency for you: 5 AI employees + an AI director, 4 departments, a report every day. Plus I'm personally on hand as a technical partner, not a contractor at the end of a phone line.</p>
@@ -355,8 +399,8 @@ export const PARTNER_HTML_EN = `<!-- PARTNERSHIP -->
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
         <div class="port-mtag">Joint product</div>
-        <div class="port-mtit">A tech partner, not a contractor on retainer</div>
-        <p class="port-mtx">You get design, code and a launch without hiring a CTO or risking turnover. I work for equity or an option — so I'm personally invested in the product's growth, not in closing tickets.</p>
+        <div class="port-mtit">Hands-on, not a contractor on retainer</div>
+        <p class="port-mtx">Before we talk equity, I show a result on your actual task. If it lands, I design it, write the code, and take it to market for equity or an option. Personally invested in the product's growth, not in closing tickets.</p>
       </div>
       <div class="port-mcard rv d1">
         <div class="port-mico">${icon("puzzle")}</div>
