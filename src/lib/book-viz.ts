@@ -1,31 +1,37 @@
 // src/lib/book-viz.ts
-// Инлайн-SVG визуализации книги «Нейро-Воронка» — светлая тема + анимации.
+// Инлайн-SVG визуализации книги «Нейро-Воронка» — тёмная тема главы 1 + анимации.
 //
 // Владелец (важно для ВСЕГО сайта): НЕ использовать <img src> для картинок/схем.
 // Визуализации и анимации делать КОДОМ — инлайн-SVG, CSS-графика, canvas, CSS-анимации.
 // Поэтому здесь схемы (стимулы, матрица, доверие, касания) встраиваются прямо в разметку
 // подглав вместо <img src="/viz/*.svg">, с hover-анимацией на карточках и reveal при скролле.
 //
+// Палитра и шрифты — те же токены, что и во всех остальных главах книги
+// (--bg:#080808 / --a:#FFD000 / Unbounded+PT Serif+JetBrains Mono). Раньше здесь была
+// отдельная светлая палитра (#fff-панели, Space Grotesk/Mono/Manrope) — визуально
+// выпадала из тёмного фирменного стиля главы 1, из-за чего страница «моргала» белым
+// посреди тёмной читалки. Исправлено — единый тёмный стиль по всей книге.
+//
 // Используется в:
 //   - src/lib/book-reader.ts        (читалка /book/read)
 //   - src/app/book/[slug]/page.tsx  (отдельные страницы /book/[slug])
 
-// Палитра светлой темы чтения (#f8f9fa), акцент — золото/жёлтый NCAi.
+// Палитра тёмной темы книги (--bg:#080808), акцент — золото/жёлтый NCAi (--a:#FFD000).
 const C = {
-	panelFrom: "#ffffff",
-	panelTo: "#f5f7f9",
-	panelBorder: "#e7e9ec",
-	card: "#ffffff",
-	cardBorder: "#e7e9ec",
-	ink: "#16181d",
-	ink2: "#3b3e44",
-	ink3: "#55595f",
-	label: "#6a6f76",
-	muted: "#9aa0a8",
-	gold: "#c99700",
-	goldDeep: "#b07e00",
+	panelFrom: "#131313",
+	panelTo: "#0d0d0d",
+	panelBorder: "#1e1e1e",
+	card: "#131313",
+	cardBorder: "#2a2a2a",
+	ink: "#f0ede6",
+	ink2: "#a8a49b",
+	ink3: "#7a7670",
+	label: "#7a7670",
+	muted: "#4a463f",
+	gold: "#FFD000",
+	goldDeep: "#c99700",
 	yellow: "#FFD000",
-	grid: "rgba(201,151,0,.06)",
+	grid: "rgba(255,208,0,.03)",
 };
 
 let uidCounter = 0;
@@ -34,9 +40,9 @@ function nextId(): string {
 	return `nz${uidCounter}`;
 }
 
-const FG = "'Space Grotesk',sans-serif";
-const FM = "'Space Mono',monospace";
-const FS = "'Manrope',sans-serif";
+const FG = "'Unbounded',sans-serif";
+const FM = "'JetBrains Mono',monospace";
+const FS = "'PT Serif',serif";
 
 // ─────────────────────────────────────────────────────────────
 // 4.2 — Шесть стимулов (1600×1080)
@@ -53,14 +59,14 @@ function stimuly(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="1040" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="1040" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="260" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(201,151,0,.35)"/>
+  <rect x="80" y="66" width="260" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
   <text x="210" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 4 · НЕЙРО-ТРАФИК</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ШЕСТЬ СТИМУЛОВ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">на что мозг реагирует раньше, чем включается анализ</text>
 
   <g class="vz-card">
     <rect x="40" y="300" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="72" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">01</text>
+    <text x="72" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">01</text>
     <text x="72" y="430" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">ВИЗУАЛЬНЫЙ</text>
     <text x="72" y="468" font-family="${FM}" font-size="21" fill="${C.label}">«Я это вижу»</text>
     <text x="72" y="512" font-family="${FS}" font-size="22" fill="${C.ink3}">картинка считывается раньше текста</text>
@@ -69,7 +75,7 @@ function stimuly(id: string): string {
   </g>
   <g class="vz-card">
     <rect x="550" y="300" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="582" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">02</text>
+    <text x="582" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">02</text>
     <text x="582" y="430" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">МАТЕРИАЛЬНЫЙ</text>
     <text x="582" y="468" font-family="${FM}" font-size="21" fill="${C.label}">«Я могу это взять»</text>
     <text x="582" y="512" font-family="${FS}" font-size="22" fill="${C.ink3}">эффект предварительного владения</text>
@@ -78,7 +84,7 @@ function stimuly(id: string): string {
   </g>
   <g class="vz-card">
     <rect x="1060" y="300" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="1092" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">03</text>
+    <text x="1092" y="366" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">03</text>
     <text x="1092" y="430" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">ЭГО</text>
     <text x="1092" y="468" font-family="${FM}" font-size="21" fill="${C.label}">«Это про меня»</text>
     <text x="1092" y="512" font-family="${FS}" font-size="22" fill="${C.ink3}">точное попадание в личную карту выгоды</text>
@@ -87,7 +93,7 @@ function stimuly(id: string): string {
   </g>
   <g class="vz-card">
     <rect x="40" y="670" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="72" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">04</text>
+    <text x="72" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">04</text>
     <text x="72" y="800" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">ЭМОЦИОНАЛЬНЫЙ</text>
     <text x="72" y="838" font-family="${FM}" font-size="21" fill="${C.label}">«Я это чувствую»</text>
     <text x="72" y="882" font-family="${FS}" font-size="22" fill="${C.ink3}">эмоция — главное топливо решения</text>
@@ -96,7 +102,7 @@ function stimuly(id: string): string {
   </g>
   <g class="vz-card">
     <rect x="550" y="670" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="582" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">05</text>
+    <text x="582" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">05</text>
     <text x="582" y="800" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">КОНТРАСТНЫЙ</text>
     <text x="582" y="838" font-family="${FM}" font-size="21" fill="${C.label}">«Я вижу разницу»</text>
     <text x="582" y="882" font-family="${FS}" font-size="22" fill="${C.ink3}">сравнение экономит энергию мозга</text>
@@ -105,7 +111,7 @@ function stimuly(id: string): string {
   </g>
   <g class="vz-card">
     <rect x="1060" y="670" width="500" height="350" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="1092" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">06</text>
+    <text x="1092" y="736" font-family="${FG}" font-weight="800" font-size="64" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">06</text>
     <text x="1092" y="800" font-family="${FG}" font-weight="800" font-size="34" fill="${C.gold}">ПАМЯТЬ</text>
     <text x="1092" y="838" font-family="${FM}" font-size="21" fill="${C.label}">«Я это узнаю»</text>
     <text x="1092" y="882" font-family="${FS}" font-size="22" fill="${C.ink3}">эффект простого предъявления</text>
@@ -128,7 +134,7 @@ function matrica(id: string): string {
 	const barRows = bars
 		.map((b) => {
 			const fill = `rgba(255,208,0,${[0.06, 0.12, 0.2, 0.32][b.o]})`;
-			const stroke = `rgba(201,151,0,${[0.35, 0.45, 0.55, 0.7][b.o]})`;
+			const stroke = `rgba(255,208,0,${[0.35, 0.45, 0.55, 0.7][b.o]})`;
 			const lvlFill = b.o >= 2 ? C.gold : C.goldDeep;
 			const titleFill = b.o >= 3 ? C.gold : C.ink;
 			return `<g class="vz-bar">
@@ -152,7 +158,7 @@ function matrica(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="280" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(201,151,0,.35)"/>
+  <rect x="80" y="66" width="280" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
   <text x="220" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 2 · ИНЖЕНЕРИЯ СИСТЕМ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ПРОДУКТОВАЯ МАТРИЦА</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">лестница ценности · техника «нога в двери» · каждое «да» делает следующее проще</text>
@@ -184,7 +190,7 @@ function doverie(id: string): string {
 			const w = c.x === 1180 ? 380 : 360;
 			return `<g class="vz-card">
     <rect x="${c.x}" y="310" width="${w}" height="300" rx="20" fill="${C.card}" stroke="${C.cardBorder}"/>
-    <text x="${c.x + 32}" y="378" font-family="${FG}" font-weight="800" font-size="60" fill="none" stroke="rgba(201,151,0,.5)" stroke-width="1.5">${c.n}</text>
+    <text x="${c.x + 32}" y="378" font-family="${FG}" font-weight="800" font-size="60" fill="none" stroke="rgba(255,208,0,.5)" stroke-width="1.5">${c.n}</text>
     <text x="${c.x + 32}" y="442" font-family="${FG}" font-weight="800" font-size="30" fill="${C.gold}">${c.t}</text>
     <text x="${c.x + 32}" y="486" font-family="${FM}" font-size="19" fill="${C.label}">${c.q}</text>
     <text x="${c.x + 32}" y="530" font-family="${FS}" font-size="21" fill="${C.ink3}">${c.l1}</text>
@@ -205,7 +211,7 @@ function doverie(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="760" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(201,151,0,.35)"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
   <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ЧЕТЫРЕ ЭЛЕМЕНТА ДОВЕРИЯ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">прогрев: спроектированное меню из четырёх блюд · от скепсиса к готовности действовать</text>
@@ -255,11 +261,11 @@ function kasanija(id: string): string {
   </defs>
   <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
   <rect x="20" y="20" width="1560" height="720" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
-  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(201,151,0,.35)"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
   <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
   <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="62" letter-spacing="-1" fill="${C.ink}">ЦЕПОЧКА КАСАНИЙ</text>
   <text x="84" y="248" font-family="${FM}" font-size="24" letter-spacing="1" fill="${C.ink3}">каждый «джеб» снимает один барьер и готовит следующий шаг · 24/7, автоматически</text>
-  <line x1="200" y1="400" x2="1400" y2="400" stroke="rgba(201,151,0,.35)" stroke-width="3"/>
+  <line x1="200" y1="400" x2="1400" y2="400" stroke="rgba(255,208,0,.35)" stroke-width="3"/>
   ${nodes}
   <g class="vz-dot">
     <circle cx="1400" cy="400" r="16" fill="${C.ink}" stroke="${C.yellow}" stroke-width="3"/>
@@ -297,10 +303,10 @@ export function inlineVizSvg(html: string): string {
 
 // CSS для инлайн-визуализаций (встраивается в <head> каждой подглавы).
 export const VIZ_CSS = `
-.nz-viz{margin:2.6rem 0;padding:1rem;background:#fff;border:1px solid #e7e9ec;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.06)}
+.nz-viz{margin:2.6rem 0;padding:1rem;background:#080808;border:1px solid #1e1e1e;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.35)}
 .nz-viz svg{width:100%;height:auto;display:block;border-radius:10px}
 .nz-viz .vz-card{transition:transform .35s cubic-bezier(.16,1,.3,1),filter .35s cubic-bezier(.16,1,.3,1)}
-.nz-viz .vz-card:hover{transform:translateY(-5px);filter:drop-shadow(0 12px 20px rgba(201,151,0,.16))}
+.nz-viz .vz-card:hover{transform:translateY(-5px);filter:drop-shadow(0 12px 20px rgba(255,208,0,.16))}
 .nz-viz .vz-bar{transition:transform .35s cubic-bezier(.16,1,.3,1)}
 .nz-viz .vz-bar:hover{transform:translateX(8px)}
 .nz-viz .vz-dot{transition:transform .3s cubic-bezier(.16,1,.3,1)}
