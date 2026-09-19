@@ -58,7 +58,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-arr">→</div>
         </a>
       </div>
-      <div class="pc-group-label pc-group-label-alt">Ищете тех-партнёра</div>
+      <div class="pc-group-label pc-group-label-alt">Основное</div>
       <div class="product-cards">
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">${icon("target", "var(--c)")}</div>
@@ -117,7 +117,7 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 <section id="journey" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Мой путь</span>
-    <h2 class="sec-h2 rv d1">300+ проектов с 2016 года — практика, а не теория</h2>
+    <h2 class="sec-h2 rv d1">300+ проектов за плечами — практика, а не теория</h2>
     <p class="p journey-lead rv d1">Компетентность не появилась однажды. Она собиралась годами: от первых продаж до архитектуры AI-систем.</p>
 
     <div class="jrn">
@@ -211,7 +211,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
 <section id="products" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">Чем занимаюсь</span>
-    <h2 class="sec-h2 rv d1">От бесплатной книги —<br>до готового AI-агентства за 19 900 ₽</h2>
+    <h2 class="sec-h2 rv d1">От бесплатной книги —<br>до месяца работы вместе</h2>
     <div class="products-grid">
 
       <a href="/raspakovka" class="prod-card c1 rv">
@@ -574,7 +574,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
           <div class="pc-arr">→</div>
         </a>
       </div>
-      <div class="pc-group-label pc-group-label-alt">Looking for a tech partner</div>
+      <div class="pc-group-label pc-group-label-alt">Main</div>
       <div class="product-cards">
         <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
           <div class="pc-icon">${icon("target", "var(--c)")}</div>
@@ -633,7 +633,7 @@ export const JOURNEY_HTML_EN = `<!-- JOURNEY -->
 <section id="journey" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">My path</span>
-    <h2 class="sec-h2 rv d1">300+ projects since 2016 — practice, not theory</h2>
+    <h2 class="sec-h2 rv d1">300+ projects behind me — practice, not theory</h2>
     <p class="p journey-lead rv d1">Competence didn't appear overnight. It was built over years: from first sales to architecting AI systems.</p>
 
     <div class="jrn">
@@ -727,7 +727,7 @@ export const PRODUCTS_HTML_EN = `<!-- PRODUCTS -->
 <section id="products" class="sec-light">
   <div class="wrap">
     <span class="sec-tag rv">What I do</span>
-    <h2 class="sec-h2 rv d1">From a free book —<br>to a ready AI agency for 19 900 ₽</h2>
+    <h2 class="sec-h2 rv d1">From a free book —<br>to a month of work together</h2>
     <div class="products-grid">
 
       <a href="/raspakovka" class="prod-card c1 rv">
