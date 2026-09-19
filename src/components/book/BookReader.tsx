@@ -98,12 +98,31 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 		return () => window.removeEventListener("resize", onResize);
 	}, []);
 
-	// Плавный скролл к секции + scroll-spy по активной подглаве.
+	// Клик по оглавлению целится по el.offsetTop, который зависит от высоты ВСЕХ
+	// секций выше — а они всё ещё домеряются (см. комментарий у measureFrame).
+	// Один scrollIntoView в момент клика промахивается: едем по заниженной
+	// высоте, а через 300–3000мс, когда верхние iframe домеряются до реальной
+	// высоты, страница «уезжает» и под курсором оказывается случайный кусок
+	// соседней главы. Лечим тем же приёмом, что и переход по #hash ниже:
+	// сразу форсируем замер всех уже загруженных iframe, затем несколько раз
+	// повторяем scrollIntoView, пока высоты не стабилизируются.
+	const scrollToSlug = (slug: string) => {
+		const el = sectionRefs.current.get(slug);
+		if (!el) return;
+		frameRefs.current.forEach((frame, s) => measureFrame(s, frame));
+		let tries = 0;
+		const attempt = () => {
+			el.scrollIntoView({ block: "start" });
+			frameRefs.current.forEach((frame, s) => measureFrame(s, frame));
+			if (++tries < 7) setTimeout(attempt, 200);
+		};
+		attempt();
+	};
+
 	const scrollTo = (slug: string) => {
 		setMobileOpen(false);
 		setActive(slug);
-		const el = sectionRefs.current.get(slug);
-		if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+		scrollToSlug(slug);
 	};
 
 	useEffect(() => {
@@ -129,14 +148,8 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 		// Переход по якорю из URL (/book/read#4-2-shest-stimulov).
 		const hash = typeof window !== "undefined" ? window.location.hash.replace("#", "") : "";
 		if (hash && sectionRefs.current.has(hash)) {
-			const el = sectionRefs.current.get(hash)!;
-			let tries = 0;
-			const attempt = () => {
-				el.scrollIntoView({ block: "start" });
-				setActive(hash);
-				if (++tries < 4) setTimeout(attempt, 250);
-			};
-			setTimeout(attempt, 150);
+			setActive(hash);
+			setTimeout(() => scrollToSlug(hash), 150);
 		}
 
 		return () => {
