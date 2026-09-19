@@ -258,6 +258,21 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
 .tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
 
+/* ─── CHEAT-INDEX (bespoke 3.4: сканируемый указатель 15 кодов) ─── */
+.cheat-index{margin:2.5rem 0;padding:1.75rem 2rem 2rem;border:1px solid var(--br);border-radius:16px;background:var(--bgc);position:relative;overflow:hidden}
+.cheat-index::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.08),transparent)}
+.ci-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,208,0,.6);margin-bottom:1.4rem}
+.ci-groups{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+@media(max-width:640px){.ci-groups{grid-template-columns:1fr}}
+.ci-group-h{font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--t2);margin-bottom:.65rem}
+.ci-tiles{display:flex;flex-direction:column;gap:.4rem}
+.ci-tile{display:flex;align-items:center;gap:.65rem;padding:.55rem .7rem;border:1px solid var(--br2);border-radius:8px;background:var(--bg);
+  opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease),border-color .2s}
+.ci-tile.on{opacity:1;transform:none}
+.ci-tile:hover{border-color:rgba(255,208,0,.35)}
+.ci-tile span{font-family:var(--fm);font-size:.62rem;color:var(--a);flex-shrink:0}
+.ci-tile b{font-family:var(--fd);font-size:.8rem;font-weight:600;color:var(--t)}
+
 </style>
 </head>
 <body>
@@ -295,7 +310,50 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <article>
 <div class="wrap">
 
-<div class="rv"><p class="prose-p" style="margin-top:0">Теперь у тебя есть надёжная база и готовые сценарии, адаптируемые под любые задачи: ты знаешь, что и в какой последовательности говорить, чтобы провести клиента через четыре этапа прогрева. Но чтобы перейти от рабочего результата к выдающемуся, в систему нужно добавить ещё один слой — элементы, которые делают взаимодействие с твоим брендом по-настоящему запоминающимся.</p><p class="prose-p">Это 15 «чит-кодов» — продвинутых психологических техник, которые усиливают любую единицу контента: пост, письмо в рассылке, видео. Если базовые сценарии формируют каркас воронки, то эти приёмы делают его живым и выразительным. Они работают не потому, что «обходят» рациональность, а потому, что учитывают, как человек распределяет внимание, формирует доверие и принимает решения.</p></div><h2 class="prose-h2 rv">Коды захвата и удержания</h2><div class="cards rv">
+<div class="rv"><p class="prose-p" style="margin-top:0">Теперь у тебя есть надёжная база и готовые сценарии, адаптируемые под любые задачи: ты знаешь, что и в какой последовательности говорить, чтобы провести клиента через четыре этапа прогрева. Но чтобы перейти от рабочего результата к выдающемуся, в систему нужно добавить ещё один слой — элементы, которые делают взаимодействие с твоим брендом по-настоящему запоминающимся.</p><p class="prose-p">Это 15 «чит-кодов» — продвинутых психологических техник, которые усиливают любую единицу контента: пост, письмо в рассылке, видео. Если базовые сценарии формируют каркас воронки, то эти приёмы делают его живым и выразительным. Они работают не потому, что «обходят» рациональность, а потому, что учитывают, как человек распределяет внимание, формирует доверие и принимает решения.</p></div>
+
+<div class="cheat-index rv" id="cheatIndex">
+  <div class="ci-label">Указатель · 15 чит-кодов по группам</div>
+  <div class="ci-groups">
+    <div class="ci-col">
+      <div class="ci-group-h">Захват и удержание</div>
+      <div class="ci-tiles">
+        <div class="ci-tile"><span>01</span><b>Сторителлинг</b></div>
+        <div class="ci-tile"><span>02</span><b>Открытые петли</b></div>
+        <div class="ci-tile"><span>03</span><b>Социальное доказательство</b></div>
+        <div class="ci-tile"><span>04</span><b>Интеллектуальная нарезка</b></div>
+      </div>
+    </div>
+    <div class="ci-col">
+      <div class="ci-group-h">Контраст и ценность</div>
+      <div class="ci-tiles">
+        <div class="ci-tile"><span>05</span><b>Разрушение шаблона</b></div>
+        <div class="ci-tile"><span>06</span><b>Противопоставление</b></div>
+        <div class="ci-tile"><span>07</span><b>Создание дефицита</b></div>
+        <div class="ci-tile"><span>09</span><b>Визуализация данных</b></div>
+      </div>
+    </div>
+    <div class="ci-col">
+      <div class="ci-group-h">Вовлечение и статус</div>
+      <div class="ci-tiles">
+        <div class="ci-tile"><span>08</span><b>Вовлечение через вопрос</b></div>
+        <div class="ci-tile"><span>10</span><b>Эксклюзивность</b></div>
+        <div class="ci-tile"><span>11</span><b>Закулисье</b></div>
+        <div class="ci-tile"><span>12</span><b>Геймификация</b></div>
+      </div>
+    </div>
+    <div class="ci-col">
+      <div class="ci-group-h">Доверие и логика</div>
+      <div class="ci-tiles">
+        <div class="ci-tile"><span>13</span><b>Простота и ясность</b></div>
+        <div class="ci-tile"><span>14</span><b>Точная статистика</b></div>
+        <div class="ci-tile"><span>15</span><b>Личная уязвимость</b></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="prose-h2 rv">Коды захвата и удержания</h2><div class="cards rv">
 <div class="card"><div class="c-num">01</div><div class="c-title">Сторителлинг, или «Путь героя»</div><div class="c-text">Эффект нарративного транспорта: когда человек поглощён сюжетом, аналитическое мышление и скептицизм отходят на второй план, а выводы истории становятся его собственными, а не чужими навязанными идеями. Структура: обычный мир и проблема → переломный момент → встреча с наставником → испытания и трансформация → возвращение с результатом — путь, понятный в любой нише.</div></div>
 <div class="card"><div class="c-num">02</div><div class="c-title">Открытые петли (клиффхэнгеры)</div><div class="c-text">Эффект Зейгарник: мозг органически не переносит незавершённости и воспринимает открытую петлю как когнитивный долг, который нужно погасить. Заканчивай смысловой блок управляемой недосказанностью: «...и именно это решение стало моей самой дорогой ошибкой за год. Как я выбрался — расскажу завтра в это же время».</div></div>
 <div class="card"><div class="c-num">03</div><div class="c-title">Социальное доказательство</div><div class="c-text">Эвристика консенсуса: «если другие уже сделали этот шаг и остались в выигрыше — значит, это безопасный путь». Забудь про отполированные отзывы, мозг мгновенно распознаёт фальшь — используй живые скриншоты переписок, видео-отзывы на телефон, фото «до/после» и сухие проверяемые цифры.</div></div>
@@ -381,6 +439,12 @@ else{
   document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
   setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
 }
+// CHEAT-INDEX stagger reveal
+const cheatIndex=document.getElementById('cheatIndex');
+if(cheatIndex){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    cheatIndex.querySelectorAll('.ci-tile').forEach((el,i)=>setTimeout(()=>{el.classList.add('on')},100+i*60));
+  }})},{threshold:.2}).observe(cheatIndex)}
 // SCROLL NAV dots
 const sections=['hero', 'k1', 'k2', 'k3', 'k4', 'dossier'];
 const dots=document.querySelectorAll('.sn-dot');

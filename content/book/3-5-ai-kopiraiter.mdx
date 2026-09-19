@@ -258,6 +258,21 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
 .tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
 
+/* ─── AI-SPLIT (bespoke 3.5: кто делает что в связке человек × AI) ─── */
+.ai-split{margin:2.5rem 0;display:grid;grid-template-columns:1fr auto 1fr;gap:1.3rem;align-items:start}
+@media(max-width:640px){.ai-split{grid-template-columns:1fr}}
+.as-col{border:1px solid var(--br);border-radius:14px;background:var(--bgc);padding:1.4rem 1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.as-col.you{border-color:rgba(255,208,0,.25)}
+.as-head{font-family:var(--fd);font-size:.92rem;font-weight:800;margin-bottom:.3rem}
+.as-col.you .as-head{color:var(--a)}
+.as-col.ai .as-head{color:var(--t2)}
+.as-item{font-size:.83rem;color:var(--t2);line-height:1.55;padding-left:1.1rem;position:relative}
+.as-item::before{content:'—';position:absolute;left:0;color:var(--t3)}
+.as-item.highlight{color:var(--t);font-weight:600}
+.as-item.highlight::before{content:'★';color:var(--a)}
+.as-mid{display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:1.3rem;color:var(--br2);padding-top:1.6rem}
+@media(max-width:640px){.as-mid{display:none}}
+
 </style>
 </head>
 <body>
@@ -295,7 +310,29 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 <article>
 <div class="wrap">
 
-<div class="rv"><p class="prose-p" style="margin-top:0">Знать механику — одно, а постоянно производить качественный контент — намного сложнее. Творчество, эмпатия и удержание всей стратегии в голове требуют ресурса — и большинство разбивается об эту невидимую стену: идеи иссякают, вместо точных «джебов» появляются хаотичные посты «для галочки». Что, если делегировать 90% рутины, оставив себе чистую стратегию и смыслы?</p></div><h2 class="prose-h2 rv">AI: твой ассистент, а не замена создателю</h2><p class="prose-p rv">AI не знает твоих клиентов так, как знаешь их ты, у него нет твоего бэкграунда и опыта провалов. И главное — AI не проживает опыт и не передаёт живое человеческое присутствие, на котором строится доверие. Думай об AI как об умном, быстром, но исполнительном младшем партнёре: <strong>ты придумываешь и направляешь, AI предлагает варианты и ускоряет</strong>.</p><blockquote class="quote rv d1">Идеальная связка проста: ты стратег, который ставит задачу и задаёт смысловые рамки, а AI — исполнитель, который берёт черновую работу: гипотезы, структуру, первичные черновики.<span class="q-src">— Правило игры с AI</span></blockquote><h2 class="prose-h2 rv">Практикум: создаём контент за 6 шагов</h2><p class="prose-p rv d1">Разберём, как за один час создать готовый пост. Пример: эксперт продаёт курс «Автоворонка на миллион», задача — пост, актуализирующий проблему (прогрев к теме).</p><div class="steps rv">
+<div class="rv"><p class="prose-p" style="margin-top:0">Знать механику — одно, а постоянно производить качественный контент — намного сложнее. Творчество, эмпатия и удержание всей стратегии в голове требуют ресурса — и большинство разбивается об эту невидимую стену: идеи иссякают, вместо точных «джебов» появляются хаотичные посты «для галочки». Что, если делегировать 90% рутины, оставив себе чистую стратегию и смыслы?</p></div><h2 class="prose-h2 rv">AI: твой ассистент, а не замена создателю</h2><p class="prose-p rv">AI не знает твоих клиентов так, как знаешь их ты, у него нет твоего бэкграунда и опыта провалов. И главное — AI не проживает опыт и не передаёт живое человеческое присутствие, на котором строится доверие. Думай об AI как об умном, быстром, но исполнительном младшем партнёре: <strong>ты придумываешь и направляешь, AI предлагает варианты и ускоряет</strong>.</p><blockquote class="quote rv d1">Идеальная связка проста: ты стратег, который ставит задачу и задаёт смысловые рамки, а AI — исполнитель, который берёт черновую работу: гипотезы, структуру, первичные черновики.<span class="q-src">— Правило игры с AI</span></blockquote>
+
+<div class="ai-split rv" id="aiSplit">
+  <div class="as-col you">
+    <div class="as-head">Ты — стратег</div>
+    <div class="as-item">Задаёшь рамку: аудитория, стиль, задача</div>
+    <div class="as-item">Выбираешь тему и психологический триггер</div>
+    <div class="as-item">Правишь метафору под свой голос</div>
+    <div class="as-item highlight">Добавляешь личную историю — этого AI не создаст</div>
+    <div class="as-item">Финально одобряешь визуал и публикуешь</div>
+  </div>
+  <div class="as-mid">×</div>
+  <div class="as-col ai">
+    <div class="as-head">AI — исполнитель</div>
+    <div class="as-item">Держит контекст и рамку в фокусе</div>
+    <div class="as-item">Предлагает 5 тем на выбор</div>
+    <div class="as-item">Строит структуру по формуле PAS</div>
+    <div class="as-item">Пишет связный, но «стерильный» черновик</div>
+    <div class="as-item">Генерирует визуал по описанию</div>
+  </div>
+</div>
+
+<h2 class="prose-h2 rv">Практикум: создаём контент за 6 шагов</h2><p class="prose-p rv d1">Разберём, как за один час создать готовый пост. Пример: эксперт продаёт курс «Автоворонка на миллион», задача — пост, актуализирующий проблему (прогрев к теме).</p><div class="steps rv">
 <div class="step"><div class="s-num">Шаг 01</div><div class="s-body"><div class="s-title">Загрузка контекста</div><div class="s-text">Промпт-инжиниринг: «Ты мой ассистент-копирайтер. Моя аудитория — владельцы онлайн-школ, которые устали сливать бюджет. Мой стиль — экспертный, но живой. Задача ясна?» Рамка делает результат точнее.</div></div></div>
 <div class="step"><div class="s-num">Шаг 02</div><div class="s-body"><div class="s-title">Постановка задачи</div><div class="s-text">«Предложи 5 тем постов для этапа “прогрев к проблеме”, триггер — неприятие потерь». Выбираешь лучшую: «Почему таргетинг без автоворонки — это слив денег».</div></div></div>
 <div class="step"><div class="s-num">Шаг 03</div><div class="s-body"><div class="s-title">Генерация структуры</div><div class="s-text">«Дай пошаговый план по формуле PAS и встрой метафору с рыбалкой». Проблема → усиление (ловить рыбу голыми руками) → решение (надёжная сеть).</div></div></div>
