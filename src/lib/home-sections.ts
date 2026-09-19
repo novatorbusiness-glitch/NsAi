@@ -23,7 +23,7 @@ export const HERO_HTML = `<!-- HERO -->
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Проектов</div></div>
         <div class="hstat"><div class="hstat-n">50M ₽</div><div class="hstat-l">В запусках</div></div>
         <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Лет агентства</div></div>
-        <div class="hstat"><div class="hstat-n">1</div><div class="hstat-l">Книга издана</div></div>
+        <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Книги изданы</div></div>
       </div>
     </div>
     <!-- RIGHT — PRODUCT CARDS -->
@@ -86,7 +86,7 @@ export const INTRO_HTML = `<!-- INTRO: коротко кто я + Илья ≠ N
     <div class="intro-split rv d2">
       <div class="intro-half">
         <div class="intro-split-tag">Илья Новицкий</div>
-        <div class="intro-split-x">Человек. Предприниматель, разработчик, архитектор систем. Пишет книгу, ведёт R&D-проекты, выступает.</div>
+        <div class="intro-split-x">Человек. Предприниматель, разработчик, архитектор систем. Автор двух изданных книг, ведёт R&D-проекты, выступает.</div>
       </div>
       <div class="intro-arr">≠</div>
       <div class="intro-half">
@@ -539,7 +539,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
         <div class="hstat"><div class="hstat-n">300+</div><div class="hstat-l">Projects</div></div>
         <div class="hstat"><div class="hstat-n">50M ₽</div><div class="hstat-l">In launches</div></div>
         <div class="hstat"><div class="hstat-n">5</div><div class="hstat-l">Years running an agency</div></div>
-        <div class="hstat"><div class="hstat-n">1</div><div class="hstat-l">Book published</div></div>
+        <div class="hstat"><div class="hstat-n">2</div><div class="hstat-l">Books published</div></div>
       </div>
     </div>
     <!-- RIGHT — PRODUCT CARDS -->
@@ -602,7 +602,7 @@ export const INTRO_HTML_EN = `<!-- INTRO -->
     <div class="intro-split rv d2">
       <div class="intro-half">
         <div class="intro-split-tag">Ilya Novitsky</div>
-        <div class="intro-split-x">The person. An entrepreneur, developer, systems architect. Writing a book, running R&D projects, speaking.</div>
+        <div class="intro-split-x">The person. An entrepreneur, developer, systems architect. Author of two published books, running R&D projects, speaking.</div>
       </div>
       <div class="intro-arr">≠</div>
       <div class="intro-half">
