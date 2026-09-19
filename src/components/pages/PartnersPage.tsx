@@ -6,12 +6,13 @@ import PageShell from "@/components/layout/PageShell";
 interface Partner {
 	name: string;
 	url: string;
-	displayUrl?: string;
 	badge: string;
 	badgeEn: string;
 	logo: string;
 	desc: string;
 	descEn: string;
+	cta: string;
+	ctaEn: string;
 	internal?: boolean;
 }
 
@@ -26,12 +27,27 @@ const PARTNERS: Partner[] = [
 			"b24u.com — чат-бот с ИИ для сайта с конверсией более 60%. Отвечает клиентам круглосуточно и помогает вернуть лиды, которые вы теряете, пока никого нет онлайн.",
 		descEn:
 			"b24u.com — an AI chatbot for your website with over 60% conversion. Answers clients around the clock and helps recover leads you lose while no one's online.",
+		cta: "Открыть страницу",
+		ctaEn: "Open page",
+		internal: true,
+	},
+	{
+		name: "ex NIHILO",
+		url: "/ex-nihilo",
+		badge: "Партнёр-исследователь",
+		badgeEn: "Research partner",
+		logo: "∅",
+		desc:
+			"ex NIHILO — платформа самоисследования для предпринимателей: ЭЭГ, трекеры сна и пульса, клинические шкалы и голосовой дневник сводятся в одну картину, а личный ИИ-агент показывает, что держит продуктивность, а что её съедает.",
+		descEn:
+			"ex NIHILO — a self-research platform for entrepreneurs: EEG, sleep and pulse trackers, clinical scales and a voice diary combine into one picture, and a personal AI agent shows what's driving your productivity and what's draining it.",
+		cta: "Открыть страницу",
+		ctaEn: "Open page",
 		internal: true,
 	},
 	{
 		name: "Prodamus",
 		url: "https://connect.prodamus.ru/?ref=NSAI&c=T2w",
-		displayUrl: "prodamus.ru",
 		badge: "Партнёр",
 		badgeEn: "Partner",
 		logo: "₽",
@@ -39,6 +55,8 @@ const PARTNERS: Partner[] = [
 			"Prodamus — приём онлайн-платежей и рассрочек: платёжные ссылки, интеграция с CRM и автоворонками, автоматизация продаж курсов и услуг.",
 		descEn:
 			"Prodamus — online payments and installment plans: payment links, CRM and funnel integrations, automated sales for courses and services.",
+		cta: "Перейти и зарегистрировать платёжку",
+		ctaEn: "Go register a payment account",
 	},
 ];
 
@@ -79,9 +97,7 @@ export default function PartnersPage() {
 								</div>
 							</div>
 							<p className="partner-desc">{ru ? p.desc : p.descEn}</p>
-							<span className="partner-go">
-								{p.internal ? (ru ? "Страница партнёра" : "Partner page") : p.displayUrl ?? p.url.replace("https://", "")} →
-							</span>
+							<span className="partner-go">{ru ? p.cta : p.ctaEn} →</span>
 						</a>
 					))}
 				</div>
