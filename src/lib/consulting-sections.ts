@@ -641,6 +641,43 @@ export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система пр�
     <span class="lb rv">Движок</span>
     <h2 class="sh2 rv d1">Не «доступ к нейросети».<br>Настоящий движок приёмки и проверки.</h2>
     <p class="sl rv d2">Под капотом — не чат с моделью, а конвейер: задача проходит приёмку, двойную проверку и только потом закрывается. Поэтому «сдано» в NCAi означает «проверено», а не «написано».</p>
+    <div class="vz vz-pipe rv d2" role="img" aria-label="Конвейер приёмки задачи: согласование, исполнение, проверка двумя агентами, директор, закрыто">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>Конвейер приёмки</span>
+        <span class="vz-note">Задача не закрывается, пока не пройдёт все пять узлов</span>
+      </div>
+      <ol class="vz-track">
+        <svg class="vz-rail" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <line class="vz-rail-line" x1="8" y1="1" x2="992" y2="1" />
+          <rect class="vz-rail-pulse" x="8" y="0" width="110" height="2" rx="1" />
+        </svg>
+        <li class="vz-step" style="--i:0">
+          <span class="vz-step-n">01</span>
+          <span class="vz-step-t">Приёмка</span>
+          <span class="vz-step-x">Работа не стартует, пока концепция не согласована</span>
+        </li>
+        <li class="vz-step" style="--i:1">
+          <span class="vz-step-n">02</span>
+          <span class="vz-step-t">Исполнение</span>
+          <span class="vz-step-x">Задачу берёт агент с профильной зоной ответственности</span>
+        </li>
+        <li class="vz-step" style="--i:2">
+          <span class="vz-step-n">03</span>
+          <span class="vz-step-t">Проверка ×2</span>
+          <span class="vz-step-x">Результат смотрят два других агента, независимо друг от друга</span>
+        </li>
+        <li class="vz-step" style="--i:3">
+          <span class="vz-step-n">04</span>
+          <span class="vz-step-t">Директор</span>
+          <span class="vz-step-x">Финальная сверка с критериями задачи</span>
+        </li>
+        <li class="vz-step is-done" style="--i:4">
+          <span class="vz-step-n">05</span>
+          <span class="vz-step-t">Закрыто</span>
+          <span class="vz-step-x">«Сдано» означает проверено, а не написано</span>
+        </li>
+      </ol>
+    </div>
     <div class="amp-grid">
       <div class="amp rv d1"><div class="amp-ico">${icon("door")}</div><div><div class="amp-t">Задачу сначала согласовывают</div><div class="amp-x">Работа не начинается, пока концепция не согласована. Не делаем лишнего и не тратим ваш AI-бюджет на задачи, которые всё равно переделывать.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("eye")}</div><div><div class="amp-t">Каждую задачу проверяют дважды</div><div class="amp-x">Прежде чем закрыть задачу, её смотрят два других агента, и только потом — директор. «Готово» — это проверенный результат, а не слово на веру.</div></div></div>
@@ -1315,6 +1352,43 @@ export const UNDER_HOOD_HTML_EN = `<!-- THE ENGINE -->
     <span class="lb rv">The engine</span>
     <h2 class="sh2 rv d1">Not "access to a neural network."<br>A real intake and review engine.</h2>
     <p class="sl rv d2">Under the hood isn't a chat with a model, it's a pipeline: a task goes through intake, a double review, and only then gets closed. That's why "done" in NCAi means "checked," not just "written."</p>
+    <div class="vz vz-pipe rv d2" role="img" aria-label="Task intake pipeline: approval, execution, review by two agents, director, closed">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>Intake pipeline</span>
+        <span class="vz-note">A task doesn't close until it clears all five nodes</span>
+      </div>
+      <ol class="vz-track">
+        <svg class="vz-rail" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <line class="vz-rail-line" x1="8" y1="1" x2="992" y2="1" />
+          <rect class="vz-rail-pulse" x="8" y="0" width="110" height="2" rx="1" />
+        </svg>
+        <li class="vz-step" style="--i:0">
+          <span class="vz-step-n">01</span>
+          <span class="vz-step-t">Intake</span>
+          <span class="vz-step-x">Work doesn't start until the concept is signed off</span>
+        </li>
+        <li class="vz-step" style="--i:1">
+          <span class="vz-step-n">02</span>
+          <span class="vz-step-t">Execution</span>
+          <span class="vz-step-x">An agent whose remit covers it picks the task up</span>
+        </li>
+        <li class="vz-step" style="--i:2">
+          <span class="vz-step-n">03</span>
+          <span class="vz-step-t">Review ×2</span>
+          <span class="vz-step-x">Two other agents check the result, independently of each other</span>
+        </li>
+        <li class="vz-step" style="--i:3">
+          <span class="vz-step-n">04</span>
+          <span class="vz-step-t">Director</span>
+          <span class="vz-step-x">A final check against the task's acceptance criteria</span>
+        </li>
+        <li class="vz-step is-done" style="--i:4">
+          <span class="vz-step-n">05</span>
+          <span class="vz-step-t">Closed</span>
+          <span class="vz-step-x">"Done" means checked, not written</span>
+        </li>
+      </ol>
+    </div>
     <div class="amp-grid">
       <div class="amp rv d1"><div class="amp-ico">${icon("door")}</div><div><div class="amp-t">A task gets approved first</div><div class="amp-x">Work doesn't start until the concept is signed off. We don't do unnecessary work or burn your AI budget on tasks that will just get redone.</div></div></div>
       <div class="amp rv d1"><div class="amp-ico">${icon("eye")}</div><div><div class="amp-t">Every task gets checked twice</div><div class="amp-x">Before a task closes, two other agents review it, and only then the director. "Done" is a checked result, not just a claim taken on faith.</div></div></div>

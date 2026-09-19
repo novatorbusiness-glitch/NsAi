@@ -7,6 +7,7 @@ import "../styles/home.css";
 import "../styles/consulting.css";
 import "../styles/ai-training.css";
 import "../styles/portfolio.css";
+import "../styles/viz.css";
 
 const syne = Unbounded({
 	subsets: ["latin", "cyrillic"],
