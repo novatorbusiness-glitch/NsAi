@@ -23,7 +23,7 @@ export const dict = {
   "nav.bookAgency": { ru: "Агентство в коробке", en: "Agency in a Box" },
   "nav.blog": { ru: "Блог", en: "Blog" },
   "nav.about": { ru: "О проекте", en: "About" },
-  "nav.portfolio": { ru: "Портфолио", en: "Portfolio" },
+  "nav.portfolio": { ru: "Работа со мной", en: "Work with me" },
   "nav.partners": { ru: "Партнёры", en: "Partners" },
   "nav.b24u": { ru: "B24U чат-бот", en: "B24U chatbot" },
   "nav.cta": { ru: "Обсудить проект", en: "Discuss a project" },

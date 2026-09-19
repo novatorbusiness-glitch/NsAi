@@ -28,10 +28,10 @@ export default function MobileTabs() {
   ];
 
   const moreLinks = [
+    { label: "Работа со мной", href: "/portfolio" },
     { label: "Распаковка агентства", href: "/raspakovka" },
     { label: "Обучение AI", href: "/ai-training" },
     { label: "О проекте", href: "/o-proekte" },
-    { label: "Портфолио", href: "/portfolio" },
     { label: "Партнёры", href: "/partners" },
     { label: "Политика", href: "/privacy" },
     { label: "Оферта", href: "/offer" },
