@@ -455,6 +455,85 @@ function uderzhanie(id: string): string {
 }
 
 // ─────────────────────────────────────────────────────────────
+// 3.4 — 15 чит-кодов по 4 группам (1600×860)
+// ─────────────────────────────────────────────────────────────
+function ohvaty(id: string): string {
+	const groups = [
+		{ x: 80, y: 260, t: "ЗАХВАТ И УДЕРЖАНИЕ", items: ["01 Сторителлинг", "02 Открытые петли", "03 Соц. доказательство", "04 Нарезка контента"] },
+		{ x: 820, y: 260, t: "КОНТРАСТ И ЦЕННОСТЬ", items: ["05 Разрушение шаблона", "06 Противопоставление", "07 Дефицит", "09 Визуализация данных"] },
+		{ x: 80, y: 550, t: "ВОВЛЕЧЕНИЕ И СТАТУС", items: ["08 Вопрос", "10 Эксклюзивность", "11 Закулисье", "12 Геймификация"] },
+		{ x: 820, y: 550, t: "ДОВЕРИЕ И ЛОГИКА", items: ["13 Простота", "14 Точная статистика", "15 Личная уязвимость"] },
+	];
+	const groupBlocks = groups
+		.map((g) => {
+			const items = g.items
+				.map((it, i) => `<text x="${g.x + 32}" y="${g.y + 100 + i * 42}" font-family="${FM}" font-size="19" fill="${C.ink2}">${it}</text>`)
+				.join("\n");
+			return `<g class="vz-card">
+    <rect x="${g.x}" y="${g.y}" width="680" height="240" rx="18" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="${g.x + 32}" y="${g.y + 50}" font-family="${FG}" font-weight="800" font-size="24" fill="${C.gold}">${g.t}</text>
+    ${items}
+  </g>`;
+		})
+		.join("\n");
+
+	return `<svg class="nz-viz" viewBox="0 0 1600 860" role="img" aria-label="15 чит-кодов усиления охватов по четырём группам">
+  <defs>
+    <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
+    </linearGradient>
+    <pattern id="${id}-grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="820" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="820" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="54" letter-spacing="-1" fill="${C.ink}">15 ЧИТ-КОДОВ</text>
+  <text x="84" y="240" font-family="${FM}" font-size="21" letter-spacing="1" fill="${C.ink3}">усиление охватов: один материал работает на нескольких площадках</text>
+  ${groupBlocks}
+</svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// 3.5 — Человек × AI: связка ролей (1600×560)
+// ─────────────────────────────────────────────────────────────
+function kopirajter(id: string): string {
+	const you = ["Задаёшь рамку и аудиторию", "Выбираешь тему и триггер", "Правишь метафору под стиль", "Личная история"];
+	const ai = ["Держит контекст", "Предлагает 5 тем", "Строит структуру PAS", "Пишет черновик"];
+	const rows = (arr: string[], x: number) =>
+		arr.map((t, i) => `<text x="${x}" y="${376 + i * 46}" font-family="${FS}" font-size="21" fill="${C.ink2}">${t}</text>`).join("\n");
+
+	return `<svg class="nz-viz" viewBox="0 0 1600 560" role="img" aria-label="Человек и AI: разделение ролей в создании контента">
+  <defs>
+    <linearGradient id="${id}-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${C.panelFrom}"/><stop offset="1" stop-color="${C.panelTo}"/>
+    </linearGradient>
+    <pattern id="${id}-grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="${C.grid}" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="520" rx="28" fill="url(#${id}-panel)" stroke="${C.panelBorder}"/>
+  <rect x="20" y="20" width="1560" height="520" rx="28" fill="url(#${id}-grid)" opacity=".6"/>
+  <rect x="80" y="66" width="270" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)"/>
+  <text x="215" y="94" text-anchor="middle" font-family="${FM}" font-size="20" letter-spacing="2" fill="${C.gold}">ГЛ. 3 · СИНТЕЗ ДОВЕРИЯ</text>
+  <text x="80" y="196" font-family="${FG}" font-weight="800" font-size="52" letter-spacing="-1" fill="${C.ink}">AI КАК КОПИРАЙТЕР</text>
+  <g class="vz-card">
+    <rect x="80" y="270" width="640" height="250" rx="18" fill="${C.card}" stroke="rgba(255,208,0,.3)"/>
+    <text x="112" y="316" font-family="${FG}" font-weight="800" font-size="28" fill="${C.gold}">ТЫ — СТРАТЕГ</text>
+    ${rows(you, 112)}
+  </g>
+  <text x="800" y="410" text-anchor="middle" font-family="${FG}" font-size="40" fill="${C.gold}">×</text>
+  <g class="vz-card">
+    <rect x="880" y="270" width="640" height="250" rx="18" fill="${C.card}" stroke="${C.cardBorder}"/>
+    <text x="912" y="316" font-family="${FG}" font-weight="800" font-size="28" fill="${C.ink3}">AI — ИСПОЛНИТЕЛЬ</text>
+    ${rows(ai, 912)}
+  </g>
+</svg>`;
+}
+
+// ─────────────────────────────────────────────────────────────
 // Замена <img src="/viz/*.svg"> на инлайн-SVG
 // ─────────────────────────────────────────────────────────────
 const VIZ: Record<string, (id: string) => string> = {
@@ -466,11 +545,13 @@ const VIZ: Record<string, (id: string) => string> = {
 	arhitektura,
 	sborka,
 	uderzhanie,
+	ohvaty,
+	kopirajter,
 };
 
 export function inlineVizSvg(html: string): string {
 	return html.replace(
-		/<img\b[^>]*src=["']\/viz\/(stimuly|matrica|doverie|kasanija|anatomiya|arhitektura|sborka|uderzhanie)\.svg["'][^>]*\/?>/gi,
+		/<img\b[^>]*src=["']\/viz\/(stimuly|matrica|doverie|kasanija|anatomiya|arhitektura|sborka|uderzhanie|ohvaty|kopirajter)\.svg["'][^>]*\/?>/gi,
 		(match, name: string) => {
 			const fn = VIZ[name.toLowerCase()];
 			if (!fn) return match;
