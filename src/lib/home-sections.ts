@@ -498,6 +498,11 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
         <div class="cp-t">Распаковка агентства</div>
         <div class="cp-s">Разбор 190 ₽ → распаковка 19 900 ₽ — руль сразу у вас</div>
       </a>
+      <a href="/ai-training" class="closing-path">
+        <div class="cp-n">2</div>
+        <div class="cp-t">Обучение AI</div>
+        <div class="cp-s">1 месяц · 2 сессии — создаёшь реальный продукт с нуля · 70–80к ₽</div>
+      </a>
     </div>
 
     <div class="closing-acts rv d3">
@@ -1007,6 +1012,11 @@ export const CLOSING_HTML_EN = `<!-- CLOSING CTA -->
         <div class="cp-n">1</div>
         <div class="cp-t">Agency unboxing</div>
         <div class="cp-s">190 ₽ breakdown → 19 900 ₽ unboxing — you stay in control</div>
+      </a>
+      <a href="/ai-training" class="closing-path">
+        <div class="cp-n">2</div>
+        <div class="cp-t">AI training</div>
+        <div class="cp-s">1 month · 2 sessions — you build a real product from scratch · 70–80K ₽</div>
       </a>
     </div>
 
