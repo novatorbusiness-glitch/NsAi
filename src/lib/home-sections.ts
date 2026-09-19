@@ -170,7 +170,7 @@ export const JOURNEY_HTML = `<!-- JOURNEY: путь с 2016 года -->
 export const MECHANISM_HTML = `<!-- MECHANISM: как устроена система -->
 <section id="mechanism" class="sec-light">
   <div class="wrap">
-    <span class="sec-tag rv">То, что я в итоге построил</span>
+    <span class="sec-tag rv is-center">То, что я в итоге построил</span>
     <h2 class="sec-h2 rv d1" style="text-align:center">Пишете задачу —<br>вечером готовый результат в панели</h2>
     <p class="p mech-lead rv d1">Та же система, что провела меня от 2016 года до сейчас — только теперь можно развернуть её и под ваш бизнес. Не абстрактный «AI-помощник» и не чат с ботом: вы пишете задачу AI-директору, он сам решает, кому из команды её передать, результат и расход на AI собираются в одной панели. Подходит и владельцу бизнеса, и специалисту, который собирает себе AI-отдел.</p>
 
@@ -483,7 +483,7 @@ export const PERSONAL_HTML = `<!-- PERSONAL LAYER: фото-плейсхолде
 export const CLOSING_HTML = `<!-- CLOSING CTA -->
 <section id="closing">
   <div class="wrap">
-    <span class="sec-tag rv" style="justify-content:center">Готов начать</span>
+    <span class="sec-tag rv is-center">Готов начать</span>
     <h2 class="closing-h2 rv d1">Не разговор «про AI вообще» —<br>конкретный первый шаг</h2>
     <p class="closing-lead rv d1">Три шага — от разбора за 190 ₽ до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
 
@@ -685,7 +685,7 @@ export const JOURNEY_HTML_EN = `<!-- JOURNEY -->
 export const MECHANISM_HTML_EN = `<!-- MECHANISM -->
 <section id="mechanism" class="sec-light">
   <div class="wrap">
-    <span class="sec-tag rv">What I ended up building</span>
+    <span class="sec-tag rv is-center">What I ended up building</span>
     <h2 class="sec-h2 rv d1" style="text-align:center">You write the task —<br>by evening, the result is ready in the panel</h2>
     <p class="p mech-lead rv d1">The same system that carried me from 2016 to now — except now you can deploy it for your own business too. Not an abstract "AI assistant" or a chat with a bot: you give the AI director a task, it decides who on the team should handle it, and the result plus the AI spend land in one panel. Works for a business owner and for a specialist building their own AI department alike.</p>
 
@@ -998,7 +998,7 @@ export const PERSONAL_HTML_EN = `<!-- PERSONAL LAYER -->
 export const CLOSING_HTML_EN = `<!-- CLOSING CTA -->
 <section id="closing">
   <div class="wrap">
-    <span class="sec-tag rv" style="justify-content:center">Ready to start</span>
+    <span class="sec-tag rv is-center">Ready to start</span>
     <h2 class="closing-h2 rv d1">Not a chat "about AI in general" —<br>a concrete first step</h2>
     <p class="closing-lead rv d1">Three steps — from a 190 ₽ breakdown to a working agency. It all leads into one system, nothing gets paid for twice.</p>
 

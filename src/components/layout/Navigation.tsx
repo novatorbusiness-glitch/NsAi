@@ -10,12 +10,12 @@ import LangSwitch from "./LangSwitch";
 // открывающий выезжающую шторку со всеми пунктами (крупные тапы, свайп/крестик).
 const MENU_ITEMS: { href: string; label: string }[] = [
   { href: "/", label: "Главная" },
+  { href: "/portfolio", label: "Работа со мной" },
   { href: "/raspakovka", label: "Распаковка агентства" },
   { href: "/ai-training", label: "Обучение AI" },
   { href: "/book", label: "Книги" },
   { href: "/blog", label: "Блог" },
   { href: "/o-proekte", label: "О проекте" },
-  { href: "/portfolio", label: "Портфолио" },
   { href: "/partners", label: "Партнёры" },
 ];
 
