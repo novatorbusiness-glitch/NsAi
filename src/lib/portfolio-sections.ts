@@ -10,7 +10,7 @@ export const HERO_HTML = `<!-- HERO -->
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
     <h1 class="port-hero-name">Захожу в проект, показываю результат.<br><span class="port-acc">Заходит — довожу до конца.</span></h1>
-    <p class="port-hero-sub">Не продаю часы и не обещаю. Беру вашу задачу и показываю готовый результат — исследование, разбор, рабочий прототип. Заходит — довожу до релиза: фикс от 200 000 ₽, или доля/опцион, если строим вместе.</p>
+    <p class="port-hero-sub">Не продаю часы и не обещаю. Беру вашу задачу, провожу исследование и отдаю готовые артефакты — бесплатно. Зашло — захожу в проект на месяц: внедряю метод, обучаю вашего человека им управлять и работаю рядом с ним. От 200 000 ₽.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Обсудить проект →</a>
       <a href="#port-work" class="bs">Портфолио ↓</a>
@@ -137,58 +137,29 @@ export const HIRE_HTML = `<!-- HIRE -->
 <section id="port-hire">
   <div class="w">
     <span class="sec-tag rv">Как работаем</span>
-    <h2 class="sec-h2 rv d1">Демонстрация → Партнёрство → Ретейнер</h2>
-    <p class="port-sec-lead rv d1">Сначала показываю результат на вашей задаче — без предоплаты и без часового отчёта. Заходит — довожу до релиза. Дальше, если нужно, остаюсь рядом на постоянной основе.</p>
+    <h2 class="sec-h2 rv d1">Сначала результат.<br>Платите, если зашло.</h2>
+    <p class="port-sec-lead rv d1">Первый шаг ничего не стоит: беру вашу задачу и отдаю готовые артефакты. Если зашло — захожу в проект на месяц и за этот месяц оставляю вас с человеком, который умеет вести это сам.</p>
     <div class="port-mgrid">
       <div class="port-mcard rv">
-        <div class="port-mtag">Демонстрация</div>
-        <div class="port-mtit">Не уверены, что я вам подхожу — посмотрите на результате</div>
-        <div class="port-mprice">от 0 ₽</div>
-        <p class="port-mtx">Даёте задачу — присылаю рабочий артефакт: разбор, прототип, план. Не питч и не смета, а то, что можно посмотреть и потрогать. Дальше решаете сами: продолжать со мной или нет.</p>
-        <div class="port-mmeta"><span class="port-mch">1–3 дня</span><span class="port-mch">Готовый артефакт</span></div>
+        <div class="port-mtag">Шаг 1 · Бесплатно</div>
+        <div class="port-mtit">Получаете готовые артефакты по своей задаче</div>
+        <div class="port-mprice">0 ₽</div>
+        <p class="port-mtx">Исследование, разбор, презентация, воронка, контент-план — то, что можно открыть и сразу использовать. Не питч и не смета. Ничем не обязывает: не зашло — расходимся.</p>
+        <div class="port-mmeta"><span class="port-mch">Без предоплаты</span><span class="port-mch">Артефакты на руках</span></div>
       </div>
       <div class="port-mcard rv d1">
-        <div class="port-mtag">Партнёрство / довожу до релиза</div>
-        <div class="port-mtit">Демонстрация зашла — довожу задачу до конца</div>
+        <div class="port-mtag">Шаг 2 · Месяц работы</div>
+        <div class="port-mtit">Задачи бизнеса закрываются циклами — вместе со мной</div>
         <div class="port-mprice">от 200 000 ₽</div>
-        <p class="port-mtx">Фикс за результат или доля/опцион, если строим вместе. Обсуждаем задачу, срок и критерий готовности до старта — дальше я просто делаю, без отчётов по часам.</p>
-        <div class="port-mmeta"><span class="port-mch">2–4 недели</span><span class="port-mch">Результат, не часы</span></div>
+        <p class="port-mtx">Захожу в проект с технологией и методологией агентства NCAi: обучаю вашего человека управлять этим, сам работаю рядом с ним и решаю задачи бизнеса циклами. Вилка — от объёма задач.</p>
+        <div class="port-mmeta"><span class="port-mch">1 месяц</span><span class="port-mch">Обучение + работа</span></div>
       </div>
       <div class="port-mcard rv d2">
-        <div class="port-mtag">Ретейнер</div>
-        <div class="port-mtit">Нужен постоянный тех-партнёр</div>
-        <div class="port-mprice">от 200 000 ₽ / мес</div>
-        <p class="port-mtx">Разворачиваю у вас NCAi-агентство: 5 AI-сотрудников + AI-директор, 4 отдела, отчёт каждый день. Плюс я лично на связи как технический партнёр, а не подрядчик на телефоне.</p>
-        <div class="port-mmeta"><span class="port-mch">5 AI-сотрудников + директор</span><span class="port-mch">Отчёт ежедневно</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">`;
-
-export const PARTNER_HTML = `<!-- PARTNERSHIP -->
-<section id="port-partner">
-  <div class="w">
-    <span class="sec-tag rv">Другие форматы</span>
-    <h2 class="sec-h2 rv d1">Ещё три способа поработать вместе</h2>
-    <div class="port-mgrid">
-      <div class="port-mcard rv">
-        <div class="port-mico">${icon("handshake")}</div>
-        <div class="port-mtag">Совместный продукт</div>
-        <div class="port-mtit">Вхожу руками, а не подрядчик на удержании</div>
-        <p class="port-mtx">Прежде чем говорить о доле — показываю результат на вашей задаче. Заходит — проектирую, пишу код, вывожу на рынок за долю или опцион. Лично заинтересован в росте продукта, а не в закрытии тикетов.</p>
-      </div>
-      <div class="port-mcard rv d1">
-        <div class="port-mico">${icon("puzzle")}</div>
-        <div class="port-mtag">White-label / Методология</div>
-        <div class="port-mtit">Готовая система под вашим брендом — без месяцев разработки</div>
-        <p class="port-mtx">Методология NCAi и книга «Нейро-Воронка» уже проверены на реальных клиентах. Продаёте как свою, экономите R&D и выходите на рынок сразу — без стадии «а вдруг не взлетит».</p>
-      </div>
-      <div class="port-mcard rv d2">
-        <div class="port-mico">${icon("link")}</div>
-        <div class="port-mtag">Рефералка</div>
-        <div class="port-mtit">Доход с клиента без дополнительной работы</div>
-        <p class="port-mtx">Знакомите — я сам закрываю задачу: распаковку, обучение или разработку. Простая и прозрачная комиссия за каждого пришедшего клиента.</p>
+        <div class="port-mtag">Что остаётся</div>
+        <div class="port-mtit">Команда работает, когда я вышел из проекта</div>
+        <div class="port-mprice">Ваш человек у руля</div>
+        <p class="port-mtx">К концу месяца управляет не подрядчик, а ваш сотрудник: он ведёт систему, ставит задачи и читает отчёты сам. Дальше — следующий цикл, если задачи есть. Не хотите — не нужен.</p>
+        <div class="port-mmeta"><span class="port-mch">Без привязки</span><span class="port-mch">Следующий цикл — по желанию</span></div>
       </div>
     </div>
   </div>
@@ -218,7 +189,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
   <div class="port-hero-inner">
     <div class="port-hero-badge"><span class="port-bdot"></span>Tech Product Partner · Web3 / HealthTech / AI</div>
     <h1 class="port-hero-name">I join the project, I show the result.<br><span class="port-acc">If it lands, I carry it through.</span></h1>
-    <p class="port-hero-sub">I don't sell hours and I don't promise. I take your task and show a finished result — a research report, a teardown, a working prototype. If it lands, I carry it to release: a fixed fee from 200,000 ₽, or equity/an option if we build it together.</p>
+    <p class="port-hero-sub">I don't sell hours and I don't promise. I take your task, do the research and hand over finished artifacts — free. If it lands, I join the project for a month: I bring in the method, train the person who'll run it, and work alongside them. From 200,000 ₽.</p>
     <div class="port-hero-acts">
       <a href="https://t.me/Ilya_novator" class="bp">Discuss a project →</a>
       <a href="#port-work" class="bs">Portfolio ↓</a>
@@ -345,58 +316,29 @@ export const HIRE_HTML_EN = `<!-- HIRE -->
 <section id="port-hire">
   <div class="w">
     <span class="sec-tag rv">How we work</span>
-    <h2 class="sec-h2 rv d1">Demonstration → Partnership → Retainer</h2>
-    <p class="port-sec-lead rv d1">First I show a result on your actual task — no upfront payment, no hourly report. If it lands, I carry it to release. After that, if you need it, I stay on as a standing partner.</p>
+    <h2 class="sec-h2 rv d1">The result comes first.<br>You pay if it lands.</h2>
+    <p class="port-sec-lead rv d1">The first step costs nothing: I take your task and hand over finished artifacts. If it lands, I join the project for a month — and by the end of it you're left with someone who can run this without me.</p>
     <div class="port-mgrid">
       <div class="port-mcard rv">
-        <div class="port-mtag">Demonstration</div>
-        <div class="port-mtit">Not sure I'm the right fit — judge me by a result</div>
-        <div class="port-mprice">from $0</div>
-        <p class="port-mtx">Give me a task — I send back a working artifact: a teardown, a prototype, a plan. Not a pitch or a quote, something you can actually look at and use. Then you decide whether to continue.</p>
-        <div class="port-mmeta"><span class="port-mch">1–3 days</span><span class="port-mch">Finished artifact</span></div>
+        <div class="port-mtag">Step 1 · Free</div>
+        <div class="port-mtit">You get finished artifacts for your own task</div>
+        <div class="port-mprice">$0</div>
+        <p class="port-mtx">Research, a teardown, a deck, a funnel, a content plan — things you can open and use right away. Not a pitch or a quote. No strings: if it doesn't land, we part ways.</p>
+        <div class="port-mmeta"><span class="port-mch">No upfront payment</span><span class="port-mch">Artifacts in hand</span></div>
       </div>
       <div class="port-mcard rv d1">
-        <div class="port-mtag">Partnership / carried to release</div>
-        <div class="port-mtit">The demo landed — now I carry the task through</div>
+        <div class="port-mtag">Step 2 · A month of work</div>
+        <div class="port-mtit">Business tasks get closed in cycles — with me alongside</div>
         <div class="port-mprice">from 200,000 ₽</div>
-        <p class="port-mtx">A fixed fee for the result, or equity/an option if we build it together. We agree on the task, timeline and acceptance criteria before starting — then I just get it done, no hourly reports.</p>
-        <div class="port-mmeta"><span class="port-mch">2–4 weeks</span><span class="port-mch">A result, not hours</span></div>
+        <p class="port-mtx">I join the project with NCAi's technology and method: I train the person who'll run it, work alongside them, and close business tasks in cycles. The range depends on the scope.</p>
+        <div class="port-mmeta"><span class="port-mch">1 month</span><span class="port-mch">Training + hands-on work</span></div>
       </div>
       <div class="port-mcard rv d2">
-        <div class="port-mtag">Retainer</div>
-        <div class="port-mtit">You need a standing tech partner</div>
-        <div class="port-mprice">from 200,000 ₽ / mo</div>
-        <p class="port-mtx">I deploy an NCAi agency for you: 5 AI employees + an AI director, 4 departments, a report every day. Plus I'm personally on hand as a technical partner, not a contractor at the end of a phone line.</p>
-        <div class="port-mmeta"><span class="port-mch">5 AI employees + a director</span><span class="port-mch">Daily report</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="dv">`;
-
-export const PARTNER_HTML_EN = `<!-- PARTNERSHIP -->
-<section id="port-partner">
-  <div class="w">
-    <span class="sec-tag rv">Other formats</span>
-    <h2 class="sec-h2 rv d1">Three more ways to work together</h2>
-    <div class="port-mgrid">
-      <div class="port-mcard rv">
-        <div class="port-mico">${icon("handshake")}</div>
-        <div class="port-mtag">Joint product</div>
-        <div class="port-mtit">Hands-on, not a contractor on retainer</div>
-        <p class="port-mtx">Before we talk equity, I show a result on your actual task. If it lands, I design it, write the code, and take it to market for equity or an option. Personally invested in the product's growth, not in closing tickets.</p>
-      </div>
-      <div class="port-mcard rv d1">
-        <div class="port-mico">${icon("puzzle")}</div>
-        <div class="port-mtag">White-label / Methodology</div>
-        <div class="port-mtit">A ready system under your brand — no months of development</div>
-        <p class="port-mtx">NCAi's methodology and the "Neuro-Funnel" book are already proven on real clients. Sell them as your own, skip the R&D, and go to market right away — no "will this even work" stage.</p>
-      </div>
-      <div class="port-mcard rv d2">
-        <div class="port-mico">${icon("link")}</div>
-        <div class="port-mtag">Referrals</div>
-        <div class="port-mtit">Income per client, no extra work</div>
-        <p class="port-mtx">You make the introduction — I handle the work myself: unboxing, training, or development. A simple, transparent commission for every client who comes through you.</p>
+        <div class="port-mtag">What you keep</div>
+        <div class="port-mtit">The team keeps working once I've stepped out</div>
+        <div class="port-mprice">Your person at the wheel</div>
+        <p class="port-mtx">By the end of the month it's your employee running this, not a contractor: they set the tasks and read the reports themselves. Another cycle only if there's work for it.</p>
+        <div class="port-mmeta"><span class="port-mch">No lock-in</span><span class="port-mch">Next cycle optional</span></div>
       </div>
     </div>
   </div>
