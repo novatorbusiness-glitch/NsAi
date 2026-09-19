@@ -84,13 +84,6 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
         <p class="port-pj-desc">6 глав, 30 подглав. Нейробиология продаж и AI-автоматизация</p>
         <span class="port-pj-status">Бесплатно</span>
       </div>
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("robot")}</div>
-        <div class="port-pj-tag">AI-команда</div>
-        <div class="port-pj-title">NCAi Agency</div>
-        <p class="port-pj-desc">4 отдела, 5 AI-сотрудников + AI-директор. Полная разработка и автоматизация</p>
-        <span class="port-pj-status">Ретейнер</span>
-      </div>
       <div class="port-pj rv d1">
         <div class="port-pj-icon">${icon("brain")}</div>
         <div class="port-pj-tag">HealthTech · AI</div>
@@ -105,7 +98,7 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
         <p class="port-pj-desc">Трекер привычек — каждая вредная привычка как «босс», которого нужно одолеть</p>
         <span class="port-pj-status">Тестирование</span>
       </div>
-      <div class="port-pj rv d3">
+      <div class="port-pj rv">
         <div class="port-pj-icon">${icon("gamepad")}</div>
         <div class="port-pj-tag">EdTech · Дети</div>
         <div class="port-pj-title">Nezha_Quest</div>
@@ -113,7 +106,6 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
         <span class="port-pj-status">R&D</span>
       </div>
     </div>
-    <img src="/viz/mrr.svg" alt="Масштаб запусков — лестница MRR и экономика проектов" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 <hr class="dv">`;
@@ -177,8 +169,8 @@ export const HIRE_HTML = `<!-- HIRE -->
 export const PARTNER_HTML = `<!-- PARTNERSHIP -->
 <section id="port-partner">
   <div class="w">
-    <span class="sec-tag rv">Партнёрство</span>
-    <h2 class="sec-h2 rv d1">Партнёрство: что получает ваш бизнес</h2>
+    <span class="sec-tag rv">Другие форматы</span>
+    <h2 class="sec-h2 rv d1">Ещё три способа поработать вместе</h2>
     <div class="port-mgrid">
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
@@ -300,13 +292,6 @@ export const WORK_HTML_EN = `<!-- PORTFOLIO -->
         <p class="port-pj-desc">6 chapters, 30 subchapters. The neuroscience of sales and AI automation</p>
         <span class="port-pj-status">Free</span>
       </div>
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("robot")}</div>
-        <div class="port-pj-tag">AI team</div>
-        <div class="port-pj-title">NCAi Agency</div>
-        <p class="port-pj-desc">4 departments, 5 AI employees + an AI director. Full development and automation</p>
-        <span class="port-pj-status">Retainer</span>
-      </div>
       <div class="port-pj rv d1">
         <div class="port-pj-icon">${icon("brain")}</div>
         <div class="port-pj-tag">HealthTech · AI</div>
@@ -321,7 +306,7 @@ export const WORK_HTML_EN = `<!-- PORTFOLIO -->
         <p class="port-pj-desc">A habit tracker — every bad habit is a "boss" you have to defeat</p>
         <span class="port-pj-status">Testing</span>
       </div>
-      <div class="port-pj rv d3">
+      <div class="port-pj rv">
         <div class="port-pj-icon">${icon("gamepad")}</div>
         <div class="port-pj-tag">EdTech · Kids</div>
         <div class="port-pj-title">Nezha_Quest</div>
@@ -329,7 +314,6 @@ export const WORK_HTML_EN = `<!-- PORTFOLIO -->
         <span class="port-pj-status">R&D</span>
       </div>
     </div>
-    <img src="/viz/mrr.svg" alt="Launch scale — the MRR ladder and project economics" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;border:1px solid var(--br);margin-top:3rem" />
   </div>
 </section>
 <hr class="dv">`;
@@ -393,8 +377,8 @@ export const HIRE_HTML_EN = `<!-- HIRE -->
 export const PARTNER_HTML_EN = `<!-- PARTNERSHIP -->
 <section id="port-partner">
   <div class="w">
-    <span class="sec-tag rv">Partnership</span>
-    <h2 class="sec-h2 rv d1">Partnership: what your business gets</h2>
+    <span class="sec-tag rv">Other formats</span>
+    <h2 class="sec-h2 rv d1">Three more ways to work together</h2>
     <div class="port-mgrid">
       <div class="port-mcard rv">
         <div class="port-mico">${icon("handshake")}</div>
