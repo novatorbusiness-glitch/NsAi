@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet the Book — Neuro-Funnel · NcAi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#080808;--bg2:#0d0d0d;--bgc:#131313;--bgc2:#181818;
+  --br:#1e1e1e;--br2:#2a2a2a;
+  --t:#f0ede6;--t2:#7a7670;--t3:#333;
+  --a:#FFD000;--ad:rgba(255,208,0,.08);
+  --metal:linear-gradient(135deg,#e8e8e8 0%,#c8c8c8 35%,#888 65%,#d4d4d4 100%);
+  --fd:'Unbounded',sans-serif;--fs:'PT Serif',serif;--fm:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(.16,1,.3,1);--max:800px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:18px;line-height:1.8;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
+@media(pointer:fine){#cd,#cr{display:block}}
+#cd{width:5px;height:5px;background:var(--a);border-radius:50%}
+#cr{z-index:9998;width:28px;height:28px;border:1px solid rgba(255,208,0,.35);border-radius:50%;transition:width .3s var(--ease),height .3s var(--ease)}
+#cr.ex{width:46px;height:46px;opacity:.3}
+body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(255,208,0,.4));z-index:200;width:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+  background:rgba(8,8,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.04);transition:all .3s}
+nav.sc{border-color:rgba(255,255,255,.07)}
+.ni{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
+  background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.nav-chap{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-back{font-family:var(--fd);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);
+  text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;flex-shrink:0;white-space:nowrap}
+.nav-back:hover{color:var(--t)}
+
+/* BASE */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}.rv.d4{transition-delay:.44s}
+
+/* SCROLL NAV */
+.scroll-nav{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.45rem;z-index:50}
+@media(max-width:900px){.scroll-nav{display:none}}
+.sn-dot{width:4px;height:4px;border-radius:50%;background:var(--br2);cursor:pointer;transition:background .3s,transform .3s,height .3s}
+.sn-dot.act{background:var(--a);height:20px;border-radius:2px}
+.sn-dot:hover{background:rgba(255,208,0,.5)}
+
+/* HERO */
+#hero{min-height:55vh;display:flex;align-items:flex-end;padding:calc(60px + 5rem) 0 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 0%,rgba(255,208,0,.05),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.chap-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--t2);padding:.36rem .88rem;border:1px solid var(--br2);border-radius:999px;
+  margin-bottom:1.75rem;animation:fup .8s var(--ease) both}
+.bd{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.6rem,6.5vw,5.5rem);font-weight:800;line-height:.95;letter-spacing:-.045em;
+  margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
+.hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--t2);max-width:540px;line-height:1.78;animation:fup 1s .2s var(--ease) both;margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--br);animation:fup 1s .3s var(--ease) both;flex-wrap:wrap}
+.hm-item{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.hm-item span{display:block;color:var(--t2);margin-top:.2rem;font-size:.68rem;letter-spacing:0;text-transform:none}
+
+/* ARTICLE */
+article{padding:5rem 0 8rem}
+.prose-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;
+  color:var(--t);margin:4.5rem 0 1.4rem}
+.prose-p{font-size:1.02rem;color:var(--t2);line-height:1.85;margin-bottom:1.35rem}
+.prose-p strong{color:var(--t);font-weight:600}
+hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
+
+/* STAT ROW */
+.stat-row{display:flex;gap:.75rem;flex-wrap:wrap;margin:2rem 0}
+.stat-card{flex:1;min-width:130px;padding:1.4rem 1.2rem;border:1px solid rgba(255,208,0,.16);border-radius:12px;
+  background:rgba(255,208,0,.04);text-align:center;transition:border-color .25s,background .25s}
+.stat-card:hover{border-color:rgba(255,208,0,.3);background:rgba(255,208,0,.07)}
+.stat-val{font-family:var(--fm);font-size:2rem;font-weight:700;color:var(--a);letter-spacing:-.03em;line-height:1;margin-bottom:.4rem}
+.stat-lbl{font-family:var(--fs);font-size:.78rem;color:var(--t2);line-height:1.4}
+
+/* AUTHOR QUOTE (light card) */
+.author-pivot{margin:2.5rem 0;padding:2rem 2.5rem;background:#f5f1e8;border-radius:16px}
+.pivot-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#8a7f6e;margin-bottom:.85rem}
+.pivot-title{font-family:var(--fd);font-size:1.2rem;font-weight:800;line-height:1.25;color:#0a0a0a;letter-spacing:-.02em;margin-bottom:.75rem}
+.pivot-text{font-family:var(--fs);font-size:.96rem;line-height:1.72;color:#2e2b26}
+
+/* BLOCKQUOTE */
+.bq{margin:1.5rem 0;padding:1.25rem 1.5rem;border-left:2px solid rgba(255,208,0,.4);
+  background:rgba(255,208,0,.04);border-radius:0 10px 10px 0}
+.bq p{font-family:var(--fs);font-style:italic;font-size:1.05rem;color:var(--t2);line-height:1.75;margin:0}
+
+/* SILENCE VISUALIZATION */
+.silence-vis{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:2rem 0}
+@media(max-width:480px){.silence-vis{grid-template-columns:1fr}}
+.silence-card{padding:1.75rem 1.25rem;background:#000;border:1px solid #1a1a1a;border-radius:12px;text-align:center;
+  transition:border-color .3s}
+.silence-card:hover{border-color:#2d2d2d}
+.silence-day{font-family:var(--fm);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:#2d2d2d;margin-bottom:.85rem}
+.silence-word{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:#3d3d3d}
+
+/* RESULTS FLOW */
+.results-flow{display:flex;align-items:center;gap:.5rem;margin:1.75rem 0;flex-wrap:wrap}
+.rf-step{font-family:var(--fm);font-size:.88rem;color:var(--t2);padding:.4rem .85rem;
+  border:1px solid var(--br2);border-radius:8px;background:var(--bgc)}
+.rf-step.peak{font-size:1rem;font-weight:700;color:var(--a);border-color:rgba(255,208,0,.35);
+  background:rgba(255,208,0,.08);padding:.5rem 1.1rem}
+.rf-arrow{color:var(--t3);font-size:1rem;flex-shrink:0}
+
+/* CONCLUSION CARD (light) */
+.conclusion-card{margin:2.5rem 0;padding:2rem 2.5rem;background:#f5f1e8;border-radius:16px}
+.cc-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:#8a7f6e;margin-bottom:.85rem}
+.cc-title{font-family:var(--fd);font-size:1.1rem;font-weight:800;line-height:1.3;color:#0a0a0a;margin-bottom:.65rem}
+.cc-text{font-family:var(--fs);font-size:.95rem;line-height:1.72;color:#2e2b26}
+
+/* PRACTICE */
+.practice{margin:2rem 0;padding:1.75rem 2rem 1.75rem 1.75rem;border-left:3px solid rgba(255,208,0,.5);
+  background:rgba(255,208,0,.04);border-radius:0 10px 10px 0}
+.practice-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);
+  opacity:.8;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.practice-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a);opacity:.6;flex-shrink:0}
+.practice p{font-size:.92rem;color:var(--t2);line-height:1.75}
+.practice strong{color:var(--t)}
+
+/* ROADMAP */
+.roadmap{display:grid;gap:.8rem;margin:1.5rem 0 2.5rem}
+.road-item{display:flex;gap:1.25rem;align-items:flex-start;padding:1.25rem 1.5rem;
+  border:1px solid var(--br);border-radius:12px;background:var(--bgc);
+  transition:border-color .25s,background .25s,transform .25s var(--ease);cursor:default}
+.road-item:hover{background:var(--bgc2);transform:translateX(4px)}
+.road-num{font-family:var(--fm);font-size:1.2rem;font-weight:700;line-height:1;min-width:2.2rem;padding-top:.1rem}
+.road-title{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.road-desc{font-family:var(--fs);font-size:.84rem;color:var(--t2);line-height:1.58;margin:0}
+
+/* KEY INSIGHT */
+.insight{margin:4rem 0;padding:2.5rem;background:var(--bgc);border:1px solid rgba(255,208,0,.2);border-radius:14px;
+  position:relative;overflow:hidden;text-align:center}
+.insight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(255,208,0,.05),transparent);pointer-events:none}
+.insight-icon{font-size:2.5rem;margin-bottom:1.2rem}
+.insight-text{font-family:var(--fs);font-style:italic;font-size:1.1rem;line-height:1.78;color:var(--t);max-width:560px;margin:0 auto 1.5rem}
+.insight-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+
+/* CHAPTER NAV */
+.chapter-nav{margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.chapter-nav{grid-template-columns:1fr}}
+.cn-btn{padding:1.5rem;border:1px solid var(--br);border-radius:12px;text-decoration:none;background:var(--bgc);
+  transition:border-color .25s,transform .25s var(--ease),background .25s;display:block}
+.cn-btn:hover{border-color:rgba(255,208,0,.3);background:var(--bgc2);transform:translateY(-3px)}
+.cn-btn.next{border-color:rgba(255,208,0,.2);background:var(--ad)}
+.cn-btn.next:hover{border-color:rgba(255,208,0,.5)}
+.cn-dir{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.cn-btn.next .cn-dir{color:var(--a);opacity:.8}
+.cn-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.3}
+
+@media(max-width:640px){
+  .wrap{padding:0 1.25rem}
+  .hero-meta{gap:1.25rem}
+  .stat-card{min-width:100px}
+  .author-pivot,.conclusion-card{padding:1.5rem}
+  .silence-vis{grid-template-columns:1fr 1fr 1fr}
+}
+
+/* TELEGRAM CTA */
+.tg-cta{margin:3rem 0;padding:2.5rem 2rem;background:var(--a);border-radius:16px;text-align:center;position:relative;overflow:hidden}
+.tg-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 0%,rgba(255,255,255,.25),transparent);pointer-events:none}
+.tg-cta-icon{font-size:2.4rem;margin-bottom:.9rem;position:relative}
+.tg-cta-title{font-family:var(--fd);font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:#0a0a0a;line-height:1.15;max-width:560px;margin:0 auto .7rem;position:relative}
+.tg-cta-text{font-family:var(--fs);font-size:.95rem;color:rgba(0,0,0,.62);line-height:1.7;max-width:480px;margin:0 auto 1.5rem;position:relative}
+.tg-cta-btn{display:inline-block;background:#0a0a0a;color:var(--a);font-family:var(--fd);font-weight:700;font-size:.9rem;text-decoration:none;padding:.95rem 2rem;border-radius:10px;transition:transform .25s var(--ease),opacity .25s;position:relative}
+.tg-cta-btn:hover{transform:translateY(-2px);opacity:.92}
+/* TELEGRAM SUBSCRIBE (compact) */
+.tg-sub{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;margin-top:1.5rem;padding:1.5rem 1.75rem;background:var(--bgc);border:1px solid rgba(255,208,0,.22);border-radius:12px}
+.tg-sub-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.tg-sub-text{font-family:var(--fs);font-size:.84rem;color:var(--t2);line-height:1.6}
+.tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
+.tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
+
+</style>
+</head>
+<body>
+<div id="cd"></div><div id="cr"></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <div class="ni">
+    <a href="/" class="logo">NcAi</a>
+    <span class="nav-chap">Meet the Book · NEURO-FUNNEL</span>
+    <a href="/book" class="nav-back">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11 6.5H2M5.5 3L2 6.5l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All chapters
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="chap-badge"><span class="bd"></span>Meet the book · 8 min read</div>
+    <h1 class="hero-h1">NEURO-<br><em>FUNNEL</em></h1>
+    <p class="hero-sub">A practical guide to engineering sales systems at the intersection of neuroscience, behavioral psychology and AI.</p>
+    <div class="hero-meta">
+      <div class="hm-item">Author<span>Ilya Novitsky</span></div>
+      <div class="hm-item">Chapters<span>6 major</span></div>
+      <div class="hm-item">Subchapters<span>30 articles</span></div>
+      <div class="hm-item">Projects behind it<span>300+</span></div>
+    </div>
+  </div>
+</section>
+
+<article>
+<div class="wrap">
+
+  <!-- TELEGRAM CTA -->
+  <div class="tg-cta rv">
+    <div class="tg-cta-icon">✈️</div>
+    <div class="tg-cta-title">Follow Ilya's channel — content, breakdowns and new chapters</div>
+    <p class="tg-cta-text">Breakdowns, case studies and new chapters of the book — before anywhere else.</p>
+    <a class="tg-cta-btn" href="https://t.me/+8Qp8aSVS3nlhOTMy" target="_blank" rel="noopener">Follow the channel →</a>
+  </div>
+
+  <!-- INTRO -->
+  <div class="rv">
+    <p class="prose-p" style="margin-top:0">This book is written for entrepreneurs, marketers and experts who are tired of building a business on a foundation of hope. For those who want to escape the chaos of manual day-to-day work and design a predictable, autonomous system — a mechanism that runs without burnout and gives you back control of your time.</p>
+    <p class="prose-p">We'll break down how to capture audience attention even when it's in a state of deep digital trance. How to build a steady stream of leads with mathematical precision and no strain. <strong>There's no cheap manipulation here — only clean engineering</strong>, grounded in fundamental neuroscience and the actual mechanics of how the human brain works.</p>
+  </div>
+
+  <hr class="div rv">
+
+  <!-- AUTHOR -->
+  <div id="author">
+    <h2 class="prose-h2 rv">About the Author</h2>
+
+    <div class="stat-row rv d1">
+      <div class="stat-card">
+        <div class="stat-val">300+</div>
+        <div class="stat-lbl">projects through the agency</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">50M</div>
+        <div class="stat-lbl">rubles in launches</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">100K+</div>
+        <div class="stat-lbl">leads in client databases</div>
+      </div>
+    </div>
+
+    <div class="rv d2">
+      <p class="prose-p">My name is <strong>Ilya Novitsky</strong>, and I've been researching marketing for over seven years. I used to be the founder of the digital agency Novator.vip. More than 300 projects passed through our team — online schools, private clinics, therapists, IT companies. The algorithms we built generated over 50 million rubles in launches and brought in more than 100,000 leads. But behind those pretty numbers lie gigabytes of data on how people actually make buying decisions.</p>
+      <p class="prose-p">One day, the system inside me started to glitch. The endless client-service cycle, the constant race, the classic agency model — they drained all my energy. Background tension crept in, I developed the habit of clenching my jaw, and then burnout snuck up on me unnoticed.</p>
+    </div>
+
+    <div class="author-pivot rv d3">
+      <div class="pivot-label">The turning point</div>
+      <div class="pivot-title">"That's when I stopped the conveyor belt"</div>
+      <p class="pivot-text">I closed the agency, stepped out of day-to-day operations, and threw myself into studying AI agents and live-coding systems. In development: Neuro-Flow — analytics through PPG measurements via a smartphone camera. GAZE.ARCH, an autonomous infrastructure for the beauty industry, has launched. This wasn't a crisis — it was a reset point.</p>
+    </div>
+
+    <div class="rv d4">
+      <p class="prose-p">Shifting focus let me look at every marketing system I'd built from above. It became clear why some projects burn through budgets trying to break through a wall with dry logic, while others grow confidently with little effort. <strong>The difference came down to one thing: the successful systems spoke the natural language of the human brain.</strong></p>
+    </div>
+  </div>
+
+  <hr class="div rv">
+
+  <!-- STORY -->
+  <div id="story">
+    <h2 class="prose-h2 rv">How It All Started</h2>
+
+    <div class="bq rv d1">
+      <p>"Wouldn't it be great to one day be on a yacht right here in Moscow, invite a mentor, and gather some interesting people around."</p>
+    </div>
+
+    <div class="rv d2">
+      <p class="prose-p">My partner, Kostya Shel, and I were walking along Mayakovskaya, thinking out loud. We said it and kept walking — nothing concrete about it. Back then we were buried in agency operations. Everything was rolling along until a major client missed a payment, and rent was already due. Anxiety was building.</p>
+      <p class="prose-p">Right at that moment, the phone rang — our mentor, <strong>Alexander Petrov</strong>. The Cryptospace project: a crypto conference, and we needed to test selling tickets through webinars. We said yes without hesitation — on trust alone. He allocated 300,000 rubles for traffic and gave us full freedom.</p>
+      <p class="prose-p">Instead of acting blindly, we took Jeff Walker's "Launch" framework and started building our first automated funnel — late 2017, no convenient tools yet, everything by hand: Telegram, email newsletters, VKontakte sequences, SMS and auto-calls, all wired together.</p>
+      <p class="prose-p">While building it, something important became clear: <strong>people aren't interested in faceless projects, because the brain responds to people and their stories, not logos</strong>. We made Kostya the face of the launch. It was our first, still intuitive step into neuromarketing.</p>
+      <p class="prose-p">The mechanism was ready. We hired targeting specialists, paid 90,000 rubles, and waited.</p>
+    </div>
+
+    <div class="silence-vis rv d3">
+      <div class="silence-card">
+        <div class="silence-day">Day one</div>
+        <div class="silence-word">Silence.</div>
+      </div>
+      <div class="silence-card">
+        <div class="silence-day">Day two</div>
+        <div class="silence-word">Nothing.</div>
+      </div>
+      <div class="silence-card">
+        <div class="silence-day">Day three</div>
+        <div class="silence-word">Zero leads.</div>
+      </div>
+    </div>
+
+    <div class="rv d4">
+      <p class="prose-p">The contractors gave vague excuses and disappeared. We had to take control ourselves. That failure is exactly what forced us to truly understand how ad algorithms work — and, more importantly, <strong>how human perception works</strong>.</p>
+    </div>
+  </div>
+
+  <hr class="div rv">
+
+  <!-- RESULTS -->
+  <div id="results">
+    <h2 class="prose-h2 rv">How One Precise Offer Restarted Everything</h2>
+
+    <div class="rv d1">
+      <p class="prose-p">20 days were left before launch. We realized something non-obvious: there's no point optimizing an ad account if you don't understand how the filters of human attention work. So we built one precise offer: <strong>a free ticket to an online presentation of an international business conference at Skolkovo</strong>. The key word was "online" — but people, scanning the text, saw what they wanted to see: free entry to an exclusive event. That's how we tapped into a basic instinct — fear of missing out.</p>
+    </div>
+
+    <p class="prose-p rv d2">The numbers came alive:</p>
+
+    <div class="results-flow rv d3">
+      <div class="rf-step">10 leads</div>
+      <div class="rf-arrow">→</div>
+      <div class="rf-step">50</div>
+      <div class="rf-arrow">→</div>
+      <div class="rf-step">320</div>
+      <div class="rf-arrow">→</div>
+      <div class="rf-step peak">2,000,000 ₽</div>
+    </div>
+
+    <div class="rv d4">
+      <p class="prose-p">Webinar day came, show-up rate hit <strong>70%</strong>, and after the first session we brought in 600,000 rubles. The funnel generated two million — our first systemic win.</p>
+    </div>
+
+    <div class="conclusion-card rv">
+      <div class="cc-label">The payoff moment</div>
+      <div class="cc-title">Kostya and I were standing on a yacht deck in Moscow.</div>
+      <p class="cc-text">Next to us — that same mentor, and those same interesting people we'd talked about six months earlier on Mayakovskaya. Words said out loud had become reality through a system. Not through luck.</p>
+    </div>
+
+    <div class="practice rv">
+      <div class="practice-label">The core takeaway</div>
+      <p><strong>Automation isn't about scripts and code.</strong> It's about a managed, predictable path to a goal, with no strain. Once you understand the mechanics of perception, you stop competing only on features — and start working at a deeper level.</p>
+    </div>
+  </div>
+
+  <hr class="div rv">
+
+  <!-- ROADMAP -->
+  <div id="roadmap">
+    <h2 class="prose-h2 rv">The Route Map: What's Ahead</h2>
+    <p class="prose-p rv d1">Six stages lie ahead. We'll skip academic terms wherever a simple example does the job — and stay precise wherever terminology can't be avoided.</p>
+
+    <div class="roadmap rv d2">
+      <div class="road-item">
+        <div class="road-num" style="color:#FF6B35">01</div>
+        <div>
+          <div class="road-title">Neuromarketing</div>
+          <p class="road-desc">Five cognitive traps that break even strong launches. A client rarely encounters a product in a state of calm analysis — we break down how to get past the first biological filter.</p>
+        </div>
+      </div>
+      <div class="road-item">
+        <div class="road-num" style="color:#4ECDC4">02</div>
+        <div>
+          <div class="road-title">Systems Engineering</div>
+          <p class="road-desc">Neuroscience gives you the foundation, but you need to build something on it. Product matrix, funnel anatomy, and choosing the right architecture for the task at hand.</p>
+        </div>
+      </div>
+      <div class="road-item">
+        <div class="road-num" style="color:#A8E6CF">03</div>
+        <div>
+          <div class="road-title">Synthesizing Trust</div>
+          <p class="road-desc">The system is designed — now it needs fuel. How to hold attention, build a content sequence, and automate generation with AI without losing your own voice.</p>
+        </div>
+      </div>
+      <div class="road-item">
+        <div class="road-num" style="color:#FF8B94">04</div>
+        <div>
+          <div class="road-title">Traffic</div>
+          <p class="road-desc">Even the most beautiful funnel is useless without a flow of the right people at the entrance. The anatomy of ad creative, the mechanics of virality, and organic content as a self-sustaining source of leads.</p>
+        </div>
+      </div>
+      <div class="road-item">
+        <div class="road-num" style="color:#B4A7D6">05</div>
+        <div>
+          <div class="road-title">Autopilot</div>
+          <p class="road-desc">By this point you have a working system. All that's left is to remove yourself from it — in a good way. The webinar engine, an AI sales agent, and finding leaks in the funnel.</p>
+        </div>
+      </div>
+      <div class="road-item">
+        <div class="road-num" style="color:#FFD000">06</div>
+        <div>
+          <div class="road-title">The Autonomous Loop · AI</div>
+          <p class="road-desc">The final level. Digital employees, agent roles, and assembling complex IT infrastructure in natural language. Not theory — live projects in real time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="div rv">
+
+  <!-- KEY INSIGHT -->
+  <div class="insight rv">
+    <div class="insight-icon">🧠</div>
+    <p class="insight-text">Every chapter ends with an "Architect's Glossary" — a breakdown of neuroscience and technical terms translated into business results. It's not a box-ticking appendix — it's a working tool.</p>
+    <div class="insight-tag">→ Next: The Architect's Manifesto</div>
+  </div>
+
+  <!-- CHAPTER NAV -->
+  <div class="chapter-nav rv d1">
+    <a href="/book" class="cn-btn">
+      <div class="cn-dir">← Back</div>
+      <div class="cn-title">All book chapters</div>
+    </a>
+    <a href="/book/read#00-b-prolog" class="cn-btn next">
+      <div class="cn-dir">Next →</div>
+      <div class="cn-title">Prologue: The Architect's Manifesto — The Turning Point</div>
+    </a>
+  </div>
+
+  <!-- TELEGRAM SUBSCRIBE -->
+  <div class="tg-sub rv d1">
+    <div class="tg-sub-body">
+      <div class="tg-sub-title">More content on the channel</div>
+      <div class="tg-sub-text">Breakdowns, new chapters and tools — on Ilya's Telegram channel.</div>
+    </div>
+    <a class="tg-sub-btn" href="https://t.me/+8Qp8aSVS3nlhOTMy" target="_blank" rel="noopener">Follow →</a>
+  </div>
+
+
+</div>
+</article>
+
+<script>
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button,.stat-card,.road-item,.silence-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cr.classList.add('ex'));
+    el.addEventListener('mouseleave',()=>cr.classList.remove('ex'));
+  });
+}
+// NAV + PROGRESS
+const nav=document.getElementById('nav'),prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('sc',window.scrollY>40);
+  prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+},{passive:true});
+// REVEAL (progressive enhancement: content is visible without JS; fallback catches what wasn't triggered)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));}
+else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
+}
+// SCROLL NAV
+const sections=['hero','author','story','results','roadmap'];
+const dots=document.querySelectorAll('.sn-dot');
+dots.forEach((d,i)=>{d.addEventListener('click',()=>{
+  const el=document.getElementById(sections[i]);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+})});
+const sio=new IntersectionObserver(es=>{es.forEach(e=>{
+  if(e.isIntersecting){const idx=sections.indexOf(e.target.id);if(idx>=0)dots.forEach((d,i)=>d.classList.toggle('act',i===idx))}
+})},{threshold:.35});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)sio.observe(el)});
+</script>
+</body>
+</html>
