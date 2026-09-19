@@ -1,10 +1,12 @@
 // Секции главной (HTML из index-content, разбито по ТЗ NCAI_SPEC).
 import { icon } from "./icons";
+import { FLOW_HTML } from "./flow";
 
 export const HERO_HTML = `<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
+  ${FLOW_HTML}
   <div class="hero-inner">
     <!-- LEFT -->
     <div>
@@ -520,6 +522,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
+  ${FLOW_HTML}
   <div class="hero-inner">
     <!-- LEFT -->
     <div>

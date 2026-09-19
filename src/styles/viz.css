@@ -393,7 +393,110 @@
 	}
 }
 
+/* ── Живой слоистый фон (ambient) ──────────────────────────────────────
+   Разобрал, как это сделано у exnihilo.life/onto-nothing: ощущение прибора
+   даёт не сложный SVG, а многослойность. Там один простой путь-обводка без
+   заливки, продублированный 6 раз с разной прозрачностью (0.05–0.15), своим
+   оттенком и своей длительностью (6/8/12/15/18/22с), часть — в обратную
+   сторону. Движение непрерывное, а не одноразовое.
+
+   Здесь та же механика, но на нашей палитре и на нашем смысле: это не
+   мозговые волны, а поток — он идёт, сужается и не останавливается. */
+
+/* Фон позиционируется относительно своей секции. Если секция static,
+   он растягивается на всю страницу — поэтому задаём контекст явно. */
+#hero-consulting,
+#ait-hero {
+	position: relative;
+}
+
+.vz-flow {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.vz-flow svg {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 200%;
+	height: 100%;
+	overflow: visible;
+}
+
+.vz-flow path {
+	fill: none;
+	stroke-width: 1.5;
+	vector-effect: non-scaling-stroke;
+}
+
+@keyframes vz-flow-shift {
+	from {
+		transform: translate(-50%, -50%);
+	}
+
+	to {
+		transform: translate(0%, -50%);
+	}
+}
+
+/* Слои: своя скорость, свой оттенок, своя прозрачность — как в референсе */
+.vz-flow .f1 {
+	animation: vz-flow-shift 9s linear infinite;
+}
+
+.vz-flow .f1 path {
+	stroke: rgba(255, 208, 0, 0.15);
+}
+
+.vz-flow .f2 {
+	animation: vz-flow-shift 14s linear infinite reverse;
+}
+
+.vz-flow .f2 path {
+	stroke: rgba(255, 170, 40, 0.10);
+}
+
+.vz-flow .f3 {
+	animation: vz-flow-shift 7s linear infinite;
+}
+
+.vz-flow .f3 path {
+	stroke: rgba(255, 236, 150, 0.07);
+}
+
+.vz-flow .f4 {
+	animation: vz-flow-shift 20s linear infinite;
+}
+
+.vz-flow .f4 path {
+	stroke: rgba(255, 208, 0, 0.06);
+}
+
+.vz-flow .f5 {
+	animation: vz-flow-shift 17s linear infinite reverse;
+}
+
+.vz-flow .f5 path {
+	stroke: rgba(180, 140, 0, 0.07);
+}
+
+.vz-flow .f6 {
+	animation: vz-flow-shift 24s linear infinite;
+}
+
+.vz-flow .f6 path {
+	stroke: rgba(255, 255, 255, 0.04);
+}
+
 @media (prefers-reduced-motion: reduce) {
+
+	.vz-flow svg {
+		animation: none;
+	}
 
 	.vz-pulse,
 	.vz-rail-pulse,
