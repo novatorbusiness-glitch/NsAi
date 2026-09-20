@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PartnersPage from "@/components/pages/PartnersPage";
 
-const TITLE = "Партнёры и сервисы";
+const TITLE = "Сервисы, которые закрывают то, что я не строю сам";
 const DESCRIPTION =
-	"Сервисы и компании, с которыми работает NCAi: интеграции, white-label и партнёрские программы.";
+	"Три сервиса рядом с NCAi: чат-бот, который отвечает клиентам ночью, приём платежей без разработки и платформа восстановления для основателя. За каждый отвечаю лично.";
 
 export const metadata: Metadata = {
 	title: TITLE,

@@ -71,11 +71,13 @@ export default function PartnersPage() {
 					<span className="bdot" />
 					{ru ? "Экосистема NCAi" : "The NCAi ecosystem"}
 				</p>
-				<h1 className="page-h1">{ru ? "Партнёры" : "Partners"}</h1>
+				<h1 className="page-h1">
+					{ru ? "Сервисы, которые закрывают то, что я не строю сам" : "Services that cover what I don't build myself"}
+				</h1>
 				<p className="page-sub">
 					{ru
-						? "Компании и сервисы, с которыми NCAi строит системы продаж и AI-автоматизации. Партнёрство — это не рекламa, а совместная работа над продуктами клиентов."
-						: "Companies and services NCAi partners with to build sales systems and AI automation. Partnership here isn't advertising — it's joint work on clients' products."}
+						? "Клиент уходит, пока вы спите; платёжку нужно поднять без разработки; основатель выгорает раньше, чем окупается воронка. Это три дыры, которые я не закрываю кодом — их закрывают сервисы ниже. Честно: ссылка на Prodamus партнёрская, с неё идёт вознаграждение. На выбор это не влияет — ставлю то, чем пользуюсь сам."
+						: "A client leaves while you sleep; payments need to go live without a developer; the founder burns out before the funnel pays off. Three gaps I don't close with code — the services below do. To be straight: the Prodamus link is a referral one and pays a commission. It doesn't drive the pick — I list what I use myself."}
 				</p>
 			</div>
 
@@ -103,7 +105,7 @@ export default function PartnersPage() {
 				</div>
 
 				<div style={{ marginBottom: "5rem" }}>
-					<h2 className="legal-h2">{ru ? "Стать партнёром" : "Become a partner"}</h2>
+					<h2 className="legal-h2">{ru ? "Кому есть смысл написать" : "Who it's worth writing to me"}</h2>
 					<p className="legal-p">
 						{ru ? (
 							<>
