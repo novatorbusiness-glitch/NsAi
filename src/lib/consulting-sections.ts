@@ -8,7 +8,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
-    <h1 class="hh1">Работа в вашей голове.<span class="acc">Забираем в агентство за 19 900 ₽.</span></h1>
+    <h1 class="hh1">Операционка уходит с вас.<span class="acc">Забираем в агентство за 19 900 ₽.</span></h1>
     <p class="hsub">Не «доступ к нейросети», а настоящий движок: приёмка задач, пир-ревью, ночной драйвер 24/7. Готовая AI-команда с ролями, доской задач и контролем расходов. Руль сразу у вас — для владельца бизнеса и для новой профессии менеджера AI-агентства.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -763,7 +763,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Agency in a box · unboxing + subscription</div>
-    <h1 class="hh1">The work in your head.<span class="acc">We turn it into an agency for 19,900 ₽.</span></h1>
+    <h1 class="hh1">The operational load leaves you.<span class="acc">We turn it into an agency for 19,900 ₽.</span></h1>
     <p class="hsub">Not "access to a neural network," but a real engine: task intake, peer review, a 24/7 night-shift driver. A ready AI team with roles, a task board and spend control. You're in control from day one — for a business owner and for the new profession of AI-agency manager alike.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>

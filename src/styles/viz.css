@@ -666,7 +666,9 @@
 
 .vz-fn-step {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	/* Фикс. ширина под самую длинную плашку («ОТ 200 000 ₽»),
+	   иначе текст описаний стартует вразнобой по левому краю. */
+	grid-template-columns: 6.8rem 1fr;
 	gap: 0.9rem;
 	align-items: baseline;
 }
