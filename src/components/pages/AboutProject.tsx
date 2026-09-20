@@ -76,8 +76,8 @@ export default function AboutProject() {
 							<div className="hstatl">{ru ? "Заявок обработано" : "Leads handled"}</div>
 						</div>
 						<div className="hstat">
-							<div className="hstatn">1</div>
-							<div className="hstatl">{ru ? "Книга" : "Book"}</div>
+							<div className="hstatn">2</div>
+							<div className="hstatl">{ru ? "Книги изданы" : "Books published"}</div>
 						</div>
 					</div>
 				</div>
