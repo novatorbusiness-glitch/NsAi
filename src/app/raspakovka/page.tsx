@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import RaspakovkaPage from "@/components/pages/RaspakovkaPage";
 
-const TITLE = "Распаковка AI-агентства за несколько шагов";
+const TITLE = "Операционка уходит с вас за 19 900 ₽";
 const DESCRIPTION =
-	"Готовая AI-команда под ваш бизнес за 19 900 ₽: AI-директор и агенты с ролями, доска задач, контроль расходов на AI. Руль сразу у вас.";
+	"Разворачиваю под ваш бизнес AI-команду: задачи ставите в чате, результат проверяется до закрытия, расход на AI под контролем. Руль сразу у вас.";
 
 export const metadata: Metadata = {
 	title: TITLE,

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import AboutProject from "@/components/pages/AboutProject";
 
-const TITLE = "О проекте";
+const TITLE = "Чем мы отличаемся от чат-бота";
 const DESCRIPTION =
-	"NCAi — проект Ильи Новицкого: инженерия систем продаж, AI-агентства и нейромаркетинг. Как устроены продукты и на чём они основаны.";
+	"Не доступ к нейросети, а команда с ролями, памятью о вашем бизнесе и проверкой результата до закрытия задачи. Как устроены продукты и на чём основаны.";
 
 export const metadata: Metadata = {
 	title: TITLE,
