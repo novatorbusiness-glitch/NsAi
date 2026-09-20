@@ -163,6 +163,53 @@ export const PROGRAM_HTML = `<!-- 4 · ПЛАН МЕСЯЦА -->
         <div class="ait-tl-d">Пишешь в Telegram, если застрял — отвечаю. В конце месяца — план развития без меня и книга из 111 готовых промптов NCAi.</div>
       </div>
     </div>
+    <div class="vz vz-skills rv d2" role="img" aria-label="Что окажется в руках: база работы с моделью, инструменты, сборка продукта, и то, что остаётся после месяца">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>Что останется в руках</span>
+        <span class="vz-note">Не программа занятий — перечень того, что ты делаешь сам и уносишь с собой</span>
+      </div>
+      <ol class="vz-tree">
+        <li class="vz-tier" style="--t:0">
+          <div class="vz-tier-h"><span class="vz-tier-n">Уровень 1</span><span class="vz-tier-t">Разговаривать с моделью так, чтобы она делала работу</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">контекст вместо вопросов</span>
+            <span class="vz-chip" style="--i:1">ТЗ, а не пожелания</span>
+            <span class="vz-chip" style="--i:2">итерации до результата</span>
+            <span class="vz-chip" style="--i:3">где модель врёт и как ловить</span>
+          </div>
+        </li>
+        <li class="vz-tier" style="--t:1">
+          <div class="vz-tier-h"><span class="vz-tier-n">Уровень 2</span><span class="vz-tier-t">Выбирать инструмент под задачу, а не по моде</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">Claude</span>
+            <span class="vz-chip" style="--i:1">Cursor</span>
+            <span class="vz-chip" style="--i:2">Gemini</span>
+            <span class="vz-chip" style="--i:3">ChatGPT</span>
+            <span class="vz-chip" style="--i:4">что во сколько обходится</span>
+          </div>
+        </li>
+        <li class="vz-tier" style="--t:2">
+          <div class="vz-tier-h"><span class="vz-tier-n">Уровень 3</span><span class="vz-tier-t">Собрать продукт руками и довести до рабочего</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">каркас</span>
+            <span class="vz-chip" style="--i:1">данные и тексты</span>
+            <span class="vz-chip" style="--i:2">правки без паники</span>
+            <span class="vz-chip" style="--i:3">публикация</span>
+            <span class="vz-chip" style="--i:4">что делать, когда сломалось</span>
+          </div>
+        </li>
+        <li class="vz-tier is-keep" style="--t:3">
+          <div class="vz-tier-h"><span class="vz-tier-n">Остаётся</span><span class="vz-tier-t">После месяца это твоё, без меня и без подписки</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">работающий продукт</span>
+            <span class="vz-chip" style="--i:1">AI-команда в панели</span>
+            <span class="vz-chip" style="--i:2">111 промптов</span>
+            <span class="vz-chip" style="--i:3">план развития без меня</span>
+            <span class="vz-chip" style="--i:4">навык</span>
+          </div>
+        </li>
+      </ol>
+    </div>
   </div>
 </section>
 <hr class="dv">`;
@@ -474,6 +521,53 @@ export const PROGRAM_HTML_EN = `<!-- MONTH PLAN -->
         <div><div class="ait-tl-n">All month</div><div class="ait-tl-t">On hand + 111 prompts as a gift</div></div>
         <div class="ait-tl-d">Message me on Telegram if you're stuck — I answer. At the end of the month: a development plan without me and a book of 111 ready NCAi prompts.</div>
       </div>
+    </div>
+    <div class="vz vz-skills rv d2" role="img" aria-label="What you end up holding: working with the model, tools, building the product, and what stays after the month">
+      <div class="vz-head">
+        <span class="vz-badge"><span class="vz-pulse"></span>What you walk away with</span>
+        <span class="vz-note">Not a syllabus — the list of things you do yourself and keep</span>
+      </div>
+      <ol class="vz-tree">
+        <li class="vz-tier" style="--t:0">
+          <div class="vz-tier-h"><span class="vz-tier-n">Level 1</span><span class="vz-tier-t">Talk to the model so it actually does the work</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">context, not questions</span>
+            <span class="vz-chip" style="--i:1">a spec, not a wish</span>
+            <span class="vz-chip" style="--i:2">iterating to a result</span>
+            <span class="vz-chip" style="--i:3">where it lies and how to catch it</span>
+          </div>
+        </li>
+        <li class="vz-tier" style="--t:1">
+          <div class="vz-tier-h"><span class="vz-tier-n">Level 2</span><span class="vz-tier-t">Pick the tool for the job, not for the hype</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">Claude</span>
+            <span class="vz-chip" style="--i:1">Cursor</span>
+            <span class="vz-chip" style="--i:2">Gemini</span>
+            <span class="vz-chip" style="--i:3">ChatGPT</span>
+            <span class="vz-chip" style="--i:4">what each one costs</span>
+          </div>
+        </li>
+        <li class="vz-tier" style="--t:2">
+          <div class="vz-tier-h"><span class="vz-tier-n">Level 3</span><span class="vz-tier-t">Build the product by hand and get it working</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">the skeleton</span>
+            <span class="vz-chip" style="--i:1">data and copy</span>
+            <span class="vz-chip" style="--i:2">edits without panic</span>
+            <span class="vz-chip" style="--i:3">shipping it</span>
+            <span class="vz-chip" style="--i:4">what to do when it breaks</span>
+          </div>
+        </li>
+        <li class="vz-tier is-keep" style="--t:3">
+          <div class="vz-tier-h"><span class="vz-tier-n">You keep</span><span class="vz-tier-t">After the month it is yours — no me, no subscription</span></div>
+          <div class="vz-chips">
+            <span class="vz-chip" style="--i:0">a working product</span>
+            <span class="vz-chip" style="--i:1">an AI team in a panel</span>
+            <span class="vz-chip" style="--i:2">111 prompts</span>
+            <span class="vz-chip" style="--i:3">a plan to grow without me</span>
+            <span class="vz-chip" style="--i:4">the skill</span>
+          </div>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
