@@ -276,6 +276,28 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .ao-card-name{font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--a);margin-bottom:.3rem}
 .ao-card-role{font-size:.78rem;color:var(--t2);line-height:1.5}
 
+
+
+
+
+/* ─── BOOKVIZ: большая inline-SVG панель главы ─── */
+.bviz{margin:2.4rem 0 3rem;padding:1rem;background:var(--bg2);border:1px solid var(--br);border-radius:16px;
+  box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.bviz svg{width:100%;height:auto;display:block;border-radius:10px}
+.bviz .bv-card,.bviz .bv-row{transition:transform .38s var(--ease),filter .38s var(--ease)}
+.bviz .bv-card:hover{transform:translateY(-4px);filter:drop-shadow(0 12px 20px rgba(255,208,0,.14))}
+.bviz .bv-row:hover{transform:translateX(7px)}
+.bviz .bv-pulse{animation:bvPulse 3.6s ease-in-out infinite}
+@keyframes bvPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.bviz .bv-dash{stroke-dasharray:7 9;animation:bvDash 2.6s linear infinite}
+@keyframes bvDash{to{stroke-dashoffset:-32}}
+@media(max-width:640px){.bviz{padding:.55rem;border-radius:12px}}
+@media (prefers-reduced-motion: reduce){
+  .bviz .bv-pulse,.bviz .bv-dash{animation:none}
+  .bviz .bv-card,.bviz .bv-row{transition:none}
+  .bviz .bv-card:hover,.bviz .bv-row:hover{transform:none;filter:none}
+}
+
 </style>
 </head>
 <body>
@@ -312,6 +334,91 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 
 <article>
 <div class="wrap">
+
+<!-- BOOKVIZ-PANEL -->
+<figure class="bviz rv">
+<svg class="bviz-svg" viewBox="0 0 1600 900" role="img" aria-label="Длинный коридор классической разработки против live coding" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bv62-p" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#131313"/><stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="bv62-g" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#bv62-p)" stroke="#1e1e1e" stroke-width="1"/>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#bv62-g)" opacity=".6"/>
+  <rect x="80" y="66" width="394" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)" stroke-width="1"/>
+  <text x="277.0" y="94" font-family="'JetBrains Mono',monospace" font-size="20" fill="#FFD000" text-anchor="middle" letter-spacing="2">ГЛ. 6 · АВТОНОМНЫЙ КОНТУР</text>
+  <text x="80" y="196" font-family="'Unbounded',sans-serif" font-size="62" fill="#f0ede6" font-weight="800" letter-spacing="-1">КОРИДОР ПРОТИВ LIVE CODING</text>
+  <text x="84" y="248" font-family="'JetBrains Mono',monospace" font-size="24" fill="#7a7670" letter-spacing="1">старая модель переводит замысел через пять слоёв · новая сжимает цикл</text>
+  <text x="80" y="320" font-family="'JetBrains Mono',monospace" font-size="18" fill="#7a7670" letter-spacing="2">СТАРАЯ МОДЕЛЬ · ДЛИННЫЙ ЦИКЛ ОБРАТНОЙ СВЯЗИ</text>
+  <rect x="80" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="190" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">ИДЕЯ</text>
+  <text x="190" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">на языке бизнеса</text>
+  <path d="M308,380 l10,8 l-10,8" stroke="#4a463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="324" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="434" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">ОПИСАНИЕ</text>
+  <text x="434" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">перевод № 1</text>
+  <path d="M552,380 l10,8 l-10,8" stroke="#4a463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="568" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="678" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">ТЗ</text>
+  <text x="678" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">перевод № 2</text>
+  <path d="M796,380 l10,8 l-10,8" stroke="#4a463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="812" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="922" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">КОМАНДА</text>
+  <text x="922" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">перевод № 3</text>
+  <path d="M1040,380 l10,8 l-10,8" stroke="#4a463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1056" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="1166" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">КОД</text>
+  <text x="1166" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">чёрный ящик</text>
+  <path d="M1284,380 l10,8 l-10,8" stroke="#4a463f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1300" y="346" width="220" height="84" rx="14" fill="#151515" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="1410" y="386" font-family="'Unbounded',sans-serif" font-size="20" fill="#a8a49b" font-weight="800" text-anchor="middle">ПРАВКИ</text>
+  <text x="1410" y="412" font-family="'JetBrains Mono',monospace" font-size="14" fill="#7a7670" text-anchor="middle">недели ожидания</text>
+  <text x="80" y="472" font-family="'PT Serif',serif" font-size="20" fill="#c85a4a">каждый стык — задержка, шум и искажение замысла: фабрика ошибок предсказания</text>
+  <text x="80" y="550" font-family="'JetBrains Mono',monospace" font-size="18" fill="#c99700" letter-spacing="2">НОВАЯ МОДЕЛЬ · LIVE CODING</text>
+  <g class="bv-card">
+  <rect x="70" y="576" width="344" height="132" rx="18" fill="rgba(255,208,0,.06)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="242" y="608" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">АРХИТЕКТУРА</text>
+  <text x="242" y="638" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">НАМЕРЕНИЯ</text>
+  <text x="242" y="670" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">что строим, для кого,</text>
+  <text x="242" y="696" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">где ценность</text>
+  </g>
+  <path class="bv-dash" d="M420,642 L434,642" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M426,634 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bv-card">
+  <rect x="442" y="576" width="344" height="132" rx="18" fill="rgba(255,208,0,.06)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="614" y="608" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">КОНТЕКСТ</text>
+  <text x="614" y="638" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">СВЕРХМОЗГ</text>
+  <text x="614" y="670" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">память проекта: решения,</text>
+  <text x="614" y="696" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">правила, ограничения</text>
+  </g>
+  <path class="bv-dash" d="M792,642 L806,642" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M798,634 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bv-card">
+  <rect x="814" y="576" width="344" height="132" rx="18" fill="rgba(255,208,0,.06)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="986" y="608" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">АГЕНТНЫЙ</text>
+  <text x="986" y="638" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">СЛОЙ</text>
+  <text x="986" y="670" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">роли и среды под</text>
+  <text x="986" y="696" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">единым управлением</text>
+  </g>
+  <path class="bv-dash" d="M1164,642 L1178,642" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M1170,634 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bv-card">
+  <rect x="1186" y="576" width="344" height="132" rx="18" fill="rgba(255,208,0,.06)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="1358" y="608" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">РАБОЧАЯ</text>
+  <text x="1358" y="638" font-family="'Unbounded',sans-serif" font-size="21" fill="#FFD000" font-weight="800" text-anchor="middle">СИСТЕМА</text>
+  <text x="1358" y="670" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">виден не только результат,</text>
+  <text x="1358" y="696" font-family="'PT Serif',serif" font-size="17" fill="#7a7670" text-anchor="middle">но и ход мысли</text>
+  </g>
+  <path class="bv-dash" d="M1414,708 L1414,756 L242,756 L242,708" stroke="#FFD000" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".55"/>
+  <path d="M234,718 l8,-10 l8,10" stroke="#FFD000" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+  <text x="800" y="800" font-family="'PT Serif',serif" font-size="21" fill="#f0ede6" text-anchor="middle">цикл сжимается до почти непрерывного: мысль → проверка → правка → реализация</text>
+  <text x="80" y="856" font-family="'JetBrains Mono',monospace" font-size="18" fill="#4a463f" letter-spacing="1">чем ниже порог входа, тем дороже слабая мысль · архитектура важнее синтаксиса</text>
+</svg>
+</figure>
+<!-- /BOOKVIZ-PANEL -->
 
 <div class="rv"><p class="prose-p" style="margin-top:0">Значимую часть цифровых продуктов можно собирать через естественный язык, архитектуру контекста и агентную координацию. Исчезает не сложность — ослабевает старая монополия на вход и смещается центр тяжести. Раньше ключевой дефицит был в умении писать код руками, теперь всё чаще — в способности <strong>ясно мыслить, собирать систему, удерживать контекст и отличать рабочую архитектуру от красивой иллюзии</strong>. Новая эпоха не делает всех разработчиками — она делает архитектурное мышление важнее синтаксической ловкости.</p></div><h2 class="prose-h2 rv">Почему старая модель разработки начинает трещать</h2><p class="prose-p rv d1">Классическая разработка держалась на длинном переводческом коридоре: идея на языке бизнеса → описание → техническое мышление → код → интерфейс → серия уточнений. Каждый слой между замыслом и реализацией создаёт задержку, шум и вероятность искажения. Для мозга это особенно тяжело: <strong>длинный цикл обратной связи повышает неопределённость — один из самых энергозатратных режимов для нервной системы</strong>. С точки зрения predictive coding это почти идеальная фабрика ошибок предсказания: ожидаешь одно, получаешь другое, перестраиваешь модель, снова объясняешь. Live coding сокращает этот разрыв, сжимая дистанцию между мыслью, проверкой, правкой и реализацией до почти непрерывного цикла.</p><h2 class="prose-h2 rv">Что такое live coding на самом деле</h2><p class="prose-p rv d1">Live coding — не эффектная демонстрация экрана, где кто-то быстро печатает код. Это <strong>режим прозрачной сборки системы в реальном времени</strong>, когда архитектура, интерфейс, логика и код развиваются не в чёрном ящике подрядчика, а внутри общего поля понимания. Ты видишь не только результат, но и механизм принятия решений: почему блок появился здесь, почему выбрана такая структура, почему эта интеграция нужна, а эта нет. В старой модели заказчик видит две точки — обещание и артефакт. В новой — ход мысли между ними. Live coding делает объяснение частью самой работы: результатом становится не только продукт, но и <strong>передаваемое понимание</strong>.</p><h2 class="prose-h2 rv">Как работает новый механизм</h2><p class="prose-p rv d1">Сначала появляется не код, а <strong>архитектура намерения</strong>: что строим, для кого, какой сценарий должен возникнуть, где ценность, а что декоративная оболочка. Потом собирается контекст — внешний сверхмозг (Obsidian, документация, карты решений, правила, ограничения): это пространство, где проект обретает память и непрерывность. После включается агентный слой — не одна вкладка с чатом, а распределённая команда ролей.</p><p class="prose-p rv d1">Для разных задач — разные среды. Claude — глубина рассуждения и архитектурная связность. Gemini — мультимодальный разбор и широкий контекст. Cursor и кодовые среды — быстрая материализация в интерфейс и код. Плюс облако, базы данных, деплой, аналитика. <strong>Моя роль — не отойти в сторону и смотреть, как «AI всё делает», а держать целостность, цену ошибки, приоритеты и точку, где скорость не должна победить смысл.</strong></p>
 

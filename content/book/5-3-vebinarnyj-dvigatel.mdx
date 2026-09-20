@@ -258,6 +258,28 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
 .tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
 
+
+
+
+
+/* ─── BOOKVIZ: большая inline-SVG панель главы ─── */
+.bviz{margin:2.4rem 0 3rem;padding:1rem;background:var(--bg2);border:1px solid var(--br);border-radius:16px;
+  box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.bviz svg{width:100%;height:auto;display:block;border-radius:10px}
+.bviz .bv-card,.bviz .bv-row{transition:transform .38s var(--ease),filter .38s var(--ease)}
+.bviz .bv-card:hover{transform:translateY(-4px);filter:drop-shadow(0 12px 20px rgba(255,208,0,.14))}
+.bviz .bv-row:hover{transform:translateX(7px)}
+.bviz .bv-pulse{animation:bvPulse 3.6s ease-in-out infinite}
+@keyframes bvPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.bviz .bv-dash{stroke-dasharray:7 9;animation:bvDash 2.6s linear infinite}
+@keyframes bvDash{to{stroke-dashoffset:-32}}
+@media(max-width:640px){.bviz{padding:.55rem;border-radius:12px}}
+@media (prefers-reduced-motion: reduce){
+  .bviz .bv-pulse,.bviz .bv-dash{animation:none}
+  .bviz .bv-card,.bviz .bv-row{transition:none}
+  .bviz .bv-card:hover,.bviz .bv-row:hover{transform:none;filter:none}
+}
+
 </style>
 </head>
 <body>
@@ -294,6 +316,81 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 
 <article>
 <div class="wrap">
+
+<!-- BOOKVIZ-PANEL -->
+<figure class="bviz rv">
+<svg class="bviz-svg" viewBox="0 0 1600 960" role="img" aria-label="Вебинарная машина: чертёж, прогрев, техническая сборка" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bv53-p" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#131313"/><stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="bv53-g" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="920" rx="28" fill="url(#bv53-p)" stroke="#1e1e1e" stroke-width="1"/>
+  <rect x="20" y="20" width="1560" height="920" rx="28" fill="url(#bv53-g)" opacity=".6"/>
+  <rect x="80" y="66" width="282" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)" stroke-width="1"/>
+  <text x="221.0" y="94" font-family="'JetBrains Mono',monospace" font-size="20" fill="#FFD000" text-anchor="middle" letter-spacing="2">ГЛ. 5 · АВТОПИЛОТ</text>
+  <text x="80" y="196" font-family="'Unbounded',sans-serif" font-size="62" fill="#f0ede6" font-weight="800" letter-spacing="-1">ВЕБИНАРНАЯ МАШИНА</text>
+  <text x="84" y="248" font-family="'JetBrains Mono',monospace" font-size="24" fill="#7a7670" letter-spacing="1">три шага сборки · сначала живой запуск, потом автопилот</text>
+  <g class="bv-card">
+  <rect x="64" y="316" width="424" height="380" rx="20" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="90" y="358" font-family="'JetBrains Mono',monospace" font-size="18" fill="#FFD000" letter-spacing="2">ШАГ 01</text>
+  <text x="90" y="404" font-family="'Unbounded',sans-serif" font-size="24" fill="#f0ede6" font-weight="800">ЧЕРТЁЖ МАРШРУТА</text>
+  <line x1="90" y1="428" x2="462" y2="428" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="90" y="464" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">воронка — не график рассылки,</text>
+  <text x="90" y="496" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">а последовательность состояний</text>
+  <text x="90" y="528" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">для дорогого продукта —</text>
+  <text x="90" y="560" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">«Воронка-Событие»</text>
+  <text x="90" y="592" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">у события есть дата, время</text>
+  <text x="90" y="624" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">и внутренняя развязка</text>
+  <text x="90" y="668" font-family="'JetBrains Mono',monospace" font-size="16" fill="#c99700">снижает неопределённость</text>
+  </g>
+  <path class="bv-dash" d="M506,506 L570,506" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M562,498 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bv-card">
+  <rect x="588" y="316" width="424" height="380" rx="20" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="614" y="358" font-family="'JetBrains Mono',monospace" font-size="18" fill="#FFD000" letter-spacing="2">ШАГ 02</text>
+  <text x="614" y="404" font-family="'Unbounded',sans-serif" font-size="24" fill="#f0ede6" font-weight="800">СЦЕНАРИЙ ПРОГРЕВА</text>
+  <line x1="614" y1="428" x2="986" y2="428" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="614" y="464" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">01 бонус сразу после регистрации</text>
+  <text x="614" y="496" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">02 актуализация ключевой ошибки</text>
+  <text x="614" y="528" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">03 экспертиза: кейсы и разборы</text>
+  <text x="614" y="560" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">04 трансформация: образ будущего</text>
+  <text x="614" y="592" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">05 доходимость: напоминания вовремя</text>
+  <text x="614" y="624" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">— и только к своему сеансу эфира</text>
+  <text x="614" y="668" font-family="'JetBrains Mono',monospace" font-size="16" fill="#c99700">довести до комнаты в нужном состоянии</text>
+  </g>
+  <path class="bv-dash" d="M1030,506 L1094,506" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M1086,498 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="bv-card">
+  <rect x="1112" y="316" width="424" height="380" rx="20" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="1138" y="358" font-family="'JetBrains Mono',monospace" font-size="18" fill="#FFD000" letter-spacing="2">ШАГ 03</text>
+  <text x="1138" y="404" font-family="'Unbounded',sans-serif" font-size="24" fill="#f0ede6" font-weight="800">ТЕХНИЧЕСКАЯ СБОРКА</text>
+  <line x1="1138" y1="428" x2="1510" y2="428" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="1138" y="464" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">01 короткая страница регистрации</text>
+  <text x="1138" y="496" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">02 двойной захват: база + мессенджер</text>
+  <text x="1138" y="528" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">03 конструктор: задержки и ветки</text>
+  <text x="1138" y="560" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">04 CRM-память: источник и статус</text>
+  <text x="1138" y="592" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">05 персональные ссылки на эфир</text>
+  <text x="1138" y="624" font-family="'PT Serif',serif" font-size="19" fill="#a8a49b">06 сегментация по поведению после</text>
+  <text x="1138" y="668" font-family="'JetBrains Mono',monospace" font-size="16" fill="#c99700">каждый переход — точка риска</text>
+  </g>
+  <rect x="64" y="740" width="680" height="120" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="96" y="786" font-family="'Unbounded',sans-serif" font-size="26" fill="#f0ede6" font-weight="800">ЖИВОЙ ЗАПУСК</text>
+  <text x="96" y="824" font-family="'PT Serif',serif" font-size="19" fill="#7a7670">доказывает, что маршрут работает на людях</text>
+  <text x="712" y="800" font-family="'JetBrains Mono',monospace" font-size="22" fill="#FFD000" text-anchor="end">2 200 000 ₽</text>
+  <path class="bv-dash" d="M764,800 L832,800" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M824,792 l10,8 l-10,8" stroke="#FFD000" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="856" y="740" width="680" height="120" rx="18" fill="rgba(255,208,0,.07)" stroke="rgba(255,208,0,.32)" stroke-width="1"/>
+  <text x="888" y="786" font-family="'Unbounded',sans-serif" font-size="26" fill="#FFD000" font-weight="800">АВТОВЕБИНАР</text>
+  <text x="888" y="824" font-family="'PT Serif',serif" font-size="19" fill="#7a7670">тот же маршрут в автоматическом режиме</text>
+  <text x="1504" y="800" font-family="'JetBrains Mono',monospace" font-size="22" fill="#FFD000" text-anchor="end">~100 000 ₽ / нед</text>
+  <text x="80" y="918" font-family="'JetBrains Mono',monospace" font-size="18" fill="#4a463f" letter-spacing="1">автовебинар начинается не с записи, а с логики живого запуска</text>
+</svg>
+</figure>
+<!-- /BOOKVIZ-PANEL -->
 
 <div class="rv"><p class="prose-p" style="margin-top:0">Цифровой арсенал уже собран: мы понимаем, что каждое решение в системе отвечает не за «техническую функцию», а за конкретную роль в маршруте клиента. Но этого мало — любой набор даже хороших инструментов остаётся грудой деталей, пока не заставишь их работать в одном ритме. Сценарий прогрева, который на бумаге выглядит убедительно, должен превратиться в живую цепочку: регистрация, касания, напоминания, допуск, эфир, оффер, оплата, дожим, выдача доступа. Если хотя бы один переход собран плохо, система теряет силу не в момент старта, а в момент движения.</p><p class="prose-p">Соберём самую практичную модель для образовательного бизнеса и экспертных продуктов: вебинарную воронку, которая сначала продаёт в живом формате, а затем упаковывается в автопилот. <strong>Автовебинар начинается не с записи, а с правильно собранной логики живого запуска</strong> — сначала ты доказываешь, что маршрут работает на реальной аудитории, потом переводишь его в автоматический режим. Вебинарная машина особенно хороша для разбора: здесь ясно видно, как поведенческая психология спаивается с технологией — каждый этап либо снижает сопротивление, либо создаёт его. Сборка всегда начинается с трёх вещей: с чертежа, с прогрева и с технической реализации — а не наоборот. Если сначала бежать в сервисы, получается типичная рыночная ошибка: дорогая, сложная конструкция, в которой владелец через неделю боится поменять хоть одну настройку.</p></div><h2 class="prose-h2 rv">Шаг 1. Выбираем чертёж: по какому маршруту пойдёт человек</h2><p class="prose-p rv">Воронка — не график отправки сообщений, а последовательность состояний: замечает сигнал → соглашается на вход → получает подтверждения → интерес уплотняется, тревога снижается → покупка ощущается естественным продолжением. Для дорогого экспертного продукта лучше всего подходит <strong>«Воронка-Событие»</strong>: у события есть дата, время и внутренняя развязка, которые снижают неопределённость и повышают значимость касаний.</p><h2 class="prose-h2 rv">Шаг 2. Заливаем топливо: сценарий прогрева</h2><p class="prose-p rv d1">Задача прогрева — довести до вебинарной комнаты в нужном состоянии: с интересом, доверием и ощущением «пропустить эфир было бы ошибкой».</p><div class="steps rv">
 <div class="step"><div class="s-num">Шаг 01</div><div class="s-body"><div class="s-title">Сразу после регистрации</div><div class="s-text">Подтверждение + бонус: чек-лист, разбор, короткое видео. Запускается взаимность, первое касание перестаёт быть формальностью.</div></div></div>

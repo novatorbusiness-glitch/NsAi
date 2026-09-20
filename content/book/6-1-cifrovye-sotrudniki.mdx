@@ -258,6 +258,28 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 .tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#0a0a0a;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
 .tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
 
+
+
+
+
+/* ─── BOOKVIZ: большая inline-SVG панель главы ─── */
+.bviz{margin:2.4rem 0 3rem;padding:1rem;background:var(--bg2);border:1px solid var(--br);border-radius:16px;
+  box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.bviz svg{width:100%;height:auto;display:block;border-radius:10px}
+.bviz .bv-card,.bviz .bv-row{transition:transform .38s var(--ease),filter .38s var(--ease)}
+.bviz .bv-card:hover{transform:translateY(-4px);filter:drop-shadow(0 12px 20px rgba(255,208,0,.14))}
+.bviz .bv-row:hover{transform:translateX(7px)}
+.bviz .bv-pulse{animation:bvPulse 3.6s ease-in-out infinite}
+@keyframes bvPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.bviz .bv-dash{stroke-dasharray:7 9;animation:bvDash 2.6s linear infinite}
+@keyframes bvDash{to{stroke-dashoffset:-32}}
+@media(max-width:640px){.bviz{padding:.55rem;border-radius:12px}}
+@media (prefers-reduced-motion: reduce){
+  .bviz .bv-pulse,.bviz .bv-dash{animation:none}
+  .bviz .bv-card,.bviz .bv-row{transition:none}
+  .bviz .bv-card:hover,.bviz .bv-row:hover{transform:none;filter:none}
+}
+
 </style>
 </head>
 <body>
@@ -294,6 +316,103 @@ blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);fon
 
 <article>
 <div class="wrap">
+
+<!-- BOOKVIZ-PANEL -->
+<figure class="bviz rv">
+<svg class="bviz-svg" viewBox="0 0 1600 1000" role="img" aria-label="Оргсхема цифровых сотрудников и зоны их ответственности" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bv61-p" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#131313"/><stop offset="1" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <pattern id="bv61-g" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(255,208,0,.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#bv61-p)" stroke="#1e1e1e" stroke-width="1"/>
+  <rect x="20" y="20" width="1560" height="960" rx="28" fill="url(#bv61-g)" opacity=".6"/>
+  <rect x="80" y="66" width="394" height="44" rx="22" fill="rgba(255,208,0,.14)" stroke="rgba(255,208,0,.35)" stroke-width="1"/>
+  <text x="277.0" y="94" font-family="'JetBrains Mono',monospace" font-size="20" fill="#FFD000" text-anchor="middle" letter-spacing="2">ГЛ. 6 · АВТОНОМНЫЙ КОНТУР</text>
+  <text x="80" y="196" font-family="'Unbounded',sans-serif" font-size="62" fill="#f0ede6" font-weight="800" letter-spacing="-1">ОРГСХЕМА ЦИФРОВЫХ РОЛЕЙ</text>
+  <text x="84" y="248" font-family="'JetBrains Mono',monospace" font-size="24" fill="#7a7670" letter-spacing="1">агент = роль + память + инструменты + границы</text>
+  <rect x="480" y="300" width="640" height="104" rx="20" fill="rgba(255,208,0,.08)" stroke="rgba(255,208,0,.35)" stroke-width="1"/>
+  <text x="800" y="344" font-family="'Unbounded',sans-serif" font-size="28" fill="#FFD000" font-weight="800" text-anchor="middle">ЧЕЛОВЕК · АРХИТЕКТОР</text>
+  <text x="800" y="380" font-family="'JetBrains Mono',monospace" font-size="17" fill="#a8a49b" text-anchor="middle">цель · критерии · точка эскалации</text>
+  <line x1="800" y1="404" x2="800" y2="452" stroke="rgba(255,208,0,.4)" stroke-width="2"/>
+  <rect x="60" y="452" width="1480" height="72" rx="16" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="92" y="496" font-family="'JetBrains Mono',monospace" font-size="19" fill="#FFD000" letter-spacing="1.5">ОБЩАЯ ПАМЯТЬ ПРОЕКТА · OBSIDIAN</text>
+  <text x="1508" y="496" font-family="'PT Serif',serif" font-size="19" fill="#7a7670" text-anchor="end">решения, правила, язык и границы — одна проектная истина</text>
+  <line x1="154" y1="524" x2="154" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="36" y="596" width="236" height="246" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="54" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#f0ede6" font-weight="800">АНАЛИТИК</text>
+  <text x="54" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">собирает данные,</text>
+  <text x="54" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">считает и сверяет</text>
+  <text x="54" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">с гипотезой</text>
+  <rect x="54" y="766" width="96" height="28" rx="14" fill="rgba(255,208,0,.12)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="102.0" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFD000" text-anchor="middle" letter-spacing="1">ЛОКАЛЬНО</text>
+  <text x="54" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: низкая</text>
+  </g>
+  <line x1="412" y1="524" x2="412" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="294" y="596" width="236" height="246" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="312" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#f0ede6" font-weight="800">КОПИРАЙТЕР</text>
+  <text x="312" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">тексты внутри</text>
+  <text x="312" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">голоса бренда</text>
+  <text x="312" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">и смысловой рамки</text>
+  <rect x="312" y="766" width="96" height="28" rx="14" fill="rgba(255,208,0,.12)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="360.0" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFD000" text-anchor="middle" letter-spacing="1">ЛОКАЛЬНО</text>
+  <text x="312" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: низкая</text>
+  </g>
+  <line x1="670" y1="524" x2="670" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="552" y="596" width="236" height="246" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="570" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#f0ede6" font-weight="800">РЕДАКТОР</text>
+  <text x="570" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">режет лишнее,</text>
+  <text x="570" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">держит ритм</text>
+  <text x="570" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">и терминологию</text>
+  <rect x="570" y="766" width="96" height="28" rx="14" fill="rgba(255,208,0,.12)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="618.0" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFD000" text-anchor="middle" letter-spacing="1">ЛОКАЛЬНО</text>
+  <text x="570" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: низкая</text>
+  </g>
+  <line x1="928" y1="524" x2="928" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="810" y="596" width="236" height="246" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="828" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#f0ede6" font-weight="800">ДИЗАЙНЕР</text>
+  <text x="828" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">визуальный язык,</text>
+  <text x="828" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">ритм блоков,</text>
+  <text x="828" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">интерфейс</text>
+  <rect x="828" y="766" width="96" height="28" rx="14" fill="rgba(255,208,0,.12)" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="876.0" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#FFD000" text-anchor="middle" letter-spacing="1">ЛОКАЛЬНО</text>
+  <text x="828" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: средняя</text>
+  </g>
+  <line x1="1186" y1="524" x2="1186" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="1068" y="596" width="236" height="246" rx="18" fill="#181818" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="1086" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#FFD000" font-weight="800">РАЗРАБОТЧИК</text>
+  <text x="1086" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">собирает код</text>
+  <text x="1086" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">по утверждённой</text>
+  <text x="1086" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">архитектуре</text>
+  <rect x="1086" y="766" width="158" height="28" rx="14" fill="rgba(200,90,74,.14)" stroke="rgba(200,90,74,.4)" stroke-width="1"/>
+  <text x="1165.0" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#c85a4a" text-anchor="middle" letter-spacing="1">ПО СОГЛАСОВАНИЮ</text>
+  <text x="1086" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: высокая</text>
+  </g>
+  <line x1="1444" y1="524" x2="1444" y2="596" stroke="rgba(255,208,0,.18)" stroke-width="2"/>
+  <g class="bv-card">
+  <rect x="1326" y="596" width="236" height="246" rx="18" fill="#181818" stroke="rgba(255,208,0,.3)" stroke-width="1"/>
+  <text x="1344" y="640" font-family="'Unbounded',sans-serif" font-size="17" fill="#FFD000" font-weight="800">ТЕХСПЕЦИАЛИСТ</text>
+  <text x="1344" y="678" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">интеграции,</text>
+  <text x="1344" y="702" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">доступы, деплой,</text>
+  <text x="1344" y="726" font-family="'PT Serif',serif" font-size="16" fill="#7a7670">боевые данные</text>
+  <rect x="1344" y="766" width="105" height="28" rx="14" fill="rgba(200,90,74,.14)" stroke="rgba(200,90,74,.4)" stroke-width="1"/>
+  <text x="1396.5" y="785" font-family="'JetBrains Mono',monospace" font-size="13" fill="#c85a4a" text-anchor="middle" letter-spacing="1">ЭСКАЛАЦИЯ</text>
+  <text x="1344" y="822" font-family="'JetBrains Mono',monospace" font-size="13" fill="#7a7670">цена ошибки: высокая</text>
+  </g>
+  <rect x="60" y="872" width="1480" height="70" rx="16" fill="rgba(255,208,0,.06)" stroke="rgba(255,208,0,.26)" stroke-width="1"/>
+  <text x="800" y="914" font-family="'JetBrains Mono',monospace" font-size="20" fill="#f0ede6" text-anchor="middle" letter-spacing="1">ПРАВО НА ДЕЙСТВИЕ = КОНТЕКСТ × ЯСНОСТЬ РОЛИ × СТРОГОСТЬ ГРАНИЦ ÷ ЦЕНА ОШИБКИ</text>
+  <text x="80" y="968" font-family="'JetBrains Mono',monospace" font-size="18" fill="#4a463f" letter-spacing="1">агент подключается к порядку — к хаосу он подключаться не должен</text>
+</svg>
+</figure>
+<!-- /BOOKVIZ-PANEL -->
 
 <div class="rv"><p class="prose-p" style="margin-top:0">К этому моменту мы уже много раз касались AI с разных сторон: в первых главах — как инструмента исследования аудитории и сборки смыслов, в контенте — как ускорителя производства, в трафике — как усилителя креативного цикла, а в пятой главе — как слоя, который помогает воронке не просто отвечать, а поддерживать живую коммуникацию. Но всё это было только подготовкой. До сих пор AI в нашей логике в основном усиливал уже существующую архитектуру — помогал думать быстрее, писать быстрее, отвечать быстрее, оставаясь сильным инструментом внутри старой модели работы.</p><p class="prose-p">Сейчас меняется уже не скорость отдельных действий, а сама рамка работы. AI перестаёт быть только помощником и начинает становиться операционной единицей: он уже не просто генерирует текст по запросу, а удерживает контекст задачи, работает внутри роли, опирается на память, использует инструменты, принимает локальные решения и доводит работу до результата. Это уже не просто «умный чат», а форма цифрового сотрудника — пока ещё ограниченная, но уже рабочая.</p></div><blockquote class="quote rv d1">Для меня это был не футурологический спор, а внутренний факт. В какой-то момент я понял, что по-старому работать уже не могу — не потому, что люди стали не нужны, а потому, что сама конструкция классического агентства начала выглядеть слишком тяжёлой для новой реальности. Старую модель я в итоге закрыл, а долю передал партнёру из-за смены эпохи.<span class="q-src">— Илья Новицкий</span></blockquote><div class="rv d2"><p class="prose-p">Когда рядом с тобой может работать не один подрядчик на отдельную функцию, а целый контур цифровых исполнителей в общем контексте, ты уже иначе смотришь на скорость, стоимость, качество и саму архитектуру бизнеса. В этой главе речь пойдёт именно об этом: не о «нейросетях вообще» и не о приёмах для ускорения рутины, а о цифровых сотрудниках, об агентной логике и о том, как человек из исполнителя постепенно превращается в архитектора автономного контура.</p></div><hr class="div rv"><div class="rv"><p class="prose-p">Когда рынок говорит об AI, он чаще всего имеет в виду чат: окно переписки, поле ввода, ответ. Это полезный режим, но по природе ограниченный — чат живёт в логике разового когнитивного акта: пришёл, сформулировал, получил, ушёл. AI-агент устроен иначе: <strong>это искусственный исполнитель, помещённый в конкретную роль, снабжённый памятью, контекстом, инструментами, рамками поведения и правом совершать ограниченные действия внутри своей зоны ответственности</strong>. Чат — интеллект без устойчивой должности. Агент — интеллект, которому выдали должность, контекст и право на следующий шаг.</p></div><h2 class="prose-h2 rv">Почему это меняет саму природу бизнеса</h2><p class="prose-p rv d1">Мозг — не машина бесконечного внимания, он всё время экономит ресурс. С точки зрения predictive coding он сжимает сложность в удобные модели — поэтому нам так тяжело держать десятки контекстов одновременно: рабочая память перегружается, внимание распадается. <strong>Даже сильный человек быстро становится бутылочным горлышком собственной системы</strong>, особенно если он одновременно стратег, редактор, креатор, аналитик и постановщик задач. AI-агенты позволяют вынести значимую часть когнитивной нагрузки во внешний слой — ты строишь внешний разумовой контур, который удерживает контекст и не теряет нить проекта.</p><h2 class="prose-h2 rv">Почему просто чат с ИИ — ещё не агентная система</h2><p class="prose-p rv d1">Человеку кажется: если он пользуется ChatGPT или Claude, он уже работает с агентами. Чаще всего это не так. Разовому чату не хватает четырёх критически важных свойств цифрового сотрудника.</p><div class="cards rv">
 <div class="card"><div class="c-num">01</div><div class="c-title">Устойчивая память</div><div class="c-text">У чата нет операционной памяти проекта — он видит только то, что ты объяснил в текущем окне.</div></div>
