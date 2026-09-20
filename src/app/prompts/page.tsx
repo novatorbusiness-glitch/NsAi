@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import PromptsCatalog from "@/components/pages/PromptsCatalog";
+import ProtectedStub from "@/components/pages/ProtectedStub";
 
 export const metadata: Metadata = {
-	title: "111 промптов, готовых к работе",
-	description:
-		"Берите и применяйте: 111 промптов из рабочей базы агентства — продажи, маркетинг, контент, разработка, финансы. Поиск и копирование в один клик.",
+	title: "Промпты NCAi — доступ через бота",
+	description: "Готовые промпты NCAi выдаются персонально через бота. Открытого каталога на сайте нет.",
 	alternates: { canonical: "/prompts" },
-	openGraph: {
-		type: "website",
-		title: "NCAi · книга промптов",
-		description: "111 готовых промптов из базы NCAi: воронки, креативы, доверие, AI-агенты, разработка. Каталог по категориям, поиск и копирование.",
-		url: "https://ilya-novitsky.ru/prompts",
-		images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
-	},
+	robots: { index: false, follow: false },
 };
 
 export default function Page() {
-	return <PromptsCatalog />;
+	return (
+		<ProtectedStub
+			title="Промпты NCAi"
+			description={
+				<>
+					База готовых промптов агентства — закрытый материал.
+					Выдаётся персонально через бота NCAi по одноразовой ссылке.
+				</>
+			}
+		/>
+	);
 }

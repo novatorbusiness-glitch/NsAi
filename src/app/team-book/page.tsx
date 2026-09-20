@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import PasswordGate from "@/components/pages/PasswordGate";
+import ProtectedStub from "@/components/pages/ProtectedStub";
 
 export const metadata: Metadata = {
-	title: "NCAi · команда под капотом",
-	description: "Закрытый раздел NCAi. Доступ по паролю.",
+	title: "Команда под капотом — доступ через бота",
+	description: "Книга команды NCAi — закрытый материал, выдаётся через бота NCAi.",
 	alternates: { canonical: "/team-book" },
 	robots: { index: false, follow: false },
 };
 
 export default function Page() {
-	// TeamBook рендерится ТОЛЬКО на клиенте после ввода пароля
-	// (dynamic ssr:false) — данные сотрудников и промптов не попадают в статический HTML.
-	return <PasswordGate kind="team" />;
+	return (
+		<ProtectedStub
+			title="Команда под капотом"
+			description={
+				<>
+					Книга команды NCAi (сотрудники, промпты, механика работы) —
+					закрытый материал. Выдаётся персонально через бота NCAi.
+				</>
+			}
+		/>
+	);
 }
