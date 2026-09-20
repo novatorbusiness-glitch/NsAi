@@ -178,8 +178,8 @@ export const PANEL_HTML = `<!-- PANEL PREVIEW · как выглядит про�
 export const SCREENS_HTML = `<!-- СКРИНЫ · реальный интерфейс системы (не макет, не сток) -->
 <section id="screens" class="sec-light">
   <div class="w">
-    <span class="lb rv">Скрины · живая система</span>
-    <h2 class="sh2 rv d1">Пять живых экранов:<br>деньги, команда, задачи, аналитика, отчёт</h2>
+    <span class="lb rv">Так это выглядит у клиента</span>
+    <h2 class="sh2 rv d1">Не макеты —<br>снимки работающей системы</h2>
     <p class="sl rv d2">Реальные скрины рабочего кабинета NCAi: пульт, команда, доска задач, аналитика и отчёт. Снято с живой системы — не макет.</p>
     <div class="screens">
       <figure class="scr rv d1">
@@ -417,7 +417,7 @@ export const STEPS_HTML = `<!-- 5 · МЕХАНИЗМ: РАСПАКОВКА -->
   <div class="w">
     <div class="wlay">
       <div>
-        <span class="lb rv">Распаковка · как это устроено</span>
+        <span class="lb rv">Что происходит после оплаты</span>
         <h2 class="sh2 rv d1">Платите один раз —<br>агентство работает уже сегодня</h2>
         <p class="sl rv d2" style="margin-bottom:0">Не абстрактный «процесс внедрения» на месяцы. Четыре шага, у каждого — результат, который видно, а не который надо принять на веру. Нажмите на шаг.</p>
         <div class="funnelw rv d3">
@@ -683,8 +683,8 @@ export const VS_AI_HTML = `<!-- 3 · ЧЕМ ОТЛИЧАЕТСЯ ОТ Claude/GPT
 export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система принимает, проверяет и доводит задачи -->
 <section id="under-hood" style="background:var(--bg2)">
   <div class="w">
-    <span class="lb rv">Движок</span>
-    <h2 class="sh2 rv d1">Не «доступ к нейросети».<br>Настоящий движок приёмки и проверки.</h2>
+    <span class="lb rv">Почему результату можно верить</span>
+    <h2 class="sh2 rv d1">«Сдано» здесь значит проверено,<br>а не написано</h2>
     <p class="sl rv d2">Под капотом — не чат с моделью, а конвейер: задача проходит приёмку, двойную проверку и только потом закрывается. Поэтому «сдано» в NCAi означает «проверено», а не «написано».</p>
     <div class="vz vz-pipe rv d2" role="img" aria-label="Конвейер приёмки задачи: согласование, исполнение, проверка двумя агентами, директор, закрыто">
       <div class="vz-head">
@@ -738,8 +738,8 @@ export const UNDER_HOOD_HTML = `<!-- ДВИЖОК · как система пр�
 export const FEATURES_HTML = `<!-- 8 · ФИЧИ ПАНЕЛИ -->
 <section id="features" class="sec-light">
   <div class="w">
-    <span class="lb rv">Фичи панели</span>
-    <h2 class="sh2 rv d1">Шесть вкладок панели —<br>работают с первого дня</h2>
+    <span class="lb rv">Что видно каждый день</span>
+    <h2 class="sh2 rv d1">Видно, что сделано,<br>кем и во сколько обошлось</h2>
     <p class="sl rv d2">Не обещания — конкретные вкладки рабочего кабинета, которые работают с первого дня.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Доска задач</div><p class="ntx">Номер, срок, исполнитель, статус. Закрытой задача становится только после вашего «Утвердил» — статус сотрудника «готово» до этого лишь гипотеза.</p></div>
@@ -1103,9 +1103,9 @@ export const ROI_HTML_EN = `<!-- ROI -->
 export const REALWORK_HTML_EN = `<!-- HOW IT ACTUALLY WORKS: NICHE CAROUSEL -->
 <section id="realwork" class="sec-light">
   <div class="w">
-    <span class="lb rv">How it actually works</span>
-    <h2 class="sh2 rv d1">Ready-made tasks for 4 niches:<br>beauty, services, sales, content</h2>
-    <p class="sl rv d2">Every niche gets its own template: departments, roles and the first tasks that genuinely get set in week one. Not "imagine if…" — this is already live in the panel right after unboxing.</p>
+    <span class="lb rv">What changes in your niche</span>
+    <h2 class="sh2 rv d1">What actually gets closed<br>in the first week</h2>
+    <p class="sl rv d2">You set tasks in chat with the director — he breaks them into subtasks and hands them to roles. Below: what specifically comes off your plate in beauty, services, sales and content, and what you stop paying a contractor for. Not "imagine if…" — this is ready right after unboxing.</p>
     <div class="ncw rv d2">
       <button class="nc-arr nc-prev" id="ncPrev" aria-label="Previous niche">‹</button>
       <div class="ncarousel" id="ncarousel">
@@ -1172,7 +1172,7 @@ export const STEPS_HTML_EN = `<!-- MECHANISM: UNBOXING -->
   <div class="w">
     <div class="wlay">
       <div>
-        <span class="lb rv">Unboxing · how it works</span>
+        <span class="lb rv">What happens after you pay</span>
         <h2 class="sh2 rv d1">Pay once —<br>the agency works today</h2>
         <p class="sl rv d2" style="margin-bottom:0">Not an abstract months-long "onboarding process." Four steps, each with a result you can see — not one you have to take on faith. Click a step.</p>
         <div class="funnelw rv d3">
@@ -1438,8 +1438,8 @@ export const VS_AI_HTML_EN = `<!-- HOW IT'S DIFFERENT FROM Claude/GPT/Codex -->
 export const UNDER_HOOD_HTML_EN = `<!-- THE ENGINE -->
 <section id="under-hood" style="background:var(--bg2)">
   <div class="w">
-    <span class="lb rv">The engine</span>
-    <h2 class="sh2 rv d1">Not "access to a neural network."<br>A real intake and review engine.</h2>
+    <span class="lb rv">Why you can trust the result</span>
+    <h2 class="sh2 rv d1">Here "done" means checked,<br>not just written</h2>
     <p class="sl rv d2">Under the hood isn't a chat with a model, it's a pipeline: a task goes through intake, a double review, and only then gets closed. That's why "done" in NCAi means "checked," not just "written."</p>
     <div class="vz vz-pipe rv d2" role="img" aria-label="Task intake pipeline: approval, execution, review by two agents, director, closed">
       <div class="vz-head">
@@ -1493,8 +1493,8 @@ export const UNDER_HOOD_HTML_EN = `<!-- THE ENGINE -->
 export const FEATURES_HTML_EN = `<!-- PANEL FEATURES -->
 <section id="features" class="sec-light">
   <div class="w">
-    <span class="lb rv">Panel features</span>
-    <h2 class="sh2 rv d1">Six panel tabs —<br>working from day one</h2>
+    <span class="lb rv">What you see every day</span>
+    <h2 class="sh2 rv d1">You see what got done,<br>by whom and what it cost</h2>
     <p class="sl rv d2">Not promises — actual tabs in the workspace, working from day one.</p>
     <div class="ngrid">
       <div class="ncard rv"><div class="nbadge">01</div><div class="ntit">Task board</div><p class="ntx">Number, deadline, assignee, status. A task closes only after your "Approved" — an employee's "done" status is just a claim until then.</p></div>
