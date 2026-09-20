@@ -191,6 +191,43 @@ export const HIRE_HTML = `<!-- HIRE -->
           <div class="port-week-x">Остаётся работающая система и сотрудник, который умеет ей управлять. Плюс сравнение с точкой отсчёта первой недели.</div>
         </div>
       </div>
+          <div class="vz-hand rv d2">
+      <div class="vz-hand-bars">
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:133px;--yours:37px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Неделя 1</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:99px;--yours:71px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Недели 2–3</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:59px;--yours:111px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Неделя 4</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:25px;--yours:145px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">На выходе</div>
+        </div>
+      </div>
+      <div class="vz-hand-key">
+        <span><i class="m"></i>делаю я</span>
+        <span><i class="y"></i>ведёт ваш человек</span>
+      </div>
+      <p class="vz-hand-note">Так устроен месяц по замыслу: к концу у руля стоит ваш сотрудник, а не подрядчик. Это схема работы, а не измеренная статистика — клиентов на этом продукте пока не было, и выдавать рисунок за результат я не стану.</p>
+    </div>
       <div class="port-metrics">
         <div class="port-metrics-h">Чем меряем результат</div>
         <div class="port-mlist">
@@ -509,6 +546,43 @@ export const HIRE_HTML_EN = `<!-- HIRE -->
           <div class="port-week-x">A working system plus an employee who can operate it — and a comparison against week one's baseline.</div>
         </div>
       </div>
+          <div class="vz-hand rv d2">
+      <div class="vz-hand-bars">
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:133px;--yours:37px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Week 1</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:99px;--yours:71px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Weeks 2–3</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:59px;--yours:111px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">Week 4</div>
+        </div>
+        <div class="vz-hand-col">
+          <div class="vz-hand-stack" style="--mine:25px;--yours:145px">
+            <div class="vz-hand-mine"></div>
+            <div class="vz-hand-yours"></div>
+          </div>
+          <div class="vz-hand-w">After</div>
+        </div>
+      </div>
+      <div class="vz-hand-key">
+        <span><i class="m"></i>done by me</span>
+        <span><i class="y"></i>run by your person</span>
+      </div>
+      <p class="vz-hand-note">This is how the month is designed: by the end your employee is at the wheel, not a contractor. It's the shape of the work, not measured statistics — there have been no clients on this product yet, and I won't pass a drawing off as a result.</p>
+    </div>
       <div class="port-metrics">
         <div class="port-metrics-h">How we measure the result</div>
         <div class="port-mlist">
