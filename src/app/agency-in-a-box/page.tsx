@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import PasswordGate from "@/components/pages/PasswordGate";
+import ProtectedStub from "@/components/pages/ProtectedStub";
 
 export const metadata: Metadata = {
-	title: "Агентство в коробке — методология NCAi | NcAi",
-	description: "Закрытый раздел NCAi. Доступ по паролю.",
-	alternates: {
-		canonical: "/agency-in-a-box",
-	},
+	title: "Агентство в коробке — доступ через бота",
+	description: "Методология «Агентство в коробке» — закрытый материал, выдаётся через бота NCAi.",
+	alternates: { canonical: "/agency-in-a-box" },
 	robots: { index: false, follow: false },
 };
 
-export default function AgencyInABoxPage() {
-	// Контент (.md → React) рендерится ТОЛЬКО на клиенте после ввода пароля
-	// (см. PasswordGate / AgencyInABoxContent с dynamic ssr:false).
-	// В статический HTML попадает только экран ввода пароля.
-	return <PasswordGate kind="agency" />;
+export default function Page() {
+	return (
+		<ProtectedStub
+			title="Агентство в коробке"
+			description={
+				<>
+					Методология «Агентство в коробке» — закрытый материал.
+					Выдаётся персонально через бота NCAi по одноразовой ссылке.
+				</>
+			}
+		/>
+	);
 }
