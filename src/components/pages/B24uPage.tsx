@@ -243,18 +243,28 @@ export default function B24uPage() {
 					</div>
 				</section>
 
-				{/* ── КАК РАБОТАЕТ ── */}
+				{/* ── КАК РАБОТАЕТ ──
+				    Тот же конвейер (.vz-track), что и на /raspakovka — концепт
+				    №5, три узла вместо пяти. Анимации (пульс на рельсе, свечение
+				    узла) чисто на CSS: страница без JS, поэтому без .rv — здесь
+				    просто нет скрипта, который добавит класс .on. */}
 				<section className="b24u-sec b24u-sec-solution">
 					<div className="b24u-inner">
 						<h2 className="b24u-h2">Подключение за 15 минут: скан сайта → настройка → продажи</h2>
-						<div className="b24u-steps">
-							{STEPS.map((s) => (
-								<div key={s.n} className="b24u-step">
-									<div className="b24u-step-n">{s.n}</div>
-									<h3 className="b24u-card-t">{s.t}</h3>
-									<p className="b24u-card-d">{s.d}</p>
-								</div>
-							))}
+						<div className="vz vz-pipe" role="img" aria-label="Подключение B24U: сканирование сайта, настройка под нишу, запуск продаж — три шага">
+							<ol className="vz-track vz-track-3">
+								<svg className="vz-rail" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+									<line className="vz-rail-line" x1="8" y1="1" x2="992" y2="1" />
+									<rect className="vz-rail-pulse" x="8" y="0" width="110" height="2" rx="1" />
+								</svg>
+								{STEPS.map((s, i) => (
+									<li key={s.n} className="vz-step" style={{ ["--i" as string]: i }}>
+										<span className="vz-step-n">{s.n}</span>
+										<span className="vz-step-t">{s.t}</span>
+										<span className="vz-step-x">{s.d}</span>
+									</li>
+								))}
+							</ol>
 						</div>
 					</div>
 				</section>
