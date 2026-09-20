@@ -563,30 +563,32 @@
 }
 
 .vz-fn-band {
-	stroke: rgba(150, 110, 0, 0.5);
+	stroke: rgba(138, 100, 0, 0.62);
 	stroke-width: 1.5;
 }
 
-/* Поток сужается — насыщенность растёт к низу */
+/* Поток сужается — насыщенность растёт к низу.
+   Заливки подобраны под светлую полосу #FAFAF8: при alpha 0.16
+   верхняя лента давала контраст 1.06 к фону, то есть не читалась. */
 .vz-fn-b1 {
-	fill: rgba(255, 208, 0, 0.16);
+	fill: rgba(255, 205, 0, 0.34);
 }
 
 .vz-fn-b2 {
-	fill: rgba(255, 208, 0, 0.28);
+	fill: rgba(255, 200, 0, 0.52);
 }
 
 .vz-fn-b3 {
-	fill: rgba(255, 208, 0, 0.45);
+	fill: rgba(255, 192, 0, 0.72);
 }
 
 .vz-fn-b4 {
-	fill: rgba(255, 196, 0, 0.72);
+	fill: rgba(248, 178, 0, 0.96);
 }
 
 /* Частицы идут сверху вниз; часть гаснет по пути — это и есть отсев */
 .vz-fn-dot {
-	fill: rgba(60, 50, 10, 0.55);
+	fill: rgba(45, 37, 5, 0.7);
 	animation: vz-fn-fall 5.5s linear infinite;
 }
 
@@ -648,6 +650,9 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	/* На широком экране строка иначе растягивается на всю колонку
+	   и перестаёт читаться — держим меру около 70 знаков. */
+	max-width: 70ch;
 	display: flex;
 	flex-direction: column;
 	gap: 1.1rem;
@@ -681,6 +686,7 @@
 }
 
 .vz-fn-note {
+	max-width: 70ch;
 	margin-top: 1.4rem;
 	padding-top: 1.1rem;
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
