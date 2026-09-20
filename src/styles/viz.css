@@ -393,6 +393,173 @@
 	}
 }
 
+/* ── Воронка продуктов (главная · секция «Чем занимаюсь») ──────────────
+   Концепт №1: поток сужается, часть частиц отсеивается по пути.
+   Здесь это не абстракция — ступени подписаны реальными продуктами,
+   от бесплатной книги до месяца работы.
+
+   Секция светлая (.sec-light), поэтому палитра отдельная: тёмный текст
+   на кремовом, золото как акцент. Подписи — HTML, а не текст внутри SVG:
+   на мобильном SVG-подписи становятся нечитаемыми при сжатии. */
+
+.vz-funnel {
+	display: grid;
+	grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+	gap: 2.5rem;
+	align-items: center;
+	margin-top: 2.75rem;
+}
+
+@media (max-width: 860px) {
+	.vz-funnel {
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+	}
+}
+
+.vz-funnel-viz svg {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.vz-fn-band {
+	stroke: rgba(150, 110, 0, 0.5);
+	stroke-width: 1.5;
+}
+
+/* Поток сужается — насыщенность растёт к низу */
+.vz-fn-b1 {
+	fill: rgba(255, 208, 0, 0.16);
+}
+
+.vz-fn-b2 {
+	fill: rgba(255, 208, 0, 0.28);
+}
+
+.vz-fn-b3 {
+	fill: rgba(255, 208, 0, 0.45);
+}
+
+.vz-fn-b4 {
+	fill: rgba(255, 196, 0, 0.72);
+}
+
+/* Частицы идут сверху вниз; часть гаснет по пути — это и есть отсев */
+.vz-fn-dot {
+	fill: rgba(60, 50, 10, 0.55);
+	animation: vz-fn-fall 5.5s linear infinite;
+}
+
+@keyframes vz-fn-fall {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+
+	8% {
+		opacity: 1;
+	}
+
+	55% {
+		opacity: 1;
+	}
+
+	78% {
+		opacity: 0.25;
+	}
+
+	100% {
+		transform: translateY(250px);
+		opacity: 0;
+	}
+}
+
+/* Отсеивающиеся — гаснут раньше и не доходят до низа */
+.vz-fn-dot.is-lost {
+	animation-name: vz-fn-lost;
+}
+
+@keyframes vz-fn-lost {
+	0% {
+		transform: translateY(0);
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 0.9;
+	}
+
+	42% {
+		opacity: 0.5;
+	}
+
+	58% {
+		transform: translateY(120px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(120px);
+		opacity: 0;
+	}
+}
+
+.vz-fn-steps {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+
+.vz-fn-step {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 0.9rem;
+	align-items: baseline;
+}
+
+.vz-fn-step b {
+	font-family: var(--fm);
+	font-size: 0.62rem;
+	letter-spacing: 0.1em;
+	color: #a37900;
+	white-space: nowrap;
+}
+
+.vz-fn-step span {
+	font-size: 0.95rem;
+	line-height: 1.55;
+	color: #2e2e2c;
+}
+
+.vz-fn-step span i {
+	font-style: normal;
+	font-weight: 700;
+	color: #111;
+}
+
+.vz-fn-note {
+	margin-top: 1.4rem;
+	padding-top: 1.1rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	line-height: 1.6;
+	color: #6b675f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.vz-fn-dot,
+	.vz-fn-dot.is-lost {
+		animation: none;
+		opacity: 0.5;
+	}
+}
+
 /* ── Карта развития (/o-proekte) ───────────────────────────────────────
    Траектория проекта: опыт → старт разработки → что уже есть → куда идём.
    Даты старта подтверждены записями в базе, а не заявлены — поэтому

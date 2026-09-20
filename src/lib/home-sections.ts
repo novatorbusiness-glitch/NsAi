@@ -212,6 +212,33 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
   <div class="wrap">
     <span class="sec-tag rv">Чем занимаюсь</span>
     <h2 class="sec-h2 rv d1">От бесплатной книги —<br>до месяца работы вместе</h2>
+    <div class="vz-funnel rv d2">
+      <div class="vz-funnel-viz" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+        <path class="vz-fn-band vz-fn-b1" d="M10,10 L390,10 L345,80 L55,80 Z"/>
+        <path class="vz-fn-band vz-fn-b2" d="M55,88 L345,88 L295,150 L105,150 Z"/>
+        <path class="vz-fn-band vz-fn-b3" d="M105,158 L295,158 L250,215 L150,215 Z"/>
+        <path class="vz-fn-band vz-fn-b4" d="M150,223 L250,223 L225,280 L175,280 Z"/>
+        <circle class="vz-fn-dot is-lost" cx="46" cy="22" r="3.2" style="animation-delay:0s"/>
+        <circle class="vz-fn-dot" cx="92" cy="22" r="3.2" style="animation-delay:0.7s"/>
+        <circle class="vz-fn-dot is-lost" cx="138" cy="22" r="3.2" style="animation-delay:1.4s"/>
+        <circle class="vz-fn-dot" cx="184" cy="22" r="3.2" style="animation-delay:0.35s"/>
+        <circle class="vz-fn-dot" cx="230" cy="22" r="3.2" style="animation-delay:1.1s"/>
+        <circle class="vz-fn-dot is-lost" cx="276" cy="22" r="3.2" style="animation-delay:2.1s"/>
+        <circle class="vz-fn-dot" cx="322" cy="22" r="3.2" style="animation-delay:1.75s"/>
+        <circle class="vz-fn-dot is-lost" cx="68" cy="22" r="3.2" style="animation-delay:2.6s"/>
+        <circle class="vz-fn-dot" cx="210" cy="22" r="3.2" style="animation-delay:3.2s"/>
+        <circle class="vz-fn-dot is-lost" cx="300" cy="22" r="3.2" style="animation-delay:2.9s"/>
+        </svg>
+      </div>
+      <ol class="vz-fn-steps">
+        <li class="vz-fn-step"><b>БЕСПЛАТНО</b><span><i>Книга «Нейро-Воронка».</i> 6 глав и 30 подглав о том, как воронка приносит заявки. Читается прямо на сайте.</span></li>
+        <li class="vz-fn-step"><b>0 ₽</b><span><i>Демонстрация на вашей задаче.</i> Беру реальную задачу и отдаю готовые артефакты за 1–3 дня. Не зашло — расходимся.</span></li>
+        <li class="vz-fn-step"><b>ОТ 200 000 ₽</b><span><i>Месяц работы вместе.</i> Захожу в проект с методом NCAi, обучаю вашего человека и работаю рядом с ним.</span></li>
+        <li class="vz-fn-step"><b>ДАЛЬШЕ</b><span><i>Следующий цикл — по желанию.</i> У руля остаётся ваш сотрудник, а не подрядчик.</span></li>
+      </ol>
+    </div>
+    <p class="vz-fn-note rv d2">Поток сужается на каждом шаге — так и должно быть. Платит не тот, кого уговорили, а тот, кому подошёл результат.</p>
     <div class="products-grid">
 
       <a href="/raspakovka" class="prod-card c1 rv">
@@ -728,6 +755,33 @@ export const PRODUCTS_HTML_EN = `<!-- PRODUCTS -->
   <div class="wrap">
     <span class="sec-tag rv">What I do</span>
     <h2 class="sec-h2 rv d1">From a free book —<br>to a month of work together</h2>
+    <div class="vz-funnel rv d2">
+      <div class="vz-funnel-viz" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+        <path class="vz-fn-band vz-fn-b1" d="M10,10 L390,10 L345,80 L55,80 Z"/>
+        <path class="vz-fn-band vz-fn-b2" d="M55,88 L345,88 L295,150 L105,150 Z"/>
+        <path class="vz-fn-band vz-fn-b3" d="M105,158 L295,158 L250,215 L150,215 Z"/>
+        <path class="vz-fn-band vz-fn-b4" d="M150,223 L250,223 L225,280 L175,280 Z"/>
+        <circle class="vz-fn-dot is-lost" cx="46" cy="22" r="3.2" style="animation-delay:0s"/>
+        <circle class="vz-fn-dot" cx="92" cy="22" r="3.2" style="animation-delay:0.7s"/>
+        <circle class="vz-fn-dot is-lost" cx="138" cy="22" r="3.2" style="animation-delay:1.4s"/>
+        <circle class="vz-fn-dot" cx="184" cy="22" r="3.2" style="animation-delay:0.35s"/>
+        <circle class="vz-fn-dot" cx="230" cy="22" r="3.2" style="animation-delay:1.1s"/>
+        <circle class="vz-fn-dot is-lost" cx="276" cy="22" r="3.2" style="animation-delay:2.1s"/>
+        <circle class="vz-fn-dot" cx="322" cy="22" r="3.2" style="animation-delay:1.75s"/>
+        <circle class="vz-fn-dot is-lost" cx="68" cy="22" r="3.2" style="animation-delay:2.6s"/>
+        <circle class="vz-fn-dot" cx="210" cy="22" r="3.2" style="animation-delay:3.2s"/>
+        <circle class="vz-fn-dot is-lost" cx="300" cy="22" r="3.2" style="animation-delay:2.9s"/>
+        </svg>
+      </div>
+      <ol class="vz-fn-steps">
+        <li class="vz-fn-step"><b>FREE</b><span><i>The Neuro-Funnel book.</i> 6 chapters and 30 subchapters on how a funnel actually brings in leads. Read it right here.</span></li>
+        <li class="vz-fn-step"><b>$0</b><span><i>A demonstration on your task.</i> I take a real task and hand back finished artifacts in 1–3 days. If it doesn't land, we part ways.</span></li>
+        <li class="vz-fn-step"><b>FROM 200,000 ₽</b><span><i>A month of work together.</i> I join the project with NCAi's method, train your person and work alongside them.</span></li>
+        <li class="vz-fn-step"><b>AFTER</b><span><i>Another cycle, optional.</i> Your employee stays at the wheel, not a contractor.</span></li>
+      </ol>
+    </div>
+    <p class="vz-fn-note rv d2">The flow narrows at every step — that's how it should be. The person who pays isn't the one who was talked into it, but the one the result fit.</p>
     <div class="products-grid">
 
       <a href="/raspakovka" class="prod-card c1 rv">
