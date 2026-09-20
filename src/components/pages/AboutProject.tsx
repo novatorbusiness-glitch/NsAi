@@ -86,7 +86,7 @@ export default function AboutProject() {
 			{/* Направления */}
 			<div className="w" style={{ paddingTop: "4rem" }}>
 				<h2 className="legal-h2" style={{ borderTop: "none", paddingTop: 0 }}>
-					{ru ? "Три направления" : "Three directions"}
+					{ru ? "Откуда берётся результат" : "Where the result comes from"}
 				</h2>
 				<div className="about-blocks">
 					{blocks.map((b, i) => (
@@ -98,7 +98,7 @@ export default function AboutProject() {
 					))}
 				</div>
 
-				<h2 className="legal-h2">{ru ? "Куда идём" : "Where this is going"}</h2>
+				<h2 className="legal-h2">{ru ? "Что уже работает, а что ещё нет" : "What already works and what doesn't yet"}</h2>
 				<p className="about-block-text" style={{ maxWidth: 680 }}>
 					{ru
 						? "Семь лет практики до платформы и месяц реальной разработки внутри неё. Даты старта ниже взяты из записей системы, а не написаны задним числом."
@@ -135,14 +135,14 @@ export default function AboutProject() {
 					</a>
 				</p>
 
-				<h2 className="legal-h2">{ru ? "Почему это работает" : "Why it works"}</h2>
+				<h2 className="legal-h2">{ru ? "Почему воронка не рассыпается на стыке" : "Why the funnel doesn't break at the seam"}</h2>
 				<p className="legal-p">
 					{ru
 						? "Ключевое отличие — я не разделяю «стратегию» и «исполнение». Воронка придумана здесь же, где написана. Баг, отказ рынка или неудачный тест — это не проблема, а датасет для следующей итерации системы. Такой подход исключает ситуацию, когда маркетолог продаёт то, что разработчик не может собрать."
 						: "The key difference: I don't separate 'strategy' from 'execution'. The funnel is designed in the same place it is coded. A bug, a failed test or market rejection is not a problem — it is a dataset for the next iteration. This approach eliminates the gap between what marketing sells and what developers can build."}
 				</p>
 
-				<h2 className="legal-h2">{ru ? "Продукты" : "Products"}</h2>
+				<h2 className="legal-h2">{ru ? "С чего начать, если вы здесь впервые" : "Where to start if this is your first visit"}</h2>
 				<ul className="legal-list">
 					<li className="legal-li">
 						<strong>{ru ? "Книги:" : "Books:"}</strong>{" "}
@@ -167,7 +167,7 @@ export default function AboutProject() {
 					</li>
 				</ul>
 
-				<h2 className="legal-h2">{ru ? "Связь" : "Contact"}</h2>
+				<h2 className="legal-h2">{ru ? "Куда писать" : "Where to write"}</h2>
 				<p className="legal-p">
 					{ru ? "По всем вопросам — " : "For any questions — "}
 					<a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer" style={{ color: "var(--a)" }}>
