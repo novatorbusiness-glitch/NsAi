@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/pages/HomePage";
 
-const TITLE = "Илья Новицкий — AI-агентство и продукты";
+const TITLE = "Рутина уходит с вас, а не копится";
 const DESCRIPTION =
-	"Бизнесу — готовое AI-агентство под ключ. Специалисту — своя AI-команда. 300+ проектов, 50M ₽ в запусках, две изданные книги.";
+	"Забираю операционку в AI-агентство: команда с ролями, проверкой результата и контролем расходов. Сначала показываю результат на вашей задаче — бесплатно.";
 
 export const metadata: Metadata = {
 	title: TITLE,

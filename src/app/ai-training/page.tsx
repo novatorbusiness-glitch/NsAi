@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import AiTrainingPage from "@/components/pages/AiTrainingPage";
 
-const TITLE = "Обучение AI один на один — проект за месяц";
+const TITLE = "За месяц — готовый продукт, а не конспект";
 const DESCRIPTION =
-	"За месяц собираем ваш реальный проект руками, а не изучаем инструменты. Две живые сессии и распаковка агентства в программе. 70–80к ₽.";
+	"Собираем ваш реальный проект руками: сайт, книгу или автоматизацию. Две живые сессии, месяц на связи и распаковка агентства в программе. 70–80к ₽.";
 
 export const metadata: Metadata = {
   title: TITLE,

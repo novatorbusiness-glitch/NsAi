@@ -3,9 +3,9 @@ import BookCatalog from "@/components/pages/BookCatalog";
 import "@/styles/book-catalog.css";
 
 export const metadata: Metadata = {
-	title: "Книга «Нейро-Воронка» — бесплатно",
+	title: "Воронка, которая продаёт — книга бесплатно",
 	description:
-		"Практическое руководство по инженерии систем продаж: нейробиология, психология и AI. 6 глав, 30 подглав. Бесплатно, читается прямо на сайте.",
+		"Как собрать воронку, которая приносит заявки без надрыва: нейробиология внимания, доверие, AI-автоматизация. 6 глав, 30 подглав. Читается на сайте.",
 	alternates: { canonical: "/book" },
 	openGraph: {
 		type: "website",

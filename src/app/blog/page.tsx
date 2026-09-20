@@ -3,9 +3,9 @@ import BlogIndex from "@/components/pages/BlogIndex";
 import "@/styles/blog.css";
 
 export const metadata: Metadata = {
-	title: "Блог — нейромаркетинг, воронки и AI",
+	title: "Как заставить воронку приносить заявки",
 	description:
-		"Статьи о нейромаркетинге, инженерии воронок, крючках и офферах, AI-копирайтинге. Практические механики, которые можно применить сразу.",
+		"Разбираю, почему воронка не приносит заявки и что чинить первым: крючки, офферы, касания, AI-копирайтинг. Механики, которые применяются сразу.",
 	alternates: { canonical: "/blog" },
 	openGraph: {
 		type: "website",
