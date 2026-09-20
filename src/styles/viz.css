@@ -1041,3 +1041,146 @@
 		opacity: 0;
 	}
 }
+
+/* ── Дерево навыков (/ai-training · секция «Программа») ──
+   Концепт №9. Продаём исход: не «программа курса», а список
+   того, что окажется в руках у человека и останется после.
+   Узлы загораются по очереди — но конечное состояние всегда
+   видимое (animation-fill-mode: backwards), чтобы блок не
+   зависел от того, доскроллил ли наблюдатель.               */
+
+.vz-tree {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+/* Ствол — вертикальная линия, вдоль которой идут уровни */
+.vz-tree::before {
+	content: "";
+	position: absolute;
+	left: 7px;
+	top: 10px;
+	bottom: 10px;
+	width: 1px;
+	background: linear-gradient(180deg, var(--a), rgba(255, 208, 0, 0.3) 45%, var(--br2));
+}
+
+.vz-tier {
+	position: relative;
+	padding-left: 2rem;
+	padding-bottom: 1.6rem;
+}
+
+.vz-tier:last-child {
+	padding-bottom: 0;
+}
+
+/* Узел ствола */
+.vz-tier::before {
+	content: "";
+	position: absolute;
+	left: 2px;
+	top: 6px;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background: var(--bgc);
+	border: 1px solid var(--a);
+	animation: vz-tree-node 0.5s var(--ease) backwards;
+	animation-delay: calc(var(--t) * 0.34s);
+}
+
+.vz-tier-h {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+	margin-bottom: 0.7rem;
+}
+
+.vz-tier-n {
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--a);
+}
+
+.vz-tier-t {
+	font-family: var(--fd);
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var(--t);
+	line-height: 1.3;
+}
+
+.vz-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.vz-chip {
+	font-family: var(--fm);
+	font-size: 0.68rem;
+	line-height: 1.35;
+	color: var(--t2);
+	background: var(--bgc2);
+	border: 1px solid var(--br2);
+	border-radius: var(--r-pill);
+	padding: 0.38rem 0.75rem;
+	animation: vz-tree-chip 0.5s var(--ease) backwards;
+	animation-delay: calc(var(--t) * 0.34s + var(--i) * 0.07s + 0.12s);
+}
+
+/* Последний уровень — то, что остаётся: выделен цветом акцента */
+.vz-tier.is-keep .vz-chip {
+	color: var(--a);
+	border-color: rgba(255, 208, 0, 0.32);
+	background: var(--ad);
+}
+
+@keyframes vz-tree-node {
+	from {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes vz-tree-chip {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (max-width: 560px) {
+
+	.vz-tier {
+		padding-left: 1.6rem;
+	}
+
+	.vz-chip {
+		font-size: 0.64rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.vz-tier::before,
+	.vz-chip {
+		animation: none;
+	}
+}
