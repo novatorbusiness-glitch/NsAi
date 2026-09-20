@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import PartnersPage from "@/components/pages/PartnersPage";
 
-const TITLE = "Партнёры — NCAi";
+const TITLE = "Партнёры и сервисы";
 const DESCRIPTION =
-	"Партнёры NCAi — компании и сервисы, с которыми Илья Новицкий строит системы продаж и AI-автоматизации: b24u.com (AI-чатбот для сайта), ex NIHILO (платформа самоисследования) и Prodamus (приём платежей и рассрочек).";
+	"Сервисы и компании, с которыми работает NCAi: интеграции, white-label и партнёрские программы.";
 
 export const metadata: Metadata = {
 	title: TITLE,
