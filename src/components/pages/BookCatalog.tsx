@@ -105,6 +105,50 @@ export default function BookCatalog() {
 							? "6 глав, 30 подглав — от захвата внимания до воронки, которая работает сама"
 							: "6 chapters, 30 subchapters — from capturing attention to a funnel that runs itself"}
 					</h2>
+
+					{/* Полоса — реальный вес каждой главы по числу подглав
+					    (BOOK_CHAPTER_SUBS), не оценка на глаз. Цвета совпадают
+					    с карточками ниже — сразу видно, где какая глава. */}
+					<div
+						className="vz vz-comp"
+						role="img"
+						aria-label={
+							ru
+								? `Состав книги по главам: ${BOOK_CHAPTER_SUBS.map((c) => `глава ${c.id} — ${c.subs.length} подглав`).join(", ")}`
+								: `Book composition by chapter: ${BOOK_CHAPTER_SUBS.map((c) => `chapter ${c.id} — ${c.subs.length} subchapters`).join(", ")}`
+						}
+					>
+						<div className="vz-head">
+							<span className="vz-badge">
+								<span className="vz-pulse" />
+								{ru ? "Вес глав в книге" : "Chapter weight in the book"}
+							</span>
+							<span className="vz-note">
+								{ru ? "По числу подглав в каждой главе" : "By the number of subchapters per chapter"}
+							</span>
+						</div>
+						<div className="vz-comp-bar">
+							{BOOK_CHAPTER_SUBS.map((c, i) => (
+								<div
+									key={c.id}
+									className="vz-comp-seg"
+									style={{ width: `${(c.subs.length / 30) * 100}%`, ["--c" as string]: CHAPTER_META[c.id].color, ["--i" as string]: i }}
+								/>
+							))}
+						</div>
+						<ul className="vz-comp-legend">
+							{BOOK_CHAPTER_SUBS.map((c) => (
+								<li key={c.id}>
+									<span className="vz-comp-sw" style={{ ["--c" as string]: CHAPTER_META[c.id].color }} />
+									<span className="vz-comp-name">
+										{ru ? "Глава" : "Ch."} {c.id} · {c.title}
+									</span>
+									<span className="vz-comp-n">{c.subs.length}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+
 					<div className="bkcat-grid">
 						{BOOK_CHAPTER_SUBS.map((chapter) => (
 							<a
