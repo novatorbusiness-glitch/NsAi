@@ -93,8 +93,11 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .pc-book .pc-label{color:#B4A7D6}
 .pc-portfolio .pc-label{color:#ff9d2e}
 
-/* SCROLL HINT */
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+/* SCROLL HINT — z-index выше .hero-inner (2): иначе на узких экранах,
+   где правая колонка карточек ниже центра героя, последняя карточка
+   рисуется поверх подсказки независимо от порядка в DOM (у элемента
+   с явным z-index стек-контекст всегда выше z-index:auto). */
+.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;
   display:flex;flex-direction:column;align-items:center;gap:.4rem;animation:fup 1.2s .7s var(--ease) both}
 .sh-txt{font-family:var(--fm);font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
 .sh-line{width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,208,0,.5),transparent);
