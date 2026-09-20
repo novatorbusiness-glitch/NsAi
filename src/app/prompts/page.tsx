@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import PromptsCatalog from "@/components/pages/PromptsCatalog";
 
 export const metadata: Metadata = {
-	title: "NCAi · книга промптов — 111 готовых промптов из базы агентства",
+	title: "111 готовых промптов из базы агентства",
 	description:
-		"Книга промптов NCAi: 111 готовых промптов из базы агентства — продажи, маркетинг, контент, разработка, книги, финансы, базы, qa, услуги. Каталог по категориям со счётчиками, поиск ⌘K, копирование в один клик.",
+		"111 готовых промптов NCAi: продажи, маркетинг, контент, разработка, финансы. Каталог по категориям, быстрый поиск и копирование в один клик.",
 	alternates: { canonical: "/prompts" },
 	openGraph: {
 		type: "website",

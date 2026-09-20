@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import AboutProject from "@/components/pages/AboutProject";
 
-const TITLE = "О проекте — NCAi";
+const TITLE = "О проекте";
 const DESCRIPTION =
-	"NCAi — проект Ильи Новицкого: нейромаркетинг, инженерия систем продаж, AI-автоматизация. Продукты: распаковка AI-агентства, обучение AI 1 на 1 и бесплатная книга «Нейро-Воронка».";
+	"NCAi — проект Ильи Новицкого: инженерия систем продаж, AI-агентства и нейромаркетинг. Как устроены продукты и на чём они основаны.";
 
 export const metadata: Metadata = {
 	title: TITLE,

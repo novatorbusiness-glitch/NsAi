@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import HomePage from "@/components/pages/HomePage";
 
-const TITLE = "NCAi — Илья Новицкий · AI-Powered Product Builder";
+const TITLE = "Илья Новицкий — AI-агентство и продукты";
 const DESCRIPTION =
-	"Илья Новицкий — AI-Powered Product Builder. Распаковка AI-агентства, обучение AI и книга «Нейро-воронка». Соединяю продуктовое мышление предпринимателя с руками разработчика.";
+	"Бизнесу — готовое AI-агентство под ключ. Специалисту — своя AI-команда. 300+ проектов, 50M ₽ в запусках, две изданные книги.";
 
 export const metadata: Metadata = {
 	title: TITLE,

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import ExNihiloPage from "@/components/pages/ExNihiloPage";
 
-const TITLE = "ex NIHILO — платформа самоисследования · партнёр Илья Новицкий";
+const TITLE = "ex NIHILO — платформа самоисследования";
 const DESCRIPTION =
-	"ex NIHILO: ЭЭГ-сессии Neiry, трекеры сна и пульса, клинические шкалы и голосовой дневник сводятся в одну картину — личный ИИ-агент находит, что держит вашу продуктивность и что её съедает. 7 дней бесплатно. Партнёр — Илья Новицкий (NCAi).";
+	"ЭЭГ-сессии, трекеры сна и пульса, клинические шкалы и дневник в одной картине. Личный ИИ-агент находит, что влияет на ваше состояние.";
 
 export const metadata: Metadata = {
 	title: TITLE,
