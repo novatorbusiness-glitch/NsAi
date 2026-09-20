@@ -562,33 +562,39 @@
 	display: block;
 }
 
-.vz-fn-band {
-	stroke: rgba(138, 100, 0, 0.62);
-	stroke-width: 1.5;
+.vz-funnel-viz svg {
+	filter: drop-shadow(0 10px 22px rgba(120, 84, 0, 0.22));
 }
 
-/* Поток сужается — насыщенность растёт к низу.
-   Заливки подобраны под светлую полосу #FAFAF8: при alpha 0.16
-   верхняя лента давала контраст 1.06 к фону, то есть не читалась. */
+.vz-fn-band {
+	stroke: #7a5400;
+	stroke-width: 2.5;
+}
+
+/* Плотные заливки, а не полупрозрачная плёнка поверх фона — воронка
+   должна читаться как предмет, а не как акварель. Насыщенность и
+   контур растут к низу: последняя лента — самый весомый узел. */
 .vz-fn-b1 {
-	fill: rgba(255, 205, 0, 0.34);
+	fill: #ffe49b;
 }
 
 .vz-fn-b2 {
-	fill: rgba(255, 200, 0, 0.52);
+	fill: #ffcf4d;
 }
 
 .vz-fn-b3 {
-	fill: rgba(255, 192, 0, 0.72);
+	fill: #ffb400;
 }
 
 .vz-fn-b4 {
-	fill: rgba(248, 178, 0, 0.96);
+	fill: #e88a00;
 }
 
 /* Частицы идут сверху вниз; часть гаснет по пути — это и есть отсев */
 .vz-fn-dot {
-	fill: rgba(45, 37, 5, 0.7);
+	fill: #3a2c00;
+	stroke: #fff;
+	stroke-width: 0.6;
 	animation: vz-fn-fall 5.5s linear infinite;
 }
 
@@ -666,10 +672,16 @@
 }
 
 .vz-fn-step b {
+	display: inline-block;
 	font-family: var(--fm);
 	font-size: 0.62rem;
-	letter-spacing: 0.1em;
-	color: #a37900;
+	letter-spacing: 0.08em;
+	font-weight: 700;
+	color: #6b4700;
+	background: #ffd863;
+	border: 1px solid #caa100;
+	border-radius: 6px;
+	padding: 0.2rem 0.5rem;
 	white-space: nowrap;
 }
 
