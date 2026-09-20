@@ -72,7 +72,10 @@ const FAQ = [
 export default function ExNihiloPage() {
 	return (
 		<PageShell>
-			<style>{EXN_CSS}</style>
+			{/* dangerouslySetInnerHTML — см. тот же фикс в B24uPage.tsx: текстовый
+			    ребёнок заставляет SSR экранировать кавычки в content:"✓", и
+			    гидратация расходится с сервером на этом узле. */}
+			<style dangerouslySetInnerHTML={{ __html: EXN_CSS }} />
 			<div className="exn-wrap">
 				{/* ── HERO ── */}
 				<section className="exn-hero">

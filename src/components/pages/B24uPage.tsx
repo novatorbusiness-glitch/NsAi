@@ -132,7 +132,11 @@ const FAQ = [
 export default function B24uPage() {
 	return (
 		<PageShell>
-			<style>{B24U_CSS}</style>
+			{/* dangerouslySetInnerHTML, а не текстовый ребёнок — иначе SSR
+			    экранирует кавычки в content:"✓" до &quot;✓&quot;, а браузер не
+			    декодирует сущности внутри <style>. Клиент и сервер расходятся,
+			    React рвёт серверный HTML и перерисовывает страницу заново. */}
+			<style dangerouslySetInnerHTML={{ __html: B24U_CSS }} />
 			<div className="b24u-wrap">
 				{/* ── HERO ── */}
 				<section className="b24u-hero">
