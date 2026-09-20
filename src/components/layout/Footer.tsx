@@ -36,6 +36,7 @@ export default function Footer() {
             <div className="fch">{t("footer.colProject")}</div>
             <ul className="fls">
               <li><a href="/o-proekte">{t("footer.about")}</a></li>
+              <li><a href="/roadmap">{t("footer.roadmap")}</a></li>
               <li><a href="/blog">{t("footer.blog")}</a></li>
               <li><a href="/portfolio">{t("footer.cases")}</a></li>
               <li><a href="/partners">Партнёры</a></li>
