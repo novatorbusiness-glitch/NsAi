@@ -346,7 +346,7 @@ export const ABOUT_HTML = `<!-- ABOUT -->
               <div>
                 <div class="acj-p">Сейчас · NCAi</div>
                 <div class="acj-t">Три продукта</div>
-                <div class="acj-d">Распаковка · Обучение · Книга · Соло R&D</div>
+                <div class="acj-d">Распаковка · Обучение · Книга</div>
               </div>
             </div>
           </div>
@@ -889,7 +889,7 @@ export const ABOUT_HTML_EN = `<!-- ABOUT -->
               <div>
                 <div class="acj-p">Now · NCAi</div>
                 <div class="acj-t">Three products</div>
-                <div class="acj-d">Unboxing · Training · Book · Solo R&D</div>
+                <div class="acj-d">Unboxing · Training · Book</div>
               </div>
             </div>
           </div>
