@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+	BLOG_CADENCE,
 	BLOG_CATEGORIES,
 	BLOG_POSTS_SORTED,
 	BLOG_STATS,
@@ -109,6 +110,47 @@ export default function BlogIndex() {
 						<div className="nb-stat-label">{s.label}</div>
 					</div>
 				))}
+			</div>
+
+			{/* Ритм публикаций — точки стоят по реальным датам из BLOG_POSTS,
+			    не по равномерной сетке, поэтому видны настоящие паузы. */}
+			<div className="w">
+				<div
+					className="vz vz-rhythm rv"
+					role="img"
+					aria-label={
+						ru
+							? `Ритм публикаций: ${BLOG_CADENCE.points.length} статей за ${BLOG_CADENCE.span} дней, в среднем раз в ${BLOG_CADENCE.avgGap} дня`
+							: `Publishing rhythm: ${BLOG_CADENCE.points.length} posts over ${BLOG_CADENCE.span} days, averaging one every ${BLOG_CADENCE.avgGap} days`
+					}
+				>
+					<div className="vz-head">
+						<span className="vz-badge">
+							<span className="vz-pulse" />
+							{ru ? "Ритм публикаций" : "Publishing rhythm"}
+						</span>
+						<span className="vz-note">
+							{ru
+								? `В среднем раз в ${BLOG_CADENCE.avgGap} дня · от ${BLOG_CADENCE.minGap} до ${BLOG_CADENCE.maxGap} дней между статьями`
+								: `Averaging one every ${BLOG_CADENCE.avgGap} days · ${BLOG_CADENCE.minGap}–${BLOG_CADENCE.maxGap} days between posts`}
+						</span>
+					</div>
+					<div className="vz-rhythm-track">
+						<div className="vz-rhythm-line" />
+						{BLOG_CADENCE.points.map((p, i) => (
+							<div
+								key={p.date}
+								className="vz-rhythm-dot"
+								style={{ left: `${p.pct}%`, ["--i" as string]: i }}
+								title={p.date}
+							/>
+						))}
+					</div>
+					<div className="vz-rhythm-ends">
+						<span>{BLOG_CADENCE.first}</span>
+						<span>{BLOG_CADENCE.last}</span>
+					</div>
+				</div>
 			</div>
 
 			{/* Фильтры-категории (чипы) */}

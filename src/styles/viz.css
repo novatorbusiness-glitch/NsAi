@@ -1309,3 +1309,73 @@
 		animation: none;
 	}
 }
+
+/* ── Ритм публикаций (/blog · над фильтрами) ──
+   Точки стоят на шкале по реальным датам из BLOG_POSTS (не выдумка,
+   не равномерная сетка) — видно настоящие паузы между статьями. */
+
+.vz-rhythm-track {
+	position: relative;
+	height: 44px;
+	margin: 1.75rem 0 0.75rem;
+}
+
+.vz-rhythm-line {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 21px;
+	height: 1px;
+	background: linear-gradient(90deg, var(--br2), var(--a) 2%, var(--a) 98%, var(--br2));
+}
+
+.vz-rhythm-dot {
+	position: absolute;
+	top: 21px;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--a);
+	border: 2px solid var(--bgc);
+	transform: translate(-50%, -50%);
+	animation: vz-rhythm-pop 0.5s var(--ease) backwards;
+	animation-delay: calc(var(--i) * 0.05s);
+}
+
+.vz-rhythm-dot:last-child {
+	width: 11px;
+	height: 11px;
+	box-shadow: 0 0 0 4px var(--ad);
+}
+
+.js .rv:not(.on) .vz-rhythm-dot {
+	transform: translate(-50%, -50%) scale(0);
+}
+
+@keyframes vz-rhythm-pop {
+	from {
+		transform: translate(-50%, -50%) scale(0);
+	}
+
+	to {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.vz-rhythm-ends {
+	display: flex;
+	justify-content: space-between;
+	font-family: var(--fm);
+	font-size: 0.6rem;
+	letter-spacing: 0.04em;
+	color: var(--t3);
+	margin-top: 0.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.vz-rhythm-dot {
+		animation: none;
+		transform: translate(-50%, -50%);
+	}
+}
