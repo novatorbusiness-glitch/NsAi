@@ -145,10 +145,16 @@
 }
 
 /* ── Вступление ── */
+/* Это <section>, а значит к ней уже применяется глобальное
+   section{padding: clamp(5.5rem,11vw,9.5rem) 0}. Собственные отступы
+   складывались с ним: между интро и списком глав набегало 346px пустоты
+   (22 отступ абзаца + 112 снизу секции + 61 внешний + 112 сверху соседней).
+   Гасим нижнее поле — ритм задаёт padding-top следующей секции. */
 .bkcat-intro {
 	max-width: 760px;
 	margin: clamp(3rem, 6vw, 5rem) 0 0;
 	padding-top: 2.5rem;
+	padding-bottom: 0;
 	border-top: 1px solid var(--br, #1e1e1e);
 }
 
@@ -166,8 +172,9 @@
 }
 
 /* ── Список глав карточками ── */
+/* margin-top здесь дублировал глобальный padding секции — убран. */
 .bkcat-chapters {
-	margin-top: clamp(3rem, 6vw, 5rem);
+	margin-top: 0;
 }
 
 .bkcat-chapters-label {
