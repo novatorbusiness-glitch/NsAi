@@ -241,3 +241,34 @@ export const BLOG_STATS = {
 	pages: SITE_PAGES,
 	newIn30: BLOG_POSTS.filter((p) => isWithinDays(p.date, NEW_DAYS)).length,
 };
+
+// Ритм публикаций для визуализации на /blog — считаем из тех же дат,
+// что уже лежат в BLOG_POSTS, ничего не придумываем. pct — позиция
+// точки на шкале (0 = первая статья, 100 = последняя).
+export interface BlogCadencePoint {
+	date: string;
+	pct: number;
+}
+
+function daysBetween(a: string, b: string): number {
+	const ta = new Date(`${a}T00:00:00`).getTime();
+	const tb = new Date(`${b}T00:00:00`).getTime();
+	return Math.round((tb - ta) / (24 * 3600 * 1000));
+}
+
+export const BLOG_CADENCE = (() => {
+	const dates = [...BLOG_POSTS].map((p) => p.date).sort();
+	const first = dates[0];
+	const last = dates[dates.length - 1];
+	const span = Math.max(1, daysBetween(first, last));
+	const points: BlogCadencePoint[] = dates.map((d) => ({
+		date: d,
+		pct: (daysBetween(first, d) / span) * 100,
+	}));
+	const gaps: number[] = [];
+	for (let i = 1; i < dates.length; i++) gaps.push(daysBetween(dates[i - 1], dates[i]));
+	const avgGap = Math.round((gaps.reduce((s, g) => s + g, 0) / gaps.length) * 10) / 10;
+	const minGap = Math.min(...gaps);
+	const maxGap = Math.max(...gaps);
+	return { points, span, first, last, avgGap, minGap, maxGap };
+})();
