@@ -6,6 +6,8 @@ import PageShell from "@/components/layout/PageShell";
 interface Partner {
 	name: string;
 	url: string;
+	gap: string;
+	gapEn: string;
 	badge: string;
 	badgeEn: string;
 	logo: string;
@@ -20,6 +22,8 @@ const PARTNERS: Partner[] = [
 	{
 		name: "b24u.com",
 		url: "/b24u",
+		gap: "Клиент уходит, пока вы спите",
+		gapEn: "A client leaves while you sleep",
 		badge: "Официальный партнёр",
 		badgeEn: "Official partner",
 		logo: "b24",
@@ -34,6 +38,8 @@ const PARTNERS: Partner[] = [
 	{
 		name: "ex NIHILO",
 		url: "/ex-nihilo",
+		gap: "Вы выгораете раньше, чем окупается воронка",
+		gapEn: "You burn out before the funnel pays off",
 		badge: "Партнёр-исследователь",
 		badgeEn: "Research partner",
 		logo: "∅",
@@ -48,6 +54,8 @@ const PARTNERS: Partner[] = [
 	{
 		name: "Prodamus",
 		url: "https://connect.prodamus.ru/?ref=NSAI&c=T2w",
+		gap: "Платёжку нужно поднять без разработки",
+		gapEn: "Payments need to go live without a developer",
 		badge: "Партнёр",
 		badgeEn: "Partner",
 		logo: "₽",
@@ -82,6 +90,37 @@ export default function PartnersPage() {
 			</div>
 
 			<div className="w">
+				{/* Три дыры из подзаголовка напрямую связаны с тремя партнёрами —
+				    не выдуманная статистика, а честная схема «кто что закрывает». */}
+				<div
+					className="vz"
+					role="img"
+					aria-label={
+						ru
+							? "Три дыры и кто их закрывает: клиент уходит ночью → b24u.com, выгорание → ex NIHILO, платежи → Prodamus"
+							: "Three gaps and who closes them: client leaves at night → b24u.com, burnout → ex NIHILO, payments → Prodamus"
+					}
+				>
+					<div className="vz-head">
+						<span className="vz-badge">
+							<span className="vz-pulse" />
+							{ru ? "Кто что закрывает" : "Who closes what"}
+						</span>
+					</div>
+					<ul className="vz-gaps-list">
+						{PARTNERS.map((p) => (
+							<li key={p.name} className="vz-gaps-row">
+								<span className="vz-gaps-problem">{ru ? p.gap : p.gapEn}</span>
+								<span className="vz-gaps-arrow">→</span>
+								<span className="vz-gaps-partner">
+									<span className="vz-gaps-partner-logo">{p.logo}</span>
+									<span className="vz-gaps-partner-name">{p.name}</span>
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+
 				<div className="partners-grid">
 					{PARTNERS.map((p) => (
 						<a
