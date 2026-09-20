@@ -65,47 +65,59 @@ export const WORK_HTML = `<!-- PORTFOLIO -->
       <p class="port-case-quote">«Заебись, чётко»<span>Костя, ex NIHILO — реакция на присланный комплект</span></p>
     </div>
     <div class="port-wgrid">
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("rocket")}</div>
-        <div class="port-pj-tag">Маркетинг · Автоматизация</div>
-        <div class="port-pj-title">Novator.vip</div>
-        <p class="port-pj-desc">Агентство маркетинга и автоматизации: 300+ проектов, 50M+ ₽ в запусках</p>
-        <span class="port-pj-status">2020–2025</span>
+      <div class="port-pj port-pj-shot-card rv">
+        <div class="port-pj-shot"><img src="/images/portfolio/ncai.png" alt="NCAi — скриншот сайта" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Платформа · NCAi</div>
+          <div class="port-pj-title">NCAi</div>
+          <p class="port-pj-desc">Этот сайт, книга, промпт-база и мини-апп — пишу код сам, от идеи до продакшена</p>
+          <span class="port-pj-status">283K строк кода</span>
+        </div>
       </div>
-      <div class="port-pj rv d1">
-        <div class="port-pj-icon">${icon("sparkle")}</div>
-        <div class="port-pj-tag">Beauty · Mini App</div>
-        <div class="port-pj-title">Gaze Architecture</div>
-        <p class="port-pj-desc">Telegram Mini App + сайт для бьюти-сферы. Подписка 990 ₽/мес</p>
-        <span class="port-pj-status">Запущен</span>
-      </div>
-      <div class="port-pj rv d2">
-        <div class="port-pj-icon">${icon("book")}</div>
-        <div class="port-pj-tag">Книга · Методология</div>
-        <div class="port-pj-title">«Нейро-Воронка»</div>
-        <p class="port-pj-desc">6 глав, 30 подглав. Нейробиология продаж и AI-автоматизация</p>
-        <span class="port-pj-status">Бесплатно</span>
-      </div>
-      <div class="port-pj rv d1">
-        <div class="port-pj-icon">${icon("brain")}</div>
-        <div class="port-pj-tag">HealthTech · AI</div>
-        <div class="port-pj-title">Neuroflow</div>
-        <p class="port-pj-desc">PPG-измерение через камеру телефона: ВСР, показатели нервной системы</p>
-        <span class="port-pj-status">R&D</span>
+      <div class="port-pj port-pj-shot-card rv d1">
+        <div class="port-pj-shot"><img src="/images/portfolio/gaze.png" alt="Gaze Architecture — скриншот сайта" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Beauty · Mini App</div>
+          <div class="port-pj-title">Gaze Architecture</div>
+          <p class="port-pj-desc">Telegram Mini App + сайт для бьюти-сферы. Подписка 990 ₽/мес</p>
+          <span class="port-pj-status">Запущен</span>
+        </div>
       </div>
       <div class="port-pj rv d2">
-        <div class="port-pj-icon">${icon("sword")}</div>
-        <div class="port-pj-tag">Продуктивность</div>
-        <div class="port-pj-title">Vlinx</div>
-        <p class="port-pj-desc">Трекер привычек — каждая вредная привычка как «босс», которого нужно одолеть</p>
-        <span class="port-pj-status">Тестирование</span>
+        <div class="port-pj-body">
+          <div class="port-pj-icon">${icon("book")}</div>
+          <div class="port-pj-tag">Книга · Методология</div>
+          <div class="port-pj-title">«Нейро-Воронка»</div>
+          <p class="port-pj-desc">6 глав, 30 подглав. Нейробиология продаж и AI-автоматизация</p>
+          <span class="port-pj-status">Бесплатно</span>
+        </div>
       </div>
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("gamepad")}</div>
-        <div class="port-pj-tag">EdTech · Дети</div>
-        <div class="port-pj-title">Nezha_Quest</div>
-        <p class="port-pj-desc">Трекер дисциплины ребёнка с системой последствий. Связка ребёнок–родитель</p>
-        <span class="port-pj-status">R&D</span>
+      <div class="port-pj port-pj-shot-card rv d1">
+        <div class="port-pj-shot"><img src="/images/portfolio/neuroflow.png" alt="Neuroflow — скриншот сайта" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">HealthTech · AI</div>
+          <div class="port-pj-title">Neuroflow</div>
+          <p class="port-pj-desc">PPG-измерение через камеру телефона: ВСР, показатели нервной системы</p>
+          <span class="port-pj-status">R&D</span>
+        </div>
+      </div>
+      <div class="port-pj port-pj-shot-card rv d2">
+        <div class="port-pj-shot"><img src="/images/portfolio/vlinx.png" alt="Vlinx — скриншот приложения" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Продуктивность</div>
+          <div class="port-pj-title">Vlinx</div>
+          <p class="port-pj-desc">Трекер привычек — каждая вредная привычка как «босс», которого нужно одолеть</p>
+          <span class="port-pj-status">Тестирование</span>
+        </div>
+      </div>
+      <div class="port-pj port-pj-shot-card rv">
+        <div class="port-pj-shot"><img src="/images/portfolio/nezha.png" alt="Nezha_Quest — скриншот приложения" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">EdTech · Дети</div>
+          <div class="port-pj-title">Nezha_Quest</div>
+          <p class="port-pj-desc">Трекер дисциплины ребёнка с системой последствий. Связка ребёнок–родитель</p>
+          <span class="port-pj-status">R&D</span>
+        </div>
       </div>
     </div>
   </div>
@@ -420,47 +432,59 @@ export const WORK_HTML_EN = `<!-- PORTFOLIO -->
       <p class="port-case-quote">"Hell yeah, that's sharp"<span>Kostya, ex NIHILO — reaction to the delivered set</span></p>
     </div>
     <div class="port-wgrid">
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("rocket")}</div>
-        <div class="port-pj-tag">Marketing · Automation</div>
-        <div class="port-pj-title">Novator.vip</div>
-        <p class="port-pj-desc">A marketing and automation agency: 300+ projects, 50M+ ₽ in launches</p>
-        <span class="port-pj-status">2020–2025</span>
+      <div class="port-pj port-pj-shot-card rv">
+        <div class="port-pj-shot"><img src="/images/portfolio/ncai.png" alt="NCAi — website screenshot" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Platform · NCAi</div>
+          <div class="port-pj-title">NCAi</div>
+          <p class="port-pj-desc">This site, the book, the prompt base and the mini-app — I write the code myself, idea to production</p>
+          <span class="port-pj-status">283K lines of code</span>
+        </div>
       </div>
-      <div class="port-pj rv d1">
-        <div class="port-pj-icon">${icon("sparkle")}</div>
-        <div class="port-pj-tag">Beauty · Mini App</div>
-        <div class="port-pj-title">Gaze Architecture</div>
-        <p class="port-pj-desc">A Telegram Mini App + website for the beauty industry. Subscription at 990 ₽/mo</p>
-        <span class="port-pj-status">Launched</span>
-      </div>
-      <div class="port-pj rv d2">
-        <div class="port-pj-icon">${icon("book")}</div>
-        <div class="port-pj-tag">Book · Methodology</div>
-        <div class="port-pj-title">"Neuro-Funnel"</div>
-        <p class="port-pj-desc">6 chapters, 30 subchapters. The neuroscience of sales and AI automation</p>
-        <span class="port-pj-status">Free</span>
-      </div>
-      <div class="port-pj rv d1">
-        <div class="port-pj-icon">${icon("brain")}</div>
-        <div class="port-pj-tag">HealthTech · AI</div>
-        <div class="port-pj-title">Neuroflow</div>
-        <p class="port-pj-desc">PPG measurement via phone camera: HRV, nervous system markers</p>
-        <span class="port-pj-status">R&D</span>
+      <div class="port-pj port-pj-shot-card rv d1">
+        <div class="port-pj-shot"><img src="/images/portfolio/gaze.png" alt="Gaze Architecture — website screenshot" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Beauty · Mini App</div>
+          <div class="port-pj-title">Gaze Architecture</div>
+          <p class="port-pj-desc">A Telegram Mini App + website for the beauty industry. Subscription at 990 ₽/mo</p>
+          <span class="port-pj-status">Launched</span>
+        </div>
       </div>
       <div class="port-pj rv d2">
-        <div class="port-pj-icon">${icon("sword")}</div>
-        <div class="port-pj-tag">Productivity</div>
-        <div class="port-pj-title">Vlinx</div>
-        <p class="port-pj-desc">A habit tracker — every bad habit is a "boss" you have to defeat</p>
-        <span class="port-pj-status">Testing</span>
+        <div class="port-pj-body">
+          <div class="port-pj-icon">${icon("book")}</div>
+          <div class="port-pj-tag">Book · Methodology</div>
+          <div class="port-pj-title">"Neuro-Funnel"</div>
+          <p class="port-pj-desc">6 chapters, 30 subchapters. The neuroscience of sales and AI automation</p>
+          <span class="port-pj-status">Free</span>
+        </div>
       </div>
-      <div class="port-pj rv">
-        <div class="port-pj-icon">${icon("gamepad")}</div>
-        <div class="port-pj-tag">EdTech · Kids</div>
-        <div class="port-pj-title">Nezha_Quest</div>
-        <p class="port-pj-desc">A child discipline tracker with a consequence system. A child–parent link</p>
-        <span class="port-pj-status">R&D</span>
+      <div class="port-pj port-pj-shot-card rv d1">
+        <div class="port-pj-shot"><img src="/images/portfolio/neuroflow.png" alt="Neuroflow — website screenshot" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">HealthTech · AI</div>
+          <div class="port-pj-title">Neuroflow</div>
+          <p class="port-pj-desc">PPG measurement via phone camera: HRV, nervous system markers</p>
+          <span class="port-pj-status">R&D</span>
+        </div>
+      </div>
+      <div class="port-pj port-pj-shot-card rv d2">
+        <div class="port-pj-shot"><img src="/images/portfolio/vlinx.png" alt="Vlinx — app screenshot" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">Productivity</div>
+          <div class="port-pj-title">Vlinx</div>
+          <p class="port-pj-desc">A habit tracker — every bad habit is a "boss" you have to defeat</p>
+          <span class="port-pj-status">Testing</span>
+        </div>
+      </div>
+      <div class="port-pj port-pj-shot-card rv">
+        <div class="port-pj-shot"><img src="/images/portfolio/nezha.png" alt="Nezha_Quest — app screenshot" loading="lazy" width="760" height="475"></div>
+        <div class="port-pj-body">
+          <div class="port-pj-tag">EdTech · Kids</div>
+          <div class="port-pj-title">Nezha_Quest</div>
+          <p class="port-pj-desc">A child discipline tracker with a consequence system. A child–parent link</p>
+          <span class="port-pj-status">R&D</span>
+        </div>
       </div>
     </div>
   </div>

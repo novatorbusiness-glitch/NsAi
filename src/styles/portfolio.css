@@ -51,9 +51,17 @@
 .port-wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2.5rem}
 @media(max-width:900px){.port-wgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.port-wgrid{grid-template-columns:1fr}}
-.port-pj{padding:1.6rem;background:var(--bgc2);border:1px solid var(--br);border-radius:12px;
+.port-pj{background:var(--bgc2);border:1px solid var(--br);border-radius:12px;overflow:hidden;
   transition:border-color .25s,transform .3s var(--ease)}
 .port-pj:hover{border-color:rgba(255,208,0,.22);transform:translateY(-4px)}
+.port-pj-body{padding:1.4rem 1.6rem 1.6rem}
+/* Карточки без реального скриншота (книга) держат прежний паддинг сверху. */
+.port-pj:not(.port-pj-shot-card) .port-pj-body{padding-top:1.6rem}
+.port-pj-shot{position:relative;aspect-ratio:760/475;overflow:hidden;background:#0b0b0b;
+  border-bottom:1px solid var(--br)}
+.port-pj-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .5s var(--ease)}
+.port-pj-shot-card:hover .port-pj-shot img{transform:scale(1.04)}
 .port-pj-icon{font-size:1.4rem;margin-bottom:.9rem}
 .port-pj-tag{font-family:var(--fm);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:.4rem}
 .port-pj-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.4rem}
