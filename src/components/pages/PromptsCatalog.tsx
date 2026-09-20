@@ -25,6 +25,11 @@ const CAT_META: Record<string, { emoji: string; desc: string; descEn: string }> 
 
 const CAT_ORDER = Object.keys(CAT_META);
 
+// Монохромная шкала от акцента к тени: сегмент тем темнее, чем меньше
+// доля категории. Порядок присваивается по убыванию count, а не жёстко,
+// чтобы шкала не разъехалась при обновлении базы.
+const COMP_RAMP = ["#FFD000", "#F0BE05", "#DCA90A", "#C6950F", "#AE8114", "#956D18", "#7B591B", "#61461D", "#4A361F"];
+
 // Источник каждого промпта — уже в данных (например «Книга „Нейро-воронка“ — глава 2.1»).
 const BOT_LINK = "https://t.me/ilya_novator";
 
@@ -53,6 +58,20 @@ export default function PromptsCatalog() {
 		};
 		window.addEventListener("keydown", onKey);
 		return () => window.removeEventListener("keydown", onKey);
+	}, []);
+
+	// Состав базы для полосы: доли считаются из PROMPT_COUNTS, поэтому
+	// сумма сегментов всегда равна реальному числу промптов.
+	const composition = useMemo(() => {
+		const total = PROMPT_COUNTS.reduce((a, c) => a + c.count, 0) || 1;
+		return [...PROMPT_COUNTS]
+			.sort((a, b) => b.count - a.count)
+			.map((c, i) => ({
+				category: c.category,
+				count: c.count,
+				pct: (c.count / total) * 100,
+				color: COMP_RAMP[i] ?? COMP_RAMP[COMP_RAMP.length - 1],
+			}));
 	}, []);
 
 	// Группы: категории из канона, со счётчиками из базы.
@@ -193,6 +212,53 @@ export default function PromptsCatalog() {
 				{/* ── РАЗДЕЛЫ · Обзор ── */}
 				<section id="obzor" className="pb-sec">
 					<h2 className="pb-h2">{t("Обзор", "Overview")}</h2>
+
+					{/* Состав базы — реальные доли из PROMPT_COUNTS, не оценка на глаз. */}
+					<div
+						className="vz vz-comp rv"
+						role="img"
+						aria-label={t(
+							`Состав базы: ${composition.map((c) => `${c.category} — ${c.count}`).join(", ")}. Всего ${PROMPTS_TOTAL}.`,
+							`Base composition: ${composition.map((c) => `${c.category} — ${c.count}`).join(", ")}. ${PROMPTS_TOTAL} total.`,
+						)}
+					>
+						<div className="vz-head">
+							<span className="vz-badge">
+								<span className="vz-pulse" />
+								{t("Из чего состоит база", "What the base is made of")}
+							</span>
+							<span className="vz-note">
+								{t("Доли посчитаны из самой базы, а не прикинуты", "Shares are counted from the base itself, not estimated")}
+							</span>
+						</div>
+						<div className="vz-comp-bar">
+							{composition.map((c, i) => (
+								<div
+									key={c.category}
+									className="vz-comp-seg"
+									style={{ width: `${c.pct}%`, ["--c" as string]: c.color, ["--i" as string]: i }}
+								/>
+							))}
+						</div>
+						<ul className="vz-comp-legend">
+							{composition.map((c) => (
+								<li key={c.category}>
+									<span className="vz-comp-sw" style={{ ["--c" as string]: c.color }} />
+									<span className="vz-comp-name">
+										{CAT_META[c.category]?.emoji} {c.category}
+									</span>
+									<span className="vz-comp-n">{c.count}</span>
+								</li>
+							))}
+						</ul>
+						<p className="vz-comp-sum">
+							{t(
+								`Всего ${PROMPTS_TOTAL} промптов. Больше половины — продажи, маркетинг и контент: база выросла из задач, которые приходили чаще остальных.`,
+								`${PROMPTS_TOTAL} prompts in total. Sales, marketing and content make up more than half — the base grew out of the tasks that came up most often.`,
+							)}
+						</p>
+					</div>
+
 					<div className="pb-cards">
 						<div className="pb-card">
 							<h3 className="pb-card-h">{t("С чего начать", "Where to start")}</h3>
