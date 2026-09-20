@@ -55,8 +55,11 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
 .hero-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fup 1s .36s var(--ease) both}
 .hm{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
 .hm span{display:block;color:var(--t2);margin-top:.18rem;letter-spacing:0;text-transform:none}
-.hero-stats{display:flex;gap:0;border-top:1px solid var(--br);padding-top:2rem;animation:fup 1s .44s var(--ease) both}
-.hstat{padding-right:2rem;margin-right:2rem;border-right:1px solid var(--br)}
+/* flex-wrap — иначе на 900–1200px, где правая колонка ещё видна,
+   а левая уже сжата, длинная подпись («Книги изданы») схлопывается
+   в узкую колонку и текст режется под соседней карточкой. */
+.hero-stats{display:flex;flex-wrap:wrap;row-gap:1.5rem;gap:0;border-top:1px solid var(--br);padding-top:2rem;animation:fup 1s .44s var(--ease) both}
+.hstat{padding-right:2rem;margin-right:2rem;border-right:1px solid var(--br);flex:0 0 auto;min-width:5.5rem}
 .hstat:last-child{border-right:none;margin-right:0;padding-right:0}
 .hstat-n{font-family:var(--fd);font-size:1.9rem;font-weight:800;letter-spacing:-.04em;color:var(--a);line-height:1}
 .hstat-l{font-family:var(--fm);font-size:.54rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3);margin-top:.25rem}
