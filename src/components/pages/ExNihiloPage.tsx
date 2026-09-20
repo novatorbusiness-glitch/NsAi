@@ -179,18 +179,26 @@ export default function ExNihiloPage() {
 					<p className="exn-note">Данные открытой когорты ex NIHILO, 2026.</p>
 				</section>
 
-				{/* ── 3 ШАГА ── */}
+				{/* ── 3 ШАГА ──
+				    Тот же конвейер (.vz-track), что на /raspakovka и /b24u —
+				    концепт №5, без JS: страница статична, .rv тут некому включать. */}
 				<section className="exn-sec exn-sec-alt">
 					<div className="exn-inner">
 						<h2 className="exn-h2">От ссылки до первого разбора — один вечер</h2>
-						<div className="exn-grid-3">
-							{STEPS.map((s) => (
-								<div key={s.n} className="exn-step">
-									<div className="exn-step-n">{s.n}</div>
-									<h3 className="exn-card-t">{s.t}</h3>
-									<p className="exn-card-d">{s.d}</p>
-								</div>
-							))}
+						<div className="vz vz-pipe" role="img" aria-label="От ссылки до первого разбора: вход в бота, точка А, первый разбор — три шага">
+							<ol className="vz-track vz-track-3">
+								<svg className="vz-rail" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+									<line className="vz-rail-line" x1="8" y1="1" x2="992" y2="1" />
+									<rect className="vz-rail-pulse" x="8" y="0" width="110" height="2" rx="1" />
+								</svg>
+								{STEPS.map((s, i) => (
+									<li key={s.n} className="vz-step" style={{ ["--i" as string]: i }}>
+										<span className="vz-step-n">{s.n}</span>
+										<span className="vz-step-t">{s.t}</span>
+										<span className="vz-step-x">{s.d}</span>
+									</li>
+								))}
+							</ol>
 						</div>
 					</div>
 				</section>
