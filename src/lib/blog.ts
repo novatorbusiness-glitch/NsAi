@@ -258,6 +258,17 @@ export function isWithinDays(dateISO: string, days: number): boolean {
 
 export const NEW_DAYS = 30;
 
+// Метка NEW на карточке — только у статей из последней «пачки» публикаций
+// (той же даты, что самая свежая статья на сайте), а не у всех, что вышли
+// за последние NEW_DAYS: иначе после нескольких публикаций подряд NEW
+// копится сразу на куче старых статей и перестаёт значить «новое».
+// Как только выходит статья со свежей датой — метка сама уходит со всех
+// прежних, никаких ручных правок не нужно.
+export const LATEST_POST_DATE = BLOG_POSTS.reduce((max, p) => (p.date > max ? p.date : max), BLOG_POSTS[0]?.date ?? "");
+export function isLatestBatch(dateISO: string): boolean {
+	return dateISO === LATEST_POST_DATE;
+}
+
 // Количество страниц на сайте (статические маршруты: главная + разделы +
 // статьи блога + главы книги). Используется в блоке «статы» на /blog.
 export const SITE_PAGES = 53;

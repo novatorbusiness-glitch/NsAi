@@ -7,7 +7,7 @@ import {
 	BLOG_POSTS_SORTED,
 	BLOG_STATS,
 	NEW_DAYS,
-	isWithinDays,
+	isLatestBatch,
 } from "@/lib/blog";
 import type { BlogCategory } from "@/lib/blog";
 import { useLang } from "@/lib/i18n";
@@ -173,7 +173,7 @@ export default function BlogIndex() {
 			<div className="w nb-grid">
 				{filtered.length > 0 ? (
 					filtered.map((post) => {
-						const isNew = isWithinDays(post.date, NEW_DAYS);
+						const isNew = isLatestBatch(post.date);
 						return (
 							<a key={post.slug} href={`/blog/${post.slug}`} className="nb-card">
 								<div className="nb-card-top">

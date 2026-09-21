@@ -23,7 +23,7 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
    справа не прилипали к шапке. min-height, а не height, поэтому
    на невысоком экране секция растёт и отступ сохраняется. */
 #hero{min-height:calc(100vh - 68px);display:flex;align-items:center;position:relative;overflow:hidden;
-  padding:clamp(2.75rem,5.5vh,5rem) 0}
+  padding:clamp(2.75rem,5.5vh,5rem) 0 clamp(4.5rem,9vh,6.5rem)}
 .hero-grid{position:absolute;inset:0;pointer-events:none;
   background-image:linear-gradient(rgba(255,208,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(255,208,0,.016) 1px,transparent 1px);
   background-size:60px 60px;animation:gm 30s ease-in-out infinite alternate}
@@ -97,8 +97,12 @@ body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
    где правая колонка карточек ниже центра героя, последняя карточка
    рисуется поверх подсказки независимо от порядка в DOM (у элемента
    с явным z-index стек-контекст всегда выше z-index:auto). */
-.scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);z-index:3;
+.scroll-hint{position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);z-index:3;
   display:flex;flex-direction:column;align-items:center;gap:.4rem;animation:fup 1.2s .7s var(--ease) both}
+/* На невысоких экранах колонка карточек справа всё равно может дотянуться
+   до низа секции даже с запасом padding — подсказка декоративная, прячем,
+   а не гоняемся за z-index поверх контента. */
+@media(max-height:820px){.scroll-hint{display:none}}
 .sh-txt{font-family:var(--fm);font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
 .sh-line{width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,208,0,.5),transparent);
   animation:spulse 2s ease-in-out infinite}
