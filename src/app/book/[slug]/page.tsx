@@ -222,19 +222,29 @@ export function generateMetadata({ params }: ChapterPageProps): Metadata {
 	const resolvedSlug = resolveChapterSlug(params.slug);
 	if (!slugs.includes(resolvedSlug)) {
 		return {
-			title: "Глава не найдена | NCAi",
+			title: { absolute: "Глава не найдена | NCAi" },
 			description: "Запрошенная глава книги не найдена.",
 		};
 	}
 
 	const chapterTitle = getSubchapterTitle(resolvedSlug);
+	const ogTitle = `${chapterTitle} — Нейро-воронка`;
+	const description = `${chapterTitle}. Глава книги «Нейро-воронка» Ильи Новицкого — инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI.`;
 
 	return {
-		title: `${chapterTitle} — Нейро-воронка | NCAi`,
-		description: `${chapterTitle}. Глава книги «Нейро-воронка» Ильи Новицкого — инженерия систем продаж на стыке нейробиологии, поведенческой психологии и AI.`,
+		title: { absolute: `${chapterTitle} — Нейро-воронка | NCAi` },
+		description,
 		alternates: {
 			canonical: `/book/${resolvedSlug}`,
 		},
+		openGraph: {
+			title: ogTitle,
+			description,
+			url: `/book/${resolvedSlug}`,
+			type: "article",
+			images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
+		},
+		twitter: { card: "summary_large_image", title: ogTitle, description },
 	};
 }
 
