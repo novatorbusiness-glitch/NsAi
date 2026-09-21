@@ -3385,6 +3385,26 @@ footer {
 	padding-bottom: 6rem;
 }
 
+/* Прогресс чтения статьи — концепт №20. Тонкая линия под шапкой,
+   заполняется по факту прохождения текста (не всей страницы). */
+.blog-read-bar {
+	position: fixed;
+	top: 68px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: transparent;
+	z-index: 90;
+	pointer-events: none;
+}
+
+.blog-read-bar-fill {
+	height: 100%;
+	background: linear-gradient(90deg, var(--a), rgba(255, 208, 0, 0.55));
+	box-shadow: 0 0 8px rgba(255, 208, 0, 0.5);
+	transition: width 0.12s linear;
+}
+
 .blog-article-head {
 	margin-bottom: 3rem;
 }
