@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 		title: "Блог — нейромаркетинг, воронки и AI",
 		description: "Практические статьи о том, как заставить воронку продаж работать: крючок, боль, оффер, AI.",
 		url: "https://ilya-novitsky.ru/blog",
-		images: [{ url: "/images/og/default.png", width: 1200, height: 630 }],
+		images: [{ url: "/images/og/blog.png", width: 1200, height: 630 }],
 	},
 };
 

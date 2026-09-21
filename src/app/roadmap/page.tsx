@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	title: TITLE,
 	description: DESCRIPTION,
 	alternates: { canonical: "/roadmap" },
-	openGraph: { title: TITLE, description: DESCRIPTION, url: "/roadmap", type: "website", images: [{ url: "/images/og/default.png", width: 1200, height: 630 }] },
+	openGraph: { title: TITLE, description: DESCRIPTION, url: "/roadmap", type: "website", images: [{ url: "/images/og/roadmap.png", width: 1200, height: 630 }] },
 	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
