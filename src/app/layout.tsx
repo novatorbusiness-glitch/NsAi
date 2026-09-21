@@ -140,8 +140,7 @@ export default function RootLayout({
 				<LangProvider>{children}</LangProvider>
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
 				<Script id="yandex-metrika" strategy="afterInteractive">
-					{`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112582890','ym');ym(112582890,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
-document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e.target.closest('a'):null;if(!a)return;var g=a.getAttribute('data-goal');if(g){ym(112582890,'reachGoal',g);return;}var h=a.getAttribute('href')||'';if(h.indexOf('t.me')!==-1){ym(112582890,'reachGoal','telegram');return;}if(a.classList&&(a.classList.contains('nc')||a.classList.contains('mnav-cta')||a.classList.contains('bp'))){ym(112582890,'reachGoal','cta');}});`}
+					{`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=112582890','ym');ym(112582890,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});`}
 				</Script>
 				<noscript>
 					<div>
@@ -154,6 +153,27 @@ document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-JZ4HFZSL4S');`}
+				</Script>
+				{/* Один обработчик кликов на обе системы аналитики — цель шлётся
+				    под одним и тем же именем в Метрику (reachGoal) и в GA4
+				    (event), чтобы имена целей не могли разойтись между
+				    системами. Источники: ссылки на t.me → "telegram",
+				    основные CTA-кнопки (.nc/.mnav-cta/.bp) → "cta",
+				    произвольные — через data-goal на конкретной ссылке. */}
+				<Script id="analytics-goals" strategy="afterInteractive">
+					{`document.addEventListener('click',function(e){
+	var a=e.target&&e.target.closest?e.target.closest('a'):null;
+	if(!a)return;
+	var goal=a.getAttribute('data-goal');
+	if(!goal){
+		var h=a.getAttribute('href')||'';
+		if(h.indexOf('t.me')!==-1){goal='telegram';}
+		else if(a.classList&&(a.classList.contains('nc')||a.classList.contains('mnav-cta')||a.classList.contains('bp'))){goal='cta';}
+	}
+	if(!goal)return;
+	if(window.ym)ym(112582890,'reachGoal',goal);
+	if(window.gtag)gtag('event',goal);
+});`}
 				</Script>
 			</body>
 		</html>
