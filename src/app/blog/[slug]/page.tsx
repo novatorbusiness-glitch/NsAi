@@ -18,7 +18,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 		return { title: "Статья не найдена" };
 	}
 	return {
-		title: post.title,
+		// заголовки статей не должны получать суффикс «· NCAi» из шаблона
+		// layout.tsx, если сами уже содержат «NCAi» (см. chto-takoe-ncai) —
+		// иначе на проде получается «...NCAi... · NCAi».
+		title: post.title.includes("NCAi") ? { absolute: post.title } : post.title,
 		description: post.excerpt,
 		alternates: { canonical: `/blog/${post.slug}` },
 		openGraph: {
