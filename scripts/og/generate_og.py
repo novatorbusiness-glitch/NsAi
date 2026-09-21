@@ -117,7 +117,15 @@ def main():
         hy += 62
 
     sub_y = hy + 18
-    for line in wrap(d, args.subtitle, f_sub, W - margin * 2)[:2]:
+    sub_lines = wrap(d, args.subtitle, f_sub, W - margin * 2)
+    max_lines = 3
+    if len(sub_lines) > max_lines:
+        sub_lines = sub_lines[:max_lines]
+        last = sub_lines[-1]
+        while d.textlength(last + "…", font=f_sub) > W - margin * 2 and len(last) > 1:
+            last = last[:-1].rstrip()
+        sub_lines[-1] = last + "…"
+    for line in sub_lines:
         d.text((margin, sub_y), line, font=f_sub, fill=T3)
         sub_y += 30
 
