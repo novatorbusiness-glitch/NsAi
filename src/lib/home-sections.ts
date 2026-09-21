@@ -28,7 +28,19 @@ export const HERO_HTML = `<!-- HERO -->
     </div>
     <!-- RIGHT — PRODUCT CARDS -->
     <div class="hero-right">
-      <div class="pc-group-label">Для бизнеса</div>
+      <div class="pc-group-label">Основное</div>
+      <div class="product-cards">
+        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
+          <div class="pc-icon">${icon("target", "var(--c)")}</div>
+          <div class="pc-body">
+            <div class="pc-label">Основное · Вход в бизнес</div>
+            <div class="pc-title">Месяц работы вместе</div>
+            <div class="pc-sub">Сначала бесплатно показываю результат на вашей задаче. Зашло — захожу на месяц работы вместе.</div>
+          </div>
+          <div class="pc-arr">→</div>
+        </a>
+      </div>
+      <div class="pc-group-label pc-group-label-alt">Для бизнеса</div>
       <div class="product-cards">
         <a href="/raspakovka" class="pc pc-consulting" style="--c:#FFD000">
           <div class="pc-icon">${icon("box", "var(--c)")}</div>
@@ -54,18 +66,6 @@ export const HERO_HTML = `<!-- HERO -->
             <div class="pc-label">Книга · Бесплатно</div>
             <div class="pc-title">Нейро-воронка</div>
             <div class="pc-sub">Нейробиология продаж и AI-автоматизация. 6 глав.</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-      </div>
-      <div class="pc-group-label pc-group-label-alt">Основное</div>
-      <div class="product-cards">
-        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
-          <div class="pc-icon">${icon("target", "var(--c)")}</div>
-          <div class="pc-body">
-            <div class="pc-label">Основное · Вход в бизнес</div>
-            <div class="pc-title">Месяц работы вместе</div>
-            <div class="pc-sub">Сначала бесплатно показываю результат на вашей задаче. Зашло — захожу на месяц работы вместе.</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -571,7 +571,19 @@ export const HERO_HTML_EN = `<!-- HERO -->
     </div>
     <!-- RIGHT — PRODUCT CARDS -->
     <div class="hero-right">
-      <div class="pc-group-label">For business</div>
+      <div class="pc-group-label">Main</div>
+      <div class="product-cards">
+        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
+          <div class="pc-icon">${icon("target", "var(--c)")}</div>
+          <div class="pc-body">
+            <div class="pc-label">Main · Joining your business</div>
+            <div class="pc-title">A month of work together</div>
+            <div class="pc-sub">First I show a result on your task for free. If it lands, I join for a month of work together.</div>
+          </div>
+          <div class="pc-arr">→</div>
+        </a>
+      </div>
+      <div class="pc-group-label pc-group-label-alt">For business</div>
       <div class="product-cards">
         <a href="/raspakovka" class="pc pc-consulting" style="--c:#FFD000">
           <div class="pc-icon">${icon("box", "var(--c)")}</div>
@@ -597,18 +609,6 @@ export const HERO_HTML_EN = `<!-- HERO -->
             <div class="pc-label">Book · Free</div>
             <div class="pc-title">Neuro-Funnel</div>
             <div class="pc-sub">The neuroscience of sales and AI automation. 6 chapters.</div>
-          </div>
-          <div class="pc-arr">→</div>
-        </a>
-      </div>
-      <div class="pc-group-label pc-group-label-alt">Main</div>
-      <div class="product-cards">
-        <a href="/portfolio" class="pc pc-portfolio" style="--c:#ff9d2e">
-          <div class="pc-icon">${icon("target", "var(--c)")}</div>
-          <div class="pc-body">
-            <div class="pc-label">Main · Joining your business</div>
-            <div class="pc-title">A month of work together</div>
-            <div class="pc-sub">First I show a result on your task for free. If it lands, I join for a month of work together.</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
