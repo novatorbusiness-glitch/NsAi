@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import RaspakovkaPage from "@/components/pages/RaspakovkaPage";
 
-const TITLE = "Операционка уходит с вас за 19 900 ₽";
+const TITLE = "Операционка уходит с вас";
 const DESCRIPTION =
 	"Разворачиваю под ваш бизнес AI-команду: задачи ставите в чате, результат проверяется до закрытия, расход на AI под контролем. Руль сразу у вас.";
 

@@ -8,7 +8,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Агентство в коробке · распаковка + подписка</div>
-    <h1 class="hh1">Операционка уходит с вас.<span class="acc">Забираем в агентство за 19 900 ₽.</span></h1>
+    <h1 class="hh1">Операционка уходит с вас.<span class="acc">Забираем её в агентство.</span></h1>
     <p class="hsub">Не «доступ к нейросети», а настоящий движок: приёмка задач, пир-ревью, ночной драйвер 24/7. Готовая AI-команда с ролями, доской задач и контролем расходов. Руль сразу у вас — для владельца бизнеса и для новой профессии менеджера AI-агентства.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -16,7 +16,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
     </div>
     <div class="hstats">
       <div class="hstat"><div class="hstatn">4<span class="sfx">шага</span></div><div class="hstatl">Распаковка — агентство готово</div></div>
-      <div class="hstat"><div class="hstatn">19 900<span class="sfx">₽</span></div><div class="hstatl">Разово за распаковку, дальше — подписка</div></div>
+      <div class="hstat"><div class="hstatn">24<span class="sfx">/7</span></div><div class="hstatl">Агентство на связи, а не по расписанию</div></div>
       <div class="hstat"><div class="hstatn">1<span class="sfx">–5</span></div><div class="hstatl">AI-агентов под ваши задачи</div></div>
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Прозрачность: всё в панели у вас</div></div>
     </div>
@@ -296,7 +296,7 @@ export const ROI_HTML = `<!-- ROI · ПОЧЕМУ ЭТО ОКУПАЕТСЯ -->
     <div class="roi-head">
       <div>
         <span class="lb rv">Почему это окупается</span>
-        <h2 class="sh2 rv d1">19 900 ₽ — не трата.<br>Это экономия миллионов.</h2>
+        <h2 class="sh2 rv d1">Это не трата.<br>Это экономия миллионов.</h2>
       </div>
       <p class="roi-tx rv d2">Вы платите не за «ботов в Telegram» и не за красивые консультации. Вы платите за то, чтобы <strong>ближайшие полгода не отдавать миллионы за зарплаты</strong> — и запускать свои продукты за <strong>дни, а не за месяцы</strong>. Это не расход. Это ROI.</p>
     </div>
@@ -499,7 +499,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
   <div class="w">
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Оффер · распаковка</span>
-      <h2 class="ofh2 rv d1">Что вы получаете<br>за 19 900 ₽</h2>
+      <h2 class="ofh2 rv d1">Что вы получаете</h2>
       <p class="ofsub rv d2">Лестница входа: <b>разбор 190 ₽</b> (квиз в боте, без риска) → <b>распаковка 19 900 ₽</b> (первый месяц подписки включён) → <b>подписка 4 900 ₽/мес</b>. Прозрачно, без скрытых платежей.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">Что входит в распаковку</p>
@@ -763,7 +763,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
   <div class="hgrid"></div><div class="hgl"></div>
   <div class="hleft">
     <div class="hew"><span class="hdot"></span>Agency in a box · unboxing + subscription</div>
-    <h1 class="hh1">The operational load leaves you.<span class="acc">We turn it into an agency for 19,900 ₽.</span></h1>
+    <h1 class="hh1">The operational load leaves you.<span class="acc">We turn it into an agency.</span></h1>
     <p class="hsub">Not "access to a neural network," but a real engine: task intake, peer review, a 24/7 night-shift driver. A ready AI team with roles, a task board and spend control. You're in control from day one — for a business owner and for the new profession of AI-agency manager alike.</p>
     <div class="hacts">
       <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -771,7 +771,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
     </div>
     <div class="hstats">
       <div class="hstat"><div class="hstatn">4<span class="sfx">steps</span></div><div class="hstatl">Unboxing — agency ready</div></div>
-      <div class="hstat"><div class="hstatn">19,900<span class="sfx">₽</span></div><div class="hstatl">One-time for unboxing, then a subscription</div></div>
+      <div class="hstat"><div class="hstatn">24<span class="sfx">/7</span></div><div class="hstatl">The agency is on call, not on a schedule</div></div>
       <div class="hstat"><div class="hstatn">1<span class="sfx">–5</span></div><div class="hstatl">AI agents built for your tasks</div></div>
       <div class="hstat"><div class="hstatn"><span class="cnt" data-to="100">0</span><span class="sfx">%</span></div><div class="hstatl">Transparent: everything's in your panel</div></div>
     </div>
@@ -1051,7 +1051,7 @@ export const ROI_HTML_EN = `<!-- ROI -->
     <div class="roi-head">
       <div>
         <span class="lb rv">Why it pays for itself</span>
-        <h2 class="sh2 rv d1">19,900 ₽ isn't a cost.<br>It's a savings of millions.</h2>
+        <h2 class="sh2 rv d1">It isn't a cost.<br>It's a savings of millions.</h2>
       </div>
       <p class="roi-tx rv d2">You're not paying for "Telegram bots" or nice-sounding consultations. You're paying so that <strong>you don't hand over millions in salaries over the next six months</strong> — and so you can launch products in <strong>days, not months</strong>. This isn't a cost. It's ROI.</p>
     </div>
@@ -1254,7 +1254,7 @@ export const OFFER_HTML_EN = `<!-- THE OFFER -->
   <div class="w">
     <div class="ofin">
       <span class="lb rv" style="justify-content:center">Offer · unboxing</span>
-      <h2 class="ofh2 rv d1">What you get<br>for 19,900 ₽</h2>
+      <h2 class="ofh2 rv d1">What you get</h2>
       <p class="ofsub rv d2">An entry ladder: <b>a 190 ₽ assessment</b> (a quiz in the bot, no risk) → <b>a 19,900 ₽ unboxing</b> (first month of subscription included) → <b>a 4,900 ₽/mo subscription</b>. Transparent, no hidden fees.</p>
       <div class="ofcard rv d2">
         <p style="font-family:var(--fm);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:1.5rem">What's included in the unboxing</p>

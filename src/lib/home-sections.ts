@@ -35,7 +35,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Распаковка агентства</div>
             <div class="pc-title">Цифровой отдел за 4 шага</div>
-            <div class="pc-sub">Распаковка в боте · свои AI-агенты, доска задач, руль сразу у вас · 19 900 ₽</div>
+            <div class="pc-sub">Распаковка в боте · свои AI-агенты, доска задач, руль сразу у вас</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -43,7 +43,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-icon">${icon("bolt", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">Обучение AI</div>
-            <div class="pc-title">1 месяц · 70–80к ₽</div>
+            <div class="pc-title">1 месяц · готовый продукт</div>
             <div class="pc-sub">2 сессии + распаковка агентства, создаёшь реальный продукт с нуля</div>
           </div>
           <div class="pc-arr">→</div>
@@ -65,7 +65,7 @@ export const HERO_HTML = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Основное · Вход в бизнес</div>
             <div class="pc-title">Месяц работы вместе</div>
-            <div class="pc-sub">Сначала бесплатно показываю результат на вашей задаче. Зашло — захожу на месяц: от 200 000 ₽</div>
+            <div class="pc-sub">Сначала бесплатно показываю результат на вашей задаче. Зашло — захожу на месяц работы вместе.</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -233,8 +233,8 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
       </div>
       <ol class="vz-fn-steps">
         <li class="vz-fn-step"><b>БЕСПЛАТНО</b><span><i>Книга «Нейро-Воронка».</i> 6 глав и 30 подглав о том, как воронка приносит заявки. Читается прямо на сайте.</span></li>
-        <li class="vz-fn-step"><b>0 ₽</b><span><i>Демонстрация на вашей задаче.</i> Беру реальную задачу и отдаю готовые артефакты за 1–3 дня. Не зашло — расходимся.</span></li>
-        <li class="vz-fn-step"><b>ОТ 200 000 ₽</b><span><i>Месяц работы вместе.</i> Захожу в проект с методом NCAi, обучаю вашего человека и работаю рядом с ним.</span></li>
+        <li class="vz-fn-step"><b>ДЕМО</b><span><i>Демонстрация на вашей задаче.</i> Беру реальную задачу и отдаю готовые артефакты за 1–3 дня. Не зашло — расходимся.</span></li>
+        <li class="vz-fn-step"><b>ВМЕСТЕ</b><span><i>Месяц работы вместе.</i> Захожу в проект с методом NCAi, обучаю вашего человека и работаю рядом с ним.</span></li>
         <li class="vz-fn-step"><b>ДАЛЬШЕ</b><span><i>Следующий цикл — по желанию.</i> У руля остаётся ваш сотрудник, а не подрядчик.</span></li>
       </ol>
     </div>
@@ -256,7 +256,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>Разово</span>19 900 ₽</div>
+          <div class="prod-price"><span>Формат</span>Разово + подписка</div>
           <div class="prod-link">Подробнее →</div>
         </div>
       </a>
@@ -276,7 +276,7 @@ export const PRODUCTS_HTML = `<!-- PRODUCTS -->
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>Цена</span>70–80к ₽ / месяц</div>
+          <div class="prod-price"><span>Формат</span>1 месяц</div>
           <div class="prod-link">Подробнее →</div>
         </div>
       </a>
@@ -514,7 +514,7 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
   <div class="wrap">
     <span class="sec-tag rv is-center">Готов начать</span>
     <h2 class="closing-h2 rv d1">Не разговор «про AI вообще» —<br>конкретный первый шаг</h2>
-    <p class="closing-lead rv d1">Три шага — от разбора за 190 ₽ до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
+    <p class="closing-lead rv d1">Три шага — от бесплатного разбора до рабочего агентства. Всё ведёт в одну систему, ничего не платится дважды.</p>
 
     <div class="closing-paths rv d2">
       <a href="/book" class="closing-path">
@@ -525,12 +525,12 @@ export const CLOSING_HTML = `<!-- CLOSING CTA -->
       <a href="/raspakovka" class="closing-path cp-main">
         <div class="cp-n">1</div>
         <div class="cp-t">Распаковка агентства</div>
-        <div class="cp-s">Разбор 190 ₽ → распаковка 19 900 ₽ — руль сразу у вас</div>
+        <div class="cp-s">Бесплатный разбор → распаковка агентства — руль сразу у вас</div>
       </a>
       <a href="/ai-training" class="closing-path">
         <div class="cp-n">2</div>
         <div class="cp-t">Обучение AI</div>
-        <div class="cp-s">1 месяц · 2 сессии — создаёшь реальный продукт с нуля · 70–80к ₽</div>
+        <div class="cp-s">1 месяц · 2 сессии — создаёшь реальный продукт с нуля</div>
       </a>
     </div>
 
@@ -578,7 +578,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Agency Unboxing</div>
             <div class="pc-title">A digital department in 4 steps</div>
-            <div class="pc-sub">Unboxed in the bot · your own AI agents, a task board, control stays with you from day one · 19 900 ₽</div>
+            <div class="pc-sub">Unboxed in the bot · your own AI agents, a task board, control stays with you from day one</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -586,7 +586,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
           <div class="pc-icon">${icon("bolt", "var(--c)")}</div>
           <div class="pc-body">
             <div class="pc-label">AI Training</div>
-            <div class="pc-title">1 month · 70–80K ₽</div>
+            <div class="pc-title">1 month · a finished product</div>
             <div class="pc-sub">2 sessions + agency unboxing — you build a real product from scratch</div>
           </div>
           <div class="pc-arr">→</div>
@@ -608,7 +608,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
           <div class="pc-body">
             <div class="pc-label">Main · Joining your business</div>
             <div class="pc-title">A month of work together</div>
-            <div class="pc-sub">First I show a result on your task for free. If it lands, I join for a month: from 200,000 ₽</div>
+            <div class="pc-sub">First I show a result on your task for free. If it lands, I join for a month of work together.</div>
           </div>
           <div class="pc-arr">→</div>
         </a>
@@ -776,8 +776,8 @@ export const PRODUCTS_HTML_EN = `<!-- PRODUCTS -->
       </div>
       <ol class="vz-fn-steps">
         <li class="vz-fn-step"><b>FREE</b><span><i>The Neuro-Funnel book.</i> 6 chapters and 30 subchapters on how a funnel actually brings in leads. Read it right here.</span></li>
-        <li class="vz-fn-step"><b>$0</b><span><i>A demonstration on your task.</i> I take a real task and hand back finished artifacts in 1–3 days. If it doesn't land, we part ways.</span></li>
-        <li class="vz-fn-step"><b>FROM 200,000 ₽</b><span><i>A month of work together.</i> I join the project with NCAi's method, train your person and work alongside them.</span></li>
+        <li class="vz-fn-step"><b>DEMO</b><span><i>A demonstration on your task.</i> I take a real task and hand back finished artifacts in 1–3 days. If it doesn't land, we part ways.</span></li>
+        <li class="vz-fn-step"><b>TOGETHER</b><span><i>A month of work together.</i> I join the project with NCAi's method, train your person and work alongside them.</span></li>
         <li class="vz-fn-step"><b>AFTER</b><span><i>Another cycle, optional.</i> Your employee stays at the wheel, not a contractor.</span></li>
       </ol>
     </div>
@@ -799,7 +799,7 @@ export const PRODUCTS_HTML_EN = `<!-- PRODUCTS -->
           </div>
         </div>
         <div class="prod-bottom">
-          <div class="prod-price"><span>One-time</span>19 900 ₽</div>
+          <div class="prod-price"><span>Format</span>One-time + subscription</div>
           <div class="prod-link">Learn more →</div>
         </div>
       </a>

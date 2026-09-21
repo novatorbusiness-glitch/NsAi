@@ -21,7 +21,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
       <div class="ait-hero-meta">
         <div class="ait-hm">Формат<span>2 сессии + распаковка</span></div>
         <div class="ait-hm">Длительность<span>1 месяц на связи</span></div>
-        <div class="ait-hm">Цена<span>70–80к ₽</span></div>
+        <div class="ait-hm">Итог<span>Готовый продукт</span></div>
         <div class="ait-hm">Группа<span>1–2 человека</span></div>
       </div>
     </div>
@@ -256,7 +256,7 @@ export const OFFER_HTML = `<!-- 7 · ОФФЕР -->
 <section id="inside" class="ait-alt">
   <div class="w ait-price-wrap">
     <span class="ait-sec-tag rv" style="justify-content:center">Оффер</span>
-    <h2 class="ait-sec-h2 rv d1" style="text-align:center">Что ты получаешь за 70–80к</h2>
+    <h2 class="ait-sec-h2 rv d1" style="text-align:center">Что ты получаешь</h2>
     <div class="ait-price-card rv d2">
       <div class="ait-price-top">
         <div>
@@ -380,7 +380,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
       <div class="ait-hero-meta">
         <div class="ait-hm">Format<span>2 sessions + unboxing</span></div>
         <div class="ait-hm">Duration<span>1 month on hand</span></div>
-        <div class="ait-hm">Price<span>70–80K ₽</span></div>
+        <div class="ait-hm">Outcome<span>A finished product</span></div>
         <div class="ait-hm">Group<span>1–2 people</span></div>
       </div>
     </div>
@@ -615,7 +615,7 @@ export const OFFER_HTML_EN = `<!-- THE OFFER -->
 <section id="inside" class="ait-alt">
   <div class="w ait-price-wrap">
     <span class="ait-sec-tag rv" style="justify-content:center">The offer</span>
-    <h2 class="ait-sec-h2 rv d1" style="text-align:center">What you get for 70–80K</h2>
+    <h2 class="ait-sec-h2 rv d1" style="text-align:center">What you get</h2>
     <div class="ait-price-card rv d2">
       <div class="ait-price-top">
         <div>
