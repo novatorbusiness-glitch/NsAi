@@ -6,7 +6,7 @@ const DESCRIPTION =
 	"Политика обработки персональных данных сайта ilya-novitsky.ru в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».";
 
 export const metadata: Metadata = {
-	title: TITLE,
+	title: { absolute: TITLE },
 	description: DESCRIPTION,
 	alternates: { canonical: "/privacy" },
 	openGraph: { title: TITLE, description: DESCRIPTION, url: "/privacy", type: "website", images: [{ url: "/images/og/default.png", width: 1200, height: 630 }] },

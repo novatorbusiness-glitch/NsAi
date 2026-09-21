@@ -6,7 +6,7 @@ const DESCRIPTION =
 	"Публичный договор-оферта (Пользовательское соглашение) об условиях использования сайта ilya-novitsky.ru и его материалов.";
 
 export const metadata: Metadata = {
-	title: TITLE,
+	title: { absolute: TITLE },
 	description: DESCRIPTION,
 	alternates: { canonical: "/offer" },
 	openGraph: { title: TITLE, description: DESCRIPTION, url: "/offer", type: "website", images: [{ url: "/images/og/default.png", width: 1200, height: 630 }] },
