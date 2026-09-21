@@ -42,6 +42,8 @@ function getPostSource(slug: string, variant: "" | ".en" = ""): string {
 	return fs.readFileSync(filePath, "utf8").trim();
 }
 
+const SITE_URL = "https://ilya-novitsky.ru";
+
 export default function BlogArticlePage({ params }: { params: { slug: string } }) {
 	const post = getBlogPost(params.slug);
 	if (!post) notFound();
@@ -49,8 +51,27 @@ export default function BlogArticlePage({ params }: { params: { slug: string } }
 	const sourceRu = getPostSource(params.slug);
 	const sourceEn = getPostSource(params.slug, ".en");
 
+	const articleJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "BlogPosting",
+		headline: post.title,
+		description: post.excerpt,
+		datePublished: post.date,
+		dateModified: post.date,
+		url: `${SITE_URL}/blog/${post.slug}`,
+		image: `${SITE_URL}/images/og/blog-${post.slug}.png`,
+		author: { "@type": "Person", name: "Илья Новицкий", url: SITE_URL },
+		publisher: {
+			"@type": "Organization",
+			name: "NCAi",
+			logo: { "@type": "ImageObject", url: `${SITE_URL}/images/og/default.png` },
+		},
+		mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+	};
+
 	return (
 		<PageShell>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
 			<div className="nb-article-wrap">
 				<article className="nb-article">
 					<BlogArticleBody

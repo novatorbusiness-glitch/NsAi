@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ExNihiloPage from "@/components/pages/ExNihiloPage";
+import ExNihiloPage, { FAQ } from "@/components/pages/ExNihiloPage";
 
 const TITLE = "ex NIHILO — платформа самоисследования";
 const DESCRIPTION =
@@ -13,6 +13,21 @@ export const metadata: Metadata = {
 	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
+const FAQ_JSON_LD = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: FAQ.map((f) => ({
+		"@type": "Question",
+		name: f.q,
+		acceptedAnswer: { "@type": "Answer", text: f.a },
+	})),
+};
+
 export default function Page() {
-	return <ExNihiloPage />;
+	return (
+		<>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
+			<ExNihiloPage />
+		</>
+	);
 }

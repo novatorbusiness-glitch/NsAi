@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import B24uPage from "@/components/pages/B24uPage";
+import B24uPage, { FAQ } from "@/components/pages/B24uPage";
 
 const TITLE = "AI-чатбот B24U для сайта";
 const DESCRIPTION =
@@ -13,6 +13,24 @@ export const metadata: Metadata = {
 	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
+// FAQPage — вопросы и ответы те же, что реально показаны на странице
+// (FAQ из B24uPage.tsx), только сюда добавлена structured data для
+// расширенного сниппета в поиске.
+const FAQ_JSON_LD = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: FAQ.map((f) => ({
+		"@type": "Question",
+		name: f.q,
+		acceptedAnswer: { "@type": "Answer", text: f.a },
+	})),
+};
+
 export default function Page() {
-	return <B24uPage />;
+	return (
+		<>
+			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
+			<B24uPage />
+		</>
+	);
 }
