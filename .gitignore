@@ -8,3 +8,4 @@ out
 *.tsbuildinfo
 __pycache__/
 *.pyc
+scripts/og/.cache/
