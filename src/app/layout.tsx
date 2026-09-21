@@ -148,6 +148,13 @@ document.addEventListener('click',function(e){var a=e.target&&e.target.closest?e
 						<img src="https://mc.yandex.ru/watch/112582890" style={{ position: "absolute", left: "-9999px" }} alt="" />
 					</div>
 				</noscript>
+				<Script async src="https://www.googletagmanager.com/gtag/js?id=G-JZ4HFZSL4S" strategy="afterInteractive" />
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-JZ4HFZSL4S');`}
+				</Script>
 			</body>
 		</html>
 	);
