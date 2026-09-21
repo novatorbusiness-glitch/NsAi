@@ -10,13 +10,17 @@ default.png и raspakovka.png разошлись с реальным содер�
 из export const metadata в src/app/<page>/page.tsx, чтобы у копии
 на картинке и в metadata был один и тот же ввод.
 
-Использование:
+CLI-использование (одна картинка):
     python3 scripts/og/generate_og.py \
         --out public/images/og/raspakovka.png \
         --badge "Илья Новицкий · NCAi" \
-        --headline "Операционка уходит с вас за 19 900 ₽" \
-        --subtitle "Разворачиваю под ваш бизнес AI-команду: задачи ставите в чате, результат проверяется до закрытия, расход под контролем." \
+        --headline "Операционка уходит с вас" \
+        --subtitle "Разворачиваю под ваш бизнес AI-команду..." \
         --stat "19 900 ₽"
+
+Как модуль (для скриптов вроде generate_blog_images.py):
+    from generate_og import render
+    render(out="public/images/og/x.png", badge="...", headline="...", subtitle="...")
 
 Шрифт (Unbounded, вариативный, вес 400-800, кириллица) скачивается один
 раз с GitHub (google/fonts) и кешируется в scripts/og/.cache/ — при
@@ -79,16 +83,8 @@ def wrap(draw, text, font, max_width):
     return lines
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--out", required=True, help="путь к выходному PNG")
-    ap.add_argument("--badge", required=True, help="строка-эйбрау над заголовком")
-    ap.add_argument("--headline", required=True, help="заголовок (H1/og:title)")
-    ap.add_argument("--subtitle", required=True, help="подзаголовок (og:description)")
-    ap.add_argument("--stat", default="", help="цифра справа внизу (например, цена); можно пусто")
-    ap.add_argument("--url", default="ilya-novitsky.ru")
-    args = ap.parse_args()
-
+def render(out, badge: str, headline: str, subtitle: str, stat: str = "", url: str = "ilya-novitsky.ru") -> pathlib.Path:
+    """Рендерит одну og-картинку. Возвращает путь к сохранённому файлу."""
     ensure_deps()
     from PIL import Image, ImageDraw, ImageFont
 
@@ -107,41 +103,61 @@ def main():
 
     badge_y = 128
     d.line([(margin, badge_y + 8), (margin + 28, badge_y + 8)], fill=A, width=2)
-    d.text((margin + 42, badge_y), args.badge.upper(), font=f_badge, fill=A)
+    d.text((margin + 42, badge_y), badge.upper(), font=f_badge, fill=A)
+
+    def cap_lines(all_lines, font, max_w, max_lines):
+        if len(all_lines) <= max_lines:
+            return all_lines
+        capped = all_lines[:max_lines]
+        last = capped[-1]
+        while d.textlength(last + "…", font=font) > max_w and len(last) > 1:
+            last = last[:-1].rstrip()
+        capped[-1] = last + "…"
+        return capped
 
     max_w = W - margin * 2 - 40
-    lines = wrap(d, args.headline, f_headline, max_w)
+    lines = cap_lines(wrap(d, headline, f_headline, max_w), f_headline, max_w, 3)
     hy = 205
     for line in lines:
         d.text((margin, hy), line, font=f_headline, fill=T)
         hy += 62
 
     sub_y = hy + 18
-    sub_lines = wrap(d, args.subtitle, f_sub, W - margin * 2)
-    max_lines = 3
-    if len(sub_lines) > max_lines:
-        sub_lines = sub_lines[:max_lines]
-        last = sub_lines[-1]
-        while d.textlength(last + "…", font=f_sub) > W - margin * 2 and len(last) > 1:
-            last = last[:-1].rstrip()
-        sub_lines[-1] = last + "…"
+    sub_max_w = W - margin * 2
+    sub_lines = cap_lines(wrap(d, subtitle, f_sub, sub_max_w), f_sub, sub_max_w, 3)
     for line in sub_lines:
         d.text((margin, sub_y), line, font=f_sub, fill=T3)
         sub_y += 30
 
-    div_y = 532
+    div_y = max(532, sub_y + 24)
     d.line([(margin, div_y), (W - margin, div_y)], fill=BR, width=1)
 
-    foot_y = 564
-    d.text((margin, foot_y), args.url, font=f_footer, fill=T3)
-    if args.stat:
-        stat_w = d.textlength(args.stat, font=f_stat)
-        d.text((W - margin - stat_w, foot_y - 1), args.stat, font=f_stat, fill=A)
+    foot_y = div_y + 32
+    if foot_y + 24 > H - 10:
+        print(f"WARNING: {out} — content may overflow canvas (foot_y={foot_y}, H={H}) — shorten headline/subtitle")
+    d.text((margin, foot_y), url, font=f_footer, fill=T3)
+    if stat:
+        stat_w = d.textlength(stat, font=f_stat)
+        d.text((W - margin - stat_w, foot_y - 1), stat, font=f_stat, fill=A)
 
-    out = pathlib.Path(args.out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    img.save(out)
-    print(f"saved {out}")
+    out_path = pathlib.Path(out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out_path)
+    return out_path
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out", required=True, help="путь к выходному PNG")
+    ap.add_argument("--badge", required=True, help="строка-эйбрау над заголовком")
+    ap.add_argument("--headline", required=True, help="заголовок (H1/og:title)")
+    ap.add_argument("--subtitle", required=True, help="подзаголовок (og:description)")
+    ap.add_argument("--stat", default="", help="цифра справа внизу (например, цена); можно пусто")
+    ap.add_argument("--url", default="ilya-novitsky.ru")
+    args = ap.parse_args()
+
+    out_path = render(out=args.out, badge=args.badge, headline=args.headline, subtitle=args.subtitle, stat=args.stat, url=args.url)
+    print(f"saved {out_path}")
 
 
 if __name__ == "__main__":

@@ -53,7 +53,7 @@ export default function Footer() {
           <div>
             <div className="fch">{t("footer.colWork")}</div>
             <ul className="fls">
-              <li><a href="/raspakovka">{t("footer.consulting")} · 19 900 ₽</a></li>
+              <li><a href="/raspakovka">{t("footer.consulting")}</a></li>
               <li><a href="/ai-training">{t("footer.aiTraining")}</a></li>
               <li><a href="/raspakovka#cases">{t("footer.cases")}</a></li>
               <li><a href="/raspakovka#steps">{t("footer.method")}</a></li>
