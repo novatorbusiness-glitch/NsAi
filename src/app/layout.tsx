@@ -67,6 +67,13 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		images: ["/images/og/default.png"],
 	},
+	// Google подтверждён HTML-файлом (public/google44dc7b2423db5368.html),
+	// не мета-тегом — у меня нет реального content-токена для мета-способа,
+	// а выдумывать его нельзя: не совпадёт с тем, что Google выдал Илье.
+	// Одного способа подтверждения достаточно, дублировать не нужно.
+	verification: {
+		yandex: "0a04b9c11bffe08d",
+	},
 	robots: {
 		index: true,
 		follow: true,
