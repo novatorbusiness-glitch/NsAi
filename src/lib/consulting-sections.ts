@@ -11,7 +11,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
     <h1 class="hh1">Операционка уходит с вас.<span class="acc">Забираем её в агентство.</span></h1>
     <p class="hsub">Не «доступ к нейросети», а настоящий движок: приёмка задач, пир-ревью, ночной драйвер 24/7. Готовая AI-команда с ролями, доской задач и контролем расходов. Руль сразу у вас — для владельца бизнеса и для новой профессии менеджера AI-агентства.</p>
     <div class="hacts">
-      <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#idea" class="bs">Почему это работает</a>
     </div>
     <div class="hstats">
@@ -529,7 +529,7 @@ export const OFFER_HTML = `<!-- 8 · ОФФЕР -->
         <p style="font-size:.92rem;color:var(--t2);line-height:1.6;margin:0">Распаковку <b>19 900 ₽</b> можно разбить на части — рассрочка через Prodamus. Годовая подписка — <b>49 000 ₽</b> вместо 58 800 помесячно: два месяца в подарок.</p>
       </div>
       <div class="ofcta rv d3">
-        <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Начать распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Начать распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
@@ -598,7 +598,7 @@ export const CTA_HTML = `<!-- CTA -->
     <h2 class="ofh2 rv">Хватит быть человеком-системой.<br>Получите <em style="font-style:normal;color:var(--a)">агентство в коробке.</em></h2>
     <p class="ofsub rv d1">Несколько шагов — и у вас рабочее агентство, которое снимает с вас операционку. Дальше руль в ваших руках: ставите задачи, смотрите результат.</p>
     <div class="ofcta rv d2">
-      <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Записаться на распаковку <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/ai-training" class="bs">Сравнить с обучением AI</a>
     </div>
     <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>
@@ -766,7 +766,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
     <h1 class="hh1">The operational load leaves you.<span class="acc">We turn it into an agency.</span></h1>
     <p class="hsub">Not "access to a neural network," but a real engine: task intake, peer review, a 24/7 night-shift driver. A ready AI team with roles, a task board and spend control. You're in control from day one — for a business owner and for the new profession of AI-agency manager alike.</p>
     <div class="hacts">
-      <a href="https://t.me/NCAi_Agency_bot" class="bp" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="#idea" class="bs">Why this works</a>
     </div>
     <div class="hstats">
@@ -1284,7 +1284,7 @@ export const OFFER_HTML_EN = `<!-- THE OFFER -->
         <p style="font-size:.92rem;color:var(--t2);line-height:1.6;margin:0">The <b>19,900 ₽</b> unboxing can be split into installments via Prodamus. The annual subscription is <b>49,000 ₽</b> instead of 58,800 paid monthly: two months free.</p>
       </div>
       <div class="ofcta rv d3">
-        <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Start unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Start unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
   </div>
@@ -1353,7 +1353,7 @@ export const CTA_HTML_EN = `<!-- CTA -->
     <h2 class="ofh2 rv">Stop being a human system.<br>Get an <em style="font-style:normal;color:var(--a)">agency in a box.</em></h2>
     <p class="ofsub rv d1">A few steps — and you have a working agency running operations without you. From there, you're in control: set tasks, watch the results.</p>
     <div class="ofcta rv d2">
-      <a href="https://t.me/NCAi_Agency_bot" class="bp" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/NCAi_Agency_bot" class="bp" data-goal="raspakovka_cta" style="font-size:.92rem;padding:1rem 2.25rem" target="_blank" rel="noopener noreferrer">Book an unboxing <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/ai-training" class="bs">Compare with AI training</a>
     </div>
     <div class="final-alt" style="font-family:var(--fm);font-size:.68rem;color:var(--t3);margin-top:1.5rem">Questions? <a href="mailto:ilya.novitskii@yandex.ru" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">ilya.novitskii@yandex.ru</a> or <a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer" style="color:var(--t2);text-decoration:none;border-bottom:1px solid var(--br2)">Telegram</a></div>

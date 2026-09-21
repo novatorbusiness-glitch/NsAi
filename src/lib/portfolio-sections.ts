@@ -14,7 +14,7 @@ export const HERO_HTML = `<!-- HERO -->
     <h1 class="port-hero-name">Сначала показываю результат.<br><span class="port-acc">Заходит — работаем месяц вместе.</span></h1>
     <p class="port-hero-sub">Не продаю часы и не обещаю. Беру вашу задачу, провожу исследование и отдаю готовые артефакты — бесплатно. Зашло — захожу в проект на месяц: внедряю метод, обучаю вашего человека им управлять и работаю рядом с ним. От 200 000 ₽.</p>
     <div class="port-hero-acts">
-      <a href="https://t.me/Ilya_novator" class="bp">Обсудить проект →</a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="portfolio_cta">Обсудить проект →</a>
       <a href="#port-work" class="bs">Портфолио ↓</a>
     </div>
     <div class="port-hero-term rv">
@@ -269,7 +269,7 @@ export const CONTACT_HTML = `<!-- CONTACT -->
     <h2 class="port-ch2 rv">Обсудим задачу?</h2>
     <p class="port-csub rv d1">Опишите проект в Telegram — отвечу в течение дня. Или на почту.</p>
     <div class="port-cacts rv d2">
-      <a href="https://t.me/Ilya_novator" class="bp">Telegram →</a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="portfolio_cta">Telegram →</a>
       <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Email</a>
     </div>
   </div>
@@ -381,7 +381,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
     <h1 class="port-hero-name">First I show you a result.<br><span class="port-acc">If it lands, we work a month together.</span></h1>
     <p class="port-hero-sub">I don't sell hours and I don't promise. I take your task, do the research and hand over finished artifacts — free. If it lands, I join the project for a month: I bring in the method, train the person who'll run it, and work alongside them. From 200,000 ₽.</p>
     <div class="port-hero-acts">
-      <a href="https://t.me/Ilya_novator" class="bp">Discuss a project →</a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="portfolio_cta">Discuss a project →</a>
       <a href="#port-work" class="bs">Portfolio ↓</a>
     </div>
     <div class="port-hero-term rv">
@@ -636,7 +636,7 @@ export const CONTACT_HTML_EN = `<!-- CONTACT -->
     <h2 class="port-ch2 rv">Let's discuss a task?</h2>
     <p class="port-csub rv d1">Describe the project on Telegram — I'll reply within the day. Or by email.</p>
     <div class="port-cacts rv d2">
-      <a href="https://t.me/Ilya_novator" class="bp">Telegram →</a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="portfolio_cta">Telegram →</a>
       <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Email</a>
     </div>
   </div>

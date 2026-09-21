@@ -93,7 +93,7 @@ export default function ExNihiloPage() {
 							что именно держит вашу продуктивность и что её съедает.
 						</p>
 						<div className="exn-cta">
-							<a href={REF} target="_blank" rel="noopener noreferrer" className="exn-btn" data-goal="exn_cta">
+							<a href={REF} target="_blank" rel="noopener noreferrer" className="exn-btn">
 								Начать исследование в Telegram →
 							</a>
 							<a href="#how" className="exn-btn exn-btn-ghost">
@@ -252,7 +252,7 @@ export default function ExNihiloPage() {
 							именно вам.
 						</p>
 						<div className="exn-cta">
-							<a href={REF} target="_blank" rel="noopener noreferrer" className="exn-btn" data-goal="exn_cta">
+							<a href={REF} target="_blank" rel="noopener noreferrer" className="exn-btn">
 								Начать 7 дней бесплатно →
 							</a>
 							<a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer" className="exn-btn exn-btn-ghost">

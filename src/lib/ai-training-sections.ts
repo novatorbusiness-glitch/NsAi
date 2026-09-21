@@ -15,7 +15,7 @@ export const HERO_HTML = `<!-- HERO · ТИЗЕРНЫЙ ХУК -->
       <h1 class="ait-hero-h1">Тебя учили <em>смотреть</em>.<span class="ait-acc">Здесь ты делаешь.</span></h1>
       <p class="ait-hero-sub">Не курс и не лекции. Берём <strong>твой реальный проект</strong> и собираем его на 2 живых сессиях. Плюс разворачиваю рабочее AI-агентство, месяц остаюсь на связи, книга из 111 промптов — в подарок.</p>
       <div class="ait-hero-acts">
-        <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#idea" class="bs">Почему это работает</a>
       </div>
       <div class="ait-hero-meta">
@@ -285,7 +285,7 @@ export const OFFER_HTML = `<!-- 7 · ОФФЕР -->
         <div class="ait-m4"><div class="ait-m4-l">Твои усилия</div><div class="ait-m4-v">Диагностика + практика между сессиями</div></div>
       </div>
       <div class="ait-price-cta">
-        <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
+        <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
         <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Написать на почту</a>
       </div>
       <div class="ait-price-caption">1–2 человека одновременно — работаю с тобой лично, а не с потоком. Если места заняты, встаёшь в лист ожидания.</div>
@@ -352,7 +352,7 @@ export const FINAL_HTML = `<!-- 10 · CTA -->
     <h2 class="ait-final-h2 rv">Хватит смотреть.<br>Начни <em>собирать.</em></h2>
     <p class="ait-final-sub rv d1">Месяц, твой проект, 1 на 1. Уходишь с продуктом и навыком, который остаётся.</p>
     <div class="ait-final-acts rv d2">
-      <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Записаться <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/raspakovka" class="bs">Сравнить с распаковкой NCAi</a>
     </div>
     <div class="ait-final-alt rv d3">Вопросы? <a href="mailto:ilya.novitskii@yandex.ru">ilya.novitskii@yandex.ru</a> или <a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a></div>
@@ -374,7 +374,7 @@ export const HERO_HTML_EN = `<!-- HERO -->
       <h1 class="ait-hero-h1">You were taught to <em>watch</em>.<span class="ait-acc">Here you build.</span></h1>
       <p class="ait-hero-sub">Not a course, not lectures. We take <strong>your real project</strong> and build it across 2 live sessions. Plus I deploy a working AI agency, stay on hand for a month, and give you a book of 111 prompts as a gift.</p>
       <div class="ait-hero-acts">
-        <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Sign up <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Sign up <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#idea" class="bs">Why this works</a>
       </div>
       <div class="ait-hero-meta">
@@ -644,7 +644,7 @@ export const OFFER_HTML_EN = `<!-- THE OFFER -->
         <div class="ait-m4"><div class="ait-m4-l">Your effort</div><div class="ait-m4-v">Diagnosis + practice between sessions</div></div>
       </div>
       <div class="ait-price-cta">
-        <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Sign up on Telegram</a>
+        <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Sign up on Telegram</a>
         <a href="mailto:ilya.novitskii@yandex.ru" class="bs">Email me</a>
       </div>
       <div class="ait-price-caption">1–2 people at a time — I work with you personally, not with a crowd. If the spots are taken, you join the waitlist.</div>
@@ -711,7 +711,7 @@ export const FINAL_HTML_EN = `<!-- CTA -->
     <h2 class="ait-final-h2 rv">Stop watching.<br>Start <em>building.</em></h2>
     <p class="ait-final-sub rv d1">A month, your project, one on one. You leave with a product and a skill that stays.</p>
     <div class="ait-final-acts rv d2">
-      <a href="https://t.me/Ilya_novator" class="bp" target="_blank" rel="noopener noreferrer">Sign up <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://t.me/Ilya_novator" class="bp" data-goal="ai_training_cta" target="_blank" rel="noopener noreferrer">Sign up <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="/raspakovka" class="bs">Compare with NCAi unboxing</a>
     </div>
     <div class="ait-final-alt rv d3">Questions? <a href="mailto:ilya.novitskii@yandex.ru">ilya.novitskii@yandex.ru</a> or <a href="https://t.me/Ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a></div>
