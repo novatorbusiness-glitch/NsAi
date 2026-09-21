@@ -26,6 +26,36 @@ export const BLOG_CATEGORIES: { key: BlogCategory | "all"; label: string; labelE
 
 export const BLOG_POSTS: BlogPost[] = [
 	{
+		slug: "sdelano-i-provereno",
+		title: "«Сделано» и «проверено» — разные слова: как в AI-команде работает контроль качества",
+		titleEn: "\"Done\" and \"Checked\" Are Different Words: How Quality Control Works in an AI Team",
+		date: "2026-09-21",
+		dateLabel: "21 сентября 2026",
+		excerpt:
+			"AI отвечает быстро — это не то же самое, что отвечает правильно. Рассказываю, как устроена проверка в NCAi: почему ни одна задача не закрывается на первом «готово» и кто ставит финальную точку перед тем, как результат попадёт к вам.",
+		excerptEn:
+			"An AI answers fast — that's not the same as answering correctly. Here's how checking works at NCAi: why no task closes on the first \"done,\" and who has the final say before a result reaches you.",
+		tags: ["контроль качества", "AI-команда", "NCAi"],
+		category: "ai",
+		chars: 2063,
+		words: 328,
+	},
+	{
+		slug: "pochemu-ai-agent-ne-chatgpt",
+		title: "Почему AI-агент — это не ChatGPT в новой обёртке",
+		titleEn: "Why an AI Agent Isn't Just ChatGPT in a New Wrapper",
+		date: "2026-09-21",
+		dateLabel: "21 сентября 2026",
+		excerpt:
+			"«Просто подключите нейросеть» — самый частый совет, который не работает. Разбираю, чем команда AI-агентов с ролями и памятью о бизнесе отличается от одного чата с ChatGPT — и почему разница решает, работает система без вас или нет.",
+		excerptEn:
+			"\"Just plug in a neural network\" is the most common advice — and it usually doesn't work. Here's what separates a team of AI agents with roles and memory of your business from a single ChatGPT chat — and why that difference decides whether the system runs without you.",
+		tags: ["AI-агенты", "NCAi", "агентство в коробке"],
+		category: "ai",
+		chars: 2072,
+		words: 319,
+	},
+	{
 		slug: "chto-takoe-ncai",
 		title: "Что такое NCAi на самом деле — агентство, которое не нанимает людей",
 		titleEn: "What NCAi Actually Is — an Agency That Doesn't Hire People",
