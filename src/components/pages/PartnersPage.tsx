@@ -19,22 +19,7 @@ interface Partner {
 }
 
 const PARTNERS: Partner[] = [
-	{
-		name: "b24u.com",
-		url: "/b24u",
-		gap: "Клиент уходит, пока вы спите",
-		gapEn: "A client leaves while you sleep",
-		badge: "Официальный партнёр",
-		badgeEn: "Official partner",
-		logo: "b24",
-		desc:
-			"b24u.com — чат-бот с ИИ для сайта с конверсией более 60%. Отвечает клиентам круглосуточно и помогает вернуть лиды, которые вы теряете, пока никого нет онлайн.",
-		descEn:
-			"b24u.com — an AI chatbot for your website with over 60% conversion. Answers clients around the clock and helps recover leads you lose while no one's online.",
-		cta: "Открыть страницу",
-		ctaEn: "Open page",
-		internal: true,
-	},
+	// B24U временно скрыт (партнёрство обсуждается — вернуть после подтверждения сделки)
 	{
 		name: "ex NIHILO",
 		url: "/ex-nihilo",
@@ -84,8 +69,8 @@ export default function PartnersPage() {
 				</h1>
 				<p className="page-sub">
 					{ru
-						? "Клиент уходит, пока вы спите; платёжку нужно поднять без разработки; основатель выгорает раньше, чем окупается воронка. Это три дыры, которые я не закрываю кодом — их закрывают сервисы ниже. Честно: ссылка на Prodamus партнёрская, с неё идёт вознаграждение. На выбор это не влияет — ставлю то, чем пользуюсь сам."
-						: "A client leaves while you sleep; payments need to go live without a developer; the founder burns out before the funnel pays off. Three gaps I don't close with code — the services below do. To be straight: the Prodamus link is a referral one and pays a commission. It doesn't drive the pick — I list what I use myself."}
+						? "Платёжку нужно поднять без разработки; основатель выгорает раньше, чем окупается воронка. Это две дыры, которые я не закрываю кодом — их закрывают сервисы ниже. Честно: ссылка на Prodamus партнёрская, с неё идёт вознаграждение. На выбор это не влияет — ставлю то, чем пользуюсь сам."
+						: "Payments need to go live without a developer; the founder burns out before the funnel pays off. Two gaps I don't close with code — the services below do. To be straight: the Prodamus link is a referral one and pays a commission. It doesn't drive the pick — I list what I use myself."}
 				</p>
 			</div>
 
@@ -97,8 +82,8 @@ export default function PartnersPage() {
 					role="img"
 					aria-label={
 						ru
-							? "Три дыры и кто их закрывает: клиент уходит ночью → b24u.com, выгорание → ex NIHILO, платежи → Prodamus"
-							: "Three gaps and who closes them: client leaves at night → b24u.com, burnout → ex NIHILO, payments → Prodamus"
+							? "Две дыры и кто их закрывает: выгорание → ex NIHILO, платежи → Prodamus"
+							: "Two gaps and who closes them: burnout → ex NIHILO, payments → Prodamus"
 					}
 				>
 					<div className="vz-head">
