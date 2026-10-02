@@ -252,7 +252,7 @@ export default function BookReader({ chapters }: { chapters: ReaderChapter[] }) 
 				</nav>
 
 				<a
-					href="https://t.me/+8Qp8aSVS3nlhOTMy"
+					href="https://t.me/lowcortisol_ai"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="bkr-tg"

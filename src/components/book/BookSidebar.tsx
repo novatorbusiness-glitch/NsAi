@@ -91,7 +91,7 @@ export default function BookSidebar({ current }: { current?: string }) {
 				</nav>
 
 				<a
-					href="https://t.me/+8Qp8aSVS3nlhOTMy"
+					href="https://t.me/lowcortisol_ai"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="bkr-tg"
