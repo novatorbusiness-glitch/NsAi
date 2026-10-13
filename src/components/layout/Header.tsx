@@ -5,7 +5,7 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import BrandMark from "@/components/ui/BrandMark";
 
-// Шапка: значок и имя, три пункта меню, кнопка «Начать с одной задачи»; на телефоне — «Написать» и меню.
+// Шапка: значок и имя, три пункта меню, кнопка «Написать в Telegram»; на телефоне — «Написать» и меню.
 // На телефоне и планшете при прокрутке вниз уезжает, при прокрутке вверх возвращается (решение Ильи 13.10: мешала читать).
 export default function Header() {
 	const [open, setOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function Header() {
 					))}
 				</nav>
 				<div className="cta-row">
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" >
 						<span className="full">{common.ui.headerStart}</span>
 						<span className="short">{common.ui.headerShort}</span>
 					</a>

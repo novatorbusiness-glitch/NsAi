@@ -56,7 +56,7 @@ export function servicesLd() {
 		hasOfferCatalog: {
 			"@type": "OfferCatalog", name: "Шаги работы",
 			itemListElement: [
-				offer("Тест-драйв", prices.testDrive.price),
+				offer("Аудит и план действий", prices.testDrive.price),
 				offer("Чертёж системы", prices.blueprint.price),
 				offer("Ведение", prices.management.price, "месяц"),
 				offer("Наставничество", prices.mentor.price, "месяц"),

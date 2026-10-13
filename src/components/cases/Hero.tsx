@@ -17,7 +17,7 @@ export default function Hero() {
 						<div className="past-n">{c.past.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
 						<p className="past-note">{c.past.note}</p>
 					</div>
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{c.button}</a>
+					<a className="btn p" href="/#how" data-goal="cta_start">{c.button}</a>
 				</div>
 				<div className="result-viz" aria-label={c.viz.label}>
 					{c.viz.flows.map((f) => (
