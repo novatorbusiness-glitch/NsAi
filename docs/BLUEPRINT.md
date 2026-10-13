@@ -31,16 +31,17 @@ ilya-novitsky.ru/
 │   ├── legal/                ✓ offer, privacy, consent (.md; ≠ .mdx — MDX не нужен)
 │   ├── blog/                 ✓ 10 статей (.md с карточкой; старые 8 — переадресация на /blog)
 │   └── book/                 ✓ 30 глав «Нейро-воронки», новое начало без жертвенности
+│   └── og.json               ✓ подзаголовки на картинках превью (по одной мысли на страницу)
 ├── functions/lead/           ◐ форма заявки с amoCRM — после запуска (сейчас заявки в Telegram и MAX)
 ├── public/
-│   ├── fonts/                ✓ Manrope, JetBrains Mono — свои файлы, без Google
+│   ├── fonts/                ✓ Manrope, JetBrains Mono — свои файлы, без Google (кириллица, латиница, latin-ext для ₽)
 │   ├── images/site/          ✓ только настоящие экраны и фото
 │   ├── og/                   ✓ превью 1200×630 для каждой страницы и статьи + manifest.json
 │   ├── book/                 ✓ готовые главы (scripts/book)
 │   ├── CNAME, google….html   ✓
 │   └── favicon*, manifest    ≠ знак NCAi — решение Ильи 13.10; фирменный стиль отдельной задачей
 ├── scripts/
-│   ├── og/generate_og.py     ✓ превью по заголовку страницы; готовые не перерисовывает
+│   ├── og/generate_og.py     ✓ превью по заголовку и подзаголовку; готовые не перерисовывает
 │   ├── check/links.mjs       ✓ битые ссылки и якоря
 │   ├── check/redirects.mjs   ✓ каждый старый адрес ведёт на живую страницу
 │   ├── check/seo.mjs         ✓ title, description, один H1, canonical, свежее превью, alt и размеры картинок
@@ -108,4 +109,5 @@ ilya-novitsky.ru/
 - **Кейс**: `content/cases/<slug>.md` (поле `order` — место в списке, `homeBig` — показать на главной).
 - **Старый адрес**: строка в `src/config/redirects.ts`.
 - **Цену**: `src/config/prices.ts`.
+- **Подзаголовок превью**: `content/og.json` → `npm run og`.
 - **Текст**: файл страницы в `content/pages/`. Разметка: `**жирный**`, `[текст](адрес)`, `{{без переноса}}`.
