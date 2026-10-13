@@ -22,20 +22,14 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install og-image generator deps
-        run: pip install --quiet fonttools Pillow
-
-      - name: Build
+      # сборка + проверки (postbuild: ссылки, переадресации, SEO, вес); упала проверка — сайт не выкладывается
+      - name: Build and check
         run: npm run build
 
       - name: Setup Pages

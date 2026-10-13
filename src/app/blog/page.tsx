@@ -4,9 +4,11 @@ import ArticleCard from "@/components/blog/ArticleCard";
 import { allPosts } from "@/lib/blog";
 import { site } from "@/config/site";
 import { blog } from "@content/pages/blog";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, crumbs } from "@/lib/seo";
 import { common } from "@content/pages/common";
 
-export const metadata: Metadata = { ...blog.meta, alternates: { canonical: "/blog" } };
+export const metadata: Metadata = pageMeta(blog.meta, "/blog", "blog");
 
 export default function BlogPage() {
 	const [first, ...rest] = allPosts();
@@ -41,6 +43,7 @@ export default function BlogPage() {
 					</div>
 				</div>
 			</section>
+			<JsonLd data={crumbs([{ name: h.crumb, path: "/blog" }])} />
 		</>
 	);
 }

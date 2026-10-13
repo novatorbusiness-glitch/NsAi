@@ -1,12 +1,10 @@
-import fs from "fs";
-import path from "path";
 import { posts, covers } from "@/config/blog";
+import { readMd, str } from "@/lib/content";
 
 // Статьи блога: content/blog/<slug>.md (title, h1, description, cover во frontmatter).
 // Ошибка в карточке статьи — сборка падает, а не страница.
 export type Post = { slug: string; title: string; h1: string; description: string; cover: string; tag: string; cta: string; updated: string; mins: number; coverClass: string; body: string };
 
-const DIR = path.join(process.cwd(), "content/blog");
 const MON = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 
 export function dateRu(iso: string) {
@@ -15,12 +13,8 @@ export function dateRu(iso: string) {
 }
 
 function read(slug: string) {
-	const raw = fs.readFileSync(path.join(DIR, `${slug}.md`), "utf8");
-	const [, fmRaw, ...rest] = raw.split("---");
-	const fm: Record<string, string> = {};
-	for (const m of fmRaw.matchAll(/^(\w+):\s*"(.*)"\s*$/gm)) fm[m[1]] = m[2];
-	for (const k of ["title", "description"]) if (!fm[k]) throw new Error(`content/blog/${slug}.md: нет поля ${k}`);
-	return { fm, body: rest.join("---").trim() };
+	const { fm, body } = readMd("blog", slug, ["title", "description"]);
+	return { fm: Object.fromEntries(Object.entries(fm).map(([k, v]) => [k, str(v)])), body };
 }
 
 export function allPosts(): Post[] {

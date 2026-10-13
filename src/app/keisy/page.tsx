@@ -5,8 +5,11 @@ import System from "@/components/cases/System";
 import Sales from "@/components/cases/Sales";
 import Contact from "@/components/cases/Contact";
 import { keisy } from "@content/pages/keisy";
+import JsonLd from "@/components/ui/JsonLd";
+import { allCases } from "@/lib/cases";
+import { pageMeta, crumbs, casesLd } from "@/lib/seo";
 
-export const metadata: Metadata = { ...keisy.meta, alternates: { canonical: "/keisy" } };
+export const metadata: Metadata = pageMeta(keisy.meta, "/keisy", "keisy");
 
 export default function Page() {
 	return (
@@ -16,6 +19,7 @@ export default function Page() {
 			<System />
 			<Sales />
 			<Contact />
+			<JsonLd data={[crumbs([{ name: "Кейсы", path: "/keisy" }]), casesLd(allCases())]} />
 		</>
 	);
 }

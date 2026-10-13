@@ -12,12 +12,11 @@ import Fit from "@/components/home/Fit";
 import Faq from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
 import { home } from "@content/pages/home";
+import { faq } from "@content/pages/faq";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, servicesLd, faqLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-	title: { absolute: home.meta.title },
-	description: home.meta.description,
-	alternates: { canonical: "/" },
-};
+export const metadata: Metadata = pageMeta(home.meta, "/", "home", { absolute: true });
 
 export default function Page() {
 	return (
@@ -34,6 +33,7 @@ export default function Page() {
 			<Fit />
 			<Faq />
 			<Contact />
+			<JsonLd data={[servicesLd(), faqLd(faq)]} />
 		</>
 	);
 }

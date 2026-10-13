@@ -6,6 +6,8 @@ import ArticleBody from "@/components/blog/ArticleBody";
 import { allPosts, dateRu, getPost, render } from "@/lib/blog";
 import type { Cta } from "@/config/blog";
 import { blog } from "@content/pages/blog";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, crumbs, articleLd } from "@/lib/seo";
 import { site } from "@/config/site";
 import { redirects } from "@/config/redirects";
 import Redirect from "@/components/layout/Redirect";
@@ -24,12 +26,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 	if (moved(params.slug)) return { title: common.redirect.title, alternates: { canonical: moved(params.slug) }, robots: { index: false } };
 	const r = getPost(params.slug);
 	if (!r) return {};
-	return {
-		title: r.post.title,
-		description: r.post.description,
-		alternates: { canonical: `/blog/${r.post.slug}` },
-		openGraph: { type: "article", title: r.post.title, description: r.post.description, modifiedTime: r.post.updated, url: `/blog/${r.post.slug}`, images: [site.og] },
-	};
+	return pageMeta({ title: r.post.title, description: r.post.description }, `/blog/${r.post.slug}`, `blog-${r.post.slug}`, { type: "article", modified: r.post.updated });
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
@@ -40,7 +37,6 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 	const { toc } = render(a.body);
 	const c = blog.ctas[a.cta as Cta];
 	const t = blog.article;
-	const ld = { "@context": "https://schema.org", "@type": "Article", headline: a.h1, description: a.description, dateModified: a.updated, author: { "@type": "Person", name: site.name, url: site.url }, mainEntityOfPage: `${site.url}/blog/${a.slug}` };
 	return (
 		<div className="article">
 			<div className="wrap">
@@ -71,7 +67,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 					<div className="agrid three">{related.map((p) => <ArticleCard key={p.slug} p={p} />)}</div>
 				</div>
 			</section>
-			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+			<JsonLd data={[articleLd(a), crumbs([{ name: common.ui.blog, path: "/blog" }, { name: a.cover, path: `/blog/${a.slug}` }])]} />
 		</div>
 	);
 }
