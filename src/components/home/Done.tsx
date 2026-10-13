@@ -16,6 +16,7 @@ export default function Done() {
 				<div className="agency">
 					<div className="ag-text"><h3>{c.agency.title}</h3><p>{c.agency.text}</p></div>
 					<div className="ag-num">{c.agency.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
+					<div className="ag-quotes">{c.agency.quotes.map((q) => <figure key={q.who}><blockquote>«{q.text}»</blockquote><figcaption>{q.who}</figcaption></figure>)}</div>
 				</div>
 				<p style={{ marginTop: "22px" }}><a className="btn s" href="/keisy">{c.all}</a></p>
 			</div>

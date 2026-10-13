@@ -1,6 +1,6 @@
 import { keisy } from "@content/pages/keisy";
 
-// К.4 · системы продаж для клиентов: четыре кейса агентства с цифрами.
+// К.4 · системы продаж для клиентов: кейсы агентства (опыт до 2025 года) с цифрами.
 export default function Sales() {
 	const c = keisy.sales;
 	return (
