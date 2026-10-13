@@ -6,23 +6,32 @@ import StepPicker from "@/components/home/StepPicker";
 import { allPosts, dateRu, getPost, render } from "@/lib/blog";
 import { ctas, type Cta } from "@/config/blog";
 import { site } from "@/config/site";
+import { redirects } from "@/config/redirects";
+import Redirect from "@/components/layout/Redirect";
+
+// Старые статьи, которых больше нет, ведут на /blog.
+const moved = (slug: string) => redirects[`/blog/${slug}`];
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-	return allPosts().map((p) => ({ slug: p.slug }));
+	const old = Object.keys(redirects).filter((p) => p.startsWith("/blog/")).map((p) => ({ slug: p.slice(6) }));
+	return [...allPosts().map((p) => ({ slug: p.slug })), ...old];
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+	if (moved(params.slug)) return { title: "Страница переехала", alternates: { canonical: moved(params.slug) }, robots: { index: false } };
 	const r = getPost(params.slug);
 	if (!r) return {};
 	return {
 		title: r.post.title,
 		description: r.post.description,
 		alternates: { canonical: `/blog/${r.post.slug}` },
-		openGraph: { type: "article", title: r.post.title, description: r.post.description, modifiedTime: r.post.updated },
+		openGraph: { type: "article", title: r.post.title, description: r.post.description, modifiedTime: r.post.updated, url: `/blog/${r.post.slug}`, images: [site.og] },
 	};
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
+	if (moved(params.slug)) return <Redirect to={moved(params.slug)} />;
 	const r = getPost(params.slug);
 	if (!r) notFound();
 	const { post: a, related } = r;

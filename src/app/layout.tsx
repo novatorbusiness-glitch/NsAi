@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
 	title: { default: "Илья Новицкий · маркетинг, продукт и автоматизация", template: "%s · Илья Новицкий" },
 	description: "Маркетинг, продукт и автоматизация на уровне директора по маркетингу, без найма в штат: сайт, контент, продукт и аналитика у одного специалиста. Первый шаг за 3–4 дня.",
-	openGraph: { type: "website", locale: "ru_RU", url: site.url, siteName: site.name },
+	openGraph: { type: "website", locale: "ru_RU", siteName: site.name, images: [{ url: site.og, width: 1200, height: 630, alt: site.name }] },
+	twitter: { card: "summary_large_image" },
+	manifest: "/site.webmanifest",
 	verification: { yandex: "0a04b9c11bffe08d" },
 	robots: { index: true, follow: true },
 	icons: {
