@@ -1023,16 +1023,20 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 }
 .cmp + .cap{margin-top:20px}@media(min-width:900px){.cmp + .cap{margin-top:28px}}
 .cmp .cnote{font:500 13px/1.4 var(--m);color:#7fd3b6}
-/* 04 · как работаем: три шага в ряд */
-.psteps{display:grid;gap:12px;counter-reset:none}
+/* 04 · как работаем: три шага в ряд, результат в заголовке, цена крупно внизу */
+.psteps{display:grid;gap:12px}
 @media(min-width:900px){.psteps{grid-template-columns:repeat(3,1fr);gap:20px}}
-.pstep{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
-@media(min-width:900px){.pstep{grid-template-columns:1fr;padding:28px 28px 30px;gap:16px}}
-.pstep .pn{width:36px;height:36px;border-radius:50%;border:2px solid var(--acc);display:flex;align-items:center;justify-content:center;font:700 15px/1 var(--m);color:var(--acc)}
-.pstep:nth-child(2) .pn{background:var(--acc);color:#fff}
-.pstep h3{margin:0;font-size:clamp(18px,2.2vw,20px)}
-.pstep .pm{margin:6px 0 8px;font:600 13px/1.3 var(--m);color:var(--acc)}
-.pstep p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.pstep{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 20px 0;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+@media(min-width:900px){.pstep{padding:28px 28px 0;gap:12px}}
+.pstep .pl{margin:0;font:600 12px/1.45 var(--m);letter-spacing:.04em;color:var(--acc)}
+.pstep h3{margin:0;font-size:clamp(18px,2.2vw,20px);line-height:1.3}
+.pstep .px{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.pstep .pp b small{font:600 14px/1 var(--f);color:var(--ink2);letter-spacing:0}
+.pstep .pp{margin:auto -20px 0;padding:16px 20px 18px;border-top:1px solid var(--line);background:var(--acc-soft)}
+@media(min-width:900px){.pstep .pp{margin:auto -28px 0;padding:18px 28px 22px}}
+.pstep .pp b{display:block;font:700 clamp(22px,2.6vw,26px)/1.1 var(--m);color:var(--ink);letter-spacing:-.02em}
+.pstep .pp span{display:block;margin-top:6px;font-size:14px;color:var(--ink2)}
+.pstep:nth-child(2){border-color:var(--acc)}
 .how .after{margin-top:14px}
 .how .fable{margin-bottom:36px}
 .pstep{align-content:start}

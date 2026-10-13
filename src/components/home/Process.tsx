@@ -11,10 +11,12 @@ export default function Process() {
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="psteps">
-					{c.steps.map((s, i) => (
-						<div className="pstep" key={s.title}>
-							<span className="pn">{i + 1}</span>
-							<div><h3>{s.title}</h3><p className="pm">{s.meta}</p><p>{s.text}</p></div>
+					{c.steps.map((s) => (
+						<div className="pstep" key={s.label}>
+							<p className="pl">{s.label}</p>
+							<h3>{s.title}</h3>
+							<p className="px">{s.text}</p>
+							<div className="pp"><b>{s.price}{"unit" in s && <small> {s.unit}</small>}</b><span>{s.note}</span></div>
 						</div>
 					))}
 				</div>
