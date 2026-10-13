@@ -15,7 +15,7 @@ export default function About() {
 			</div>
 			<div className="wrap">
 				<p className="cpath-l">{c.pathLabel}</p>
-				<ol className="cpath">{c.path.map((p) => <li key={p.t}><b>{p.t}</b><span>{p.d}</span></li>)}</ol>
+				<ol className="cpath">{c.path.map((p) => <li key={p.t}><span className="cy">{p.y}</span><b>{p.t}</b><span className="cd">{p.d}</span></li>)}</ol>
 				<p className="cpath-out">{c.pathOut}</p>
 			</div>
 		</section>
