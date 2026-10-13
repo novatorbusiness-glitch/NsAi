@@ -966,7 +966,7 @@ footer .fmark{display:block;height:24px;width:auto;margin:0 0 16px}
 .snum{display:flex;align-items:center;gap:8px;font:600 12.5px/1 var(--m);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin:0 0 16px}
 .snum b{color:var(--acc);font-weight:700}
 .snum .sl{color:var(--line2)}
-.section-head h2{max-width:22ch}
+.section-head h2{max-width:26ch}
 .section-head .lead{max-width:36em}
 .rgrid{display:grid;gap:12px;margin-top:4px}
 @media(min-width:700px){.rgrid{grid-template-columns:1fr 1fr;gap:16px}}
