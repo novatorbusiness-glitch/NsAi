@@ -801,13 +801,13 @@ details.sub li b{display:block;font-size:15px;color:var(--ink)}
 .rv-proof{display:flex;flex-wrap:wrap;gap:8px}
 .rv-proof span{background:var(--acc-soft);border-radius:999px;padding:7px 12px;font-size:14px;font-weight:600}
 .result-viz .cap{margin:0}
-.fan.fan-sm{height:420px;margin:0 0 28px;border:0;background:radial-gradient(90% 120% at 50% 100%,#dcefe7 0%,#eef3f0 55%,#f6f7f6 100%)}
-.fan.fan-sm img{width:24%}
-.fan.fan-sm .f2{left:38%;width:24%}
-.fan.fan-sm .f1{left:15%}
-.fan.fan-sm .f3{right:15%}
-@media(max-width:899px){.fan.fan-sm{height:340px}.fan.fan-sm img,.fan.fan-sm .f2{width:32%}.fan.fan-sm .f2{left:34%}.fan.fan-sm .f1{left:6%}.fan.fan-sm .f3{right:6%}}
-@media(max-width:480px){.fan.fan-sm{height:260px}}
+/* веер в кейсах: телефоны выходят из нижнего края с мягким затуханием, сверху всегда воздух; высота растёт вместе с шириной */
+.fan.fan-sm{height:auto;aspect-ratio:2.9/1;margin:0 0 28px;border:0;background:radial-gradient(90% 120% at 50% 100%,#dcefe7 0%,#eef3f0 55%,#f6f7f6 100%)}
+.fan.fan-sm img{width:20%;bottom:-1%;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent);filter:drop-shadow(0 16px 26px rgba(17,20,22,.16))}
+.fan.fan-sm .f2{left:40%;width:20%;bottom:-1%}
+.fan.fan-sm .f1{left:19%;bottom:-6%}
+.fan.fan-sm .f3{right:19%;bottom:-6%}
+@media(max-width:899px){.fan.fan-sm{aspect-ratio:2.3/1}.fan.fan-sm img,.fan.fan-sm .f2{width:25%}.fan.fan-sm .f2{left:37.5%}.fan.fan-sm .f1{left:12%}.fan.fan-sm .f3{right:12%}}
 .for-you{background:var(--acc-soft);border-radius:10px;padding:12px 14px;margin-top:12px;color:var(--ink)}
 
 /* ---- стили отдельных страниц (из прототипа 13.10) ---- */

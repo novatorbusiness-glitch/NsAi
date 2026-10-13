@@ -20,7 +20,7 @@ export default function Hero() {
 						<h1>{c.h1}</h1>
 						<p className="lead">{c.lead}</p>
 						<div className="cta-row">
-							<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.start}</a>
+							<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{common.buttons.start}</a>
 							<a className="btn s" href="#how">{c.secondary}</a>
 						</div>
 						<p className="promise">{c.promise}</p>
