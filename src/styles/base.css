@@ -282,14 +282,13 @@ ul.clean li::before{font-size:15px;top:9px}
 .df-list li{position:relative;display:grid;grid-template-columns:118px 1fr auto;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #1f2427}
 .df-list li:last-child{border-bottom:0}
 .df-who{font:600 12px/1.4 var(--m);color:#7fd6bd}
-.df-coord .df-who{color:#e9ecea}
 .df-task{color:#c9cfcc;line-height:1.45}
 .df-st{font:600 11px/1 var(--m);color:var(--dark-mut);min-width:64px;text-align:right;white-space:nowrap}
 .df-list li.is-run .df-st{color:#f0c674}
 .df-list li.is-done .df-st{color:#5fd38d}
 .df-list li.is-done .df-st::before{content:"✓ "}
 .df-prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:#5fd38d;opacity:.8}
-.df-list li.is-run .df-prog{animation:dfprog 1.5s linear forwards}
+.df-list li.is-run .df-prog{animation:dfprog 2.2s ease-in-out forwards}
 .df-list li.is-done .df-prog{width:100%;opacity:.25}
 @keyframes dfprog{to{width:100%}}
 .df-foot{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid #23282b;background:#15191b;font:500 12px/1.4 var(--m);color:var(--dark-mut)}
@@ -903,3 +902,15 @@ section.final.dark .tg-top b{color:var(--ink)}
 section.final.dark .tg .msg{color:var(--ink)}
 section.final:not(.dark) .card{border-color:transparent;box-shadow:0 1px 2px rgba(16,24,20,.04),0 18px 50px rgba(16,24,20,.08)}
 @media(max-width:600px){.fan.fan-sm{display:none}} /* на телефоне веер дублирует экраны из карточек ниже */
+/* лента «от задачи до продаж»: плавные смены и выделенный результат */
+.df-list{transition:opacity .6s ease}
+.df-list.df-fade{opacity:.25}
+.df-list li{transition:background-color .6s ease}
+.df-st,.df-task,.df-who{transition:color .6s ease}
+.df-list li.is-run{background:rgba(240,198,116,.04)}
+.df-result .df-who{color:#e9ecea}
+.df-result .df-task{color:#e9ecea}
+.df-list li.df-result.is-run,.df-list li.df-result.is-done{background:linear-gradient(90deg,rgba(47,181,138,.16),rgba(47,181,138,.04))}
+.df-list li.df-result.is-done .df-who{color:#7fd3b6}
+.df-list li.df-result.is-done .df-st{color:#0b1a14;background:#5fd38d;border-radius:999px;padding:4px 9px}
+.df-list li.df-result.is-done .df-st::before{content:"● "}
