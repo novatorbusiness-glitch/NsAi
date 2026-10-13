@@ -13,7 +13,7 @@ export default function Hero() {
 					<h1>{c.h1}</h1>
 					<p className="lead">{c.lead}</p>
 					<p className="sub">{c.sub}</p>
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{c.button}</a>
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{c.button}</a>
 				</div>
 				<div className="result-viz" aria-label={c.viz.label}>
 					{c.viz.flows.map((f) => (

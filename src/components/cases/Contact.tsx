@@ -10,7 +10,7 @@ export default function Contact() {
 				<div className="card">
 					<h2>{c.h2}</h2>
 					<p className="lead">{c.lead}</p>
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{c.button}</a>
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{c.button}</a>
 					<p className="under">{c.under}</p>
 				</div>
 			</div>
