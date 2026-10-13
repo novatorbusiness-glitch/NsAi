@@ -1,15 +1,22 @@
-import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
+import SectionHead from "@/components/ui/SectionHead";
 
-// 2 · ситуации клиента.
+// 01 · ситуация (вопрос собственника «это про меня?»): четыре истории, в каждой — во что это обходится.
 export default function Situations() {
 	const c = home.situations;
 	return (
 		<section id="situations" className="alt situations">
 			<div className="wrap">
-				<div className="section-head"><h2>{c.h2}</h2></div>
-				<div className="grid g2">
-					{c.cards.map((k) => <div className="card" key={k.title}><h3>{k.title}</h3><p><Rich t={k.text} /></p></div>)}
+				<SectionHead num={c.num} label={c.label} title={c.h2} />
+				<div className="sgrid">
+					{c.cards.map((k) => (
+						<div className="scard" key={k.title}>
+							<h3>{k.title}</h3>
+							<p>{k.text}</p>
+							<p className="punch">{k.punch}</p>
+							{"src" in k && <p className="src">{k.src}</p>}
+						</div>
+					))}
 				</div>
 				<p className="closing">{c.closing}</p>
 			</div>

@@ -981,3 +981,11 @@ footer .fmark{display:block;height:24px;width:auto;margin:0 0 16px}
 .hero .lead{margin-bottom:10px}
 .hsub{font-size:16px;line-height:1.6;color:var(--ink2);max-width:34em;margin:0 0 26px}
 @media(min-width:900px){.hsub{font-size:17px}}
+/* 01 · ситуация: история + во что обходится */
+.sgrid{display:grid;gap:12px}
+@media(min-width:800px){.sgrid{grid-template-columns:1fr 1fr;gap:16px}}
+.scard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px}
+.scard h3{font-size:clamp(18px,2.2vw,20px);line-height:1.3;margin:0}
+.scard p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.scard .punch{color:var(--ink);font-weight:600;padding-left:12px;border-left:2px solid var(--acc);margin-top:2px}
+.scard .src{font:500 11.5px/1.45 var(--m);color:var(--mut);margin-top:auto;padding-top:4px}

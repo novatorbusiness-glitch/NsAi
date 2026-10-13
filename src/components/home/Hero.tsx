@@ -36,11 +36,6 @@ export default function Hero() {
 						<div className="df-foot"><span>{f.foot}</span><a href="/kak-my-rabotaem">{f.more}</a></div>
 					</div>
 				</div>
-				<div className="wrap">
-					<div className="strip s3">
-						{c.strip.map((s) => <div key={s.num}><span className="num">{s.num}</span><small>{s.text}</small></div>)}
-					</div>
-				</div>
 			</section>
 			<DayfeedAnimation />
 		</>
