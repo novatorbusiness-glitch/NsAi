@@ -1,27 +1,26 @@
 import StepPicker from "./StepPicker";
-// Перенесено из прототипа 13.10.2026.
-export default function Process() {
-	return (
-		<>
-			<section id="how" className="alt how">
-			<div className="wrap split">
-			<div className="head">
-			<h2>Как мы работаем</h2>
-			<p className="lead">Каждый шаг заканчивается результатом, который остаётся у вас, и после каждого вы сами решаете, идти ли дальше.</p>
-			</div>
-			<div>
-			<div className="steps tl">
-			<div className="step"><div className="n">1</div><div><h3>Тест-драйв</h3><div className="meta">3–4 дня · 40 000 ₽</div><p>Одна ваша задача, разобранная до конца. Идея нового продукта, сайт, который не продаёт, заявки, которые куда-то пропадают, или вечное «с чего начать автоматизацию». В конце у вас письменный разбор и понятный следующий шаг. А заодно вы видите, как я думаю, и решаете, хотите ли работать дальше, ещё до больших денег.</p></div></div>
-			<div className="step"><div className="n">2</div><div><h3>Чертёж системы</h3><div className="meta">2–3 недели · от 120 000 ₽</div><p>Карта всего, что у вас есть и чего не хватает: что работает, где утекают деньги, в каком порядке строить, сколько это займёт и на чём будет зарабатывать. Если речь о продукте, к чертежу прилагается прототип, по которому можно пройти своими руками. Стоимость тест-драйва входит в сумму, так что первый шаг не пропадает.</p></div></div>
-			<div className="step"><div className="n">3</div><div><h3>Ведение</h3><div className="meta">от 3 месяцев · от 150 000 ₽ в месяц</div><p>Дальше я собираю и веду всё по этому чертежу. Каждую неделю у вас план и отчёт, где решения опираются на цифры, а не на ощущения, и видно, на что уходят деньги и что они приносят. Точная цена зависит от того, сколько процессов и как плотно мы их ведём. Пришли после чертежа? Половина его стоимости идёт в счёт первого месяца.</p></div></div>
-			</div>
-			<p className="more-link"><a className="more" href="/kak-my-rabotaem">Что входит в каждый шаг, как проходит и чего не будет →</a></p>
-			<p className="after">Уже есть работающая система? Можно начать сразу с ведения. Одновременно я веду не больше двух проектов, поэтому старт идёт по очереди.</p>
+import { home } from "@content/pages/home";
 
-			<StepPicker />
+// 4 · как мы работаем: три шага с ценами и подбор шага.
+export default function Process() {
+	const c = home.process;
+	return (
+		<section id="how" className="alt how">
+			<div className="wrap split">
+				<div className="head">
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+				</div>
+				<div>
+					<div className="steps tl">
+						{c.steps.map((s, i) => <div className="step" key={s.title}><div className="n">{i + 1}</div><div><h3>{s.title}</h3><div className="meta">{s.meta}</div><p>{s.text}</p></div></div>)}
+					</div>
+					<p className="more-link"><a className="more" href="/kak-my-rabotaem">{c.more}</a></p>
+					<p className="after">{c.after}</p>
+
+					<StepPicker />
+				</div>
 			</div>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

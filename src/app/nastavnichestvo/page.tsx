@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { mentor } from "@content/pages/nastavnichestvo";
 import Hero from "@/components/mentor/Hero";
 import Fit from "@/components/mentor/Fit";
 import Program from "@/components/mentor/Program";
@@ -11,11 +12,7 @@ import Mentor from "@/components/mentor/Mentor";
 import Faq from "@/components/mentor/Faq";
 import Contact from "@/components/mentor/Contact";
 
-export const metadata: Metadata = {
-	title: "Наставничество: продукт на AI своими руками",
-	description: "Наставничество один на один: соберёте приложение, сайт или сервис на AI сами, по шагам и без опыта программирования. 80 000 ₽ в месяц, около двух месяцев.",
-	alternates: { canonical: "/nastavnichestvo" },
-};
+export const metadata: Metadata = { ...mentor.meta, alternates: { canonical: "/nastavnichestvo" } };
 
 export default function Page() {
 	return (

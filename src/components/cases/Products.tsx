@@ -1,45 +1,38 @@
-// Перенесено из прототипа 13.10.2026.
+import Rich from "@/components/ui/Rich";
+import { allCases } from "@/lib/cases";
+import { keisy } from "@content/pages/keisy";
+
+// К.2 · продукты: веер экранов и строки «экран + текст». Кейсы — content/cases/*.md.
 export default function Products() {
+	const c = keisy.products;
 	return (
-		<>
-			<section id="products" className="alt">
+		<section id="products" className="alt">
 			<div className="wrap">
-			<div className="section-head"><h2>Продукты, которые я собрал сам</h2></div>
-			<div className="fan fan-sm" aria-label="Экраны продуктов на телефоне">
-			<img className="f1" src="/images/site/shot-gaze-phone.png" alt="GAZE на телефоне" width={800} height={1159} />
-			<img className="f3" src="/images/site/shot-nezha-phone.png" alt="Nezha Quest на телефоне" width={800} height={1159} />
-			<img className="f2" src="/images/site/shot-okidelo-phone.png" alt="OkiDelo на телефоне" width={800} height={1159} />
+				<div className="section-head"><h2>{c.h2}</h2></div>
+				<div className="fan fan-sm" aria-label={c.fanLabel}>
+					{c.fan.map((f) => <img key={f.cls} className={f.cls} src={f.src} alt={f.alt} width={800} height={1159} />)}
+				</div>
+				<div className="prows">
+					{allCases().map((k) => {
+						const img = <img src={k.image} alt={k.imageAlt} width={k.w} height={k.h} loading="lazy" />;
+						return (
+							<article className="prow" key={k.slug}>
+								<div className={`pv v-${k.view}`}>
+									{k.window ? <figure className="window" style={{ margin: "0" }}><div className="bar"><i></i><i></i><i></i><span>{k.window}</span></div>{img}</figure> : img}
+									{k.caption && <span className="pvcap">{k.caption}</span>}
+								</div>
+								<div className="pt">
+									{k.logo && <img className="plogo" src={k.logo} alt={k.title.split(":")[0]} width={380} height={100} />}
+									<span className="tag">{k.tag}</span><h3>{k.title}</h3>
+									<p><Rich t={k.text} /></p>
+									{k.forYou && <p className="for-you"><b>{c.forYou}</b>{" " + k.forYou}</p>}
+									{k.metrics.length > 0 && <ul className="pf">{k.metrics.map((m) => <li key={m.value}><b>{m.value}</b>{m.label}</li>)}</ul>}
+								</div>
+							</article>
+						);
+					})}
+				</div>
 			</div>
-			<div className="prows">
-			<article className="prow">
-			<div className="pv v-oki"><img src="/images/site/shot-okidelo-phone.png" alt="OkiDelo на телефоне: чат с AI-отделом" width={800} height={1159} loading="lazy" /></div>
-			<div className="pt"><img className="plogo" src="/images/site/okidelo-logo-h.svg" alt="OkiDelo" width={380} height={100} /><span className="tag">Старт продаж: ноябрь–декабрь</span><h3>OkiDelo: AI-отдел по подписке для малого бизнеса</h3>
-			<p>Отдел маркетинга из трёх-четырёх человек обходится компании примерно в 440 тысяч рублей в месяц. OkiDelo будет давать команду AI-сотрудников, разложенную по отделам, за <span className="nw">9 900–24 900 ₽</span>, и по плану первый результат появится через десять минут, без настроек и интеграций. На нём я прошёл весь путь, который предлагаю клиентам. Исследование, позиционирование, экономика, прототип и план сборки. Тот же путь вы пройдёте со своей задачей. Старт продаж запланирован на ноябрь–декабрь.</p>
-			<p className="for-you"><b>Что это значит для вас.</b> Вы видите, как выглядит чертёж и прототип на настоящем продукте, ещё до того, как заказываете свой.</p>
-			<ul className="pf"><li><b>9 900–24 900 ₽</b>в месяц вместо ≈440 тыс. ₽ на отдел</li><li><b>10 минут</b>до первого результата, по плану</li></ul></div>
-			</article>
-			<article className="prow">
-			<div className="pv v-gaze"><img src="/images/site/shot-gaze-analytics-phone.png" alt="GAZE на телефоне: аналитика мастера в рублях" width={800} height={1159} loading="lazy" /><span className="pvcap">экран аналитики в демо-режиме, цифры условные</span></div>
-			<div className="pt"><span className="tag">Основа за 3 недели · +10 вернувшихся клиенток</span><h3>GAZE: платформа для мастеров красоты, которая возвращает клиентов</h3>
-			<p>Мастеру не нужна ещё одна запись в календарь. Ему нужно, чтобы клиентки возвращались. GAZE ведёт карточку каждой клиентки, подсказывает, кого давно не было, и готовит сообщение, которое остаётся только отправить, а аналитика показывает средний чек и подсказывает, кому предложить комплекс вместо базовой услуги. Есть бонусы, рекомендации и чаевые по QR. Основу я собрал сам за три недели, и сейчас на платформе работает практикующий мастер, моя жена. GAZE уже вернул ей десять клиенток, которые давно не приходили.</p>
-			<p className="for-you"><b>Что это значит для вас.</b> Если у вас покупают повторно, та же механика возврата клиентов встраивается в ваш бизнес: салон, клинику, школу или сервис.</p>
-			<ul className="pf"><li><b>3 недели</b>на основу, в одиночку</li><li><b>+10</b>клиенток вернулись к мастеру</li></ul></div>
-			</article>
-			<article className="prow">
-			<div className="pv v-nezha"><img src="/images/site/shot-nezha-phone.png" alt="Nezha Quest на телефоне: уровень, здоровье, опыт и кристаллы" width={800} height={1159} loading="lazy" /></div>
-			<div className="pt"><span className="tag">Для своей семьи</span><h3>Nezha Quest: семейная игра для родителей и ребёнка</h3>
-			<p>Обычные дела ребёнка превращаются в квесты. За честность, дисциплину и старание он получает опыт и награды, а за нарушения срабатывают последствия, о которых договорились заранее. Правила устанавливает «система», а не мама с папой, так что спорить не с кем. Собрал для своей семьи. С тех пор у ребёнка выросла дисциплина, а дома появились чёткие границы, и родителям больше не нужно стоять над душой.</p></div>
-			</article>
-			<article className="prow">
-			<div className="pv v-vlinx"><figure className="window" style={{ margin: "0" }}><div className="bar"><i></i><i></i><i></i><span>Vlinx</span></div><img src="/images/site/shot-vlinx.jpg" alt="Vlinx: дневник, аналитика, питание" width={1400} height={930} loading="lazy" /></figure></div>
-			<div className="pt"><span className="tag">Тренировка метода</span><h3>Vlinx: трекер прогресса</h3>
-			<p>Личный трекер привычек и прогресса. Внутри дневник дня, режим голодания, вес с графиками и недельным отчётом, план питания со списком покупок. Чтобы режим держался дольше первой недели, добавил уровни, очки и мини-челленджи. На телефоне он работает как обычное приложение, данные хранятся в облаке и закрыты входом по паролю. Проект не для продажи: на нём я проверял, как быстро метод доводит идею до рабочего продукта.</p>
-			<p className="for-you"><b>Что это значит для вас.</b> Внутренний сервис под ваш процесс, например учёт, отчёты или кабинет для команды, собирается за дни, а не за месяцы, если заранее понятно, что именно строить.</p>
-			<ul className="pf"><li><b>4 дня</b>от идеи до рабочей версии</li><li><b>7 разделов</b>дневник, аналитика, питание, мотивация и другие</li></ul></div>
-			</article>
-			</div>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

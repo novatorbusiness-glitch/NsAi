@@ -1,17 +1,18 @@
-// Перенесено из прототипа 13.10.2026.
+import { home } from "@content/pages/home";
+
+// 8 · кому подойду, а кому нет.
 export default function Fit() {
+	const c = home.fit;
 	return (
-		<>
-			<section id="fit">
+		<section id="fit">
 			<div className="wrap">
-			<div className="section-head"><h2>Кому я подойду, а кому нет</h2><p className="lead">Мне важно, чтобы работа дала результат обеим сторонам, поэтому скажу заранее.</p></div>
-			<div className="fitcards">
-			<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>Подойду, если</p><ul><li>бизнес работает и растёт, а маркетинг и цифра держатся на вас или на разрозненных подрядчиках;</li><li>вам нужен директор по маркетингу, но вы не готовы к зарплате и команде под него;</li><li>есть идея нового направления или продукта, и нужен человек, который проведёт от чертежа до работающей системы;</li><li>хотите, чтобы за всю цифровую часть отвечал один человек, а не цепочка исполнителей.</li></ul></div>
-			<div className="fc no"><p className="fc-h"><span className="ic">×</span>Не подойду, если</p><ul><li>нужно сделать одну задачу как можно дешевле: на рынке есть исполнители, и для простых задач это нормальный выбор;</li><li>нужна только реклама или только посты, без системы вокруг них;</li><li>нужен человек в штат, который будет нанимать и контролировать ваших сотрудников и подрядчиков или сидеть на собраниях;</li><li>вы большая компания с тендерами и своим отделом маркетинга;</li><li>вы предлагаете долю вместо оплаты. За долю я вхожу только в проекты, которые выбираю сам, и это отдельный разговор.</li></ul></div>
+				<div className="section-head"><h2>{c.h2}</h2><p className="lead">{c.lead}</p></div>
+				<div className="fitcards">
+					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{c.yesTitle}</p><ul>{c.yes.map((t) => <li key={t}>{t}</li>)}</ul></div>
+					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{c.noTitle}</p><ul>{c.no.map((t) => <li key={t}>{t}</li>)}</ul></div>
+				</div>
+				<p style={{ marginTop: "24px" }}><a href="/nastavnichestvo">{c.mentor}</a></p>
 			</div>
-			<p style={{ marginTop: "24px" }}><a href="/nastavnichestvo">Если строить хотите сами, а нужен наставник, это отдельный формат →</a></p>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

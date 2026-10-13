@@ -1,15 +1,17 @@
-// Перенесено из прототипа 13.10.2026.
+import { process } from "@content/pages/kak-my-rabotaem";
+import { common } from "@content/pages/common";
+
+// Первый экран «Как мы работаем»: крошки, обещание, оглавление шагов.
 export default function Hero() {
+	const c = process.hero;
 	return (
-		<>
-			<section className="hero">
+		<section className="hero">
 			<div className="wrap">
-			<p className="crumbs"><a href="/">Главная</a><span>/</span>Как мы работаем</p>
-			<h1>Как мы работаем</h1>
-			<p className="lead">Три шага. Каждый заканчивается результатом, который остаётся у вас, и после каждого вы сами решаете, идти ли дальше. Оплата по этапам: за следующий шаг платите, только когда увидели результат предыдущего.</p>
-			<div className="svc-toc"><a href="#test-drive">1. Тест-драйв</a><a href="#chertezh">2. Чертёж системы</a><a href="#vedenie">3. Ведение</a><a href="/nastavnichestvo">Хочу собрать сам →</a></div>
+				<p className="crumbs"><a href="/">{common.ui.home}</a><span>/</span>{c.crumb}</p>
+				<h1>{c.h1}</h1>
+				<p className="lead">{c.lead}</p>
+				<div className="svc-toc">{c.toc.map((t) => <a key={t.href} href={t.href}>{t.label}</a>)}</div>
 			</div>
-			</section>
-		</>
+		</section>
 	);
 }

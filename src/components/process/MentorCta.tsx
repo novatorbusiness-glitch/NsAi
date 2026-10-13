@@ -1,12 +1,13 @@
-// Перенесено из прототипа 13.10.2026.
+import { process } from "@content/pages/kak-my-rabotaem";
+
+// Финал страницы: кто хочет собрать сам — на наставничество.
 export default function MentorCta() {
+	const c = process.mentor;
 	return (
-		<>
-			<section className="dark">
+		<section className="dark">
 			<div className="wrap">
-			<div className="card"><h2 style={{ fontSize: "clamp(22px,3vw,28px)" }}>Хотите собрать продукт сами?</h2><p className="sub" style={{ margin: "12px 0 18px" }}>Тогда вам на наставничество: проведу по шагам, а собираете вы. 80 000 ₽ в месяц, обычно около двух месяцев.</p><a className="btn s" href="/nastavnichestvo">Страница «Наставничество» →</a></div>
+				<div className="card"><h2 style={{ fontSize: "clamp(22px,3vw,28px)" }}>{c.h2}</h2><p className="sub" style={{ margin: "12px 0 18px" }}>{c.text}</p><a className="btn s" href="/nastavnichestvo">{c.button}</a></div>
 			</div>
-			</section>
-		</>
+		</section>
 	);
 }

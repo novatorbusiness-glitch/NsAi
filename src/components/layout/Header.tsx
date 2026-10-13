@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 
 // Шапка: имя, три пункта меню, кнопка «Начать с одной задачи»; на телефоне — «Написать» и меню.
 export default function Header() {
@@ -21,10 +22,10 @@ export default function Header() {
 				</nav>
 				<div className="cta-row">
 					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">
-						<span className="full">Начать с одной задачи</span>
-						<span className="short">Написать</span>
+						<span className="full">{common.ui.headerStart}</span>
+						<span className="short">{common.ui.headerShort}</span>
 					</a>
-					<button className="burger" aria-label="Меню" aria-expanded={open} onClick={() => setOpen(!open)}>
+					<button className="burger" aria-label={common.ui.menu} aria-expanded={open} onClick={() => setOpen(!open)}>
 						<span></span>
 					</button>
 				</div>

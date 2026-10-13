@@ -1,15 +1,19 @@
-// Перенесено из прототипа 13.10.2026.
+import { book } from "@content/pages/book";
+
+type Ch = { slug: string; title: string };
+const List = ({ items }: { items: readonly Ch[] }) => <ol>{items.map((c) => <li key={c.slug}><a href={`/book/${c.slug}`}>{c.title}</a></li>)}</ol>;
+
+// Оглавление: начало, шесть этапов, эпилог.
 export default function Toc() {
+	const c = book.toc;
 	return (
-		<>
-			<section id="toc" className="alt booktoc">
+		<section id="toc" className="alt booktoc">
 			<div className="wrap">
-			<div className="section-head"><h2>Оглавление</h2></div>
-			<div className="bpart bintro"><h3>С чего начать</h3><ol><li><a href="/book/00-a-znakomstvo">Знакомство с книгой</a></li><li><a href="/book/00-b-prolog">Пролог. Манифест Архитектора</a></li></ol></div>
-			<div className="bparts"><div className="bpart"><p className="bpn">Этап 01</p><h3>Нейромаркетинг</h3><ol><li><a href="/book/1-1-kognitivnye-lovushki">Пять когнитивных ловушек, из-за которых ломаются даже дорогие запуски</a></li><li><a href="/book/1-2-nejrokopiraiting">Нейрокопирайтинг: как текст запускает предсказуемые реакции в голове читателя</a></li><li><a href="/book/1-3-lid-magnit">Лид-магнит: как создать бесплатный продукт, который клиент забирает сам</a></li><li><a href="/book/1-4-vizualnye-stimuly">Визуальные стимулы: как один образ останавливает автоматический скроллинг</a></li></ol></div><div className="bpart"><p className="bpn">Этап 02</p><h3>Инженерия систем</h3><ol><li><a href="/book/2-1-produktovaya-matrica">Продуктовая матрица: каждый продукт ведёт к следующему</a></li><li><a href="/book/2-2-anatomiya-voronki">Анатомия воронки: из каких конструкций она состоит</a></li><li><a href="/book/2-3-arhitektura-voronki">Выбор архитектуры: какая воронка нужна твоему бизнесу</a></li><li><a href="/book/2-4-finalnaya-sborka">Финальная сборка: соединяем элементы в работающий механизм</a></li></ol></div><div className="bpart"><p className="bpn">Этап 03</p><h3>Синтез доверия</h3><ol><li><a href="/book/3-1-fiziologiya-uderzhaniya">Физиология удержания: почему одни тексты читают до конца</a></li><li><a href="/book/3-2-chetyre-elementa-doveriya">Четыре несущих элемента доверия</a></li><li><a href="/book/3-3-cepochki-kasanij">Цепочки касаний: путь от подписки до заявки</a></li><li><a href="/book/3-4-usilenie-ohvatov">Усиление охватов: один материал — пять площадок</a></li><li><a href="/book/3-5-ai-kopiraiter">AI как копирайтер: автоматизация без потери голоса</a></li></ol></div><div className="bpart"><p className="bpn">Этап 04</p><h3>Трафик</h3><ol><li><a href="/book/4-1-anatomiya-kreativa">Почему один нейро-креатив стоит миллиона рублей бюджета</a></li><li><a href="/book/4-2-shest-stimulov">Шесть стимулов: как мозг считывает сильный креатив</a></li><li><a href="/book/4-3-virusnaya-mehanika">Мемический стимул: говорить на языке, который уже любят</a></li><li><a href="/book/4-4-organicheskij-trafik">Блог как магнит: органический трафик с помощью контента</a></li><li><a href="/book/4-5-poisk-segmentaciya">Источники трафика: где искать твоих клиентов</a></li><li><a href="/book/4-6-analitika-trafika">Приборная панель: трафик по цифрам, а не по ощущениям</a></li><li><a href="/book/4-7-ai-kreativy">AI-конвейер: сборка сильных креативов за 60 минут</a></li></ol></div><div className="bpart"><p className="bpn">Этап 05</p><h3>Автопилот</h3><ol><li><a href="/book/5-1-algoritm-vs-chelovek">Почему система продаёт стабильнее человека</a></li><li><a href="/book/5-2-stek-avtomatizacii">Арсенал Архитектора: собираем цифровой экзокортекс</a></li><li><a href="/book/5-3-vebinarnyj-dvigatel">Сборка автопилота: вебинарная машина с нуля</a></li><li><a href="/book/5-4-audit-voronki">Аналитика воронки: как найти «дыры» и усилить прибыль</a></li><li><a href="/book/5-5-ai-v-prodazhah">AI-ассистент для воронки: первый цифровой слой общения</a></li></ol></div><div className="bpart"><p className="bpn">Этап 06</p><h3>Автономный контур</h3><ol><li><a href="/book/6-1-cifrovye-sotrudniki">Цифровые сотрудники: AI-агенты с правом на локальные решения</a></li><li><a href="/book/6-2-razrabotka-bez-programmistov">Разработка в новой логике: IT-инфраструктура на естественном языке</a></li></ol></div></div>
-			<div className="bpart bintro"><h3>В конце</h3><ol><li><a href="/book/00-c-epilog">Эпилог. Архитектура твоей цифровой монополии</a></li></ol></div>
+				<div className="section-head"><h2>{c.h2}</h2></div>
+				<div className="bpart bintro"><h3>{c.start.title}</h3><List items={c.start.chapters} /></div>
+				<div className="bparts">{c.parts.map((p) => <div className="bpart" key={p.num}><p className="bpn">{p.num}</p><h3>{p.title}</h3><List items={p.chapters} /></div>)}</div>
+				<div className="bpart bintro"><h3>{c.end.title}</h3><List items={c.end.chapters} /></div>
 			</div>
-			</section>
-		</>
+		</section>
 	);
 }

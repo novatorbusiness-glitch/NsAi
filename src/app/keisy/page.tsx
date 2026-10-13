@@ -4,12 +4,9 @@ import Products from "@/components/cases/Products";
 import System from "@/components/cases/System";
 import Sales from "@/components/cases/Sales";
 import Contact from "@/components/cases/Contact";
+import { keisy } from "@content/pages/keisy";
 
-export const metadata: Metadata = {
-	title: "Кейсы: четыре продукта за полгода",
-	description: "Четыре продукта с апреля 2026 года, собранные в одиночку с командой AI-агентов, и системы продаж: 17 млн ₽ за 8 месяцев, рост сети с 3 до 30 филиалов.",
-	alternates: { canonical: "/keisy" },
-};
+export const metadata: Metadata = { ...keisy.meta, alternates: { canonical: "/keisy" } };
 
 export default function Page() {
 	return (

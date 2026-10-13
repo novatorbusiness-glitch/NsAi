@@ -1,18 +1,18 @@
-// Перенесено из прототипа 13.10.2026.
+import Rich from "@/components/ui/Rich";
+import { mentor } from "@content/pages/nastavnichestvo";
+
+// Сколько это экономит: студия, почасовка, наставничество.
 export default function Savings() {
+	const c = mentor.savings;
 	return (
-		<>
-			<section className="alt compare">
+		<section className="alt compare">
 			<div className="wrap">
-			<div className="section-head"><h2>Сколько это экономит</h2><p className="lead">Сравнение с тем, как обычно собирают первую версию. Цены студий и разработчиков взяты из открытых прайсов осенью 2026 года.</p></div>
-			<div className="grid g3 cmp">
-			<div className="card"><p className="lbl">Студия</p><h3>от 0,26 до 4,4 млн ₽</h3><p>Первая версия за 3–5 месяцев. Продукт ваш, но собирали его другие, и следующий снова придётся заказывать.</p></div>
-			<div className="card"><p className="lbl">Разработчик на почасовке</p><h3>от 160 000 ₽ в месяц</h3><p>Соберёт по заданию. Что строить, для кого и как это продавать, решаете сами.</p></div>
-			<div className="card me"><p className="lbl">Наставничество</p><h3>80 000 ₽ в месяц</h3><p>Обычно около двух месяцев. Продукт собираете вы, а навык и инструкции остаются у вас для следующих проектов. Подписки и сервисы оплачиваются отдельно.</p></div>
+				<div className="section-head"><h2>{c.h2}</h2><p className="lead">{c.lead}</p></div>
+				<div className="grid g3 cmp">
+					{c.cards.map((k) => <div className={"me" in k ? "card me" : "card"} key={k.label}><p className="lbl">{k.label}</p><h3>{k.title}</h3><p>{k.text}</p></div>)}
+				</div>
+				<p className="cap"><Rich t={c.cap} /></p>
 			</div>
-			<p className="cap">Источники цен в статье <a href="/blog/skolko-stoit-mvp">«Сколько стоит MVP в 2026 году»</a>.</p>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

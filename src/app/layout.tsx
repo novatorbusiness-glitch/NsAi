@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
 import Goals from "@/components/layout/Goals";
 import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 import "../styles/tokens.css";
 import "../styles/base.css";
 
@@ -14,8 +15,8 @@ const mono = JetBrains_Mono({ subsets: ["latin", "cyrillic"], weight: ["400", "5
 
 export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
-	title: { default: "Илья Новицкий · маркетинг, продукт и автоматизация", template: "%s · Илья Новицкий" },
-	description: "Маркетинг, продукт и автоматизация на уровне директора по маркетингу, без найма в штат: сайт, контент, продукт и аналитика у одного специалиста. Первый шаг за 3–4 дня.",
+	title: { default: common.site.title, template: `%s · ${site.name}` },
+	description: common.site.description,
 	openGraph: { type: "website", locale: "ru_RU", siteName: site.name, images: [{ url: site.og, width: 1200, height: 630, alt: site.name }] },
 	twitter: { card: "summary_large_image" },
 	manifest: "/site.webmanifest",
@@ -37,7 +38,7 @@ const JSON_LD = {
 	"@id": `${site.url}/#person`,
 	name: site.name,
 	url: site.url,
-	jobTitle: "Маркетинг, продукт и автоматизация",
+	jobTitle: common.site.jobTitle,
 	sameAs: [site.contacts.telegram, site.contacts.channel],
 };
 

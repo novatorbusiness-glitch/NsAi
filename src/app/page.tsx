@@ -11,10 +11,11 @@ import About from "@/components/home/About";
 import Fit from "@/components/home/Fit";
 import Faq from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
+import { home } from "@content/pages/home";
 
 export const metadata: Metadata = {
-	title: { absolute: "Один человек вместо отдела маркетинга и пяти подрядчиков · Илья Новицкий" },
-	description: "Маркетинг, продукт и автоматизация на уровне директора по маркетингу, без найма в штат: сайт, контент, продукт и аналитика у одного специалиста. Первый шаг за 3–4 дня.",
+	title: { absolute: home.meta.title },
+	description: home.meta.description,
 	alternates: { canonical: "/" },
 };
 

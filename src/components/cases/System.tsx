@@ -1,64 +1,60 @@
-// Перенесено из прототипа 13.10.2026.
+import Rich from "@/components/ui/Rich";
+import { keisy } from "@content/pages/keisy";
+
+// К.3 · голова, опыт и система: карточки, схема работы, «под капотом».
 export default function System() {
+	const c = keisy.system;
+	const h = c.hood;
+	const t = c.tools;
 	return (
-		<>
-			<section id="system">
+		<section id="system">
 			<div className="wrap">
-			<div className="section-head" style={{ maxWidth: "820px" }}>
-			<h2>Голова, опыт и система, которая ускоряет</h2>
-			<p className="lead">Нейросеть сегодня может открыть каждый. Результат от этого появляется не у каждого, и вы, как предприниматель или эксперт, наверняка понимаете почему: инструмент сам ничего не решает. Решает человек, который знает, что строить, видел, как это ломается, и уже набил шишки на своих и чужих проектах.</p>
-			<p className="sub">У меня за плечами пять лет агентства, десятки запусков, сотни задач по автоматизации и 631 успешная сделка только за последние 3,5 года. <b>Именно этот опыт определяет, что и в каком порядке делать.</b> AI-агенты и система вокруг них дают скорость: то, на что раньше уходили недели работы команды, теперь занимает дни. Но направление задаёт голова, а не модель.</p>
+				<div className="section-head" style={{ maxWidth: "820px" }}>
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+					<p className="sub"><Rich t={c.sub} /></p>
+				</div>
+				<div className="grid g2">
+					{c.cards.map((k) => <div className="card" key={k.title}><h3>{k.title}</h3><p>{k.text}</p></div>)}
+				</div>
+				<div className="hood" aria-label={h.label}>
+					<div className="hood-h"><span className="dot"></span>{h.head}</div>
+					<div className="hl hl-top">
+						<div className="hn you"><b>{h.you.title}</b><span>{h.you.text}</span></div>
+						<div className="hx">⇄</div>
+						<div className="hn me"><b>{h.me.title}</b><span>{h.me.text}</span></div>
+					</div>
+					<div className="hw"><i></i></div>
+					<div className="hl"><div className="hn coord"><b>{h.coord.title}</b><span>{h.coord.text}</span></div></div>
+					<div className="hw"><i></i></div>
+					<div className="hl agents">
+						{h.agents.map((a) => <span key={a}>{a}</span>)}<span className="more">{h.agentsMore}</span>
+					</div>
+					<div className="hw"><i></i></div>
+					<div className="hl tri">
+						{h.tri.map((b) => <div className="hb" key={b.tag}><em>{b.tag}</em><b>{b.title}</b><span>{b.text}</span></div>)}
+					</div>
+					<div className="hw"><i></i></div>
+					<div className="hl"><div className="hn base"><b>{h.base.title}</b><span>{h.base.text}</span></div></div>
+				</div>
+				<p className="hood-cap">{c.hoodCap}</p>
+				<div className="split static" style={{ marginTop: "40px" }}>
+					<div className="head">
+						<h3 style={{ fontSize: "22px" }}>{t.h3}</h3>
+						<p className="sub" style={{ margin: "6px 0 10px" }}>{t.sub}</p>
+						<details className="tools"><summary>{t.summary}</summary>
+							<div className="stack">
+								{t.groups.map((g) => <div key={g.tag}><em>{g.tag}</em><small>{g.text}</small><p>{g.items.map((i) => <span key={i}>{i}</span>)}</p></div>)}
+							</div>
+						</details>
+					</div>
+					<div>
+						<figure className="window" style={{ margin: "0" }}><div className="bar"><i></i><i></i><i></i><span>{t.window}</span></div><img src={t.shot.src} alt={t.shot.alt} width={1400} height={824} loading="lazy" /></figure>
+						<p className="cap">{t.cap}</p>
+						<div className="card soft" style={{ marginTop: "18px" }}><h3>{t.okidelo.title}</h3><p>{t.okidelo.text}</p></div>
+					</div>
+				</div>
 			</div>
-			<div className="grid g2">
-			<div className="card"><h3>Быстро</h3><p>Под каждую задачу подбираются AI-инструменты: исследование, тексты, прототип, код. Работа, на которую у команды ушли бы недели, занимает дни.</p></div>
-			<div className="card"><h3>Без ошибок по невнимательности</h3><p>У проекта свои правила и эталон стиля. Ничего не считается готовым без проверки по списку, перед каждой правкой сохраняется копия, а к паролям и ключам у инструментов доступа нет.</p></div>
-			<div className="card"><h3>Работает и ночью</h3><p>Проверки, отчёты и резервные копии запускаются сами по расписанию, а AI-помощники отвечают и напоминают круглосуточно.</p></div>
-			<div className="card"><h3>Всё прозрачно</h3><p>Исследование, решения, тексты и план лежат в одном документе, по шагам, и у каждой цифры есть источник. Вы утверждаете шаг, и только после этого работа идёт дальше.</p></div>
-			</div>
-			<div className="hood" aria-label="Схема системы">
-			<div className="hood-h"><span className="dot"></span>пример · так устроена работа на моих проектах</div>
-			<div className="hl hl-top">
-			<div className="hn you"><b>Вы</b><span>утверждаете каждый шаг</span></div>
-			<div className="hx">⇄</div>
-			<div className="hn me"><b>Илья</b><span>отвечает за результат</span></div>
-			</div>
-			<div className="hw"><i></i></div>
-			<div className="hl"><div className="hn coord"><b>Координатор</b><span>общие правила · кто кому передаёт работу · один список задач</span></div></div>
-			<div className="hw"><i></i></div>
-			<div className="hl agents">
-			<span>Исследователь</span><span>Автор текстов</span><span>Прототип</span><span>Код</span><span>Задачи</span><span>Контент</span><span>Нейминг</span><span className="more">состав под задачу</span>
-			</div>
-			<div className="hw"><i></i></div>
-			<div className="hl tri">
-			<div className="hb"><em>подключения</em><b>Работают прямо в ваших сервисах</b><span>почта · календарь · Google Диск · CRM · браузер</span></div>
-			<div className="hb"><em>страховки</em><b>Срабатывают сами</b><span>проверка перед «готово» · копия перед правкой · к паролям доступа нет</span></div>
-			<div className="hb"><em>без меня</em><b>Идёт по расписанию</b><span>10 задач сами · агенты отвечают и напоминают круглосуточно</span></div>
-			</div>
-			<div className="hw"><i></i></div>
-			<div className="hl"><div className="hn base"><b>Живой документ проекта</b><span>исследование, решения, тексты и план по шагам · у каждой цифры источник · история каждой правки в GitHub</span></div></div>
-			</div>
-			<p className="hood-cap">Это схема моей собственной работы, а не тариф. На вашей задаче состав подбирается под неё: где-то нужны исследование и тексты, где-то прототип и код. Неизменно одно: за результат отвечаю я.</p>
-			<div className="split static" style={{ marginTop: "40px" }}>
-			<div className="head">
-			<h3 style={{ fontSize: "22px" }}>Под капотом</h3>
-			<p className="sub" style={{ margin: "6px 0 10px" }}>Инструменты меняются каждые полгода, метод остаётся. Если интересно, из чего система собрана сейчас, список ниже.</p>
-			<details className="tools"><summary>Показать инструменты</summary>
-			<div className="stack">
-			<div><em>агенты</em><small>Среды, где работает команда, и агенты с долгой памятью. Навыки и страховки: процедуры, проверки и запреты, которые срабатывают сами.</small><p><span>Claude Code</span><span>Codex</span><span>свои навыки и страховки</span></p></div>
-			<div><em>подключения</em><small>Агенты работают прямо в этих сервисах, а не только советуют.</small><p><span>MCP: почта, календарь, Диск, CRM, браузер</span></p></div>
-			<div><em>данные</em><small>Локальные и облачные базы для продуктов, авторизация и база знаний по всем проектам.</small><p><span>PostgreSQL в OrbStack</span><span>Supabase</span><span>Firebase</span><span>Obsidian</span></p></div>
-			<div><em>надёжность</em><small>История каждой правки, проект в свежей версии даже с телефона, пароли под замком и копии с проверкой восстановления.</small><p><span>GitHub</span><span>живые HTML-документы</span><span>менеджер паролей</span><span>резервные копии</span></p></div>
-			</div>
-			</details>
-			</div>
-			<div>
-			<figure className="window" style={{ margin: "0" }}><div className="bar"><i></i><i></i><i></i><span>документ проекта · дерево сайта до каждого файла</span></div><img src="/images/site/shot-tree.jpg" alt="Фрагмент рабочего документа: дерево проекта, у каждого файла своя функция и статус" width={1400} height={824} loading="lazy" /></figure>
-			<p className="cap">Так выглядит документ проекта: этот сайт разложен до каждого файла, прежде чем писать код.</p>
-			<div className="card soft" style={{ marginTop: "18px" }}><h3>Лучшее из этой системы будет в OkiDelo</h3><p>Малому бизнесу не нужно строить такое самому. OkiDelo будет давать ту же логику в готовом виде: команду AI-сотрудников с ролями и проверкой результата, по подписке.</p></div>
-			</div>
-			</div>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }
