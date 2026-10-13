@@ -46,24 +46,54 @@ def wrap(s, fonts, maxw):
 
 PHOTO = Image.open(f'{ROOT}/public/images/site/ilya-main.jpg').convert('RGB')
 
-def render(name, title):
-    im = Image.new('RGB', (W, H), '#ffffff'); d = ImageDraw.Draw(im)
-    pw = 380; k = max(pw / PHOTO.width, H / PHOTO.height)
-    ph = PHOTO.resize((round(PHOTO.width * k), round(PHOTO.height * k)), Image.LANCZOS)
-    left = (ph.width - pw) // 2; top = max(0, (ph.height - H) // 4)
-    im.paste(ph.crop((left, top, left + pw, top + H)), (W - pw, 0))
-    x, maxw = 72, W - pw - 72 - 48
-    kick = SECTION.get(name, 'Блог' if name.startswith('blog-') else 'Илья Новицкий').upper()
-    d.rectangle((x, 84, x + 48, 90), fill=ACC)
-    draw(d, x, 112, kick, mono(22), ACC)
-    for size in (64, 58, 52, 46, 40):
+# Статьи — в цвете своей обложки из блога (порядок и темы — src/config/blog.ts, цвета — .c-* в base.css).
+THEMES = {  # фон: два цвета градиента, текст, акцент
+    'c-emerald': ('#0F6E56', '#0b5242', '#ffffff', '#bfe6d8'),
+    'c-dark': ('#1b1f22', '#111416', '#e9ecea', '#7fd3b6'),
+    'c-sand': ('#f6ece4', '#eadbcf', '#3a2a20', '#8a5a3c'),
+    'c-lilac': ('#efeafb', '#e1d9f7', '#2a1f4a', '#5b46a8'),
+    'c-mint': ('#e8f3ef', '#d5ebe2', '#123f33', '#0F6E56'),
+}
+_cfg = open(f'{ROOT}/src/config/blog.ts', encoding='utf-8').read()
+POSTS = re.findall(r'slug: "([^"]+)", tag: "([^"]+)"', _cfg)
+COVERS = re.findall(r'"(c-[a-z]+)"', _cfg[_cfg.index('covers'):])
+ARTICLE = {s: (tag, COVERS[i % len(COVERS)]) for i, (s, tag) in enumerate(POSTS)}
+
+def gradient(c1, c2):
+    a, b = Image.new('RGB', (W, H), c1), Image.new('RGB', (W, H), c2)
+    mask = Image.new('L', (2, 2)); mask.putdata([0, 110, 145, 255])  # плавно из левого верхнего угла в правый нижний
+    return Image.composite(b, a, mask.resize((W, H), Image.BILINEAR))
+
+def title_block(d, x, y, title, maxw, color, sizes=(68, 62, 56, 50, 44), lines_max=4):
+    for size in sizes:
         f = manrope(size, 800); lines = wrap(title, f, maxw)
-        if len(lines) <= 4: break
-    y = 164
+        if len(lines) <= lines_max: break
     for ln in lines:
-        draw(d, x, y, ln, f, INK); y += int(size * 1.18)
-    draw(d, x, H - 112, 'Илья Новицкий', manrope(26, 700), INK)
-    draw(d, x, H - 76, 'ilya-novitsky.ru', mono(20), INK2)
+        draw(d, x, y, ln, f, color); y += int(size * 1.16)
+
+def render(name, title):
+    x = 72
+    if name.startswith('blog-') and name[5:] in ARTICLE:
+        tag, cover = ARTICLE[name[5:]]; c1, c2, ink, acc = THEMES[cover]
+        im = gradient(c1, c2); d = ImageDraw.Draw(im)
+        d.ellipse((W - 300, H - 300, W + 200, H + 200), outline=acc, width=3)  # круг, как на обложке в блоге
+        kick, maxw, sub = f'БЛОГ · {tag.upper()}', W - 2 * x - 120, acc
+    else:
+        im = Image.new('RGB', (W, H), '#ffffff'); d = ImageDraw.Draw(im); ink, sub = INK, INK2; acc = ACC
+        if name == 'home':  # главная — о человеке, поэтому с фото
+            pw = 380; k = max(pw / PHOTO.width, H / PHOTO.height)
+            ph = PHOTO.resize((round(PHOTO.width * k), round(PHOTO.height * k)), Image.LANCZOS)
+            left = (ph.width - pw) // 2; top = max(0, (ph.height - H) // 4)
+            im.paste(ph.crop((left, top, left + pw, top + H)), (W - pw, 0)); maxw = W - pw - x - 48
+        else:
+            maxw = W - 2 * x - 60
+            d.rectangle((W - 16, 0, W, H), fill=ACC)  # зелёная кромка справа — фирменный цвет
+        kick = SECTION.get(name, 'Илья Новицкий').upper()
+    d.rectangle((x, 84, x + 48, 90), fill=acc)
+    draw(d, x, 112, kick, mono(22), acc)
+    title_block(d, x, 164, title, maxw, ink, sizes=(58, 54, 50) if name == 'home' else (68, 62, 56, 50, 44), lines_max=3 if name == 'home' else 4)
+    draw(d, x, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
+    draw(d, x, H - 76, 'ilya-novitsky.ru · маркетинг, продукт и автоматизация', mono(20), sub)
     im.save(f'{DST}/{name}.jpg', 'JPEG', quality=86, optimize=True)
 
 os.makedirs(DST, exist_ok=True)
