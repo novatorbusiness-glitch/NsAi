@@ -29,6 +29,9 @@ export const common = typo({
 		menu: "Меню",
 		channel: "Канал",
 		requisites: "Реквизиты:",
+		footPages: "Страницы",
+		footContacts: "Связаться",
+		footDocs: "Документы",
 	},
 
 	buttons: {

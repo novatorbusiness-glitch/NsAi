@@ -68,12 +68,12 @@ ilya-novitsky.ru/
     │   ├── sitemap.ts        ✓ собирает адреса сам: страницы, статьи, главы
     │   └── robots.ts         ✓ без устаревшей строки Host
     ├── components/
-    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd   Button, Section, Card… ◐
-    │   ├── layout/           ✓ Header, Footer, CookieBanner, Goals, LegalPage, Redirect
-    │   ├── home/             ✓ по файлу на блок + StepPicker
+    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners   Button, Card… ◐
+    │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, Goals, LegalPage, Redirect
+    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact) + StepPicker
     │   ├── cases/            ✓ Hero, Products, System, Sales, Contact
     │   ├── mentor/           ✓ блоки Н.1–Н.9
-    │   ├── process/          ✓ Hero, ServiceStep (один на три шага), MentorCta
+    │   ├── process/          ✓ Hero, ServiceStep (один на три шага), Scope (что можно поручить / не входит), MentorCta
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc
     │   └── lead/             ◐ форма заявки — вместе с functions/lead
