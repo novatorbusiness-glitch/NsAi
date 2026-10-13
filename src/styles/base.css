@@ -1232,3 +1232,5 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .faq-lines .a{padding:0 0 20px}
 @media(min-width:900px){.psteps.line .pstep .pp{margin-top:auto}.psteps.line .pstep .px{margin-bottom:14px}}
 .how .after{font-weight:600;color:var(--ink);padding-left:14px;border-left:2px solid var(--acc)}
+/* крупные цифры — основным шрифтом, без точки в нуле (решение Ильи 13.10) */
+.pstep .pp b,.pr-r .pr-big b,.past-n b,.ag-num b,.num,.done .win .big,.ag-big b,.strip .num,.pillar .pb b,.stat b,.ct-row b,.big{font-family:var(--f) !important;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
