@@ -24,9 +24,14 @@ for (const f of pages()) {
 	if (h1 !== 1) errors.push(`${r}: H1 на странице — ${h1}, нужен один`);
 	if (!canon) errors.push(`${r}: нет canonical`);
 	else if (!isChapter(f) && new URL(canon).pathname.replace(/\/$/, "") !== route(f).replace(/\/$/, "")) errors.push(`${r}: canonical ${canon} не совпадает с адресом`);
-	if (isChapter(f)) continue; // главы книги — готовые страницы, у них свои правила (scripts/book)
 	const og = html.match(/property="og:image" content="[^"]*\/og\/([a-z0-9-]+)\.jpg"/)?.[1];
 	const ogTitle = unesc(html.match(/property="og:title" content="([^"]*)"/)?.[1] || "");
+	if (isChapter(f)) { // главы книги — готовые страницы (scripts/book); превью у каждой своё: og/book-<глава>.jpg
+		const want = "book-" + path.basename(f, ".html");
+		if (og !== want) errors.push(`${r}: превью главы должно быть /og/${want}.jpg`);
+		else if (!fs.existsSync(path.join(process.cwd(), "public/og", `${og}.jpg`)) || manifest[og]?.title !== ogTitle) errors.push(`${r}: превью ${og}.jpg нет или оно старое — запустите npm run og`);
+		continue;
+	}
 	if (!og) errors.push(`${r}: нет своего превью /og/*.jpg`);
 	else if (!fs.existsSync(path.join(process.cwd(), "public/og", `${og}.jpg`))) errors.push(`${r}: нет файла public/og/${og}.jpg — запустите npm run og`);
 	else if (!subs[og]) errors.push(`${r}: нет подзаголовка превью в content/og.json (ключ ${og})`);

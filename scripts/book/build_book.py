@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / 'content' / 'book'
 OUT = ROOT / 'public' / 'book'
+MARK = re.sub(r'<svg [^>]*viewBox="([^"]+)">', r'<svg viewBox="\1" aria-hidden="true">', (ROOT / 'public' / 'brand' / 'n.svg').read_text(encoding='utf-8'))  # знак «N с лепестком» в шапке
 VIZ = json.loads((Path(__file__).parent / 'viz.json').read_text(encoding='utf-8'))
 FONTS = '/fonts/fonts.css'
 SITE = 'https://ilya-novitsky.ru'
@@ -29,10 +30,10 @@ def fix(html, slug):
     url = f'{SITE}/book/{slug}'
     meta = (f'<link rel="canonical" href="{url}">\n<meta property="og:type" content="article">\n<meta property="og:url" content="{url}">\n'
             f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
-            f'<meta property="og:image" content="{SITE}/og/book.jpg">\n<meta name="twitter:card" content="summary_large_image">\n'
+            f'<meta property="og:image" content="{SITE}/og/book-{slug}.jpg">\n<meta name="twitter:card" content="summary_large_image">\n'
             '<link rel="icon" href="/favicon.ico" sizes="any">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
     html = re.sub(r'(<meta name="description" content="[^"]*">)', lambda m: m.group(1) + '\n' + meta, html, count=1)
-    html = html.replace('<a href="/" class="logo">NcAi</a>', '<a href="../index.html" class="logo">Илья Новицкий</a>')
+    html = html.replace('<a href="/" class="logo">NcAi</a>', '<a href="../index.html" class="logo">' + MARK + 'Илья Новицкий</a>')
     html = re.sub(r'>\s*NcAi\s*<', '>Илья Новицкий<', html)
     html = re.sub(r'href="/book/read#([0-9a-z-]+)"', r'href="\1.html"', html)
     html = re.sub(r'href="/book/([0-9a-z-]+)"', r'href="\1.html"', html)
@@ -94,6 +95,7 @@ def to_light(html, slug):
                '.hero-h1,.hero-h1 *{background:none!important;-webkit-text-fill-color:#15181a!important;color:#15181a!important}'
                '.pivot-title,.cc-title{color:#15181a!important}.tg-cta{background:#e8f3ef!important}.tg-cta::before{display:none!important}'
                '.tg-cta-title{color:#15181a!important}.tg-cta-text{color:#4b5257!important}.tg-cta-btn{background:#0F6E56!important;color:#fff!important}'
+               '.logo{display:inline-flex!important;align-items:center;gap:8px}.logo svg{height:1.15em;width:auto;flex:0 0 auto}'
                '.nz-viz{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important}</style>'
                '<script>try{history.scrollRestoration="manual"}catch(e){}addEventListener("load",function(){if(!location.hash)scrollTo(0,0);'
                'document.querySelectorAll("[data-fill]").forEach(function(b){b.style.width=b.dataset.fill+"%"});'

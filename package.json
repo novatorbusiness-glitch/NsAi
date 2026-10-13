@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"og": "python3 scripts/og/generate_og.py",
+		"og": "python3.13 scripts/og/generate_og.py",
 		"check": "node scripts/check/links.mjs && node scripts/check/redirects.mjs && node scripts/check/seo.mjs && node scripts/check/budget.mjs",
 		"postbuild": "npm run check"
 	},

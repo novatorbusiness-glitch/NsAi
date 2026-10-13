@@ -52,6 +52,7 @@ def wrap(s, fonts, maxw):
 
 SUBS = json.load(open(f'{ROOT}/content/og.json', encoding='utf-8'))
 MARK = {k: Image.open(f'{ROOT}/public/brand/{k}.png').convert('RGBA') for k in ('n', 'n-white')}  # знак «N с лепестком»
+COVER = Image.open(f'{ROOT}/public/images/site/book-cover.jpg').convert('RGB')  # обложка — на превью глав
 PHOTO = Image.open(f'{ROOT}/public/images/site/ilya-main.jpg').convert('RGB')
 
 # Статьи — в цвете своей обложки из блога (порядок и темы — src/config/blog.ts, цвета — .c-* в base.css).
@@ -77,15 +78,28 @@ def title_block(d, x, y, title, sub, maxw, color, subcolor, room, sizes=(68, 62,
     for size in sizes:
         f = manrope(size, 800); lines = wrap(title, f, maxw)
         ss = max(28, int(size * 0.5)); sf = manrope(ss, 600); slines = wrap(sub, sf, maxw) if sub else []
+        if len(slines) > 2:  # подзаголовок — не больше двух строк, дальше многоточие
+            last = slines[1]
+            while last and width(last + '…', sf) > maxw: last = last.rsplit(' ', 1)[0] if ' ' in last else last[:-1]
+            slines = [slines[0], last.rstrip(',;:—- ') + '…']
         h = len(lines) * int(size * 1.16) + (22 + len(slines) * int(ss * 1.35) if slines else 0)
-        if h <= room and len(slines) <= 2: break
+        if h <= room: break
     for ln in lines:
         draw(d, x, y, ln, f, color); y += int(size * 1.16)
     y += 22
     for ln in slines:
         draw(d, x, y, ln, sf, subcolor); y += int(ss * 1.35)
 
-def render(name, title):
+def chapter(t, title):
+    # глава книги: «Гл. 1.3 · Лид-магнит» → отметка, заголовок без номера и « — Нейро-воронка», подзаголовок — первая фраза описания
+    nav = re.search(r'class="nav-chap">([^<]*)<', t); part = nav.group(1).split(' · ')[0].strip() if nav else ''
+    part = part if part.startswith(('Гл.', 'Пролог', 'Эпилог')) else ''
+    title = re.sub(r'\s*—\s*Нейро-воронка$', '', title); title = re.sub(r'^(\d\.\d\s+|Пролог\.\s+|Эпилог\.\s+)', '', title)
+    desc = html.unescape(re.search(r'name="description" content="([^"]*)"', t).group(1))
+    sub = re.split(r'(?<=[.!?])\s', desc)[0].rstrip('…').replace('→', '—')  # стрелок нет в шрифтах сайта
+    return title, sub, 'КНИГА «НЕЙРО-ВОРОНКА»' + (' · ' + part.upper() if part else '')
+
+def render(name, title, sub_text=None, kicker=None):
     x = 72
     if name.startswith('blog-') and name[5:] in ARTICLE:
         tag, cover = ARTICLE[name[5:]]; c1, c2, ink, acc = THEMES[cover]
@@ -95,7 +109,12 @@ def render(name, title):
         subtle = ink
     else:
         im = Image.new('RGB', (W, H), '#ffffff'); d = ImageDraw.Draw(im); ink, sub = INK, INK2; acc = ACC; subtle = INK2
-        if name == 'home':  # главная — о человеке, поэтому с фото
+        if kicker:  # глава книги — с обложкой справа
+            ch = 470; cw = round(COVER.width * ch / COVER.height); cv = COVER.resize((cw, ch), Image.LANCZOS)
+            d.rectangle((W - 72 - cw + 8, 88, W - 72 + 8, 80 + ch + 8), fill='#e3e6e4')  # тень
+            im.paste(cv, (W - 72 - cw, 80)); maxw = W - cw - 2 * x - 56
+            d.rectangle((W - 16, 0, W, H), fill=ACC)
+        elif name == 'home':  # главная — о человеке, поэтому с фото
             pw = 380; k = max(pw / PHOTO.width, H / PHOTO.height)
             ph = PHOTO.resize((round(PHOTO.width * k), round(PHOTO.height * k)), Image.LANCZOS)
             left = (ph.width - pw) // 2; top = max(0, (ph.height - H) // 4)
@@ -103,10 +122,10 @@ def render(name, title):
         else:
             maxw = W - 2 * x - 60
             d.rectangle((W - 16, 0, W, H), fill=ACC)  # зелёная кромка справа — фирменный цвет
-        kick = SECTION.get(name, 'Илья Новицкий').upper()
+        kick = kicker or SECTION.get(name, 'Илья Новицкий').upper()
     d.rectangle((x, 84, x + 48, 90), fill=acc)
-    draw(d, x, 112, kick, mono(22), acc)
-    title_block(d, x, 164, title, SUBS.get(name, ''), maxw, ink, subtle, room=H - 164 - 140, sizes=(56, 52, 48, 44, 40) if name == 'home' else (66, 60, 54, 50, 44, 40))
+    draw(d, x, 112, kick, mono(20 if len(kick) > 34 else 22), acc)
+    title_block(d, x, 164, title, sub_text if sub_text is not None else SUBS.get(name, ''), maxw, ink, subtle, room=H - 164 - 140, sizes=(56, 52, 48, 44, 40) if name == 'home' else (66, 60, 54, 50, 44, 40))
     light = ink.lower() in ('#ffffff', '#e9ecea')  # на тёмном/зелёном фоне — белый знак
     mk = MARK['n-white' if light else 'n']; mh = 46; mk = mk.resize((round(mk.width * mh / mk.height), mh), Image.LANCZOS)
     im.paste(mk, (x, H - 118), mk); nx = x + mk.width + 14
@@ -120,12 +139,18 @@ man = json.load(open(man_path, encoding='utf-8')) if os.path.exists(man_path) el
 seen, made = set(), 0
 for f in sorted(glob.glob(f'{OUT}/**/*.html', recursive=True)):
     t = open(f, encoding='utf-8').read()
+    if f.endswith('/404.html') or 'http-equiv="refresh"' in t: continue  # 404 и переадресации: превью по умолчанию, своё не рисуем
     img = re.search(r'property="og:image" content="[^"]*/og/([a-z0-9-]+)\.jpg"', t)
     ttl = re.search(r'property="og:title" content="([^"]*)"', t)
     if not img or not ttl: continue
     name, title = img.group(1), html.unescape(ttl.group(1))
     if name in seen: continue
     seen.add(name)
+    if name.startswith('book-'):  # главы книги
+        ctitle, csub, kick = chapter(t, title)
+        want = {'title': title, 'sub': csub, 'brand': 1}
+        if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
+        render(name, ctitle, csub, kick); man[name] = want; made += 1; continue
     want = {'title': title, 'sub': SUBS.get(name, ''), 'brand': 1}
     if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
     render(name, title); man[name] = want; made += 1
