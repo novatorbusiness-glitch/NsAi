@@ -29,7 +29,7 @@ def fix(html, slug):
     url = f'{SITE}/book/{slug}'
     meta = (f'<link rel="canonical" href="{url}">\n<meta property="og:type" content="article">\n<meta property="og:url" content="{url}">\n'
             f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
-            f'<meta property="og:image" content="{SITE}/images/site/og.jpg">\n<meta name="twitter:card" content="summary_large_image">\n'
+            f'<meta property="og:image" content="{SITE}/og/book.jpg">\n<meta name="twitter:card" content="summary_large_image">\n'
             '<link rel="icon" href="/favicon.ico" sizes="any">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
     html = re.sub(r'(<meta name="description" content="[^"]*">)', lambda m: m.group(1) + '\n' + meta, html, count=1)
     html = html.replace('<a href="/" class="logo">NcAi</a>', '<a href="../index.html" class="logo">Илья Новицкий</a>')
