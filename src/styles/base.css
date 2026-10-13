@@ -1138,3 +1138,4 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .apoints li{padding-left:14px;border-left:2px solid var(--acc)}
 .apoints b{display:block;font-size:17px;line-height:1.35;color:var(--ink)}
 .apoints span{display:block;margin-top:4px;font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.faq .a b{color:var(--ink)}
