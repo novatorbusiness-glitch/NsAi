@@ -2,12 +2,13 @@ import Link from "next/link";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 
-// Подвал: роль, страницы, контакты, документы, реквизиты.
+// Подвал: знак NCAi, роль, страницы, контакты, документы, реквизиты.
 export default function Footer() {
 	const c = site.contacts;
 	return (
 		<footer>
 			<div className="wrap">
+				<img className="fmark" src="/brand/ncai.svg" alt="NCAi" width={77} height={27} />
 				<p>
 					<b style={{ color: "var(--ink)" }}>{site.name}</b> · {site.roleFooter}
 				</p>

@@ -3,14 +3,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
+import BrandMark from "@/components/ui/BrandMark";
 
-// Шапка: имя, три пункта меню, кнопка «Начать с одной задачи»; на телефоне — «Написать» и меню.
+// Шапка: значок и имя, три пункта меню, кнопка «Начать с одной задачи»; на телефоне — «Написать» и меню.
 export default function Header() {
 	const [open, setOpen] = useState(false);
 	return (
 		<header className="top">
 			<div className="wrap">
 				<Link className="brand" href="/">
+					<BrandMark />
 					{site.name}
 				</Link>
 				<nav className="nav">

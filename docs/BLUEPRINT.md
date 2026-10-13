@@ -39,8 +39,10 @@ ilya-novitsky.ru/
 │   ├── og/                   ✓ превью 1200×630 для каждой страницы и статьи + manifest.json
 │   ├── book/                 ✓ готовые главы (scripts/book)
 │   ├── CNAME, google….html   ✓
-│   └── favicon*, manifest    ≠ знак NCAi — решение Ильи 13.10; фирменный стиль отдельной задачей
+│   ├── brand/                ✓ знак NCAi: полное слово (ncai.svg) и «N с лепестком» (n.svg), PNG для превью
+│   └── icon.svg, favicon*    ✓ иконка вкладки «N с лепестком» на зелёном
 ├── scripts/
+│   ├── brand/                ✓ mark.py (геометрия знака), build.py (SVG), render.mjs (PNG через Chrome)
 │   ├── og/generate_og.py     ✓ превью по заголовку и подзаголовку; готовые не перерисовывает
 │   ├── check/links.mjs       ✓ битые ссылки и якоря
 │   ├── check/redirects.mjs   ✓ каждый старый адрес ведёт на живую страницу
