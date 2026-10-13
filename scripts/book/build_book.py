@@ -9,6 +9,7 @@ SRC = ROOT / 'content' / 'book'
 OUT = ROOT / 'public' / 'book'
 VIZ = json.loads((Path(__file__).parent / 'viz.json').read_text(encoding='utf-8'))
 FONTS = '/fonts/fonts.css'
+SITE = 'https://ilya-novitsky.ru'
 OVERRIDE = ('<style>body{cursor:auto!important}#cd,#cr{display:none!important}'
             'a,button,summary{cursor:pointer!important}</style>')
 
@@ -22,6 +23,15 @@ def fix(html, slug):
         if len(d) > 158: d = d[:155].rsplit(' ', 1)[0].rstrip(',;:—-') + '…'
         d = d.replace('"', '&quot;')
         html = html.replace('</title>', '</title>\n<meta name="description" content="' + d + '">', 1)
+    # canonical и превью для ссылок
+    title = re.search(r'<title>(.*?)</title>', html, re.S).group(1).strip()
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
+    url = f'{SITE}/book/{slug}'
+    meta = (f'<link rel="canonical" href="{url}">\n<meta property="og:type" content="article">\n<meta property="og:url" content="{url}">\n'
+            f'<meta property="og:title" content="{title}">\n<meta property="og:description" content="{desc}">\n'
+            f'<meta property="og:image" content="{SITE}/images/site/og.jpg">\n<meta name="twitter:card" content="summary_large_image">\n'
+            '<link rel="icon" href="/favicon.ico" sizes="any">\n<link rel="apple-touch-icon" href="/apple-touch-icon.png">')
+    html = re.sub(r'(<meta name="description" content="[^"]*">)', lambda m: m.group(1) + '\n' + meta, html, count=1)
     html = html.replace('<a href="/" class="logo">NcAi</a>', '<a href="../index.html" class="logo">Илья Новицкий</a>')
     html = re.sub(r'>\s*NcAi\s*<', '>Илья Новицкий<', html)
     html = re.sub(r'href="/book/read#([0-9a-z-]+)"', r'href="\1.html"', html)
