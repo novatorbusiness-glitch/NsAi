@@ -1,7 +1,6 @@
 import StepPicker from "./StepPicker";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
-import Fable from "@/components/ui/Fable";
 
 // 04 · как работаем (вопрос собственника «как это будет, не потеряю ли контроль?»): три шага по строке, подробности — на /kak-my-rabotaem; подбор шага.
 export default function Process() {
@@ -22,7 +21,6 @@ export default function Process() {
 				</div>
 				<p className="more-link"><a href="/kak-my-rabotaem">{c.more}</a></p>
 				<p className="after">{c.after}</p>
-				<Fable q={c.fable.q} src={c.fable.src} />
 				<StepPicker />
 			</div>
 		</section>

@@ -4,7 +4,7 @@ import { typo } from "@/lib/typo";
 import { prices as P } from "@/config/prices";
 import type { Cta } from "@/config/blog";
 
-const T = `Тест-драйв: ${P.testDrive.price} · ${P.testDrive.term}`;
+const T = `Аудит и план действий: ${P.testDrive.price} · ${P.testDrive.term}`;
 const TG = "https://t.me/Ilya_novator";
 
 export const blog = typo({
