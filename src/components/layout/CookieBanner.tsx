@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 
 const KEY = "cookie-choice"; // "1" — принять все, "0" — только необходимые
 
@@ -38,13 +39,16 @@ export default function CookieBanner() {
 		setShow(false);
 	};
 	if (!show) return null;
+	const c = common.cookie;
 	return (
 		<div className="cookie" id="cookie">
 			<p>
-				Я использую необходимые cookie, чтобы сайт работал, а с вашего согласия ещё и cookie Яндекс Метрики, чтобы видеть, как люди пользуются сайтом. <Link href="/consent">Согласие</Link> · <Link href="/privacy">Политика</Link>
+				{c.text} <span className="nw"><Link href="/consent">{c.consent}</Link> · <Link href="/privacy">{c.privacy}</Link></span>
 			</p>
-			<button className="btn p" onClick={() => choose("1")}>Принять все</button>
-			<button className="btn s" onClick={() => choose("0")}>Только необходимые</button>
+			<div className="cookie-act">
+				<button className="btn s" onClick={() => choose("0")}>{c.necessary}</button>
+				<button className="btn p" onClick={() => choose("1")}>{c.all}</button>
+			</div>
 		</div>
 	);
 }

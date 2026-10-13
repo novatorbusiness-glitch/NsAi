@@ -1,22 +1,23 @@
-// Перенесено из прототипа 13.10.2026.
+import { home } from "@content/pages/home";
+
+// 5 · почему быстро и без потери качества: прототип OkiDelo.
 export default function Speed() {
+	const c = home.speed;
 	return (
-		<>
-			<section id="system" className="system">
+		<section id="system" className="system">
 			<div className="wrap">
-			<div className="section-head">
-			<h2>Почему быстро и без потери качества</h2>
-			<p className="lead">Скорость даёт не спешка, а опыт и инструменты. Пять лет систем продаж и десятки запусков подсказывают, что строить и в каком порядке, поэтому переделок меньше, а многие тупики видны раньше, чем в них уйдут деньги. Черновую работу берут AI-инструменты: исследование, черновики, прототипы и код. То, на что у команды ушли бы недели, занимает дни, а вы платите за результат, а не за часы.</p>
-			<p className="sub" style={{ marginTop: "14px" }}>Вся работа лежит в одном документе проекта. Вы видите каждый шаг и утверждаете его, у каждой цифры есть источник, а резервные копии делаются сами.</p>
+				<div className="section-head">
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+					<p className="sub" style={{ marginTop: "14px" }}>{c.sub}</p>
+				</div>
+				<div className="duo" aria-label={c.label}>
+					<div className="shot-clean"><img src={c.shot.src} alt={c.shot.alt} width={1400} height={839} loading="lazy" /></div>
+					<div className="phone"><img src={c.phone.src} alt={c.phone.alt} width={800} height={1159} loading="lazy" /></div>
+				</div>
+				<p className="cap">{c.cap}</p>
+				<a className="more" href="/keisy#system">{c.more}</a>
 			</div>
-			<div className="duo" aria-label="Прототип OkiDelo: кабинет и телефон">
-			<div className="shot-clean"><img src="/images/site/shot-prototype.jpg" alt="Прототип OkiDelo: кабинет с чатом и задачами AI-отдела" width={1400} height={839} loading="lazy" /></div>
-			<div className="phone"><img src="/images/site/shot-okidelo-phone.png" alt="OkiDelo на телефоне" width={800} height={1159} loading="lazy" /></div>
-			</div>
-			<p className="cap">Прототип моего продукта OkiDelo: кабинет и телефон. До него были чертёж и план сборки. На вашей задаче будет так же.</p>
-			<a className="more" href="/keisy#system">Как устроена система подробно →</a>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

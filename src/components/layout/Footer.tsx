@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 
 // Подвал: роль, страницы, контакты, документы, реквизиты.
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
 				<div className="row">
 					<a href={c.telegram} target="_blank" rel="noopener">Telegram {c.telegramHandle}</a>
 					<a href={c.max} target="_blank" rel="noopener">MAX</a>
-					<a href={c.channel} target="_blank" rel="noopener">Канал {c.channelHandle}</a>
+					<a href={c.channel} target="_blank" rel="noopener">{common.ui.channel} {c.channelHandle}</a>
 					<a href={`mailto:${c.email}`}>{c.email}</a>
 				</div>
 				<div className="row fine">
@@ -29,7 +30,7 @@ export default function Footer() {
 							{i.label}
 						</Link>
 					))}
-					<span>Реквизиты: {site.requisites}</span>
+					<span>{common.ui.requisites} {site.requisites}</span>
 				</div>
 				<p className="fine">© {new Date().getFullYear()} {site.name}</p>
 			</div>

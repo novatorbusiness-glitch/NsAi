@@ -1,19 +1,21 @@
-// Перенесено из прототипа 13.10.2026.
+import { book } from "@content/pages/book";
+import { common } from "@content/pages/common";
+
+// Первый экран книги: о чём книга, кнопка «Читать», обложка.
 export default function Hero() {
+	const c = book.hero;
 	return (
-		<>
-			<section className="hero bookhero">
+		<section className="hero bookhero">
 			<div className="wrap bookgrid">
-			<div>
-			<p className="crumbs"><a href="/">Главная</a><span>/</span>Книга</p>
-			<h1>Книга «Нейро-воронка»</h1>
-			<p className="lead">Практическое руководство по системам продаж на стыке нейробиологии, поведенческой психологии и AI. Шесть этапов: от того, как клиент замечает вас в ленте, до продаж, которые идут без вас.</p>
-			<p className="sub">Книга собрана на опыте агентства: больше 300 проектов, онлайн-школы, клиники, эксперты и IT-компании. Читается бесплатно, прямо на сайте.</p>
-			<div className="cta-row"><a className="btn p" href="/book/00-a-znakomstvo">Читать бесплатно</a><a className="btn s" href="#toc">Оглавление</a></div>
+				<div>
+					<p className="crumbs"><a href="/">{common.ui.home}</a><span>/</span>{c.crumb}</p>
+					<h1>{c.h1}</h1>
+					<p className="lead">{c.lead}</p>
+					<p className="sub">{c.sub}</p>
+					<div className="cta-row"><a className="btn p" href={`/book/${book.toc.start.chapters[0].slug}`}>{c.read}</a><a className="btn s" href="#toc">{c.toc}</a></div>
+				</div>
+				<img className="bookcover" src={c.cover.src} alt={c.cover.alt} width={600} height={900} />
 			</div>
-			<img className="bookcover" src="/images/site/book-cover.jpg" alt="Обложка книги «Нейро-воронка»" width={600} height={900} />
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

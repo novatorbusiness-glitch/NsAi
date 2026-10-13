@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { home } from "@content/pages/home";
 
 // Лента «что сделано за два дня»: строки по очереди проходят «в работе → готово». Без анимации, если она отключена в системе.
 export default function DayfeedAnimation() {
@@ -9,7 +10,7 @@ export default function DayfeedAnimation() {
 		const set = (li: HTMLLIElement, s: string) => {
 			li.className = li.className.replace(/\s?(is-run|is-done)/g, "") + (s ? " " + s : "");
 			const st = li.querySelector(".df-st");
-			if (st) st.textContent = s === "is-done" ? "готово" : "в работе";
+			if (st) st.textContent = s === "is-done" ? home.hero.feed.done : home.hero.feed.run;
 		};
 		if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
 			items.forEach((li) => set(li, "is-done"));

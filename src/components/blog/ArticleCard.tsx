@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Post } from "@/lib/blog";
 import { dateRu } from "@/lib/blog";
+import { blog } from "@content/pages/blog";
 
 // Карточка статьи: в списке блога и в «Читать дальше».
 export default function ArticleCard({ p, big = false }: { p: Post; big?: boolean }) {
@@ -13,7 +14,7 @@ export default function ArticleCard({ p, big = false }: { p: Post; big?: boolean
 			<div className="abody">
 				<h3>{big ? p.h1 : p.title}</h3>
 				<p>{p.description}</p>
-				<div className="ameta">{p.mins} мин чтения · {dateRu(p.updated)}</div>
+				<div className="ameta">{p.mins} {blog.article.mins} · {dateRu(p.updated)}</div>
 			</div>
 		</Link>
 	);

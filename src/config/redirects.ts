@@ -1,4 +1,5 @@
 // Старые адреса сайта → новые (Blueprint 15.4). Каждая пара — статическая страница с переадресацией.
+// Заглушки NCAi (/team-book, /agency-in-a-box, /docs, /inside, /prompts) в поиске не были — по плану отдают 404.
 export const redirects: Record<string, string> = {
 	"/raspakovka": "/",
 	"/consulting": "/",
@@ -6,14 +7,9 @@ export const redirects: Record<string, string> = {
 	"/partners": "/",
 	"/b24u": "/",
 	"/ex-nihilo": "/",
-	"/agency-in-a-box": "/",
-	"/inside": "/",
-	"/prompts": "/",
-	"/team-book": "/",
 	"/portfolio": "/keisy",
 	"/roadmap": "/keisy",
 	"/ai-training": "/nastavnichestvo",
-	"/docs": "/offer",
 	"/book/read": "/book",
 	"/blog/ai-kopiraiter-neuro-voronka": "/blog",
 	"/blog/chto-takoe-ncai": "/blog",

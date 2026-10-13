@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Кнопка «Раскрыть всю программу»: открывает и закрывает все подшаги разом.
-export default function ProgramToggle() {
+export default function ProgramToggle({ open: openLabel, close }: { open: string; close: string }) {
 	const [open, setOpen] = useState(false);
 	const toggle = () => {
 		const next = !open;
@@ -11,7 +11,7 @@ export default function ProgramToggle() {
 	};
 	return (
 		<button className="btn s allsteps" type="button" onClick={toggle}>
-			{open ? "Свернуть программу" : "Раскрыть всю программу"}
+			{open ? close : openLabel}
 		</button>
 	);
 }

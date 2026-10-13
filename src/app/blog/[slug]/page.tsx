@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ArticleCard from "@/components/blog/ArticleCard";
-import StepPicker from "@/components/home/StepPicker";
+import ArticleBody from "@/components/blog/ArticleBody";
 import { allPosts, dateRu, getPost, render } from "@/lib/blog";
-import { ctas, type Cta } from "@/config/blog";
+import type { Cta } from "@/config/blog";
+import { blog } from "@content/pages/blog";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, crumbs, articleLd } from "@/lib/seo";
 import { site } from "@/config/site";
 import { redirects } from "@/config/redirects";
 import Redirect from "@/components/layout/Redirect";
+import { common } from "@content/pages/common";
 
 // Старые статьи, которых больше нет, ведут на /blog.
 const moved = (slug: string) => redirects[`/blog/${slug}`];
@@ -19,15 +23,10 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-	if (moved(params.slug)) return { title: "Страница переехала", alternates: { canonical: moved(params.slug) }, robots: { index: false } };
+	if (moved(params.slug)) return { title: common.redirect.title, alternates: { canonical: moved(params.slug) }, robots: { index: false } };
 	const r = getPost(params.slug);
 	if (!r) return {};
-	return {
-		title: r.post.title,
-		description: r.post.description,
-		alternates: { canonical: `/blog/${r.post.slug}` },
-		openGraph: { type: "article", title: r.post.title, description: r.post.description, modifiedTime: r.post.updated, url: `/blog/${r.post.slug}`, images: [site.og] },
-	};
+	return pageMeta({ title: r.post.title, description: r.post.description }, `/blog/${r.post.slug}`, `blog-${r.post.slug}`, { type: "article", modified: r.post.updated });
 }
 
 export default function ArticlePage({ params }: { params: { slug: string } }) {
@@ -35,22 +34,22 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 	const r = getPost(params.slug);
 	if (!r) notFound();
 	const { post: a, related } = r;
-	const { parts, toc } = render(a.body);
-	const c = ctas[a.cta as Cta];
-	const ld = { "@context": "https://schema.org", "@type": "Article", headline: a.h1, description: a.description, dateModified: a.updated, author: { "@type": "Person", name: site.name, url: site.url }, mainEntityOfPage: `${site.url}/blog/${a.slug}` };
+	const { toc } = render(a.body);
+	const c = blog.ctas[a.cta as Cta];
+	const t = blog.article;
 	return (
 		<div className="article">
 			<div className="wrap">
-				<p className="crumbs"><Link href="/">Главная</Link><span>/</span><Link href="/blog">Блог</Link><span>/</span>{a.cover}</p>
+				<p className="crumbs"><Link href="/">{common.ui.home}</Link><span>/</span><Link href="/blog">{common.ui.blog}</Link><span>/</span>{a.cover}</p>
 				<div className="ahead">
 					<span className="tagc">{a.tag}</span>
 					<h1>{a.h1}</h1>
-					<div className="byline"><img src="/images/site/ilya-main.jpg" alt={site.name} width={40} height={40} /><div><b>{site.name}</b><span>обновлено {dateRu(a.updated)} · {a.mins} мин чтения</span></div></div>
+					<div className="byline"><img src="/images/site/ilya-main.jpg" alt={site.name} width={40} height={40} /><div><b>{site.name}</b><span>{t.updated} {dateRu(a.updated)} · {a.mins} {t.mins}</span></div></div>
 				</div>
 				<div className="alayout">
-					<aside className="toc"><p className="lbl">В статье</p><ol>{toc.map((t) => <li key={t.id}><a href={`#${t.id}`}>{t.title}</a></li>)}</ol></aside>
+					<aside className="toc"><p className="lbl">{t.toc}</p><ol>{toc.map((t) => <li key={t.id}><a href={`#${t.id}`}>{t.title}</a></li>)}</ol></aside>
 					<div className="prose">
-						{parts.map((p, i) => (typeof p === "string" ? <div key={i} style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: p }} /> : <StepPicker key={i} id="pick-a" />))}
+						<ArticleBody body={a.body} />
 						<div className="acta">
 							<div><h3>{c.title}</h3><p>{c.text}</p></div>
 							<div>
@@ -58,17 +57,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 								<p className="under">{c.under}</p>
 							</div>
 						</div>
-						<div className="author"><img src="/images/site/ilya-main.jpg" alt={site.name} width={72} height={72} /><div><b>{site.name}</b><p>Помогаю бизнесу с маркетингом, продуктом и автоматизацией на уровне директора по маркетингу, без найма в штат. Пять лет строил системы продаж для клиентов, а с апреля 2026 года собрал четыре своих продукта.</p><Link href="/">Подробнее обо мне →</Link> <a className="tga" href={site.contacts.channel} target="_blank" rel="noopener">Канал в Telegram →</a></div></div>
+						<div className="author"><img src="/images/site/ilya-main.jpg" alt={site.name} width={72} height={72} /><div><b>{site.name}</b><p>{t.author}</p><Link href="/">{t.about}</Link> <a className="tga" href={site.contacts.channel} target="_blank" rel="noopener">{t.channel}</a></div></div>
 					</div>
 				</div>
 			</div>
 			<section className="alt related">
 				<div className="wrap">
-					<h2>Читать дальше</h2>
+					<h2>{t.related}</h2>
 					<div className="agrid three">{related.map((p) => <ArticleCard key={p.slug} p={p} />)}</div>
 				</div>
 			</section>
-			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
+			<JsonLd data={[articleLd(a), crumbs([{ name: common.ui.blog, path: "/blog" }, { name: a.cover, path: `/blog/${a.slug}` }])]} />
 		</div>
 	);
 }

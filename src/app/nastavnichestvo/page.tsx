@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { mentor } from "@content/pages/nastavnichestvo";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, crumbs, mentorLd, faqLd } from "@/lib/seo";
 import Hero from "@/components/mentor/Hero";
 import Fit from "@/components/mentor/Fit";
 import Program from "@/components/mentor/Program";
@@ -11,11 +14,7 @@ import Mentor from "@/components/mentor/Mentor";
 import Faq from "@/components/mentor/Faq";
 import Contact from "@/components/mentor/Contact";
 
-export const metadata: Metadata = {
-	title: "Наставничество: продукт на AI своими руками",
-	description: "Наставничество один на один: соберёте приложение, сайт или сервис на AI сами, по шагам и без опыта программирования. 80 000 ₽ в месяц, около двух месяцев.",
-	alternates: { canonical: "/nastavnichestvo" },
-};
+export const metadata: Metadata = pageMeta(mentor.meta, "/nastavnichestvo", "nastavnichestvo");
 
 export default function Page() {
 	return (
@@ -31,6 +30,7 @@ export default function Page() {
 			<Mentor />
 			<Faq />
 			<Contact />
+			<JsonLd data={[crumbs([{ name: "Наставничество", path: "/nastavnichestvo" }]), mentorLd(), faqLd(mentor.faq.items)]} />
 		</>
 	);
 }

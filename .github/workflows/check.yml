@@ -1,0 +1,24 @@
+name: Check
+
+# На каждую ветку и PR: типы, сборка и проверки (ссылки, переадресации, SEO, вес страниц). Выкладки нет.
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and check
+        run: npm run build

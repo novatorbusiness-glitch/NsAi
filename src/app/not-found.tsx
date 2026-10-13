@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 
-export const metadata: Metadata = { title: "Страница не найдена", robots: { index: false } };
+const c = common.notFound;
+export const metadata: Metadata = { title: c.title };
 
 // 404: GitHub Pages отдаёт out/404.html на любой несуществующий адрес.
 export default function NotFound() {
 	return (
 		<section className="hero">
 			<div className="wrap">
-				<p className="kicker">Ошибка 404</p>
-				<h1>Такой страницы нет</h1>
-				<p className="lead">Возможно, адрес изменился после обновления сайта. Начните с главной или выберите раздел.</p>
+				<p className="kicker">{c.kicker}</p>
+				<h1>{c.h1}</h1>
+				<p className="lead">{c.lead}</p>
 				<div className="cta-row">
-					<Link className="btn p" href="/">На главную</Link>
-					<a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener">Написать в Telegram</a>
+					<Link className="btn p" href="/">{c.home}</Link>
+					<a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a>
 				</div>
 				<p className="lead" style={{ marginTop: 28 }}>
 					{site.menu.map((m, i) => <span key={m.href}>{i ? " · " : ""}<Link href={m.href}>{m.label}</Link></span>)}

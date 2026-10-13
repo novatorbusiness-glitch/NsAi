@@ -1,21 +1,22 @@
-// Перенесено из прототипа 13.10.2026.
+import { site } from "@/config/site";
+import { mentor } from "@content/pages/nastavnichestvo";
+
+// Н.5 · сколько стоит (цена — config/prices.ts).
 export default function Price() {
+	const c = mentor.price;
 	return (
-		<>
-			<section id="price" className="band">
+		<section id="price" className="band dark">
 			<div className="wrap split">
-			<div className="head">
-			<h2>Сколько стоит</h2>
-			<p className="price-big">80 000 ₽<small>в месяц</small></p>
+				<div className="head">
+					<h2>{c.h2}</h2>
+					<p className="price-big">{c.price}<small>{c.per}</small></p>
+				</div>
+				<div>
+					<p className="lead" style={{ marginTop: "0" }}>{c.lead}</p>
+					{c.subs.map((s) => <p className="sub" key={s}>{s}</p>)}
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{c.button}</a>
+				</div>
 			</div>
-			<div>
-			<p className="lead" style={{ marginTop: "0" }}>Платите за месяц вперёд, и идём дальше. Фиксированного срока нет. Обычно путь занимает около двух месяцев, а если не успели, оплачиваете следующий месяц и продолжаете с того же места.</p>
-			<p className="sub">В цену входят встречи, связь в Telegram, инструкции и проверка каждого этапа, а подписки и сервисы для проекта оплачиваются отдельно.</p>
-			<p className="sub">Одновременно я веду не больше двух учеников и беру одного нового в месяц. Поэтому старт идёт по очереди.</p>
-			<a className="btn p" href="https://t.me/Ilya_novator" target="_blank" rel="noopener">Записаться на разговор</a>
-			</div>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

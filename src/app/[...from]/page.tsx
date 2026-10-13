@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Redirect from "@/components/layout/Redirect";
+import { common } from "@content/pages/common";
 import { redirects } from "@/config/redirects";
 
 // Старые адреса вне блога. Статьи блога — в blog/[slug].
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { from: string[] } }): Metadata {
-	return { title: "Страница переехала", alternates: { canonical: redirects[`/${params.from.join("/")}`] }, robots: { index: false } };
+	return { title: common.redirect.title, alternates: { canonical: redirects[`/${params.from.join("/")}`] }, robots: { index: false } };
 }
 
 export default function Page({ params }: { params: { from: string[] } }) {

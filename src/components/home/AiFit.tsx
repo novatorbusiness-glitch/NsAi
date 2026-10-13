@@ -1,29 +1,23 @@
-// Перенесено из прототипа 13.10.2026.
+import { home } from "@content/pages/home";
+
+// 5а · где AI ускоряет, а где только мешает.
 export default function AiFit() {
+	const c = home.ai;
 	return (
-		<>
-			<section id="ai" className="ai">
+		<section id="ai" className="alt ai">
 			<div className="wrap">
-			<div className="section-head">
-			<h2>Где AI ускоряет, а где только мешает</h2>
-			<p className="lead">Нейросети не волшебная таблетка. В одних задачах они дают скорость и экономию, в других не нужны вообще, а иногда делают хуже. Поэтому первым делом я смотрю, где AI окупится, а где проще и надёжнее оставить человека.</p>
+				<div className="section-head">
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+				</div>
+				<div className="grid g2 ai-yes">
+					{c.yes.map((k) => <div className="card" key={k.label}><p className="lbl">{k.label}</p><p>{k.text}</p></div>)}
+				</div>
+				<div className="notdo ai-no"><p className="lbl">{c.noLabel}</p><ul>
+					{c.no.map((t) => <li key={t}>{t}</li>)}
+				</ul></div>
+				<p className="closing">{c.closing}</p>
 			</div>
-			<div className="grid g2 ai-yes">
-			<div className="card"><p className="lbl">Скорость</p><p>Исследование рынка, черновики текстов, прототипы. То, на что у команды уходили недели, занимает дни.</p></div>
-			<div className="card"><p className="lbl">Экономия</p><p>Рутина, которую сейчас делают люди: типовые ответы, отчёты, сбор данных. Вы платите за работающий процесс, а не за часы сотрудников.</p></div>
-			<div className="card"><p className="lbl">Масштаб</p><p>Процесс одинаково работает на десять клиентов и на тысячу, и для этого не нужно нанимать людей.</p></div>
-			<div className="card"><p className="lbl">Автоматизация</p><p>Заявки не теряются, напоминания уходят сами, отчёт собирается без вас.</p></div>
-			</div>
-			<div className="notdo ai-no"><p className="lbl">Где AI не нужен</p><ul>
-			<li>решения о продукте, цене и позиционировании: здесь нужны опыт и голова;</li>
-			<li>продажи на доверии и переговоры с крупным клиентом;</li>
-			<li>процесс, в котором нет порядка: автоматизация хаоса даёт быстрый хаос;</li>
-			<li>редкие задачи, где настройка дороже ручной работы;</li>
-			<li>места, где ошибка дорогая, а проверить её некому.</li>
-			</ul></div>
-			<p className="closing">Сначала порядок и расчёт, потом AI. Иначе это дорогая игрушка.</p>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

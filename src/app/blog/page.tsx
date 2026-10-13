@@ -3,23 +3,25 @@ import Link from "next/link";
 import ArticleCard from "@/components/blog/ArticleCard";
 import { allPosts } from "@/lib/blog";
 import { site } from "@/config/site";
+import { blog } from "@content/pages/blog";
+import JsonLd from "@/components/ui/JsonLd";
+import { pageMeta, crumbs } from "@/lib/seo";
+import { common } from "@content/pages/common";
 
-export const metadata: Metadata = {
-	title: "Блог: продукт, цены и путь клиента до оплаты",
-	description: "Разборы для предпринимателей: сколько стоит запуск, как поднять продажи ценой и предложением, где найти первых клиентов и как вернуть старых. На своих цифрах.",
-	alternates: { canonical: "/blog" },
-};
+export const metadata: Metadata = pageMeta(blog.meta, "/blog", "blog");
 
 export default function BlogPage() {
 	const [first, ...rest] = allPosts();
+	const h = blog.hero;
+	const f = blog.final;
 	return (
 		<>
 			<section className="hero bloghero">
 				<div className="wrap">
-					<p className="crumbs"><Link href="/">Главная</Link><span>/</span>Блог</p>
-					<h1>Блог</h1>
-					<p className="lead">Разбираю, где бизнес может заработать больше и где тихо теряет то, что уже заработал: запуск продукта, цены, путь клиента до оплаты, повторные продажи. На своих проектах и с цифрами.</p>
-					<p className="tgline">Короткие заметки по ходу работы пишу в Telegram-канале <a href={site.contacts.channel} target="_blank" rel="noopener">{site.contacts.channelHandle}</a></p>
+					<p className="crumbs"><Link href="/">{common.ui.home}</Link><span>/</span>{h.crumb}</p>
+					<h1>{h.h1}</h1>
+					<p className="lead">{h.lead}</p>
+					<p className="tgline">{h.channel} <a href={site.contacts.channel} target="_blank" rel="noopener">{site.contacts.channelHandle}</a></p>
 				</div>
 			</section>
 			<section className="alt blogs">
@@ -33,14 +35,15 @@ export default function BlogPage() {
 			<section className="final">
 				<div className="wrap">
 					<div className="card">
-						<h2>Нашли в статье свою ситуацию?</h2>
-						<p className="lead">Напишите в Telegram или MAX, что у вас сейчас происходит. Начнём с одной задачи: за 3–4 дня я её разберу и скажу, что делать первым.</p>
-						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">Написать в Telegram</a>{" "}
-						<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">Написать в MAX</a>
-						<p className="under">{site.contacts.telegramHandle} · Тест-драйв: 40 000 ₽ · 3–4 дня</p>
+						<h2>{f.h2}</h2>
+						<p className="lead">{f.lead}</p>
+						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a>{" "}
+						<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a>
+						<p className="under">{site.contacts.telegramHandle} · {f.under}</p>
 					</div>
 				</div>
 			</section>
+			<JsonLd data={crumbs([{ name: h.crumb, path: "/blog" }])} />
 		</>
 	);
 }

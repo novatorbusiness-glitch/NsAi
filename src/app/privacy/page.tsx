@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/layout/LegalPage";
+import { common } from "@content/pages/common";
+import { pageMeta } from "@/lib/seo";
 
-export const metadata: Metadata = {
-	title: "Политика обработки персональных данных",
-	description: "Какие данные собирает сайт ilya-novitsky.ru, зачем, где они хранятся, сколько и как их защищают. Права посетителя и контакты для запросов.",
-	alternates: { canonical: "/privacy" },
-	robots: { index: false },
-};
+const d = common.legal.docs.find((x) => x.slug === "privacy")!;
+export const metadata: Metadata = pageMeta(d, "/privacy", "privacy", { noindex: true });
 
 export default function Page() {
 	return <LegalPage slug="privacy" />;

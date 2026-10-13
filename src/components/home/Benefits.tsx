@@ -1,28 +1,24 @@
-// Перенесено из прототипа 13.10.2026.
+import { home } from "@content/pages/home";
+
+// 3 · что вы получаете, что можно поручить и что не входит.
 export default function Benefits() {
+	const c = home.benefits;
 	return (
-		<>
-			<section id="scope" className="scope">
+		<section id="scope" className="scope">
 			<div className="wrap">
-			<div className="section-head">
-			<h2>Что вы получаете</h2>
-			<p className="lead">Один ответственный за всю цифровую часть вместо цепочки исполнителей. Задачи не теряются между подрядчиками, и каждая часть работает на продажи.</p>
+				<div className="section-head">
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+				</div>
+				<div className="grid g3 benefits">
+					{c.cards.map((k) => <div className="card" key={k.title}><h3>{k.title}</h3><p>{k.text}</p></div>)}
+				</div>
+				<div className="scope-row">
+					<div className="wall"><p className="lbl">{c.canLabel}</p><div className="tags">{c.can.map((t) => <span key={t}>{t}</span>)}</div></div>
+					<div className="notdo"><p className="lbl">{c.notLabel}</p><ul>{c.not.map((t) => <li key={t}>{t}</li>)}</ul></div>
+				</div>
+				<p className="note">{c.note}</p>
 			</div>
-			<div className="grid g3 benefits">
-			<div className="card"><h3>Дни, а не месяцы</h3><p>Исследование, тексты, прототип и автоматизация собираются за дни. Опыт подсказывает порядок, AI-инструменты берут черновую работу, поэтому переделок меньше.</p></div>
-			<div className="card"><h3>Один ответственный вместо пяти</h3><p>Не нужно сводить студию, фрилансера и агентство. Один человек видит всю картину и отвечает за то, чтобы она приносила деньги.</p></div>
-			<div className="card"><h3>Всё прозрачно</h3><p>Каждую неделю план и отчёт: что сделано, что изменилось в цифрах и что дальше. Решения и источники лежат в одном документе.</p></div>
-			<div className="card"><h3>Работает без вас</h3><p>Заявки не теряются, напоминания уходят сами, отчёт собирается без ручной работы. Вы занимаетесь развитием, а не таблицами.</p></div>
-			<div className="card"><h3>AI только там, где он окупается</h3><p>Сначала считаем, где нейросети дают скорость или экономию. Там, где они не нужны, их не будет.</p></div>
-			<div className="card"><h3>Всё остаётся у вас</h3><p>Документы, прототипы, код и доступы принадлежат вам. Проект не держится в чьей-то голове.</p></div>
-			</div>
-			<div className="scope-row">
-			<div className="wall"><p className="lbl">Что можно поручить</p><div className="tags"><span>сайт и лендинги</span><span>контент-план и тексты</span><span>Telegram-бот</span><span>CRM и воронка продаж</span><span>рассылки и напоминания</span><span>обработка заявок</span><span>аналитика и отчёты</span><span>разбор трафика</span><span>прототип продукта</span><span>автоматизация рутины</span><span>AI-ассистент для клиентов</span><span>повторные продажи</span></div></div>
-			<div className="notdo"><p className="lbl">Не входит</p><ul><li>закупка рекламы и ведение рекламных кабинетов</li><li>найм и контроль ваших сотрудников и подрядчиков</li><li>собрания и связь круглосуточно</li></ul></div>
-			</div>
-			<p className="note">Рекламу ведёте вы или ваш специалист, а я готовлю всё, от чего зависит, окупится ли она. Вам не нужно согласовывать людей между собой и пересылать файлы: всё в одних руках, а результат вы видите в еженедельном отчёте.</p>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }

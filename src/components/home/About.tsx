@@ -1,19 +1,19 @@
-// Перенесено из прототипа 13.10.2026.
+import { home } from "@content/pages/home";
+
+// 7 · кто я.
 export default function About() {
+	const c = home.about;
 	return (
-		<>
-			<section id="about">
+		<section id="about" className="alt">
 			<div className="wrap about">
-			<img className="photo-img" src="/images/site/ilya-main.jpg" alt="Илья Новицкий" width={800} height={1000} />
-			<div className="col">
-			<h2>Кто я</h2>
-			<p className="lead">Меня зовут Илья Новицкий. Помогаю бизнесу навести порядок в маркетинге, продажах и продукте на уровне директора по маркетингу, только без найма в штат: от чертежа до работающей системы. Сам я не программист: код пишут AI-инструменты, а я отвечаю за то, что строим и какой будет результат.</p>
-			<p className="sub">До этого, с 2017 года, я строил системы продаж: первая автоворонка принесла больше миллиона рублей, потом было пять лет своего агентства, где я вёл команду разработки. Оттуда привычка думать не только о том, как всё устроено, но и о том, как это будет продавать.</p>
-			<p className="sub">Ещё я пишу книги: «Нейро-воронка» о продажах и AI, «Ростовщик» о психологии людей, третья в работе. Это помогает объяснять сложное простыми словами.</p>
-			<div className="facts"><div><b>2017</b><span>первая автоворонка, больше миллиона рублей</span></div><div><b>5 лет</b><span>своё агентство и команда разработки</span></div><div><b>2 книги</b><span>о продажах, AI и людях</span></div></div>
+				<img className="photo-img" src={c.photo.src} alt={c.photo.alt} width={800} height={1000} />
+				<div className="col">
+					<h2>{c.h2}</h2>
+					<p className="lead">{c.lead}</p>
+					{c.subs.map((s) => <p className="sub" key={s}>{s}</p>)}
+					<div className="facts">{c.facts.map((f) => <div key={f.num}><b>{f.num}</b><span>{f.text}</span></div>)}</div>
+				</div>
 			</div>
-			</div>
-			</section>
-		</>
+		</section>
 	);
 }
