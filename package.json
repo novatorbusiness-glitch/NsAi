@@ -1,10 +1,9 @@
 {
-	"name": "ncai-site",
+	"name": "ilya-novitsky-site",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"prebuild": "python3 scripts/og/generate_blog_images.py",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint"

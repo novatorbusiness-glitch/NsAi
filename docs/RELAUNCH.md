@@ -9,8 +9,8 @@
 ## Порядок (решение 15.6) и статус
 
 - [x] 0. Метка старого сайта, ветка, зависимости
-- [ ] 1. Стили: tokens.css и base.css из прототипа (styles.css + site.css), шрифты Manrope и JetBrains Mono
-- [ ] 2. Каркас: layout.tsx (метатеги, шаблон «%s · Илья Новицкий», Метрика только после согласия), Header, Footer, CookieBanner; config/site.ts, prices.ts, goals.ts
+- [x] 1. Стили: tokens.css и base.css из прототипа (styles.css + site.css), шрифты Manrope и JetBrains Mono
+- [x] 2. Каркас: layout.tsx (метатеги, шаблон «%s · Илья Новицкий», Метрика только после согласия), Header, Footer, CookieBanner; config/site.ts, prices.ts, goals.ts
 - [ ] 3. Главная: блоки по одному файлу в components/home, тексты в content/pages/home.ts
 - [ ] 4. «Как мы работаем»: /kak-my-rabotaem
 - [ ] 5. Кейсы: /keisy, кейсы в content/cases
@@ -29,3 +29,7 @@
 - MAX в контактах и цель Метрики «перешёл в MAX»;
 - баннер cookie «Принять все / Только необходимые»;
 - Next.js 14.2.5 с предупреждением о безопасности: обновить до последней 14.2.x.
+
+## Журнал
+
+- 13.10: шаги 0–2. Старые страницы, компоненты, библиотеки и стили удалены в ветке (в main и метке old-site-2026-10 они целы). Шрифты Manrope и JetBrains Mono через next/font: скачиваются при сборке, у посетителя нет запросов к Google. Метрика 112582890 загружается только после «Принять все». GA4 убран. Сборка проходит.

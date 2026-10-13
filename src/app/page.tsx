@@ -1,17 +1,11 @@
-import type { Metadata } from "next";
-import HomePage from "@/components/pages/HomePage";
-
-const TITLE = "Рутина уходит с вас, а не копится";
-const DESCRIPTION =
-	"Забираю операционку в AI-агентство: команда с ролями, проверкой результата и контролем расходов. Сначала показываю результат на вашей задаче — бесплатно.";
-
-export const metadata: Metadata = {
-	title: TITLE,
-	description: DESCRIPTION,
-	openGraph: { title: TITLE, description: DESCRIPTION, url: "/", type: "website", images: [{ url: "/images/og/home.png", width: 1200, height: 630 }] },
-	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
-};
-
-export default function Page() {
-	return <HomePage />;
+// Временная главная: настоящая собирается на шаге 3 (docs/RELAUNCH.md).
+export default function Home() {
+	return (
+		<section className="hero">
+			<div className="wrap">
+				<h1>Один человек вместо отдела маркетинга и пяти подрядчиков</h1>
+				<p className="lead">Каркас сайта: шапка, подвал, баннер cookie. Блоки главной переносятся на следующем шаге.</p>
+			</div>
+		</section>
+	);
 }

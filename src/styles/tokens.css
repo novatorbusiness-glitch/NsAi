@@ -1,78 +1,10 @@
-/* ────────────────────────────────────────────────────────────
-   NCAi · дизайн-токены
-   Тёмная премиальная тема: чистая поверхность, точечный
-   золотой акцент, читаемые серые. Легаси-алиасы сохранены.
-   ──────────────────────────────────────────────────────────── */
-:root {
-	/* Поверхности — строго по спецификации NCAi */
-	--bg: #080808;
-	--bg2: #0d0d0d;
-	--bgc: #111;
-	--bgc2: #161616;
-	--bgc3: #1a1a1a;
-
-	/* Границы — строго по спецификации NCAi */
-	--br: #1e1e1e;
-	--br2: #272727;
-
-	/* Текст — строго по спецификации NCAi (контраст поднят: вторичный текст светлее) */
-	--t: #edeae3;
-	--t2: #c2bdb5;
-	--t3: #8b867e;
-
-	/* Акцент — жёлтый #FFD000 */
-	--a: #ffd000;
-	--ad: rgba(255, 208, 0, 0.07);
-	--ag: rgba(255, 208, 0, 0.14);
-	--red: #e84040;
-
-	--metal: linear-gradient(135deg, #f0f0ec 0%, #cfcfca 35%, #8a8a86 65%, #d8d8d3 100%);
-
-	/* Типографика — Syne (заголовки) / Instrument Serif (тело) / JetBrains Mono (моно),
-	   подключена через next/font в layout.tsx (переменные --font-syne и т.д.) */
-	--font-display: var(--font-syne), sans-serif;
-	--font-serif: var(--font-instrument-serif), serif;
-	--font-mono: var(--font-jetbrains-mono), monospace;
-
-	/* Легаси-алиасы (используются по всему проекту) */
-	--fd: var(--font-display);
-	--fs: var(--font-serif);
-	--fm: var(--font-mono);
-
-	/* Движение и ширина контейнера */
-	--ease: cubic-bezier(0.16, 1, 0.3, 1);
-	--max: 1280px;
-
-	/* Шкала отступов (4/8) */
-	--sp-1: 0.25rem;
-	--sp-2: 0.5rem;
-	--sp-3: 0.75rem;
-	--sp-4: 1rem;
-	--sp-5: 1.5rem;
-	--sp-6: 2rem;
-	--sp-7: 3rem;
-	--sp-8: 4rem;
-	--sp-9: 6rem;
-	--sp-10: 8rem;
-
-	/* Радиусы */
-	--r-sm: 6px;
-	--r-md: 10px;
-	--r-lg: 14px;
-	--r-xl: 20px;
-	--r-pill: 999px;
-
-	/* Тени */
-	--sh-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
-	--sh-md: 0 10px 34px rgba(0, 0, 0, 0.42);
-	--sh-lg: 0 26px 70px rgba(0, 0, 0, 0.5);
-	--sh-glow: 0 0 0 1px rgba(255, 208, 0, 0.14), 0 12px 44px rgba(0, 0, 0, 0.5);
-
-	/* Текст-шкала */
-	--ts-xs: 0.75rem;
-	--ts-sm: 0.875rem;
-	--ts-base: 1rem;
-	--ts-md: 1.125rem;
-	--ts-lg: 1.25rem;
-	--ts-xl: 1.5rem;
+/* tokens.css — цвета, шрифты, размеры сайта (шаг 14, светлая тема, изумрудный акцент).
+   Источник: прототип 13.10.2026, styles.css. Меняются только здесь. */
+:root{
+  --bg:#ffffff; --bg2:#f6f7f6; --ink:#15181a; --ink2:#4b5257; --mut:#8a9196;
+  --line:#e3e6e4; --line2:#cfd4d1;
+  --acc:#0F6E56; --acc-ink:#ffffff; --acc-soft:#e8f3ef;
+  --dark:#111416; --dark2:#1b1f22; --dark-ink:#e9ecea; --dark-mut:#8f979c;
+  --r:8px; --max:1120px; --col:680px;
+  --f:var(--font-manrope),'Manrope',-apple-system,system-ui,sans-serif; --m:var(--font-mono),'JetBrains Mono',ui-monospace,monospace;
 }
