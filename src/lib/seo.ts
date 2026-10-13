@@ -6,11 +6,16 @@ import { common } from "@content/pages/common";
 // Метатеги, превью и разметка schema.org для каждой страницы — из тех же данных, что и страница (Blueprint S3–S8).
 // Превью: /og/<имя>.jpg, собирает scripts/og/generate_og.py по заголовку страницы; проверка — scripts/check-seo.mjs.
 
-export const plain = (s: string) => s.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\[(.+?)\]\((.+?)\)/g, "$1").replace(/\{\{(.+?)\}\}/g, "$1").replace(/ /g, " ");
+// убрать невидимые знаки типографики из метатегов и разметки
+export const clean = (s: string) => s.replace(/\u2060/g, "");
+
+export const plain = (s: string) => clean(s.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\[(.+?)\]\((.+?)\)/g, "$1").replace(/\{\{(.+?)\}\}/g, "$1").replace(/\u00a0/g, " "));
 
 type PageMeta = { title: string; description: string };
 
-export function pageMeta(m: PageMeta, path: string, og: string, opts: { absolute?: boolean; type?: "website" | "article"; modified?: string; noindex?: boolean } = {}): Metadata {
+
+export function pageMeta(raw: PageMeta, path: string, og: string, opts: { absolute?: boolean; type?: "website" | "article"; modified?: string; noindex?: boolean } = {}): Metadata {
+	const m = { title: clean(raw.title), description: clean(raw.description) };
 	const ogTitle = m.title.replace(` · ${site.name}`, "");
 	return {
 		title: opts.absolute ? { absolute: m.title } : m.title,

@@ -6,6 +6,7 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import Goals from "@/components/layout/Goals";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
+import { clean } from "@/lib/seo";
 import "../styles/tokens.css";
 import "../styles/base.css";
 
@@ -16,7 +17,7 @@ const mono = JetBrains_Mono({ subsets: ["latin", "cyrillic"], weight: ["400", "5
 export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
 	title: { default: common.site.title, template: `%s · ${site.name}` },
-	description: common.site.description,
+	description: clean(common.site.description),
 	openGraph: { type: "website", locale: "ru_RU", siteName: site.name, images: [{ url: site.og, width: 1200, height: 630, alt: site.name }] },
 	twitter: { card: "summary_large_image" },
 	manifest: "/site.webmanifest",
