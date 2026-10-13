@@ -8,7 +8,6 @@ export type Case = {
 	view: string; image: string; imageAlt: string; w: number; h: number;
 	logo?: string; caption?: string; window?: string; forYou?: string;
 	metrics: { value: string; label: string }[];
-	home?: { big: string; label: string; text: string };
 };
 
 export function allCases(): Case[] {
@@ -20,7 +19,6 @@ export function allCases(): Case[] {
 			view: str(fm.view), image: str(fm.image), imageAlt: str(fm.imageAlt), w, h,
 			logo: str(fm.logo) || undefined, caption: str(fm.caption) || undefined, window: str(fm.window) || undefined, forYou: str(fm.forYou) || undefined,
 			metrics: list(fm.metric).map((m) => { const [value, label] = m.split(" | "); return { value, label }; }),
-			home: fm.homeBig ? { big: str(fm.homeBig), label: str(fm.homeLabel), text: str(fm.homeText) } : undefined,
 		};
 	})).sort((a, b) => a.order - b.order);
 }

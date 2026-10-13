@@ -9,7 +9,7 @@ export default function TagFilter({ tags, all }: { tags: string[]; all: string }
 		document.querySelectorAll<HTMLElement>("#posts [data-tag]").forEach((e) => { e.hidden = !!t && e.dataset.tag !== t; });
 	};
 	return (
-		<div className="tags" role="group">
+		<div className="btags" role="group">
 			{["", ...tags].map((t) => (
 				<button key={t || "all"} className={t === cur ? "tagb on" : "tagb"} aria-pressed={t === cur} onClick={() => pick(t)}>{t || all}</button>
 			))}

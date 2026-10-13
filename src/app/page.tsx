@@ -5,7 +5,6 @@ import Benefits from "@/components/home/Benefits";
 import Compare from "@/components/home/Compare";
 import Process from "@/components/home/Process";
 import Speed from "@/components/home/Speed";
-import AiFit from "@/components/home/AiFit";
 import Done from "@/components/home/Done";
 import About from "@/components/home/About";
 import Fit from "@/components/home/Fit";
@@ -27,7 +26,6 @@ export default function Page() {
 			<Compare />
 			<Process />
 			<Speed />
-			<AiFit />
 			<Done />
 			<About />
 			<Fit />

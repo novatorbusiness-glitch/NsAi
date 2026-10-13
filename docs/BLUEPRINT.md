@@ -21,7 +21,7 @@ ilya-novitsky.ru/
 ├── package.json, next.config.js, tsconfig.json  ✓ настройки сборки (npm run build · og · check)
 ├── content/                  ✓ всё, что читает человек, — отдельно от кода
 │   ├── pages/
-│   │   ├── home.ts           ✓ главная, блоки 1–10; цитаты видеоотзывов — в блоке «Что я уже сделал»
+│   │   ├── home.ts           ✓ главная, блоки 1–10; блок 06: продажи, продукт, автоматизация + 631 сделка и цитаты видеоотзывов
 │   │   ├── faq.ts            ✓ вопросы главной
 │   │   ├── keisy.ts          ✓ К.1–К.5; системы продаж — опыт агентства до 2025, 6 кейсов
 │   │   ├── nastavnichestvo.ts✓ Н.1–Н.9 + «На выходе», программа 8 шагов / 52 подшага
@@ -68,12 +68,12 @@ ilya-novitsky.ru/
     │   ├── sitemap.ts        ✓ собирает адреса сам: страницы, статьи, главы
     │   └── robots.ts         ✓ без устаревшей строки Host
     ├── components/
-    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd   Button, Section, Card… ◐
-    │   ├── layout/           ✓ Header, Footer, CookieBanner, Goals, LegalPage, Redirect
-    │   ├── home/             ✓ по файлу на блок + StepPicker
+    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners   Button, Card… ◐
+    │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, Goals, LegalPage, Redirect
+    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact) + StepPicker
     │   ├── cases/            ✓ Hero, Products, System, Sales, Contact
     │   ├── mentor/           ✓ блоки Н.1–Н.9
-    │   ├── process/          ✓ Hero, ServiceStep (один на три шага), MentorCta
+    │   ├── process/          ✓ Hero, ServiceStep (один на три шага), Scope (что можно поручить / не входит), MentorCta
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc
     │   └── lead/             ◐ форма заявки — вместе с functions/lead
@@ -110,7 +110,7 @@ ilya-novitsky.ru/
 ## Как добавить
 
 - **Статью**: `content/blog/<slug>.md` + строка в `src/config/blog.ts` → `npm run build` → `npm run og` → `npm run build`.
-- **Кейс**: `content/cases/<slug>.md` (поле `order` — место в списке, `homeBig` — показать на главной).
+- **Кейс**: `content/cases/<slug>.md` (поле `order` — место в списке; на главной не показываются по одному — там три направления в блоке 06).
 - **Старый адрес**: строка в `src/config/redirects.ts`.
 - **Цену**: `src/config/prices.ts`.
 - **Подзаголовок превью**: `content/og.json` → `npm run og`.
