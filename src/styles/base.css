@@ -1022,3 +1022,4 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
   .fable{margin-top:44px}
 }
 .cmp + .cap{margin-top:20px}@media(min-width:900px){.cmp + .cap{margin-top:28px}}
+.cmp .cnote{font:500 13px/1.4 var(--m);color:#7fd3b6}
