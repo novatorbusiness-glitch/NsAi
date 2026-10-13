@@ -1,17 +1,15 @@
 import { home } from "@content/pages/home";
+import SectionHead from "@/components/ui/SectionHead";
 
-// 3 · что вы получаете, что можно поручить и что не входит.
+// 02 · что вы получаете (вопрос собственника «что я получу?»), что можно поручить и что не входит.
 export default function Benefits() {
 	const c = home.benefits;
 	return (
 		<section id="scope" className="scope">
 			<div className="wrap">
-				<div className="section-head">
-					<h2>{c.h2}</h2>
-					<p className="lead">{c.lead}</p>
-				</div>
-				<div className="grid g3 benefits">
-					{c.cards.map((k) => <div className="card" key={k.title}><h3>{k.title}</h3><p>{k.text}</p></div>)}
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<div className="rgrid">
+					{c.cards.map((k, i) => <div className="rcard" key={k.title}><span className="ri">{String(i + 1).padStart(2, "0")}</span><h3>{k.title}</h3><p>{k.text}</p></div>)}
 				</div>
 				<div className="scope-row">
 					<div className="wall"><p className="lbl">{c.canLabel}</p><div className="tags">{c.can.map((t) => <span key={t}>{t}</span>)}</div></div>
