@@ -33,7 +33,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 	if (moved(params.slug)) return <Redirect to={moved(params.slug)} />;
 	const r = getPost(params.slug);
 	if (!r) notFound();
-	const { post: a, related } = r;
+	const { post: a, related, prev, next } = r;
 	const { toc } = render(a.body);
 	const c = blog.ctas[a.cta as Cta];
 	const t = blog.article;
@@ -47,7 +47,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 					<div className="byline"><img src="/images/site/ilya-main.jpg" alt={site.name} width={40} height={40} /><div><b>{site.name}</b><span>{t.updated} {dateRu(a.updated)} · {a.mins} {t.mins}</span></div></div>
 				</div>
 				<div className="alayout">
-					<aside className="toc"><p className="lbl">{t.toc}</p><ol>{toc.map((t) => <li key={t.id}><a href={`#${t.id}`}>{t.title}</a></li>)}</ol></aside>
+					<aside className="toc"><details className="tocd"><summary className="lbl">{t.toc}</summary><ol>{toc.map((t) => <li key={t.id}><a href={`#${t.id}`}>{t.title}</a></li>)}</ol></details><p className="lbl tocl">{t.toc}</p><ol className="tocl">{toc.map((t) => <li key={t.id}><a href={`#${t.id}`}>{t.title}</a></li>)}</ol></aside>
 					<div className="prose">
 						<ArticleBody body={a.body} />
 						<div className="acta">
@@ -57,6 +57,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 								<p className="under">{c.under}</p>
 							</div>
 						</div>
+						<nav className="pnav" aria-label={t.all}>
+							{prev ? <Link className="pn prev" href={`/blog/${prev.slug}`}><span>← {t.prev}</span><b>{prev.cover}</b></Link> : <span />}
+							{next ? <Link className="pn next" href={`/blog/${next.slug}`}><span>{t.next} →</span><b>{next.cover}</b></Link> : <span />}
+						</nav>
+						<p className="pall"><Link href="/blog">{t.all} →</Link></p>
 						<div className="author"><img src="/images/site/ilya-main.jpg" alt={site.name} width={72} height={72} /><div><b>{site.name}</b><p>{t.author}</p><Link href="/">{t.about}</Link> <a className="tga" href={site.contacts.channel} target="_blank" rel="noopener">{t.channel}</a></div></div>
 					</div>
 				</div>
