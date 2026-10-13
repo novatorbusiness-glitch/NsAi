@@ -1129,3 +1129,5 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 }
 .cpath-out{margin:22px 0 0;padding-left:14px;border-left:2px solid var(--acc);font-weight:600;color:var(--ink);line-height:1.55}
 @media(min-width:900px){.cpath-out{max-width:760px;margin-top:26px}}
+@media(min-width:900px){.fitcards{gap:20px}.fc{padding:28px 28px 30px}}
+.fc li{line-height:1.55}
