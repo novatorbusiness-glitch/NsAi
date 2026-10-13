@@ -10,6 +10,17 @@ export const common = typo({
 		jobTitle: "Маркетинг, продукт и автоматизация",
 	},
 
+	// Партнёрства Ильи (13.10). logo — файл в public/images/partners/, пока его нет, показывается название.
+	partners: {
+		label: "Официальный партнёр",
+		note: "Лицензий amoCRM продал больше чем на 1 млн ₽.",
+		items: [
+			{ name: "amoCRM", logo: "" },
+			{ name: "Prodamus", logo: "" },
+			{ name: "Wazzup", logo: "" },
+			{ name: "eLama", logo: "" },
+		],
+	},
 	ui: {
 		home: "Главная",
 		blog: "Блог",

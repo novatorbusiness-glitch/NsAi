@@ -1147,3 +1147,13 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .fsteps li span{width:28px;height:28px;border-radius:50%;background:var(--acc-soft);color:var(--acc);display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--m)}
 .fsteps b{color:var(--ink)}
 section.final .card .fsteps li{color:var(--ink2)}section.final .card .fsteps b{color:var(--ink)}section.final .card .section-head .lead{color:var(--ink2)}
+/* партнёры */
+.partners{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.partners .pl{font:600 12px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.partners ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+.partners li{font:700 16px/1 var(--f);letter-spacing:-.01em;color:var(--ink2);opacity:.85}
+.partners img{display:block;height:22px;width:auto;filter:grayscale(1);opacity:.75}
+.partners.compact{margin:14px 0 4px;padding-top:0;border-top:0;gap:8px 14px}
+.partners.compact li{font-size:14px}
+.partners .pn{flex-basis:100%;margin:0;font-size:14px;color:var(--ink2)}
+footer .partners.compact{margin:16px 0 14px}

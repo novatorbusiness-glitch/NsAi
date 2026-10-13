@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
+import Partners from "@/components/ui/Partners";
 
-// Подвал: знак NCAi, роль, страницы, контакты, документы, реквизиты.
+// Подвал: знак NCAi, роль, страницы, контакты, партнёры, документы, реквизиты.
 export default function Footer() {
 	const c = site.contacts;
 	return (
@@ -25,6 +26,7 @@ export default function Footer() {
 					<a href={c.channel} target="_blank" rel="noopener">{common.ui.channel} {c.channelHandle}</a>
 					<a href={`mailto:${c.email}`}>{c.email}</a>
 				</div>
+				<Partners compact />
 				<div className="row fine">
 					{site.legal.map((i) => (
 						<Link key={i.href} href={i.href}>

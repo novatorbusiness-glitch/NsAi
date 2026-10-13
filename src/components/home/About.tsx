@@ -1,5 +1,6 @@
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
+import Partners from "@/components/ui/Partners";
 
 // 07 · кто я (вопрос собственника «кто вы?»): сам строю то, что советую.
 export default function About() {
@@ -11,6 +12,7 @@ export default function About() {
 				<div className="col">
 					<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 					<ul className="apoints">{c.points.map((p) => <li key={p.b}><b>{p.b}</b><span>{p.t}</span></li>)}</ul>
+					<Partners />
 				</div>
 			</div>
 			<div className="wrap">
