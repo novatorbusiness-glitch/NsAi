@@ -39,13 +39,13 @@ ilya-novitsky.ru/
 │   ├── fonts/                ✓ Manrope, JetBrains Mono — свои файлы, без Google (кириллица, латиница, latin-ext для ₽)
 │   ├── images/site/          ✓ только настоящие экраны и фото
 │   ├── og/                   ✓ превью 1200×630 для каждой страницы и статьи + manifest.json
-│   ├── book/                 ✓ готовые главы (scripts/book), превью глав — og/book.jpg
+│   ├── book/                 ✓ готовые главы (scripts/book), знак в шапке, у каждой главы своё превью og/book-<глава>.jpg
 │   ├── CNAME, google….html   ✓
 │   ├── brand/                ✓ знак NCAi: полное слово (ncai.svg) и «N с лепестком» (n.svg), PNG для превью и материалов (презентации, посты)
 │   └── icon.svg, favicon*    ✓ иконка вкладки «N с лепестком» на зелёном
 ├── scripts/
 │   ├── brand/                ✓ mark.py (геометрия знака), build.py (SVG), render.mjs (PNG через Chrome)
-│   ├── og/generate_og.py     ✓ превью по заголовку и подзаголовку; готовые не перерисовывает
+│   ├── og/generate_og.py     ✓ превью по заголовку и подзаголовку (у глав — номер, название, первая фраза, обложка); готовые не перерисовывает; нужен Python с Pillow (python3.13)
 │   ├── check/links.mjs       ✓ битые ссылки и якоря
 │   ├── check/redirects.mjs   ✓ каждый старый адрес ведёт на живую страницу
 │   ├── check/seo.mjs         ✓ title, description, один H1, canonical, свежее превью, alt и размеры картинок
