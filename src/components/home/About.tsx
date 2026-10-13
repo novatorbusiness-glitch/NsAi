@@ -11,8 +11,12 @@ export default function About() {
 				<div className="col">
 					<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 					{c.subs.map((s) => <p className="sub" key={s}>{s}</p>)}
-					<div className="facts">{c.facts.map((f) => <div key={f.num}><b>{f.num}</b><span>{f.text}</span></div>)}</div>
 				</div>
+			</div>
+			<div className="wrap">
+				<p className="cpath-l">{c.pathLabel}</p>
+				<ol className="cpath">{c.path.map((p) => <li key={p.t}><b>{p.t}</b><span>{p.d}</span></li>)}</ol>
+				<p className="cpath-out">{c.pathOut}</p>
 			</div>
 		</section>
 	);
