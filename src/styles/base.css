@@ -1007,3 +1007,18 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
   .cmp .punch{padding-top:8px;font-size:15px}
 }
 .cmp .nl{font:600 11.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--dark-mut);margin-top:6px !important}
+/* воздух финальной версии (решение Ильи 13.10): для читаемости смыслов, без лишней пустоты */
+.section-head .lead{margin-top:14px;line-height:1.6}
+.rcard,.scard{gap:10px}
+.rcard h3,.scard h3{letter-spacing:-.01em}
+@media(min-width:900px){
+  .section-head{margin-bottom:48px}
+  .section-head .lead{margin-top:20px}
+  .snum{margin-bottom:20px}
+  .rgrid,.sgrid{gap:20px}
+  .rcard,.scard{padding:28px 28px 30px;gap:12px}
+  .cmp{gap:20px}.cmp .card{padding:28px 28px 30px}
+  .closing{margin-top:36px}
+  .fable{margin-top:44px}
+}
+.cmp + .cap{margin-top:20px}@media(min-width:900px){.cmp + .cap{margin-top:28px}}
