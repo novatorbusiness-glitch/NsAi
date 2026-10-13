@@ -1,7 +1,8 @@
 # Превью для соцсетей и мессенджеров (Blueprint S7): /og/<имя>.jpg 1200×630 для каждой страницы и статьи.
-# Читает готовую сборку out/: имя картинки берётся из og:image страницы, заголовок — из og:title.
+# Читает готовую сборку out/: имя картинки берётся из og:image страницы, заголовок — из og:title,
+# подзаголовок — из content/og.json.
 # Запуск после правки заголовков: npm run build && npm run og && npm run build
-# Готовые картинки не перерисовываются (public/og/manifest.json: имя → заголовок). Проверка — scripts/check-seo.mjs.
+# Готовые картинки не перерисовываются (public/og/manifest.json: имя → заголовок и подзаголовок). Проверка — scripts/check/seo.mjs.
 import json, re, glob, html, os
 from PIL import Image, ImageDraw, ImageFont
 
@@ -20,14 +21,19 @@ def font(name, size, weight=None):
 
 def manrope(size, weight):
     return (font('@fontsource-variable/manrope/files/manrope-cyrillic-wght-normal.woff2', size, weight),
-            font('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2', size, weight))
+            font('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2', size, weight),
+            font('@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2', size, weight))
 
 def mono(size):
     return (font('@fontsource/jetbrains-mono/files/jetbrains-mono-cyrillic-600-normal.woff2', size),
-            font('@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2', size))
+            font('@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2', size),
+            font('@fontsource/jetbrains-mono/files/jetbrains-mono-latin-ext-600-normal.woff2', size))
 
 def pick(fonts, ch):
-    return fonts[0] if 'Ѐ' <= ch <= 'ӿ' else fonts[1]
+    # кириллица · знаки валют (₽ есть только в latin-ext) · остальное
+    if 0x0400 <= ord(ch) <= 0x04FF: return fonts[0]
+    if 0x20A0 <= ord(ch) <= 0x20C0: return fonts[2]
+    return fonts[1]
 
 def width(s, fonts):
     return sum(pick(fonts, ch).getlength(ch) for ch in s)
@@ -44,6 +50,7 @@ def wrap(s, fonts, maxw):
         else: lines.append(cur); cur = w
     return lines + [cur]
 
+SUBS = json.load(open(f'{ROOT}/content/og.json', encoding='utf-8'))
 PHOTO = Image.open(f'{ROOT}/public/images/site/ilya-main.jpg').convert('RGB')
 
 # Статьи — в цвете своей обложки из блога (порядок и темы — src/config/blog.ts, цвета — .c-* в base.css).
@@ -64,12 +71,18 @@ def gradient(c1, c2):
     mask = Image.new('L', (2, 2)); mask.putdata([0, 110, 145, 255])  # плавно из левого верхнего угла в правый нижний
     return Image.composite(b, a, mask.resize((W, H), Image.BILINEAR))
 
-def title_block(d, x, y, title, maxw, color, sizes=(68, 62, 56, 50, 44), lines_max=4):
+def title_block(d, x, y, title, sub, maxw, color, subcolor, room, sizes=(68, 62, 56, 50, 44)):
+    # заголовок + подзаголовок; подбираем размер, чтобы всё влезло в room пикселей по высоте
     for size in sizes:
         f = manrope(size, 800); lines = wrap(title, f, maxw)
-        if len(lines) <= lines_max: break
+        ss = max(28, int(size * 0.5)); sf = manrope(ss, 600); slines = wrap(sub, sf, maxw) if sub else []
+        h = len(lines) * int(size * 1.16) + (22 + len(slines) * int(ss * 1.35) if slines else 0)
+        if h <= room and len(slines) <= 2: break
     for ln in lines:
         draw(d, x, y, ln, f, color); y += int(size * 1.16)
+    y += 22
+    for ln in slines:
+        draw(d, x, y, ln, sf, subcolor); y += int(ss * 1.35)
 
 def render(name, title):
     x = 72
@@ -77,9 +90,10 @@ def render(name, title):
         tag, cover = ARTICLE[name[5:]]; c1, c2, ink, acc = THEMES[cover]
         im = gradient(c1, c2); d = ImageDraw.Draw(im)
         d.ellipse((W - 300, H - 300, W + 200, H + 200), outline=acc, width=3)  # круг, как на обложке в блоге
-        kick, maxw, sub = f'БЛОГ · {tag.upper()}', W - 2 * x - 120, acc
+        kick, maxw, sub = f'БЛОГ · {tag.upper()}', W - 2 * x - 290, acc  # текст не заходит на круг
+        subtle = ink
     else:
-        im = Image.new('RGB', (W, H), '#ffffff'); d = ImageDraw.Draw(im); ink, sub = INK, INK2; acc = ACC
+        im = Image.new('RGB', (W, H), '#ffffff'); d = ImageDraw.Draw(im); ink, sub = INK, INK2; acc = ACC; subtle = INK2
         if name == 'home':  # главная — о человеке, поэтому с фото
             pw = 380; k = max(pw / PHOTO.width, H / PHOTO.height)
             ph = PHOTO.resize((round(PHOTO.width * k), round(PHOTO.height * k)), Image.LANCZOS)
@@ -91,7 +105,7 @@ def render(name, title):
         kick = SECTION.get(name, 'Илья Новицкий').upper()
     d.rectangle((x, 84, x + 48, 90), fill=acc)
     draw(d, x, 112, kick, mono(22), acc)
-    title_block(d, x, 164, title, maxw, ink, sizes=(58, 54, 50) if name == 'home' else (68, 62, 56, 50, 44), lines_max=3 if name == 'home' else 4)
+    title_block(d, x, 164, title, SUBS.get(name, ''), maxw, ink, subtle, room=H - 164 - 140, sizes=(56, 52, 48, 44, 40) if name == 'home' else (66, 60, 54, 50, 44, 40))
     draw(d, x, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
     draw(d, x, H - 76, 'ilya-novitsky.ru · маркетинг, продукт и автоматизация', mono(20), sub)
     im.save(f'{DST}/{name}.jpg', 'JPEG', quality=86, optimize=True)
@@ -108,8 +122,9 @@ for f in sorted(glob.glob(f'{OUT}/**/*.html', recursive=True)):
     name, title = img.group(1), html.unescape(ttl.group(1))
     if name in seen: continue
     seen.add(name)
-    if man.get(name) == title and os.path.exists(f'{DST}/{name}.jpg'): continue
-    render(name, title); man[name] = title; made += 1
+    want = {'title': title, 'sub': SUBS.get(name, '')}
+    if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
+    render(name, title); man[name] = want; made += 1
 for name in list(man):
     if name not in seen:
         man.pop(name); p = f'{DST}/{name}.jpg'

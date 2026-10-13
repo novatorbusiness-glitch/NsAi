@@ -5,6 +5,7 @@ import path from "path";
 import { pages, rel, route, isRedirect, isChapter, report } from "./lib.mjs";
 
 const manifest = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public/og/manifest.json"), "utf8"));
+const subs = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/og.json"), "utf8"));
 const unesc = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 const errors = [];
 const titles = new Map();
@@ -28,7 +29,8 @@ for (const f of pages()) {
 	const ogTitle = unesc(html.match(/property="og:title" content="([^"]*)"/)?.[1] || "");
 	if (!og) errors.push(`${r}: нет своего превью /og/*.jpg`);
 	else if (!fs.existsSync(path.join(process.cwd(), "public/og", `${og}.jpg`))) errors.push(`${r}: нет файла public/og/${og}.jpg — запустите npm run og`);
-	else if (manifest[og] !== ogTitle) errors.push(`${r}: превью ${og}.jpg нарисовано по старому заголовку — запустите npm run og`);
+	else if (!subs[og]) errors.push(`${r}: нет подзаголовка превью в content/og.json (ключ ${og})`);
+	else if (manifest[og]?.title !== ogTitle || manifest[og]?.sub !== subs[og]) errors.push(`${r}: превью ${og}.jpg нарисовано по старому заголовку или подзаголовку — запустите npm run og`);
 	for (const [img] of html.matchAll(/<img\b[^>]*>/g)) {
 		if (!/\salt="[^"]+"/.test(img)) errors.push(`${r}: картинка без alt ${img.slice(0, 80)}`);
 		if (!/\swidth="\d+"/.test(img) || !/\sheight="\d+"/.test(img)) errors.push(`${r}: у картинки не заданы размеры ${img.slice(0, 80)}`);
