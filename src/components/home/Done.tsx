@@ -5,7 +5,7 @@ import { home } from "@content/pages/home";
 export default function Done() {
 	const c = home.done;
 	return (
-		<section id="done" className="done">
+		<section id="done" className="alt done">
 			<div className="wrap">
 				<div className="section-head"><h2>{c.h2}</h2></div>
 				<div className="grid g3 wins">

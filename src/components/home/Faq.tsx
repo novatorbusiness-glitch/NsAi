@@ -5,7 +5,7 @@ import { faq } from "@content/pages/faq";
 // 9 · вопросы (content/pages/faq.ts).
 export default function Faq() {
 	return (
-		<section id="faq" className="alt">
+		<section id="faq">
 			<div className="wrap">
 				<div className="section-head"><h2>{home.faq.h2}</h2></div>
 				<div className="faq faq-grid">

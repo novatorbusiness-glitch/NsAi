@@ -1,22 +1,27 @@
 import { home } from "@content/pages/home";
+import SectionHead from "@/components/ui/SectionHead";
+import Fable from "@/components/ui/Fable";
 
-// 5 · почему быстро и без потери качества: прототип OkiDelo.
+// 05 · почему быстро (вопрос собственника «не халтура?»): опыт + AI = результат; где AI, а где голова — в схеме.
 export default function Speed() {
 	const c = home.speed;
 	return (
 		<section id="system" className="system">
 			<div className="wrap">
-				<div className="section-head">
-					<h2>{c.h2}</h2>
-					<p className="lead">{c.lead}</p>
-					<p className="sub" style={{ marginTop: "14px" }}>{c.sub}</p>
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<div className="sflow">
+					{c.flow.map((f, i) => (
+						<div className={"me" in f ? "sbox me" : "sbox"} key={f.label}>
+							{i > 0 && <span className="sop" aria-hidden="true">{i === 1 ? "+" : "="}</span>}
+							<p className="sl">{f.label}</p>
+							<h3>{f.title}</h3>
+							<ul>{f.items.map((t) => <li key={t}>{t}</li>)}</ul>
+						</div>
+					))}
 				</div>
-				<div className="duo" aria-label={c.label}>
-					<div className="shot-clean"><img src={c.shot.src} alt={c.shot.alt} width={1400} height={839} loading="lazy" /></div>
-					<div className="phone"><img src={c.phone.src} alt={c.phone.alt} width={800} height={1159} loading="lazy" /></div>
-				</div>
-				<p className="cap">{c.cap}</p>
-				<a className="more" href="/keisy#system">{c.more}</a>
+				<Fable q={c.fable.q} src={c.fable.src} />
+				<p className="closing">{c.closing}</p>
+				<p className="more-link"><a href="/keisy#system">{c.more}</a></p>
 			</div>
 		</section>
 	);

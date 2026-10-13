@@ -4,7 +4,7 @@ import { home } from "@content/pages/home";
 export default function Fit() {
 	const c = home.fit;
 	return (
-		<section id="fit">
+		<section id="fit" className="alt">
 			<div className="wrap">
 				<div className="section-head"><h2>{c.h2}</h2><p className="lead">{c.lead}</p></div>
 				<div className="fitcards">

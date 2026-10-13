@@ -4,7 +4,7 @@ import { home } from "@content/pages/home";
 export default function About() {
 	const c = home.about;
 	return (
-		<section id="about" className="alt">
+		<section id="about">
 			<div className="wrap about">
 				<img className="photo-img" src={c.photo.src} alt={c.photo.alt} width={800} height={1000} />
 				<div className="col">

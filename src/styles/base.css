@@ -1040,3 +1040,18 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .how .after{margin-top:14px}
 .how .fable{margin-bottom:36px}
 .pstep{align-content:start}
+/* 05 · почему быстро: опыт + AI = результат */
+.sflow{display:grid;gap:30px}
+@media(min-width:900px){.sflow{grid-template-columns:repeat(3,1fr);gap:44px}}
+.sbox{position:relative;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 20px 22px}
+@media(min-width:900px){.sbox{padding:28px 28px 30px}}
+.sbox .sl{margin:0 0 8px;font:600 12px/1.4 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.sbox h3{margin:0 0 12px;font-size:clamp(18px,2.2vw,20px)}
+.sbox ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.sbox li{position:relative;padding-left:18px;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.sbox li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--line2)}
+.sbox.me{background:var(--dark);border-color:var(--dark)}
+.sbox.me .sl{color:#7fd3b6}.sbox.me h3{color:#fff}.sbox.me li{color:var(--dark-ink)}.sbox.me li::before{background:#7fd3b6}
+.sop{position:absolute;left:50%;top:-30px;transform:translate(-50%,0);width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--m);color:var(--acc)}
+@media(min-width:900px){.sop{left:-44px;top:50%;transform:translate(0,-50%);width:44px;height:44px;font-size:26px}}
+.system .fable{margin-top:40px}
