@@ -2,7 +2,7 @@
 export default function Compare() {
 	return (
 		<>
-			<section id="compare" className="alt compare">
+			<section id="compare" className="dark compare">
 			<div className="wrap">
 			<div className="section-head">
 			<h2>Сколько времени и денег до результата</h2>

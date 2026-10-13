@@ -2,7 +2,7 @@
 export default function Management() {
 	return (
 		<>
-			<section id="vedenie" className="svc">
+			<section id="vedenie" className="alt svc">
 			<div className="wrap">
 			<div className="svc-head"><span className="svc-n">3</span><div><h2>Ведение</h2><p className="meta">от 3 месяцев · от 150 000 ₽ в месяц</p></div></div>
 			<p className="lead">Собираю и веду систему по чертежу. Вы получаете результат и еженедельный отчёт, а не команду, которой нужно управлять.</p>

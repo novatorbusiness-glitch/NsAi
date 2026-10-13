@@ -1,7 +1,7 @@
 /* tokens.css — цвета, шрифты, размеры сайта (шаг 14, светлая тема, изумрудный акцент).
    Источник: прототип 13.10.2026, styles.css. Меняются только здесь. */
 :root{
-  --bg:#ffffff; --bg2:#f6f7f6; --ink:#15181a; --ink2:#4b5257; --mut:#8a9196;
+  --bg:#ffffff; --bg2:#f1f3f1; --ink:#15181a; --ink2:#4b5257; --mut:#8a9196;
   --line:#e3e6e4; --line2:#cfd4d1;
   --acc:#0F6E56; --acc-ink:#ffffff; --acc-soft:#e8f3ef;
   --dark:#111416; --dark2:#1b1f22; --dark-ink:#e9ecea; --dark-mut:#8f979c;

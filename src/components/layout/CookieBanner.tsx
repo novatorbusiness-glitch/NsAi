@@ -41,10 +41,12 @@ export default function CookieBanner() {
 	return (
 		<div className="cookie" id="cookie">
 			<p>
-				Я использую необходимые cookie, чтобы сайт работал, а с вашего согласия ещё и cookie Яндекс Метрики, чтобы видеть, как люди пользуются сайтом. <Link href="/consent">Согласие</Link> · <Link href="/privacy">Политика</Link>
+				Я использую необходимые cookie, чтобы сайт работал, а с вашего согласия ещё и cookie Яндекс Метрики, чтобы видеть, как люди пользуются сайтом. <span className="nw"><Link href="/consent">Согласие</Link> · <Link href="/privacy">Политика</Link></span>
 			</p>
-			<button className="btn p" onClick={() => choose("1")}>Принять все</button>
-			<button className="btn s" onClick={() => choose("0")}>Только необходимые</button>
+			<div className="cookie-act">
+				<button className="btn s" onClick={() => choose("0")}>Только необходимые</button>
+				<button className="btn p" onClick={() => choose("1")}>Принять все</button>
+			</div>
 		</div>
 	);
 }

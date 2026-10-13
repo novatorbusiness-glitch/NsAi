@@ -2,7 +2,7 @@
 export default function TestDrive() {
 	return (
 		<>
-			<section id="test-drive" className="svc">
+			<section id="test-drive" className="alt svc">
 			<div className="wrap">
 			<div className="svc-head"><span className="svc-n">1</span><div><h2>Тест-драйв</h2><p className="meta">3–4 дня · 40 000 ₽</p></div></div>
 			<p className="lead">По сути это аудит одной задачи. Быстрый и недорогой способ понять, что делать, и заодно проверить, подходим ли мы друг другу, ещё до больших денег.</p>

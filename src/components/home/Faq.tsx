@@ -2,7 +2,7 @@
 export default function Faq() {
 	return (
 		<>
-			<section id="faq">
+			<section id="faq" className="alt">
 			<div className="wrap">
 			<div className="section-head"><h2>Вопросы, которые обычно задают</h2></div>
 			<div className="faq faq-grid">

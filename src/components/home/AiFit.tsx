@@ -2,7 +2,7 @@
 export default function AiFit() {
 	return (
 		<>
-			<section id="ai" className="ai">
+			<section id="ai" className="alt ai">
 			<div className="wrap">
 			<div className="section-head">
 			<h2>Где AI ускоряет, а где только мешает</h2>

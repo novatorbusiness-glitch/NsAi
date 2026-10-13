@@ -2,7 +2,7 @@
 export default function Price() {
 	return (
 		<>
-			<section id="price" className="band">
+			<section id="price" className="band dark">
 			<div className="wrap split">
 			<div className="head">
 			<h2>Сколько стоит</h2>

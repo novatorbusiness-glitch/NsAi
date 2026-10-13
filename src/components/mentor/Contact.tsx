@@ -2,14 +2,13 @@
 export default function Contact() {
 	return (
 		<>
-			<section id="contact" className="final">
+			<section id="contact" className="final dark">
 			<div className="wrap">
 			<div className="card final-card">
 			<div>
 			<h2>Напишите в Telegram или MAX</h2>
 			<p className="lead">Пара строк о деле или идее: что хотите собрать и есть ли уже своё дело. Отвечу в течение рабочего дня. Если всё подходит, предложу короткий созвон на 20 минут, на котором поймём, подходим ли мы друг другу и с чего начнём.</p>
-			<a className="btn p" href="https://t.me/Ilya_novator" target="_blank" rel="noopener">Написать в Telegram</a>
-			<a className="btn s" href="https://max.ru/u/f9LHodD0cOJ7sFFvli4XlmkEOONE_hl47mUJ5CDNggHpSU7D9dpD65nPB3w" target="_blank" rel="noopener">Написать в MAX</a>
+			<div className="cta-row"><a className="btn p" href="https://t.me/Ilya_novator" target="_blank" rel="noopener">Написать в Telegram</a><a className="btn s" href="https://max.ru/u/f9LHodD0cOJ7sFFvli4XlmkEOONE_hl47mUJ5CDNggHpSU7D9dpD65nPB3w" target="_blank" rel="noopener">Написать в MAX</a></div>
 			<p className="under">@Ilya_novator · 80 000 ₽ в месяц</p>
 			</div>
 			<div className="tg" aria-hidden="true">

@@ -2,7 +2,7 @@
 export default function Fit() {
 	return (
 		<>
-			<section id="fit" className="alt">
+			<section id="fit">
 			<div className="wrap">
 			<div className="section-head"><h2>Кому я подойду, а кому нет</h2><p className="lead">Мне важно, чтобы работа дала результат обеим сторонам, поэтому скажу заранее.</p></div>
 			<div className="fitcards">

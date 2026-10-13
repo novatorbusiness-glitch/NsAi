@@ -2,7 +2,7 @@
 export default function About() {
 	return (
 		<>
-			<section id="about">
+			<section id="about" className="alt">
 			<div className="wrap about">
 			<img className="photo-img" src="/images/site/ilya-main.jpg" alt="Илья Новицкий" width={800} height={1000} />
 			<div className="col">

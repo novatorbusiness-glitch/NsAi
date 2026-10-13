@@ -2,7 +2,7 @@
 export default function Sales() {
 	return (
 		<>
-			<section id="sales" className="alt">
+			<section id="sales" className="dark">
 			<div className="wrap">
 			<div className="section-head" style={{ maxWidth: "820px" }}>
 			<h2>Системы продаж для клиентов</h2>
