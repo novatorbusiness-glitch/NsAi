@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мемический стимул: говорить на языке, который уже любят — Нейро-воронка</title>
+<meta name="description" content="24 мем-шаблона как рабочая матрица креативов: от поиска разницы до провокации. Мем — не развлечение, а инженерия внимания.">
+<link rel="canonical" href="https://ilya-novitsky.ru/book/4-3-virusnaya-mehanika">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ilya-novitsky.ru/book/4-3-virusnaya-mehanika">
+<meta property="og:title" content="Мемический стимул: говорить на языке, который уже любят — Нейро-воронка">
+<meta property="og:description" content="24 мем-шаблона как рабочая матрица креативов: от поиска разницы до провокации. Мем — не развлечение, а инженерия внимания.">
+<meta property="og:image" content="https://ilya-novitsky.ru/images/site/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="/fonts/fonts.css" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ffffff;--bg2:#f6f7f6;--bgc:#ffffff;--bgc2:#f6f7f6;--br:#e3e6e4;--br2:#cfd4d1;--t:#15181a;--t2:#4b5257;--t3:#8a9196;--a:#0F6E56;--ad:rgba(15,110,86,.08);--red:#c62828;--metal:linear-gradient(135deg,#15181a 0%,#2c3236 50%,#15181a 100%);--fd:'Manrope',sans-serif;--fs:'Manrope',sans-serif;--fm:'JetBrains Mono',monospace;--ease:cubic-bezier(.16,1,.3,1);--max:760px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:18px;line-height:1.8;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
+@media(pointer:fine){#cd,#cr{display:block}}
+#cd{width:5px;height:5px;background:var(--a);border-radius:50%}
+#cr{z-index:9998;width:28px;height:28px;border:1px solid rgba(15,110,86,.35);border-radius:50%;transition:width .3s var(--ease),height .3s var(--ease)}
+#cr.ex{width:46px;height:46px;opacity:.3}
+body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(15,110,86,.4));z-index:200;width:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(21,24,26,.04);transition:all .3s}
+nav.sc{border-color:rgba(21,24,26,.07)}
+.ni{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
+  background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.nav-chap{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-back{font-family:var(--fd);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);
+  text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;flex-shrink:0;white-space:nowrap}
+.nav-back:hover{color:var(--t)}
+
+/* BASE */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}.rv.d4{transition-delay:.44s}
+
+/* SCROLL NAV */
+.scroll-nav{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.45rem;z-index:50}
+@media(max-width:900px){.scroll-nav{display:none}}
+.sn-dot{width:4px;height:4px;border-radius:50%;background:var(--br2);cursor:pointer;transition:background .3s,transform .3s,height .3s}
+.sn-dot.act{background:var(--a);height:20px;border-radius:2px}
+.sn-dot:hover{background:rgba(15,110,86,.5)}
+
+/* HERO */
+#hero{min-height:52vh;display:flex;align-items:flex-end;padding:calc(60px + 5rem) 0 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 0%,rgba(15,110,86,.055),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(15,110,86,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(15,110,86,.016) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.chap-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--t2);padding:.36rem .88rem;border:1px solid var(--br2);border-radius:999px;
+  margin-bottom:1.75rem;animation:fup .8s var(--ease) both}
+.bd{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.2rem,5.5vw,4.6rem);font-weight:800;line-height:.97;letter-spacing:-.04em;
+  margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
+.hero-h1 em{font-style:normal;background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--t2);max-width:560px;line-height:1.78;animation:fup 1s .2s var(--ease) both;margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--br);animation:fup 1s .3s var(--ease) both;flex-wrap:wrap}
+.hm-item{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.hm-item span{display:block;color:var(--t2);margin-top:.2rem;font-size:.68rem;letter-spacing:0;text-transform:none}
+
+/* ARTICLE */
+article{padding:5rem 0 8rem}
+.prose-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;
+  color:var(--t);margin:4.5rem 0 1.4rem}
+.prose-h3{font-family:var(--fd);font-size:1.12rem;font-weight:700;letter-spacing:-.02em;color:var(--t);margin:2.6rem 0 .9rem}
+.prose-p{font-size:1.02rem;color:var(--t2);line-height:1.85;margin-bottom:1.35rem}
+.prose-p strong{color:var(--t);font-weight:600}
+.prose-p em{font-style:italic;color:var(--t)}
+hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
+ul.ticks{list-style:none;margin:1.2rem 0 1.6rem}
+ul.ticks li{position:relative;padding:0 0 0 1.6rem;margin-bottom:.8rem;font-size:.98rem;color:var(--t2);line-height:1.7}
+ul.ticks li::before{content:'+';position:absolute;left:0;top:0;color:var(--a);font-family:var(--fm);font-size:.9rem}
+ul.ticks li strong{color:var(--t)}
+ul.minus{list-style:none;margin:1.2rem 0 1.6rem}
+ul.minus li{position:relative;padding:0 0 0 1.6rem;margin-bottom:.8rem;font-size:.98rem;color:var(--t2);line-height:1.7}
+ul.minus li::before{content:'—';position:absolute;left:0;top:0;color:var(--red);font-family:var(--fm);font-size:.9rem}
+
+/* PRACTICE */
+.practice{margin:2rem 0;padding:1.75rem 2rem 1.75rem 1.75rem;border-left:3px solid rgba(15,110,86,.5);
+  background:rgba(15,110,86,.04);border-radius:0 10px 10px 0}
+.practice-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);
+  opacity:.8;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.practice-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a);opacity:.6;flex-shrink:0}
+.practice p{font-size:.92rem;color:var(--t2);line-height:1.75}
+.practice strong{color:var(--t)}
+
+/* KEY INSIGHT */
+.insight{margin:4rem 0;padding:2.5rem;background:var(--bgc);border:1px solid rgba(15,110,86,.2);border-radius:14px;
+  position:relative;overflow:hidden;text-align:center}
+.insight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 0%,rgba(15,110,86,.05),transparent);pointer-events:none}
+.insight-icon{font-size:2.5rem;margin-bottom:1.2rem}
+.insight-text{font-family:var(--fs);font-style:italic;font-size:1.12rem;line-height:1.75;color:var(--t);max-width:580px;margin:0 auto 1.5rem}
+.insight-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+
+/* CHAPTER NAV */
+.chapter-nav{margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.chapter-nav{grid-template-columns:1fr}}
+.cn-btn{padding:1.5rem;border:1px solid var(--br);border-radius:12px;text-decoration:none;background:var(--bgc);
+  transition:border-color .25s,transform .25s var(--ease),background .25s;display:block}
+.cn-btn:hover{border-color:rgba(15,110,86,.3);background:var(--bgc2);transform:translateY(-3px)}
+.cn-btn.next{border-color:rgba(15,110,86,.2);background:var(--ad)}
+.cn-btn.next:hover{border-color:rgba(15,110,86,.5)}
+.cn-dir{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.cn-btn.next .cn-dir{color:var(--a);opacity:.8}
+.cn-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.3}
+
+/* ── SHARED COMPONENT BLOCKS (used across generated chapters) ── */
+
+/* NUMBERED CARD GRID */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+.card{padding:1.4rem 1.5rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s var(--ease),background .25s}
+.card:hover{border-color:rgba(15,110,86,.35);background:var(--bgc2);transform:translateY(-3px)}
+.card .c-num{font-family:var(--fd);font-size:2.1rem;font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:.8rem;
+  color:transparent;-webkit-text-stroke:1px rgba(15,110,86,.25)}
+.card .c-title{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--t);margin-bottom:.45rem;line-height:1.3}
+.card .c-text{font-size:.84rem;color:var(--t2);line-height:1.6}
+.card .c-text strong{color:var(--t)}
+
+/* STEP FLOW */
+.steps{margin:2rem 0;display:flex;flex-direction:column;gap:.6rem}
+.step{display:grid;grid-template-columns:54px 1fr;gap:1.1rem;align-items:start;padding:1.1rem 1.3rem;
+  border:1px solid var(--br);border-radius:11px;background:var(--bgc);transition:border-color .25s,transform .25s var(--ease)}
+.step:hover{border-color:rgba(15,110,86,.3);transform:translateX(5px)}
+.step .s-num{font-family:var(--fm);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--a);
+  background:var(--ad);border:1px solid rgba(15,110,86,.22);border-radius:8px;text-align:center;padding:.5rem .3rem;line-height:1.35;
+  overflow-wrap:break-word;word-break:break-word;hyphens:auto}
+.step .s-body .s-title{font-family:var(--fd);font-size:.98rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.step .s-body .s-text{font-size:.87rem;color:var(--t2);line-height:1.65}
+.step .s-body .s-text strong{color:var(--t)}
+
+/* COMPARISON */
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0}
+@media(max-width:560px){.comp{grid-template-columns:1fr}}
+.comp-col{padding:1.5rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc)}
+.comp-col.bad{border-color:rgba(232,64,64,.22);background:rgba(232,64,64,.03)}
+.comp-col.good{border-color:rgba(15,110,86,.25);background:var(--ad)}
+.comp-col .cc-tag{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.9rem}
+.comp-col.bad .cc-tag{color:var(--red)}
+.comp-col.good .cc-tag{color:var(--a)}
+.comp-col .cc-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.55rem}
+.comp-col .cc-text{font-size:.85rem;color:var(--t2);line-height:1.65}
+.comp-col .cc-text strong{color:var(--t)}
+
+/* METRIC / STAT ROW */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin:2rem 0}
+.metric{padding:1.3rem 1.2rem;border:1px solid var(--br);border-radius:12px;background:var(--bgc);text-align:center;transition:border-color .25s}
+.metric:hover{border-color:rgba(15,110,86,.35)}
+.metric .m-val{font-family:var(--fd);font-size:1.9rem;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--a);margin-bottom:.5rem}
+.metric .m-label{font-family:var(--fm);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t2)}
+
+/* DOSSIER (case study) */
+.dossier{margin:3rem 0;border:1px solid var(--br);border-radius:16px;overflow:hidden;background:var(--bgc)}
+.dossier-head{padding:1.3rem 1.8rem;border-bottom:1px solid var(--br);display:flex;align-items:center;gap:.8rem;
+  background:linear-gradient(90deg,rgba(15,110,86,.06),transparent)}
+.dossier-head .d-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a)}
+.dossier-head .d-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t)}
+.dossier-body{padding:1.8rem}
+.dossier-body .d-row{margin-bottom:1.4rem}
+.dossier-body .d-row:last-child{margin-bottom:0}
+.dossier-body .d-row .dr-tag{font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.dossier-body .d-row p{font-size:.92rem;color:var(--t2);line-height:1.75}
+.dossier-body .d-row p strong{color:var(--t)}
+
+/* GLOSSARY */
+.glossary{margin:3rem 0}
+.glossary .g-title{font-family:var(--fd);font-size:1.35rem;font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:1.4rem}
+.g-term{display:grid;grid-template-columns:190px 1fr;gap:1.1rem;padding:1rem 0;border-bottom:1px solid var(--br);align-items:start}
+@media(max-width:560px){.g-term{grid-template-columns:1fr;gap:.3rem}}
+.g-term .gt-name{font-family:var(--fm);font-size:.72rem;line-height:1.5;color:var(--t);font-weight:700}
+.g-term .gt-desc{font-size:.88rem;color:var(--t2);line-height:1.7}
+
+/* FORMULA BANNER */
+.formula{margin:2rem 0;padding:1.6rem 1.8rem;border:1px solid rgba(15,110,86,.28);border-radius:12px;background:var(--ad);
+  font-family:var(--fm);font-size:.92rem;color:var(--t);text-align:center;letter-spacing:.01em;line-height:1.7}
+.formula .f-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--a);margin-bottom:.6rem}
+
+/* QUOTE */
+blockquote.quote{margin:2.2rem 0;padding:1.6rem 1.9rem;border-left:3px solid rgba(15,110,86,.4);background:var(--bgc);
+  border-radius:0 10px 10px 0;font-size:1.04rem;font-style:italic;color:var(--t);line-height:1.75}
+blockquote.quote .q-src{display:block;margin-top:.8rem;font-family:var(--fm);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);font-style:normal}
+
+/* TAGS */
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t2);
+  border:1px solid var(--br2);border-radius:999px;padding:.35rem .8rem}
+.tag.hot{color:var(--a);border-color:rgba(15,110,86,.3)}
+
+/* GLOSSARY (matches completed chapter pages) */
+.gl-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(15,110,86,.45);margin-bottom:.8rem}
+.gl-h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:2rem;line-height:1.1}
+.gloss-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:3rem}
+@media(max-width:540px){.gloss-grid{grid-template-columns:1fr}}
+.gl-item{padding:1rem 1.25rem;border:1px solid var(--br2);border-radius:10px;background:var(--bgc);
+  cursor:default;transition:border-color .2s,background .2s}
+.gl-item:hover{border-color:rgba(15,110,86,.18);background:var(--bgc2)}
+.gl-term{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--a);margin-bottom:.32rem;line-height:1.25;opacity:.9}
+.gl-def{font-size:.75rem;color:var(--t2);line-height:1.6}
+.gl-def strong{color:var(--t3);font-weight:600}
+.gl-closer{margin-top:2rem;padding:1.5rem;background:var(--bgc);border:1px solid var(--br2);border-radius:12px;text-align:center}
+.gl-closer p{font-size:.88rem;color:rgba(21,24,26,.6);line-height:1.8}
+.gl-closer strong{color:var(--t)}
+
+
+
+/* ─── VIZ KIT: таблицы, ASCII, эмодзи-списки, бейджи ─── */
+.viz-wrap{margin:2.2rem 0;overflow-x:auto;border:1px solid var(--br);border-radius:12px;background:var(--bgc)}
+.viz-table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:500px}
+.viz-table th{font-family:var(--fm);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);text-align:left;padding:.85rem 1.15rem;border-bottom:1px solid var(--br2);background:var(--bgc2);font-weight:700}
+.viz-table td{padding:.8rem 1.15rem;border-bottom:1px solid var(--br);color:var(--t2);line-height:1.62;vertical-align:top}
+.viz-table tr:last-child td{border-bottom:none}
+.viz-table td strong{color:var(--t)}
+.viz-table .y{color:var(--a);font-family:var(--fm);font-size:.78rem}
+.viz-table .r{color:var(--red);font-family:var(--fm);font-size:.78rem}
+.ascii{margin:2.2rem 0;padding:1.3rem 1.5rem;border:1px solid var(--br2);border-radius:12px;background:var(--bg2);overflow-x:auto}
+.ascii pre{margin:0;font-family:var(--fm);font-size:.7rem;line-height:1.52;color:#2c3236;white-space:pre}
+.ascii .a-title{font-family:var(--fm);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--a);opacity:.8;margin-bottom:.9rem}
+.emoji-list{list-style:none;margin:1.3rem 0 1.7rem;padding:0}
+.emoji-list li{position:relative;padding:.4rem 0 .4rem 2.15rem;font-size:.97rem;color:var(--t2);line-height:1.72}
+.emoji-list li .em{position:absolute;left:0;top:.45rem;font-size:1.05rem}
+.emoji-list li strong{color:var(--t)}
+.viz-label{font-family:var(--fm);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(15,110,86,.55);margin:2.4rem 0 .8rem}
+
+/* TELEGRAM CTA */
+.tg-cta{margin:3rem 0;padding:2.5rem 2rem;background:var(--a);border-radius:16px;text-align:center;position:relative;overflow:hidden}
+.tg-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 0%,rgba(21,24,26,.25),transparent);pointer-events:none}
+.tg-cta-icon{font-size:2.4rem;margin-bottom:.9rem;position:relative}
+.tg-cta-title{font-family:var(--fd);font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:#ffffff;line-height:1.15;max-width:560px;margin:0 auto .7rem;position:relative}
+.tg-cta-text{font-family:var(--fs);font-size:.95rem;color:rgba(21,24,26,.08);line-height:1.7;max-width:480px;margin:0 auto 1.5rem;position:relative}
+.tg-cta-btn{display:inline-block;background:#ffffff;color:var(--a);font-family:var(--fd);font-weight:700;font-size:.9rem;text-decoration:none;padding:.95rem 2rem;border-radius:10px;transition:transform .25s var(--ease),opacity .25s;position:relative}
+.tg-cta-btn:hover{transform:translateY(-2px);opacity:.92}
+/* TELEGRAM SUBSCRIBE (compact) */
+.tg-sub{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;margin-top:1.5rem;padding:1.5rem 1.75rem;background:var(--bgc);border:1px solid rgba(15,110,86,.22);border-radius:12px}
+.tg-sub-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.tg-sub-text{font-family:var(--fs);font-size:.84rem;color:var(--t2);line-height:1.6}
+.tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#ffffff;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
+.tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
+
+</style>
+<style>
+.nz-viz{margin:2.6rem 0;padding:1rem;background:#ffffff;border:1px solid #e3e6e4;border-radius:16px;box-shadow:0 14px 34px rgba(21,24,26,.08)}
+.nz-viz svg{width:100%;height:auto;display:block;border-radius:10px}
+.nz-viz .vz-card{transition:transform .35s cubic-bezier(.16,1,.3,1),filter .35s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-card:hover{transform:translateY(-5px);filter:drop-shadow(0 12px 20px rgba(15,110,86,.16))}
+.nz-viz .vz-bar{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-bar:hover{transform:translateX(8px)}
+.nz-viz .vz-dot{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-dot:hover{transform:scale(1.22);transform-origin:center}
+@media (max-width:640px){.nz-viz{padding:.6rem;border-radius:12px}}
+</style><style>body{cursor:auto!important}#cd,#cr{display:none!important}a,button,summary{cursor:pointer!important}</style>
+<style>body::before{display:none!important}.rv{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto!important;overflow-x:clip}body{font-size:18px;line-height:1.7;background:#fff;color:#15181a;overflow-x:clip}@media(max-width:480px){.silence-vis{grid-template-columns:1fr!important}nav,.chapter-nav{max-width:100%;box-sizing:border-box}}.prose-p{font-size:18px!important;line-height:1.7!important;color:#2c3236!important}*,*::before,*::after{animation-duration:0s!important;animation-delay:0s!important}.hero-h1,.hero-h1 *{background:none!important;-webkit-text-fill-color:#15181a!important;color:#15181a!important}.pivot-title,.cc-title{color:#15181a!important}.tg-cta{background:#e8f3ef!important}.tg-cta::before{display:none!important}.tg-cta-title{color:#15181a!important}.tg-cta-text{color:#4b5257!important}.tg-cta-btn{background:#0F6E56!important;color:#fff!important}.nz-viz{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important}</style><script>try{history.scrollRestoration="manual"}catch(e){}addEventListener("load",function(){if(!location.hash)scrollTo(0,0);document.querySelectorAll("[data-fill]").forEach(function(b){b.style.width=b.dataset.fill+"%"});document.querySelectorAll(".ladder-fill").forEach(function(b){b.style.width=b.dataset.w+"%"});document.querySelectorAll(".rv").forEach(function(e){e.classList.add("on")})});</script>
+</head>
+<body>
+<div id="cd"></div><div id="cr"></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <div class="ni">
+    <a href="/" class="logo">Илья Новицкий</a>
+    <span class="nav-chap">Гл. 4.3 · Мемический стимул</span>
+    <a href="/book" class="nav-back">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11 6.5H2M5.5 3L2 6.5l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      К главам
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="chap-badge"><span class="bd"></span>Глава 4 · Подглава 4.3 · 14 мин чтения</div>
+    <h1 class="hero-h1">Мемический стимул:<br>говорить на языке,<br>который уже <em>любят</em></h1>
+    <p class="hero-sub">24 мем-шаблона как рабочая матрица креативов: от поиска разницы до провокации. Мем — не развлечение, а инженерия внимания.</p>
+    <div class="hero-meta">
+      <div class="hm-item">Глава<span>4 · Нейро-трафик</span></div>
+      <div class="hm-item">Подглава<span>4.3</span></div>
+      <div class="hm-item">Шаблонов<span>24</span></div>
+      <div class="hm-item">Проверок<span>3 на каждый</span></div>
+    </div>
+  </div>
+</section>
+
+<article>
+<div class="wrap">
+
+<figure class="nz-panel rv" style="margin:0 0 3rem">
+<svg viewBox="0 0 1600 1020" role="img" aria-label="Схема распространения мемического креатива: культурный код, узнавание, эмоция, оффер внутри шаблона, пересылка; 24 шаблона и три проверки" style="width:100%;height:auto;display:block" xmlns="http://www.w3.org/2000/svg">
+<style>
+.p43-bdg{opacity:.95}
+.p43-pulse{animation:p43-pulse 4.2s ease-in-out infinite}
+.p43-pulse:nth-of-type(2n){animation-delay:.7s}
+.p43-flow{stroke-dasharray:7 11;animation:p43-flow 5.5s linear infinite}
+.p43-glow{animation:p43-glow 6s ease-in-out infinite}
+@keyframes p43-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes p43-flow{to{stroke-dashoffset:-72}}
+@keyframes p43-glow{0%,100%{opacity:.35}50%{opacity:.8}}
+@media (prefers-reduced-motion: reduce){
+.p43-pulse,.p43-flow,.p43-glow{animation:none!important}
+.p43-flow{stroke-dasharray:none}
+}
+</style>
+<defs>
+<linearGradient id="p43-pan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f7f6"/></linearGradient>
+<pattern id="p43-grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0V56" fill="none" stroke="rgba(15,110,86,.03)" stroke-width="1"/></pattern>
+</defs>
+<rect x="20" y="20" width="1560" height="980" rx="28" fill="url(#p43-pan)" stroke="#e3e6e4"/>
+<rect x="20" y="20" width="1560" height="980" rx="28" fill="url(#p43-grid)" opacity=".6"/>
+<rect x="80" y="66" width="336" height="44" rx="22" fill="rgba(15,110,86,.14)" stroke="rgba(15,110,86,.35)"/>
+<text x="248.0" y="94" font-family="'JetBrains Mono',monospace" font-size="20" fill="#0F6E56" text-anchor="middle" letter-spacing="2" class="p43-bdg" data-box="80,66,336.0,44">ГЛ. 4 · НЕЙРО-ТРАФИК</text>
+<text x="80" y="196" font-family="'Manrope',sans-serif" font-size="58" fill="#15181a" font-weight="800" letter-spacing="-1" data-box="80,150,1440,60">МЕМИЧЕСКИЙ СТИМУЛ</text>
+<text x="84" y="248" font-family="'JetBrains Mono',monospace" font-size="22" fill="#6b7378" letter-spacing="1" data-box="84,230,1436,28">мем — не развлечение, а готовый культурный шаблон: рамка уже в памяти, расшифровывать нечего</text>
+<line x1="200" y1="380" x2="1400" y2="380" stroke="rgba(15,110,86,.28)" stroke-width="3"/>
+<line x1="200" y1="380" x2="1400" y2="380" stroke="#0F6E56" stroke-width="3" opacity=".6" class="p43-flow"/>
+<text x="200" y="336" font-family="'Manrope',sans-serif" font-size="19" fill="#15181a" font-weight="800" text-anchor="middle" data-box="60,300,280,200">КУЛЬТУРНЫЙ КОД</text>
+<circle cx="200" cy="380" r="13" fill="#0F6E56" class="p43-pulse"/>
+<text x="200" y="428" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="60,300,280,200">шаблон уже лежит</text>
+<text x="200" y="452" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="60,300,280,200">в памяти аудитории</text>
+<path d="M328,371 l12,9 l-12,9" fill="none" stroke="#0F6E56" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+<text x="500" y="336" font-family="'Manrope',sans-serif" font-size="19" fill="#15181a" font-weight="800" text-anchor="middle" data-box="360,300,280,200">УЗНАВАНИЕ</text>
+<circle cx="500" cy="380" r="13" fill="#0F6E56"/>
+<text x="500" y="428" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="360,300,280,200">мозг не расшифровывает</text>
+<text x="500" y="452" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="360,300,280,200">контекст заново</text>
+<path d="M628,371 l12,9 l-12,9" fill="none" stroke="#0F6E56" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+<text x="800" y="336" font-family="'Manrope',sans-serif" font-size="19" fill="#15181a" font-weight="800" text-anchor="middle" data-box="660,300,280,200">ЭМОЦИЯ</text>
+<circle cx="800" cy="380" r="13" fill="#0F6E56"/>
+<text x="800" y="428" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="660,300,280,200">считывается раньше,</text>
+<text x="800" y="452" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="660,300,280,200">чем коммерческий смысл</text>
+<path d="M928,371 l12,9 l-12,9" fill="none" stroke="#0F6E56" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+<text x="1100" y="336" font-family="'Manrope',sans-serif" font-size="19" fill="#15181a" font-weight="800" text-anchor="middle" data-box="960,300,280,200">ОФФЕР В ШАБЛОНЕ</text>
+<circle cx="1100" cy="380" r="13" fill="#0F6E56"/>
+<text x="1100" y="428" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="960,300,280,200">подача входит внутрь</text>
+<text x="1100" y="452" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="960,300,280,200">знакомой рамки</text>
+<path d="M1228,371 l12,9 l-12,9" fill="none" stroke="#0F6E56" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+<text x="1400" y="336" font-family="'Manrope',sans-serif" font-size="19" fill="#0F6E56" font-weight="800" text-anchor="middle" data-box="1260,300,280,200">ПЕРЕСЫЛКА</text>
+<circle cx="1400" cy="380" r="13" fill="#0F6E56" class="p43-pulse"/>
+<text x="1400" y="428" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="1260,300,280,200">делюсь — значит расту</text>
+<text x="1400" y="452" font-family="'Manrope',sans-serif" font-size="16" fill="#4b5257" text-anchor="middle" data-box="1260,300,280,200">в глазах своей группы</text>
+<text x="80" y="540" font-family="'JetBrains Mono',monospace" font-size="16" fill="#0b5a46" letter-spacing="1" data-box="80,526,1440,20">24 ШАБЛОНА · рабочая матрица креативов, сгруппированная по силе входа</text>
+<rect x="80" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="94" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="94,562,141,64">01</text>
+<text x="94" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="94,562,141,64">Поиск разницы</text>
+<rect x="261" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="275" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="275,562,141,64">02</text>
+<text x="275" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="275,562,141,64">Стратегия</text>
+<rect x="442" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="456" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="456,562,141,64">03</text>
+<text x="456" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="456,562,141,64">Ассоциация</text>
+<rect x="623" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="637" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="637,562,141,64">04</text>
+<text x="637" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="637,562,141,64">Загадка</text>
+<rect x="804" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="818" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="818,562,141,64">05</text>
+<text x="818" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="818,562,141,64">Секс</text>
+<rect x="985" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="999" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="999,562,141,64">06</text>
+<text x="999" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="999,562,141,64">Еда</text>
+<rect x="1166" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1180" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1180,562,141,64">07</text>
+<text x="1180" y="610" font-family="'Manrope',sans-serif" font-size="11" fill="#4b5257" font-weight="600" data-box="1180,562,141,64">Кризис во спасение</text>
+<rect x="1347" y="562" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1361" y="586" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1361,562,141,64">08</text>
+<text x="1361" y="610" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="1361,562,141,64">Безопасность</text>
+<rect x="80" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="94" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="94,642,141,64">09</text>
+<text x="94" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="94,642,141,64">Повторение</text>
+<rect x="261" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="275" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="275,642,141,64">10</text>
+<text x="275" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="275,642,141,64">Осмысление</text>
+<rect x="442" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="456" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="456,642,141,64">11</text>
+<text x="456" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="456,642,141,64">Евангелизм</text>
+<rect x="623" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="637" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="637,642,141,64">12</text>
+<text x="637" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="637,642,141,64">Традиция</text>
+<rect x="804" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="818" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="818,642,141,64">13</text>
+<text x="818" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="818,642,141,64">Превосходство</text>
+<rect x="985" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="999" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="999,642,141,64">14</text>
+<text x="999" y="690" font-family="'Manrope',sans-serif" font-size="12" fill="#4b5257" font-weight="600" data-box="999,642,141,64">Дешёвая страховка</text>
+<rect x="1166" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1180" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1180,642,141,64">15</text>
+<text x="1180" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="1180,642,141,64">Принадлежность</text>
+<rect x="1347" y="642" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1361" y="666" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1361,642,141,64">16</text>
+<text x="1361" y="690" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="1361,642,141,64">Минимум риска</text>
+<rect x="80" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="94" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="94,722,141,64">17</text>
+<text x="94" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="94,722,141,64">Против шаблонов</text>
+<rect x="261" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="275" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="275,722,141,64">18</text>
+<text x="275" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="275,722,141,64">Троянский конь</text>
+<rect x="442" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="456" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="456,722,141,64">19</text>
+<text x="456" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="456,722,141,64">Свой vs Чужой</text>
+<rect x="623" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="637" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="637,722,141,64">20</text>
+<text x="637" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="637,722,141,64">Инвестиция</text>
+<rect x="804" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="818" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="818,722,141,64">21</text>
+<text x="818" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="818,722,141,64">Забота о детях</text>
+<rect x="985" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="999" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="999,722,141,64">22</text>
+<text x="999" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="999,722,141,64">Диссонанс</text>
+<rect x="1166" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1180" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1180,722,141,64">23</text>
+<text x="1180" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="1180,722,141,64">Классический мем</text>
+<rect x="1347" y="722" width="169" height="64" rx="12" fill="#f6f7f6" stroke="#cfd4d1"/>
+<text x="1361" y="746" font-family="'JetBrains Mono',monospace" font-size="13" fill="#0b5a46" data-box="1361,722,141,64">24</text>
+<text x="1361" y="770" font-family="'Manrope',sans-serif" font-size="13" fill="#4b5257" font-weight="600" data-box="1361,722,141,64">Провокация</text>
+<text x="80" y="832" font-family="'JetBrains Mono',monospace" font-size="16" fill="#0b5a46" letter-spacing="1" data-box="80,818,1440,20">ТРИ ПРОВЕРКИ ПЕРЕД ЗАПУСКОМ · если провален хотя бы один вопрос, шаблон не берём</text>
+<rect x="80" y="852" width="466" height="96" rx="16" fill="#f6f7f6" stroke="rgba(15,110,86,.22)"/>
+<text x="104" y="884" font-family="'JetBrains Mono',monospace" font-size="14" fill="#0b5a46" letter-spacing="1" data-box="104,852,418,96">ПРОВЕРКА 01</text>
+<text x="104" y="914" font-family="'Manrope',sans-serif" font-size="20" fill="#0F6E56" font-weight="800" data-box="104,852,418,96">Понятен ли код?</text>
+<text x="104" y="938" font-family="'Manrope',sans-serif" font-size="14" fill="#6b7378" data-box="104,852,418,96">именно моей аудитории, а не узкому кругу внутри команды</text>
+<rect x="566" y="852" width="466" height="96" rx="16" fill="#f6f7f6" stroke="rgba(15,110,86,.22)"/>
+<text x="590" y="884" font-family="'JetBrains Mono',monospace" font-size="14" fill="#0b5a46" letter-spacing="1" data-box="590,852,418,96">ПРОВЕРКА 02</text>
+<text x="590" y="914" font-family="'Manrope',sans-serif" font-size="20" fill="#0F6E56" font-weight="800" data-box="590,852,418,96">Усиливает ли тезис?</text>
+<text x="590" y="938" font-family="'Manrope',sans-serif" font-size="15" fill="#6b7378" data-box="590,852,418,96">или шутка живёт отдельно от оффера и уводит от сути</text>
+<rect x="1052" y="852" width="466" height="96" rx="16" fill="#f6f7f6" stroke="rgba(15,110,86,.22)"/>
+<text x="1076" y="884" font-family="'JetBrains Mono',monospace" font-size="14" fill="#0b5a46" letter-spacing="1" data-box="1076,852,418,96">ПРОВЕРКА 03</text>
+<text x="1076" y="914" font-family="'Manrope',sans-serif" font-size="20" fill="#0F6E56" font-weight="800" data-box="1076,852,418,96">Не разрушает ли бренд?</text>
+<text x="1076" y="938" font-family="'Manrope',sans-serif" font-size="12" fill="#6b7378" data-box="1076,852,418,96">что станет с позиционированием, если мем увидят вне контекста</text>
+<text x="80" y="980" font-family="'JetBrains Mono',monospace" font-size="18" fill="#8a9196" letter-spacing="1" data-box="80,964,1440,24">мем снижает когнитивное сопротивление: сообщение входит как участник среды, а не как чужеродный продавец</text>
+</svg>
+</figure>
+
+
+
+<div class="rv"><p class="prose-p" style="margin-top:0">Люди устали не только от плохой рекламы, но и от слишком хорошо сделанной, в которой мгновенно распознаётся коммерческое намерение. Мем — это готовый культурный шаблон, который уже хранится в памяти аудитории. Мозгу не нужно расшифровывать контекст заново: он узнаёт паттерн, считывает эмоцию — и только потом сталкивается с твоей подачей, встроенной внутрь шаблона.</p></div><p class="prose-p rv d1">Мемы пробивают баннерную слепоту, проще распространяются (люди делятся тем, что выражает их эмоцию) и объединяют сразу несколько механизмов: память, эмоцию, принадлежность, эго, контраст. Ниже — <strong>24 мем-шаблона</strong> как рабочая матрица.</p><h2 class="prose-h2 rv">Шаблоны 1–8</h2><div class="cards rv">
+<div class="card"><div class="c-num">01</div><div class="c-title">Поиск разницы</div><div class="c-text">Два состояния, которые нужно сравнить: до/после, домашнее/профессиональное, ручная работа/система. Мозг любит искать различия — формат активирует зрительное внимание и лёгкое когнитивное напряжение: человек хочет понять, в чём отличие и на чьей стороне правильный вариант. Особенно полезен там, где нужно быстро показать разницу в качестве или результате.</div></div>
+<div class="card"><div class="c-num">02</div><div class="c-title">Стратегия</div><div class="c-text">«Система из 5 шагов», «карта запуска», «модель, которая собрала результат» — снижают тревогу перед хаосом, и вместо неопределённости человек видит структуру. Особенно силён в сложных нишах, где клиент перегружен информацией: хорошая стратегия в креативе продаёт не только знание, но и чувство контроля.</div></div>
+<div class="card"><div class="c-num">03</div><div class="c-title">Ассоциация</div><div class="c-text">Связываешь продукт, роль или метод с уже знакомым архетипом: капитан, навигатор, переводчик, хирург, архитектор. Формат работает через перенос уже существующих качеств образа на твой бренд. Главное не переигрывать — ассоциация должна упрощать считывание роли, а не превращать сообщение в театральную сцену.</div></div>
+<div class="card"><div class="c-num">04</div><div class="c-title">Загадка</div><div class="c-text">Строится на информационном зазоре: не вся мысль сразу, а дефицит данных — «3 ошибки, которые убивают продажи». Работает эффект незавершённости: мозг плохо переносит разрыв в информации, особенно если чувствует, что ответ может быть полезным или статусным. Важна мера — дешёвая манипуляция роняет доверие.</div></div>
+<div class="card"><div class="c-num">05</div><div class="c-title">Секс</div><div class="c-text">Один из самых сильных стимулов захвата внимания и один из самых опасных в применении — связан с базовыми эволюционными механизмами. Использовать можно только там, где он органичен теме и быстро переводится в более глубокий смысл; если стимул остаётся самодовлеющим, реклама превращается в дешёвую приманку. Требует максимальной дисциплины.</div></div>
+<div class="card"><div class="c-num">06</div><div class="c-title">Еда</div><div class="c-text">Хорошо работает на удовольствии, комфорте, чувстве насыщения и безопасности — там, где бренд хочет передать заботу, изобилие, тепло или человеческую общность. Сила не только в аппетите: совместная еда, стол, ритуал угощения считываются как маркеры доверия и принадлежности к группе, усиливая ощущение «своего пространства».</div></div>
+<div class="card"><div class="c-num">07</div><div class="c-title">Кризис во спасение</div><div class="c-text">Сначала показывается угроза, затем рядом появляется понятное решение — резкий переход от тревоги к контролю. Хорошо работает в B2B, безопасности, финансах, IT — везде, где цена ошибки высока. Важно, чтобы угроза была конкретной, а решение немедленным и простым, иначе креатив только повышает тревожность, но не конвертирует её в действие.</div></div>
+<div class="card"><div class="c-num">08</div><div class="c-title">Безопасность</div><div class="c-text">Работает через страх остаться позади, быть исключённым из новой нормы или потерять место в иерархии. Особенно силён в темах AI, технологий, рынка труда, карьеры. Ключевое — показать не абстрактную панику, а понятный сценарий выпадения из контекста: тогда продукт воспринимается как инструмент сохранения позиции.</div></div>
+</div><h2 class="prose-h2 rv">Шаблоны 9–16</h2><div class="cards rv">
+<div class="card"><div class="c-num">09</div><div class="c-title">Повторение</div><div class="c-text">Не один креатив, а принцип сборки всей коммуникации: одна и та же ключевая мысль повторяется в постах, сторис, письмах, пока не становится знакомой и внутренне правдоподобной. Работает не как навязчивость, а как способ стабилизировать идею в памяти — столкнувшись с ней в разных форматах, человек перестаёт воспринимать её как случайное заявление.</div></div>
+<div class="card"><div class="c-num">10</div><div class="c-title">Осмысление</div><div class="c-text">Формат для тех, кто тонет в сложности: простая ясная схема собирает хаотичную тему в один понятный каркас — таблица, диаграмма, рамка из трёх элементов. Особенно силён в сложных экспертных нишах: переводит бренд из позиции «ещё один продавец» в позицию «тот, кто приносит ясность».</div></div>
+<div class="card"><div class="c-num">11</div><div class="c-title">Евангелизм</div><div class="c-text">Создаётся так, чтобы хотелось переслать другим: сильный инсайт, острая формулировка, точное попадание в боль, социально полезная мысль. Люди делятся не из альтруизма, а потому что это повышает их собственную ценность в глазах группы — хороший вирусный креатив отвечает на вопрос «что даёт человеку сам факт пересылки?».</div></div>
+<div class="card"><div class="c-num">12</div><div class="c-title">Традиция</div><div class="c-text">Формат регулярной рубрики, которую аудитория начинает ждать: разборы по понедельникам, практики по средам, Q&A по пятницам — превращает контент из случайного потока в предсказуемый ритуал. Сила традиции в том, что она снижает необходимость каждый раз заново завоёвывать внимание — формируется ожидание, а вместе с ним привычка возвращаться.</div></div>
+<div class="card"><div class="c-num">13</div><div class="c-title">Чувство превосходства</div><div class="c-text">Даёт ощущение, что человек видит то, чего не видят другие, или понимает рынок глубже большинства — закрытые подборки, аналитика, «карта реального положения дел». Легко скатиться в снобизм: если аудитория чувствует не уважение к её интеллекту, а позу автора, формат теряет силу. Задача не унизить других, а усилить самоощущение клиента.</div></div>
+<div class="card"><div class="c-num">14</div><div class="c-title">Дешёвая страховка</div><div class="c-text">Показывает, что цена продукта мала по сравнению с потерями, которые он предотвращает — особенно эффективно в консалтинге, аудите, юридических услугах, безопасности. Работает потому, что мозг сильнее реагирует на риск больших потерь, чем на абстрактное обещание выгоды. Если сравнение корректное и честное, ценность считывается быстро.</div></div>
+<div class="card"><div class="c-num">15</div><div class="c-title">Принадлежность</div><div class="c-text">Акцент не на продукте, а на группе — вход в пространство со своими нормами, языком и уровнем общения. Особенно силён для клубов, закрытых чатов, наставничества, сообществ. Человек остаётся там, где чувствует не только пользу, но и своё место — поэтому принадлежность один из самых устойчивых стимулов лояльности.</div></div>
+<div class="card"><div class="c-num">16</div><div class="c-title">Минимум риска — максимум профита</div><div class="c-text">Затраты на вход выглядят минимальными по сравнению с потенциальным выигрышем: бесплатные интенсивы, тест-доступы, лёгкие механики участия в обмен на ощутимый шанс получить больше. Хорошо работает на первом касании, но требует аккуратности — если обещание чрезмерно, доверие разрушается.</div></div>
+</div><h2 class="prose-h2 rv">Шаблоны 17–24</h2><div class="cards rv">
+<div class="card"><div class="c-num">17</div><div class="c-title">Против шаблонов</div><div class="c-text">Намеренное нарушение визуальных и смысловых стандартов ниши — не ради эпатажа, а чтобы сломать предсказуемость и вернуть внимание: грубый визуал среди вылизанных макетов, слишком честная фраза среди гладких обещаний. Особенно полезен там, где рынок стал слишком однообразным, но работает только когда за разрушением шаблона стоит ясная мысль.</div></div>
+<div class="card"><div class="c-num">18</div><div class="c-title">Троянский конь</div><div class="c-text">Коммерческий смысл упакован внутрь того, что само по себе выглядит социально желательным: благотворительная акция, общественно полезный разбор, неожиданный бесплатный сервис. Работает через снижение настороженности — когда человек сначала видит пользу или человеческий жест, а уже потом сталкивается с брендом, защита срабатывает мягче.</div></div>
+<div class="card"><div class="c-num">19</div><div class="c-title">«Свой» vs «Чужой»</div><div class="c-text">Строится на ясной границе: для кого ты, а для кого нет. Не универсален, но в сильных брендах работает хорошо, потому что создаёт резкую идентификацию — если человек видит, что ты защищаешь его ценности и не пытаешься нравиться всем, доверие растёт быстрее. Сила не в скандале, а в чёткой ценностной позиции.</div></div>
+<div class="card"><div class="c-num">20</div><div class="c-title">Инвестиция в будущее</div><div class="c-text">Трата денег или времени перепозиционируется как вклад в долгосрочный результат — особенно полезен в образовании, здоровье, внешности, стратегическом консалтинге. Помогает перевести решение из режима «жалко потратить сейчас» в режим «дороже не вложиться»; если будущая выгода описана убедительно, сопротивление снижается.</div></div>
+<div class="card"><div class="c-num">21</div><div class="c-title">Забота о детях</div><div class="c-text">Один из самых сильных эмоциональных стимулов — затрагивает родительскую ответственность и будущее ребёнка, мощно работает в образовании, здоровье, безопасности. Требует особенно высокой этической точности: любое пережатие превращает такой креатив в давление на вину. Использовать стоит только там, где польза действительно прямолинейна и доказуема.</div></div>
+<div class="card"><div class="c-num">22</div><div class="c-title">Когнитивный диссонанс</div><div class="c-text">Показываешь, что действия человека противоречат его же образу себя: считает себя эффективным руководителем, но держит команду на ручных процессах; хочет роста, но избегает базовых решений. Внутреннее противоречие создаёт напряжение — если аргументация достаточно сильна, человеку проще изменить поведение, чем игнорировать разрыв.</div></div>
+<div class="card"><div class="c-num">23</div><div class="c-title">Классический мем</div><div class="c-text">Берёшь общеизвестный мемный шаблон и адаптируешь его под коммерческую ситуацию. Сила формата в скорости считывания — аудитория узнаёт структуру мгновенно и быстро понимает, где шутка, а где оффер. Особенно полезно для соцсетей, где важно выиграть долю секунды на первом контакте, но мем должен быть понятен именно твоей аудитории.</div></div>
+<div class="card"><div class="c-num">24</div><div class="c-title">Провокация</div><div class="c-text">Резкое, спорное или идущее против нормы утверждение — нужно для случаев, когда рынок настолько перенасыщен безопасными формулировками, что нейтральный голос больше не слышат. Работает только при одном условии: за ней должна стоять содержательная позиция. Если дальше нет аргументов, провокация даёт всплеск внимания, но не создаёт доверия.</div></div>
+</div><h2 class="prose-h2 rv">Как работать с мем-стимулом без потери качества</h2><p class="prose-p rv d1">Мем — инструмент снижения когнитивного сопротивления, а не развлечение ради развлечения. Хороший мемический креатив проходит три проверки.</p><div class="steps rv">
+<div class="step"><div class="s-num">Шаг 01</div><div class="s-body"><div class="s-title">Понятен ли код?</div><div class="s-text">Этот код понятен именно моей аудитории, а не узкому кругу внутри команды?</div></div></div>
+<div class="step"><div class="s-num">Шаг 02</div><div class="s-body"><div class="s-title">Усиливает ли тезис?</div><div class="s-text">Выбранный формат усиливает главный тезис, или шутка живёт отдельно от оффера?</div></div></div>
+<div class="step"><div class="s-num">Шаг 03</div><div class="s-body"><div class="s-title">Не разрушает ли бренд?</div><div class="s-text">Что произойдёт с позиционированием, если мем увидят вне контекста?</div></div></div>
+</div><div class="practice rv d1">
+  <div class="practice-label">Практика</div>
+  <p>Возьми одну рекламную задачу и пересобери её в 3 разных мем-шаблона из списка. Прогони каждый через три проверки. Оставь тот, где код понятен, тезис усилен и бренд не разрушен.</p>
+</div><div class="insight rv">
+  <div class="insight-icon">🎭</div>
+  <p class="insight-text">Мем помогает встроить рекламное сообщение в культурную среду аудитории так, чтобы оно считывалось быстрее, легче и мягче — как участник среды, а не чужеродный продавец.</p>
+  <div class="insight-tag">→ Дальше: блог как магнит — органический трафик</div>
+</div>
+
+    <div class="chapter-nav rv d1">
+    <a href="/book/4-2-shest-stimulov" class="cn-btn">
+      <div class="cn-dir">← Назад</div>
+      <div class="cn-title">4.2 · Шесть стимулов</div>
+    </a>
+    <a href="/book/4-4-organicheskij-trafik" class="cn-btn next">
+      <div class="cn-dir">Следующая →</div>
+      <div class="cn-title">4.4 · Блог как магнит: органический трафик</div>
+    </a>
+  </div>
+
+  <!-- TELEGRAM SUBSCRIBE -->
+  <div class="tg-sub rv d1">
+    <div class="tg-sub-body">
+      <div class="tg-sub-title">Мой канал в Telegram</div>
+      <div class="tg-sub-text">Короткие заметки по ходу работы и разборы из практики.</div>
+    </div>
+    <a class="tg-sub-btn" href="https://t.me/lowcortisol_ai" target="_blank" rel="noopener">Подписаться →</a>
+  </div>
+
+
+</div>
+</article>
+
+
+<script>
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button,.card,.step,.metric,.comp-col,.g-term').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cr.classList.add('ex'));
+    el.addEventListener('mouseleave',()=>cr.classList.remove('ex'));
+  });
+}
+// NAV + PROGRESS
+const nav=document.getElementById('nav'),prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('sc',window.scrollY>40);
+  prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+},{passive:true});
+// REVEAL (прогрессивное улучшение: без JS контент виден; fallback добивает неоткрытое)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));}
+else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
+}
+// SCROLL NAV dots
+const sections=['hero', 'm1', 'm2', 'm3', 'quality'];
+const dots=document.querySelectorAll('.sn-dot');
+dots.forEach((d,i)=>{d.addEventListener('click',()=>{
+  const el=document.getElementById(sections[i]);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+})});
+const sio=new IntersectionObserver(es=>{es.forEach(e=>{
+  if(e.isIntersecting){const idx=sections.indexOf(e.target.id);if(idx>=0)dots.forEach((d,i)=>d.classList.toggle('act',i===idx))}
+})},{threshold:.35});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)sio.observe(el)});
+// METER fill animation (if present)
+const meters=document.querySelectorAll('[data-fill]');
+if(meters.length){let done=false;
+  new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!done){done=true;
+    meters.forEach((b,i)=>setTimeout(()=>{b.style.width=b.dataset.fill+'%'},150+i*180));
+  }})},{threshold:.4}).observe(document.querySelector('[data-fill]')||document.body)}
+</script>
+</body>
+</html>
+

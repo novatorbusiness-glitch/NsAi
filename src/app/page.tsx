@@ -1,17 +1,38 @@
 import type { Metadata } from "next";
-import HomePage from "@/components/pages/HomePage";
-
-const TITLE = "Рутина уходит с вас, а не копится";
-const DESCRIPTION =
-	"Забираю операционку в AI-агентство: команда с ролями, проверкой результата и контролем расходов. Сначала показываю результат на вашей задаче — бесплатно.";
+import Hero from "@/components/home/Hero";
+import Situations from "@/components/home/Situations";
+import Benefits from "@/components/home/Benefits";
+import Compare from "@/components/home/Compare";
+import Process from "@/components/home/Process";
+import Speed from "@/components/home/Speed";
+import AiFit from "@/components/home/AiFit";
+import Done from "@/components/home/Done";
+import About from "@/components/home/About";
+import Fit from "@/components/home/Fit";
+import Faq from "@/components/home/Faq";
+import Contact from "@/components/home/Contact";
 
 export const metadata: Metadata = {
-	title: TITLE,
-	description: DESCRIPTION,
-	openGraph: { title: TITLE, description: DESCRIPTION, url: "/", type: "website", images: [{ url: "/images/og/home.png", width: 1200, height: 630 }] },
-	twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+	title: { absolute: "Один человек вместо отдела маркетинга и пяти подрядчиков · Илья Новицкий" },
+	description: "Маркетинг, продукт и автоматизация на уровне директора по маркетингу, без найма в штат: сайт, контент, продукт и аналитика у одного специалиста. Первый шаг за 3–4 дня.",
+	alternates: { canonical: "/" },
 };
 
 export default function Page() {
-	return <HomePage />;
+	return (
+		<>
+			<Hero />
+			<Situations />
+			<Benefits />
+			<Compare />
+			<Process />
+			<Speed />
+			<AiFit />
+			<Done />
+			<About />
+			<Fit />
+			<Faq />
+			<Contact />
+		</>
+	);
 }

@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import OfferPage from "@/components/pages/OfferPage";
-
-const TITLE = "Публичная оферта — NCAi";
-const DESCRIPTION =
-	"Публичный договор-оферта (Пользовательское соглашение) об условиях использования сайта ilya-novitsky.ru и его материалов.";
+import LegalPage from "@/components/layout/LegalPage";
 
 export const metadata: Metadata = {
-	title: { absolute: TITLE },
-	description: DESCRIPTION,
+	title: "Публичная оферта на оказание услуг",
+	description: "Условия оказания услуг Ильи Новицкого: тест-драйв, чертёж системы, ведение и наставничество. Цены, порядок оплаты, возврат и ответственность.",
 	alternates: { canonical: "/offer" },
-	openGraph: { title: TITLE, description: DESCRIPTION, url: "/offer", type: "website", images: [{ url: "/images/og/offer.png", width: 1200, height: 630 }] },
+	robots: { index: false },
 };
 
 export default function Page() {
-	return <OfferPage />;
+	return <LegalPage slug="offer" />;
 }

@@ -1,86 +1,38 @@
-"use client";
+import Link from "next/link";
+import { site } from "@/config/site";
 
-import { useLang } from "@/lib/i18n";
-import LangSwitch from "./LangSwitch";
-
-// Подвал сайта: описание, колонки ссылок (Проект / Книги / Работа / Правовое), язык, копирайт.
-// Дизайн NCAi: тёмный фон, жёлтый акцент, аккуратная сетка, выровненный низ.
+// Подвал: роль, страницы, контакты, документы, реквизиты.
 export default function Footer() {
-  const { t } = useLang();
-
-  return (
-    <footer>
-      <div className="fwm">NCAi</div>
-      <div className="w footer-inner">
-        <div className="fgrid">
-          <div className="fcol-brand">
-            <div className="flogo">NCAi</div>
-            <p className="ftag">{t("footer.tagline")}</p>
-            <div className="fsoc">
-              <a
-                href="https://t.me/ilya_novator"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="fsi"
-                aria-label="Telegram"
-              >
-                ✈
-              </a>
-              <a href="mailto:ilya.novitskii@yandex.ru" className="fsi" aria-label="Email">
-                ✉
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <div className="fch">{t("footer.colProject")}</div>
-            <ul className="fls">
-              <li><a href="/o-proekte">{t("footer.about")}</a></li>
-              <li><a href="/roadmap">{t("footer.roadmap")}</a></li>
-              <li><a href="/blog">{t("footer.blog")}</a></li>
-              <li><a href="/portfolio">{t("footer.cases")}</a></li>
-              <li><a href="/partners">Партнёры</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="fch">{t("footer.colBooks")}</div>
-            <ul className="fls">
-              <li><a href="/book">{t("nav.bookNeuro")}</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="fch">{t("footer.colWork")}</div>
-            <ul className="fls">
-              <li><a href="/raspakovka">{t("footer.consulting")}</a></li>
-              <li><a href="/ai-training">{t("footer.aiTraining")}</a></li>
-              <li><a href="/raspakovka#cases">{t("footer.cases")}</a></li>
-              <li><a href="/raspakovka#steps">{t("footer.method")}</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="fch">{t("footer.colLegal")}</div>
-            <ul className="fls">
-              <li><a href="/privacy">{t("footer.privacy")}</a></li>
-              <li><a href="/offer">{t("footer.offer")}</a></li>
-              <li><a href="https://t.me/ilya_novator" target="_blank" rel="noopener noreferrer">Telegram</a></li>
-              <li><a href="mailto:ilya.novitskii@yandex.ru">Email</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="fbot">
-          <span className="fcp">© {new Date().getFullYear()} NCAi · Илья Новицкий. {t("footer.rights")}</span>
-          <span className="fright">
-            <LangSwitch light />
-            <span className="fea">
-              {t("footer.easter")} <span>{t("footer.easter2")}</span>
-            </span>
-          </span>
-        </div>
-      </div>
-    </footer>
-  );
+	const c = site.contacts;
+	return (
+		<footer>
+			<div className="wrap">
+				<p>
+					<b style={{ color: "var(--ink)" }}>{site.name}</b> · {site.roleFooter}
+				</p>
+				<div className="row">
+					{site.footerNav.map((i) => (
+						<Link key={i.href} href={i.href}>
+							{i.label}
+						</Link>
+					))}
+				</div>
+				<div className="row">
+					<a href={c.telegram} target="_blank" rel="noopener">Telegram {c.telegramHandle}</a>
+					<a href={c.max} target="_blank" rel="noopener">MAX</a>
+					<a href={c.channel} target="_blank" rel="noopener">Канал {c.channelHandle}</a>
+					<a href={`mailto:${c.email}`}>{c.email}</a>
+				</div>
+				<div className="row fine">
+					{site.legal.map((i) => (
+						<Link key={i.href} href={i.href}>
+							{i.label}
+						</Link>
+					))}
+					<span>Реквизиты: {site.requisites}</span>
+				</div>
+				<p className="fine">© {new Date().getFullYear()} {site.name}</p>
+			</div>
+		</footer>
+	);
 }
