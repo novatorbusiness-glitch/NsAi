@@ -1055,3 +1055,54 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .sop{position:absolute;left:50%;top:-30px;transform:translate(-50%,0);width:30px;height:30px;display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--m);color:var(--acc)}
 @media(min-width:900px){.sop{left:-44px;top:50%;transform:translate(0,-50%);width:44px;height:44px;font-size:26px}}
 .system .fable{margin-top:40px}
+/* 06 · что уже сделано */
+.wins{gap:12px}
+@media(min-width:900px){.wins{gap:20px}.done .win{padding:28px 28px 30px}}
+.done .win .big{font:700 clamp(30px,4vw,40px)/1 var(--m);color:var(--acc);letter-spacing:-.02em}
+.done .win .bl{margin-top:6px;font-size:14px;color:var(--ink2)}
+.ag-ql{grid-column:1 / -1;margin:6px 0 -6px;font:600 12px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:#7fd3b6}
+.done-all{margin-top:28px}
+@media(min-width:900px){.done .agency{margin-top:24px;padding:36px 36px}}
+.done .ag-ql{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin:4px 0 0}.done .ag-quotes{border-top:0;padding-top:0}
+/* 06 · три направления + опыт агентства */
+.pillars{display:grid;gap:12px}
+@media(min-width:900px){.pillars{grid-template-columns:repeat(3,1fr);gap:20px}}
+.pillar{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:10px}
+@media(min-width:900px){.pillar{padding:28px 28px 30px;gap:12px}}
+.pillar .pl{margin:0;font:600 12px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.pillar h3{margin:0;font-size:clamp(18px,2.2vw,21px);line-height:1.3}
+.pillar .pb{padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pillar .pb b{display:block;font:700 clamp(28px,3.4vw,36px)/1 var(--m);color:var(--acc);letter-spacing:-.02em}
+.pillar .pb span{display:block;margin-top:6px;font-size:14px;line-height:1.4;color:var(--ink2)}
+.pillar .px{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
+.done .pillars + .cap{margin-top:16px}
+.done .agency{display:block}
+.ag-big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.ag-big b{font:700 clamp(36px,5vw,52px)/1 var(--m);color:#7fd3b6;letter-spacing:-.02em}
+.ag-big span{font-size:clamp(16px,2vw,19px);color:var(--dark-ink);font-weight:600}
+.done .ag-ql{margin-top:24px}
+.done .ag-quotes{margin-top:18px}
+@media(min-width:900px){.done .ag-quotes{grid-template-columns:repeat(3,1fr);gap:28px}}
+/* 06 · визуализация «мой путь проб и ошибок → ваш прямой путь» */
+.done .ag-t{color:#fff;margin:0 0 22px;font-size:clamp(20px,2.6vw,26px);max-width:24ch}
+.xp{display:grid;gap:26px}
+.xp-l{margin:0 0 8px;font:600 12px/1.3 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--dark-mut)}
+.xp-row.you .xp-l{color:#7fd3b6}
+.xp-wave,.xp-line{display:block;width:100%;height:34px;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.xp-wave path{stroke:#4b5257;stroke-width:2.5;stroke-dasharray:6 6}
+.xp-line path{stroke:#7fd3b6;stroke-width:3}
+.xp-marks{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.xp-marks span{font-size:14px;line-height:1.2;padding:7px 11px;border-radius:999px;background:var(--dark2);color:var(--dark-ink);border:1px solid #2a3034}
+.xp-marks span.err{color:#e8a2a2;border-color:#4a2c2c;background:#221a1a}
+.xp-row.you .xp-marks{justify-content:space-between}
+.xp-row.you .xp-marks span.goal{background:#7fd3b6;color:#0e2e26;border-color:#7fd3b6;font-weight:700}
+/* 06 · направления строками, как список результатов: слева номер и обещание, справа доказательство */
+.prow2s{border-top:1px solid var(--line2)}
+.prow2{display:grid;gap:10px;padding:22px 0;border-bottom:1px solid var(--line2)}
+@media(min-width:900px){.prow2{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;padding:34px 0}}
+.pr-n{display:block;margin-bottom:10px;font:600 12px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.prow2 h3{margin:0;font-size:clamp(22px,3vw,30px);line-height:1.2;letter-spacing:-.02em}
+.pr-r p{margin:0;font-size:16px;line-height:1.6;color:var(--ink2)}
+.pr-r .pr-big{margin-bottom:8px;color:var(--ink);font-size:16px}
+.pr-r .pr-big b{font:700 clamp(24px,3vw,30px)/1 var(--m);color:var(--acc);letter-spacing:-.02em;margin-right:6px}
+.done .prow2s + .cap{margin-top:14px}
