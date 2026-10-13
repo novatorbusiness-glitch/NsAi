@@ -989,3 +989,9 @@ footer .fmark{display:block;height:24px;width:auto;margin:0 0 16px}
 .scard p{margin:0;font-size:15.5px;line-height:1.6;color:var(--ink2)}
 .scard .punch{color:var(--ink);font-weight:600;padding-left:12px;border-left:2px solid var(--acc);margin-top:2px}
 .scard .src{font:500 11.5px/1.45 var(--m);color:var(--mut);margin-top:auto;padding-top:4px}
+.more-link{margin:22px 0 0;font-weight:600}
+/* цитата-басня */
+.fable{margin:32px 0 0;max-width:640px}
+.fable blockquote{margin:0;font-size:clamp(20px,2.6vw,25px);line-height:1.35;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.fable figcaption{margin-top:10px;font:500 12.5px/1.4 var(--m);color:var(--mut)}
+.fable + .closing{margin-top:20px}

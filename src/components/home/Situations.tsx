@@ -1,5 +1,6 @@
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
+import Fable from "@/components/ui/Fable";
 
 // 01 · ситуация (вопрос собственника «это про меня?»): четыре истории, в каждой — во что это обходится.
 export default function Situations() {
@@ -18,6 +19,7 @@ export default function Situations() {
 						</div>
 					))}
 				</div>
+				<Fable q={c.fable.q} src={c.fable.src} />
 				<p className="closing">{c.closing}</p>
 			</div>
 		</section>
