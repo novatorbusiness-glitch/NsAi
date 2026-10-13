@@ -1001,3 +1001,9 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .cmp .card h3,.cmp .card p{margin:0}
 .cmp .punch{margin-top:auto !important;padding:10px 0 0 12px;border-left:2px solid #7fd3b6;color:var(--dark-ink);font-weight:600;font-size:15.5px;line-height:1.5}
 .cmp .card:not(.me) .punch{border-left-color:#4b5257}
+@media(max-width:699px){
+  .bars .bar-row{display:grid !important;grid-template-columns:1fr auto;grid-template-areas:"bn b" "bt bt";gap:6px 12px;align-items:baseline;margin:12px 0 0}
+  .bars .bar-row .bn{grid-area:bn}.bars .bar-row b{grid-area:b}.bars .bar-row .bt{grid-area:bt;width:100%}
+  .cmp .card{padding:16px 18px;gap:6px}
+  .cmp .punch{padding-top:8px;font-size:15px}
+}
