@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пролог. Манифест Архитектора — Нейро-воронка</title>
+<meta name="description" content="86 миллиардов нейронов. 200 000 лет эволюции. Одна точка, в которой правила игры меняются навсегда.">
+<link href="/fonts/fonts.css" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#ffffff;--bg2:#f6f7f6;--bgc:#ffffff;--bgc2:#f6f7f6;--br:#e3e6e4;--br2:#cfd4d1;--t:#15181a;--t2:#4b5257;--t3:#8a9196;--a:#B07800;--ad:rgba(201,138,0,.08);--red:#c62828;--metal:linear-gradient(135deg,#15181a 0%,#2c3236 50%,#15181a 100%);--fd:'Manrope',sans-serif;--fs:'Manrope',sans-serif;--fm:'JetBrains Mono',monospace;--ease:cubic-bezier(.16,1,.3,1);--max:760px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font-family:var(--fs);font-size:18px;line-height:1.8;overflow-x:hidden}
+@media(pointer:fine){body{cursor:none}}
+#cd,#cr{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
+@media(pointer:fine){#cd,#cr{display:block}}
+#cd{width:5px;height:5px;background:var(--a);border-radius:50%}
+#cr{z-index:9998;width:28px;height:28px;border:1px solid rgba(201,138,0,.35);border-radius:50%;transition:width .3s var(--ease),height .3s var(--ease)}
+#cr.ex{width:46px;height:46px;opacity:.3}
+body::before{content:'';position:fixed;inset:0;z-index:8000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--a),rgba(201,138,0,.4));z-index:200;width:0;pointer-events:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;padding:0 2rem;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(21,24,26,.04);transition:all .3s}
+nav.sc{border-color:rgba(21,24,26,.07)}
+.ni{max-width:1100px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--fd);font-size:1.3rem;font-weight:800;letter-spacing:-.03em;text-decoration:none;
+  background:var(--metal);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;flex-shrink:0}
+.nav-chap{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-back{font-family:var(--fd);font-size:.72rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--t2);
+  text-decoration:none;display:flex;align-items:center;gap:.5rem;transition:color .2s;flex-shrink:0;white-space:nowrap}
+.nav-back:hover{color:var(--t)}
+
+/* BASE */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 2rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.32s}
+
+/* SCROLL NAV */
+.scroll-nav{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.45rem;z-index:50}
+@media(max-width:900px){.scroll-nav{display:none}}
+.sn-dot{width:4px;height:4px;border-radius:50%;background:var(--br2);cursor:pointer;transition:background .3s,transform .3s,height .3s}
+.sn-dot.act{background:var(--a);height:20px;border-radius:2px}
+.sn-dot:hover{background:rgba(201,138,0,.5)}
+
+/* HERO */
+#hero{min-height:60vh;display:flex;align-items:flex-end;padding:calc(60px + 5rem) 0 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 30% 0%,rgba(201,138,0,.055),transparent);pointer-events:none}
+.hero-grid{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(201,138,0,.016) 1px,transparent 1px),linear-gradient(90deg,rgba(201,138,0,.016) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,black,transparent 75%)}
+.hero-inner{position:relative;z-index:2;width:100%}
+.chap-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fm);font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--t2);padding:.36rem .88rem;border:1px solid var(--br2);border-radius:999px;
+  margin-bottom:1.75rem;animation:fup .8s var(--ease) both}
+.bd{width:5px;height:5px;background:var(--a);border-radius:50%;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes fup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-h1{font-family:var(--fd);font-size:clamp(2.2rem,5.5vw,4.8rem);font-weight:800;line-height:.97;letter-spacing:-.04em;
+  margin-bottom:1.5rem;animation:fup .9s .1s var(--ease) both}
+.hero-h1 em{font-style:normal;color:var(--a)}
+.hero-sub{font-size:1rem;color:var(--t2);max-width:540px;line-height:1.78;animation:fup 1s .2s var(--ease) both;margin-bottom:2.5rem}
+.hero-meta{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--br);animation:fup 1s .3s var(--ease) both;flex-wrap:wrap}
+.hm-item{font-family:var(--fm);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.hm-item span{display:block;color:var(--t2);margin-top:.2rem;font-size:.68rem;letter-spacing:0;text-transform:none}
+
+/* ARTICLE */
+article{padding:5rem 0 2rem}
+.prose-h2{font-family:var(--fd);font-size:clamp(1.45rem,2.6vw,2rem);font-weight:800;letter-spacing:-.035em;line-height:1.1;
+  color:var(--t);margin:4.5rem 0 1.4rem}
+.prose-p{font-size:1.02rem;color:var(--t2);line-height:1.85;margin-bottom:1.35rem}
+.prose-p strong{color:var(--t);font-weight:600}
+hr.div{border:none;border-top:1px solid var(--br);margin:3.5rem 0}
+
+/* SKULL STATS */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0}
+@media(max-width:500px){.stat-row{grid-template-columns:1fr}}
+.stat-card{background:var(--bgc);border:1px solid var(--br);border-radius:12px;padding:1.6rem 1.4rem;text-align:center}
+.stat-val{font-family:var(--fd);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--a);line-height:1;margin-bottom:.5rem}
+.stat-lbl{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3)}
+
+/* HIGHLIGHT QUOTE */
+.hq{border-left:3px solid var(--a);padding:1.2rem 1.6rem;background:var(--ad);border-radius:0 8px 8px 0;margin:2rem 0}
+.hq p{font-size:.98rem;color:var(--t);line-height:1.75;margin:0}
+
+/* EPOCHS — light section */
+.epochs-section{background:#f6f7f6;padding:5rem 0;margin:0}
+.ep-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#8B7355;margin-bottom:.8rem}
+.ep-h2{font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:#15181a;margin-bottom:1.5rem}
+.ep-intro{font-family:'Manrope',sans-serif;font-size:1rem;color:#4a3f35;line-height:1.8;margin-bottom:2.5rem;max-width:600px}
+.epoch-list{display:flex;flex-direction:column;gap:0;position:relative}
+.epoch-list::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#c8b89a,#3a2e1e)}
+@media(max-width:600px){.epoch-list::before{left:18px}}
+.ep-item{display:flex;gap:2rem;padding:2rem 0;align-items:flex-start}
+@media(max-width:600px){.ep-item{gap:1.2rem}}
+.ep-dot{flex-shrink:0;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Manrope',sans-serif;font-weight:800;font-size:1.1rem;z-index:1;position:relative}
+@media(max-width:600px){.ep-dot{width:36px;height:36px;font-size:.85rem}}
+.ep-dot.e1{background:#c8b89a;color:#3a2e1e}
+.ep-dot.e2{background:#6b5b45;color:#15181a}
+.ep-dot.e3{background:#f6f7f6;color:#B07800}
+.ep-body{}
+.ep-tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#8B7355;margin-bottom:.4rem}
+.ep-name{font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:800;color:#15181a;margin-bottom:.6rem}
+.ep-text{font-family:'Manrope',sans-serif;font-size:.9rem;color:#4a3f35;line-height:1.75}
+.ep-note{background:rgba(139,115,85,.1);border-left:3px solid #8B7355;padding:.75rem 1rem;margin-top:.75rem;font-family:'Manrope',sans-serif;font-size:.85rem;color:#4a3f35}
+
+/* TRANCE SECTION — very dark */
+.trance-section{background:#f6f7f6;padding:5rem 0;margin:0}
+.tr-eyebrow{font-family:var(--fm);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(201,138,0,.6);margin-bottom:.8rem}
+.tr-h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:var(--t);margin-bottom:1.5rem}
+.trance-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+@media(max-width:580px){.trance-cards{grid-template-columns:1fr}}
+.tc{border:1px solid #e3e6e4;border-radius:12px;padding:1.6rem 1.4rem;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.tc1::before{background:linear-gradient(90deg,#cfd4d1,#4a4a4a)}
+.tc2::before{background:linear-gradient(90deg,rgba(201,138,0,.3),rgba(201,138,0,.7))}
+.tc3::before{background:linear-gradient(90deg,#f6f7f6,#cfd4d1)}
+.tc-ico{font-size:1.5rem;margin-bottom:.8rem}
+.tc-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);margin-bottom:.5rem}
+.tc-text{font-size:.82rem;color:rgba(21,24,26,.5);line-height:1.65}
+.trance-block{background:#ffffff;border:1px solid #f6f7f6;border-radius:12px;padding:2rem;margin:2rem 0}
+.trance-block .prose-p{color:rgba(21,24,26,.7)}
+
+/* SALIENCE */
+.sn-vis{background:var(--bgc);border:1px solid var(--br);border-radius:16px;padding:2rem;margin:2rem 0}
+.sn-label{font-family:var(--fm);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-bottom:1rem}
+.sn-nodes{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.2rem}
+.sn-node{display:flex;align-items:center;gap:.5rem;background:var(--bg);border:1px solid var(--br2);border-radius:999px;padding:.5rem .9rem;font-family:var(--fm);font-size:.65rem;color:var(--t2)}
+.sn-node.hot{border-color:var(--a);color:var(--a);background:var(--ad)}
+.sn-nd{width:6px;height:6px;border-radius:50%;background:var(--br2);flex-shrink:0}
+.sn-node.hot .sn-nd{background:var(--a);box-shadow:0 0 6px rgba(201,138,0,.5)}
+
+/* INSIGHT */
+.insight{background:var(--ad);border:1px solid rgba(201,138,0,.18);border-radius:14px;padding:2rem;margin:3.5rem 0}
+.insight p{font-size:1rem;line-height:1.8;color:var(--t)}
+.insight strong{color:var(--a)}
+.insight-tag{font-family:var(--fm);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,138,0,.5);margin-top:1rem}
+
+/* PAIN GRID */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2rem 0}
+@media(max-width:500px){.pain-grid{grid-template-columns:1fr}}
+.pain-card{background:var(--bgc);border:1px solid var(--br);border-left:3px solid rgba(255,100,60,.4);border-radius:10px;padding:1.4rem 1.2rem}
+.pain-card p{font-size:.9rem;color:var(--t2);line-height:1.7}
+.pain-card strong{color:#e8a070;font-family:var(--fd);font-weight:700}
+
+/* BLUEPRINT */
+.blueprint{background:var(--ad);border:1px solid rgba(201,138,0,.18);border-radius:14px;padding:2rem;margin:2rem 0}
+.blueprint-title{font-family:var(--fd);font-size:1.1rem;font-weight:800;color:var(--a);margin-bottom:1rem}
+.blueprint p{font-size:.98rem;color:rgba(21,24,26,.8);line-height:1.8;margin-bottom:.8rem}
+.blueprint p:last-child{margin-bottom:0}
+
+/* LANG — light section */
+.lang-section{background:#f6f7f6;padding:5rem 0;margin:0}
+.lang-section .ep-eyebrow{color:#8B7355}
+.lang-section .ep-h2{color:#15181a}
+.vocab-list{display:flex;flex-direction:column;gap:0;margin:2.5rem 0}
+.vocab-item{display:grid;grid-template-columns:1fr 24px 1fr;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(139,115,85,.15)}
+@media(max-width:500px){.vocab-item{grid-template-columns:1fr;gap:.3rem}}
+.vocab-before{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#8B7355;text-decoration:line-through}
+.vocab-arrow{display:flex;align-items:center;justify-content:center;color:#c8b89a;font-size:1rem}
+@media(max-width:500px){.vocab-arrow{display:none}}
+.vocab-after{font-family:'Manrope',sans-serif;font-size:.88rem;font-weight:700;color:#15181a}
+.lang-close{background:#f6f7f6;border-radius:12px;padding:2rem;margin-top:2.5rem}
+.lang-close p{font-family:'Manrope',sans-serif;font-size:.98rem;color:rgba(21,24,26,.75);line-height:1.8;margin-bottom:.8rem}
+.lang-close p:last-child{margin-bottom:0;font-family:'Manrope',sans-serif;font-size:1.1rem;font-weight:800;color:#B07800}
+
+/* CHAPTER NAV */
+.chapter-nav{margin-top:5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.chapter-nav{grid-template-columns:1fr}}
+.cn-btn{padding:1.5rem;border:1px solid var(--br);border-radius:12px;text-decoration:none;background:var(--bgc);
+  transition:border-color .25s,background .25s,transform .3s var(--ease);display:block}
+.cn-btn:hover{border-color:rgba(201,138,0,.3);background:var(--bgc2);transform:translateY(-3px)}
+.cn-btn.next{border-color:rgba(201,138,0,.2);background:var(--ad)}
+.cn-btn.next:hover{border-color:rgba(201,138,0,.5)}
+.cn-dir{font-family:var(--fm);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:.5rem}
+.cn-btn.next .cn-dir{color:var(--a);opacity:.8}
+.cn-title{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--t);line-height:1.3}
+
+/* TELEGRAM CTA */
+.tg-cta{margin:3rem 0;padding:2.5rem 2rem;background:var(--a);border-radius:16px;text-align:center;position:relative;overflow:hidden}
+.tg-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 0%,rgba(21,24,26,.25),transparent);pointer-events:none}
+.tg-cta-icon{font-size:2.4rem;margin-bottom:.9rem;position:relative}
+.tg-cta-title{font-family:var(--fd);font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.03em;color:#ffffff;line-height:1.15;max-width:560px;margin:0 auto .7rem;position:relative}
+.tg-cta-text{font-family:var(--fs);font-size:.95rem;color:rgba(21,24,26,.08);line-height:1.7;max-width:480px;margin:0 auto 1.5rem;position:relative}
+.tg-cta-btn{display:inline-block;background:#ffffff;color:var(--a);font-family:var(--fd);font-weight:700;font-size:.9rem;text-decoration:none;padding:.95rem 2rem;border-radius:10px;transition:transform .25s var(--ease),opacity .25s;position:relative}
+.tg-cta-btn:hover{transform:translateY(-2px);opacity:.92}
+/* TELEGRAM SUBSCRIBE (compact) */
+.tg-sub{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;margin-top:1.5rem;padding:1.5rem 1.75rem;background:var(--bgc);border:1px solid rgba(201,138,0,.22);border-radius:12px}
+.tg-sub-title{font-family:var(--fd);font-size:1.02rem;font-weight:700;color:var(--t);margin-bottom:.3rem}
+.tg-sub-text{font-family:var(--fs);font-size:.84rem;color:var(--t2);line-height:1.6}
+.tg-sub-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--a);color:#ffffff;font-family:var(--fd);font-weight:700;font-size:.82rem;text-decoration:none;padding:.7rem 1.35rem;border-radius:9px;transition:transform .25s var(--ease),opacity .25s;white-space:nowrap}
+.tg-sub-btn:hover{transform:translateY(-2px);opacity:.92}
+
+</style>
+<style>
+.nz-viz{margin:2.6rem 0;padding:1rem;background:#ffffff;border:1px solid #e3e6e4;border-radius:16px;box-shadow:0 14px 34px rgba(21,24,26,.08)}
+.nz-viz svg{width:100%;height:auto;display:block;border-radius:10px}
+.nz-viz .vz-card{transition:transform .35s cubic-bezier(.16,1,.3,1),filter .35s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-card:hover{transform:translateY(-5px);filter:drop-shadow(0 12px 20px rgba(201,138,0,.16))}
+.nz-viz .vz-bar{transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-bar:hover{transform:translateX(8px)}
+.nz-viz .vz-dot{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.nz-viz .vz-dot:hover{transform:scale(1.22);transform-origin:center}
+@media (max-width:640px){.nz-viz{padding:.6rem;border-radius:12px}}
+</style><style>body{cursor:auto!important}#cd,#cr{display:none!important}a,button,summary{cursor:pointer!important}</style>
+<style>body::before{display:none!important}.rv{opacity:1!important;transform:none!important;transition:none!important}html{scroll-behavior:auto!important;overflow-x:clip}body{font-size:18px;line-height:1.7;background:#fff;color:#15181a;overflow-x:clip}@media(max-width:480px){.silence-vis{grid-template-columns:1fr!important}nav,.chapter-nav{max-width:100%;box-sizing:border-box}}.prose-p{font-size:18px!important;line-height:1.7!important;color:#2c3236!important}*,*::before,*::after{animation-duration:0s!important;animation-delay:0s!important}.hero-h1,.hero-h1 *{background:none!important;-webkit-text-fill-color:#15181a!important;color:#15181a!important}.pivot-title,.cc-title{color:#15181a!important}.tg-cta{background:#e8f3ef!important}.tg-cta::before{display:none!important}.tg-cta-title{color:#15181a!important}.tg-cta-text{color:#4b5257!important}.tg-cta-btn{background:#0F6E56!important;color:#fff!important}.nz-viz{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important}</style><script>try{history.scrollRestoration="manual"}catch(e){}addEventListener("load",function(){if(!location.hash)scrollTo(0,0);document.querySelectorAll("[data-fill]").forEach(function(b){b.style.width=b.dataset.fill+"%"});document.querySelectorAll(".ladder-fill").forEach(function(b){b.style.width=b.dataset.w+"%"});document.querySelectorAll(".rv").forEach(function(e){e.classList.add("on")})});</script>
+</head>
+<body>
+<div id="cd"></div>
+<div id="cr"></div>
+<div id="prog"></div>
+
+<nav id="nav">
+  <div class="ni">
+    <a href="/" class="logo">Илья Новицкий</a>
+    <span class="nav-chap">Пролог · Манифест Архитектора</span>
+    <a href="/book" class="nav-back">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11 6.5H2M5.5 3L2 6.5l3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      К главам
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="chap-badge"><span class="bd"></span>Пролог · Манифест Архитектора · 10 мин чтения</div>
+    <h1 class="hero-h1">Точка<br><em>перехода</em></h1>
+    <p class="hero-sub">86 миллиардов нейронов. 200 000 лет эволюции. Одна точка, в которой правила игры меняются навсегда.</p>
+    <div class="hero-meta">
+      <div class="hm-item">Охват<span>Вся книга</span></div>
+      <div class="hm-item">Формат<span>Манифест</span></div>
+      <div class="hm-item">Разделов<span>6</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 200 000 ЛЕТ -->
+<article id="skull">
+  <div class="wrap">
+  <!-- NZ-PANEL:start -->
+<div class="rv d1" style="margin:0 0 3rem">
+<svg class="nz-viz-svg nzz2" viewBox="0 0 1600 900" role="img" aria-label="Три эпохи обмена информацией и фильтр внимания" style="width:100%;height:auto;display:block;border-radius:14px;border:1px solid #e3e6e4;background:#f6f7f6">
+  <defs>
+    <linearGradient id="nzz2-pg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6f7f6"/>
+    </linearGradient>
+    <pattern id="nzz2-gr" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" fill="none" stroke="rgba(201,138,0,.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <style>
+svg.nzz2 .nz-seq{opacity:0;animation:nzz2seq 9s linear infinite}
+@keyframes nzz2seq{0%{opacity:0}5%{opacity:.9}16%{opacity:0}100%{opacity:0}}
+svg.nzz2 .nz-pulse{animation:nzz2pl 3.6s ease-in-out infinite}
+@keyframes nzz2pl{0%,100%{opacity:.45}50%{opacity:1}}
+svg.nzz2 .nz-run{animation:nzz2run 5.4s linear infinite}
+@keyframes nzz2run{0%{transform:translateX(0);opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateX(940px);opacity:0}}
+@media (prefers-reduced-motion:reduce){svg.nzz2 *{animation:none!important}svg.nzz2 .nz-seq{opacity:0}svg.nzz2 .nz-pulse{opacity:1}}
+</style>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#nzz2-pg)" stroke="#e3e6e4"/>
+  <rect x="20" y="20" width="1560" height="860" rx="28" fill="url(#nzz2-gr)" opacity=".6"/>
+  <rect x="80" y="66" width="480" height="44" rx="22" fill="rgba(201,138,0,.14)" stroke="rgba(201,138,0,.35)" stroke-width="1" class="nzz2-bdg"/>
+  <text x="320.0" y="94" font-family="'JetBrains Mono',monospace" font-size="20" text-anchor="middle" letter-spacing="2" fill="#B07800">ПРОЛОГ · МАНИФЕСТ АРХИТЕКТОРА</text>
+  <text x="80" y="196" font-family="'Manrope',sans-serif" font-size="62" font-weight="800" letter-spacing="-1" fill="#15181a">ОТ КОСТРА ДО СМАРТФОНА</text>
+  <text x="84" y="248" font-family="'JetBrains Mono',monospace" font-size="24" letter-spacing="1" fill="#6b7378">три сдвига в обмене информацией · и фильтр, который вырос вместе с ними</text>
+  <line x1="330" y1="430" x2="1270" y2="430" stroke="rgba(201,138,0,.35)" stroke-width="3"/>
+  <g style="transform:translateX(330px)"><circle class="nz-run" cx="0" cy="430" r="9" fill="#B07800"/></g>
+  <text x="330" y="352" font-family="'Manrope',sans-serif" font-size="28" text-anchor="middle" font-weight="800" fill="#15181a">УСТНАЯ ЭПОХА</text>
+  <text x="330" y="386" font-family="'JetBrains Mono',monospace" font-size="17" text-anchor="middle" letter-spacing="1" fill="#8a5e00">I · ДЕСЯТКИ ТЫСЯЧ ЛЕТ</text>
+  <circle class="nz-pulse" cx="330" cy="430" r="16" fill="#B07800" style="animation-delay:0.0s"/>
+  <text x="330" y="488" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">живой голос у костра —</text>
+  <text x="330" y="516" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">прямо в лимбическую систему</text>
+  <text x="330" y="554" font-family="'JetBrains Mono',monospace" font-size="16" text-anchor="middle" fill="#8a5e00">доверие рождалось мгновенно</text>
+  <text x="800" y="352" font-family="'Manrope',sans-serif" font-size="28" text-anchor="middle" font-weight="800" fill="#15181a">ПЕЧАТНАЯ ЭПОХА</text>
+  <text x="800" y="386" font-family="'JetBrains Mono',monospace" font-size="17" text-anchor="middle" letter-spacing="1" fill="#8a5e00">II · ~500 ЛЕТ НАЗАД</text>
+  <circle class="nz-pulse" cx="800" cy="430" r="16" fill="#B07800" style="animation-delay:0.8s"/>
+  <text x="800" y="488" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">текст масштабирует идею,</text>
+  <text x="800" y="516" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">но теряет её эмоцию</text>
+  <text x="800" y="554" font-family="'JetBrains Mono',monospace" font-size="16" text-anchor="middle" fill="#8a5e00">доверие через авторитет</text>
+  <text x="1270" y="352" font-family="'Manrope',sans-serif" font-size="28" text-anchor="middle" font-weight="800" fill="#B07800">ЦИФРОВАЯ ЭПОХА</text>
+  <text x="1270" y="386" font-family="'JetBrains Mono',monospace" font-size="17" text-anchor="middle" letter-spacing="1" fill="#8a5e00">III · СЕГОДНЯ</text>
+  <circle class="nz-pulse" cx="1270" cy="430" r="16" fill="#B07800" style="animation-delay:1.6s"/>
+  <text x="1270" y="488" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">шума больше, чем мозг</text>
+  <text x="1270" y="516" font-family="'Manrope',sans-serif" font-size="20" text-anchor="middle" fill="#4b5257">успевает обрабатывать</text>
+  <text x="1270" y="554" font-family="'JetBrains Mono',monospace" font-size="16" text-anchor="middle" fill="#8a5e00">механизм доверия сломался</text>
+  <text x="80" y="620" font-family="'JetBrains Mono',monospace" font-size="19" letter-spacing="1" fill="#6b7378">мозг фильтрует поток: серое тонет в DMN · жёлтое включает Salience Network</text>
+  <rect x="80" y="648" width="345" height="62" rx="14" fill="#f6f7f6" stroke="#cfd4d1" stroke-width="1"/>
+  <text x="96" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#8a9196">✕</text>
+  <text x="126" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#6b7378">скидка 20%</text>
+  <rect x="445" y="648" width="345" height="62" rx="14" fill="#f6f7f6" stroke="#cfd4d1" stroke-width="1"/>
+  <text x="461" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#8a9196">✕</text>
+  <text x="491" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#6b7378">красивый дизайн</text>
+  <rect x="810" y="648" width="345" height="62" rx="14" fill="#f6f7f6" stroke="#cfd4d1" stroke-width="1"/>
+  <text x="826" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#8a9196">✕</text>
+  <text x="856" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#6b7378">характеристики</text>
+  <rect x="1175" y="648" width="345" height="62" rx="14" fill="#f6f7f6" stroke="#cfd4d1" stroke-width="1"/>
+  <text x="1191" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#8a9196">✕</text>
+  <text x="1221" y="688" font-family="'JetBrains Mono',monospace" font-size="18" fill="#6b7378">длинный текст</text>
+  <rect x="80" y="726" width="345" height="62" rx="14" fill="rgba(201,138,0,.10)" stroke="rgba(201,138,0,.35)" stroke-width="1"/>
+  <text x="96" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#B07800">✓</text>
+  <text x="126" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#15181a">угроза упустить</text>
+  <rect class="nz-seq" x="80" y="726" width="345" height="62" rx="14" fill="none" stroke="#B07800" stroke-width="2" style="animation-delay:0.00s"/>
+  <rect x="445" y="726" width="345" height="62" rx="14" fill="rgba(201,138,0,.10)" stroke="rgba(201,138,0,.35)" stroke-width="1"/>
+  <text x="461" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#B07800">✓</text>
+  <text x="491" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#15181a">история такого же</text>
+  <rect class="nz-seq" x="445" y="726" width="345" height="62" rx="14" fill="none" stroke="#B07800" stroke-width="2" style="animation-delay:0.62s"/>
+  <rect x="810" y="726" width="345" height="62" rx="14" fill="rgba(201,138,0,.10)" stroke="rgba(201,138,0,.35)" stroke-width="1"/>
+  <text x="826" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#B07800">✓</text>
+  <text x="856" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#15181a">социальный статус</text>
+  <rect class="nz-seq" x="810" y="726" width="345" height="62" rx="14" fill="none" stroke="#B07800" stroke-width="2" style="animation-delay:1.24s"/>
+  <rect x="1175" y="726" width="345" height="62" rx="14" fill="rgba(201,138,0,.10)" stroke="rgba(201,138,0,.35)" stroke-width="1"/>
+  <text x="1191" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#B07800">✓</text>
+  <text x="1221" y="766" font-family="'JetBrains Mono',monospace" font-size="18" fill="#15181a">новизна + любопытство</text>
+  <rect class="nz-seq" x="1175" y="726" width="345" height="62" rx="14" fill="none" stroke="#B07800" stroke-width="2" style="animation-delay:1.86s"/>
+  <text x="80" y="864" font-family="'JetBrains Mono',monospace" font-size="18" letter-spacing="1" fill="#8a9196">работают не самые громкие сигналы, а самые точные</text>
+</svg>
+<div style="font-family:var(--fm);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--t2);text-align:center;margin-top:.85rem">От костра до смартфона — три эпохи и фильтр внимания</div>
+</div>
+<!-- NZ-PANEL:end -->
+
+    <div class="hq rv"><p><strong>Ты держишь в руках не мотивационный текст.</strong> Это чертёж выхода из игры, где фишками становятся время и деньги. Мы будем собирать систему с математической предсказуемостью — потому что она опирается на то, что не менялось последние пятьдесят тысяч лет.</p></div>
+
+    <h2 class="prose-h2 rv">Двести тысяч лет в одном черепе</h2>
+
+    <div class="stat-row rv">
+      <div class="stat-card"><div class="stat-val">86B</div><div class="stat-lbl">нейронов в мозге</div></div>
+      <div class="stat-card"><div class="stat-val">200K</div><div class="stat-lbl">лет эволюции</div></div>
+      <div class="stat-card"><div class="stat-val">~50K</div><div class="stat-lbl">лет без изменений</div></div>
+    </div>
+
+    <p class="prose-p rv">Двести тысяч лет назад на африканской саванне произошло событие, изменившее ход эволюции. Мозг Homo sapiens — биологическая сеть из 86 миллиардов нейронов — совершил скачок и научился создавать абстрактные модели будущего. Наш неокортекс стал самым совершенным вычислительным устройством на планете и одновременно превратился в нашу главную маркетинговую проблему.</p>
+    <p class="prose-p rv">Мозг научился выживать за счёт <strong>предиктивного кодирования</strong>. Он не просто реагирует на мир — он постоянно старается его предсказать, чтобы экономить энергию. При этом базовые механизмы выживания, оценки угрозы, значимости и вознаграждения меняются гораздо медленнее, чем среда вокруг.</p>
+    <p class="prose-p rv">Именно поэтому человек XXI века по-прежнему приносит в цифровой мир древние контуры внимания, тревоги, статуса и любопытства. Ты продаёшь продукт через экран смартфона, а мозг покупателя всё ещё оценивает ситуацию по алгоритмам саванны.</p>
+  </div>
+</article>
+
+<!-- ТРИ ЭПОХИ — light -->
+<div class="epochs-section" id="epochs">
+  <div class="wrap">
+    <div class="ep-eyebrow rv">Пролог / II</div>
+    <h2 class="ep-h2 rv">От костра до смартфона:<br>как ломался механизм доверия</h2>
+    <p class="ep-intro rv">Человечество прошло через три сдвига в обмене информацией — и каждый безвозвратно менял правила влияния.</p>
+    <div class="epoch-list rv">
+      <div class="ep-item">
+        <div class="ep-dot e1">I</div>
+        <div class="ep-body">
+          <div class="ep-tag">Десятки тысяч лет</div>
+          <div class="ep-name">Устная эпоха</div>
+          <p class="ep-text">Единственный канал — живой голос. Рассказчик у костра безраздельно владел вниманием племени. Мимика, интонации и паузы попадали напрямую в лимбическую систему.</p>
+          <div class="ep-note">Доверие рождалось почти мгновенно — через присутствие и эмоцию.</div>
+        </div>
+      </div>
+      <div class="ep-item">
+        <div class="ep-dot e2">II</div>
+        <div class="ep-body">
+          <div class="ep-tag">~500 лет назад</div>
+          <div class="ep-name">Печатная эпоха</div>
+          <p class="ep-text">Текст позволил масштабировать идеи, но лишил их эмоциональной плотности. Доверие стало формироваться медленнее — через авторитет издательства, повторные касания и социальное доказательство.</p>
+          <div class="ep-note">Влияние масштабировалось, но глубина контакта снизилась.</div>
+        </div>
+      </div>
+      <div class="ep-item">
+        <div class="ep-dot e3">III</div>
+        <div class="ep-body">
+          <div class="ep-tag">Сегодня</div>
+          <div class="ep-name">Цифровая эпоха</div>
+          <p class="ep-text">Здесь прежний механизм сломался. Объём информации, который современный человек потребляет за сутки, превышает то, что житель XV века получал за всю жизнь. Мозг не успел адаптироваться.</p>
+          <div class="ep-note" style="background:rgba(0,0,0,.06);border-color:#f6f7f6;color:#3a3430">Защитные механизмы включились на максимум. Теперь они фильтруют не хищников в траве, а рекламные баннеры.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦИФРОВОЙ ТРАНС — very dark -->
+<div class="trance-section" id="trance">
+  <div class="wrap">
+    <div class="tr-eyebrow rv">Пролог / III</div>
+    <h2 class="tr-h2 rv">Великий фильтр и цифровой транс</h2>
+    <div class="trance-cards rv">
+      <div class="tc tc1">
+        <div class="tc-ico">🌀</div>
+        <div class="tc-title">DMN активен</div>
+        <p class="tc-text">Default Mode Network — режим пассивной работы мозга. Внимание рассеяно, энергия экономится. Здесь находится клиент, пока скроллит ленту.</p>
+      </div>
+      <div class="tc tc2">
+        <div class="tc-ico">⚡</div>
+        <div class="tc-title">Нужен точный сигнал</div>
+        <p class="tc-text">Сигнал, который мозг сам пометит как «важное» — без давления. Иначе человек просто не входит в контакт достаточно глубоко.</p>
+      </div>
+      <div class="tc tc3">
+        <div class="tc-ico">🔇</div>
+        <div class="tc-title">Баннерная слепота</div>
+        <p class="tc-text">Визуальный шум обесценил эстетику до уровня фона. Красивый дизайн сам по себе давно перестал спасать ситуацию.</p>
+      </div>
+    </div>
+    <div class="trance-block rv">
+      <p class="prose-p">Сегодня твой клиент живёт в состоянии информационного транса. Листая ленту, он часто находится во власти DMN. Пытаться продать сложный продукт человеку в таком режиме почти бесполезно.</p>
+      <p class="prose-p" style="margin-bottom:0">Он не отказывает тебе осознанно. <strong>Он просто не входит в контакт достаточно глубоко.</strong> Громкий крик не работает. Рациональные аргументы тоже.</p>
+    </div>
+  </div>
+</div>
+
+<!-- НЕЙРОХИМИЯ -->
+<article id="salience">
+  <div class="wrap">
+    <h2 class="prose-h2 rv">Нейрохимия продаж<br>и новый код доступа</h2>
+    <div class="sn-vis rv">
+      <div class="sn-label">Сигналы, которые обрабатывает мозг — жёлтые активируют Salience Network</div>
+      <div class="sn-nodes">
+        <div class="sn-node"><div class="sn-nd"></div>скидка 20%</div>
+        <div class="sn-node hot"><div class="sn-nd"></div>угроза упустить</div>
+        <div class="sn-node"><div class="sn-nd"></div>красивый дизайн</div>
+        <div class="sn-node hot"><div class="sn-nd"></div>история такого же</div>
+        <div class="sn-node"><div class="sn-nd"></div>характеристики</div>
+        <div class="sn-node hot"><div class="sn-nd"></div>социальный статус</div>
+        <div class="sn-node"><div class="sn-nd"></div>длинный текст</div>
+        <div class="sn-node hot"><div class="sn-nd"></div>новизна + любопытство</div>
+      </div>
+    </div>
+    <p class="prose-p rv">Чтобы пробить барьер DMN, нужно активировать <strong>Salience Network</strong> — сеть выявления значимости, которая выхватывает из шума то, что мозг помечает как важное. Работают не самые громкие сигналы, а самые точные.</p>
+    <div class="insight rv">
+      <p>Забудь про классические «продажи». Мы будем проектировать системы, которые проходят сквозь защитные фильтры <strong>не силой, а точностью</strong>. Эмоциональная оценка почти всегда возникает раньше, чем человек успевает рационально объяснить собственный выбор. Тот, кто понимает механику восприятия, начинает работать глубже — на уровне значимости, доверия и правильной последовательности касаний.</p>
+      <div class="insight-tag">→ Salience Network · DMN · предиктивное кодирование</div>
+    </div>
+  </div>
+</article>
+
+<!-- ТОЧКА ПЕРЕХОДА -->
+<article id="transition" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="prose-h2 rv">Точка перехода</h2>
+    <div class="pain-grid rv">
+      <div class="pain-card"><p><strong>Открываешь рекламный кабинет</strong> — смотришь на цифры и не можешь понять, почему вчера работало, а сегодня нет.</p></div>
+      <div class="pain-card"><p><strong>Меняешь креативы, переписываешь тексты</strong>, нанимаешь очередного специалиста — но не отпускает холодное ощущение потери контроля.</p></div>
+      <div class="pain-card"><p><strong>Строишь на надежде</strong> — на алгоритмы соцсетей, на настроение менеджера, на то, что клиент сам догадается о ценности продукта.</p></div>
+      <div class="pain-card"><p><strong>Игра в угадайку</strong>, где фишками становятся твоё время и деньги. Нет системы — есть только ожидание следующего цикла.</p></div>
+    </div>
+    <div class="blueprint rv">
+      <div class="blueprint-title">Чертёж выхода</div>
+      <p>Мы будем собирать нейро-воронку — механизм, который работает с математической предсказуемостью не потому, что следует актуальным трендам, а потому что опирается на то, что не менялось последние пятьдесят тысяч лет.</p>
+      <p>Инструменты меняются каждый сезон, а нейробиология клиента и механизмы принятия решений остаются неизменными. Поняв этот код, ты сможешь продавать системно.</p>
+    </div>
+  </div>
+</article>
+
+<!-- ЯЗЫК АРХИТЕКТОРА — light -->
+<div class="lang-section" id="lang">
+  <div class="wrap">
+    <div class="ep-eyebrow rv">Пролог / VI</div>
+    <h2 class="ep-h2 rv">Язык Архитектора</h2>
+    <p class="ep-intro rv">Мы работаем на стыке прикладной нейробиологии, поведенческой психологии и системной инженерии. Называем вещи точно — без расплывчатых формулировок и маркетингового тумана.</p>
+    <div class="vocab-list rv">
+      <div class="vocab-item">
+        <div class="vocab-before">красивый дизайн</div>
+        <div class="vocab-arrow">→</div>
+        <div class="vocab-after">визуальные стимулы, проходящие сквозь когнитивные фильтры</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-before">продающий текст</div>
+        <div class="vocab-arrow">→</div>
+        <div class="vocab-after">смысловая конструкция, говорящая с лимбической системой</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-before">автоворонка</div>
+        <div class="vocab-arrow">→</div>
+        <div class="vocab-after">система навигации клиента из точки А в точку Б</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-before">хаотичные рассылки</div>
+        <div class="vocab-arrow">→</div>
+        <div class="vocab-after">несущие конструкции воронки с AI-ассистентами</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-before">инструмент давления</div>
+        <div class="vocab-arrow">→</div>
+        <div class="vocab-after">инженерное решение, бережно ведущее человека</div>
+      </div>
+    </div>
+    <div class="lang-close rv">
+      <p>Языковая среда определяет мышление. Как только начнёшь называть автоворонку «системой навигации клиента» — подход изменится. В конце каждой главы есть <strong style="color:#B07800">«Словарь Архитектора»</strong>. Это расшифровка понятий с переводом на язык бизнес-результатов.</p>
+      <p>Пора перестать угадывать и переходить к практике. Начинаем сборку.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER NAV -->
+<article style="padding-top:0;padding-bottom:5rem">
+  <div class="wrap">
+    <div class="chapter-nav rv d1">
+      <a href="/book/00-a-znakomstvo" class="cn-btn">
+        <div class="cn-dir">← Назад</div>
+        <div class="cn-title">Знакомство: об авторе и книге</div>
+      </a>
+      <a href="/book/1-1-kognitivnye-lovushki" class="cn-btn next">
+        <div class="cn-dir">Следующая →</div>
+        <div class="cn-title">1.1 · Пять когнитивных ловушек</div>
+      </a>
+    </div>
+
+  <!-- TELEGRAM SUBSCRIBE -->
+  <div class="tg-sub rv d1">
+    <div class="tg-sub-body">
+      <div class="tg-sub-title">Мой канал в Telegram</div>
+      <div class="tg-sub-text">Короткие заметки по ходу работы и разборы из практики.</div>
+    </div>
+    <a class="tg-sub-btn" href="https://t.me/lowcortisol_ai" target="_blank" rel="noopener">Подписаться →</a>
+  </div>
+
+  </div>
+</article>
+
+<script>
+// CURSOR
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px'});
+  (function loop(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button,.tc,.pain-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cr.classList.add('ex'));
+    el.addEventListener('mouseleave',()=>cr.classList.remove('ex'));
+  });
+}
+// NAV + PROGRESS
+const navEl=document.getElementById('nav'),prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  navEl.classList.toggle('sc',window.scrollY>40);
+  prog.style.width=Math.min(window.scrollY/(document.body.scrollHeight-innerHeight)*100,100)+'%';
+},{passive:true});
+// REVEAL (прогрессивное улучшение: без JS контент виден; fallback добивает неоткрытое)
+document.documentElement.classList.add('js');
+if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(el=>el.classList.add('on'));}
+else{
+  const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.07});
+  document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+  setTimeout(()=>{document.querySelectorAll('.rv:not(.on)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('on')})},1500);
+}
+// SCROLL NAV
+const sections=['hero','skull','epochs','trance','salience','transition','lang'];
+const dots=document.querySelectorAll('.sn-dot');
+dots.forEach((d,i)=>{d.addEventListener('click',()=>{
+  const el=document.getElementById(sections[i]);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+})});
+const sio=new IntersectionObserver(es=>{es.forEach(e=>{
+  if(e.isIntersecting){const idx=sections.indexOf(e.target.id);if(idx>=0)dots.forEach((d,i)=>d.classList.toggle('act',i===idx))}
+})},{threshold:.35});
+sections.forEach(id=>{const el=document.getElementById(id);if(el)sio.observe(el)});
+</script>
+</body>
+</html>
