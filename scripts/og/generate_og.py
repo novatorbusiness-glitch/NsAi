@@ -51,6 +51,7 @@ def wrap(s, fonts, maxw):
     return lines + [cur]
 
 SUBS = json.load(open(f'{ROOT}/content/og.json', encoding='utf-8'))
+MARK = {k: Image.open(f'{ROOT}/public/brand/{k}.png').convert('RGBA') for k in ('n', 'n-white')}  # знак «N с лепестком»
 PHOTO = Image.open(f'{ROOT}/public/images/site/ilya-main.jpg').convert('RGB')
 
 # Статьи — в цвете своей обложки из блога (порядок и темы — src/config/blog.ts, цвета — .c-* в base.css).
@@ -106,8 +107,11 @@ def render(name, title):
     d.rectangle((x, 84, x + 48, 90), fill=acc)
     draw(d, x, 112, kick, mono(22), acc)
     title_block(d, x, 164, title, SUBS.get(name, ''), maxw, ink, subtle, room=H - 164 - 140, sizes=(56, 52, 48, 44, 40) if name == 'home' else (66, 60, 54, 50, 44, 40))
-    draw(d, x, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
-    draw(d, x, H - 76, 'ilya-novitsky.ru · маркетинг, продукт и автоматизация', mono(20), sub)
+    light = ink.lower() in ('#ffffff', '#e9ecea')  # на тёмном/зелёном фоне — белый знак
+    mk = MARK['n-white' if light else 'n']; mh = 46; mk = mk.resize((round(mk.width * mh / mk.height), mh), Image.LANCZOS)
+    im.paste(mk, (x, H - 118), mk); nx = x + mk.width + 14
+    draw(d, nx, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
+    draw(d, nx, H - 76, 'ilya-novitsky.ru · маркетинг, продукт и автоматизация', mono(20), sub)
     im.save(f'{DST}/{name}.jpg', 'JPEG', quality=86, optimize=True)
 
 os.makedirs(DST, exist_ok=True)
@@ -122,7 +126,7 @@ for f in sorted(glob.glob(f'{OUT}/**/*.html', recursive=True)):
     name, title = img.group(1), html.unescape(ttl.group(1))
     if name in seen: continue
     seen.add(name)
-    want = {'title': title, 'sub': SUBS.get(name, '')}
+    want = {'title': title, 'sub': SUBS.get(name, ''), 'brand': 1}
     if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
     render(name, title); man[name] = want; made += 1
 for name in list(man):

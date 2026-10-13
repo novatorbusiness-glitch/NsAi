@@ -914,3 +914,8 @@ section.final:not(.dark) .card{border-color:transparent;box-shadow:0 1px 2px rgb
 .df-list li.df-result.is-done .df-who{color:#7fd3b6}
 .df-list li.df-result.is-done .df-st{color:#0b1a14;background:#5fd38d;border-radius:999px;padding:4px 9px}
 .df-list li.df-result.is-done .df-st::before{content:"● "}
+/* фирменный знак (13.10): значок «N с лепестком» в шапке, полное слово NCAi в подвале */
+.brand{display:inline-flex;align-items:center;gap:9px}
+.brand .bmark{flex:none;width:auto;height:24px}
+@media(min-width:900px){.brand .bmark{height:26px}}
+footer .fmark{display:block;height:24px;width:auto;margin:0 0 16px}
