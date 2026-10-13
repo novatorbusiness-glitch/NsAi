@@ -15,7 +15,6 @@ export default function Situations() {
 							<h3>{k.title}</h3>
 							<p>{k.text}</p>
 							<p className="punch">{k.punch}</p>
-							{"src" in k && <p className="src">{k.src}</p>}
 						</div>
 					))}
 				</div>
