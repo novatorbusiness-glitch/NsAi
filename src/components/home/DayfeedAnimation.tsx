@@ -2,15 +2,23 @@
 import { useEffect } from "react";
 import { home } from "@content/pages/home";
 
-// Лента «что сделано за два дня»: строки по очереди проходят «в работе → готово». Без анимации, если она отключена в системе.
+// Лента «от задачи до продаж»: шаги плавно проходят «в работе → готово», последняя строка — результат,
+// держится дольше, потом лента мягко начинается заново. Без анимации, если она отключена в системе.
+const STEP = 2200; // мс на шаг
+const HOLD = 6000; // сколько держим результат
+
 export default function DayfeedAnimation() {
 	useEffect(() => {
+		const list = document.querySelector<HTMLUListElement>(".df-list");
 		const items = Array.from(document.querySelectorAll<HTMLLIElement>(".df-list li"));
-		if (!items.length) return;
-		const set = (li: HTMLLIElement, s: string) => {
-			li.className = li.className.replace(/\s?(is-run|is-done)/g, "") + (s ? " " + s : "");
+		if (!list || !items.length) return;
+		const f = home.hero.feed;
+		const set = (li: HTMLLIElement, s: "" | "is-run" | "is-done") => {
+			li.classList.remove("is-run", "is-done");
+			if (s) li.classList.add(s);
 			const st = li.querySelector(".df-st");
-			if (st) st.textContent = s === "is-done" ? home.hero.feed.done : home.hero.feed.run;
+			const result = li.classList.contains("df-result");
+			if (st) st.textContent = s === "is-done" ? (result ? f.resultDone : f.done) : s === "is-run" ? f.run : "";
 		};
 		if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
 			items.forEach((li) => set(li, "is-done"));
@@ -18,19 +26,22 @@ export default function DayfeedAnimation() {
 		}
 		let k = 0;
 		const timers: number[] = [];
+		const later = (fn: () => void, ms: number) => timers.push(window.setTimeout(fn, ms));
 		const tick = () => {
+			if (k > 0) set(items[k - 1], "is-done");
 			if (k < items.length) {
-				if (k > 0) set(items[k - 1], "is-done");
 				set(items[k], "is-run");
 				k++;
-				timers.push(window.setTimeout(tick, 1500));
+				later(tick, k === items.length ? STEP / 2 : STEP);
 			} else {
-				set(items[items.length - 1], "is-done");
-				timers.push(window.setTimeout(() => { items.forEach((li) => set(li, "")); k = 0; timers.push(window.setTimeout(tick, 600)); }, 3500));
+				later(() => {
+					list.classList.add("df-fade");
+					later(() => { items.forEach((li) => set(li, "")); list.classList.remove("df-fade"); k = 0; later(tick, 700); }, 600);
+				}, HOLD);
 			}
 		};
 		items.forEach((li) => set(li, ""));
-		timers.push(window.setTimeout(tick, 500));
+		later(tick, 600);
 		return () => timers.forEach(clearTimeout);
 	}, []);
 	return null;
