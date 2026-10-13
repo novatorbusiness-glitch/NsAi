@@ -10,7 +10,7 @@ export default function About() {
 				<img className="photo-img" src={c.photo.src} alt={c.photo.alt} width={800} height={1000} />
 				<div className="col">
 					<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-					{c.subs.map((s) => <p className="sub" key={s}>{s}</p>)}
+					<ul className="apoints">{c.points.map((p) => <li key={p.b}><b>{p.b}</b><span>{p.t}</span></li>)}</ul>
 				</div>
 			</div>
 			<div className="wrap">

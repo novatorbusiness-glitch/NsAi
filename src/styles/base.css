@@ -1131,3 +1131,10 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 @media(min-width:900px){.cpath-out{max-width:760px;margin-top:26px}}
 @media(min-width:900px){.fitcards{gap:20px}.fc{padding:28px 28px 30px}}
 .fc li{line-height:1.55}
+.fc li b{display:block;font-size:16.5px;line-height:1.35;color:var(--ink);font-weight:700}
+.fc li span{display:block;margin-top:3px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.fc.no li b{color:var(--ink2)}
+.apoints{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.apoints li{padding-left:14px;border-left:2px solid var(--acc)}
+.apoints b{display:block;font-size:17px;line-height:1.35;color:var(--ink)}
+.apoints span{display:block;margin-top:4px;font-size:15.5px;line-height:1.55;color:var(--ink2)}
