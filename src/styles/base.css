@@ -1106,3 +1106,6 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
 .pr-r .pr-big{margin-bottom:8px;color:var(--ink);font-size:16px}
 .pr-r .pr-big b{font:700 clamp(24px,3vw,30px)/1 var(--m);color:var(--acc);letter-spacing:-.02em;margin-right:6px}
 .done .prow2s + .cap{margin-top:14px}
+.about .section-head{margin-bottom:18px}
+.about .sub{margin:0 0 12px}
+@media(min-width:900px){.about .facts{margin-top:30px}}
