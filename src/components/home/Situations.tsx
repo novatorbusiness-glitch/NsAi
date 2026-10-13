@@ -7,7 +7,7 @@ export default function Situations() {
 	return (
 		<section id="situations" className="alt situations">
 			<div className="wrap">
-				<SectionHead num={c.num} label={c.label} title={c.h2} />
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="sgrid">
 					{c.cards.map((k) => (
 						<div className="scard" key={k.title}>
