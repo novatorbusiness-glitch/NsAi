@@ -11,8 +11,8 @@ import "../styles/tokens.css";
 import "../styles/base.css";
 
 // Шрифты скачиваются при сборке и отдаются с нашего сайта: без запросов к Google у посетителя.
-const manrope = Manrope({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin", "cyrillic"], weight: ["400", "500", "600", "700"], variable: "--font-mono", display: "swap" });
+const manrope = Manrope({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500", "600", "700"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
