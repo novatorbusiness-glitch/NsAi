@@ -1006,3 +1006,4 @@ section.dark .snum{color:var(--dark-mut)}section.dark .snum b{color:#7fd3b6}sect
   .cmp .card{padding:16px 18px;gap:6px}
   .cmp .punch{padding-top:8px;font-size:15px}
 }
+.cmp .nl{font:600 11.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--dark-mut);margin-top:6px !important}

@@ -10,7 +10,7 @@ export default function Compare() {
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="grid g3 cmp">
-					{c.cards.map((k) => <div className={"me" in k ? "card me" : "card"} key={k.label}><p className="lbl">{k.label}</p><h3>{k.title}</h3><p>{k.text}</p><p className="punch">{k.punch}</p></div>)}
+					{c.cards.map((k) => <div className={"me" in k ? "card me" : "card"} key={k.label}><p className="lbl">{k.label}</p><h3>{k.title}</h3><p className="nl">{c.nervesLabel}</p><p>{k.nerves}</p><p className="punch">{k.punch}</p></div>)}
 				</div>
 				<p className="cap"><Rich t={c.cap} /></p>
 			</div>
