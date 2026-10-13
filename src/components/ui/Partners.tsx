@@ -7,7 +7,7 @@ export default function Partners({ compact = false }: { compact?: boolean }) {
 		<div className={compact ? "partners compact" : "partners"}>
 			<span className="pl">{c.label}</span>
 			<ul>{c.items.map((p) => <li key={p.name}>{p.logo ? <img src={p.logo} alt={p.name} height={22} /> : p.name}</li>)}</ul>
-			{!compact && <p className="pn">{c.note}</p>}
+			{!compact && <p className="ptn-note">{c.note}</p>}
 		</div>
 	);
 }

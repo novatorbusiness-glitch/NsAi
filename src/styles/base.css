@@ -1155,5 +1155,5 @@ section.final .card .fsteps li{color:var(--ink2)}section.final .card .fsteps b{c
 .partners img{display:block;height:22px;width:auto;filter:grayscale(1);opacity:.75}
 .partners.compact{margin:14px 0 4px;padding-top:0;border-top:0;gap:8px 14px}
 .partners.compact li{font-size:14px}
-.partners .pn{flex-basis:100%;margin:0;font-size:14px;color:var(--ink2)}
+.partners .ptn-note{flex-basis:100%;margin:0;font-size:14px;color:var(--ink2)}
 footer .partners.compact{margin:16px 0 14px}
