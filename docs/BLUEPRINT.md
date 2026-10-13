@@ -74,7 +74,7 @@ ilya-novitsky.ru/
     │   ├── cases/            ✓ Hero, Products, System, Sales, Contact
     │   ├── mentor/           ✓ блоки Н.1–Н.9
     │   ├── process/          ✓ Hero, ServiceStep (один на три шага), MentorCta
-    │   ├── blog/             ✓ ArticleBody, ArticleCard
+    │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc
     │   └── lead/             ◐ форма заявки — вместе с functions/lead
     ├── config/

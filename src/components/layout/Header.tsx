@@ -1,15 +1,29 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import BrandMark from "@/components/ui/BrandMark";
 
 // Шапка: значок и имя, три пункта меню, кнопка «Начать с одной задачи»; на телефоне — «Написать» и меню.
+// На телефоне и планшете при прокрутке вниз уезжает, при прокрутке вверх возвращается (решение Ильи 13.10: мешала читать).
 export default function Header() {
 	const [open, setOpen] = useState(false);
+	const [hide, setHide] = useState(false);
+	const last = useRef(0);
+	useEffect(() => {
+		const onScroll = () => {
+			const y = window.scrollY, d = y - last.current;
+			if (y < 80) setHide(false);
+			else if (d > 6) setHide(true);
+			else if (d < -6) setHide(false);
+			if (Math.abs(d) > 6 || y < 80) last.current = y;
+		};
+		window.addEventListener("scroll", onScroll, { passive: true });
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
 	return (
-		<header className="top">
+		<header className={hide && !open ? "top hide" : "top"}>
 			<div className="wrap">
 				<Link className="brand" href="/">
 					<BrandMark />

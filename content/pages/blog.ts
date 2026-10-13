@@ -23,6 +23,7 @@ export const blog = typo({
 		lead: `Напишите в Telegram или MAX, что у вас сейчас происходит. Начнём с одной задачи: за ${P.testDrive.term} я её разберу и скажу, что делать первым.`,
 		under: T,
 	},
+	allTopics: "Все темы",
 	article: {
 		updated: "обновлено",
 		mins: "мин чтения",
@@ -31,6 +32,9 @@ export const blog = typo({
 		about: "Подробнее обо мне →",
 		channel: "Канал в Telegram →",
 		related: "Читать дальше",
+		prev: "Предыдущая",
+		next: "Следующая",
+		all: "Все статьи",
 	},
 	ctas: {
 		product: { title: "Разберу, кому нужен ваш продукт и что ему продавать", text: `Начнём с одной задачи: за ${P.testDrive.term} я посмотрю продукт, предложение и первых клиентов и скажу, что делать первым. Разбор останется у вас.`, button: "Написать в Telegram", href: TG, under: T },

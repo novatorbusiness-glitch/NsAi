@@ -6,7 +6,7 @@ import { blog } from "@content/pages/blog";
 // Карточка статьи: в списке блога и в «Читать дальше».
 export default function ArticleCard({ p, big = false }: { p: Post; big?: boolean }) {
 	return (
-		<Link className={big ? "acard big" : "acard"} href={`/blog/${p.slug}`}>
+		<Link className={big ? "acard big" : "acard"} href={`/blog/${p.slug}`} data-tag={p.tag}>
 			<div className={`acover ${p.coverClass}`}>
 				<span className="at">{p.tag}</span>
 				<b>{p.cover}</b>

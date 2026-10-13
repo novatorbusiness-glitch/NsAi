@@ -23,8 +23,10 @@ export default function Hero() {
 							<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{common.buttons.start}</a>
 							<a className="btn s" href="/kak-my-rabotaem#test-drive">{c.secondary}</a>
 						</div>
-						<p className="promise">{c.promise}</p>
-						<p className="under">{c.under}</p>
+						<div className="past hero-plate">
+							<p className="past-t">{c.promise}</p>
+							<div className="past-n three">{c.facts.map((f) => <div key={f.text}><b>{f.num}</b><span>{f.text}</span></div>)}</div>
+						</div>
 					</div>
 					<div className="dayfeed" aria-label={f.label}>
 						<div className="df-bar"><i></i><i></i><i></i><span>{f.bar}</span><b className="df-live">{f.live}</b></div>

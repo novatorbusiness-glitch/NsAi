@@ -29,6 +29,7 @@ section.alt .card.soft{background:#fff;border-color:var(--line)}
 
 /* шапка */
 .top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+@media(max-width:899px){.top{transition:transform .25s ease}.top.hide{transform:translateY(-100%)}}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
 .brand{font-weight:800;color:var(--ink);letter-spacing:-.02em;white-space:nowrap}
 .brand:hover{text-decoration:none}
@@ -207,6 +208,7 @@ footer .fine{color:var(--mut);font-size:13px}
 .about{align-items:center}
 @media(min-width:1000px){.about{grid-template-columns:340px minmax(0,1fr);gap:64px}}
 .about .photo-img{max-width:340px}
+@media(max-width:899px){.about .photo-img{justify-self:center;margin:0 auto}}
 
 /* финал */
 .final .card{text-align:left}
@@ -508,6 +510,10 @@ footer .row{margin-bottom:14px}
 .pv img{display:block;margin-bottom:0}
 @media(min-width:900px){.pv{padding-top:56px}.pv img{width:270px}}
 .pv.v-vlinx{align-items:center}
+@media(max-width:899px){.pv{height:auto;align-items:center;padding:28px 16px}.pv img{width:min(60%,240px)}.pv.v-vlinx .window img{width:100%}}
+/* скрины телефонов срезаны снизу в самих файлах: плавно гасим низ, чтобы срез читался как задуманный */
+.pv:not(.v-vlinx) > img{-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent);mask-image:linear-gradient(to bottom,#000 78%,transparent)}
+.pv:not(.v-vlinx){padding-bottom:0}
 .hood-cap{max-width:760px;margin:14px auto 0;text-align:center;font-size:14.5px;color:var(--mut);line-height:1.55}
 
 /* v20 · знак OkiDelo из бренда */
@@ -801,8 +807,6 @@ details.sub li b{display:block;font-size:15px;color:var(--ink)}
 .rv-join{display:flex;justify-content:center}.rv-join i{display:block;width:2px;height:22px;background:var(--acc)}
 .rv-money{background:var(--acc);color:#fff;border-radius:12px;padding:14px 16px;text-align:center}
 .rv-money .lbl{color:rgba(255,255,255,.75);margin:0 0 4px}.rv-money b{font-size:22px}
-.rv-proof{display:flex;flex-wrap:wrap;gap:8px}
-.rv-proof span{background:var(--acc-soft);border-radius:999px;padding:7px 12px;font-size:14px;font-weight:600}
 .result-viz .cap{margin:0}
 /* веер в кейсах: телефоны выходят из нижнего края с мягким затуханием, сверху всегда воздух; высота растёт вместе с шириной */
 .fan.fan-sm{height:auto;aspect-ratio:2.9/1;margin:0 0 28px;border:0;background:radial-gradient(90% 120% at 50% 100%,#dcefe7 0%,#eef3f0 55%,#f6f7f6 100%)}
@@ -931,3 +935,29 @@ footer .fmark{display:block;height:24px;width:auto;margin:0 0 16px}
 .past-n b{display:block;font:700 clamp(24px,3vw,30px)/1 var(--m);color:var(--acc);letter-spacing:-.02em}
 .past-n span{display:block;font-size:14px;line-height:1.4;color:var(--ink2);margin-top:6px}
 .past-note{margin:12px 0 0;font-size:13.5px;line-height:1.5;color:var(--mut)}
+.past-t{color:var(--acc)}
+.hero-plate{margin:22px 0 0}
+.past-n.three{grid-template-columns:repeat(3,auto);justify-content:start;gap:14px 28px}
+.past-n.three b{font-size:clamp(19px,2.4vw,24px);white-space:nowrap}
+@media(max-width:480px){.past-n.three{justify-content:space-between;gap:12px}.past-n.three b{font-size:18px}.past-n.three span{font-size:13px}}
+
+/* блог · навигация: темы над списком, содержание статьи, предыдущая/следующая */
+.tags{display:flex;gap:8px;overflow-x:auto;margin:0 0 20px;padding-bottom:4px;scrollbar-width:none}
+.tags::-webkit-scrollbar{display:none}
+.tagb{flex:0 0 auto;font:600 14px/1 var(--f);color:var(--ink2);background:#fff;border:1px solid var(--line2);border-radius:999px;padding:9px 14px;cursor:pointer}
+.tagb.on{background:var(--ink);border-color:var(--ink);color:#fff}
+#posts [hidden]{display:none!important}
+.tocd summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;margin:0}
+.tocd summary::-webkit-details-marker{display:none}
+.tocd summary::after{content:"+";font:400 20px/1 var(--m);color:var(--acc)}
+.tocd[open] summary::after{content:"−"}
+.toc .tocl{display:none}
+.tocd ol{margin-top:12px}
+@media(min-width:1000px){.toc .tocd{display:none}.toc p.tocl{display:block}.toc ol.tocl{display:grid}}
+.pnav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 8px}
+.pn{display:block;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;color:var(--ink)}
+.pn:hover{border-color:var(--acc);text-decoration:none}
+.pn span{display:block;font:600 12.5px/1.3 var(--m);color:var(--acc);margin-bottom:6px}
+.pn b{display:block;font-size:15px;line-height:1.35}
+.pn.next{text-align:right}
+.pall{margin:6px 0 28px;font-weight:600}

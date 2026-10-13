@@ -25,7 +25,6 @@ export default function Hero() {
 					))}
 					<div className="rv-join" aria-hidden="true"><i></i></div>
 					<div className="rv-money"><p className="lbl">{c.viz.moneyLabel}</p><b>{c.viz.money}</b></div>
-					<div className="rv-proof">{c.viz.proof.map((p) => <span key={p}>{p}</span>)}</div>
 					<p className="cap">{c.viz.cap}</p>
 				</div>
 			</div>

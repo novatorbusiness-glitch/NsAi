@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleCard from "@/components/blog/ArticleCard";
+import TagFilter from "@/components/blog/TagFilter";
 import { allPosts } from "@/lib/blog";
 import { site } from "@/config/site";
 import { blog } from "@content/pages/blog";
@@ -11,7 +12,9 @@ import { common } from "@content/pages/common";
 export const metadata: Metadata = pageMeta(blog.meta, "/blog", "blog");
 
 export default function BlogPage() {
-	const [first, ...rest] = allPosts();
+	const posts = allPosts();
+	const [first, ...rest] = posts;
+	const tags = Array.from(new Set(posts.map((p) => p.tag)));
 	const h = blog.hero;
 	const f = blog.final;
 	return (
@@ -25,7 +28,8 @@ export default function BlogPage() {
 				</div>
 			</section>
 			<section className="alt blogs">
-				<div className="wrap">
+				<div className="wrap" id="posts">
+					<TagFilter tags={tags} all={blog.allTopics} />
 					<ArticleCard p={first} big />
 					<div className="agrid">
 						{rest.map((p) => <ArticleCard key={p.slug} p={p} />)}

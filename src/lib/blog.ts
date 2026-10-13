@@ -37,7 +37,7 @@ export function getPost(slug: string) {
 	const same = all.filter((x) => x.slug !== slug && x.tag === a.tag);
 	const rest = all.filter((x) => x.slug !== slug && !same.includes(x));
 	const rot = rest.slice(i % rest.length).concat(rest.slice(0, i % rest.length));
-	return { post: a, related: same.concat(rot).slice(0, 3) };
+	return { post: a, related: same.concat(rot).slice(0, 3), prev: all[i - 1] || null, next: all[i + 1] || null };
 }
 
 function esc(s: string) {
