@@ -9,7 +9,7 @@ export default function Process() {
 		<section id="how" className="alt how">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className="psteps">
+				<div className="psteps line">
 					{c.steps.map((s) => (
 						<div className="pstep" key={s.label}>
 							<p className="pl">{s.label}</p>

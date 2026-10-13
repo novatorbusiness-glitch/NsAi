@@ -9,7 +9,7 @@ export default function Faq() {
 		<section id="faq">
 			<div className="wrap">
 				<SectionHead num={home.faq.num} label={home.faq.label} title={home.faq.h2} lead={home.faq.lead} />
-				<div className="faq faq-grid">
+				<div className="faq faq-lines">
 					{faq.map((f) => <details key={f.q}><summary>{f.q}</summary><div className="a"><Rich t={f.a} /></div></details>)}
 				</div>
 			</div>

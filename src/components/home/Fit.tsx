@@ -8,7 +8,7 @@ export default function Fit() {
 		<section id="fit" className="alt">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className="fitcards">
+				<div className="fitcards plain">
 					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{c.yesTitle}</p><ul>{c.yes.map((t) => <li key={t.b}><b>{t.b}</b><span>{t.t}</span></li>)}</ul></div>
 					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{c.noTitle}</p><ul>{c.no.map((t) => <li key={t.b}><b>{t.b}</b><span>{t.t}</span></li>)}</ul></div>
 				</div>
