@@ -1,8 +1,9 @@
 import { site } from "@/config/site";
 import { home } from "@content/pages/home";
 import { common } from "@content/pages/common";
+import SectionHead from "@/components/ui/SectionHead";
 
-// 10 · заявка: Telegram и MAX + пример начала переписки.
+// 10 · начать (вопрос собственника «что сделать сейчас?»): три шага до старта, Telegram и MAX + пример начала переписки.
 export default function Contact() {
 	const c = home.contact;
 	return (
@@ -10,8 +11,8 @@ export default function Contact() {
 			<div className="wrap">
 				<div className="card final-card">
 					<div>
-						<h2>{c.h2}</h2>
-						<p className="lead">{c.lead}</p>
+						<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+						<ol className="fsteps">{c.steps.map((x, i) => <li key={x.b}><span>{i + 1}</span><div><b>{x.b}</b> {x.t}</div></li>)}</ol>
 						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 						<p className="under">{c.under}</p>
 					</div>
