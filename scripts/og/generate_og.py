@@ -130,7 +130,7 @@ def render(name, title, sub_text=None, kicker=None):
     mk = MARK['n-white' if light else 'n']; mh = 46; mk = mk.resize((round(mk.width * mh / mk.height), mh), Image.LANCZOS)
     im.paste(mk, (x, H - 118), mk); nx = x + mk.width + 14
     draw(d, nx, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
-    draw(d, nx, H - 76, 'ilya-novitsky.ru · маркетинг, продукт и автоматизация', mono(20), sub)
+    draw(d, nx, H - 76, 'ilya-novitsky.ru · продукт, продажи и автоматизация', mono(20), sub)
     im.save(f'{DST}/{name}.jpg', 'JPEG', quality=86, optimize=True)
 
 os.makedirs(DST, exist_ok=True)

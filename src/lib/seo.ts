@@ -23,7 +23,7 @@ export function pageMeta(raw: PageMeta, path: string, og: string, opts: { absolu
 		alternates: { canonical: path },
 		openGraph: {
 			type: opts.type || "website", locale: "ru_RU", siteName: site.name, url: path, title: ogTitle, description: m.description,
-			images: [{ url: `/og/${og}.jpg?v=20261014`, width: 1200, height: 630, alt: ogTitle }],
+			images: [{ url: `/og/${og}.jpg?v=2026101402`, width: 1200, height: 630, alt: ogTitle }],
 			...(opts.modified ? { modifiedTime: opts.modified } : {}),
 		},
 		twitter: { card: "summary_large_image" },

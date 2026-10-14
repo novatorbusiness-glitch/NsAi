@@ -2,7 +2,7 @@
 export const site = {
 	url: "https://ilya-novitsky.ru",
 	name: "Илья Новицкий",
-	role: "маркетинг, продукт и автоматизация",
+	role: "архитектор продукта и продаж",
 	og: "/og/home.jpg",
 	roleFooter: "архитектор продукта и продаж",
 	metrikaId: 112582890,
