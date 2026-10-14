@@ -9,6 +9,7 @@ export default function Speed() {
 		<section id="system" className="system">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<p className="sstat sbig"><b>{c.stat.num}</b><span>{c.stat.t}</span></p>
 				<div className="sflow">
 					{c.flow.map((f, i) => (
 						<div className={"me" in f ? "sbox me" : "sbox"} key={f.label}>
@@ -22,6 +23,7 @@ export default function Speed() {
 				<Fable q={c.fable.q} src={c.fable.src} />
 				<p className="closing">{c.closing}</p>
 				<p className="more-link"><a href="/keisy#system">{c.more}</a></p>
+				<p className="ssrc">{c.source}</p>
 			</div>
 		</section>
 	);
