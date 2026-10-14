@@ -24,7 +24,7 @@ export const common = typo({
 	ui: {
 		home: "Главная",
 		blog: "Блог",
-		headerStart: "Написать в Telegram",
+		headerStart: "Написать мне",
 		headerShort: "Написать",
 		menu: "Меню",
 		channel: "Канал",
