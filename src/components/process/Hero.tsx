@@ -14,7 +14,6 @@ export default function Hero() {
 					<p className="lead">{c.lead}</p>
 					<div className="cta-row">
 						<a className="btn p" href="#test-drive" data-goal="cta_start">{c.button}</a>
-						<a className="btn s" href="/nastavnichestvo">{c.mentor}</a>
 					</div>
 				</div>
 				<div className="pmap">

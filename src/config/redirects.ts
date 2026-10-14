@@ -9,7 +9,8 @@ export const redirects: Record<string, string> = {
 	"/ex-nihilo": "/",
 	"/portfolio": "/keisy",
 	"/roadmap": "/keisy",
-	"/ai-training": "/nastavnichestvo",
+	"/ai-training": "/",
+	"/nastavnichestvo": "/", // наставничество скрыто 14.10, код страницы — src/app/_nastavnichestvo
 	"/book/read": "/book",
 	"/blog/ai-kopiraiter-neuro-voronka": "/blog",
 	"/blog/chto-takoe-ncai": "/blog",

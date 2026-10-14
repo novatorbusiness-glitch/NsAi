@@ -25,13 +25,11 @@ export const site = {
 		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
 		{ href: "/keisy", label: "Кейсы" },
 		{ href: "/blog", label: "Блог" },
-		{ href: "/nastavnichestvo", label: "Наставничество" },
 	],
 	footerNav: [
 		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
 		{ href: "/keisy", label: "Кейсы" },
 		{ href: "/blog", label: "Блог" },
-		{ href: "/nastavnichestvo", label: "Наставничество" },
 		{ href: "/book", label: "Книга" },
 	],
 	legal: [

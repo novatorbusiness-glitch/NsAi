@@ -59,7 +59,6 @@ export function servicesLd() {
 				offer("Аудит и план действий", prices.testDrive.price),
 				offer("Чертёж системы", prices.blueprint.price),
 				offer("Ведение", prices.management.price, "месяц"),
-				offer("Наставничество", prices.mentor.price, "месяц"),
 			],
 		},
 	};
