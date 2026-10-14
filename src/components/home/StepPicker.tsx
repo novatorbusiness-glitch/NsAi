@@ -11,7 +11,6 @@ export default function StepPicker({ id = "pick" }: { id?: string }) {
 			<p className="sub">{c.sub}</p>
 			<div className="pick">
 				{c.options.map((o, i) => <details key={o.q}><summary>{o.q}</summary><div className="ans"><p><Rich t={o.a} /></p><a className="btn p" href={site.contacts.telegram} data-goal="pick_step" data-variant={i + 1} target="_blank" rel="noopener">{common.buttons.telegram}</a></div></details>)}
-				<details><summary>{c.mentor.q}</summary><div className="ans"><p><Rich t={c.mentor.a} /></p><p className="under">{c.mentor.under}</p><a className="btn s" href="/nastavnichestvo">{c.mentor.button}</a></div></details>
 			</div>
 		</div>
 	);

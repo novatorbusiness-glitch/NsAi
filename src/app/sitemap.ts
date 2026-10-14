@@ -9,7 +9,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const u = (p: string) => `${site.url}${p}`;
-	const pages = ["/", "/kak-my-rabotaem", "/keisy", "/nastavnichestvo", "/blog", "/book"].map((p) => ({ url: u(p), changeFrequency: "weekly" as const, priority: p === "/" ? 1 : 0.8 }));
+	const pages = ["/", "/kak-my-rabotaem", "/keisy", "/blog", "/book"].map((p) => ({ url: u(p), changeFrequency: "weekly" as const, priority: p === "/" ? 1 : 0.8 }));
 	const posts = allPosts().map((p) => ({ url: u(`/blog/${p.slug}`), lastModified: p.updated, changeFrequency: "monthly" as const, priority: 0.7 }));
 	const chapters = fs.readdirSync(path.join(process.cwd(), "public/book")).filter((f) => f.endsWith(".html")).sort().map((f) => ({ url: u(`/book/${f.slice(0, -5)}`), changeFrequency: "yearly" as const, priority: 0.5 }));
 	return [...pages, ...posts, ...chapters];
