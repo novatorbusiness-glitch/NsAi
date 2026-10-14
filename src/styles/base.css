@@ -1248,3 +1248,4 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sr-r dt{font:600 12px/1.6 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--dark-mut)}
 .sr-r dd{margin:0 0 8px;color:var(--dark-ink);font-size:15.5px;line-height:1.55}
 @media(min-width:600px){.sr-r dd{margin:0}}
+.pf b{font-family:var(--f) !important;font-weight:800;letter-spacing:-.02em}
