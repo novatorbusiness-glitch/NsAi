@@ -2,14 +2,14 @@ import { Fragment } from "react";
 import { site } from "@/config/site";
 import { keisy } from "@content/pages/keisy";
 
-// К.1 · первый экран кейсов: текст + схема «продукт и продажи вместе дают деньги».
+// Первый экран кейсов (вопрос собственника «докажи»): что уже работает и сколько принесло + схема «продукт и продажи вместе дают деньги».
 export default function Hero() {
 	const c = keisy.hero;
 	return (
 		<section className="hero">
 			<div className="wrap hero-grid">
 				<div>
-					<p className="kicker">{c.kicker}</p>
+					<p className="snum">{c.kicker}</p>
 					<h1>{c.h1}</h1>
 					<p className="lead">{c.lead}</p>
 					<div className="past">
