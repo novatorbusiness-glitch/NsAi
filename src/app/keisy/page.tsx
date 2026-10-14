@@ -15,9 +15,9 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
+			<Sales />
 			<Products />
 			<System />
-			<Sales />
 			<Contact />
 			<JsonLd data={[crumbs([{ name: "Кейсы", path: "/keisy" }]), casesLd(allCases())]} />
 		</>
