@@ -1274,3 +1274,30 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .pmap-b span{display:block;font-size:14.5px;line-height:1.45;color:var(--ink2)}
 .pmap-note{font-size:13.5px;line-height:1.5;color:var(--mut);margin:6px 0 0;padding-top:12px;border-top:1px solid var(--line)}
 @media(min-width:900px){.pmap{padding:26px 28px 20px}}
+.svc.v2 .section-head{margin-bottom:10px}
+.svc-meta{font:600 14px/1.4 var(--m);color:var(--acc);margin:0 0 28px}
+.svc-two{display:grid;gap:16px}
+@media(min-width:900px){.svc-two{grid-template-columns:1fr 1fr;gap:20px}}
+.svc-gets{background:var(--dark);color:#fff;border-radius:var(--r);padding:24px 22px}
+.svc-gets .lbl{color:#9fd8c3;margin:0 0 14px}
+.svc-gets .ticks li{color:rgba(255,255,255,.86)}.svc-gets .ticks li::before{color:#5fd0a5}
+.svc-how{border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;background:#fff}
+.svc-how .lbl{margin:0 0 14px}
+.svc-how ol{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.svc-how li{display:grid;grid-template-columns:28px 1fr;gap:12px;color:var(--ink2);line-height:1.55}
+.svc-how li span{width:28px;height:28px;border-radius:50%;background:var(--acc-soft);color:var(--acc);display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--m)}
+.svc-how li b{color:var(--ink)}
+.svc-how .sub{margin:14px 0 0;font-size:14px;color:var(--mut)}
+.svc-need{margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line);color:var(--ink2)}.svc-need b{color:var(--ink)}
+.svc-fit{margin-top:40px}
+@media(min-width:900px){.svc-gets,.svc-how{padding:30px 30px}}
+.sgroups{display:grid;gap:0;border-top:1px solid var(--line)}
+.sgroups>div{padding:18px 0;border-bottom:1px solid var(--line)}
+.sgroups .lbl{margin:0 0 10px}
+.sgroups ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sgroups li{font-size:14.5px;background:var(--acc-soft);color:var(--ink);border-radius:999px;padding:7px 13px;line-height:1.2}
+@media(min-width:900px){.sgroups{grid-template-columns:repeat(4,1fr);gap:28px;border-top:0}.sgroups>div{border-bottom:0;border-top:2px solid var(--acc);padding:16px 0 0}.sgroups ul{flex-direction:column;align-items:flex-start}}
+#scope .notdo{margin-top:32px}
+.fmentor{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:8px}
+.fmentor p{margin:0;color:var(--ink2)}.fmentor b{color:var(--ink)}
+.fmentor a{font-weight:600}

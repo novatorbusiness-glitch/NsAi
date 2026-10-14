@@ -1,12 +1,20 @@
+import { site } from "@/config/site";
+import { common } from "@content/pages/common";
 import { process } from "@content/pages/kak-my-rabotaem";
+import SectionHead from "@/components/ui/SectionHead";
+import Rich from "@/components/ui/Rich";
 
-// Финал страницы: кто хочет собрать сам — на наставничество.
+// 05 · финал страницы: не знаете, с чего начать, — написать; хотите собрать сами — наставничество.
 export default function MentorCta() {
-	const c = process.mentor;
+	const c = process.final;
 	return (
-		<section className="dark">
+		<section className="final">
 			<div className="wrap">
-				<div className="card"><h2 style={{ fontSize: "clamp(22px,3vw,28px)" }}>{c.h2}</h2><p className="sub" style={{ margin: "12px 0 18px" }}>{c.text}</p><a className="btn s" href="/nastavnichestvo">{c.button}</a></div>
+				<div className="card">
+					<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+					<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
+					<div className="fmentor"><p><Rich t={c.mentor} /></p><a href="/nastavnichestvo">{c.mentorLink}</a></div>
+				</div>
 			</div>
 		</section>
 	);
