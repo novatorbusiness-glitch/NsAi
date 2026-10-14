@@ -1262,3 +1262,15 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .mlist li.mroot{padding:24px 26px;font-size:clamp(16.5px,1.9vw,18px)}
 #system .brows{margin-bottom:40px}
 .final .card .section-head h2{margin-bottom:12px}
+.pmap{border:1px solid var(--line);border-radius:var(--r);background:#fff;padding:20px 20px 16px;align-self:center}
+.pmap-t{font:600 12px/1.4 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
+.pmap ol{list-style:none;margin:0;padding:0}
+.pmap li+li{border-top:1px solid var(--line)}
+.pmap li a{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:14px 0;color:var(--ink);text-decoration:none}
+.pmap li a:hover b{color:var(--acc)}
+.pmap-n{font:700 13px/1.6 var(--m);color:var(--acc)}
+.pmap-b b{display:block;font-size:17px;line-height:1.35}
+.pmap-b em{display:block;font:500 13px/1.5 var(--m);font-style:normal;color:var(--acc);margin:4px 0 4px}
+.pmap-b span{display:block;font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.pmap-note{font-size:13.5px;line-height:1.5;color:var(--mut);margin:6px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+@media(min-width:900px){.pmap{padding:26px 28px 20px}}
