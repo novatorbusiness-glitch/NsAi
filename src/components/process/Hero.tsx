@@ -23,7 +23,7 @@ export default function Hero() {
 						{c.map.steps.map((s, i) => (
 							<li key={s.href}><a href={s.href}>
 								<span className="pmap-n">{String(i + 1).padStart(2, "0")}</span>
-								<span className="pmap-b"><b>{s.name}</b><em>{s.meta}</em><span>На руках: {s.gets}</span></span>
+								<span className="pmap-b"><b>{s.name}</b><em>{s.meta}</em><span><Rich t={s.gets} /></span></span>
 							</a></li>
 						))}
 					</ol>

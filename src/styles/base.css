@@ -1306,3 +1306,5 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sstat span{font-size:13.5px;line-height:1.45;color:var(--ink2)}
 .ssrc{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--mut);max-width:60em}
 .sstat.sbig{max-width:44em;margin:-6px 0 28px;padding:0;border:0}.sstat.sbig b{font-size:clamp(34px,4vw,44px)}.sstat.sbig span{font-size:15px}
+.pmap-b span b{color:var(--ink)}
+.pmap-b span b{display:inline;font-size:inherit;line-height:inherit}
