@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
 import Goals from "@/components/layout/Goals";
+import ContactChooser from "@/components/layout/ContactChooser";
 import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import { clean } from "@/lib/seo";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 				<Footer />
 				<CookieBanner />
 				<Goals />
+				<ContactChooser />
 				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
 			</body>
 		</html>
