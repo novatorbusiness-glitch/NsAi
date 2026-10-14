@@ -14,7 +14,7 @@ export default function Hero() {
 					<p className="lead">{c.lead}</p>
 					<div className="past">
 						<p className="past-t">{c.past.title}</p>
-						<div className="past-n">{c.past.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
+						<div className="past-n three">{c.past.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
 						<p className="past-note">{c.past.note}</p>
 					</div>
 					<a className="btn p" href="/#how" data-goal="cta_start">{c.button}</a>
