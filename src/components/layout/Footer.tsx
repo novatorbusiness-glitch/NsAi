@@ -22,7 +22,7 @@ export default function Footer() {
 					<div className="fcol">
 						<p className="fh">{u.footContacts}</p>
 						<a href={c.telegram} target="_blank" rel="noopener">Telegram {c.telegramHandle}</a>
-						<a href={c.max} target="_blank" rel="noopener">MAX {c.maxPhone}</a>
+						<a href={c.max} target="_blank" rel="noopener">MAX</a>
 						<a href={c.channel} target="_blank" rel="noopener">{u.channel} {c.channelHandle}</a>
 						<a href={`mailto:${c.email}`}>{c.email}</a>
 					</div>
