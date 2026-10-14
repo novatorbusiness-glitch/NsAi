@@ -23,7 +23,7 @@ export function pageMeta(raw: PageMeta, path: string, og: string, opts: { absolu
 		alternates: { canonical: path },
 		openGraph: {
 			type: opts.type || "website", locale: "ru_RU", siteName: site.name, url: path, title: ogTitle, description: m.description,
-			images: [{ url: `/og/${og}.jpg`, width: 1200, height: 630, alt: ogTitle }],
+			images: [{ url: `/og/${og}.jpg?v=20261014`, width: 1200, height: 630, alt: ogTitle }],
 			...(opts.modified ? { modifiedTime: opts.modified } : {}),
 		},
 		twitter: { card: "summary_large_image" },
@@ -51,7 +51,7 @@ export function servicesLd() {
 		...(unit ? { priceSpecification: { "@type": "UnitPriceSpecification", price: rub(price), priceCurrency: "RUB", unitText: unit } } : {}),
 	});
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Маркетинг, продукт и автоматизация на уровне директора по маркетингу",
+		"@context": "https://schema.org", "@type": "Service", name: "Проектирование и развитие продукта и продаж",
 		provider: person, areaServed: "RU", url: site.url,
 		hasOfferCatalog: {
 			"@type": "OfferCatalog", name: "Шаги работы",

@@ -4,7 +4,7 @@ export const site = {
 	name: "Илья Новицкий",
 	role: "маркетинг, продукт и автоматизация",
 	og: "/og/home.jpg",
-	roleFooter: "маркетинг, продукт и автоматизация на уровне директора, без найма в штат",
+	roleFooter: "архитектор продукта и продаж",
 	metrikaId: 112582890,
 	contacts: {
 		telegram: "https://t.me/Ilya_novator",

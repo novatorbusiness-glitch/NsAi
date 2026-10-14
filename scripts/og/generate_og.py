@@ -140,7 +140,7 @@ seen, made = set(), 0
 for f in sorted(glob.glob(f'{OUT}/**/*.html', recursive=True)):
     t = open(f, encoding='utf-8').read()
     if f.endswith('/404.html') or 'http-equiv="refresh"' in t: continue  # 404 и переадресации: превью по умолчанию, своё не рисуем
-    img = re.search(r'property="og:image" content="[^"]*/og/([a-z0-9-]+)\.jpg"', t)
+    img = re.search(r'property="og:image" content="[^"]*/og/([a-z0-9-]+)\.jpg(?:\?v=\d+)?"', t)
     ttl = re.search(r'property="og:title" content="([^"]*)"', t)
     if not img or not ttl: continue
     name, title = img.group(1), html.unescape(ttl.group(1))
