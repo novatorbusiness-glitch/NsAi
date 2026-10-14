@@ -1,7 +1,7 @@
-import Rich from "@/components/ui/Rich";
 import { keisy } from "@content/pages/keisy";
+import SectionHead from "@/components/ui/SectionHead";
 
-// К.3 · голова, опыт и система: карточки, схема работы, «под капотом».
+// 04 · как это устроено: опыт решает, AI ускоряет, проверки страхуют; схема работы, «под капотом».
 export default function System() {
 	const c = keisy.system;
 	const h = c.hood;
@@ -9,14 +9,10 @@ export default function System() {
 	return (
 		<section id="system">
 			<div className="wrap">
-				<div className="section-head" style={{ maxWidth: "820px" }}>
-					<h2>{c.h2}</h2>
-					<p className="lead">{c.lead}</p>
-					<p className="sub"><Rich t={c.sub} /></p>
-				</div>
-				<div className="grid g2">
-					{c.cards.map((k) => <div className="card" key={k.title}><h3>{k.title}</h3><p>{k.text}</p></div>)}
-				</div>
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<ol className="brows">
+					{c.cards.map((k, i) => <li key={k.title}><span className="bn">{String(i + 1).padStart(2, "0")}</span><h3>{k.title}</h3><p>{k.text}</p></li>)}
+				</ol>
 				<div className="hood" aria-label={h.label}>
 					<div className="hood-h"><span className="dot"></span>{h.head}</div>
 					<div className="hl hl-top">

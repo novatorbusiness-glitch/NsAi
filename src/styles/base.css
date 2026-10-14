@@ -1260,3 +1260,5 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .mlist li.mroot{display:block;margin:22px 0 0;border-bottom:0;max-width:none}
 @media(min-width:900px){.mlist li.mroot{margin:22px 0}}
 .mlist li.mroot{padding:24px 26px;font-size:clamp(16.5px,1.9vw,18px)}
+#system .brows{margin-bottom:40px}
+.final .card .section-head h2{margin-bottom:12px}
