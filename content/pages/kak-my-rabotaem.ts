@@ -2,14 +2,12 @@
 import { typo } from "@/lib/typo";
 import { prices as P } from "@/config/prices";
 
-type Card = { label: string; text?: string; ticks?: string[]; steps?: { b: string; t: string }[]; note?: string; crosses?: string[]; gives?: boolean };
-
 // Новый вид шага (решение 14.10): метка «01 / …», заголовок от задачи собственника, «на руках» и «как проходит» рядом, «подойдёт / не будет» строками.
 type Plan = { num: string; label: string; h2: string; gets: { label: string; items: string[] }; how: { label: string; steps: { b: string; t: string }[]; note?: string }; need: string; fitTitle: string; fit: string[]; notTitle: string; not: string[]; button: string };
 
-const steps: ({ id: string; title: string; meta: string; lead: string; cards: Card[]; price: string; alt: boolean } & Partial<Plan>)[] = [
+const steps: ({ id: string; title: string; meta: string; lead: string; price: string; alt: boolean } & Plan)[] = [
 	{
-		id: "test-drive", title: "Аудит и план действий", meta: `${P.testDrive.term} · ${P.testDrive.price}`, alt: true, cards: [],
+		id: "test-drive", title: "Аудит и план действий", meta: `${P.testDrive.term} · ${P.testDrive.price}`, alt: true,
 		num: "01",
 		label: "Аудит и план действий",
 		h2: "Найти, где теряются клиенты и деньги, прежде чем тратить больше",
@@ -25,7 +23,7 @@ const steps: ({ id: string; title: string; meta: string; lead: string; cards: Ca
 		button: "Начать с аудита",
 	},
 	{
-		id: "chertezh", title: "Чертёж системы", meta: `${P.blueprint.term} · от ${P.blueprint.price}`, alt: false, cards: [],
+		id: "chertezh", title: "Чертёж системы", meta: `${P.blueprint.term} · от ${P.blueprint.price}`, alt: false,
 		num: "02",
 		label: "Чертёж системы",
 		h2: "План, по которому строят, а не переделывают",
@@ -41,7 +39,7 @@ const steps: ({ id: string; title: string; meta: string; lead: string; cards: Ca
 		button: "Обсудить чертёж",
 	},
 	{
-		id: "vedenie", title: "Ведение", meta: `помесячно, от ${P.management.term} · от ${P.management.price} в месяц`, alt: true, cards: [],
+		id: "vedenie", title: "Ведение", meta: `помесячно, от ${P.management.term} · от ${P.management.price} в месяц`, alt: true,
 		num: "03",
 		label: "Ведение",
 		h2: "Проект внедряет тот, кто его спроектировал",
@@ -68,7 +66,6 @@ export const process = typo({
 		h1: "Сначала понять, потом вкладывать",
 		lead: "Найти причину, спроектировать решение, внедрить. Начать можно с любого шага: у каждого заранее известны срок, цена и что вы получите, а дальше вы сами решаете, нужен ли следующий.",
 		button: "Начать с аудита",
-		mentor: "Хочу собрать сам →",
 		map: {
 			title: "Три шага",
 			steps: [
@@ -100,7 +97,5 @@ export const process = typo({
 		label: "Начать",
 		h2: "Не знаете, с какого шага начать?",
 		lead: "Напишите пару строк о задаче. Отвечу в течение рабочего дня и скажу, с чего начать, даже если со мной вам не по пути.",
-		mentor: `**Хотите собрать продукт сами?** На наставничестве проведу по шагам, а собираете вы. ${P.mentor.price} в месяц, обычно ${P.mentor.term}.`,
-		mentorLink: "Наставничество →",
 	},
 });
