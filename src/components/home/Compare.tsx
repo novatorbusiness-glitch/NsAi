@@ -2,7 +2,7 @@ import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 03 · сколько стоит (вопрос собственника «сколько это рядом с наймом и подрядчиками?»): директор в штат, студия и подрядчики, со мной.
+// 03 · сколько стоит (вопрос собственника «сколько это рядом с наймом и подрядчиками?»): своя команда в штат, студия и подрядчики, со мной.
 export default function Compare() {
 	const c = home.compare;
 	return (
