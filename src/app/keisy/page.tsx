@@ -3,6 +3,7 @@ import Hero from "@/components/cases/Hero";
 import Products from "@/components/cases/Products";
 import System from "@/components/cases/System";
 import Sales from "@/components/cases/Sales";
+import Mistakes from "@/components/cases/Mistakes";
 import Contact from "@/components/cases/Contact";
 import { keisy } from "@content/pages/keisy";
 import JsonLd from "@/components/ui/JsonLd";
@@ -15,9 +16,10 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
+			<Sales />
+			<Mistakes />
 			<Products />
 			<System />
-			<Sales />
 			<Contact />
 			<JsonLd data={[crumbs([{ name: "Кейсы", path: "/keisy" }]), casesLd(allCases())]} />
 		</>

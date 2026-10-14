@@ -1,18 +1,30 @@
 import { keisy } from "@content/pages/keisy";
+import SectionHead from "@/components/ui/SectionHead";
 
-// К.4 · системы продаж для клиентов: кейсы агентства (опыт до 2025 года) с цифрами.
+// 01 · системы продаж (опыт агентства до 2025): по каждому проекту задача, главное решение, что дало, кто за что отвечал.
 export default function Sales() {
 	const c = keisy.sales;
+	const l = c.labels;
 	return (
 		<section id="sales" className="dark">
 			<div className="wrap">
-				<div className="section-head" style={{ maxWidth: "820px" }}>
-					<h2>{c.h2}</h2>
-					<p className="lead">{c.lead}</p>
-					<p className="nda">{c.nda}</p>
-				</div>
-				<div className="grid g2">
-					{c.cards.map((k) => <div className="card" key={k.num}><span className="num" style={{ fontSize: "34px" }}>{k.num}</span><h3 style={{ marginTop: "12px" }}>{k.title}</h3><p>{k.text}</p></div>)}
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<p className="nda">{c.nda}</p>
+				<div className="srows">
+					{c.cards.map((k) => (
+						<article className="srow" key={k.area}>
+							<div className="sr-l">
+								<p className="sr-a">{k.area}</p>
+								<h3>{k.title}</h3>
+								<p className="sr-n"><b>{k.num}</b> {k.outcome}</p>
+							</div>
+							<dl className="sr-r">
+								<dt>{l.task}</dt><dd>{k.task}</dd>
+								<dt>{l.decision}</dt><dd>{k.decision}</dd>
+								<dt>{l.role}</dt><dd>{k.role}</dd>
+							</dl>
+						</article>
+					))}
 				</div>
 				<p className="closing">{c.closing}</p>
 			</div>

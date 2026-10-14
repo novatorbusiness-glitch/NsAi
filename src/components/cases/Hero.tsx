@@ -2,19 +2,19 @@ import { Fragment } from "react";
 import { site } from "@/config/site";
 import { keisy } from "@content/pages/keisy";
 
-// К.1 · первый экран кейсов: текст + схема «продукт и продажи вместе дают деньги».
+// Первый экран кейсов (вопрос собственника «докажи»): что уже работает и сколько принесло + схема «продукт и продажи вместе дают деньги».
 export default function Hero() {
 	const c = keisy.hero;
 	return (
 		<section className="hero">
 			<div className="wrap hero-grid">
 				<div>
-					<p className="kicker">{c.kicker}</p>
+					<p className="snum">{c.kicker}</p>
 					<h1>{c.h1}</h1>
 					<p className="lead">{c.lead}</p>
 					<div className="past">
 						<p className="past-t">{c.past.title}</p>
-						<div className="past-n">{c.past.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
+						<div className="past-n three">{c.past.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
 						<p className="past-note">{c.past.note}</p>
 					</div>
 					<a className="btn p" href="/#how" data-goal="cta_start">{c.button}</a>
