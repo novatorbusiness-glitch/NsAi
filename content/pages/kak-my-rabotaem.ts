@@ -9,7 +9,7 @@ type Plan = { num: string; label: string; h2: string; gets: { label: string; ite
 
 const steps: ({ id: string; title: string; meta: string; lead: string; cards: Card[]; price: string; alt: boolean } & Partial<Plan>)[] = [
 	{
-		id: "test-drive", title: "Аудит и план действий", meta: `${P.testDrive.term.replace("дня", "рабочих дня")} · ${P.testDrive.price}`, alt: true, cards: [],
+		id: "test-drive", title: "Аудит и план действий", meta: `${P.testDrive.term} · ${P.testDrive.price}`, alt: true, cards: [],
 		num: "01",
 		label: "Аудит и план действий",
 		h2: "Сначала понять, что не так, и только потом тратить деньги",
@@ -72,7 +72,7 @@ export const process = typo({
 		map: {
 			title: "Три шага",
 			steps: [
-				{ href: "#test-drive", name: "Аудит и план действий", meta: `${P.testDrive.term.replace("дня", "рабочих дня")} · ${P.testDrive.price}`, gets: "письменный разбор одной задачи" },
+				{ href: "#test-drive", name: "Аудит и план действий", meta: `${P.testDrive.term} · ${P.testDrive.price}`, gets: "письменный разбор одной задачи" },
 				{ href: "#chertezh", name: "Чертёж системы", meta: `${P.blueprint.term} · от ${P.blueprint.price}`, gets: "документ проекта, для продукта ещё и прототип" },
 				{ href: "#vedenie", name: "Ведение", meta: `помесячно, от ${P.management.term} · от ${P.management.price} в месяц`, gets: "продукт и продажи в одних руках, отчёт каждую неделю" },
 			],
