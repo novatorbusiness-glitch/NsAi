@@ -1298,3 +1298,11 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .cmodal-btns .btn small{font-weight:500;font-size:12.5px;opacity:.8}
 .cmodal-legal{margin:14px 0 0;font-size:12.5px;line-height:1.5;color:var(--mut)}
 .cmodal-legal a{color:var(--acc)}
+.acta{grid-template-columns:1fr!important}
+.acta-act .cta-row{gap:10px}
+.acta .acta-act .under{margin-top:12px}
+.under.cnote{font-family:inherit;font-size:13px;line-height:1.5;letter-spacing:0;text-transform:none;margin-top:10px}
+.under.cnote a{color:var(--acc)}
+.acta .under.cnote,section.dark .under.cnote{color:var(--dark-mut)}
+.acta .under.cnote a{color:#5fd0a5}
+.svc-price .under.cnote{flex:1 1 100%;margin:4px 0 0}

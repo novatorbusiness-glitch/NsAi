@@ -9,6 +9,7 @@ export const site = {
 	contacts: {
 		telegram: "https://t.me/Ilya_novator",
 		telegramHandle: "@Ilya_novator",
+		maxPhone: "+7 965 872-45-68",
 		max: "https://max.ru/u/f9LHodD0cOJ7sFFvli4XlmkEOONE_hl47mUJ5CDNggHpSU7D9dpD65nPB3w",
 		channel: "https://t.me/lowcortisol_ai",
 		channelHandle: "@lowcortisol_ai",
