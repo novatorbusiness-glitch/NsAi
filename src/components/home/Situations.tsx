@@ -14,12 +14,14 @@ export default function Situations() {
 						<div className="scard" key={k.title}>
 							<h3>{k.title}</h3>
 							<p>{k.text}</p>
+							{"stat" in k && k.stat && <p className="sstat"><b>{k.stat.num}</b><span>{k.stat.t}</span></p>}
 							<p className="punch">{k.punch}</p>
 						</div>
 					))}
 				</div>
 				<Fable q={c.fable.q} src={c.fable.src} />
 				<p className="closing">{c.closing}</p>
+				<p className="ssrc">{c.sources}</p>
 			</div>
 		</section>
 	);

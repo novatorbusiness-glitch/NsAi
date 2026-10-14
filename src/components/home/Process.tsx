@@ -1,4 +1,3 @@
-import StepPicker from "./StepPicker";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
 
@@ -21,7 +20,6 @@ export default function Process() {
 				</div>
 				<p className="more-link"><a href="/kak-my-rabotaem">{c.more}</a></p>
 				<p className="after">{c.after}</p>
-				<StepPicker />
 			</div>
 		</section>
 	);
