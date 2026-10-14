@@ -1,3 +1,4 @@
+import ContactNote from "@/components/ui/ContactNote";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ArticleCard from "@/components/blog/ArticleCard";
@@ -43,7 +44,8 @@ export default function BlogPage() {
 						<p className="lead">{f.lead}</p>
 						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a>{" "}
 						<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a>
-						<p className="under">{site.contacts.telegramHandle} · {f.under}</p>
+						<p className="under">{f.under}</p>
+						<ContactNote />
 					</div>
 				</div>
 			</section>

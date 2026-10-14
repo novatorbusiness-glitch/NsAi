@@ -1,3 +1,4 @@
+import ContactNote from "@/components/ui/ContactNote";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -52,9 +53,10 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 						<ArticleBody body={a.body} />
 						<div className="acta">
 							<div><h3>{c.title}</h3><p>{c.text}</p></div>
-							<div>
-								{c.href.startsWith("/") ? <Link className="btn p" href={c.href}>{c.button}</Link> : <a className="btn p" href={c.href} target="_blank" rel="noopener">{c.button}</a>}
+							<div className="acta-act">
+								<div className="cta-row">{c.href.startsWith("/") ? <Link className="btn p" href={c.href}>{c.button}</Link> : <a className="btn p" href={c.href} target="_blank" rel="noopener">{c.button}</a>}<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 								<p className="under">{c.under}</p>
+								<ContactNote />
 							</div>
 						</div>
 						<nav className="pnav" aria-label={t.all}>
