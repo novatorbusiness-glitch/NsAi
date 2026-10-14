@@ -24,7 +24,7 @@ for (const f of pages()) {
 	if (h1 !== 1) errors.push(`${r}: H1 на странице — ${h1}, нужен один`);
 	if (!canon) errors.push(`${r}: нет canonical`);
 	else if (!isChapter(f) && new URL(canon).pathname.replace(/\/$/, "") !== route(f).replace(/\/$/, "")) errors.push(`${r}: canonical ${canon} не совпадает с адресом`);
-	const og = html.match(/property="og:image" content="[^"]*\/og\/([a-z0-9-]+)\.jpg"/)?.[1];
+	const og = html.match(/property="og:image" content="[^"]*\/og\/([a-z0-9-]+)\.jpg(?:\?v=\d+)?"/)?.[1];
 	const ogTitle = unesc(html.match(/property="og:title" content="([^"]*)"/)?.[1] || "");
 	if (isChapter(f)) { // главы книги — готовые страницы (scripts/book); превью у каждой своё: og/book-<глава>.jpg
 		const want = "book-" + path.basename(f, ".html");
