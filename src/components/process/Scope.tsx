@@ -17,7 +17,6 @@ export default function Scope() {
 						</li>
 					))}
 				</ol>
-				<div className="notdo"><p className="lbl">{c.notLabel}</p><ul>{c.not.map((t) => <li key={t}>{t}</li>)}</ul></div>
 			</div>
 		</section>
 	);
