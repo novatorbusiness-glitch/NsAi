@@ -16,7 +16,7 @@ export default function NotFound() {
 				<p className="lead">{c.lead}</p>
 				<div className="cta-row">
 					<Link className="btn p" href="/">{c.home}</Link>
-					<a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a>
+					<a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener">{common.ui.headerStart}</a>
 				</div>
 				<p className="lead" style={{ marginTop: 28 }}>
 					{site.menu.map((m, i) => <span key={m.href}>{i ? " · " : ""}<Link href={m.href}>{m.label}</Link></span>)}
