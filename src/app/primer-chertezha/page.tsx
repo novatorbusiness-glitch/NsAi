@@ -7,13 +7,14 @@ import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
 import JsonLd from "@/components/ui/JsonLd";
 import MapCanvas from "@/components/primer/MapCanvas";
+import DemoFrame from "@/components/primer/DemoFrame";
 import { pageMeta, crumbs } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа (решение 16.10): карта проекта → как читать → что получите вы → начать.
+// Пример чертежа (решение 16.10): карта проекта → демо кабинета → как читать → что получите вы → начать.
 export default function Page() {
-	const { hero: h, map: m, read: r, you: y, final: f } = primer;
+	const { hero: h, map: m, demo: d, read: r, you: y, final: f } = primer;
 	const links = data.nodes.reduce((a, n) => a + n.links.length, 0);
 	const facts = [
 		{ num: String(data.nodes.length), text: h.facts.nodes },
@@ -44,14 +45,22 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="read">
+			<section id="demo">
+				<div className="wrap">
+					<SectionHead num={d.num} label={d.label} title={d.h2} lead={d.lead} />
+					<DemoFrame />
+					<p className="under">{d.cap}</p>
+				</div>
+			</section>
+
+			<section id="read" className="alt">
 				<div className="wrap">
 					<SectionHead num={r.num} label={r.label} title={r.h2} />
 					<ul className="pm-points">{r.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
 				</div>
 			</section>
 
-			<section id="you" className="alt">
+			<section id="you">
 				<div className="wrap">
 					<SectionHead num={y.num} label={y.label} title={y.h2} />
 					<ul className="pm-points">{y.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>

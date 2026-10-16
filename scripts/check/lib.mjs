@@ -8,7 +8,7 @@ export function pages(dir = OUT) {
 	const res = [];
 	for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
 		const p = path.join(dir, e.name);
-		if (e.isDirectory()) { if (!["_next", "__proto"].includes(e.name)) res.push(...pages(p)); }
+		if (e.isDirectory()) { if (!["_next", "__proto", "demo"].includes(e.name)) res.push(...pages(p)); }
 		else if (e.name.endsWith(".html")) res.push(p);
 	}
 	return res;
