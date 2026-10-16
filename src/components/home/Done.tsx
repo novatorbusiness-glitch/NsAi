@@ -31,8 +31,10 @@ export default function Done() {
 							<div className="xp-marks"><span>{c.agency.yours.from}</span><span className="goal">{c.agency.yours.to}</span></div>
 						</div>
 					</div>
-					<p className="ag-ql">{c.agency.quotesLabel}</p>
-					<div className="ag-quotes">{c.agency.quotes.map((q) => <figure key={q.who}><blockquote>«{q.text}»</blockquote><figcaption>{q.who}</figcaption></figure>)}</div>
+				</div>
+				<div className="quotes2">
+					<p className="lbl">{c.agency.quotesLabel}</p>
+					<div>{c.agency.quotes.map((q) => <figure key={q.who}><blockquote>«{q.text}»</blockquote><figcaption>{q.who}</figcaption></figure>)}</div>
 				</div>
 				<p className="done-all"><a className="btn s" href="/keisy">{c.all}</a></p>
 			</div>
