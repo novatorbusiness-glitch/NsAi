@@ -5,6 +5,7 @@ import { process } from "@content/pages/kak-my-rabotaem";
 import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
 import MapPreview from "@/components/primer/MapPreview";
+import RazborPreview from "@/components/razbor/RazborPreview";
 
 type Step = (typeof process.steps)[number];
 
@@ -24,6 +25,7 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 						<p className="svc-need"><b>От вас:</b> {s.need}</p>
 					</div>
 				</div>
+				{s.id === "test-drive" && <RazborPreview />}
 				{s.id === "chertezh" && <MapPreview at="process" />}
 				{s.id === "vedenie" && (
 					<div className="vweek">

@@ -8,16 +8,16 @@ const C: Record<string, [string, string]> = {
 };
 const ICON: Record<string, string> = { done: "✓", now: "◐", plan: "○" };
 
-export default function MapPreview({ at }: { at?: "process" | "cases" }) {
+export default function MapPreview({ at, compact }: { at?: "process" | "cases" | "home"; compact?: boolean }) {
 	const t = primer.preview;
 	const links = data.nodes.reduce((a, n) => a + n.links.length, 0);
 	return (
-		<a className="mpv" href="/primer-chertezha">
+		<a className={`mpv${compact ? " c" : ""}`} href="/primer-chertezha">
 			<div className="mpv-t">
 				<p className="lbl">{t.label}</p>
-				<h3>{at ? t.titles[at] : t.title}</h3>
-				<p>{t.text}</p>
-				<p className="mpv-n">{data.nodes.length} {t.nodes} · {data.layers.length} {t.layers} · {links} {t.links}</p>
+				<h3>{at && at !== "home" ? t.titles[at] : t.title}</h3>
+				{!compact && <p>{t.text}</p>}
+				{!compact && <p className="mpv-n">{data.nodes.length} {t.nodes} · {data.layers.length} {t.layers} · {links} {t.links}</p>}
 				<span className="btn s">{t.button}</span>
 			</div>
 			<MapMini />
