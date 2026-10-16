@@ -1492,3 +1492,4 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .pc-kpis span{display:block;margin-top:5px;font-size:13px;line-height:1.35;color:#c3cbc7}
 .pc .df-foot{justify-content:flex-end}
 @media(max-width:520px){.pc-list{padding:12px 14px 4px}.pc-list::before{left:23px}.pc-head{flex-wrap:wrap}.pc .df-task{font-size:14px}.pc-result{margin:4px 14px 14px}}
+.pc-when{font:500 11px/1 var(--m);color:#7d8784}

@@ -36,7 +36,7 @@ export default function Hero() {
 								<li key={r.who} className="is-done">
 									<span className="pc-node" aria-hidden="true"></span>
 									<div className="pc-body">
-										<p className="pc-head"><span className="df-who">{r.who}</span><span className={`pc-step s-${r.step}`}>{r.step}</span><span className="df-st">{f.done}</span></p>
+										<p className="pc-head"><span className="df-who">{r.who}</span><span className={`pc-step s-${r.step}`}>{r.step}</span><span className="pc-when">{r.when}</span><span className="df-st">{f.done}</span></p>
 										<p className="df-task"><Rich t={r.task} /></p>
 									</div>
 								</li>
