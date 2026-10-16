@@ -47,7 +47,7 @@ export default function Page() {
 
 			<section id="why" className="alt">
 				<div className="wrap">
-					<SectionHead num={w.num} label={w.label} title={w.h2} />
+					<SectionHead num={w.num} label={w.label} title={w.h2} lead={w.lead} />
 					<ul className="pm-why">{w.items.map((x) => <li key={x.num}><b>{x.num}</b><span>{x.t}</span></li>)}</ul>
 					<p className="ssrc"><Rich t={w.sources} /></p>
 				</div>
@@ -63,7 +63,7 @@ export default function Page() {
 
 			<section id="read" className="alt">
 				<div className="wrap">
-					<SectionHead num={r.num} label={r.label} title={r.h2} />
+					<SectionHead num={r.num} label={r.label} title={r.h2} lead={r.lead} />
 					<ul className="pm-points">{r.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
 				</div>
 			</section>
@@ -89,7 +89,7 @@ export default function Page() {
 
 			<section id="you">
 				<div className="wrap">
-					<SectionHead num={y.num} label={y.label} title={y.h2} />
+					<SectionHead num={y.num} label={y.label} title={y.h2} lead={y.lead} />
 					<ul className="pm-points">{y.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
 				</div>
 			</section>
