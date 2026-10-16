@@ -2,6 +2,7 @@ import Rich from "@/components/ui/Rich";
 import { allCases } from "@/lib/cases";
 import { keisy } from "@content/pages/keisy";
 import SectionHead from "@/components/ui/SectionHead";
+import MapPreview from "@/components/primer/MapPreview";
 
 // 02 · свои продукты: веер экранов и строки «экран + главное решение + что это значит для вас». Кейсы — content/cases/*.md (headline — решение).
 export default function Products() {
@@ -33,6 +34,7 @@ export default function Products() {
 						);
 					})}
 				</div>
+				<MapPreview />
 			</div>
 		</section>
 	);
