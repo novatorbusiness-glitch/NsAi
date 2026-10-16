@@ -1493,3 +1493,44 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .pc .df-foot{justify-content:flex-end}
 @media(max-width:520px){.pc-list{padding:12px 14px 4px}.pc-list::before{left:23px}.pc-head{flex-wrap:wrap}.pc .df-task{font-size:14px}.pc-result{margin:4px 14px 14px}}
 .pc-when{font:500 11px/1 var(--m);color:#7d8784}
+/* Схема «сейчас → со мной» на главной (16.10). */
+.scheme{display:grid;gap:14px;margin:28px 0 8px;align-items:stretch}
+.sch-card{margin:0;background:#fff;border-radius:16px;padding:22px 22px 18px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 10px 30px rgba(16,24,20,.05)}
+.sch-card h3{margin:4px 0 6px;font-size:18px}
+.sch-tag{margin:0;font:600 11.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.after .sch-tag{color:var(--acc)}
+.sch-card svg{display:block;width:100%;height:auto;max-height:300px}
+.sch-card figcaption{margin-top:8px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.sch-arrow{display:none;align-self:center;font:700 26px/1 var(--f);color:var(--acc)}
+.sch-l{stroke-width:1.6}
+.sch-l.dash{stroke:#d9a273;stroke-dasharray:5 5}
+.sch-l.ok{stroke:#2fb58a}
+.sch-l.soft{stroke:#9fd9c3;stroke-dasharray:3 4}
+.sch-x{fill:#c46a3b;font:700 15px var(--f);text-anchor:middle}
+.sch-node{fill:#f6f2ee;stroke:#e6d6c8}
+.sch-node.on{fill:var(--acc-soft);stroke:#b9dfcf}
+.sch-you{fill:#fbeedd;stroke:#e3b482;stroke-width:2}
+.sch-you.small{stroke-width:1.5}
+.sch-me{fill:var(--acc)}
+.sch-sys{fill:#f7faf8;stroke:#cfe6dc;stroke-dasharray:6 5}
+.sch-t{font:600 12.5px var(--f);fill:var(--ink);text-anchor:middle}
+.sch-t.you{font-size:14px;fill:#8a4b16}
+.sch-t.you.sm{font-size:10.5px}
+.sch-t.me{fill:#fff;font-size:14px}
+.sch-cap{font:600 10.5px var(--m);fill:#6aa48f;letter-spacing:.08em;text-transform:uppercase}
+@media(min-width:900px){.scheme{grid-template-columns:1fr auto 1fr;gap:18px}.sch-arrow{display:block}}
+/* Неделя ведения (16.10): ритм роли одной полосой. */
+.vweek{margin:44px 0 0}
+.vweek ol{list-style:none;margin:0;padding:0;display:grid;gap:12px;position:relative}
+.vweek li{background:#fff;border-radius:12px;padding:18px 20px;position:relative;box-shadow:0 1px 2px rgba(16,24,20,.04),0 10px 30px rgba(16,24,20,.05)}
+.vweek li span{display:block;font:600 11px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin-bottom:8px}
+.vweek li b{display:block;font-size:18px;margin-bottom:4px}
+.vweek li p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
+.vweek-m{margin:12px 0 0;padding:14px 18px;border-radius:12px;background:var(--acc-soft);font-size:15px}
+@media(min-width:900px){
+  .vweek ol{grid-template-columns:repeat(3,1fr);gap:16px}
+  .vweek li:not(:last-child)::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);font:700 16px/1 var(--f);color:var(--acc);z-index:1}
+}
+.sch-node.ext{fill:#fff;stroke:#cfd4d1;stroke-dasharray:4 3}
+.sch-t.ext{font:500 9.5px var(--f);fill:var(--mut)}
+.sch-cap.flow{text-anchor:middle;font-size:9px}

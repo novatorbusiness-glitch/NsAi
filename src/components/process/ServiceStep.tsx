@@ -25,6 +25,13 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 					</div>
 				</div>
 				{s.id === "chertezh" && <MapPreview />}
+				{s.id === "vedenie" && (
+					<div className="vweek">
+						<p className="lbl">{process.week.label}</p>
+						<ol>{process.week.days.map((x) => <li key={x.b}><span>{x.d}</span><b>{x.b}</b><p>{x.t}</p></li>)}</ol>
+						<p className="vweek-m"><b>{process.week.month.b}:</b> {process.week.month.t}</p>
+					</div>
+				)}
 				<div className="fitcards plain svc-fit">
 					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{s.fitTitle}</p><ul>{s.fit.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{s.notTitle}</p><ul>{s.not.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
