@@ -1436,3 +1436,28 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sstat span{font-size:15px;line-height:1.5}
 .pf li{font-size:15px;line-height:1.45}
 .past-note{font-size:14.5px}
+/* Визуал, шаг 2 (16.10): кейсы агентства карточками, на компьютере в две колонки — блок вдвое короче, каждый кейс читается отдельно. */
+.srows{border-top:0;display:grid;gap:16px}
+.srow{display:flex;flex-direction:column;gap:18px;padding:26px 24px;border:1px solid #2a3034;border-radius:14px;background:var(--dark2)}
+.sr-r{grid-template-columns:1fr !important;gap:2px 0;padding-top:16px;border-top:1px solid #2a3034}
+.sr-r dd{margin:0 0 12px !important}
+.sr-r dd:last-child{margin-bottom:0 !important}
+@media(min-width:900px){
+  .srows{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .srow{padding:30px 30px 28px;gap:20px}
+}
+/* Визуал, шаг 3 (16.10): внутри шага «Как мы работаем» паузы между частями — что получите, подойдёт ли, сколько стоит. */
+.svc.v2 .mpv{margin:48px 0 0}
+.svc-fit{margin-top:56px}
+.svc-price{margin-top:44px;padding:22px 24px;gap:14px}
+.svc-price > p:first-child{font-size:17.5px}
+@media(max-width:899px){.svc-fit{margin-top:40px}.svc-price{margin-top:32px;padding:18px}}
+/* Визуал, шаг 4 (16.10): на телефоне больше воздуха между блоками и под заголовком блока. */
+@media(max-width:899px){section{padding:64px 0}section.hero{padding:44px 0 40px}.section-head{margin-bottom:32px}}
+/* Визуал, шаг 6 (16.10): отзывы отдельной светлой строкой под тёмной карточкой пути — карточка короче, отзывы заметнее. */
+.quotes2{margin-top:28px}
+.quotes2 > div{display:grid;gap:16px}
+.quotes2 figure{margin:0;background:#fff;border-radius:12px;padding:24px 26px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 10px 30px rgba(16,24,20,.05)}
+.quotes2 blockquote{margin:0;font-size:17px;line-height:1.6;color:var(--ink);padding-left:16px;border-left:2px solid var(--acc)}
+.quotes2 figcaption{margin-top:12px;padding-left:18px;font:500 12.5px/1.4 var(--m);color:var(--mut)}
+@media(min-width:900px){.quotes2 > div{grid-template-columns:repeat(2,1fr);gap:20px}}
