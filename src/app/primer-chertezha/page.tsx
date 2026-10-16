@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/config/site";
 import { primer } from "@content/pages/primer";
 import { common } from "@content/pages/common";
-import data from "@content/data/okidelo-map.json";
+import data from "@content/data/project-map.json";
 import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
 import JsonLd from "@/components/ui/JsonLd";
@@ -11,7 +11,7 @@ import { pageMeta, crumbs } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа (решение 16.10): карта проекта OkiDelo → как читать → что получите вы → начать.
+// Пример чертежа (решение 16.10): карта проекта → как читать → что получите вы → начать.
 export default function Page() {
 	const { hero: h, map: m, read: r, you: y, final: f } = primer;
 	const links = data.nodes.reduce((a, n) => a + n.links.length, 0);
