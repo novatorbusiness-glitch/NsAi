@@ -1,3 +1,4 @@
+import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
 
@@ -13,7 +14,7 @@ export default function Process() {
 						<div className="pstep" key={s.label}>
 							<p className="pl">{s.label}</p>
 							<h3>{s.title}</h3>
-							<p className="px">{s.text}</p>
+							<p className="px"><Rich t={s.text} /></p>
 							<div className="pp"><b>{s.price}{"unit" in s && <small> {s.unit}</small>}</b><span>{s.note}</span></div>
 						</div>
 					))}

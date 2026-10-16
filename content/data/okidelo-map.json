@@ -1,0 +1,469 @@
+{
+ "version": "2026-10-16",
+ "layers": [
+  {
+   "id": "goal",
+   "title": "1 · Цель и намерения"
+  },
+  {
+   "id": "market",
+   "title": "2 · Клиент и рынок"
+  },
+  {
+   "id": "product",
+   "title": "3 · Продукт и модель"
+  },
+  {
+   "id": "cabinet",
+   "title": "4 · Кабинет"
+  },
+  {
+   "id": "tech",
+   "title": "5 · Техника"
+  },
+  {
+   "id": "money",
+   "title": "6 · Деньги"
+  },
+  {
+   "id": "sales",
+   "title": "7 · Маркетинг и продажи"
+  },
+  {
+   "id": "legal",
+   "title": "8 · Документы и право"
+  },
+  {
+   "id": "route",
+   "title": "9 · Маршрут"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "goal",
+   "layer": "goal",
+   "title": "Цель и три намерения",
+   "publicNote": "Зачем продукт и куда он растёт",
+   "status": "done",
+   "links": []
+  },
+  {
+   "id": "growth",
+   "layer": "goal",
+   "title": "Путь роста",
+   "publicNote": "Этапы роста продукта",
+   "status": "done",
+   "links": [
+    "goal"
+   ]
+  },
+  {
+   "id": "research",
+   "layer": "market",
+   "title": "Исследование",
+   "publicNote": "Исследование рынка: закономерности",
+   "status": "done",
+   "links": [
+    "goal"
+   ]
+  },
+  {
+   "id": "icp",
+   "layer": "market",
+   "title": "Ядро клиентов",
+   "publicNote": "Ядро: кому продукт нужен прежде всего",
+   "status": "done",
+   "links": [
+    "research"
+   ]
+  },
+  {
+   "id": "needs",
+   "layer": "market",
+   "title": "Потребности",
+   "publicNote": "Потребности, за которые бизнес уже платит",
+   "status": "done",
+   "links": [
+    "research"
+   ]
+  },
+  {
+   "id": "segments",
+   "layer": "market",
+   "title": "Сегменты и приоритет",
+   "publicNote": "Сегменты и порядок выхода к ним",
+   "status": "done",
+   "links": [
+    "icp",
+    "needs"
+   ]
+  },
+  {
+   "id": "voice",
+   "layer": "market",
+   "title": "Голос клиента",
+   "publicNote": "Голос клиента: боли своими словами",
+   "status": "done",
+   "links": [
+    "research"
+   ]
+  },
+  {
+   "id": "offer",
+   "layer": "market",
+   "title": "Оффер",
+   "publicNote": "Оффер: что это и для кого",
+   "status": "done",
+   "links": [
+    "icp",
+    "needs",
+    "voice"
+   ]
+  },
+  {
+   "id": "analogs",
+   "layer": "market",
+   "title": "Аналоги и что берём",
+   "publicNote": "Разбор аналогов: что берём, что нет",
+   "status": "done",
+   "links": [
+    "research"
+   ]
+  },
+  {
+   "id": "bizmodel",
+   "layer": "product",
+   "title": "Бизнес-модель",
+   "publicNote": "Модель: отделы, директор и команды под задачу",
+   "status": "done",
+   "links": [
+    "offer"
+   ]
+  },
+  {
+   "id": "depts",
+   "layer": "product",
+   "title": "Отделы и сотрудники",
+   "publicNote": "Отделы и AI-сотрудники с ролями",
+   "status": "done",
+   "links": [
+    "bizmodel"
+   ]
+  },
+  {
+   "id": "taskflow",
+   "layer": "product",
+   "title": "Как проходит задача",
+   "publicNote": "Путь задачи от просьбы до результата",
+   "status": "done",
+   "links": [
+    "bizmodel"
+   ]
+  },
+  {
+   "id": "quality",
+   "layer": "product",
+   "title": "Приёмка и качество",
+   "publicNote": "Проверка качества перед сдачей",
+   "status": "done",
+   "links": [
+    "taskflow"
+   ]
+  },
+  {
+   "id": "memory",
+   "layer": "product",
+   "title": "Память и обучение",
+   "publicNote": "Память: отдел растёт вместе с клиентом",
+   "status": "done",
+   "links": [
+    "taskflow"
+   ]
+  },
+  {
+   "id": "escalation",
+   "layer": "product",
+   "title": "Подтверждения и самостоятельность",
+   "publicNote": "Ничего наружу без согласия клиента",
+   "status": "done",
+   "links": [
+    "taskflow"
+   ]
+  },
+  {
+   "id": "startmap",
+   "layer": "product",
+   "title": "С чего начать",
+   "publicNote": "Карта процессов: с чего начать",
+   "status": "done",
+   "links": [
+    "bizmodel"
+   ]
+  },
+  {
+   "id": "ds",
+   "layer": "cabinet",
+   "title": "Дизайн-система",
+   "publicNote": "Дизайн-система кабинета",
+   "status": "done",
+   "links": [
+    "bizmodel"
+   ]
+  },
+  {
+   "id": "screens",
+   "layer": "cabinet",
+   "title": "Карта экранов",
+   "publicNote": "Карта экранов кабинета",
+   "status": "done",
+   "links": [
+    "ds",
+    "taskflow"
+   ]
+  },
+  {
+   "id": "proto",
+   "layer": "cabinet",
+   "title": "Кликабельный прототип",
+   "publicNote": "Кликабельный прототип — эталон для разработки",
+   "status": "now",
+   "links": [
+    "screens"
+   ]
+  },
+  {
+   "id": "workspace",
+   "layer": "cabinet",
+   "title": "Рабочее пространство",
+   "publicNote": "Рабочее пространство: файлы, превью, ссылки",
+   "status": "now",
+   "links": [
+    "proto"
+   ]
+  },
+  {
+   "id": "bpplan",
+   "layer": "tech",
+   "title": "План Blueprint",
+   "publicNote": "Чертёж разработки по разделам",
+   "status": "done",
+   "links": [
+    "proto"
+   ]
+  },
+  {
+   "id": "decisions",
+   "layer": "tech",
+   "title": "Архитектурные решения",
+   "publicNote": "Архитектурные решения до кода",
+   "status": "now",
+   "links": [
+    "bpplan"
+   ]
+  },
+  {
+   "id": "bpdata",
+   "layer": "tech",
+   "title": "Данные",
+   "publicNote": "Схема данных и изоляция клиентов",
+   "status": "done",
+   "links": [
+    "decisions",
+    "screens"
+   ]
+  },
+  {
+   "id": "bpapi",
+   "layer": "tech",
+   "title": "API и события",
+   "publicNote": "Контракты модулей и события",
+   "status": "done",
+   "links": [
+    "bpdata"
+   ]
+  },
+  {
+   "id": "bpengine",
+   "layer": "tech",
+   "title": "Движок и команда",
+   "publicNote": "Движок AI-команды",
+   "status": "done",
+   "links": [
+    "bpapi"
+   ]
+  },
+  {
+   "id": "bprest",
+   "layer": "tech",
+   "title": "Остальные разделы Blueprint",
+   "publicNote": "Остальные разделы чертежа",
+   "status": "plan",
+   "links": [
+    "bpengine"
+   ]
+  },
+  {
+   "id": "models",
+   "layer": "tech",
+   "title": "Модели и API",
+   "publicNote": "Модели AI и как их выбираем",
+   "status": "done",
+   "links": []
+  },
+  {
+   "id": "impl",
+   "layer": "tech",
+   "title": "Реализация по волнам",
+   "publicNote": "Разработка по волнам",
+   "status": "plan",
+   "links": [
+    "bprest"
+   ]
+  },
+  {
+   "id": "unit",
+   "layer": "money",
+   "title": "Юнит-экономика",
+   "publicNote": "Экономика продукта: окупаемость каждого клиента",
+   "status": "done",
+   "links": []
+  },
+  {
+   "id": "funnel",
+   "layer": "sales",
+   "title": "Воронка первых продаж",
+   "publicNote": "Воронка первых продаж",
+   "status": "done",
+   "links": [
+    "offer"
+   ]
+  },
+  {
+   "id": "channels",
+   "layer": "sales",
+   "title": "Каналы",
+   "publicNote": "Каналы привлечения — гипотезы и тесты",
+   "status": "done",
+   "links": [
+    "segments"
+   ]
+  },
+  {
+   "id": "salesweek",
+   "layer": "sales",
+   "title": "Неделя продаж и скрипты",
+   "publicNote": "Ритм продаж и скрипты",
+   "status": "done",
+   "links": [
+    "funnel"
+   ]
+  },
+  {
+   "id": "bot",
+   "layer": "sales",
+   "title": "Бот прогрева",
+   "publicNote": "Бот прогрева в Telegram",
+   "status": "now",
+   "links": [
+    "funnel"
+   ]
+  },
+  {
+   "id": "content",
+   "layer": "sales",
+   "title": "Контент",
+   "publicNote": "Контент для привлечения",
+   "status": "now",
+   "links": [
+    "channels"
+   ]
+  },
+  {
+   "id": "site",
+   "layer": "sales",
+   "title": "Сайт продукта",
+   "publicNote": "Сайт продукта — каркас",
+   "status": "now",
+   "links": [
+    "offer",
+    "voice"
+   ]
+  },
+  {
+   "id": "offerdoc",
+   "layer": "legal",
+   "title": "Оферта",
+   "publicNote": "Договор-оферта",
+   "status": "now",
+   "links": []
+  },
+  {
+   "id": "pdn",
+   "layer": "legal",
+   "title": "Персональные данные",
+   "publicNote": "Персональные данные по закону",
+   "status": "now",
+   "links": [
+    "bpdata"
+   ]
+  },
+  {
+   "id": "rkn",
+   "layer": "legal",
+   "title": "Роскомнадзор и юрист",
+   "publicNote": "Уведомление регулятора до запуска",
+   "status": "plan",
+   "links": [
+    "pdn"
+   ]
+  },
+  {
+   "id": "r1",
+   "layer": "route",
+   "title": "Фундамент",
+   "publicNote": "Фундамент: модель, рынок, экраны",
+   "status": "done",
+   "links": []
+  },
+  {
+   "id": "r5",
+   "layer": "route",
+   "title": "Прототип",
+   "publicNote": "Прототип",
+   "status": "now",
+   "links": [
+    "r1"
+   ]
+  },
+  {
+   "id": "r6",
+   "layer": "route",
+   "title": "Blueprint",
+   "publicNote": "Чертёж разработки",
+   "status": "now",
+   "links": [
+    "r5"
+   ]
+  },
+  {
+   "id": "r7",
+   "layer": "route",
+   "title": "Реализация",
+   "publicNote": "Разработка",
+   "status": "plan",
+   "links": [
+    "r6"
+   ]
+  },
+  {
+   "id": "r8",
+   "layer": "route",
+   "title": "Первые платящие клиенты",
+   "publicNote": "Первые клиенты",
+   "status": "plan",
+   "links": [
+    "r7"
+   ]
+  }
+ ]
+}
