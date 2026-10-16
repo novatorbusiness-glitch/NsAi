@@ -3,7 +3,7 @@
 <title>AI-отдел для бизнеса — демо кабинета</title>
 <style>
 
-/* ДС — из Фундамента, собрано 2026-10-16 */
+
 
 .app{
   --bg:#ffffff; --surface:#f8f8fa; --surface-2:#f1f1f4; --border:#e6e6ea;
@@ -50,7 +50,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .app.w390 .ty{grid-template-columns:1fr;gap:4px}
 .app.w390 .ty .lbl{margin-top:12px}
 .long{font:400 16px/26px var(--f-long);max-width:640px}
-/* кнопки */
+
 .btn{font:500 14px/1 var(--f-ui);border-radius:var(--r-ctl);padding:0 14px;height:36px;display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,color .15s,transform .15s;white-space:nowrap}
 .app.w390 .btn{height:44px;padding:0 16px}
 .btn:focus-visible,.btn.is-focus{outline:none;box-shadow:var(--focus)}
@@ -95,7 +95,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .seg{display:inline-flex;flex-wrap:wrap;justify-content:center;border:1px solid var(--border);border-radius:var(--r-ctl);overflow:hidden;background:var(--surface)}
 .seg button{font:500 12.5px/1 var(--f-ui);color:var(--ink-2);background:none;border:0;padding:7px 9px;cursor:pointer;min-height:var(--seg-h,0)}
 .seg button[aria-pressed="true"]{background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px var(--border)}
-/* аватары */
+
 .av{--s:64px;position:relative;width:var(--s);height:var(--s);flex:none;display:inline-block}
 .av .clip{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:color-mix(in srgb,var(--c1) 14%,var(--bg))}
 .av .blob{position:absolute;inset:-18%;filter:blur(calc(var(--s)*.07)) saturate(.8);opacity:.9}
@@ -140,7 +140,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .pc span{font:400 11px/1.3 var(--f-mono);color:var(--ink-3)}
 .sizes{display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap}
 .sizes .sz{display:flex;flex-direction:column;align-items:center;gap:8px}
-/* состояния */
+
 .empty{border:1px dashed var(--border);border-radius:var(--r-card);padding:28px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;background:var(--bg)}
 .empty .say{font:400 16px/1.5 var(--f-long);max-width:420px}
 .empty .who{font-size:13px;color:var(--ink-2)}
@@ -151,7 +151,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .stbox p{font-size:14px;color:var(--ink-2);line-height:1.5}
 .stbox .ico{width:36px;height:36px;border-radius:var(--r-ctl);display:flex;align-items:center;justify-content:center}
 .stbox .ico svg{width:18px;height:18px}
-/* чат */
+
 .app{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg);display:grid;grid-template-columns:220px 1fr}
 .app.w390 .app{grid-template-columns:1fr}
 .side{background:var(--surface);border-right:1px solid var(--border);padding:12px 10px;display:flex;flex-direction:column;gap:2px}
@@ -258,7 +258,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .tabbar .plus{width:44px;height:44px;border-radius:12px;background:var(--accent);color:var(--accent-ink);min-width:44px}
 .demo{display:inline-block;font:500 11px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--warn);border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:4px;padding:3px 6px;vertical-align:middle}
 
-/* ===== аналитика (раздел 10) ===== */
+
 .app{--c1:#6b46c1;--c2:#eb6834;--c3:#0f97a8;--grid:#ececf0;--axis:#d4d2dc;--mute:#8e8a9e;--o1:#b9a4ea;--o2:#9a7fdd;--o3:#7f5ecf;--o4:#5b3fa8;--o5:#2e2160}
 .app[data-theme="dark"]{--c1:#7f5ecf;--c2:#d95926;--c3:#1aa3b3;--grid:#26262d;--axis:#3a3a44;--mute:#7c7a8c;--o1:#5b3fa8;--o2:#7f5ecf;--o3:#9d86ff;--o4:#b9a4ea;--o5:#d7cbf4}
 .an-filter{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
@@ -308,7 +308,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .seglab span{display:inline-flex;align-items:center;gap:6px}
 .seglab i{width:8px;height:8px;border-radius:50%;display:inline-block}
 .seglab b{color:var(--ink);font-weight:600}
-/* команда под задачу */
+
 .tm-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
 .tm-top .sp{flex:1}
 .tpane[hidden]{display:none}
@@ -419,7 +419,7 @@ svg.i{width:16px;height:16px;stroke-width:1.5;flex:none}
 .only390{display:none}
 .app.w390 .only390{display:flex}
 
-/* ===== Оболочка прототипа (инструменты просмотра — не часть продукта) ===== */
+
 html,body{margin:0;height:100%}
 body.pt{font:14px/1.45 Inter,system-ui,sans-serif;color:#191631;background:#ecebf1;display:flex;flex-direction:column;min-height:100vh}
 body.pt *{box-sizing:border-box}
@@ -487,7 +487,7 @@ body.pt *{box-sizing:border-box}
 @media (max-width:1180px){.pt-main,.pt-main.nospec{grid-template-columns:minmax(0,1fr)}.pt-nav{position:fixed;left:0;top:46px;bottom:0;width:290px;z-index:60;display:none;box-shadow:8px 0 30px rgba(0,0,0,.15)}.pt-nav.open{display:block}.pt-spec{position:static;max-height:none;border-left:0;border-top:1px solid #e6e6ea}}
 @media (min-width:1181px){.pt-navbtn{display:none}}
 
-/* ===== Продукт: оболочка кабинета (UX1, UX2) — на токенах ДС ===== */
+
 .app{flex:1;display:flex;flex-direction:column;min-height:0;background:var(--bg);color:var(--ink);font:15px/22px var(--f-ui);position:relative;overflow:hidden}
 .app .a-top{height:56px;flex:none;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid var(--border);background:var(--bg)}
 .app .a-logo{font:600 16px/1 var(--f-brand);color:var(--ink);display:flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;background:none;border:0;padding:0}
@@ -520,7 +520,7 @@ body.pt *{box-sizing:border-box}
 .app .a-main{overflow:auto;min-width:0;position:relative}
 .app .a-help{position:absolute;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--bg);border:0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-pop);z-index:5}
 .app .a-tabs{display:none}
-/* телефон 390 */
+
 .app.w390 .a-top{height:52px;padding:0 12px;gap:8px;padding-top:0}
 .app.w390 .a-search,.app.w390 .a-lvl,.app.w390 .a-side{display:none}
 .app.w390 .a-body{grid-template-columns:1fr}
@@ -536,7 +536,7 @@ body.pt *{box-sizing:border-box}
 .app .a-sheet .in{background:var(--bg);width:100%;border-radius:16px 16px 0 0;padding:10px 10px 30px;max-width:none}
 .app .a-sheet .in a{display:flex;align-items:center;gap:12px;height:48px;padding:0 12px;border-radius:var(--r-ctl);color:var(--ink);font:500 15px/1 var(--f-ui);cursor:pointer;text-decoration:none}
 .app .a-sheet .grab{width:36px;height:4px;border-radius:2px;background:var(--border);margin:0 auto 8px}
-/* заглушка «экран будет на шаге» */
+
 .app .pt-ph{max-width:560px;margin:56px auto;padding:0 20px;text-align:center}
 .app.w390 .pt-ph{margin-top:36px}
 .app .pt-ph .code{font:600 12px/1 var(--f-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
@@ -544,7 +544,7 @@ body.pt *{box-sizing:border-box}
 .app .pt-ph p{color:var(--ink-2);font-size:14px;line-height:1.55;margin:0 0 6px}
 .app .pt-ph .box{border:1px dashed var(--accent-line);background:var(--accent-soft);border-radius:12px;padding:22px 18px;margin-top:18px}
 .app .pt-ph a{color:var(--accent)}
-/* окно-заглушка поверх экрана */
+
 .app .a-modal{position:absolute;inset:0;background:rgba(25,22,49,.35);z-index:30;display:flex;align-items:center;justify-content:center;padding:16px}
 .app .a-modal .in{background:var(--bg);border-radius:12px;box-shadow:var(--shadow-pop);max-width:440px;width:100%;padding:22px;position:relative}
 .app .a-modal .x{position:absolute;right:10px;top:10px}
@@ -554,7 +554,7 @@ body.pt *{box-sizing:border-box}
 .app.w390 .a-modal{padding:0;align-items:flex-end}
 .app.w390 .a-modal .in{max-width:none;border-radius:16px 16px 0 0;max-height:92%}
 .app.w390 .a-modal.m-panel .in{border-radius:0;height:100%;max-height:none}
-/* Telegram-рамка */
+
 .tg{flex:1;display:flex;flex-direction:column;min-height:0;background:#fff;font:15px/1.4 -apple-system,Inter,sans-serif;color:#000}
 .tg .tg-status{height:44px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 6px;font:600 14px/1 -apple-system,Inter}
 .tg .tg-top{height:52px;display:flex;align-items:center;gap:10px;padding:0 12px;border-bottom:1px solid #e5e5ea;background:#f7f7f7}
@@ -571,12 +571,12 @@ body.pt *{box-sizing:border-box}
 .tg .tg-in input.f{color:#000;outline:none;font:15px -apple-system,Inter,sans-serif}
 .tg .tg-send{background:#2481cc;color:#fff;border:0;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none}
 .tg .tg-send svg{width:16px;height:16px}
-/* режим «Спецификация»: подсветка переходов */
+
 :where(.spec) [data-go]{position:relative}
 .spec [data-go]{outline:1.5px dashed #e11d74!important;outline-offset:-1px}
 .spec [data-go]::after{content:attr(data-go-tag);position:absolute;top:-7px;right:-4px;font:600 9.5px/1 'JetBrains Mono',monospace;background:#e11d74;color:#fff;padding:2px 4px;border-radius:3px;white-space:nowrap;z-index:9;pointer-events:none}
 
-/* разбор шага */
+
 .pt-tourbtn{background:#9d86ff!important;border-color:#9d86ff!important;color:#0f0f13!important;font-weight:600}
 .pt-tour{width:100%;max-width:1440px;margin:0 0 14px}
 .pt-frame[data-dev="m390"]~.pt-cap,.pt-tour+.pt-frame{}
@@ -605,14 +605,14 @@ body.pt *{box-sizing:border-box}
 .app .a-cnt{margin-left:auto;min-width:18px;height:18px;border-radius:9px;background:var(--warn-dot);color:#fff;font:600 11px/18px var(--f-ui);text-align:center;padding:0 5px}
 .app .a-tabs .a-cnt{position:absolute;top:2px;left:calc(50% + 6px);margin:0}
 
-/* ссылка-кнопка — общая для всех экранов и окон (была только внутри Чата) */
+
 .app .c1-link{white-space:nowrap;background:none;border:0;padding:0 2px;color:var(--accent);font:500 13.5px/1 var(--f-ui);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-/* цвета статусов — общие для экранов и окон (в окне М1 «Принято» и «Остановлено» были без цвета) */
+
 .app .pill.p-ok{background:var(--ok-fill);color:var(--ok)}.app .pill.p-ok i{background:var(--ok-dot)}
 .app .pill.p-gray{background:var(--surface-2);color:var(--ink-2)}.app .pill.p-gray i{background:var(--ink-3)}
 .app .pill.p-err{background:var(--err-fill);color:var(--err)}.app .pill.p-err i{background:var(--err-dot)}
 .app .m2 .sec{border-top:1px solid var(--border);margin-top:16px;padding-top:12px}
-/* 08.10: подсказка «что произойдёт» для кнопок с действием вне кабинета (data-demo) */
+
 .app .a-toast{position:absolute;left:50%;bottom:24px;transform:translate(-50%,12px);max-width:min(460px,calc(100% - 32px));background:var(--ink);color:var(--bg);font:400 14px/1.45 var(--f-ui);padding:10px 14px;border-radius:10px;box-shadow:var(--shadow-pop);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:80}
 .app .a-toast.on{opacity:1;transform:translate(-50%,0)}
 
@@ -1296,7 +1296,7 @@ body.pt *{box-sizing:border-box}
 .app .rp-msg>b{display:block;color:var(--ink);font:600 16px/1.35 var(--f-ui);margin-bottom:6px}
 .app .rp-msg .btn{margin-top:12px}
 .app .rp-src{margin-top:12px;font-size:12.5px;color:var(--ink-2);line-height:1.5}
-/* М8 */
+
 .app .rp-m8 h2{font:600 19px/1.3 var(--f-ui);margin:0 0 4px;color:var(--ink)}
 .app .rp-m8 .rp-ml{color:var(--ink-2);font-size:13.5px;line-height:1.5;margin:0 0 12px}
 .app .rp-m8 .rp-fx{background:var(--surface);border-radius:var(--r-card);padding:10px 12px;font-size:13.5px;color:var(--ink-2);margin-bottom:12px;line-height:1.5}
@@ -1436,7 +1436,7 @@ body.pt *{box-sizing:border-box}
 .app .bl-sp-row .bl-n{text-align:right;font-variant-numeric:tabular-nums}
 .app .bl-sp-row small{color:var(--ink-2);font-size:12.5px}
 .app .bl-sp-row .bl-bar{grid-column:1/-1;margin:0}
-/* М7 */
+
 .app .bl-m7 h2{font:600 19px/1.3 var(--f-ui);margin:0 0 4px;color:var(--ink)}
 .app .bl-m7 .bl-ml{color:var(--ink-2);font-size:13.5px;margin:0 0 12px;line-height:1.5}
 .app .bl-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -1454,7 +1454,7 @@ body.pt *{box-sizing:border-box}
 .app .bl-mini{display:flex;flex-direction:column;gap:3px;font-size:12.5px;color:var(--ink-2)}
 .app .bl-mini b{color:var(--ink);font-weight:500}
 .app .bl-note{font-size:12.5px;color:var(--ink-2);line-height:1.5;margin-top:10px}
-/* Т4, Т6 — отдельная страница; Т5, Т7 — плашка над Чатом */
+
 .app .bl-page{max-width:560px;margin:48px auto;padding:0 16px;text-align:center}
 .app.w390 .bl-page{margin:24px auto}
 .app .bl-page .bl-ico{width:56px;height:56px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center}
@@ -1516,7 +1516,7 @@ body.pt *{box-sizing:border-box}
 .app .tc-docs .tc-dom{color:var(--ink-2);font-size:13px;margin-bottom:12px}
 .app .tc-docs iframe{width:100%;height:62vh;border:1px solid var(--border);border-radius:var(--r-card);background:#fff;margin-top:10px}
 .app .tc-tabs{display:flex;gap:6px;flex-wrap:wrap}
-/* М4 */
+
 .app .tc-n h2{font:600 18px/1.3 var(--f-ui);margin:0 0 8px;padding-right:40px;color:var(--ink);display:flex;align-items:center;gap:8px}
 .app .tc-n h2 .tc-sp{flex:1}
 .app .tc-g{font:600 11.5px/1 var(--f-ui);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin:14px 0 4px}
@@ -1527,7 +1527,7 @@ body.pt *{box-sizing:border-box}
 .app .tc-it .tc-tx{flex:1;min-width:0}
 .app .tc-it .tc-tx small{display:block;color:var(--ink-2);font-size:12.5px}
 .app .tc-it .tc-tm{color:var(--ink-3);font-size:12px;white-space:nowrap}
-/* М5 */
+
 .app .tc-me{display:flex;flex-direction:column;gap:2px}
 .app .tc-me .tc-who{display:flex;gap:10px;align-items:center;padding:4px 6px 12px;border-bottom:1px solid var(--border);margin-bottom:6px}
 .app .tc-me .tc-av{width:40px;height:40px;border-radius:50%;background:var(--accent-soft-2);color:var(--accent);display:flex;align-items:center;justify-content:center;font:600 16px var(--f-ui)}
@@ -1537,7 +1537,7 @@ body.pt *{box-sizing:border-box}
 .app .tc-mi:hover{background:var(--surface)}
 .app .tc-mi svg{width:16px;height:16px;color:var(--ink-2);flex:none}
 .app .tc-mi small{margin-left:auto;color:var(--ink-2);font-size:12.5px;white-space:nowrap}
-/* М9 */
+
 .app .tc-up h2{font:600 18px/1.3 var(--f-ui);margin:0 0 10px;color:var(--ink)}
 .app .tc-drop{border:1.5px dashed var(--border);border-radius:var(--r-card);padding:24px;text-align:center;color:var(--ink-2);font-size:14px;line-height:1.5}
 .app .tc-drop b{display:block;color:var(--ink);font:600 15px var(--f-ui);margin-bottom:4px}
@@ -1585,7 +1585,7 @@ body.pt *{box-sizing:border-box}
 .app .sl-back{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .app.w390 .sl-chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
 .app .sl-chips{display:flex;gap:6px;flex-wrap:wrap}
-/* 13.10 (Илья): «Все решения» — по категориям, каждая отдельным блоком, сверху переключатель категорий */
+
 .app .sl-catnav{position:sticky;top:-1px;z-index:3;background:var(--bg);padding:10px 0 10px;margin:4px 0 6px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
 .app .sl-catnav .chip{flex:none;white-space:nowrap}
 .app .sl-catnav .chip small{color:var(--ink-3);margin-left:4px;font-size:12px}
@@ -1603,7 +1603,7 @@ body.pt *{box-sizing:border-box}
 .app .sl-brand b{color:var(--ink)}
 .app .sl-empty{border:1px dashed var(--border);border-radius:var(--r-card);padding:22px;text-align:center;color:var(--ink-2);font-size:14px}
 .app .sl-empty b{display:block;color:var(--ink);font:600 15px var(--f-ui);margin-bottom:6px}
-/* панель решения */
+
 .app .sl-dr{position:absolute;inset:0;z-index:60;background:rgba(20,16,40,.32);display:flex;justify-content:flex-end}
 .app .sl-pn{background:var(--bg);width:min(480px,100%);height:100%;overflow:auto;box-shadow:var(--shadow-pop);padding:20px 22px 0;box-sizing:border-box;position:relative}
 .app.w390 .sl-pn{width:100%;padding:16px 14px 0}
@@ -1623,7 +1623,7 @@ body.pt *{box-sizing:border-box}
 .app .sl-foot{position:sticky;bottom:0;background:var(--bg);padding:14px 0 16px;margin-top:18px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .app .sl-ok{color:var(--ok);font-size:13px;display:inline-flex;gap:6px;align-items:center}
 .app .sl-ok svg{width:15px;height:15px}
-/* М12 */
+
 .app .sl-m12 h2{font:600 19px/1.3 var(--f-ui);margin:0 0 4px;color:var(--ink)}
 .app .sl-m12 p{color:var(--ink-2);font-size:13.5px;line-height:1.5;margin:0 0 12px}
 .app .sl-m12 label{display:block;font-size:13px;color:var(--ink-2);margin:10px 0 4px}
@@ -1666,7 +1666,7 @@ body.pt *{box-sizing:border-box}
 .app .kn-dot.half{background:var(--warn-dot)}
 .app .kn-sub{margin-top:14px;font-size:14px}
 .app .kn-extra{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-/* панель раздела */
+
 .app .kn-dr{position:absolute;inset:0;z-index:60;background:rgba(20,16,40,.32);display:flex;justify-content:flex-end}
 .app.w390 .kn-dr{top:30px}
 .app .kn-pn{background:var(--bg);width:min(480px,100%);height:100%;overflow:auto;box-shadow:var(--shadow-pop);padding:20px 22px 0;box-sizing:border-box;position:relative}
@@ -1835,7 +1835,7 @@ body.pt *{box-sizing:border-box}
 .app .hp-in input{flex:1;font:400 14px/1.2 var(--f-ui);padding:9px 10px;border:1px solid var(--border);border-radius:var(--r-ctl);background:var(--bg);color:var(--ink);min-width:0}
 .app .hp-hm{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2)}
 .app .hp-page{max-width:560px;margin:24px auto;padding:0 16px}
-.app:has(.hp-page) .a-help{display:none} /* на странице поддержки «?» не нужен */
+.app:has(.hp-page) .a-help{display:none} 
 .app .hp-page .hp-w{position:static;width:auto;max-height:none;box-shadow:none}
 
 
@@ -1940,7 +1940,7 @@ body.pt *{box-sizing:border-box}
 .app.w390 .cl-row{grid-template-columns:minmax(0,1fr) auto}
 .app.w390 .cl-row .cl-c2,.app.w390 .cl-row .cl-c3,.app.w390 .cl-row .cl-c4{display:none}
 .app.w390 .cl-pn{width:100%;padding:18px 16px 28px}
-/* Т19 */
+
 .app .imp-ban{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#3b2a07;color:#fff3d6;padding:10px 16px;font-size:14px}
 .app .imp-ban b{font-weight:600}
 .app .imp-ban .imp-sp{flex:1}
@@ -2112,9 +2112,9 @@ body.pt-app .pa-pill{display:flex}
 .pa-pill>button:hover,.pa-pill.open>button[data-pa=toggle]{opacity:1}
 .pa-pill>button.pa-back{background:#6d4ae0;opacity:.95}
 .pa-pill>button.pa-ic{width:30px;padding:0;font-size:14px}
-/* телефон: кнопки — вверху, в строке статуса, чтобы не закрывать нижнее меню */
+
 @media (max-width:520px){.pa-pill{top:4px;bottom:auto;left:50%;transform:translateX(-50%)}.pa-pill>button{height:24px;font-size:11px;padding:0 9px}.pa-pill>button.pa-ic{width:24px}.pa-menu{bottom:auto;top:32px;left:50%;transform:translateX(-50%)}}
-/* главный экран прототипа — при открытии */
+
 .ph-home{position:fixed;inset:0;z-index:400;background:#f4f2fa;overflow:auto;display:none;font:15px/1.5 Inter,system-ui,sans-serif;color:#191631}
 .ph-home.on{display:block}
 .ph-in{max-width:1040px;margin:0 auto;padding:56px 20px 40px}
@@ -2178,7 +2178,7 @@ body.pt-app .pa-pill{display:flex}
 .app .pill.lb-w{background:var(--warn-fill);color:var(--warn)}.app .pill.lb-w i{background:var(--warn-dot)}
 .app .pill.lb-v{background:var(--surface-2);color:var(--ink-2)}
 .app .lb-note{font-size:13px;color:var(--ink-2);margin:12px 0 0}
-/* М15 — живое превью */
+
 .app .lv{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:16px;min-height:0;flex:1}
 .app.w390 .lv{grid-template-columns:1fr;display:block}
 .app.w390 .lv-doc{max-height:none;padding:10px;margin-bottom:12px}
@@ -2209,13 +2209,13 @@ body.pt-app .pa-pill{display:flex}
 .app .lv-cm textarea{width:100%;box-sizing:border-box;min-height:64px;border:1px solid var(--border);border-radius:var(--r-ctl);padding:8px;font:400 14px var(--f-ui);background:var(--bg);color:var(--ink);margin:6px 0}
 .app .lv-ok{font-size:13.5px;color:var(--ok);display:flex;gap:6px;align-items:flex-start}
 .app .lv-ok svg{width:16px;height:16px;flex:none;margin-top:1px}
-/* М16 — поделиться */
+
 .app .sh-link{display:flex;gap:6px;align-items:center;border:1px solid var(--border);border-radius:var(--r-ctl);padding:6px 6px 6px 10px;font:500 14px var(--f-mono);margin:10px 0;background:var(--surface)}
 .app .sh-link span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .app .sh-m p{color:var(--ink-2);font-size:14px;margin:4px 0 10px}
 .app .sh-m h2{font:600 18px/1.3 var(--f-ui);margin:0 30px 6px 0}
 .app .sh-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-/* Т20 — страница по ссылке */
+
 .app .sv-pg{min-height:100%;background:var(--surface);display:flex;flex-direction:column;align-items:center;padding:28px 16px}
 .app .sv-top{width:100%;max-width:640px;display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 12px;font-size:13px;color:var(--ink-2)}
 .app .sv-top b{color:var(--ink);font-size:15px}

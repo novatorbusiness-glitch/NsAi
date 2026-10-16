@@ -16,6 +16,9 @@ open(os.path.join(ROOT, "content/data/project-map.json"), "w", encoding="utf-8")
 
 d = open(os.path.join(SRC, "okidelo-demo.html"), encoding="utf-8").read()
 check("демо", d)
+# рабочие пометки из стилей (шаги, имена, «Фундамент») наружу не отдаём
+d = re.sub(r"<style>.*?</style>", lambda m: re.sub(r"/\*.*?\*/", "", m.group(0), flags=re.S), d, flags=re.S)
+d = re.sub(r"<!--.*?-->", "", d, flags=re.S)
 if 'name="robots"' not in d:
     d = re.sub(r'(<meta charset="[^"]*">)', r'\1<meta name="robots" content="noindex,nofollow">', d, count=1)
 os.makedirs(os.path.join(ROOT, "public/demo"), exist_ok=True)
