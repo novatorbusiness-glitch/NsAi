@@ -1427,8 +1427,8 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .partners.compact li{font-size:13px;padding:7px 11px}
 .ag-quotes blockquote{font-size:17px;line-height:1.55;padding-left:16px;border-left:2px solid #7fd3b6}
 .ag-quotes figcaption{padding-left:18px}
-/* Список блоков карты — только на телефоне: на компьютере всё видно на холсте (решение 16.10). */
+/* Список блоков карты под кнопкой — на всех экранах (решение Ильи 16.10); рамка фокуса только с клавиатуры. */
 .pm-more summary{list-style-position:inside}
 .pm-more summary:focus{outline:none}
 .pm-more summary:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
-@media(min-width:900px){.pm-more{display:none}}
+@media(min-width:900px){.pm-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 20px}}
