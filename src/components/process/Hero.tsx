@@ -2,7 +2,8 @@ import { process } from "@content/pages/kak-my-rabotaem";
 import { common } from "@content/pages/common";
 import Rich from "@/components/ui/Rich";
 
-// Первый экран «Как мы работаем» (вопрос собственника «не потеряю ли контроль и деньги?»): три шага со сроком, ценой и тем, что остаётся на руках.
+// Первый экран «Как мы работаем» (вопрос собственника «не потеряю ли контроль и деньги?»): три шага маршрутом.
+// Схема (16.10): шаги на одной линии, у каждого глагол (найти причину → спроектировать → внедрить), срок, цена и что остаётся на руках.
 export default function Hero() {
 	const c = process.hero;
 	return (
@@ -16,13 +17,19 @@ export default function Hero() {
 						<a className="btn p" href="#test-drive" data-goal="cta_start">{c.button}</a>
 					</div>
 				</div>
-				<div className="pmap">
+				<div className="route3">
 					<p className="pmap-t">{c.map.title}</p>
 					<ol>
 						{c.map.steps.map((s, i) => (
-							<li key={s.href}><a href={s.href}>
-								<span className="pmap-n">{String(i + 1).padStart(2, "0")}</span>
-								<span className="pmap-b"><b>{s.name}</b><em>{s.meta}</em><span><Rich t={s.gets} /></span></span>
+							<li key={s.href} className={`r${i}`}><a href={s.href}>
+								<span className="r3-dot">{String(i + 1).padStart(2, "0")}</span>
+								<span className="r3-b">
+									<span className="r3-v">{s.verb}</span>
+									<b>{s.name}</b>
+									<em>{s.meta}</em>
+									<span className="r3-t"><Rich t={s.gets} /></span>
+									<span className="r3-out">на руках: <strong>{s.out}</strong></span>
+								</span>
 							</a></li>
 						))}
 					</ol>

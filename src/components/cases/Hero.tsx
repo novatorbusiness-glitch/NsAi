@@ -1,8 +1,7 @@
-import { Fragment } from "react";
-import { site } from "@/config/site";
 import { keisy } from "@content/pages/keisy";
 
-// Первый экран кейсов (вопрос собственника «докажи»): что уже работает и сколько принесло + схема «продукт и продажи вместе дают деньги».
+// Первый экран кейсов (вопрос собственника «докажи»): что уже работает и сколько принесло + схема «две линии бизнеса».
+// Схема (16.10): продукт и продажи — две дорожки с этапами, сходятся в итог с линией роста. HTML, а не SVG: подписи читаются на телефоне.
 export default function Hero() {
 	const c = keisy.hero;
 	return (
@@ -19,14 +18,21 @@ export default function Hero() {
 					</div>
 					<a className="btn p" href="/kak-my-rabotaem#test-drive" data-goal="cta_start">{c.button}</a>
 				</div>
-				<div className="result-viz" aria-label={c.viz.label}>
-					{c.viz.flows.map((f) => (
-						<div className="flow" key={f.title}><p className="lbl">{f.title}</p><div className="fl">{f.steps.map((s, i) => <Fragment key={s}>{i > 0 && <span className="ar">→</span>}<span>{s}</span></Fragment>)}</div></div>
+				<figure className="lanes" aria-label={c.viz.label}>
+					<p className="lanes-t">{c.viz.title}</p>
+					{c.viz.flows.map((f, k) => (
+						<div className={`lane l${k}`} key={f.title}>
+							<p className="lane-n">{f.title}</p>
+							<ol>{f.steps.map((s) => <li key={s}><i></i><span>{s}</span></li>)}</ol>
+							{k === 0 && <p className="lane-plus" aria-hidden="true"><b>+</b></p>}
+						</div>
 					))}
-					<div className="rv-join" aria-hidden="true"><i></i></div>
-					<div className="rv-money"><p className="lbl">{c.viz.moneyLabel}</p><b>{c.viz.money}</b></div>
-					<p className="cap">{c.viz.cap}</p>
-				</div>
+					<div className="lane-res">
+						<div><p>{c.viz.moneyLabel}</p><b>{c.viz.money}</b></div>
+						<svg viewBox="0 0 120 48" aria-hidden="true"><path d="M2 44 L26 38 L46 40 L66 28 L86 22 L104 10 L118 4" /><circle cx="118" cy="4" r="3.5" /></svg>
+					</div>
+					<figcaption>{c.viz.cap}</figcaption>
+				</figure>
 			</div>
 		</section>
 	);

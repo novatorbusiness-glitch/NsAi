@@ -34,7 +34,7 @@ export default function Products() {
 						);
 					})}
 				</div>
-				<MapPreview />
+				<MapPreview at="cases" />
 			</div>
 		</section>
 	);
