@@ -8,7 +8,7 @@ import { allPosts, dateRu, getPost, render } from "@/lib/blog";
 import type { Cta } from "@/config/blog";
 import { blog } from "@content/pages/blog";
 import JsonLd from "@/components/ui/JsonLd";
-import { pageMeta, crumbs, articleLd } from "@/lib/seo";
+import { pageMeta, crumbs, articleLd, redirectMeta } from "@/lib/seo";
 import { site } from "@/config/site";
 import { redirects } from "@/config/redirects";
 import Redirect from "@/components/layout/Redirect";
@@ -24,7 +24,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-	if (moved(params.slug)) return { title: common.redirect.title, alternates: { canonical: moved(params.slug) }, robots: { index: false } };
+	if (moved(params.slug)) return redirectMeta(`/blog/${params.slug}`, moved(params.slug));
 	const r = getPost(params.slug);
 	if (!r) return {};
 	return pageMeta({ title: r.post.title, description: r.post.description }, `/blog/${r.post.slug}`, `blog-${r.post.slug}`, { type: "article", modified: r.post.updated });

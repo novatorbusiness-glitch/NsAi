@@ -4,7 +4,7 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 
 const c = common.notFound;
-export const metadata: Metadata = { title: c.title };
+export const metadata: Metadata = { title: c.title, description: c.lead, robots: { index: false } };
 
 // 404: GitHub Pages отдаёт out/404.html на любой несуществующий адрес.
 export default function NotFound() {
