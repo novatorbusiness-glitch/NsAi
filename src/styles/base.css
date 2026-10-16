@@ -1561,3 +1561,47 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sch-t.ext.lft{font-size:10.5px}
 .sch-cap.flow{font-size:9.5px}
 .sch-t.ext.lft{font-size:11.5px}
+
+/* Кейсы: схема «две линии одного бизнеса» (16.10) */
+.lanes{margin:0;background:#fff;border-radius:16px;padding:22px 20px 18px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 10px 30px rgba(16,24,20,.06);align-self:center}
+.lanes-t{margin:0 0 14px;font:600 12px/1.4 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.lane{--c:var(--acc);--s:var(--acc-soft);position:relative;border-radius:12px;background:var(--s);padding:12px 14px 14px}
+.lane.l1{--c:#b4691f;--s:#fbf1e4}
+.lane-n{margin:0 0 10px;font:700 12px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.lane ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.lane ol::before{content:"";position:absolute;left:12.5%;right:12.5%;top:6px;height:2px;background:var(--c);opacity:.35}
+.lane li{position:relative;text-align:center;font-size:14px;line-height:1.3;color:var(--ink);padding:0 2px}
+.lane li i{display:block;width:14px;height:14px;margin:0 auto 7px;border-radius:50%;background:#fff;border:3px solid var(--c);position:relative}
+.lane li:last-child i{background:var(--c)}
+.lane-plus{position:absolute;left:0;right:0;bottom:-15px;margin:0;display:flex;justify-content:center;z-index:1}
+.lane-plus b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid var(--line2);font:700 15px/1 var(--f);color:var(--ink)}
+.lane+.lane{margin-top:10px;padding-top:18px}
+.lane-res{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;background:var(--acc);color:#fff;border-radius:12px;padding:14px 16px}
+.lane-res p{margin:0 0 3px;font:600 11.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.lane-res b{font-size:20px;line-height:1.2}
+.lane-res svg{flex:0 0 96px;width:96px;height:auto}
+.lane-res path{fill:none;stroke:#9fe0c6;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.lane-res circle{fill:#fff}
+@media(max-width:600px){.lane{padding:12px 8px 14px}.lane-n{padding-left:6px}.lane li{font-size:13px}.lane-res b{font-size:19px}.lane-res svg{flex-basis:64px;width:64px}}
+.lanes figcaption{margin-top:12px;font-size:15px;line-height:1.5;color:var(--ink2)}
+@media(min-width:900px){.lanes{padding:26px 26px 20px}.lane li{font-size:15px}.lane-res b{font-size:22px}}
+
+/* «Как мы работаем»: три шага маршрутом (16.10) */
+.route3{border:1px solid var(--line);border-radius:16px;background:#fff;padding:20px 20px 16px;align-self:center}
+.route3 ol{list-style:none;margin:6px 0 0;padding:0;position:relative}
+.route3 li{position:relative}
+.route3 li:not(:last-child)::before{content:"";position:absolute;left:17px;top:40px;bottom:-6px;width:2px;background:linear-gradient(var(--acc),#9fd9c3)}
+.route3 li a{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:12px 0 16px;color:var(--ink);text-decoration:none}
+.route3 li a:hover b{color:var(--acc)}
+.r3-dot{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:700 13px/1 var(--m);border:2px solid var(--acc);color:var(--acc);background:#fff;position:relative;z-index:1}
+.r1 .r3-dot{background:var(--acc-soft)}
+.r2 .r3-dot{background:var(--acc);color:#fff}
+.r3-b{display:block}
+.r3-v{display:inline-block;font:600 11.5px/1 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--acc);background:var(--acc-soft);border-radius:999px;padding:5px 9px;margin-bottom:7px}
+.r3-b b{display:block;font-size:18px;line-height:1.3}
+.r3-b em{display:block;font:500 13px/1.5 var(--m);font-style:normal;color:var(--ink2);margin:3px 0 6px}
+.r3-t{display:block;font-size:15px;line-height:1.5;color:var(--ink2)}
+.r3-t b{display:inline;font-size:inherit;color:var(--ink)}
+.r3-out{display:inline-flex;gap:6px;align-items:baseline;margin-top:9px;font-size:13.5px;color:var(--mut);border-top:1px dashed var(--line2);padding-top:8px}
+.r3-out strong{color:var(--ink);font-weight:700}
+@media(min-width:900px){.route3{padding:26px 28px 20px}}

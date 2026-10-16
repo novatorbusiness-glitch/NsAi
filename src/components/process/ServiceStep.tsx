@@ -24,7 +24,7 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 						<p className="svc-need"><b>От вас:</b> {s.need}</p>
 					</div>
 				</div>
-				{s.id === "chertezh" && <MapPreview />}
+				{s.id === "chertezh" && <MapPreview at="process" />}
 				{s.id === "vedenie" && (
 					<div className="vweek">
 						<p className="lbl">{process.week.label}</p>
