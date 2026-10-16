@@ -12,6 +12,8 @@ def check(name, text):
 
 m = open(os.path.join(SRC, "okidelo-map.public.json"), encoding="utf-8").read()
 check("карте", m); json.loads(m)
+# на сайте тире нет (формула текстов): «Сайт продукта — каркас» → «Сайт продукта: каркас»
+m = m.replace(" — ", ": ")
 open(os.path.join(ROOT, "content/data/project-map.json"), "w", encoding="utf-8").write(m)
 
 d = open(os.path.join(SRC, "okidelo-demo.html"), encoding="utf-8").read()

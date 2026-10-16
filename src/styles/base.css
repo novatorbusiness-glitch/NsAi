@@ -1410,3 +1410,4 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 @media(min-width:900px){.mpv{grid-template-columns:minmax(260px,.8fr) 1.4fr;align-items:center;padding:28px}}
 @media(max-width:520px){.mpv-map{grid-template-columns:repeat(2,1fr);max-height:260px}}
 .mpv-map{-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
+.pm-note-l{margin:-8px 0 18px;color:var(--ink2)}

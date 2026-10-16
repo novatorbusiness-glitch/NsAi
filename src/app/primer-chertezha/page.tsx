@@ -31,6 +31,7 @@ export default function Page() {
 					<p className="snum">{h.kicker}</p>
 					<h1>{h.h1}</h1>
 					<p className="lead">{h.lead}</p>
+					<p className="lead">{h.sub}</p>
 					<div className="past-n three pm-facts">{facts.map((x) => <div key={x.text}><b>{x.num}</b><span>{x.text}</span></div>)}</div>
 					<div className="cta-row">
 						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{h.button}</a>
@@ -57,6 +58,7 @@ export default function Page() {
 			<section id="demo" className="alt">
 				<div className="wrap">
 					<SectionHead num={d.num} label={d.label} title={d.h2} lead={d.lead} />
+					<p className="pm-note-l">{d.note}</p>
 					<DemoFrame />
 					<p className="under">{d.cap}</p>
 				</div>
