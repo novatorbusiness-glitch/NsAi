@@ -225,7 +225,7 @@
    "id": "proto",
    "layer": "cabinet",
    "title": "Кликабельный прототип",
-   "publicNote": "Кликабельный прототип — эталон для разработки",
+   "publicNote": "Кликабельный прототип: эталон для разработки",
    "status": "now",
    "links": [
     "screens"
@@ -342,7 +342,7 @@
    "id": "channels",
    "layer": "sales",
    "title": "Каналы",
-   "publicNote": "Каналы привлечения — гипотезы и тесты",
+   "publicNote": "Каналы привлечения: гипотезы и тесты",
    "status": "done",
    "links": [
     "segments"
@@ -382,7 +382,7 @@
    "id": "site",
    "layer": "sales",
    "title": "Сайт продукта",
-   "publicNote": "Сайт продукта — каркас",
+   "publicNote": "Сайт продукта: каркас",
    "status": "now",
    "links": [
     "offer",
