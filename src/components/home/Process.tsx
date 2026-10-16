@@ -1,5 +1,6 @@
 import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
+import MapPreview from "@/components/primer/MapPreview";
 import SectionHead from "@/components/ui/SectionHead";
 
 // 04 · как работаем (вопрос собственника «как это будет, не потеряю ли контроль?»): три шага по строке, подробности — на /kak-my-rabotaem; подбор шага.
@@ -19,6 +20,7 @@ export default function Process() {
 						</div>
 					))}
 				</div>
+				<MapPreview />
 				<p className="more-link"><a href="/kak-my-rabotaem">{c.more}</a></p>
 				<p className="after">{c.after}</p>
 			</div>

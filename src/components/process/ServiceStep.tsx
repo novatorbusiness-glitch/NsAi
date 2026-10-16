@@ -4,6 +4,7 @@ import { common } from "@content/pages/common";
 import { process } from "@content/pages/kak-my-rabotaem";
 import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
+import MapPreview from "@/components/primer/MapPreview";
 
 type Step = (typeof process.steps)[number];
 
@@ -23,6 +24,7 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 						<p className="svc-need"><b>От вас:</b> {s.need}</p>
 					</div>
 				</div>
+				{s.id === "chertezh" && <MapPreview />}
 				<div className="fitcards plain svc-fit">
 					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{s.fitTitle}</p><ul>{s.fit.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{s.notTitle}</p><ul>{s.not.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
