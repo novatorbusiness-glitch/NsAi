@@ -5,6 +5,7 @@ import { common } from "@content/pages/common";
 import data from "@content/data/project-map.json";
 import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
+import Rich from "@/components/ui/Rich";
 import JsonLd from "@/components/ui/JsonLd";
 import MapCanvas from "@/components/primer/MapCanvas";
 import DemoFrame from "@/components/primer/DemoFrame";
@@ -12,9 +13,9 @@ import { pageMeta, crumbs } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа (решение 16.10): карта (чертёж) → как читать → прототип → ведение по карте → ваш проект в три шага → начать.
+// Пример чертежа (решение 16.10): зачем карта (боль и рынок) → карта (чертёж) → как читать → прототип → ведение по карте → ваш проект в три шага → начать.
 export default function Page() {
-	const { hero: h, map: m, read: r, demo: d, vedenie: v, you: y, final: f } = primer;
+	const { hero: h, why: w, map: m, read: r, demo: d, vedenie: v, you: y, final: f } = primer;
 	const route = data.nodes.filter((n) => n.layer === "route");
 	const ICON: Record<string, string> = { done: "✓", now: "◐", plan: "○" };
 	const links = data.nodes.reduce((a, n) => a + n.links.length, 0);
@@ -40,7 +41,15 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="map" className="alt">
+			<section id="why" className="alt">
+				<div className="wrap">
+					<SectionHead num={w.num} label={w.label} title={w.h2} />
+					<ul className="pm-why">{w.items.map((x) => <li key={x.num}><b>{x.num}</b><span>{x.t}</span></li>)}</ul>
+					<p className="ssrc"><Rich t={w.sources} /></p>
+				</div>
+			</section>
+
+			<section id="map">
 				<div className="wrap">
 					<SectionHead num={m.num} label={m.label} title={m.h2} lead={m.lead} />
 					<MapCanvas />
@@ -48,14 +57,14 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="read">
+			<section id="read" className="alt">
 				<div className="wrap">
 					<SectionHead num={r.num} label={r.label} title={r.h2} />
 					<ul className="pm-points">{r.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
 				</div>
 			</section>
 
-			<section id="demo" className="alt">
+			<section id="demo">
 				<div className="wrap">
 					<SectionHead num={d.num} label={d.label} title={d.h2} lead={d.lead} />
 					<p className="pm-note-l">{d.note}</p>
@@ -64,7 +73,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="vedenie">
+			<section id="vedenie" className="alt">
 				<div className="wrap">
 					<SectionHead num={v.num} label={v.label} title={v.h2} lead={v.lead} />
 					<p className="lbl">{v.routeLabel}</p>
@@ -74,7 +83,7 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="you" className="alt">
+			<section id="you">
 				<div className="wrap">
 					<SectionHead num={y.num} label={y.label} title={y.h2} />
 					<ul className="pm-points">{y.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>

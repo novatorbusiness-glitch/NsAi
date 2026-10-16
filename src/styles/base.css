@@ -1411,3 +1411,8 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 @media(max-width:520px){.mpv-map{grid-template-columns:repeat(2,1fr);max-height:260px}}
 .mpv-map{-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}
 .pm-note-l{margin:-8px 0 18px;color:var(--ink2)}
+.pm-why{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.pm-why li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.pm-why b{display:block;font:700 clamp(26px,3vw,32px)/1.1 var(--f);color:var(--acc);letter-spacing:-.02em;margin-bottom:8px;white-space:nowrap}
+.pm-why span{color:var(--ink2);font-size:15.5px;line-height:1.55}
+@media(min-width:900px){.pm-why{grid-template-columns:repeat(3,1fr);gap:20px}}
