@@ -1,5 +1,6 @@
 import { posts, covers } from "@/config/blog";
 import { readMd, str } from "@/lib/content";
+import { blogViz } from "@/lib/blog-viz";
 
 // Статьи блога: content/blog/<slug>.md (title, h1, description, cover во frontmatter).
 // Ошибка в карточке статьи — сборка падает, а не страница.
@@ -52,7 +53,7 @@ function inline(s: string) {
 	return s.replace(/(\d) (₽|млн|тыс)/g, "$1 $2");
 }
 
-// Markdown статьи → HTML. Отметка [[pick]] — место для подбора шага.
+// Markdown статьи → HTML. Отметка [[pick]] — место для подбора шага, [[viz:имя]] — схема из lib/blog-viz.ts.
 export function render(body: string) {
 	const out: (string | { pick: true })[] = [];
 	const toc: { id: string; title: string }[] = [];
@@ -60,6 +61,8 @@ export function render(body: string) {
 		const b = blk.trim();
 		if (!b) continue;
 		if (b === "[[pick]]") { out.push({ pick: true }); continue; }
+		const viz = b.match(/^\[\[viz:(\w+)\]\]$/);
+		if (viz && blogViz[viz[1]]) { out.push(blogViz[viz[1]]()); continue; }
 		if (b.startsWith("## ")) { const t = b.slice(3).trim(); const id = `s${toc.length + 1}`; toc.push({ id, title: t }); out.push(`<h2 id="${id}">${inline(t)}</h2>`); continue; }
 		if (b.startsWith("### ")) { out.push(`<h3>${inline(b.slice(4))}</h3>`); continue; }
 		const lines = b.split("\n");

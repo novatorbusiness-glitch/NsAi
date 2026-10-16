@@ -1534,3 +1534,24 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sch-node.ext{fill:#fff;stroke:#cfd4d1;stroke-dasharray:4 3}
 .sch-t.ext{font:500 9.5px var(--f);fill:var(--mut)}
 .sch-cap.flow{text-anchor:middle;font-size:9px}
+/* Схемы в статьях (16.10): [[viz:mvp]], [[viz:chain]]. */
+.bviz{margin:28px 0;padding:22px 22px 18px;border-radius:14px;background:var(--bg2)}
+.bviz-l{margin:0 0 14px !important;font:600 11.5px/1 var(--m) !important;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.bviz figcaption{margin-top:12px;font-size:13.5px;line-height:1.5;color:var(--mut)}
+.bm-row{display:grid;grid-template-columns:1fr;gap:6px;padding:12px 0;border-top:1px solid var(--line)}
+.bm-row p{margin:0 !important}
+.bm-who{font-weight:700;font-size:15.5px}
+.bm-who small,.bm-sum small{display:block;font-weight:400;font-size:13px;color:var(--mut)}
+.bm-bar{height:12px;border-radius:6px;background:#fff;overflow:hidden}
+.bm-bar i{display:block;height:100%;min-width:8px;border-radius:6px;background:linear-gradient(90deg,#2fb58a,#7fd3b6)}
+.bm-sum{font:700 16px/1.3 var(--f);color:var(--acc)}
+@media(min-width:760px){.bm-row{grid-template-columns:190px 1fr 210px;gap:16px;align-items:center}}
+.bviz-chain ol{list-style:none;margin:0;padding:0;display:grid;gap:8px;position:relative}
+.bviz-chain ol::before{content:"";position:absolute;left:15px;top:14px;bottom:14px;width:2px;background:#d7ddda}
+.bviz-chain li{display:grid;grid-template-columns:32px 1fr;gap:12px;align-items:start;margin:0 !important;padding:0 !important}
+.bviz-chain li::before{display:none}
+.bc-n{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 14px/1 var(--f);color:#fff;background:var(--c)}
+.bviz-chain li div{background:#fff;border-radius:10px;padding:10px 14px}
+.bviz-chain li p{margin:2px 0 0 !important;font-size:15px;line-height:1.45}
+.bc-k{font:600 10.5px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;color:var(--c)}
+.k-p{--c:#c46a3b}.k-e{--c:#2f6fe0}.k-r{--c:#0F6E56}.k-o{--c:#6b46c1}
