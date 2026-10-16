@@ -46,7 +46,7 @@ export default function Page() {
 					<div className="sr-scheme">
 						<figure className="sr-now"><p className="sch-tag">{s.scheme.now.tag}</p><h3>{s.scheme.now.title}</h3><div className="sr-chat"><b>один чат</b>{s.scheme.now.chips.map((c) => <span key={c}>{c}</span>)}<em className="sr-lock">✕ {s.scheme.now.lock}</em></div><figcaption>{s.scheme.now.cap}</figcaption></figure>
 						<span className="sr-arr" aria-hidden="true">→</span>
-						<figure className="sr-after"><p className="sch-tag">{s.scheme.after.tag}</p><h3>{s.scheme.after.title}</h3><ol>{s.scheme.after.rows.map((r) => <li key={r.b}><b>{r.b}</b><div className="sr-chips">{r.chips.map((c) => <i key={c} className={c.includes("бесплатно") ? "free" : ""}>{c}</i>)}</div></li>)}</ol><figcaption>{s.scheme.after.cap}</figcaption></figure>
+						<figure className="sr-after"><p className="sch-tag">{s.scheme.after.tag}</p><h3>{s.scheme.after.title}</h3><ol>{s.scheme.after.rows.map((r) => <li key={r.b}><b>{r.b}</b><span>{r.t}</span></li>)}</ol><figcaption>{s.scheme.after.cap}</figcaption></figure>
 					</div>
 				</div>
 			</section>
@@ -54,7 +54,15 @@ export default function Page() {
 			<section id="gets">
 				<div className="wrap">
 					<SectionHead num={g.num} label={g.label} title={g.h2} lead={g.lead} />
-					<ul className="pm-points">{g.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+					<div className="sr-gets">
+						<ul className="sr-cards">{g.items.map((x, i) => <li key={x.b}><em>{String(i + 1).padStart(2, "0")}</em><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+						<figure className="sr-pass">
+							<p className="lbl">{g.passport.label}</p>
+							<h3>{g.passport.title}</h3>
+							<dl>{g.passport.rows.map((r) => <div key={r.k}><dt>{r.k}</dt><dd>{r.v}</dd></div>)}</dl>
+							<figcaption>{g.passport.cap}</figcaption>
+						</figure>
+					</div>
 				</div>
 			</section>
 
