@@ -11,7 +11,6 @@ export default function Benefits() {
 				<ol className="brows">
 					{c.cards.map((k, i) => <li key={k.title}><span className="bn">{String(i + 1).padStart(2, "0")}</span><h3>{k.title}</h3><p>{k.text}</p></li>)}
 				</ol>
-				<p className="more-link"><a href="/kak-my-rabotaem#scope">{c.more} →</a></p>
 			</div>
 		</section>
 	);

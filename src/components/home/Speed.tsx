@@ -22,7 +22,6 @@ export default function Speed() {
 				</div>
 				<Fable q={c.fable.q} src={c.fable.src} />
 				<p className="closing">{c.closing}</p>
-				<p className="more-link"><a href="/keisy#system">{c.more}</a></p>
 				<p className="ssrc">{c.source}</p>
 			</div>
 		</section>
