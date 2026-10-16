@@ -26,7 +26,7 @@ export default function Products() {
 									{k.logo && <img className="plogo" src={k.logo} alt={k.title.split(":")[0]} width={380} height={100} />}
 									<span className="tag">{k.title.split(":")[0]} · {k.tag}</span><h3>{k.headline}</h3>
 									<p><Rich t={k.text} /></p>
-									{k.forYou && <p className="for-you"><b>{c.forYou}</b>{" " + k.forYou}</p>}
+									{k.forYou && <p className="for-you"><b>{c.forYou}</b> <Rich t={k.forYou} /></p>}
 									{k.metrics.length > 0 && <ul className="pf">{k.metrics.map((m) => <li key={m.value}><b>{m.value}</b>{m.label}</li>)}</ul>}
 								</div>
 							</article>

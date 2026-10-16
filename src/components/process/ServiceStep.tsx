@@ -15,7 +15,7 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 				<SectionHead num={s.num} label={s.label} title={s.h2} lead={s.lead} />
 				<p className="svc-meta">{s.meta}</p>
 				<div className="svc-two">
-					<div className="svc-gets"><p className="lbl">{s.gets.label}</p><ul className="ticks">{s.gets.items.map((t) => <li key={t}>{t}</li>)}</ul></div>
+					<div className="svc-gets"><p className="lbl">{s.gets.label}</p><ul className="ticks">{s.gets.items.map((t) => <li key={t}>{t}</li>)}</ul>{s.gets.example && <p className="more-link"><Rich t={s.gets.example} /></p>}</div>
 					<div className="svc-how">
 						<p className="lbl">{s.how.label}</p>
 						<ol>{s.how.steps.map((t, i) => <li key={t.b}><span>{i + 1}</span><div><b>{t.b}</b> {t.t}</div></li>)}</ol>
