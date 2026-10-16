@@ -20,10 +20,10 @@ export default function Situations() {
 						</div>
 					))}
 				</div>
+				<p className="ssrc">{c.sources}</p>
 				<Fable q={c.fable.q} src={c.fable.src} />
 				<p className="closing">{c.closing}</p>
 				<Scheme />
-				<p className="ssrc">{c.sources}</p>
 			</div>
 		</section>
 	);

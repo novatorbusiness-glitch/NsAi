@@ -46,7 +46,6 @@ export default function Hero() {
 							<p className="pc-rl">{f.resultLabel}</p>
 							<div className="pc-kpis">{f.kpis.map((k) => <div key={k.t}><b>{k.num}</b><span>{k.t}</span></div>)}</div>
 						</div>
-						<div className="df-foot"><a href="/kak-my-rabotaem">{f.more}</a></div>
 					</div>
 				</div>
 			</section>

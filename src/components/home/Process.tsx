@@ -20,9 +20,9 @@ export default function Process() {
 						</div>
 					))}
 				</div>
+				<p className="after">{c.after}</p>
 				<MapPreview />
 				<p className="more-link"><a href="/kak-my-rabotaem">{c.more}</a></p>
-				<p className="after">{c.after}</p>
 			</div>
 		</section>
 	);
