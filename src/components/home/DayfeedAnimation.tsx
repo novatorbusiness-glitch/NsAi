@@ -2,46 +2,48 @@
 import { useEffect } from "react";
 import { home } from "@content/pages/home";
 
-// Лента «от задачи до продаж»: шаги плавно проходят «в работе → готово», последняя строка — результат,
-// держится дольше, потом лента мягко начинается заново. Без анимации, если она отключена в системе.
-const STEP = 2200; // мс на шаг
-const HOLD = 6000; // сколько держим результат
+// Консоль проекта на первом экране (16.10): этапы по очереди «в работе → готово», счётчик и полоса прогресса растут,
+// итог проявляется последним и держится дольше, потом всё мягко начинается заново. Без анимации, если она отключена в системе
+// (тогда в разметке сразу всё «готово» — так же видят поисковики и превью).
+const STEP = 2000; // мс на этап
+const HOLD = 6000; // сколько держим итог
 
 export default function DayfeedAnimation() {
 	useEffect(() => {
-		const list = document.querySelector<HTMLUListElement>(".df-list");
-		const items = Array.from(document.querySelectorAll<HTMLLIElement>(".df-list li"));
-		if (!list || !items.length) return;
+		const box = document.querySelector<HTMLDivElement>(".dayfeed.pc");
+		const items = Array.from(document.querySelectorAll<HTMLLIElement>(".pc-list li"));
+		if (!box || !items.length || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 		const f = home.hero.feed;
+		const n = box.querySelector<HTMLElement>(".pc-n");
+		const bar = box.querySelector<HTMLElement>(".pc-prog i");
 		const set = (li: HTMLLIElement, s: "" | "is-run" | "is-done") => {
 			li.classList.remove("is-run", "is-done");
 			if (s) li.classList.add(s);
 			const st = li.querySelector(".df-st");
-			const result = li.classList.contains("df-result");
-			if (st) st.textContent = s === "is-done" ? (result ? f.resultDone : f.done) : s === "is-run" ? f.run : "";
+			if (st) st.textContent = s === "is-done" ? f.done : s === "is-run" ? f.run : "";
 		};
-		if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
-			items.forEach((li) => set(li, "is-done"));
-			return;
-		}
+		const progress = (done: number) => {
+			if (n) n.textContent = String(done);
+			if (bar) bar.style.width = `${(done / items.length) * 100}%`;
+		};
 		let k = 0;
 		const timers: number[] = [];
 		const later = (fn: () => void, ms: number) => timers.push(window.setTimeout(fn, ms));
+		const reset = () => { items.forEach((li) => set(li, "")); box.classList.remove("pc-final"); progress(0); k = 0; };
 		const tick = () => {
 			if (k > 0) set(items[k - 1], "is-done");
+			progress(k);
 			if (k < items.length) {
 				set(items[k], "is-run");
 				k++;
-				later(tick, k === items.length ? STEP / 2 : STEP);
+				later(tick, STEP);
 			} else {
-				later(() => {
-					list.classList.add("df-fade");
-					later(() => { items.forEach((li) => set(li, "")); list.classList.remove("df-fade"); k = 0; later(tick, 700); }, 600);
-				}, HOLD);
+				box.classList.add("pc-final");
+				later(() => { box.classList.add("pc-fade"); later(() => { reset(); box.classList.remove("pc-fade"); later(tick, 600); }, 600); }, HOLD);
 			}
 		};
-		items.forEach((li) => set(li, ""));
-		later(tick, 600);
+		reset();
+		later(tick, 500);
 		return () => timers.forEach(clearTimeout);
 	}, []);
 	return null;
