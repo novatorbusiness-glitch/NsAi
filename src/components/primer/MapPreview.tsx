@@ -20,14 +20,21 @@ export default function MapPreview() {
 				<p className="mpv-n">{data.nodes.length} {t.nodes} · {data.layers.length} {t.layers} · {links} {t.links}</p>
 				<span className="btn s">{t.button}</span>
 			</div>
-			<div className="mpv-map" aria-hidden="true">
-				{data.layers.map((l) => (
-					<div key={l.id} className="mpv-f">
-						<p><i style={{ background: (C[l.id] || C.goal)[0] }}></i>{l.title.replace(/^\d+\s·\s/, "")}</p>
-						<div>{data.nodes.filter((n) => n.layer === l.id).map((n) => <span key={n.id} className={n.status} style={{ background: (C[l.id] || C.goal)[1] }}><em>{ICON[n.status]}</em>{n.title}</span>)}</div>
-					</div>
-				))}
-			</div>
+			<MapMini />
 		</a>
+	);
+}
+
+// Сама мини-карта: слои цветом, стикеры со статусом. Используется в превью и в первом экране /primer-chertezha.
+export function MapMini() {
+	return (
+		<div className="mpv-map" aria-hidden="true">
+			{data.layers.map((l) => (
+				<div key={l.id} className="mpv-f">
+					<p><i style={{ background: (C[l.id] || C.goal)[0] }}></i>{l.title.replace(/^\d+\s·\s/, "")}</p>
+					<div>{data.nodes.filter((n) => n.layer === l.id).map((n) => <span key={n.id} className={n.status} style={{ background: (C[l.id] || C.goal)[1] }}><em>{ICON[n.status]}</em>{n.title}</span>)}</div>
+				</div>
+			))}
+		</div>
 	);
 }

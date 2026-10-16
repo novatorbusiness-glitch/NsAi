@@ -8,6 +8,7 @@ import ContactNote from "@/components/ui/ContactNote";
 import Rich from "@/components/ui/Rich";
 import JsonLd from "@/components/ui/JsonLd";
 import MapCanvas from "@/components/primer/MapCanvas";
+import { MapMini } from "@/components/primer/MapPreview";
 import DemoFrame from "@/components/primer/DemoFrame";
 import { pageMeta, crumbs } from "@/lib/seo";
 
@@ -27,7 +28,8 @@ export default function Page() {
 	return (
 		<>
 			<section className="hero">
-				<div className="wrap">
+				<div className="wrap hero-grid pm-hero">
+					<div>
 					<p className="crumbs"><a href="/">{common.ui.home}</a><span>/</span>{h.crumb}</p>
 					<p className="snum">{h.kicker}</p>
 					<h1>{h.h1}</h1>
@@ -38,6 +40,8 @@ export default function Page() {
 						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{h.button}</a>
 						<a className="more-link" href="/kak-my-rabotaem#chertezh">{h.more}</a>
 					</div>
+					</div>
+					<a className="pm-hero-map" href="#map" aria-label={m.h2}><MapMini /></a>
 				</div>
 			</section>
 
