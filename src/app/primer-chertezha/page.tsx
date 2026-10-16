@@ -12,9 +12,11 @@ import { pageMeta, crumbs } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа (решение 16.10): карта проекта → демо кабинета → как читать → что получите вы → начать.
+// Пример чертежа (решение 16.10): карта (чертёж) → как читать → прототип → ведение по карте → ваш проект в три шага → начать.
 export default function Page() {
-	const { hero: h, map: m, demo: d, read: r, you: y, final: f } = primer;
+	const { hero: h, map: m, read: r, demo: d, vedenie: v, you: y, final: f } = primer;
+	const route = data.nodes.filter((n) => n.layer === "route");
+	const ICON: Record<string, string> = { done: "✓", now: "◐", plan: "○" };
 	const links = data.nodes.reduce((a, n) => a + n.links.length, 0);
 	const facts = [
 		{ num: String(data.nodes.length), text: h.facts.nodes },
@@ -45,7 +47,14 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="demo">
+			<section id="read">
+				<div className="wrap">
+					<SectionHead num={r.num} label={r.label} title={r.h2} />
+					<ul className="pm-points">{r.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+				</div>
+			</section>
+
+			<section id="demo" className="alt">
 				<div className="wrap">
 					<SectionHead num={d.num} label={d.label} title={d.h2} lead={d.lead} />
 					<DemoFrame />
@@ -53,14 +62,17 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section id="read" className="alt">
+			<section id="vedenie">
 				<div className="wrap">
-					<SectionHead num={r.num} label={r.label} title={r.h2} />
-					<ul className="pm-points">{r.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+					<SectionHead num={v.num} label={v.label} title={v.h2} lead={v.lead} />
+					<p className="lbl">{v.routeLabel}</p>
+					<ol className="pm-route">{route.map((n) => <li key={n.id} className={n.status}><span>{ICON[n.status]}</span><b>{n.title}</b><small>{m.status[n.status as "done" | "now" | "plan"].toLowerCase()}</small></li>)}</ol>
+					<ul className="pm-points">{v.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+					<p className="pm-price">{v.price} <a href="/kak-my-rabotaem#vedenie">{v.more}</a></p>
 				</div>
 			</section>
 
-			<section id="you">
+			<section id="you" className="alt">
 				<div className="wrap">
 					<SectionHead num={y.num} label={y.label} title={y.h2} />
 					<ul className="pm-points">{y.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
@@ -71,7 +83,7 @@ export default function Page() {
 				<div className="wrap">
 					<div className="card">
 						<SectionHead num={f.num} label={f.label} title={f.h2} lead={f.lead} />
-						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{f.button}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
+						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{f.button}</a><a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{f.button2}</a></div>
 						<ContactNote />
 					</div>
 				</div>
