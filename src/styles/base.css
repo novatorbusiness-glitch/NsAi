@@ -1416,3 +1416,14 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .pm-why b{display:block;font:700 clamp(26px,3vw,32px)/1.1 var(--f);color:var(--acc);letter-spacing:-.02em;margin-bottom:8px;white-space:nowrap}
 .pm-why span{color:var(--ink2);font-size:15.5px;line-height:1.55}
 @media(min-width:900px){.pm-why{grid-template-columns:repeat(3,1fr);gap:20px}}
+/* Визуальная прогонка 16.10: первый экран примера с мини-картой, партнёры знаками доверия, отзывы крупнее. */
+.pm-hero{align-items:center}
+.pm-hero-map{display:block;border-radius:16px;box-shadow:0 24px 60px -30px rgba(29,26,51,.45);transition:transform .2s}
+.pm-hero-map:hover{transform:translateY(-3px)}
+.pm-hero-map .mpv-map{max-height:420px}
+@media(max-width:899px){.pm-hero-map{display:none}}
+.partners li{font:700 15px/1 var(--f);color:var(--ink);opacity:1;padding:9px 14px;border:1px solid var(--line2);border-radius:10px;background:#fff}
+.partners ul{gap:8px}
+.partners.compact li{font-size:13px;padding:7px 11px}
+.ag-quotes blockquote{font-size:17px;line-height:1.55;padding-left:16px;border-left:2px solid #7fd3b6}
+.ag-quotes figcaption{padding-left:18px}
