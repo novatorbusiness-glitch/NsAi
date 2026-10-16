@@ -1462,3 +1462,33 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .quotes2 blockquote{margin:0;font-size:17px;line-height:1.6;color:var(--ink);padding-left:16px;border-left:2px solid var(--acc)}
 .quotes2 figcaption{margin-top:12px;padding-left:18px;font:500 12.5px/1.4 var(--m);color:var(--mut)}
 @media(min-width:900px){.quotes2 > div{grid-template-columns:repeat(2,1fr);gap:20px}}
+/* Первый экран главной (16.10): консоль проекта вместо ленты — этапы на линии, метка шага услуги, прогресс, итог двумя цифрами. */
+.dayfeed.pc{box-shadow:0 30px 70px -40px rgba(10,20,16,.55);transition:opacity .5s}
+.dayfeed.pc.pc-fade{opacity:.35}
+.pc .df-bar{height:40px}
+.pc-count{margin-left:auto;font:600 11.5px/1 var(--m);color:#9fe3cc;letter-spacing:.03em}
+.pc-count em{font-style:normal;color:#fff}
+.pc-prog{height:3px;background:#1f2427}
+.pc-prog i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#2fb58a,#7fd3b6);transition:width .8s ease}
+.pc-list{list-style:none;margin:0;padding:14px 18px 6px;position:relative}
+.pc-list::before{content:"";position:absolute;left:27px;top:24px;bottom:22px;width:2px;background:#262c30}
+.pc-list li{display:grid;grid-template-columns:20px 1fr;gap:14px;padding:9px 0;border:0;background:none !important;transition:opacity .5s}
+.pc-node{width:20px;height:20px;border-radius:50%;margin-top:1px;background:var(--dark);border:2px solid #3a4246;position:relative;z-index:1;transition:all .4s}
+.pc-list li.is-done .pc-node{background:#2fb58a;border-color:#2fb58a}
+.pc-list li.is-done .pc-node::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:700 11px/1 var(--f);color:#0b1a14}
+.pc-list li.is-run .pc-node{border-color:#f0c674;box-shadow:0 0 0 5px rgba(240,198,116,.15)}
+.pc-list li:not(.is-done):not(.is-run){opacity:.45}
+.pc-head{display:flex;align-items:center;gap:8px;margin:0 0 3px}
+.pc-head .df-st{margin-left:auto;min-width:0}
+.pc-step{font:600 10.5px/1 var(--m);letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:5px;border:1px solid #2f3639;color:#aab3af}
+.pc-step.s-аудит{color:#9fe3cc;border-color:rgba(127,211,182,.35)}
+.pc-step.s-чертёж{color:#b9c7ff;border-color:rgba(160,180,255,.35)}
+.pc-step.s-ведение{color:#f0d49a;border-color:rgba(240,198,116,.35)}
+.pc .df-task{margin:0;font-size:14.5px}
+.pc-result{margin:4px 18px 16px;padding:14px 16px;border-radius:12px;background:linear-gradient(120deg,rgba(47,181,138,.18),rgba(47,181,138,.04));border:1px solid rgba(127,211,182,.25)}
+.pc-rl{margin:0 0 8px;font:600 11px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:#9fe3cc}
+.pc-kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pc-kpis b{display:block;font:800 clamp(26px,3vw,32px)/1 var(--f);color:#fff;letter-spacing:-.02em}
+.pc-kpis span{display:block;margin-top:5px;font-size:13px;line-height:1.35;color:#c3cbc7}
+.pc .df-foot{justify-content:flex-end}
+@media(max-width:520px){.pc-list{padding:12px 14px 4px}.pc-list::before{left:23px}.pc-head{flex-wrap:wrap}.pc .df-task{font-size:14px}.pc-result{margin:4px 14px 14px}}
