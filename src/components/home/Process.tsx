@@ -1,9 +1,10 @@
 import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
 import MapPreview from "@/components/primer/MapPreview";
+import RazborPreview from "@/components/razbor/RazborPreview";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 04 · как работаем (вопрос собственника «как это будет, не потеряю ли контроль?»): три шага по строке, подробности — на /kak-my-rabotaem; подбор шага.
+// 04 · как работаем (вопрос собственника «как это будет, не потеряю ли контроль?»): три шага по строке, примеры разбора и чертежа (16.10), подробности — на /kak-my-rabotaem.
 export default function Process() {
 	const c = home.process;
 	return (
@@ -21,7 +22,7 @@ export default function Process() {
 					))}
 				</div>
 				<p className="after">{c.after}</p>
-				<MapPreview />
+				<div className="ex2"><RazborPreview compact /><MapPreview compact /></div>
 				<p className="more-link"><a href="/kak-my-rabotaem">{c.more}</a></p>
 			</div>
 		</section>
