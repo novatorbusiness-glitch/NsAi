@@ -1555,3 +1555,9 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .bviz-chain li p{margin:2px 0 0 !important;font-size:15px;line-height:1.45}
 .bc-k{font:600 10.5px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;color:var(--c)}
 .k-p{--c:#c46a3b}.k-e{--c:#2f6fe0}.k-r{--c:#0F6E56}.k-o{--c:#6b46c1}
+.sch-ads .sch-node.ext{fill:#fff;stroke:#d9c7b5;stroke-dasharray:4 3}
+.sch-dot{fill:#e3a774}
+.sch-t.lft{text-anchor:start}
+.sch-t.ext.lft{font-size:10.5px}
+.sch-cap.flow{font-size:9.5px}
+.sch-t.ext.lft{font-size:11.5px}
