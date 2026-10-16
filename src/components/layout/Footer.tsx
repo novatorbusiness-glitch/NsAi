@@ -36,6 +36,7 @@ export default function Footer() {
 					<span>© {new Date().getFullYear()} {site.name}</span>
 					<span>{u.requisites} {site.requisites}</span>
 				</div>
+				<p className="fnote">{u.copyright} <Link href="/offer">{u.footOffer}</Link></p>
 			</div>
 		</footer>
 	);
