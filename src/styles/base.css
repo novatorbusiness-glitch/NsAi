@@ -1432,3 +1432,7 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .pm-more summary:focus{outline:none}
 .pm-more summary:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
 @media(min-width:900px){.pm-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 20px}}
+/* Визуал, шаг 1 (16.10): подписи к цифрам читаемым размером — это доказательства, а не сноски. */
+.sstat span{font-size:15px;line-height:1.5}
+.pf li{font-size:15px;line-height:1.45}
+.past-note{font-size:14.5px}
