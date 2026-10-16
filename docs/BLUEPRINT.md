@@ -76,11 +76,11 @@ ilya-novitsky.ru/
     ├── components/
     │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners   Button, Card… ◐
     │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, Goals, LegalPage, Redirect
-    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact); StepPicker — подбор шага, используется в статьях блога
+    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact); Hero — консоль проекта (этапы с меткой шага, пример на 3 месяца), Scheme — «сейчас → со мной» в «Ситуации» (реклама за рамкой системы); StepPicker — подбор шага, используется в статьях блога
     │   ├── cases/            ✓ Hero, Sales (кейсы агентства карточками, 2 колонки), Mistakes, Products (+ превью карты), System, Contact
     │   ├── primer/           ✓ MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
     │   ├── mentor/           ◐ блоки Н.1–Н.9 — страница скрыта 14.10
-    │   ├── process/          ✓ Hero (карта трёх шагов), ServiceStep (один вид на три шага), Scope (зона ответственности: 4 участка / не входит), MentorCta (05 «Начать»)
+    │   ├── process/          ✓ Hero (карта трёх шагов), ServiceStep (один вид на три шага; у чертежа превью карты, у ведения неделя полосой), Scope (зона ответственности: 4 участка / не входит), MentorCta (05 «Начать»)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc
     │   └── lead/             ◐ форма заявки — вместе с functions/lead
@@ -96,7 +96,8 @@ ilya-novitsky.ru/
     │   ├── typo.ts           ✓ неразрывные пробелы в числах
     │   ├── cases.ts, blog.ts, legal.ts ✓
     │   ├── analytics.ts      ✓ goal() → Метрика
-    │   └── book-viz.ts       ✓ схемы для глав книги
+    │   ├── book-viz.ts       ✓ схемы для глав книги
+    │   └── blog-viz.ts       ✓ схемы в статьях: отметка [[viz:mvp]], [[viz:chain]] → HTML (только цифры и шаги из статьи)
     └── styles/
         ├── tokens.css        ✓ цвета, шрифты, радиусы
         └── base.css          ✓ блоки сайта
