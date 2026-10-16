@@ -29,7 +29,6 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 					<div className="vweek">
 						<p className="lbl">{process.week.label}</p>
 						<ol>{process.week.days.map((x) => <li key={x.b}><span>{x.d}</span><b>{x.b}</b><p>{x.t}</p></li>)}</ol>
-						<p className="vweek-m"><b>{process.week.month.b}:</b> {process.week.month.t}</p>
 					</div>
 				)}
 				<div className="fitcards plain svc-fit">
