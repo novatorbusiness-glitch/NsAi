@@ -25,11 +25,13 @@ ilya-novitsky.ru/
 │   │   ├── faq.ts            ✓ вопросы главной
 │   │   ├── keisy.ts          ✓ первый экран + 01 Системы продаж (6 кейсов агентства до 2025) · 02 Где ломается · 03 Свои продукты · 04 Как это устроено (Hermes, модели по API) · 05 Начать
 │   │   ├── nastavnichestvo.ts◐ скрыто 14.10 (тексты сохранены; вместо продукта — «Своя AI-среда», страница позже)
+│   │   ├── primer.ts         ✓ «Пример чертежа» 16.10: зачем карта · карта проекта · как читать · прототип · ведение по карте · ваш проект · начать; превью карты для главной, «Как мы работаем», кейсов
 │   │   ├── kak-my-rabotaem.ts✓ первый экран «Сначала понять, потом вкладывать» + 01 Аудит (найти причину) · 02 Чертёж (спроектировать) · 03 Ведение (внедрить, роль) · 04 Зона ответственности · 05 Начать
 │   │   ├── blog.ts           ✓ тексты блога и финальные плашки статей
 │   │   ├── book.ts           ✓ страница книги и оглавление
 │   │   └── common.ts         ✓ общее: Person (архитектор продукта и продаж), кнопки, подбор шага (только блог), cookie, 404, документы
 │   ├── cases/                ✓ один файл = один кейс: okidelo, gaze, nezha-quest, vlinx (neuroflow не показываем)
+│   ├── data/project-map.json ✓ публичный слой карты проекта из чата «Фундамент» (без названия продукта, цифр и тире), обновляет scripts/primer/sync.py
 │   ├── legal/                ✓ offer, privacy, consent (.md; ≠ .mdx — MDX не нужен)
 │   ├── blog/                 ✓ 10 статей (.md с карточкой; старые 8 — переадресация на /blog)
 │   ├── book/                 ✓ 30 глав «Нейро-воронки», новое начало без жертвенности
@@ -37,7 +39,8 @@ ilya-novitsky.ru/
 ├── functions/lead/           ◐ форма заявки с amoCRM — после запуска (сейчас заявки в Telegram и MAX)
 ├── public/
 │   ├── fonts/                ✓ Manrope, JetBrains Mono — свои файлы, без Google (кириллица, латиница, latin-ext для ₽)
-│   ├── images/site/          ✓ только настоящие экраны и фото
+│   ├── images/site/          ✓ только настоящие экраны и фото; личные имена на скриншотах заменены на «Демо»
+│   ├── demo/kabinet.html     ✓ демо кабинета AI-сервиса (noindex, 11 экранов), грузится на /primer-chertezha по кнопке; не страница сайта — проверки веса и SEO её пропускают
 │   ├── og/                   ✓ превью 1200×630 для каждой страницы и статьи + manifest.json
 │   ├── book/                 ✓ готовые главы (scripts/book), знак в шапке, у каждой главы своё превью og/book-<глава>.jpg
 │   ├── CNAME, google….html   ✓
@@ -51,6 +54,7 @@ ilya-novitsky.ru/
 │   ├── check/seo.mjs         ✓ title, description, один H1, canonical, свежее превью, alt и размеры картинок
 │   ├── check/budget.mjs      ✓ вес HTML, JS, CSS (gzip) не больше лимита
 │   ├── book/                 ✓ сборка глав книги в public/book
+│   ├── primer/sync.py        ✓ забирает карту и демо из «OkiDelo/90 Рабочие файлы/Карта проекта», чистит комментарии, останавливается на названии продукта и ценах
 │   ├── build-redirects.mjs   ≠ не нужен: переадресации строит маршрут src/app/[...from] из config/redirects.ts
 │   └── optimize-images.mjs   ◐ WebP в нескольких размерах — когда картинок станет больше
 └── src/
@@ -60,19 +64,21 @@ ilya-novitsky.ru/
     │   ├── not-found.tsx     ✓ 404 с дорогой на главную и разделы
     │   ├── kak-my-rabotaem/  ✓
     │   ├── keisy/            ✓   [slug]/ ◐ отдельные страницы кейсов — когда кейсов больше 6
+    │   ├── primer-chertezha/ ✓ пример чертежа: карта проекта в стиле Miro, демо кабинета, подводка к ведению
     │   ├── _nastavnichestvo/ ◐ скрыто 14.10: папка с «_» не становится адресом; /nastavnichestvo → главная (config/redirects.ts)
     │   ├── svoya-ai-sreda/   ◐ страница продукта «Своя AI-среда» — после встречи 15.10 (методология — «Личный бренд/Своя AI-среда»)
     │   ├── blog/             ✓ список и [slug]   page/[n], tag/[tag] ◐ — когда статей больше 12 и 30
     │   ├── book/             ✓ страница книги; ≠ главы — готовые HTML в public/book (своя вёрстка и схемы)
     │   ├── offer, privacy, consent/ ✓
-    │   ├── [...from]/        ✓ страницы-переадресации со старых адресов
+    │   ├── [...from]/        ✓ страницы-переадресации со старых адресов; у каждой свой title и description (lib/seo redirectMeta), иначе Вебмастер видит дубли
     │   ├── sitemap.ts        ✓ собирает адреса сам: страницы, статьи, главы
     │   └── robots.ts         ✓ без устаревшей строки Host
     ├── components/
     │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners   Button, Card… ◐
     │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, Goals, LegalPage, Redirect
     │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact); StepPicker — подбор шага, используется в статьях блога
-    │   ├── cases/            ✓ Hero, Sales, Mistakes, Products, System, Contact
+    │   ├── cases/            ✓ Hero, Sales (кейсы агентства карточками, 2 колонки), Mistakes, Products (+ превью карты), System, Contact
+    │   ├── primer/           ✓ MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
     │   ├── mentor/           ◐ блоки Н.1–Н.9 — страница скрыта 14.10
     │   ├── process/          ✓ Hero (карта трёх шагов), ServiceStep (один вид на три шага), Scope (зона ответственности: 4 участка / не входит), MentorCta (05 «Начать»)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
@@ -103,7 +109,7 @@ ilya-novitsky.ru/
 | все | Person (Илья) |
 | / | Service с ценами трёх шагов, FAQPage |
 | /keisy | хлебные крошки, ItemList из CreativeWork (кейсы) |
-| /kak-my-rabotaem, /blog | хлебные крошки |
+| /kak-my-rabotaem, /blog, /primer-chertezha | хлебные крошки |
 | /blog/… | Article (автор, дата, превью), хлебные крошки |
 | /book | хлебные крошки, Book |
 

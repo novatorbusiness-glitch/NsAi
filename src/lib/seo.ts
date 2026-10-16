@@ -89,3 +89,13 @@ export function casesLd(items: { slug: string; title: string; text: string }[]) 
 		itemListElement: items.map((c, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name: c.title, description: plain(c.text), creator: person, url: `${site.url}/keisy#products` } })),
 	};
 }
+
+// Старый адрес → новый (16.10): у каждой страницы-переадресации свой заголовок и описание, иначе Вебмастер видит дубли title и description.
+export function redirectMeta(from: string, to: string): Metadata {
+	return {
+		title: `${common.redirect.title}: ${from}`,
+		description: `Страница ${from} переехала на ${site.url.replace(/^https?:\/\//, "")}${to === "/" ? "" : to}.`,
+		alternates: { canonical: to },
+		robots: { index: false },
+	};
+}
