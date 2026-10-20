@@ -445,7 +445,7 @@ footer .row{margin-bottom:14px}
 .prow{display:grid;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
 .pv{position:relative;height:300px;overflow:hidden;display:flex;justify-content:center;align-items:flex-start;padding-top:28px}
 .pv img{width:min(62%,280px);height:auto;filter:drop-shadow(0 14px 26px rgba(17,20,22,.16))}
-.pv.v-oki{background:linear-gradient(160deg,#f1ecfd,#e6e0fa)}
+.pv.v-oki{background:linear-gradient(160deg,#eaf5f0,#d7ece4)}
 .pv.v-gaze{background:linear-gradient(160deg,#f8efec,#efe2dd)}
 .pv.v-nezha{background:linear-gradient(160deg,#16233f,#0c1426)}
 .pv.v-vlinx{background:linear-gradient(160deg,#1b2230,#0e1219);align-items:center;padding:24px}
@@ -1663,3 +1663,5 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 @media(min-width:900px){.ex2{grid-template-columns:1fr 1fr}.rzp:not(.c){grid-template-columns:minmax(260px,.8fr) 1.4fr;align-items:center}}
 @media(max-width:520px){.rz-row{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:8px}.rz-lbl b{font-size:14px}}
 .rz-short p{margin:0}.rz-short p+p{margin-top:8px}
+/* скриншот OkiDelo приходит без рамки телефона (20.10): рамка стилями, как у остальных */
+img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;background:#fff;box-sizing:border-box}
