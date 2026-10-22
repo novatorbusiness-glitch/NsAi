@@ -22,6 +22,8 @@ export const razbor = typo({
 		],
 		button: "Начать с аудита",
 		more: "Как проходит аудит →",
+		price: `Такой аудит по вашим данным: ${P.testDrive.price}, ${P.testDrive.term}.`,
+		order: "Как заказать ↓",
 	},
 	doc: {
 		num: "01",
@@ -124,6 +126,7 @@ export const razbor = typo({
 		h2: "С какой задачи начнём аудит?",
 		lead: "Напишите пару строк: что не работает и что уже пробовали. Отвечу в течение рабочего дня.",
 		button: "Начать с аудита",
+		offer: { name: "Аудит по вашим данным", price: P.testDrive.price, term: P.testDrive.term, label: "Что входит", more: "Как устроены все три шага →" },
 	},
 	preview: {
 		label: "Пример аудита",

@@ -1790,3 +1790,10 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .sr-tg p.me{justify-self:end;background:#d7ece4;border-bottom-right-radius:4px}
 @media(min-width:900px){.final .card.sr-final{max-width:1040px;grid-template-columns:1.2fr 1fr;grid-template-areas:"h c" "a c";column-gap:40px}.sr-fh{grid-area:h}.sr-tg{grid-area:c;align-self:center}.sr-fa{grid-area:a}}
 .sr-final .sub{margin-top:14px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.offer{margin:4px 0 22px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.offer-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin:0 0 12px}
+.offer-h b{font-size:18px}.offer-h span{font-weight:700;color:var(--acc)}
+.offer .lbl{margin:0 0 6px}
+.offer ul{margin:0 0 12px;padding-left:20px;display:grid;gap:6px;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.offer a{font-weight:600}
+.pm-order{margin:20px 0 18px}.pm-order a{white-space:nowrap}
