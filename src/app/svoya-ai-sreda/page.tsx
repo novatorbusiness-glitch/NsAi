@@ -14,7 +14,7 @@ import Start from "@/components/sreda/Start";
 export const metadata: Metadata = pageMeta(sreda.meta, "/svoya-ai-sreda", "svoya-ai-sreda");
 
 // Своя AI-среда (16.10): консультация как вход. Ситуация → что получите → как проходит → больше → кому → начать.
-// Отдельный продукт, не смешиваем с аудитом, чертежом и ведением: в меню «AI-консультация» (22.10), на главной не стоит. Блоки — components/sreda.
+// Отдельный продукт, не смешиваем с аудитом, чертежом и ведением: в меню «Консультация по AI» (22.10), на главной не стоит. Блоки — components/sreda.
 export default function Page() {
 	const h = sreda.hero;
 	return (
