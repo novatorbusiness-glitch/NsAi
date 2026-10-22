@@ -13,7 +13,7 @@ W, H = 1200, 630
 INK, INK2, ACC = '#15181a', '#4b5257', '#0F6E56'
 SECTION = {'home': 'Илья Новицкий', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как мы работаем', 'nastavnichestvo': 'Наставничество',
            'blog': 'Блог', 'book': 'Книга', 'primer-chertezha': 'Пример чертежа', 'primer-audita': 'Пример аудита',
-           'svoya-ai-sreda': 'AI-консультация', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
+           'svoya-ai-sreda': 'Консультация по AI', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
 
 def font(name, size, weight=None):
     f = ImageFont.truetype(f'{NM}/{name}', size)
