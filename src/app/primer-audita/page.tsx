@@ -8,11 +8,11 @@ import JsonLd from "@/components/ui/JsonLd";
 import Funnel from "@/components/razbor/Funnel";
 import { pageMeta, crumbs } from "@/lib/seo";
 
-export const metadata: Metadata = pageMeta(razbor.meta, "/primer-razbora", "primer-razbora");
+export const metadata: Metadata = pageMeta(razbor.meta, "/primer-audita", "primer-audita");
 
-// Пример разбора (решение 16.10, «как пример чертежа»): первый экран с воронкой → разбор целиком документом → ваш бизнес → начать.
+// Пример аудита (16.10, переименован 22.10): первый экран с воронкой → аудит целиком документом → чем отличается от разбора по анкете → ваш бизнес → начать.
 export default function Page() {
-	const { hero: h, doc: d, you: y, final: f } = razbor;
+	const { hero: h, doc: d, vs: v, you: y, final: f } = razbor;
 	return (
 		<>
 			<section className="hero">
@@ -75,6 +75,18 @@ export default function Page() {
 				</div>
 			</section>
 
+			<section id="vs" className="alt">
+				<div className="wrap">
+					<SectionHead num={v.num} label={v.label} title={v.h2} lead={v.lead} />
+					<div className="rz-vs">
+						{[v.cheap, v.audit].map((c, i) => (
+							<div key={c.title} className={i ? "au" : "ch"}><p className="rz-vs-t">{c.title}</p><dl>{c.rows.map((r) => <div key={r.k}><dt>{r.k}</dt><dd>{r.v}</dd></div>)}</dl></div>
+						))}
+					</div>
+					<p className="rz-note">{v.note}</p>
+				</div>
+			</section>
+
 			<section id="you">
 				<div className="wrap">
 					<SectionHead num={y.num} label={y.label} title={y.h2} lead={y.lead} />
@@ -91,7 +103,7 @@ export default function Page() {
 					</div>
 				</div>
 			</section>
-			<JsonLd data={[crumbs([{ name: h.crumb, path: "/primer-razbora" }])]} />
+			<JsonLd data={[crumbs([{ name: h.crumb, path: "/primer-audita" }])]} />
 		</>
 	);
 }
