@@ -1747,3 +1747,15 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .rz-vs dd{margin:0;font-size:15px;line-height:1.45}
 .rz-vs .ch dd{color:var(--ink2)}
 @media(min-width:860px){.rz-vs{grid-template-columns:1fr 1.15fr}}
+/* «Своя AI-среда», что получите: три пункта и страницы инструкции (22.10) */
+.sr-cards.three{grid-template-columns:1fr}
+.sr-pdf{margin:0;background:#fff;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 18px 40px -20px rgba(16,24,20,.25);display:grid;gap:16px}
+.sr-pages{position:relative;height:300px}
+.sr-pages img{position:absolute;top:0;width:180px;height:auto;border-radius:6px;box-shadow:0 10px 26px -10px rgba(16,24,20,.45);border:1px solid var(--line)}
+.sr-pages img:nth-child(1){left:0;transform:rotate(-4deg);z-index:3}
+.sr-pages img:nth-child(2){left:110px;top:12px;transform:rotate(2deg);z-index:2}
+.sr-pages img:nth-child(3){left:220px;top:26px;transform:rotate(6deg);z-index:1}
+.sr-pdf figcaption b{display:block;font-size:18px;margin:4px 0 8px}
+.sr-pdf ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px;color:var(--ink2)}
+@media(max-width:520px){.sr-pages{height:230px}.sr-pages img{width:130px}.sr-pages img:nth-child(2){left:80px}.sr-pages img:nth-child(3){left:160px}}
+@media(min-width:1000px){.sr-gets{grid-template-columns:1fr 1fr}.sr-pages{width:400px;margin:0 auto}}

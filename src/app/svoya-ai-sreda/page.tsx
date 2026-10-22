@@ -55,12 +55,10 @@ export default function Page() {
 				<div className="wrap">
 					<SectionHead num={g.num} label={g.label} title={g.h2} lead={g.lead} />
 					<div className="sr-gets">
-						<ul className="sr-cards">{g.items.map((x, i) => <li key={x.b}><em>{String(i + 1).padStart(2, "0")}</em><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
-						<figure className="sr-pass">
-							<p className="lbl">{g.passport.label}</p>
-							<h3>{g.passport.title}</h3>
-							<dl>{g.passport.rows.map((r) => <div key={r.k}><dt>{r.k}</dt><dd>{r.v}</dd></div>)}</dl>
-							<figcaption>{g.passport.cap}</figcaption>
+						<ul className="sr-cards three">{g.items.map((x, i) => <li key={x.b}><em>{String(i + 1).padStart(2, "0")}</em><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+						<figure className="sr-pdf">
+							<div className="sr-pages" aria-label={g.pdf.alt}>{["Обложка инструкции", "Страница «Первые 5 шагов»", "Страница «Паспорт проекта»"].map((alt, k) => <img key={alt} src={`/images/site/sreda-pdf-${k + 1}.jpg`} alt={alt} width={560} height={792} loading="lazy" />)}</div>
+							<figcaption><p className="lbl">{g.pdf.label}</p><b>{g.pdf.title}</b><ol>{g.pdf.list.map((x) => <li key={x}>{x}</li>)}</ol></figcaption>
 						</figure>
 					</div>
 				</div>
