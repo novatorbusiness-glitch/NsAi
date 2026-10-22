@@ -91,9 +91,9 @@ def title_block(d, x, y, title, sub, maxw, color, subcolor, room, sizes=(68, 62,
         draw(d, x, y, ln, sf, subcolor); y += int(ss * 1.35)
 
 def chapter(t, title):
-    # глава книги: «Гл. 1.3 · Лид-магнит» → отметка, заголовок без номера и « — Нейро-воронка», подзаголовок — первая фраза описания
+    # глава книги: отметка из крошек («Глава 1.3», «Начало», «Эпилог»), заголовок без номера, подзаголовок — первая фраза описания
     nav = re.search(r'class="nav-chap">([^<]*)<', t); part = nav.group(1).split(' · ')[0].strip() if nav else ''
-    part = part if part.startswith(('Гл.', 'Пролог', 'Эпилог')) else ''
+    part = part if part.startswith(('Глава', 'Начало', 'Эпилог')) else ''
     title = re.sub(r'\s*—\s*Нейро-воронка$', '', title); title = re.sub(r'^(\d\.\d\s+|Пролог\.\s+|Эпилог\.\s+)', '', title)
     desc = html.unescape(re.search(r'name="description" content="([^"]*)"', t).group(1))
     sub = re.split(r'(?<=[.!?])\s', desc)[0].rstrip('…').replace('→', '—')  # стрелок нет в шрифтах сайта

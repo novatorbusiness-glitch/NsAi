@@ -1,0 +1,270 @@
+{
+ "00-nachalo": [
+  {
+   "src": "/book/cover/00-a-znakomstvo.webp",
+   "alt": "Карта маршрута книги: шесть этапов сборки нейро-воронки",
+   "w": 1392,
+   "h": 926,
+   "before": "start"
+  },
+  {
+   "src": "/book/cover/00-b-prolog.webp",
+   "alt": "Три эпохи обмена информацией и фильтр внимания",
+   "w": 1392,
+   "h": 784,
+   "before": "Пролог"
+  }
+ ],
+ "00-c-epilog": [
+  {
+   "src": "/book/cover/00-c-epilog.webp",
+   "alt": "Цифровая монополия: связанность слоёв и контур усиления",
+   "w": 1392,
+   "h": 854,
+   "before": "start"
+  }
+ ],
+ "1-1-kognitivnye-lovushki": [
+  {
+   "src": "/book/cover/1-1-kognitivnye-lovushki.webp",
+   "alt": "Три уровня принятия решения и пять когнитивных ловушек",
+   "w": 1392,
+   "h": 914,
+   "before": "start"
+  }
+ ],
+ "1-2-nejrokopiraiting": [
+  {
+   "src": "/book/cover/1-2-nejrokopiraiting.webp",
+   "alt": "Четыре сигнала сквозь фильтр, асимметрия потерь и четыре каркаса текста",
+   "w": 1392,
+   "h": 1000,
+   "before": "start"
+  }
+ ],
+ "1-3-lid-magnit": [
+  {
+   "src": "/book/cover/1-3-lid-magnit.webp",
+   "alt": "Четыре фильтра сканирования оффера и форматы лид-магнита",
+   "w": 1392,
+   "h": 836,
+   "before": "start"
+  }
+ ],
+ "1-4-vizualnye-stimuly": [
+  {
+   "src": "/book/cover/1-4-vizualnye-stimuly.webp",
+   "alt": "Девять механизмов восприятия и их место в воронке",
+   "w": 1392,
+   "h": 1044,
+   "before": "start"
+  }
+ ],
+ "2-1-produktovaya-matrica": [
+  {
+   "src": "/book/cover/2-1-produktovaya-matrica.webp",
+   "alt": "Продуктовая матрица: лестница ценности от бесплатного до VIP",
+   "w": 1392,
+   "h": 870,
+   "before": "start"
+  }
+ ],
+ "2-2-anatomiya-voronki": [
+  {
+   "src": "/book/cover/2-2-anatomiya-voronki.webp",
+   "alt": "Анатомия воронки: элементы, страницы, модель",
+   "w": 1392,
+   "h": 626,
+   "before": "start"
+  }
+ ],
+ "2-3-arhitektura-voronki": [
+  {
+   "src": "/book/cover/2-3-arhitektura-voronki.webp",
+   "alt": "Матрица выбора архитектуры воронки: вес продукта × температура аудитории",
+   "w": 1392,
+   "h": 782,
+   "before": "start"
+  }
+ ],
+ "2-4-finalnaya-sborka": [
+  {
+   "src": "/book/cover/2-4-finalnaya-sborka.webp",
+   "alt": "Полный маршрут Tripwire: от трафика до основного продукта",
+   "w": 1392,
+   "h": 556,
+   "before": "start"
+  }
+ ],
+ "3-1-fiziologiya-uderzhaniya": [
+  {
+   "src": "/book/cover/3-1-fiziologiya-uderzhaniya.webp",
+   "alt": "Джеб, джеб, джеб, правый хук: стратегия прогрева перед продажей",
+   "w": 1392,
+   "h": 538,
+   "before": "start"
+  }
+ ],
+ "3-2-chetyre-elementa-doveriya": [
+  {
+   "src": "/book/cover/3-2-chetyre-elementa-doveriya.webp",
+   "alt": "Четыре элемента доверия: экспертиза, тема, трансформация, продукт",
+   "w": 1392,
+   "h": 696,
+   "before": "start"
+  }
+ ],
+ "3-3-cepochki-kasanij": [
+  {
+   "src": "/book/cover/3-3-cepochki-kasanij.webp",
+   "alt": "Цепочка касаний: линия времени прогрева",
+   "w": 1392,
+   "h": 660,
+   "before": "start"
+  }
+ ],
+ "3-4-usilenie-ohvatov": [
+  {
+   "src": "/book/cover/3-4-usilenie-ohvatov.webp",
+   "alt": "15 чит-кодов усиления охватов по четырём группам",
+   "w": 1392,
+   "h": 748,
+   "before": "start"
+  }
+ ],
+ "3-5-ai-kopiraiter": [
+  {
+   "src": "/book/cover/3-5-ai-kopiraiter.webp",
+   "alt": "Человек и AI: разделение ролей в создании контента",
+   "w": 1392,
+   "h": 522,
+   "before": "start"
+  }
+ ],
+ "4-1-anatomiya-kreativa": [
+  {
+   "src": "/book/cover/4-1-anatomiya-kreativa.webp",
+   "alt": "Схема: один и тот же бюджет проходит через фильтр восприятия и даёт два исхода: рост стоимости лида или лавину заявок",
+   "w": 1392,
+   "h": 834,
+   "before": "start"
+  }
+ ],
+ "4-2-shest-stimulov": [
+  {
+   "src": "/book/cover/4-2-shest-stimulov.webp",
+   "alt": "Шесть стимулов сильного креатива",
+   "w": 1392,
+   "h": 938,
+   "before": "start"
+  }
+ ],
+ "4-3-virusnaya-mehanika": [
+  {
+   "src": "/book/cover/4-3-virusnaya-mehanika.webp",
+   "alt": "Схема распространения мемического креатива: культурный код, узнавание, эмоция, оффер внутри шаблона, пересылка; 24 шаблона и три проверки",
+   "w": 1392,
+   "h": 886,
+   "before": "start"
+  }
+ ],
+ "4-4-organicheskij-trafik": [
+  {
+   "src": "/book/cover/4-4-organicheskij-trafik.webp",
+   "alt": "Устройство контентной территории: четыре опоры блога, три категории контента, четыре кода потребления и результат кейса",
+   "w": 1392,
+   "h": 886,
+   "before": "start"
+  }
+ ],
+ "4-5-poisk-segmentaciya": [
+  {
+   "src": "/book/cover/4-5-poisk-segmentaciya.webp",
+   "alt": "Карта восьми источников трафика, разложенных по состоянию аудитории, и два маршрута входа: в воронку или в блог",
+   "w": 1392,
+   "h": 816,
+   "before": "start"
+  }
+ ],
+ "4-6-analitika-trafika": [
+  {
+   "src": "/book/cover/4-6-analitika-trafika.webp",
+   "alt": "Воронка запуска с метриками на каждом этапе и четыре датчика: CTR, CPL, CR, ROMI",
+   "w": 1392,
+   "h": 852,
+   "before": "start"
+  }
+ ],
+ "4-7-ai-kreativy": [
+  {
+   "src": "/book/cover/4-7-ai-kreativy.webp",
+   "alt": "Производственный цикл креатива из шести шагов за 60 минут и разделение ролей между человеком и машиной",
+   "w": 1392,
+   "h": 782,
+   "before": "start"
+  }
+ ],
+ "5-1-algoritm-vs-chelovek": [
+  {
+   "src": "/book/cover/5-1-algoritm-vs-chelovek.webp",
+   "alt": "Алгоритм против человека: что отдать системе, а что оставить себе",
+   "w": 1392,
+   "h": 862,
+   "before": "start"
+  }
+ ],
+ "5-2-stek-avtomatizacii": [
+  {
+   "src": "/book/cover/5-2-stek-avtomatizacii.webp",
+   "alt": "Стек автоматизации: шесть ролей цифрового экзокортекса",
+   "w": 1392,
+   "h": 952,
+   "before": "start"
+  }
+ ],
+ "5-3-vebinarnyj-dvigatel": [
+  {
+   "src": "/book/cover/5-3-vebinarnyj-dvigatel.webp",
+   "alt": "Вебинарная машина: чертёж, прогрев, техническая сборка",
+   "w": 1392,
+   "h": 862,
+   "before": "start"
+  }
+ ],
+ "5-4-audit-voronki": [
+  {
+   "src": "/book/cover/5-4-audit-voronki.webp",
+   "alt": "Диагностика четырёх конверсий вебинарной воронки",
+   "w": 1392,
+   "h": 828,
+   "before": "start"
+  }
+ ],
+ "5-5-ai-v-prodazhah": [
+  {
+   "src": "/book/cover/5-5-ai-v-prodazhah.webp",
+   "alt": "Мастер-промпт AI-ассистента: пять слоёв инструкции",
+   "w": 1392,
+   "h": 912,
+   "before": "start"
+  }
+ ],
+ "6-1-cifrovye-sotrudniki": [
+  {
+   "src": "/book/cover/6-1-cifrovye-sotrudniki.webp",
+   "alt": "Оргсхема цифровых сотрудников и зоны их ответственности",
+   "w": 1392,
+   "h": 894,
+   "before": "start"
+  }
+ ],
+ "6-2-razrabotka-bez-programmistov": [
+  {
+   "src": "/book/cover/6-2-razrabotka-bez-programmistov.webp",
+   "alt": "Длинный коридор классической разработки против live coding",
+   "w": 1392,
+   "h": 812,
+   "before": "start"
+  }
+ ]
+}

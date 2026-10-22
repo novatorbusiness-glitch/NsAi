@@ -13,6 +13,8 @@ export const redirects: Record<string, string> = {
 	"/primer-razbora": "/primer-audita", // переименовано 22.10: это аудит, а не разбор
 	"/nastavnichestvo": "/", // наставничество скрыто 14.10, код страницы — src/app/_nastavnichestvo
 	"/book/read": "/book",
+	"/book/00-a-znakomstvo": "/book/00-nachalo", // v2 22.10: знакомство и пролог — одна глава
+	"/book/00-b-prolog": "/book/00-nachalo",
 	"/blog/ai-kopiraiter-neuro-voronka": "/blog",
 	"/blog/chto-takoe-ncai": "/blog",
 	"/blog/kryuchok-5-sekund": "/blog",

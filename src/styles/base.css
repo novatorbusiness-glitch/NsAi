@@ -1790,3 +1790,15 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .sr-tg p.me{justify-self:end;background:#d7ece4;border-bottom-right-radius:4px}
 @media(min-width:900px){.final .card.sr-final{max-width:1040px;grid-template-columns:1.2fr 1fr;grid-template-areas:"h c" "a c";column-gap:40px}.sr-fh{grid-area:h}.sr-tg{grid-area:c;align-self:center}.sr-fa{grid-area:a}}
 .sr-final .sub{margin-top:14px;font-size:15px;line-height:1.5;color:var(--ink2)}
+
+/* ── Читалка книги v2 (22.10): спокойный текст, рисунок с подписью, без эффектов ── */
+.bk-meta{margin:0;font:500 13px/1.4 var(--m);color:var(--mut)}
+.bk-text{font-size:18.5px;line-height:1.75}
+.bk-text h2.bk-part{font-size:clamp(22px,2.6vw,26px);color:var(--acc);margin-top:8px}
+.bk-text hr.bk-start{border:0;border-top:1px solid var(--line);margin:32px 0}
+.bk-fig{margin:28px 0 32px}
+.bk-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.bk-fig figcaption{margin-top:10px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.bk-text i{font-style:italic}
+.bk-cover{margin:0 0 32px}
+.bk-cover img{display:block;width:100%;height:auto;border-radius:14px}
