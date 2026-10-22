@@ -10,6 +10,7 @@ export const redirects: Record<string, string> = {
 	"/portfolio": "/keisy",
 	"/roadmap": "/keisy",
 	"/ai-training": "/",
+	"/primer-razbora": "/primer-audita", // переименовано 22.10: это аудит, а не разбор
 	"/nastavnichestvo": "/", // наставничество скрыто 14.10, код страницы — src/app/_nastavnichestvo
 	"/book/read": "/book",
 	"/blog/ai-kopiraiter-neuro-voronka": "/blog",
