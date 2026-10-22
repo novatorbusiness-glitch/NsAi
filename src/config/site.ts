@@ -16,20 +16,23 @@ export const site = {
 		email: "ilya.novitskii@yandex.ru",
 	},
 	requisites: "Новицкий Илья Сергеевич, самозанятый (НПД), ИНН 550115335168",
-	// Шапка: три пункта; меню на телефоне и подвал — все страницы.
+	// Шапка: четыре пункта; меню на телефоне и подвал — все страницы.
 	nav: [
 		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
 		{ href: "/keisy", label: "Кейсы" },
+		{ href: "/svoya-ai-sreda", label: "AI-консультация" },
 		{ href: "/blog", label: "Блог" },
 	],
 	menu: [
 		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
 		{ href: "/keisy", label: "Кейсы" },
+		{ href: "/svoya-ai-sreda", label: "AI-консультация" },
 		{ href: "/blog", label: "Блог" },
 	],
 	footerNav: [
 		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
 		{ href: "/keisy", label: "Кейсы" },
+		{ href: "/svoya-ai-sreda", label: "AI-консультация" },
 		{ href: "/blog", label: "Блог" },
 		{ href: "/book", label: "Книга" },
 	],
