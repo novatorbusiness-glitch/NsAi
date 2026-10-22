@@ -75,7 +75,8 @@ export default function Page() {
 			<section id="more">
 				<div className="wrap">
 					<SectionHead num={m.num} label={m.label} title={m.h2} lead={m.lead} />
-					<ul className="pm-points">{m.items.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+					<ul className="sr-more">{m.items.map((x) => <li key={x.b}><b>{x.b}</b><p>{x.t}</p></li>)}</ul>
+					<p className="sr-more-note"><b>{m.price}</b> {m.note}</p>
 				</div>
 			</section>
 
