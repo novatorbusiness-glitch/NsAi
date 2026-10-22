@@ -11,7 +11,7 @@ export default function Fit() {
 				<div className="fitcards plain sr-fit">
 					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{f.yesTitle}</p><ul>{f.yes.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{f.noTitle}</p><ul>{f.no.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
-					<div className="fc not"><p className="fc-h"><span className="ic">–</span>{f.notTitle}</p><ul>{f.not.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
+					<div className="fc not"><p className="fc-h"><span className="ic">−</span>{f.notTitle}</p><ul>{f.not.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 				</div>
 			</div>
 		</section>

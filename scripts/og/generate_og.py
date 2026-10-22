@@ -12,7 +12,8 @@ NM = f'{ROOT}/node_modules'
 W, H = 1200, 630
 INK, INK2, ACC = '#15181a', '#4b5257', '#0F6E56'
 SECTION = {'home': 'Илья Новицкий', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как мы работаем', 'nastavnichestvo': 'Наставничество',
-           'blog': 'Блог', 'book': 'Книга', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
+           'blog': 'Блог', 'book': 'Книга', 'primer-chertezha': 'Пример чертежа', 'primer-audita': 'Пример аудита',
+           'svoya-ai-sreda': 'AI-консультация', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
 
 def font(name, size, weight=None):
     f = ImageFont.truetype(f'{NM}/{name}', size)
@@ -96,7 +97,9 @@ def chapter(t, title):
     part = part if part.startswith(('Глава', 'Начало', 'Эпилог')) else ''
     title = re.sub(r'\s*—\s*Нейро-воронка$', '', title); title = re.sub(r'^(\d\.\d\s+|Пролог\.\s+|Эпилог\.\s+)', '', title)
     desc = html.unescape(re.search(r'name="description" content="([^"]*)"', t).group(1))
-    sub = re.split(r'(?<=[.!?])\s', desc)[0].rstrip('…').replace('→', '—')  # стрелок нет в шрифтах сайта
+    parts = re.split(r'(?<=[.!?])\s', desc)
+    sub = parts[0] if len(parts[0]) >= 40 or len(parts) == 1 else ' '.join(parts[:2])  # «Бывает так.» мало: берём две фразы
+    sub = sub.rstrip('…').replace('→', '—')  # стрелок нет в шрифтах сайта
     return title, sub, 'КНИГА «НЕЙРО-ВОРОНКА»' + (' · ' + part.upper() if part else '')
 
 def render(name, title, sub_text=None, kicker=None):

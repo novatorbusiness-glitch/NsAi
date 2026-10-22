@@ -2,7 +2,7 @@
 import re,glob,sys,html
 from collections import Counter,defaultdict
 root=sys.argv[1]
-pages=['index.html','kak-my-rabotaem.html','keisy.html','primer-chertezha.html','primer-audita.html','blog.html','book.html','404.html']+sorted(glob.glob(root+'/blog/*.html'))
+pages=['index.html','kak-my-rabotaem.html','keisy.html','primer-chertezha.html','primer-audita.html','svoya-ai-sreda.html','blog.html','book.html','404.html']+sorted(glob.glob(root+'/blog/*.html'))
 pages=[p.replace(root+'/','') for p in pages]
 CR=['просто','очень','действительно','реально','буквально','на самом деле','как бы','собственно','вообще']
 KA=['осуществля','являет','данн[ыо][йме]','в рамках','в целях','посредством','производится','функционал','обеспечива','реализаци','в случае ']
