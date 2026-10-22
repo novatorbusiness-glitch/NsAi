@@ -1,4 +1,5 @@
 /* Стили страницы: пример чертежа. Общее — в styles/base.css. */
+.sp-slot.dim{opacity:.55}
 .pmap2{margin-top:8px;--pm-ink:#1d1a33;--pm-sub:#5b5770;--pm-line:#bdb7d3}
 .pm-board{position:relative;height:72vh;min-height:520px;max-height:760px;border-radius:18px;overflow:hidden;cursor:grab;touch-action:none;user-select:none;
   background:#f6f5f1 radial-gradient(#d8d4c8 1.1px,transparent 1.2px) 0 0/24px 24px;box-shadow:inset 0 0 0 1px rgba(29,26,51,.08)}
@@ -6,15 +7,18 @@
 .pm-world{position:absolute;left:0;top:0;transform-origin:0 0;transition:transform .18s ease}
 .pm-board.drag .pm-world{transition:none}
 .pm-frame{position:absolute;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(29,26,51,.06);box-shadow:0 1px 2px rgba(29,26,51,.05),0 12px 32px -14px rgba(29,26,51,.18)}
-.pm-fh{position:absolute;left:18px;top:14px;right:18px;display:flex;align-items:center;gap:9px;font:700 15px/1.2 var(--f);color:var(--pm-ink);letter-spacing:-.01em}
-.pm-fh i{width:11px;height:11px;border-radius:4px;flex:none}
-.pm-fh em{margin-left:auto;font:500 12px/1 var(--f);font-style:normal;color:var(--pm-sub);background:#f3f2ef;border-radius:999px;padding:4px 9px}
 .pm-lines{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+.pm-lines path{fill:none;stroke:var(--pm-line);stroke-width:1.6;opacity:.45}
+.pm-board.dim .pm-lines path{opacity:.08}
+.pm-board.dim .pm-lines path.hl{opacity:1;stroke:#6b46c1;stroke-width:2.6}
+.pm-note.r2{transform:rotate(.45deg)}
+.pm-note:hover,.pm-note.on{transform:translateY(-2px) rotate(0);box-shadow:0 2px 2px rgba(29,26,51,.06),0 16px 26px -10px rgba(29,26,51,.32)}
+.pm-note.on{box-shadow:0 0 0 2.5px var(--pm-c),0 16px 26px -10px rgba(29,26,51,.32)}
 .pm-note:focus-visible{outline:2px solid var(--pm-c);outline-offset:3px}
-.pm-note b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:none;font:700 14px/1.25 var(--f);color:var(--pm-ink);margin:0 0 5px;letter-spacing:-.01em}
 .pm-note .pm-n{flex:1;min-height:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pm-note .pm-b{align-self:flex-end;margin-top:4px}
 .pm-note.s-plan,.pm-li.s-plan{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px)}
+.pm-board.dim .pm-note:not(.hl){opacity:.22}
 .pm-board.dim .pm-frame{opacity:.75}
 .pm-b{display:inline-block;font:600 11px/1.4 var(--f);border-radius:999px;padding:2px 8px;background:rgba(255,255,255,.75)}
 .pm-leg{position:absolute;left:14px;top:14px;z-index:4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;background:#fff;border-radius:12px;padding:8px 12px;
@@ -25,38 +29,27 @@
 .pm-tools button:hover{background:#f1effa}
 .pm-tools .pm-fit{font-size:13px}
 .pm-tools .pm-z{font:500 12px/1 var(--f);color:var(--pm-sub);min-width:44px;text-align:center}
+.pm-cs{height:6px}
+.pm-ci{padding:12px 18px 0;position:relative}
+.pm-cl{font:600 11.5px/1.3 var(--f);letter-spacing:.04em;text-transform:uppercase;color:var(--pm-sub);margin:0}
+.pm-x{position:absolute;right:10px;top:10px;border:0;background:#f3f2ef;border-radius:8px;width:28px;height:28px;font-size:16px;line-height:1;cursor:pointer;color:var(--pm-sub)}
+.pm-dep button{border:0;background:none;padding:0;color:#6b46c1;font:500 12.5px/1.5 var(--f);cursor:pointer}
+.pm-dep button:hover{text-decoration:underline}
 .pm-hint{color:var(--mut);font-size:13px;margin:10px 0 0}
 .pm-more{margin-top:12px}
 .pm-more summary{cursor:pointer;font-weight:600;color:var(--acc)}
-.pm-list h3{display:flex;align-items:center;gap:8px;font:700 15px/1.3 var(--f);margin:20px 0 10px;color:var(--pm-ink)}
-.pm-list h3 i{width:11px;height:11px;border-radius:4px;flex:none}
-.pm-li{display:flex;flex-direction:column;gap:3px;border-radius:5px;padding:12px 13px 9px;margin:0 0 10px;font-size:14px;line-height:1.45;color:var(--pm-sub)}
-.pm-li b{color:var(--pm-ink);font-size:15px}
 .pm-li .pm-b{align-self:flex-start;margin-top:4px}
 @media(max-width:699px){.pm-board{height:520px;min-height:0}}
+@media(max-width:699px){.pm-card{left:10px;right:10px;top:auto;bottom:60px;width:auto;max-height:58%}}
 @media(max-width:699px){.pm-leg{font-size:11.5px;padding:6px 10px;right:14px}}
 @media(prefers-reduced-motion:reduce){.pm-note,.pm-world{transition:none}}
 .pm-demo{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 18px 44px -24px rgba(29,26,51,.35)}
-.pm-demo-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--line);font:500 12.5px/1 var(--m);color:var(--mut)}
-.pm-demo-bar i{width:10px;height:10px;border-radius:50%;background:#d6dad8}
-.pm-demo-bar span{margin-left:8px}
-.pm-demo-bar a{margin-left:auto;font-weight:600}
 .pm-demo iframe{display:block;width:100%;height:78vh;min-height:560px;max-height:820px;border:0}
 .pm-demo-start{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:320px;padding:32px 16px;text-align:center;
   background:#f6f5f1 radial-gradient(#d8d4c8 1.1px,transparent 1.2px) 0 0/24px 24px}
-.pm-demo-start p{margin:0;color:var(--ink2)}
 @media(max-width:699px){.pm-demo iframe{height:640px;min-height:0}}
-@media(max-width:699px){.pm-demo-bar span{display:none}}
-.pm-route li span{font-weight:700}
-.pm-route li.plan{background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.45) 0 6px,transparent 6px 12px)}
-.pm-route small{color:var(--mut);font-size:12.5px}
 @media(max-width:699px){.pm-route{flex-direction:column}}
-@media(max-width:699px){.pm-route li:not(:last-child)::after{content:"↓";right:auto;left:18px;bottom:-15px}}
 .pm-note-l{margin:-8px 0 18px;color:var(--ink2)}
-.pm-why{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.pm-why li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
-.pm-why b{display:block;font:700 clamp(26px,3vw,32px)/1.1 var(--f);color:var(--acc);letter-spacing:-.02em;margin-bottom:8px;white-space:nowrap}
-.pm-why span{color:var(--ink2);font-size:15.5px;line-height:1.55}
 @media(min-width:900px){.pm-why{grid-template-columns:repeat(3,1fr);gap:20px}}
 .pm-hero{align-items:center}
 .pm-hero-map{display:block;border-radius:16px;box-shadow:0 24px 60px -30px rgba(29,26,51,.45);transition:transform .2s}
