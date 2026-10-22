@@ -67,10 +67,8 @@ export default function Page() {
 			<section id="how" className="alt svc v2">
 				<div className="wrap">
 					<SectionHead num={w.num} label={w.label} title={w.h2} lead={w.lead} />
-					<div className="svc-how sr-how">
-						<ol>{w.steps.map((t, i) => <li key={t.b}><span>{i + 1}</span><div><b>{t.b}</b> {t.t}</div></li>)}</ol>
-						<p className="svc-need">{w.note}</p>
-					</div>
+					<ol className="sr-flow">{w.steps.map((t, i) => <li key={t.b} className={t.tag ? "end" : undefined}><span className="n">{i + 1}</span><b>{t.b}</b><p>{t.t}</p>{t.tag && <em>{t.tag}</em>}</li>)}</ol>
+					<ul className="sr-terms">{w.terms.map((t) => <li key={t}>{t}</li>)}</ul>
 				</div>
 			</section>
 

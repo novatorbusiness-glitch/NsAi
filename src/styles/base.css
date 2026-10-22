@@ -1675,7 +1675,6 @@ html{scroll-behavior:smooth}section[id]{scroll-margin-top:64px}@media(prefers-re
 .sr-stack li.l1{background:#d7ece4}
 .sr-stack li.l3{background:#fbf1e4}.sr-stack li.l3 b{color:#b4691f}
 .sr-stack figcaption{margin-top:12px;font-size:15px;line-height:1.5;color:var(--ink2)}
-.sr-how{margin-top:28px;max-width:760px}
 @media(max-width:520px){.sr-stack li{grid-template-columns:1fr;gap:4px}}
 .sr-paths{display:grid;gap:16px;margin-top:28px}
 .sr-path{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -1759,3 +1758,16 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .sr-pdf ol{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px;color:var(--ink2)}
 @media(max-width:520px){.sr-pages{height:230px}.sr-pages img{width:130px}.sr-pages img:nth-child(2){left:80px}.sr-pages img:nth-child(3){left:160px}}
 @media(min-width:1000px){.sr-gets{grid-template-columns:1fr 1fr}.sr-pages{width:400px;margin:0 auto}}
+
+.sr-flow{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px;counter-reset:x}
+.sr-flow li{position:relative;background:#fff;border-radius:16px;padding:20px 20px 20px 64px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 10px 30px rgba(16,24,20,.05)}
+.sr-flow .n{position:absolute;left:20px;top:18px;width:30px;height:30px;border-radius:50%;background:var(--acc-soft);color:var(--acc);font:700 14px/30px var(--m);text-align:center}
+.sr-flow b{display:block;font-size:17px;line-height:1.3}
+.sr-flow p{margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--ink2)}
+.sr-flow li.end{background:var(--acc)}.sr-flow li.end b,.sr-flow li.end p{color:#fff}
+.sr-flow li.end .n{background:#fff}
+.sr-flow em{display:inline-block;margin-top:12px;font:600 13px/1 var(--f);font-style:normal;background:#fff;color:var(--acc);border-radius:999px;padding:7px 12px}
+.sr-flow em::before{content:"PDF · ";font-weight:700}
+.sr-terms{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.sr-terms li{border:1px solid var(--line2);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--ink2);background:#fff}
+@media(min-width:900px){.sr-flow{grid-template-columns:repeat(4,1fr);gap:16px}.sr-flow li{padding:64px 20px 20px}.sr-flow li:not(:last-child)::after{content:"";position:absolute;top:33px;left:58px;right:-24px;height:2px;background:var(--acc-soft);z-index:-0}.sr-flow .n{top:18px}}
