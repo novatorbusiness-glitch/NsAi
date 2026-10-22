@@ -12,6 +12,7 @@ import MapCanvas from "@/components/primer/MapCanvas";
 import { MapMini } from "@/components/primer/MapPreview";
 import DemoFrame from "@/components/primer/DemoFrame";
 import { pageMeta, crumbs } from "@/lib/seo";
+import "@/styles/pages/primer.css";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 

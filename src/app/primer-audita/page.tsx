@@ -8,6 +8,7 @@ import ContactNote from "@/components/ui/ContactNote";
 import JsonLd from "@/components/ui/JsonLd";
 import Funnel from "@/components/razbor/Funnel";
 import { pageMeta, crumbs } from "@/lib/seo";
+import "@/styles/pages/razbor.css";
 
 export const metadata: Metadata = pageMeta(razbor.meta, "/primer-audita", "primer-audita");
 

@@ -6,6 +6,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import ContactNote from "@/components/ui/ContactNote";
 import JsonLd from "@/components/ui/JsonLd";
 import { pageMeta, crumbs } from "@/lib/seo";
+import "@/styles/pages/sreda.css";
 
 export const metadata: Metadata = pageMeta(sreda.meta, "/svoya-ai-sreda", "svoya-ai-sreda");
 

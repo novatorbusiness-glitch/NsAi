@@ -9,6 +9,7 @@ import { blog } from "@content/pages/blog";
 import JsonLd from "@/components/ui/JsonLd";
 import { pageMeta, crumbs } from "@/lib/seo";
 import { common } from "@content/pages/common";
+import "@/styles/pages/blog.css";
 
 export const metadata: Metadata = pageMeta(blog.meta, "/blog", "blog");
 

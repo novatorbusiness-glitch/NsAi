@@ -11,6 +11,7 @@ import JsonLd from "@/components/ui/JsonLd";
 import Redirect from "@/components/layout/Redirect";
 import Chapter from "@/components/book/Chapter";
 import Pager from "@/components/book/Pager";
+import "@/styles/pages/book.css";
 
 // Глава книги: читалка в стиле сайта, одна страница = одна подглава v2. Старые адреса глав — переадресация.
 const moved = (slug: string) => redirects[`/book/${slug}`];

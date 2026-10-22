@@ -9,6 +9,7 @@ import { keisy } from "@content/pages/keisy";
 import JsonLd from "@/components/ui/JsonLd";
 import { allCases } from "@/lib/cases";
 import { pageMeta, crumbs, casesLd } from "@/lib/seo";
+import "@/styles/pages/keisy.css";
 
 export const metadata: Metadata = pageMeta(keisy.meta, "/keisy", "keisy");
 
