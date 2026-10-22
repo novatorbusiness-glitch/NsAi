@@ -83,7 +83,7 @@ export function render(body: string, title: string, slug: string) {
 	const html: string[] = [];
 	const toc: { id: string; title: string }[] = [];
 	const { figures, covers } = bookData();
-	const cover = (c: Cover, first: boolean) => `<figure class="bk-cover"><img src="${c.src}" alt="${esc(c.alt)}" width="${c.w}" height="${c.h}"${first ? "" : ' loading="lazy"'} decoding="async"></figure>`;
+	const cover = (c: Cover, first: boolean) => `<figure class="bk-cover"><a href="${c.src}" target="_blank" rel="noopener"><img src="${c.src}" alt="${esc(c.alt)}" width="${c.w}" height="${c.h}"${first ? "" : ' loading="lazy"'} decoding="async"></a></figure>`;
 	const mine = covers[slug] || [];
 	for (const c of mine.filter((c) => c.before === "start")) html.push(cover(c, true));
 	for (const blk of body.replace(/[ \t]*(\[\[fig:\d+\]\])[ \t]*/g, "\n\n$1\n\n").split(/\n\s*\n/)) { // рисунок всегда отдельным блоком
@@ -92,13 +92,13 @@ export function render(body: string, title: string, slug: string) {
 		const fig = b.match(/^\[\[fig:(\d+)\]\]$/);
 		if (fig) {
 			const f = figures[fig[1]];
-			html.push(`<figure class="bk-fig"><img src="${f.src}" alt="${esc(f.alt).replace(/"/g, "&quot;")}" width="${f.w}" height="${f.h}" loading="lazy" decoding="async"><figcaption>${inline(f.caption)}</figcaption></figure>`);
+			html.push(`<figure class="bk-fig"><a href="${f.src}" target="_blank" rel="noopener"><img src="${f.src}" alt="${esc(f.alt).replace(/"/g, "&quot;")}" width="${f.w}" height="${f.h}" loading="lazy" decoding="async"></a><figcaption>${inline(f.caption)}</figcaption></figure>`);
 			continue;
 		}
 		const h = b.match(/^(#{1,3}) (.+)$/);
 		if (h) {
 			const [, lvl, t] = h;
-			if (lvl === "##" && t.replace(/^\d\.\d\.\s*/, "") === title) { html.push(`<hr class="bk-start">`); continue; }
+			if (lvl === "##" && t.replace(/^\d\.\d\.\s*/, "") === title) { if (html.some((x) => !x.startsWith('<figure class="bk-cover"'))) html.push(`<hr class="bk-start">`); continue; } // черта только после вступления этапа
 			if (lvl === "#" && t === "Нейро-воронка") continue; // название книги уже в шапке страницы
 			const id = `s${toc.length + 1}`;
 			toc.push({ id, title: t.replace(/^Глава \d\.\s*/, "") });

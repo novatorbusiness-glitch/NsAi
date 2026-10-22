@@ -38,9 +38,9 @@ export default function ChapterPage({ params }: { params: { slug: string } }) {
 	const mark = c.num ? `${t.chap} ${c.num}` : index === 0 ? t.start : t.end;
 	return (
 		<div className="article bk">
-			<div className="wrap">
+			<div className="wrap bk-col">
 				<p className="crumbs"><Link href="/">{common.ui.home}</Link><span>/</span><Link href="/book">{book.hero.crumb}</Link><span>/</span><span className="nav-chap">{mark}</span></p>
-				<div className="ahead">
+				<div className="bk-head">
 					<span className="tagc">{c.part ? `${t.part} ${c.part}` : book.hero.h1}</span>
 					<h1>{c.title}</h1>
 					<p className="bk-meta">{t.of(index + 1, total)} · {readMins(body)} {t.mins}</p>

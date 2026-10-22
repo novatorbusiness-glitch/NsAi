@@ -13,3 +13,17 @@
 .bk-text i{font-style:italic}
 .bk-cover{margin:0 0 32px}
 .bk-cover img{display:block;width:100%;height:auto;border-radius:14px}
+/* Читалка в одну колонку (22.10): шапка главы, оглавление и текст по одной оси, ширина строки для чтения */
+.bk-col{max-width:760px}
+.bk-head{margin:6px 0 24px}
+.bk-head h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 12px}
+.bk-toc{border:1px solid var(--line);border-radius:12px;background:#fff;margin:0 0 32px}
+.bk-toc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:14px 18px;font:600 12.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.bk-toc summary::-webkit-details-marker{display:none}
+.bk-toc summary span{color:var(--acc)}
+.bk-toc summary::after{content:"+";margin-left:auto;font:400 20px/1 var(--m);color:var(--acc)}
+.bk-toc[open] summary::after{content:"−"}
+.bk-toc ol{margin:0;padding:0 18px 16px 38px;display:grid;gap:8px;font-size:15px;line-height:1.45}
+.bk-toc a{color:var(--ink2)}.bk-toc a:hover{color:var(--acc)}
+.bk .author,.bk .pnav{max-width:none}
+.bk-cover a,.bk-fig a{display:block;cursor:zoom-in}
