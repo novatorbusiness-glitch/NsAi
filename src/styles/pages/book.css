@@ -1,0 +1,29 @@
+/* Стили страницы: книга: страница и читалка. Общее — в styles/base.css. */
+.bookgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
+.bookcover{width:100%;height:auto;max-width:280px;justify-self:end;border-radius:10px;box-shadow:0 24px 48px rgba(0,0,0,.18)}
+@media(max-width:900px){.bookgrid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:900px){.bookcover{max-width:160px;justify-self:start}}
+.bk-meta{margin:0;font:500 13px/1.4 var(--m);color:var(--mut)}
+.bk-text{font-size:18.5px;line-height:1.75}
+.bk-text h2.bk-part{font-size:clamp(22px,2.6vw,26px);color:var(--acc);margin-top:8px}
+.bk-text hr.bk-start{border:0;border-top:1px solid var(--line);margin:32px 0}
+.bk-fig{margin:28px 0 32px}
+.bk-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.bk-fig figcaption{margin-top:10px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.bk-text i{font-style:italic}
+.bk-cover{margin:0 0 32px}
+.bk-cover img{display:block;width:100%;height:auto;border-radius:14px}
+/* Читалка в одну колонку (22.10): шапка главы, оглавление и текст по одной оси, ширина строки для чтения */
+.bk-col{max-width:760px}
+.bk-head{margin:6px 0 24px}
+.bk-head h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 12px}
+.bk-toc{border:1px solid var(--line);border-radius:12px;background:#fff;margin:0 0 32px}
+.bk-toc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:14px 18px;font:600 12.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.bk-toc summary::-webkit-details-marker{display:none}
+.bk-toc summary span{color:var(--acc)}
+.bk-toc summary::after{content:"+";margin-left:auto;font:400 20px/1 var(--m);color:var(--acc)}
+.bk-toc[open] summary::after{content:"−"}
+.bk-toc ol{margin:0;padding:0 18px 16px 38px;display:grid;gap:8px;font-size:15px;line-height:1.45}
+.bk-toc a{color:var(--ink2)}.bk-toc a:hover{color:var(--acc)}
+.bk .author,.bk .pnav{max-width:none}
+.bk-cover a,.bk-fig a{display:block;cursor:zoom-in}

@@ -45,7 +45,7 @@ ilya-novitsky.ru/
 │   ├── og/                   ✓ превью 1200×630 для каждой страницы и статьи + manifest.json
 │   ├── book/                 ✓ img/ — 70 рисунков v2 (webp 1200 px, грузятся при прокрутке), cover/ — 30 схем в начале глав; превью глав og/book-<глава>.jpg
 │   ├── CNAME, google….html   ✓
-│   ├── brand/                ✓ знак NCAi: полное слово (ncai.svg) и «N с лепестком» (n.svg), PNG для превью и материалов (презентации, посты)
+│   ├── brand/                ✓ знак NCAi: полное слово (ncai.svg) и «N с лепестком» (n.svg), белые версии для тёмного фона (n-white, ncai-white), PNG для превью и материалов (презентации, посты)
 │   └── icon.svg, favicon*    ✓ иконка вкладки «N с лепестком» на зелёном (16, 32, ico, apple, android)
 ├── scripts/
 │   ├── brand/                ✓ mark.py (геометрия знака), build.py (SVG), render.mjs (PNG через Chrome)
@@ -77,13 +77,14 @@ ilya-novitsky.ru/
     │   ├── sitemap.ts        ✓ собирает адреса сам: страницы, статьи, главы
     │   └── robots.ts         ✓ без устаревшей строки Host
     ├── components/
-    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners   Button, Card… ◐
-    │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, Goals, LegalPage, Redirect
-    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact); Hero — консоль проекта (этапы с меткой шага, пример на 3 месяца), Scheme — «сейчас → со мной» в «Ситуации» (реклама за рамкой системы); StepPicker — подбор шага, используется в статьях блога
+    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners, BrandMark (знак «N с лепестком»), ContactNote (строка про политику и оферту под кнопками), Offer (цена, срок и «что входит» в примерах: состав с «Как мы работаем», цены из config/prices)   Button, Card… ◐
+    │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, ContactChooser (окно Telegram / MAX), Goals, LegalPage, Redirect (передаёт UTM и якорь)
+    │   ├── home/             ✓ по файлу на блок (первый экран + 01–10: Situations, Benefits, Compare, Process, Speed, Done, About, Fit, Faq, Contact); Hero — консоль проекта (этапы с меткой шага, пример на 3 месяца), Scheme — «сейчас → со мной» в «Ситуации» (реклама за рамкой системы); StepPicker — подбор шага, используется в статьях блога; DayfeedAnimation — лента дня в «Как это выглядит»
     │   ├── cases/            ✓ Hero, Sales (кейсы агентства карточками, 2 колонки), Mistakes, Products (+ превью карты), System, Contact
-    │   ├── razbor/           ✓ Funnel (путь клиента полосами), RazborPreview
-    │   ├── primer/           ✓ MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
-    │   ├── mentor/           ◐ блоки Н.1–Н.9 — страница скрыта 14.10
+    │   ├── razbor/           ✓ по файлу на блок примера аудита: Hero, Doc, Vs, You, Start; Funnel (путь клиента полосами), RazborPreview
+    │   ├── primer/           ✓ по файлу на блок примера чертежа: Hero, Why, ProjectMap, Read, Demo, Vedenie, You, Start; MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
+    │   ├── sreda/            ✓ по файлу на блок «Своей AI-среды»: Hero, Situation, Gets, How, More, Fit, Start
+    │   ├── mentor/           ◐ блоки Н.1–Н.9 (Hero, Mentor, Difference, Program + ProgramToggle, Included, Result, Savings, Price, Fit, Faq, Contact) — страница скрыта 14.10
     │   ├── process/          ✓ Hero (карта трёх шагов), ServiceStep (один вид на три шага; у чертежа превью карты, у ведения неделя полосой), Scope (зона ответственности: 4 участка / не входит), MentorCta (05 «Начать»)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc, Chapter (текст, разделы сбоку), Pager (назад / дальше)
@@ -104,7 +105,8 @@ ilya-novitsky.ru/
     │   └── blog-viz.ts       ✓ схемы в статьях: отметка [[viz:mvp]], [[viz:chain]] → HTML (только цифры и шаги из статьи)
     └── styles/
         ├── tokens.css        ✓ цвета, шрифты, радиусы
-        └── base.css          ✓ блоки сайта
+        ├── base.css          ✓ общее: основа, шапка, подвал, кнопки, блоки нескольких страниц (ФСП 22.10)
+        └── pages/            ✓ стили одной страницы: home, process, keisy, primer, razbor, sreda, blog, book, mentor — подключает сама страница, грузится только своё
 ```
 
 ## Разметка schema.org (S8)

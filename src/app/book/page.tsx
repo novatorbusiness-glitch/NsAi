@@ -5,6 +5,7 @@ import { pageMeta, crumbs, bookLd } from "@/lib/seo";
 import Hero from "@/components/book/Hero";
 import Toc from "@/components/book/Toc";
 import { chapters } from "@/lib/book";
+import "@/styles/pages/book.css";
 
 export const metadata: Metadata = pageMeta(book.meta, "/book", "book");
 

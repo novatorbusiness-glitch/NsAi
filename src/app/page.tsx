@@ -14,6 +14,7 @@ import { home } from "@content/pages/home";
 import { faq } from "@content/pages/faq";
 import JsonLd from "@/components/ui/JsonLd";
 import { pageMeta, servicesLd, faqLd } from "@/lib/seo";
+import "@/styles/pages/home.css";
 
 export const metadata: Metadata = pageMeta(home.meta, "/", "home", { absolute: true });
 

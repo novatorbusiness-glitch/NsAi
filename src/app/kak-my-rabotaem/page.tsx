@@ -6,6 +6,7 @@ import Scope from "@/components/process/Scope";
 import { process } from "@content/pages/kak-my-rabotaem";
 import JsonLd from "@/components/ui/JsonLd";
 import { pageMeta, crumbs } from "@/lib/seo";
+import "@/styles/pages/process.css";
 
 export const metadata: Metadata = pageMeta(process.meta, "/kak-my-rabotaem", "kak-my-rabotaem");
 

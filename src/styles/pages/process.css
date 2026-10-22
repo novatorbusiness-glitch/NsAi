@@ -1,0 +1,23 @@
+/* Стили страницы: «Как мы работаем». Общее — в styles/base.css. */
+section.alt .svc-price{background:#fff;border-color:transparent}
+.pmap-t{font:600 12px/1.4 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
+.pmap-note{font-size:13.5px;line-height:1.5;color:var(--mut);margin:6px 0 0;padding-top:12px;border-top:1px solid var(--line)}
+.svc-meta{font:600 14px/1.4 var(--m);color:var(--acc);margin:0 0 28px}
+.svc-two{display:grid;gap:16px}
+@media(min-width:900px){.svc-two{grid-template-columns:1fr 1fr;gap:20px}}
+.svc-how .sub{margin:14px 0 0;font-size:14px;color:var(--mut)}
+.svc-fit{margin-top:40px}
+@media(min-width:900px){.svc-gets,.svc-how{padding:30px 30px}}
+.svc-price .under.cnote{flex:1 1 100%;margin:4px 0 0}
+.svc.v2 .mpv{margin:48px 0 0}
+.svc-fit{margin-top:56px}
+.svc-price{margin-top:44px;padding:22px 24px;gap:14px}
+@media(max-width:899px){.svc-fit{margin-top:40px}}
+@media(max-width:899px){.svc-price{margin-top:32px;padding:18px}}
+.r3-dot{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:700 13px/1 var(--m);border:2px solid var(--acc);color:var(--acc);background:#fff;position:relative;z-index:1}
+.r1 .r3-dot{background:var(--acc-soft)}
+.r2 .r3-dot{background:var(--acc);color:#fff}
+.r3-v{display:inline-block;font:600 11.5px/1 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--acc);background:var(--acc-soft);border-radius:999px;padding:5px 9px;margin-bottom:7px}
+.r3-out{display:inline-flex;gap:6px;align-items:baseline;margin-top:9px;font-size:13.5px;color:var(--mut);border-top:1px dashed var(--line2);padding-top:8px}
+.r3-out strong{color:var(--ink);font-weight:700}
+@media(min-width:900px){.route3{padding:26px 28px 20px}}

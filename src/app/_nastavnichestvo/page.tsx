@@ -13,6 +13,7 @@ import Difference from "@/components/mentor/Difference";
 import Mentor from "@/components/mentor/Mentor";
 import Faq from "@/components/mentor/Faq";
 import Contact from "@/components/mentor/Contact";
+import "@/styles/pages/mentor.css";
 
 export const metadata: Metadata = pageMeta(mentor.meta, "/nastavnichestvo", "nastavnichestvo");
 

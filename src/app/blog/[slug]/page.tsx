@@ -13,6 +13,7 @@ import { site } from "@/config/site";
 import { redirects } from "@/config/redirects";
 import Redirect from "@/components/layout/Redirect";
 import { common } from "@content/pages/common";
+import "@/styles/pages/blog.css";
 
 // Старые статьи, которых больше нет, ведут на /blog.
 const moved = (slug: string) => redirects[`/blog/${slug}`];
