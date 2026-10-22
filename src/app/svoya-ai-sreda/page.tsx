@@ -93,11 +93,12 @@ export default function Page() {
 
 			<section className="final">
 				<div className="wrap">
-					<div className="card">
-						<SectionHead num={fin.num} label={fin.label} title={fin.h2} lead={fin.lead} />
-						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{fin.button}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
+					<div className="card sr-final">
+						<div className="sr-fh"><SectionHead num={fin.num} label={fin.label} title={fin.h2} lead={fin.lead} /></div>
+						<figure className="sr-tg" aria-label="Пример переписки"><p className="lbl">{fin.chat.label}</p>{fin.chat.msgs.map((x) => <p key={x.t} className={x.me ? "me" : "you"}>{x.t}</p>)}</figure>
+						<div className="sr-fa"><div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{fin.button}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 						<p className="sub">{fin.terms}</p>
-						<ContactNote />
+						<ContactNote /></div>
 					</div>
 				</div>
 			</section>

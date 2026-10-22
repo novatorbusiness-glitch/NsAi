@@ -1782,3 +1782,11 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .fc.not .ic{background:#fbeedd;color:#b4691f}
 .fc.not li{border-left-color:#f0d3b2}
 .fitcards.plain .fc.not li::before{content:"–";color:#b4691f}
+.sr-final{display:grid;gap:20px}
+.sr-tg{margin:0;background:#e9efe9;border-radius:16px;padding:16px;display:grid;gap:8px;align-content:start}
+.sr-tg .lbl{margin:0 0 4px;font:700 11px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.sr-tg p.you,.sr-tg p.me{margin:0;max-width:85%;padding:10px 14px;border-radius:14px;font-size:15px;line-height:1.45}
+.sr-tg p.you{background:#fff;border-bottom-left-radius:4px}
+.sr-tg p.me{justify-self:end;background:#d7ece4;border-bottom-right-radius:4px}
+@media(min-width:900px){.final .card.sr-final{max-width:1040px;grid-template-columns:1.2fr 1fr;grid-template-areas:"h c" "a c";column-gap:40px}.sr-fh{grid-area:h}.sr-tg{grid-area:c;align-self:center}.sr-fa{grid-area:a}}
+.sr-final .sub{margin-top:14px;font-size:15px;line-height:1.5;color:var(--ink2)}
