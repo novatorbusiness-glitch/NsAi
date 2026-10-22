@@ -26,7 +26,7 @@ export default function Hero() {
 				<div className="past-n three pm-facts">{facts.map((x) => <div key={x.text}><b>{x.num}</b><span>{x.text}</span></div>)}</div>
 				<p className="pm-price pm-order">{h.price} <a href="#start">{h.order}</a></p>
 				<div className="cta-row">
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{h.button}</a>
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start_blueprint">{h.button}</a>
 					<a className="more-link" href="/kak-my-rabotaem#chertezh">{h.more}</a>
 				</div>
 				</div>

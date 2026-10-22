@@ -16,7 +16,7 @@ export default function Hero() {
 					<p className="lead">{h.sub}</p>
 					<div className="past-n three pm-facts">{h.facts.map((x) => <div key={x.text}><b>{x.num}</b><span>{x.text}</span></div>)}</div>
 					<div className="cta-row">
-						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{h.button}</a>
+						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start_sreda">{h.button}</a>
 						<a className="more-link" href="#how">{h.more}</a>
 					</div>
 				</div>

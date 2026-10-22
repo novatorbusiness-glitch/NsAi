@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import data from "@content/data/project-map.json";
 import { primer } from "@content/pages/primer";
+import { goal } from "@/lib/analytics";
+import { goals } from "@/config/goals";
 
 // Карта проекта в стиле Miro (решение 16.10). Оформление — как вкладка «Карта проекта» в Фундаменте (map_panel.html):
 // цвет у каждого слоя, стикеры-листочки, статус значком ✓ ◐ ○, карточка с цветной полосой слоя, плавающая панель масштаба.
@@ -118,7 +120,7 @@ export default function MapCanvas() {
 						return (
 							<button key={n.id} type="button" className={`pm-note s-${n.status}${i % 2 ? " r2" : ""}${sel === n.id ? " on" : ""}${near.has(n.id) ? " hl" : ""}`}
 								style={{ left: p.x, top: p.y, width: SW, height: SH, backgroundColor: c[1], ["--pm-c" as string]: c[0] }}
-								onClick={() => setSel((x) => (x === n.id ? null : n.id))} aria-pressed={sel === n.id}>
+								onClick={() => { if (sel !== n.id) goal(goals.mapBlock); setSel((x) => (x === n.id ? null : n.id)); }} aria-pressed={sel === n.id}>
 								<b>{n.title}</b>
 								<span className="pm-n">{n.publicNote}</span>
 								{badge(n.status)}
