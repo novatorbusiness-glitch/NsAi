@@ -1,7 +1,8 @@
 # Забрать карту и демо кабинета из чата «Фундамент» (решение 16.10): python3 scripts/primer/sync.py
 # Карта → content/data/project-map.json, демо → public/demo/kabinet.html (с noindex). Название продукта и цены на сайт не попадают.
 import json, os, re, sys
-SRC = os.path.expanduser("~/Desktop/OkiDelo/90 Рабочие файлы/Карта проекта")
+# PRIMER_SRC: папка с собранной копией демо, если её собирали отдельно (20.10)
+SRC = os.environ.get("PRIMER_SRC") or os.path.expanduser("~/Desktop/OkiDelo/90 Рабочие файлы/Карта проекта")
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BAD = re.compile(r"oki\s*delo|оки\s*дело|₽", re.I)
 
@@ -21,6 +22,8 @@ check("демо", d)
 # рабочие пометки из стилей (шаги, имена, «Фундамент») наружу не отдаём
 d = re.sub(r"<style>.*?</style>", lambda m: re.sub(r"/\*.*?\*/", "", m.group(0), flags=re.S), d, flags=re.S)
 d = re.sub(r"<!--.*?-->", "", d, flags=re.S)
+# на сайте не пишем «условные» (решение Ильи 16.10): плашка демо просто «Демо»
+d = d.replace("Демо · данные условные", "Демо")
 if 'name="robots"' not in d:
     d = re.sub(r'(<meta charset="[^"]*">)', r'\1<meta name="robots" content="noindex,nofollow">', d, count=1)
 os.makedirs(os.path.join(ROOT, "public/demo"), exist_ok=True)
