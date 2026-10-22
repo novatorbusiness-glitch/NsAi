@@ -1802,3 +1802,10 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .bk-text i{font-style:italic}
 .bk-cover{margin:0 0 32px}
 .bk-cover img{display:block;width:100%;height:auto;border-radius:14px}
+.offer{margin:4px 0 22px;padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.offer-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin:0 0 12px}
+.offer-h b{font-size:18px}.offer-h span{font-weight:700;color:var(--acc)}
+.offer .lbl{margin:0 0 6px}
+.offer ul{margin:0 0 12px;padding-left:20px;display:grid;gap:6px;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+.offer a{font-weight:600}
+.pm-order{margin:20px 0 18px}.pm-order a{white-space:nowrap}
