@@ -4,6 +4,7 @@ import { primer } from "@content/pages/primer";
 import { common } from "@content/pages/common";
 import data from "@content/data/project-map.json";
 import SectionHead from "@/components/ui/SectionHead";
+import Offer from "@/components/ui/Offer";
 import ContactNote from "@/components/ui/ContactNote";
 import Rich from "@/components/ui/Rich";
 import JsonLd from "@/components/ui/JsonLd";
@@ -36,6 +37,7 @@ export default function Page() {
 					<p className="lead">{h.lead}</p>
 					<p className="lead">{h.sub}</p>
 					<div className="past-n three pm-facts">{facts.map((x) => <div key={x.text}><b>{x.num}</b><span>{x.text}</span></div>)}</div>
+					<p className="pm-price pm-order">{h.price} <a href="#start">{h.order}</a></p>
 					<div className="cta-row">
 						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{h.button}</a>
 						<a className="more-link" href="/kak-my-rabotaem#chertezh">{h.more}</a>
@@ -94,10 +96,11 @@ export default function Page() {
 				</div>
 			</section>
 
-			<section className="final">
+			<section className="final" id="start">
 				<div className="wrap">
 					<div className="card">
 						<SectionHead num={f.num} label={f.label} title={f.h2} lead={f.lead} />
+						<Offer o={f.offer} step="chertezh" />
 						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{f.button}</a><a className="btn s" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{f.button2}</a></div>
 						<ContactNote />
 					</div>

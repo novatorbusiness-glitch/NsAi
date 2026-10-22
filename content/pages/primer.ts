@@ -18,6 +18,8 @@ export const primer = typo({
 		facts: { nodes: "блока", layers: "слоёв", links: "связи" },
 		button: "Обсудить чертёж",
 		more: "Как устроен чертёж →",
+		price: `Такой чертёж под ваш проект: от ${P.blueprint.price}, ${P.blueprint.term}.`,
+		order: "Как заказать ↓",
 	},
 	why: {
 		num: "01",
@@ -108,5 +110,6 @@ export const primer = typo({
 		lead: "Если задача ясна, начнём с чертежа. Если проект уже работает, можно сразу с ведения. Если пока непонятно, что строить первым, начнём с аудита.",
 		button: "Обсудить чертёж",
 		button2: "Обсудить ведение",
+		offer: { name: "Чертёж под ваш проект", price: `от ${P.blueprint.price}`, term: P.blueprint.term, label: "Что входит", more: "Как устроены все три шага →" },
 	},
 });

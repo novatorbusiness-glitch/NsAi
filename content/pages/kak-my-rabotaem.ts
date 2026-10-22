@@ -5,7 +5,8 @@ import { prices as P } from "@/config/prices";
 // Новый вид шага (решение 14.10): метка «01 / …», заголовок от задачи собственника, «на руках» и «как проходит» рядом, «подойдёт / не будет» строками.
 type Plan = { num: string; label: string; h2: string; gets: { label: string; items: string[]; example?: string }; how: { label: string; steps: { b: string; t: string }[]; note?: string }; need: string; fitTitle: string; fit: string[]; notTitle: string; not: string[]; button: string };
 
-const steps: ({ id: string; title: string; meta: string; lead: string; price: string; alt: boolean } & Plan)[] = [
+// Шаги экспортируются: «что входит» показывают и примеры аудита и чертежа (один текст на весь сайт).
+export const steps: ({ id: string; title: string; meta: string; lead: string; price: string; alt: boolean } & Plan)[] = [
 	{
 		id: "test-drive", title: "Аудит и план действий", meta: `${P.testDrive.term} · ${P.testDrive.price}`, alt: true,
 		num: "01",
