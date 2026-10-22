@@ -5,7 +5,7 @@ export type Cta = "product" | "path" | "price" | "repeat";
 export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] = [
 	{ slug: "skolko-stoit-mvp", tag: "Продукт", cta: "product", updated: "2026-10-14" },
 	{ slug: "pervye-platyashchie-klienty", tag: "Первые клиенты", cta: "product", updated: "2026-10-14" },
-	{ slug: "podryadchiki-bez-rezultata", tag: "Путь клиента", cta: "path", updated: "2026-10-14" },
+	{ slug: "podryadchiki-bez-rezultata", tag: "Путь клиента", cta: "path", updated: "2026-10-22" },
 	{ slug: "bol-pokupatelya", tag: "Позиционирование", cta: "product", updated: "2026-10-14" },
 	{ slug: "cenovoy-yakor", tag: "Цена", cta: "price", updated: "2026-10-08" },
 	{ slug: "offer-bez-davleniya", tag: "Оффер", cta: "price", updated: "2026-10-14" },
