@@ -10,6 +10,9 @@ import RazborPreview from "@/components/razbor/RazborPreview";
 type Step = (typeof process.steps)[number];
 
 // Один шаг работы (вид 14.10): метка, заголовок, на руках и как проходит, подойдёт / не будет, цена.
+// Цель кнопки по шагу: аудит — общая cta_start, чертёж и ведение — свои (все начинаются с cta_start).
+const STEP_GOAL: Record<string, string> = { chertezh: "cta_start_blueprint", vedenie: "cta_start_vedenie" };
+
 export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 	return (
 		<section id={s.id} className={s.alt ? "alt svc v2" : "svc v2"}>
@@ -37,7 +40,7 @@ export default function ServiceStep({ s, n }: { s: Step; n: number }) {
 					<div className="fc yes"><p className="fc-h"><span className="ic">✓</span>{s.fitTitle}</p><ul>{s.fit.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 					<div className="fc no"><p className="fc-h"><span className="ic">×</span>{s.notTitle}</p><ul>{s.not.map((t) => <li key={t}><span>{t}</span></li>)}</ul></div>
 				</div>
-				<div className="svc-price"><p><Rich t={s.price} /></p><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start">{s.button}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a><ContactNote /></div>
+				<div className="svc-price"><p><Rich t={s.price} /></p><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal={STEP_GOAL[s.id] || "cta_start"}>{s.button}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a><ContactNote /></div>
 			</div>
 		</section>
 	);
