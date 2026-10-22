@@ -58,7 +58,7 @@
 .fitcards.plain .fc.not .fc-h{border-bottom-color:#e3b482}
 .fc.not .ic{background:#fbeedd;color:#b4691f}
 .fc.not li{border-left-color:#f0d3b2}
-.fitcards.plain .fc.not li::before{content:"–";color:#b4691f}
+.fitcards.plain .fc.not li::before{content:"−";color:#b4691f}
 .sr-final{display:grid;gap:20px}
 .sr-tg p.you,.sr-tg p.me{margin:0;max-width:85%;padding:10px 14px;border-radius:14px;font-size:15px;line-height:1.45}
 .sr-tg p.you{background:#fff;border-bottom-left-radius:4px}
