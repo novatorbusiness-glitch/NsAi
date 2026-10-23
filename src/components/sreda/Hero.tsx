@@ -2,10 +2,9 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import { sreda } from "@content/pages/sreda";
 
-// Первый экран v2: своя команда AI-агентов, 90 минут и PDF; справа — среда в центре и два руководителя с агентами вокруг. Факты — полосой под экраном.
+// Первый экран v2: своя команда AI-агентов, 90 минут и PDF; справа — страницы PDF-инструкции веером. Факты — полосой под экраном.
 export default function Hero() {
 	const c = sreda.hero;
-	const o = c.orbit;
 	return (
 		<>
 			<section className="hero">
@@ -20,17 +19,9 @@ export default function Hero() {
 							<a className="btn s" href="#team">{c.more}</a>
 						</div>
 					</div>
-					<figure className="orbit" aria-label={o.label}>
-						<div className="orb-c"><b>{o.center}</b><span>{o.centerNote}</span></div>
-						<div className="orb-l">
-							{o.leads.map((l) => (
-								<div className="orb-g" key={l.b}>
-									<p className="orb-h">Руководитель · <b>{l.b}</b></p>
-									<ul>{l.agents.map((a) => <li key={a}>{a}</li>)}</ul>
-								</div>
-							))}
-						</div>
-						<figcaption>{o.cap}</figcaption>
+					<figure className="pdfan" aria-label={c.pdf.label}>
+						<div className="pdfan-p">{c.pdf.alt.map((alt, k) => <img key={alt} src={`/images/site/sreda-pdf-${k + 1}.jpg`} alt={alt} width={560} height={792} />)}</div>
+						<figcaption><p className="lbl">{c.pdf.label}</p><b>{c.pdf.cap}</b></figcaption>
 					</figure>
 				</div>
 			</section>
