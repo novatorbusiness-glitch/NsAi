@@ -8,8 +8,8 @@ import { goal } from "@/lib/analytics";
 import { goals } from "@/config/goals";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 07 · познакомимся: вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX.
-export default function Contact() {
+// Разбор задачи (главная и «Как работаю в команде»): вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX.
+export default function Contact({ num }: { num?: string }) {
 	const c = home.contact;
 	const [pick, setPick] = useState<number | null>(null);
 	const choose = (i: number) => {
@@ -22,7 +22,7 @@ export default function Contact() {
 			<div className="wrap">
 				<div className="card final-card">
 					<div>
-						<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+						<SectionHead num={num ?? c.num} label={c.label} title={c.h2} lead={c.lead} />
 						<p className="lbl">{c.ask}</p>
 						<div className="chips" role="group" aria-label={c.ask}>
 							{c.options.map((o, i) => <button type="button" key={o} className={pick === i ? "chip on" : "chip"} aria-pressed={pick === i} onClick={() => choose(i)}>{o}</button>)}

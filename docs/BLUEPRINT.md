@@ -27,7 +27,7 @@ ilya-novitsky.ru/
 │   │   ├── nastavnichestvo.ts◐ скрыто 14.10 (тексты сохранены; вместо продукта — «Своя AI-среда», страница позже)
 │   │   ├── primer.ts         ✓ «Пример чертежа» 16.10: зачем карта · карта проекта · как читать · прототип · ведение по карте · ваш проект · начать; превью карты для главной, «Как мы работаем», кейсов
 │   │   ├── razbor.ts         ✓ «Пример разбора» 16.10: аудит на придуманной сети студий (воронка, 3 места потерь с расчётом, план, AI, следующий шаг) + превью
-│   │   ├── kak-my-rabotaem.ts✓ первый экран «Сначала понять, потом вкладывать» + 01 Аудит (найти причину) · 02 Чертёж (спроектировать) · 03 Ведение (внедрить, роль) · 04 Зона ответственности · 05 Начать
+│   │   ├── kak-my-rabotaem.ts ✓ «Как работаю в команде» v9: services — отдельные задачи одним списком на весь сайт (главная, эта страница, «что входит» в примерах); участки, ритм, условия
 │   │   ├── blog.ts           ✓ тексты блога и финальные плашки статей
 │   │   ├── book.ts           ✓ страница книги (подзаголовок и вступление из v2) и подписи читалки; оглавление строится из content/book/book.json
 │   │   └── common.ts         ✓ общее: Person (архитектор продукта и продаж), кнопки, подбор шага (только блог), cookie, 404, документы
@@ -79,13 +79,13 @@ ilya-novitsky.ru/
     ├── components/
     │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners, BrandMark (знак «N с лепестком»), ContactNote (строка про политику и оферту под кнопками), Offer (цена, срок и «что входит» в примерах: состав с «Как мы работаем», цены из config/prices)   Button, Card… ◐
     │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, ContactChooser (окно Telegram / MAX), Goals, LegalPage, Redirect (передаёт UTM и якорь)
-    │   ├── home/             ✓ по файлу на блок v9: Hero (схема AI-среды + полоса фактов), Team (отделы раскрываются), Save, Work, Trust, Extra (доп-услуги во всплывающем окне), Faq, Contact (вопрос «где вы сейчас?» → pick_step); StepPicker — подбор шага в статьях блога
+    │   ├── home/             ✓ по файлу на блок v9: Hero (схема AI-среды + полоса фактов), Team (отделы раскрываются), Save, Work, Trust, Extra (доп-услуги во всплывающем окне), Faq, Contact (вопрос «где вы сейчас?» → pick_step); StepPicker — подбор шага в статьях блога; EnvScheme — схема AI-среды, общая с «Как работаю в команде»; Proof — цифры из работы
     │   ├── cases/            ✓ Hero, Sales (кейсы агентства карточками, 2 колонки), Mistakes, Products (+ превью карты), System, Contact
     │   ├── razbor/           ✓ по файлу на блок примера аудита: Hero, Doc, Vs, You, Start; Funnel (путь клиента полосами), RazborPreview
     │   ├── primer/           ✓ по файлу на блок примера чертежа: Hero, Why, ProjectMap, Read, Demo, Vedenie, You, Start; MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
     │   ├── sreda/            ✓ по файлу на блок «Своей AI-среды»: Hero, Situation, Gets, How, More, Fit, Start
     │   ├── mentor/           ◐ блоки Н.1–Н.9 (Hero, Mentor, Difference, Program + ProgramToggle, Included, Result, Savings, Price, Fit, Faq, Contact) — страница скрыта 14.10
-    │   ├── process/          ✓ Hero (карта трёх шагов), ServiceStep (один вид на три шага; у чертежа превью карты, у ведения неделя полосой), Scope (зона ответственности: 4 участка / не входит), MentorCta (05 «Начать»)
+    │   ├── process/          ✓ Hero (+ схема среды), Scope (участки), Rhythm, Terms (id vedenie), Services (якоря sreda, test-drive, chertezh, razrabotka)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
     │   ├── book/             ✓ Hero, Toc, Chapter (текст, разделы сбоку), Pager (назад / дальше)
     │   └── lead/             ◐ форма заявки — вместе с functions/lead

@@ -1,23 +1,31 @@
-/* Стили страницы: «Как мы работаем». Общее — в styles/base.css. */
-section.alt .svc-price{background:#fff;border-color:transparent}
-.pmap-t{font:600 12px/1.4 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 6px}
-.pmap-note{font-size:13.5px;line-height:1.5;color:var(--mut);margin:6px 0 0;padding-top:12px;border-top:1px solid var(--line)}
-.svc-meta{font:600 14px/1.4 var(--m);color:var(--acc);margin:0 0 28px}
-.svc-two{display:grid;gap:16px}
-@media(min-width:900px){.svc-two{grid-template-columns:1fr 1fr;gap:20px}}
-.svc-how .sub{margin:14px 0 0;font-size:14px;color:var(--mut)}
-.svc-fit{margin-top:40px}
-@media(min-width:900px){.svc-gets,.svc-how{padding:30px 30px}}
-.svc-price .under.cnote{flex:1 1 100%;margin:4px 0 0}
-.svc.v2 .mpv{margin:48px 0 0}
-.svc-fit{margin-top:56px}
-.svc-price{margin-top:44px;padding:22px 24px;gap:14px}
-@media(max-width:899px){.svc-fit{margin-top:40px}}
-@media(max-width:899px){.svc-price{margin-top:32px;padding:18px}}
-.r3-dot{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font:700 13px/1 var(--m);border:2px solid var(--acc);color:var(--acc);background:#fff;position:relative;z-index:1}
-.r1 .r3-dot{background:var(--acc-soft)}
-.r2 .r3-dot{background:var(--acc);color:#fff}
-.r3-v{display:inline-block;font:600 11.5px/1 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--acc);background:var(--acc-soft);border-radius:999px;padding:5px 9px;margin-bottom:7px}
-.r3-out{display:inline-flex;gap:6px;align-items:baseline;margin-top:9px;font-size:13.5px;color:var(--mut);border-top:1px dashed var(--line2);padding-top:8px}
-.r3-out strong{color:var(--ink);font-weight:700}
-@media(min-width:900px){.route3{padding:26px 28px 20px}}
+/* Стили страницы «Как работаю в команде» (v9, 23.10). Общее — в styles/base.css. */
+.ph1{max-width:15em}
+.hero .lead{max-width:34em}
+
+/* 02 · ритм */
+.rsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+@media(min-width:900px){.rsteps{grid-template-columns:repeat(3,1fr);gap:20px}}
+.rsteps li{background:#fff;border-radius:14px;padding:24px}
+.rsteps li > span{display:inline-flex;width:34px;height:34px;border-radius:50%;border:2px solid var(--acc);align-items:center;justify-content:center;font:700 14px/1 var(--m);color:var(--acc);margin-bottom:14px}
+.rsteps h3{margin:0 0 6px}
+.rsteps p{margin:0;font-size:15px;line-height:1.55;color:var(--ink2)}
+
+/* 03 · условия */
+.terms{display:grid;gap:20px}
+@media(min-width:900px){.terms{grid-template-columns:1fr 1fr;gap:40px;align-items:start}}
+.tprice{border-radius:14px;padding:26px;background:var(--dark);color:var(--dark-ink)}
+.tprice ul{margin:14px 0 20px;padding-left:18px;font-size:15px;line-height:1.7;color:#c9d1cd}
+.tnot ul{margin:0 0 14px;padding-left:18px;font-size:15px;line-height:1.7;color:var(--ink2)}
+
+/* 04 · отдельные задачи подробно */
+.svcs{display:grid;gap:14px}
+@media(min-width:900px){.svcs{grid-template-columns:1fr 1fr;gap:20px}}
+.svc2{background:#fff;border-radius:14px;padding:26px;scroll-margin-top:80px}
+.svc2-h{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:10px}
+.svc2-h h3{margin:0}
+.svc2-h .x-price{text-align:right;flex:none}
+.svc2-for{margin:0 0 16px;font-size:15px;line-height:1.55;color:var(--ink2)}
+.svc2 .lbl{margin:0 0 8px}
+.svc2 ul{margin:0 0 14px;padding-left:18px;font-size:15px;line-height:1.6;color:var(--ink2)}
+.svc2 .cta-row{margin-top:6px}
+.svc2 .btn{font-size:15px;padding:11px 16px}
