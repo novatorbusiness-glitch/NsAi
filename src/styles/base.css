@@ -1057,3 +1057,6 @@ img[src*="shot-okidelo-phone"]{border:9px solid #15181a;border-radius:38px;backg
 .env-feed .st{font:500 11px/1 var(--m);color:var(--dark-mut)}
 .env-feed li.ok .st::before{content:"✓ ";color:#2fb58a}
 .env-feed li.run .st{color:#f0c674}
+/* воздух перед кнопками (23.10): кнопки не прилипают к тексту над ними */
+p + .cta-row,.section-head + .cta-row,ul + .cta-row{margin-top:32px}
+@media(min-width:900px){.hero .lead + .cta-row{margin-top:40px}}
