@@ -15,7 +15,7 @@ export default function Hero() {
 						<p className="lead">{c.lead}</p>
 						<div className="cta-row">
 							<a className="btn p" href="#contact" data-goal="cta_start">{c.primary}</a>
-							<a className="btn s" href="#team">{c.secondary}</a>
+							<a className="btn s" href="#extra">{c.secondary}</a>
 						</div>
 					</div>
 					<EnvScheme />
