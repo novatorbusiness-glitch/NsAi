@@ -23,7 +23,7 @@ export function pageMeta(raw: PageMeta, path: string, og: string, opts: { absolu
 		alternates: { canonical: path },
 		openGraph: {
 			type: opts.type || "website", locale: "ru_RU", siteName: site.name, url: path, title: ogTitle, description: m.description,
-			images: [{ url: `/og/${og}.jpg?v=2026102303`, width: 1200, height: 630, alt: ogTitle }],
+			images: [{ url: `/og/${og}.jpg?v=2026102304`, width: 1200, height: 630, alt: ogTitle }],
 			...(opts.modified ? { modifiedTime: opts.modified } : {}),
 		},
 		twitter: { card: "summary_large_image" },
@@ -51,7 +51,7 @@ export function servicesLd() {
 		...(unit ? { priceSpecification: { "@type": "UnitPriceSpecification", price: rub(price), priceCurrency: "RUB", unitText: unit } } : {}),
 	});
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Продукт, привлечение клиентов, продажи и автоматизация с AI-средой",
+		"@context": "https://schema.org", "@type": "Service", name: "Маркетинг, продажи и автоматизация с AI-средой",
 		provider: person, areaServed: "RU", url: site.url,
 		hasOfferCatalog: {
 			"@type": "OfferCatalog", name: "Работа в команде и отдельные задачи",
