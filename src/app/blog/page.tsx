@@ -43,8 +43,7 @@ export default function BlogPage() {
 					<div className="card">
 						<h2>{f.h2}</h2>
 						<p className="lead">{f.lead}</p>
-						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a>{" "}
-						<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a>
+						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 						<p className="under">{f.under}</p>
 						<ContactNote />
 					</div>

@@ -61,12 +61,6 @@
 .for-you{background:var(--acc-soft);border-radius:10px;padding:12px 14px;margin-top:14px !important;color:var(--ink) !important;font-size:15px !important}
 
 /* 04 · связка с услугами */
-.kbridge{display:grid;gap:12px}
-@media(min-width:800px){.kbridge{grid-template-columns:1fr 1fr;gap:20px}}
-.kbridge a{display:block;border-radius:14px;padding:22px 24px;background:var(--dark2);border:1px solid #2a3034;text-decoration:none}
-.kbridge a:hover{border-color:#7fd3b6}
-.kbridge b{display:block;font-size:20px;color:#fff;margin-bottom:6px}
-.kbridge span{font-size:15px;color:#b9c2be}
 
 /* 05 · отзывы: три в ряд */
 @media(min-width:900px){#quotes .quotes2 > div{grid-template-columns:repeat(3,1fr)}}

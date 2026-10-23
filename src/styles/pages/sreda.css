@@ -99,3 +99,4 @@
 .sp .x-price b{font-size:28px}
 .sp p:not(.x-price){font-size:15px;line-height:1.55;color:var(--ink2);margin:0 0 20px}
 .sp .btn{margin-top:auto;align-self:flex-start}
+.sp > p:not(.x-price){margin-bottom:28px}

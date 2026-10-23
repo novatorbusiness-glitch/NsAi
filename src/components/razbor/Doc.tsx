@@ -2,7 +2,7 @@ import { razbor } from "@content/pages/razbor";
 import SectionHead from "@/components/ui/SectionHead";
 import Funnel from "@/components/razbor/Funnel";
 
-// 01 Аудит целиком: документ отчёта на придуманной сети студий.
+// 02 Пример аудита целиком: документ отчёта на придуманной сети студий.
 export default function Doc() {
 	const d = razbor.doc;
 	return (
@@ -39,10 +39,6 @@ export default function Doc() {
 						</div>
 					</div>
 	
-					<div className="rz-part"><h3><span>06</span>{d.next.h}</h3>
-						<div className="rz-next"><div><b>{d.next.self.b}</b><p>{d.next.self.t}</p></div><div className="me"><b>{d.next.withMe.b}</b><p>{d.next.withMe.t}</p></div></div>
-						<p className="rz-keep">{d.next.keep}</p>
-					</div>
 					<p className="rz-sign">{d.sign}</p>
 				</article>
 			</div>

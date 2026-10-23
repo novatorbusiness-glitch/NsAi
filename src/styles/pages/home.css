@@ -28,7 +28,7 @@
 .dep-mine .lbl{margin:0 0 6px;color:var(--acc)}
 .dep-mine p{margin:0;font-size:14.5px;line-height:1.55;font-weight:500;color:var(--ink)}
 .dep-mine small{display:block;margin-top:8px;font-size:12px;color:var(--mut)}
-.dep-in .btn{margin-top:16px;font-size:15px;padding:11px 16px}
+.dep-in .btn{margin-top:28px;font-size:15px;padding:11px 16px}
 
 /* 02 · цифры из работы */
 .proof{display:grid;gap:12px}
@@ -79,7 +79,7 @@
 .me-mini p b{color:var(--ink)}
 .me-mini .btn{grid-column:1/-1;justify-self:start}
 @media(min-width:900px){.me-mini{grid-template-columns:72px 1fr auto}}
-@media(min-width:900px){.me-mini .btn{grid-column:auto}}
+@media(min-width:900px){.me-mini .btn{grid-column:auto;margin-top:0}}
 
 /* 06 · отдельные задачи: строками, как прайс */
 .extra{border-top:1px solid var(--line2)}

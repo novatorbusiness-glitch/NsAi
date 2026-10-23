@@ -1,6 +1,6 @@
 // Цены и сроки — меняются одной строкой на всём сайте (тексты в content/ берут их отсюда).
 export const prices = {
-	testDrive: { price: "40 000 ₽", term: "3–4 рабочих дня" },
+	testDrive: { price: "40 000 ₽", term: "4 рабочих дня" },
 	blueprint: { price: "120 000 ₽", term: "2–3 недели" },
 	management: { price: "150 000 ₽", term: "3 месяцев" },
 	consult: { price: "15 000 ₽", term: "90 минут" },
