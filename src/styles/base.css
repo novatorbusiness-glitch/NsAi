@@ -1086,3 +1086,6 @@ p + .cta-row,.section-head + .cta-row,ul + .cta-row{margin-top:32px}
 .hfacts .facts b{font-size:18px}
 .hfacts .facts span{font-size:13px}
 @media(max-width:560px){.hfacts .facts{grid-template-columns:1fr}}
+/* отзывы в две колонки: главная и кейсы */
+.quotes2 > div{display:grid;gap:16px}
+@media(min-width:900px){.quotes2 > div{grid-template-columns:repeat(2,1fr);gap:20px}}

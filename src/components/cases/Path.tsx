@@ -1,0 +1,15 @@
+import { keisy } from "@content/pages/keisy";
+import SectionHead from "@/components/ui/SectionHead";
+
+// 01 · путь за 10 лет: четыре этапа линией — от первых продаж до AI-среды.
+export default function Path() {
+	const c = keisy.path;
+	return (
+		<section id="path">
+			<div className="wrap">
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<ol className="kpath">{c.steps.map((s) => <li key={s.y}><span className="ky">{s.y}</span><h3>{s.t}</h3><p>{s.d}</p></li>)}</ol>
+			</div>
+		</section>
+	);
+}

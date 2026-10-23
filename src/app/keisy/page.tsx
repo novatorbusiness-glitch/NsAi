@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Hero from "@/components/cases/Hero";
+import Path from "@/components/cases/Path";
+import Cases from "@/components/cases/Cases";
 import Products from "@/components/cases/Products";
-import System from "@/components/cases/System";
-import Sales from "@/components/cases/Sales";
-import Mistakes from "@/components/cases/Mistakes";
-import Contact from "@/components/cases/Contact";
+import Bridge from "@/components/cases/Bridge";
+import Quotes from "@/components/cases/Quotes";
+import Contact from "@/components/home/Contact";
 import { keisy } from "@content/pages/keisy";
 import JsonLd from "@/components/ui/JsonLd";
 import { allCases } from "@/lib/cases";
@@ -13,16 +14,18 @@ import "@/styles/pages/keisy.css";
 
 export const metadata: Metadata = pageMeta(keisy.meta, "/keisy", "keisy");
 
+// Кейсы v2 (23.10): путь → кейсы агентства по направлениям → свои продукты → связка с услугами → отзывы → разбор задачи.
 export default function Page() {
 	return (
 		<>
 			<Hero />
-			<Sales />
-			<Mistakes />
+			<Path />
+			<Cases />
 			<Products />
-			<System />
-			<Contact />
-			<JsonLd data={[crumbs([{ name: "Кейсы", path: "/keisy" }]), casesLd(allCases())]} />
+			<Bridge />
+			<Quotes />
+			<Contact num={keisy.contactNum} />
+			<JsonLd data={[crumbs([{ name: keisy.hero.crumb, path: "/keisy" }]), casesLd(allCases())]} />
 		</>
 	);
 }

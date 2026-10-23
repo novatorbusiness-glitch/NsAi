@@ -72,8 +72,6 @@
 
 /* 04 · опыт */
 .tnums{margin-top:0}
-.quotes2 > div{display:grid;gap:16px}
-@media(min-width:900px){.quotes2 > div{grid-template-columns:repeat(2,1fr);gap:20px}}
 .tnums b{font-size:24px}
 .me-mini{display:grid;grid-template-columns:72px 1fr;gap:14px 18px;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--line2)}
 .me-mini img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 15%}
