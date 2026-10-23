@@ -1,19 +1,27 @@
 import SectionHead from "@/components/ui/SectionHead";
 import { sreda } from "@content/pages/sreda";
 
-// 02 Что получите: час разговора и инструкция PDF, страницы веером.
+// 03 · что получите: план 90 минут, что в PDF и что нужно от вас.
 export default function Gets() {
-	const g = sreda.gets;
+	const c = sreda.gets;
 	return (
 		<section id="gets">
 			<div className="wrap">
-				<SectionHead num={g.num} label={g.label} title={g.h2} lead={g.lead} />
-				<div className="sr-gets">
-					<ul className="sr-cards three">{g.items.map((x, i) => <li key={x.b}><em>{String(i + 1).padStart(2, "0")}</em><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
-					<figure className="sr-pdf">
-						<div className="sr-pages" aria-label={g.pdf.alt}>{["Обложка инструкции", "Страница «Первые 5 шагов»", "Страница «Паспорт проекта»"].map((alt, k) => <img key={alt} src={`/images/site/sreda-pdf-${k + 1}.jpg`} alt={alt} width={560} height={792} loading="lazy" />)}</div>
-						<figcaption><p className="lbl">{g.pdf.label}</p><b>{g.pdf.title}</b><ol>{g.pdf.list.map((x) => <li key={x}>{x}</li>)}</ol></figcaption>
-					</figure>
+				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<div className="gets">
+					<div className="g-call">
+						<p className="lbl">{c.callLabel}</p>
+						<ol>{c.call.map((x) => <li key={x.t}><span>{x.m}</span>{x.t}</li>)}</ol>
+					</div>
+					<div className="g-pdf">
+						<p className="lbl">{c.pdfLabel}</p>
+						<ol>{c.pdf.map((t, i) => <li key={t}><span>{i}</span>{t}</li>)}</ol>
+						<p className="cap">{c.pdfNote}</p>
+					</div>
+				</div>
+				<div className="g-need">
+					<p className="lbl">{c.needLabel}</p>
+					<ul>{c.need.map((t) => <li key={t}>{t}</li>)}</ul>
 				</div>
 			</div>
 		</section>

@@ -69,7 +69,7 @@ ilya-novitsky.ru/
     │   ├── primer-audita/    ✓ пример аудита документом (до 22.10 /primer-razbora, переадресация); блок «чем отличается от разбора по анкете»; превью на главной (рядом с чертежом) и в шаге «Аудит»
     │   ├── primer-chertezha/ ✓ пример чертежа: карта проекта в стиле Miro, демо кабинета, подводка к ведению
     │   ├── _nastavnichestvo/ ◐ скрыто 14.10: папка с «_» не становится адресом; /nastavnichestvo → главная (config/redirects.ts)
-    │   ├── svoya-ai-sreda/   ✓ консультация «Своя AI-среда» 22.10: час разговора + инструкция PDF, пункт меню «Консультация по AI»
+    │   ├── svoya-ai-sreda/            ✓ Hero (схема: среда и руководители), Team (цепочки задач), Stacks, Gets, Tasks, Prices, Faq, Start
     │   ├── blog/             ✓ список и [slug]   page/[n], tag/[tag] ◐ — когда статей больше 12 и 30
     │   ├── book/             ✓ страница книги и [slug] — читалка: одна страница = одна подглава, старые адреса глав сохранены
     │   ├── offer, privacy, consent/ ✓
@@ -83,7 +83,7 @@ ilya-novitsky.ru/
     │   ├── cases/            ✓ Hero, Sales (кейсы агентства карточками, 2 колонки), Mistakes, Products (+ превью карты), System, Contact
     │   ├── razbor/           ✓ по файлу на блок примера аудита: Hero, Doc, Vs, You, Start; Funnel (путь клиента полосами), RazborPreview
     │   ├── primer/           ✓ по файлу на блок примера чертежа: Hero, Why, ProjectMap, Read, Demo, Vedenie, You, Start; MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
-    │   ├── sreda/            ✓ по файлу на блок «Своей AI-среды»: Hero, Situation, Gets, How, More, Fit, Start
+    │   ├── sreda/            ✓ Hero (схема: среда и руководители), Team (цепочки задач), Stacks, Gets, Tasks, Prices, Faq, Start
     │   ├── mentor/           ◐ блоки Н.1–Н.9 (Hero, Mentor, Difference, Program + ProgramToggle, Included, Result, Savings, Price, Fit, Faq, Contact) — страница скрыта 14.10
     │   ├── process/          ✓ Hero (+ схема среды), Scope (участки), Rhythm, Terms (id vedenie), Services (якоря sreda, test-drive, chertezh, razrabotka)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
