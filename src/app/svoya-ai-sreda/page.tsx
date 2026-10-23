@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { sreda } from "@content/pages/sreda";
 import JsonLd from "@/components/ui/JsonLd";
-import { pageMeta, crumbs } from "@/lib/seo";
+import { pageMeta, crumbs, sredaLd } from "@/lib/seo";
 import "@/styles/pages/sreda.css";
 import Hero from "@/components/sreda/Hero";
 import Team from "@/components/sreda/Team";
@@ -27,7 +27,7 @@ export default function Page() {
 			<Prices />
 			<Faq />
 			<Start />
-			<JsonLd data={[crumbs([{ name: sreda.hero.crumb, path: "/svoya-ai-sreda" }])]} />
+			<JsonLd data={[sredaLd(), crumbs([{ name: sreda.hero.crumb, path: "/svoya-ai-sreda" }])]} />
 		</>
 	);
 }

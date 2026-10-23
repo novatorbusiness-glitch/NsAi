@@ -13,9 +13,8 @@ export default function Goals() {
 			const href = a.getAttribute("href") || "";
 			const own = a.getAttribute("data-goal");
 			if (own) goal(own, a.dataset.variant ? { variant: a.dataset.variant } : undefined);
-			const mentor = location.pathname.startsWith("/nastavnichestvo");
-			if (href.includes("t.me/Ilya_novator")) goal(mentor ? goals.mentorTelegram : goals.telegram);
-			if (href.includes("max.ru/")) goal(mentor ? goals.mentorTelegram : goals.max);
+			if (href.includes("t.me/Ilya_novator")) goal(goals.telegram);
+			if (href.includes("max.ru/")) goal(goals.max);
 		};
 		document.addEventListener("click", onClick);
 		let io: IntersectionObserver | undefined;

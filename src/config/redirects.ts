@@ -11,7 +11,7 @@ export const redirects: Record<string, string> = {
 	"/roadmap": "/keisy",
 	"/ai-training": "/",
 	"/primer-razbora": "/primer-audita", // переименовано 22.10: это аудит, а не разбор
-	"/nastavnichestvo": "/", // наставничество скрыто 14.10, код страницы — src/app/_nastavnichestvo
+	"/nastavnichestvo": "/", // наставничество убрано 23.10, код — тег archive/mentorship
 	"/book/read": "/book",
 	"/book/00-a-znakomstvo": "/book/00-nachalo", // v2 22.10: знакомство и пролог — одна глава
 	"/book/00-b-prolog": "/book/00-nachalo",

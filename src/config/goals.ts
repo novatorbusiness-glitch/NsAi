@@ -10,5 +10,4 @@ export const goals = {
 	ctaSreda: "cta_start_sreda", // «Записаться на консультацию» на /svoya-ai-sreda
 	demoOpen: "demo_open", // открыл демо кабинета (прототип) на примере чертежа
 	mapBlock: "map_block", // открыл карточку блока на карте чертежа
-	mentorTelegram: "mentor_telegram", // перешёл в мессенджер со страницы наставничества
 } as const;
