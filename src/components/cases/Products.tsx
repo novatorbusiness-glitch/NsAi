@@ -2,39 +2,30 @@ import Rich from "@/components/ui/Rich";
 import { allCases } from "@/lib/cases";
 import { keisy } from "@content/pages/keisy";
 import SectionHead from "@/components/ui/SectionHead";
-import MapPreview from "@/components/primer/MapPreview";
 
-// 02 · свои продукты: веер экранов и строки «экран + главное решение + что это значит для вас». Кейсы — content/cases/*.md (headline — решение).
+// 03 · разработка и свои продукты: две главные карточки (мой AI-сервис, GAZE), остальные — строкой. Кейсы — content/cases/*.md.
 export default function Products() {
 	const c = keisy.products;
+	const main = allCases().filter((k) => k.order <= 2);
 	return (
-		<section id="products" className="alt">
+		<section id="products">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className="fan fan-sm" aria-label={c.fanLabel}>
-					{c.fan.map((f) => <img key={f.cls} className={f.cls} src={f.src} alt={f.alt} width={800} height={1159} />)}
+				<div className="kprods">
+					{main.map((k) => (
+						<article className="kp" key={k.slug}>
+							<div className={`pv v-${k.view}`}><img src={k.image} alt={k.imageAlt} width={k.w} height={k.h} loading="lazy" /></div>
+							<div className="kp-t">
+								<span className="tag">{k.title.split(":")[0]} · {k.tag}</span>
+								<h3>{k.headline}</h3>
+								<p><Rich t={k.text} /></p>
+								{k.metrics.length > 0 && <ul className="pf">{k.metrics.map((m) => <li key={m.value}><b>{m.value}</b>{m.label}</li>)}</ul>}
+								{k.forYou && <p className="for-you"><b>{c.forYou}</b> <Rich t={k.forYou} /></p>}
+							</div>
+						</article>
+					))}
 				</div>
-				<div className="prows">
-					{allCases().map((k) => {
-						const img = <img src={k.image} alt={k.imageAlt} width={k.w} height={k.h} loading="lazy" />;
-						return (
-							<article className="prow" key={k.slug}>
-								<div className={`pv v-${k.view}`}>
-									{k.window ? <figure className="window" style={{ margin: "0" }}><div className="bar"><i></i><i></i><i></i><span>{k.window}</span></div>{img}</figure> : img}
-									{k.caption && <span className="pvcap">{k.caption}</span>}
-								</div>
-								<div className="pt">
-									{k.logo && <img className="plogo" src={k.logo} alt={k.title.split(":")[0]} width={380} height={100} />}
-									<span className="tag">{k.title.split(":")[0]} · {k.tag}</span><h3>{k.headline}</h3>
-									<p><Rich t={k.text} /></p>
-									{k.forYou && <p className="for-you"><b>{c.forYou}</b> <Rich t={k.forYou} /></p>}
-									{k.metrics.length > 0 && <ul className="pf">{k.metrics.map((m) => <li key={m.value}><b>{m.value}</b>{m.label}</li>)}</ul>}
-								</div>
-							</article>
-						);
-					})}
-				</div>
-				<MapPreview at="cases" />
+				<p className="team-own">{c.more}</p>
 			</div>
 		</section>
 	);
