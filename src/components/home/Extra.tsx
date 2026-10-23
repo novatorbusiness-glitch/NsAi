@@ -4,7 +4,7 @@ import { home } from "@content/pages/home";
 import { site } from "@/config/site";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 05 · отдельные задачи: витрина доп-услуг (решение Ильи 23.10) — карточка с ценой, подробности во всплывающем окне.
+// 05 · отдельные задачи: витрина доп-услуг (решение Ильи 23.10) — строки как прайс, подробности во всплывающем окне.
 export default function Extra() {
 	const c = home.extra;
 	const [open, setOpen] = useState<string | null>(null);
@@ -23,10 +23,10 @@ export default function Extra() {
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="extra">
 					{c.items.map((x) => (
-						<button type="button" className="card xcard" key={x.id} onClick={() => setOpen(x.id)}>
+						<button type="button" className="xrow" key={x.id} onClick={() => setOpen(x.id)}>
 							<h3>{x.title}</h3>
 							<p>{x.line}</p>
-							<p className="x-price"><b>{x.price}</b><span>{x.term}</span></p>
+							<span className="x-price"><b>{x.price}</b><span>{x.term}</span></span>
 							<span className="x-more">{c.more} +</span>
 						</button>
 					))}
