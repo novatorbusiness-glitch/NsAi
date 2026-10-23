@@ -1,8 +1,18 @@
 /* Стили страницы: кейсы v2 (23.10). Общее — в styles/base.css. */
 .ph1{max-width:15em}
 .hero .lead{max-width:33em}
-@media(max-width:899px){.hero .fan{height:340px;margin-top:8px}}
-@media(max-width:480px){.hero .fan{height:270px}}
+/* первый экран: веер выше, три цифры поверх */
+.kfan{height:440px;background:radial-gradient(120% 90% at 50% 100%,#cfe9df 0%,#eef4f1 60%,#f6f7f6 100%)}
+.kfan .f2{bottom:-30px}
+.kfan .f1,.kfan .f3{bottom:-80px}
+.kchips{list-style:none;margin:0;padding:0;position:absolute;left:16px;right:16px;top:16px;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kchips li{background:#fff;border-radius:12px;padding:10px 12px;box-shadow:0 10px 24px -14px rgba(16,24,20,.35)}
+.kchips b{display:block;font:800 19px/1.1 var(--f);letter-spacing:-.02em;color:var(--acc)}
+.kchips span{display:block;margin-top:3px;font-size:12px;line-height:1.3;color:var(--ink2)}
+@media(max-width:899px){.kfan{height:420px;margin-top:8px}}
+@media(max-width:480px){.kfan{height:340px}}
+@media(max-width:480px){.kchips b{font-size:16px}}
+@media(max-width:480px){.kchips span{font-size:11px}}
 
 /* 01 · путь */
 .kpath{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
@@ -23,14 +33,14 @@
 .kgroups{display:grid;gap:34px}
 .kg-h{margin:0 0 12px;font:700 13px/1 var(--m);letter-spacing:.1em;text-transform:uppercase;color:var(--acc)}
 .kcards{display:grid;gap:14px}
-@media(min-width:800px){.kcards{grid-template-columns:1fr 1fr;gap:20px;align-items:start}}
-.kc{background:#fff;border-radius:14px;padding:24px}
+@media(min-width:800px){.kcards{grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}}
+.kc{background:#fff;border-radius:14px;padding:24px;display:flex;flex-direction:column}
 .kc-a{margin:0 0 8px;font:600 12.5px/1.3 var(--m);color:var(--mut)}
 .kc h3{margin:0 0 14px}
 .kc-n{margin:0 0 14px;display:flex;flex-direction:column;gap:4px}
 .kc-n b{font:800 clamp(30px,4vw,40px)/1 var(--f);letter-spacing:-.03em;color:var(--acc)}
 .kc-n span{font-size:15px;line-height:1.45;color:var(--ink2)}
-.kc details{border-top:1px solid var(--line);padding-top:12px}
+.kc details{margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
 .kc summary{list-style:none;cursor:pointer;font:600 13px/1 var(--m);color:var(--acc)}
 .kc summary::-webkit-details-marker{display:none}
 .kc summary::after{content:" +"}
@@ -57,3 +67,6 @@
 .kbridge a:hover{border-color:#7fd3b6}
 .kbridge b{display:block;font-size:20px;color:#fff;margin-bottom:6px}
 .kbridge span{font-size:15px;color:#b9c2be}
+
+/* 05 · отзывы: три в ряд */
+@media(min-width:900px){#quotes .quotes2 > div{grid-template-columns:repeat(3,1fr)}}
