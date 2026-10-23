@@ -51,14 +51,16 @@ export function servicesLd() {
 		...(unit ? { priceSpecification: { "@type": "UnitPriceSpecification", price: rub(price), priceCurrency: "RUB", unitText: unit } } : {}),
 	});
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Проектирование и развитие продукта и продаж",
+		"@context": "https://schema.org", "@type": "Service", name: "Продукт, привлечение клиентов, продажи и автоматизация с AI-средой",
 		provider: person, areaServed: "RU", url: site.url,
 		hasOfferCatalog: {
-			"@type": "OfferCatalog", name: "Шаги работы",
+			"@type": "OfferCatalog", name: "Работа в команде и отдельные задачи",
 			itemListElement: [
+				offer("Работа в команде", prices.management.price, "месяц"),
+				offer("Консультация «Своя AI-среда»", prices.consult.price),
 				offer("Аудит и план действий", prices.testDrive.price),
-				offer("Чертёж системы", prices.blueprint.price),
-				offer("Ведение", prices.management.price, "месяц"),
+				offer("Чертёж веб-продукта или мини-приложения", prices.blueprint.price),
+				offer("Разработка: сайт, веб-сервис, чат-бот или мини-приложение", prices.dev.price),
 			],
 		},
 	};
