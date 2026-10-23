@@ -72,7 +72,20 @@
 .dep-in .btn{margin-top:16px;font-size:15px;padding:11px 16px}
 .team-own{margin:24px 0 0;padding-left:14px;border-left:2px solid var(--acc);font-weight:600}
 
-/* 02 · что это даёт: тёмная полоса «было → стало» */
+/* 02 · цифры из работы */
+.proof{display:grid;gap:12px}
+@media(max-width:719px){.proof{grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -16px;padding-left:16px;padding-right:16px}}
+@media(max-width:719px){.pf{scroll-snap-align:start}}
+@media(min-width:720px){.proof{grid-template-columns:1fr 1fr;gap:16px}}
+@media(min-width:1000px){.proof{grid-template-columns:repeat(3,1fr);gap:20px}}
+.pf{display:flex;flex-direction:column;background:#fff;border-radius:16px;padding:26px 24px 22px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 14px 34px -18px rgba(16,24,20,.18)}
+.pf-n{margin:0 0 14px;display:flex;flex-direction:column;gap:6px}
+.pf-n b{font:800 clamp(40px,5vw,56px)/1 var(--f);letter-spacing:-.04em;color:var(--acc)}
+.pf-n span{font:800 18px/1.2 var(--f);letter-spacing:-.01em;color:var(--ink)}
+.pf-t{margin:0 0 18px;font-size:15px;line-height:1.55;color:var(--ink2)}
+.pf-d{margin:auto 0 0;padding-top:12px;border-top:1px solid var(--line);font:600 11.5px/1 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+
+/* 03 · что это даёт: тёмная полоса «было → стало» */
 #save .snum{color:var(--dark-mut)}
 #save .snum b{color:#7fd3b6}
 .save{display:grid;gap:12px}

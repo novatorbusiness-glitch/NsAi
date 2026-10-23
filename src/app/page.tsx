@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import Team from "@/components/home/Team";
+import Proof from "@/components/home/Proof";
 import Save from "@/components/home/Save";
 import Work from "@/components/home/Work";
 import Trust from "@/components/home/Trust";
@@ -20,6 +21,7 @@ export default function Page() {
 		<>
 			<Hero />
 			<Team />
+			<Proof />
 			<Save />
 			<Work />
 			<Trust />
