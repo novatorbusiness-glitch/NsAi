@@ -1,6 +1,12 @@
 /* Стили страницы «Как работаю в команде» (v9, 23.10). Общее — в styles/base.css. */
 .ph1{max-width:15em}
 .hero .lead{max-width:34em}
+.pphoto{margin:0;position:relative;max-width:440px;justify-self:center;width:100%}
+.pphoto img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 15%;border-radius:18px;background:var(--bg2)}
+.pphoto figcaption{position:absolute;left:16px;right:16px;bottom:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:12px;border-radius:14px;background:rgba(17,20,22,.82);backdrop-filter:blur(6px)}
+.pphoto figcaption span{display:block;font:500 11.5px/1.3 var(--m);color:var(--dark-mut)}
+.pphoto figcaption b{display:block;font:800 20px/1.1 var(--f);color:#fff;margin-bottom:3px}
+@media(max-width:899px){.pphoto{max-width:380px}}
 
 /* 02 · ритм */
 .rsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
