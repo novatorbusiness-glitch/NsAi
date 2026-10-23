@@ -2,30 +2,41 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import { sreda } from "@content/pages/sreda";
 
-// Первый экран: что это, 60 минут · 10 000 ₽ · PDF, среда в четыре слоя.
+// Первый экран v2: своя команда AI-агентов, 90 минут и PDF; справа — среда в центре и два руководителя с агентами вокруг. Факты — полосой под экраном.
 export default function Hero() {
-	const h = sreda.hero;
+	const c = sreda.hero;
+	const o = c.orbit;
 	return (
-		<section className="hero">
-			<div className="wrap hero-grid">
-				<div>
-					<p className="crumbs"><a href="/">{common.ui.home}</a><span>/</span>{h.crumb}</p>
-					<p className="snum">{h.kicker}</p>
-					<h1>{h.h1}</h1>
-					<p className="lead">{h.lead}</p>
-					<p className="lead">{h.sub}</p>
-					<div className="past-n three pm-facts">{h.facts.map((x) => <div key={x.text}><b>{x.num}</b><span>{x.text}</span></div>)}</div>
-					<div className="cta-row">
-						<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start_sreda">{h.button}</a>
-						<a className="more-link" href="#how">{h.more}</a>
+		<>
+			<section className="hero">
+				<div className="wrap hero-grid">
+					<div>
+						<p className="crumbs"><a href="/">{common.ui.home}</a><span>/</span>{c.crumb}</p>
+						<div className="role"><span className="pill">{c.pill}</span></div>
+						<h1 className="ph1">{c.h1}</h1>
+						<p className="lead">{c.lead}</p>
+						<div className="cta-row">
+							<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start_sreda">{c.button}</a>
+							<a className="btn s" href="#team">{c.more}</a>
+						</div>
 					</div>
+					<figure className="orbit" aria-label={o.label}>
+						<div className="orb-c"><b>{o.center}</b><span>{o.centerNote}</span></div>
+						<div className="orb-l">
+							{o.leads.map((l) => (
+								<div className="orb-g" key={l.b}>
+									<p className="orb-h">Руководитель · <b>{l.b}</b></p>
+									<ul>{l.agents.map((a) => <li key={a}>{a}</li>)}</ul>
+								</div>
+							))}
+						</div>
+						<figcaption>{o.cap}</figcaption>
+					</figure>
 				</div>
-				<figure className="sr-stack" aria-label={h.stack.label}>
-					<p className="lbl">{h.stack.label}</p>
-					<ol>{h.stack.layers.map((l, i) => <li key={l.b} className={`l${i}`}><b>{l.b}</b><span>{l.t}</span><div className="sr-chips">{l.chips.map((c) => <i key={c} className={c.includes("бесплатно") ? "free" : ""}>{c}</i>)}</div></li>)}</ol>
-					<figcaption>{h.stack.cap}</figcaption>
-				</figure>
+			</section>
+			<div className="hfacts">
+				<div className="wrap facts">{c.facts.map((f) => <div key={f.num}><b>{f.num}</b><span>{f.text}</span></div>)}</div>
 			</div>
-		</section>
+		</>
 	);
 }

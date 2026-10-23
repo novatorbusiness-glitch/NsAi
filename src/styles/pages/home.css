@@ -1,26 +1,9 @@
 /* Стили страницы: главная v9 (23.10). Общее — в styles/base.css. */
-.pill{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--f);color:var(--ink2);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
-.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acc)}
 .hero .lead{max-width:30em}
 
-.hfacts{border-top:1px solid var(--line);padding:18px 0 28px}
-.hfacts .facts{margin-top:0}
-.hfacts .facts b{font-size:18px}
-.hfacts .facts span{font-size:13px}
 
 /* 01 · моя среда */
 .team-note{margin:-6px 0 22px;font-weight:600;color:var(--ink)}
-.tflow{margin:0 0 36px}
-.tflow ol{list-style:none;margin:0;padding:0;display:grid;gap:0;position:relative}
-.tflow li{position:relative;display:flex;gap:14px;align-items:center;padding:0 0 18px;font-size:15px;line-height:1.35;font-weight:600}
-.tflow li span{flex:none;position:relative;z-index:1;width:30px;height:30px;border-radius:50%;border:2px solid var(--acc);background:#fff;color:var(--acc);font:700 13px/26px var(--m);text-align:center}
-.tflow li::after{content:"";position:absolute;left:14px;top:30px;bottom:0;width:2px;background:var(--acc);opacity:.25}
-.tflow li:last-child{padding-bottom:0}
-.tflow li:last-child::after{display:none}
-.tflow li:last-child span{background:var(--acc);color:#fff}
-@media(min-width:900px){.tflow ol{grid-template-columns:repeat(5,1fr);gap:20px}}
-@media(min-width:900px){.tflow li{flex-direction:column;align-items:flex-start;gap:12px;padding:0}}
-@media(min-width:900px){.tflow li::after{left:34px;right:-16px;top:14px;bottom:auto;width:auto;height:2px}}
 .deps{display:grid;gap:10px}
 @media(min-width:800px){.deps{grid-template-columns:1fr 1fr;align-items:start}}
 @media(min-width:1100px){.deps{grid-template-columns:repeat(3,1fr)}}
@@ -46,7 +29,6 @@
 .dep-mine p{margin:0;font-size:14.5px;line-height:1.55;font-weight:500;color:var(--ink)}
 .dep-mine small{display:block;margin-top:8px;font-size:12px;color:var(--mut)}
 .dep-in .btn{margin-top:16px;font-size:15px;padding:11px 16px}
-.team-own{margin:24px 0 0;padding-left:14px;border-left:2px solid var(--acc);font-weight:600}
 
 /* 02 · цифры из работы */
 .proof{display:grid;gap:12px}
@@ -118,11 +100,7 @@
 .x-inc{margin:0 0 14px;padding-left:18px;font-size:15px;line-height:1.55;color:var(--ink2)}
 
 /* 06 · вопросы */
-.faq-lines{display:grid;gap:0 56px;border-top:1px solid var(--line2)}
-@media(min-width:900px){.faq-lines{grid-template-columns:1fr 1fr;align-items:start}}
-.faq-lines details{border-top:0;border-bottom:1px solid var(--line2);padding:0}
-.faq-lines summary{padding:20px 0;font-size:16.5px}
-.faq-lines .a{padding:0 0 20px}
 
 /* 07 · познакомимся */
-@media(max-width:560px){.hfacts .facts,.tnums{grid-template-columns:1fr}}
+
+@media(max-width:560px){.tnums{grid-template-columns:1fr}}
