@@ -18,19 +18,19 @@ export const site = {
 	requisites: "Новицкий Илья Сергеевич, самозанятый (НПД), ИНН 550115335168",
 	// Шапка: четыре пункта; меню на телефоне и подвал — все страницы.
 	nav: [
-		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
+		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
 		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
 		{ href: "/blog", label: "Блог" },
 	],
 	menu: [
-		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
+		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
 		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
 		{ href: "/blog", label: "Блог" },
 	],
 	footerNav: [
-		{ href: "/kak-my-rabotaem", label: "Как мы работаем" },
+		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
 		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
 		{ href: "/blog", label: "Блог" },

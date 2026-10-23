@@ -1,7 +1,7 @@
 import { process } from "@content/pages/kak-my-rabotaem";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 04 · зона ответственности в ведении: четыре участка системы и что не входит.
+// 01 · что могу усилить: четыре участка, какой нужен — решаем на разборе.
 export default function Scope() {
 	const c = process.scope;
 	return (
