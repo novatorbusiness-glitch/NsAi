@@ -1,7 +1,7 @@
 import data from "@content/data/project-map.json";
 import { primer } from "@content/pages/primer";
 
-// Превью карты для главной, «Как мы работаем» и кейсов (решение 16.10): без интерактива, ведёт на /primer-chertezha.
+// Превью карты для главной, «Как работаю в команде» и кейсов (решение 16.10): без интерактива, ведёт на /primer-chertezha.
 const C: Record<string, [string, string]> = {
 	goal: ["#6b46c1", "#f1ecfd"], market: ["#2f6fe0", "#e8f0ff"], product: ["#0f8a7e", "#e1f5f1"], cabinet: ["#4b4fd1", "#ebebfe"], tech: ["#3d4a63", "#edf0f5"],
 	money: ["#1f8a4c", "#e5f5ea"], sales: ["#d9661f", "#ffeedf"], legal: ["#c2416b", "#fdeaf0"], route: ["#b7791f", "#fff3d9"],

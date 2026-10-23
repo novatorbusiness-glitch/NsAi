@@ -14,6 +14,7 @@ export default function Stacks() {
 							<h3>{x.b}</h3>
 							<p>{x.how}</p>
 							<p className="stk-plus">{x.plus}</p>
+							<p className="stk-set">{x.setup}</p>
 							<p className="stk-fit">{x.fit}</p>
 						</div>
 					))}
