@@ -11,7 +11,7 @@ OUT, DST = f'{ROOT}/out', f'{ROOT}/public/og'
 NM = f'{ROOT}/node_modules'
 W, H = 1200, 630
 INK, INK2, ACC = '#15181a', '#4b5257', '#0F6E56'
-SECTION = {'home': 'Илья Новицкий', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как мы работаем', 'nastavnichestvo': 'Наставничество',
+SECTION = {'home': '10 лет в маркетинге и продажах', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как мы работаем', 'nastavnichestvo': 'Наставничество',
            'blog': 'Блог', 'book': 'Книга', 'primer-chertezha': 'Пример чертежа', 'primer-audita': 'Пример аудита',
            'svoya-ai-sreda': 'Консультация по AI', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
 
@@ -128,12 +128,13 @@ def render(name, title, sub_text=None, kicker=None):
         kick = kicker or SECTION.get(name, 'Илья Новицкий').upper()
     d.rectangle((x, 84, x + 48, 90), fill=acc)
     draw(d, x, 112, kick, mono(20 if len(kick) > 34 else 22), acc)
+    if name == 'home': title = re.sub(r'^Илья Новицкий:\s*', '', title); title = title[:1].upper() + title[1:]  # имя уже в подписи снизу
     title_block(d, x, 164, title, sub_text if sub_text is not None else SUBS.get(name, ''), maxw, ink, subtle, room=H - 164 - 140, sizes=(56, 52, 48, 44, 40) if name == 'home' else (66, 60, 54, 50, 44, 40))
     light = ink.lower() in ('#ffffff', '#e9ecea')  # на тёмном/зелёном фоне — белый знак
     mk = MARK['n-white' if light else 'n']; mh = 46; mk = mk.resize((round(mk.width * mh / mk.height), mh), Image.LANCZOS)
     im.paste(mk, (x, H - 118), mk); nx = x + mk.width + 14
     draw(d, nx, H - 112, 'Илья Новицкий', manrope(26, 700), ink)
-    draw(d, nx, H - 76, 'ilya-novitsky.ru · продукт, продажи и автоматизация', mono(20), sub)
+    draw(d, nx, H - 76, 'ilya-novitsky.ru · маркетинг, продажи и автоматизация', mono(20), sub)
     im.save(f'{DST}/{name}.jpg', 'JPEG', quality=86, optimize=True)
 
 os.makedirs(DST, exist_ok=True)
@@ -151,10 +152,10 @@ for f in sorted(glob.glob(f'{OUT}/**/*.html', recursive=True)):
     seen.add(name)
     if name.startswith('book-'):  # главы книги
         ctitle, csub, kick = chapter(t, title)
-        want = {'title': title, 'sub': csub, 'brand': 1}
+        want = {'title': title, 'sub': csub, 'brand': 2}
         if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
         render(name, ctitle, csub, kick); man[name] = want; made += 1; continue
-    want = {'title': title, 'sub': SUBS.get(name, ''), 'brand': 1}
+    want = {'title': title, 'sub': SUBS.get(name, ''), 'brand': 2}
     if man.get(name) == want and os.path.exists(f'{DST}/{name}.jpg'): continue
     render(name, title); man[name] = want; made += 1
 for name in list(man):
