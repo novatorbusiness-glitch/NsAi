@@ -1,8 +1,7 @@
 import { process } from "@content/pages/kak-my-rabotaem";
 import { common } from "@content/pages/common";
-import EnvScheme from "@/components/home/EnvScheme";
 
-// Первый экран «Как работаю в команде» (v9): работа в команде одним предложением, цена, две кнопки; справа схема AI-среды.
+// Первый экран «Как работаю в команде» (v9): работа в команде одним предложением, цена, две кнопки; справа фото и три факта.
 export default function Hero() {
 	const c = process.hero;
 	return (
@@ -17,7 +16,10 @@ export default function Hero() {
 						<a className="btn s" href="#extra">{c.secondary}</a>
 					</div>
 				</div>
-				<EnvScheme />
+				<figure className="pphoto">
+					<img src={c.photo.src} alt={c.photo.alt} width={680} height={850} />
+					<figcaption>{c.plate.map((p) => <span key={p.num}><b>{p.num}</b>{p.text}</span>)}</figcaption>
+				</figure>
 			</div>
 		</section>
 	);
