@@ -28,7 +28,7 @@ export default function Team() {
 								<p className="lbl">{l.tasks}</p>
 								<ul className="dep-tasks">{d.tasks.map((t) => <li key={t}>{t}</li>)}</ul>
 								<p className="lbl">{l.agents}</p>
-								<ul className="dep-agents">{d.agents.map((a) => <li key={a.n}><b>{a.n}</b> — {a.t}</li>)}</ul>
+								<ul className="dep-agents">{d.agents.map((a) => <li key={a.n}><b>{a.n}</b><span>{a.t}</span></li>)}</ul>
 								<p className="lbl">{l.me}</p>
 								<p className="dep-me">{d.me}</p>
 								{d.mine && <div className="dep-mine"><p className="lbl">{l.mine}</p><p>{d.mine}</p><small>{l.mineNote}</small></div>}

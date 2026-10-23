@@ -62,7 +62,8 @@
 .dep-in .lbl{margin:14px 0 8px;font-size:11px}
 .dep-in .lbl:first-child{margin-top:0}
 .dep-tasks,.dep-agents{margin:0;padding-left:18px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
-.dep-agents li b{color:var(--ink)}
+.dep-agents li b{display:block;color:var(--ink)}
+.dep-agents li + li{margin-top:6px}
 .dep-me{margin:0;font-size:14.5px;line-height:1.5}
 .dep-mine{margin:16px 0 0;padding:14px 16px;border-radius:10px;background:var(--acc-soft)}
 .dep-mine .lbl{margin:0 0 6px;color:var(--acc)}
