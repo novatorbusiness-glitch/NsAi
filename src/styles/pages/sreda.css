@@ -67,14 +67,14 @@
 .g-pdf{background:var(--dark);color:var(--dark-ink)}
 .g-pdf .lbl{color:#7fd3b6}
 .gets ol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.gets li{display:grid;grid-template-columns:62px 1fr;gap:10px;font-size:15px;line-height:1.45}
+.gets ol li{display:grid;grid-template-columns:62px 1fr;gap:10px;font-size:15px;line-height:1.45}
 .g-call li span{font:700 12.5px/1.6 var(--m);color:var(--acc)}
 .g-pdf li{grid-template-columns:26px 1fr;color:#d5dbd8}
 .g-pdf li span{width:22px;height:22px;border-radius:50%;background:#1f2a26;color:#7fd3b6;font:700 11px/22px var(--m);text-align:center}
 .g-pdf .cap{color:var(--dark-mut);margin-top:16px}
 .g-need{margin-top:28px;padding-top:22px;border-top:1px solid var(--line2)}
 .g-need ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.g-need li{font-size:14px;padding:8px 13px;border:1px solid var(--line2);border-radius:999px;background:#fff}
+.gets .g-need li{display:block;font-size:14px;padding:8px 13px;border:1px solid var(--line2);border-radius:999px;background:#fff}
 
 /* 04 · задачи: четыре группы на тёмной полосе */
 .tgroups{display:grid;gap:12px}

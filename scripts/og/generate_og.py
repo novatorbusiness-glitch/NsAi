@@ -11,7 +11,7 @@ OUT, DST = f'{ROOT}/out', f'{ROOT}/public/og'
 NM = f'{ROOT}/node_modules'
 W, H = 1200, 630
 INK, INK2, ACC = '#15181a', '#4b5257', '#0F6E56'
-SECTION = {'home': '10 лет в маркетинге и продажах', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как работаю в команде', 'nastavnichestvo': 'Наставничество',
+SECTION = {'home': '10 лет в маркетинге и продажах', 'keisy': 'Кейсы', 'kak-my-rabotaem': 'Как работаю в команде',
            'blog': 'Блог', 'book': 'Книга', 'primer-chertezha': 'Пример чертежа', 'primer-audita': 'Пример аудита',
            'svoya-ai-sreda': 'Консультация по AI', 'offer': 'Документы', 'privacy': 'Документы', 'consent': 'Документы'}
 

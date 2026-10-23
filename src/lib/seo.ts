@@ -66,11 +66,14 @@ export function servicesLd() {
 	};
 }
 
-export function mentorLd() {
+export function sredaLd() {
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Наставничество один на один: продукт на AI своими руками",
-		provider: person, areaServed: "RU", url: `${site.url}/nastavnichestvo`,
-		offers: { "@type": "Offer", priceCurrency: "RUB", price: rub(prices.mentor.price), priceSpecification: { "@type": "UnitPriceSpecification", price: rub(prices.mentor.price), priceCurrency: "RUB", unitText: "месяц" } },
+		"@context": "https://schema.org", "@type": "Service", name: "Консультация «Своя AI-среда»: готовая команда AI-агентов и инструкция",
+		provider: person, areaServed: "RU", url: `${site.url}/svoya-ai-sreda`,
+		offers: [
+			{ "@type": "Offer", name: "Консультация 90 минут и PDF", priceCurrency: "RUB", price: rub(prices.consult.price) },
+			{ "@type": "Offer", name: "Настройка AI-среды под ключ", priceCurrency: "RUB", price: rub(prices.setup.price) },
+		],
 	};
 }
 
