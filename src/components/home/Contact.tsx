@@ -1,28 +1,36 @@
+"use client";
+import { useState } from "react";
 import ContactNote from "@/components/ui/ContactNote";
 import { site } from "@/config/site";
 import { home } from "@content/pages/home";
 import { common } from "@content/pages/common";
+import { goal } from "@/lib/analytics";
+import { goals } from "@/config/goals";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 10 · начать (вопрос собственника «что сделать сейчас?»): три шага до старта, Telegram и MAX + пример начала переписки.
+// 07 · познакомимся: вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX.
 export default function Contact() {
 	const c = home.contact;
+	const [pick, setPick] = useState<number | null>(null);
+	const choose = (i: number) => {
+		setPick(i);
+		goal(goals.pickStep, { variant: i + 1 });
+		navigator.clipboard?.writeText(`Здравствуйте! ${c.options[i]}.`).catch(() => {});
+	};
 	return (
-		<section id="contact" className="final dark">
+		<section id="contact" className="final">
 			<div className="wrap">
 				<div className="card final-card">
 					<div>
 						<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-						<ol className="fsteps">{c.steps.map((x, i) => <li key={x.b}><span>{i + 1}</span><div><b>{x.b}</b> {x.t}</div></li>)}</ol>
-						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
-						<ContactNote />
-					</div>
-					<div className="tg" aria-hidden="true">
-						<div className="tg-top"><span className="av">{c.chat.avatar}</span><div><b>{c.chat.name}</b><small>{c.chat.status}</small></div></div>
-						<div className="tg-body">
-							{c.chat.messages.map((m) => <div className={m.me ? "msg me" : "msg"} key={m.time}>{m.text}<i>{m.time}</i></div>)}
+						<p className="lbl">{c.ask}</p>
+						<div className="chips" role="group" aria-label={c.ask}>
+							{c.options.map((o, i) => <button type="button" key={o} className={pick === i ? "chip on" : "chip"} aria-pressed={pick === i} onClick={() => choose(i)}>{o}</button>)}
 						</div>
-						<div className="tg-cap">{c.chat.cap}</div>
+						{pick !== null && <p className="cap" role="status">{c.copied}</p>}
+						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
+						<p className="cap">{c.under}</p>
+						<ContactNote />
 					</div>
 				</div>
 			</div>

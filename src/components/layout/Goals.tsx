@@ -4,7 +4,7 @@ import { goal } from "@/lib/analytics";
 import { goals } from "@/config/goals";
 
 // Один обработчик кликов на весь сайт: мессенджеры и ссылки с data-goal → цели Метрики.
-// На главной — цель «дочитал до кейсов», когда блок «Что я уже сделал» появился на экране (один раз).
+// На главной — цель «дочитал до кейсов», когда блок «Опыт» появился на экране (один раз).
 export default function Goals() {
 	useEffect(() => {
 		const onClick = (e: MouseEvent) => {
@@ -19,7 +19,7 @@ export default function Goals() {
 		};
 		document.addEventListener("click", onClick);
 		let io: IntersectionObserver | undefined;
-		const cases = location.pathname === "/" ? document.getElementById("done") : null;
+		const cases = location.pathname === "/" ? document.getElementById("trust") : null;
 		if (cases && "IntersectionObserver" in window) {
 			io = new IntersectionObserver((es) => {
 				if (es.some((x) => x.isIntersecting)) { goal(goals.readToCases); io?.disconnect(); }

@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import Situations from "@/components/home/Situations";
-import Benefits from "@/components/home/Benefits";
-import Compare from "@/components/home/Compare";
-import Process from "@/components/home/Process";
-import Speed from "@/components/home/Speed";
-import Done from "@/components/home/Done";
-import About from "@/components/home/About";
-import Fit from "@/components/home/Fit";
+import Team from "@/components/home/Team";
+import Save from "@/components/home/Save";
+import Work from "@/components/home/Work";
+import Trust from "@/components/home/Trust";
+import Extra from "@/components/home/Extra";
 import Faq from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
 import { home } from "@content/pages/home";
@@ -22,14 +19,11 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
-			<Situations />
-			<Benefits />
-			<Compare />
-			<Process />
-			<Speed />
-			<Done />
-			<About />
-			<Fit />
+			<Team />
+			<Save />
+			<Work />
+			<Trust />
+			<Extra />
 			<Faq />
 			<Contact />
 			<JsonLd data={[servicesLd(), faqLd(faq)]} />
