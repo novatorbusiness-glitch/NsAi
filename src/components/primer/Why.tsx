@@ -2,7 +2,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import Rich from "@/components/ui/Rich";
 import { primer } from "@content/pages/primer";
 
-// 01 Зачем карта: боль и рынок.
+// 01 Зачем план: боль и рынок.
 export default function Why() {
 	const w = primer.why;
 	return (
