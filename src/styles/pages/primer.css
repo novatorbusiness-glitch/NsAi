@@ -48,15 +48,37 @@
 .pm-demo-start{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:320px;padding:32px 16px;text-align:center;
   background:#f6f5f1 radial-gradient(#d8d4c8 1.1px,transparent 1.2px) 0 0/24px 24px}
 @media(max-width:699px){.pm-demo iframe{height:640px;min-height:0}}
-@media(max-width:699px){.pm-route{flex-direction:column}}
-.pm-note-l{margin:-8px 0 18px;color:var(--ink2)}
 @media(min-width:900px){.pm-why{grid-template-columns:repeat(3,1fr);gap:20px}}
 .pm-hero{align-items:center}
-.pm-hero-map{display:block;border-radius:16px;box-shadow:0 24px 60px -30px rgba(29,26,51,.45);transition:transform .2s}
-.pm-hero-map:hover{transform:translateY(-3px)}
-.pm-hero-map .mpv-map{max-height:420px}
-@media(max-width:899px){.pm-hero-map{display:none}}
 .pm-more summary{list-style-position:inside}
 .pm-more summary:focus{outline:none}
 .pm-more summary:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
 @media(min-width:900px){.pm-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 20px}}
+
+/* Обложка: кусок карты в карточке-примере. */
+.pm-hcard .mpv-map{max-height:360px;margin-top:4px}
+@media(max-width:899px){.pm-hcard .mpv-map{max-height:260px}}
+
+/* Семь частей чертежа: раскрываются по нажатию. */
+.pm-parts{display:grid;gap:12px;margin-top:28px}
+@media(min-width:900px){.pm-parts{grid-template-columns:1fr 1fr;align-items:start;gap:14px 20px}}
+.pm-parts details{background:#fff;border:1px solid var(--line);border-radius:16px;transition:border-color .2s}
+.pm-parts details[open]{border-color:var(--acc);box-shadow:0 18px 40px -28px rgba(16,24,20,.35)}
+.pm-parts summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 20px}
+.pm-parts summary::-webkit-details-marker{display:none}
+.pm-parts summary span{flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--acc-soft);color:var(--acc);font:700 14px/1 var(--f)}
+.pm-parts summary b{flex:1;font-size:17px}
+.pm-parts summary i{font-style:normal;font-size:22px;color:var(--mut);transition:transform .2s}
+.pm-parts details[open] summary i{transform:rotate(45deg)}
+.pm-parts summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:16px}
+.pm-parts dl{margin:0;padding:0 20px 20px 66px;display:grid;gap:4px}
+.pm-parts dt{font:600 12px/1.6 var(--m);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.pm-parts dt+dd+dt{margin-top:8px}
+.pm-parts dd{margin:0;font-size:15.5px;line-height:1.5;color:var(--ink2)}
+@media(max-width:560px){.pm-parts dl{padding-left:20px}}
+@media(prefers-reduced-motion:reduce){.pm-parts summary i{transition:none}}
+
+.pm-read{margin:14px 0 0;font-size:15px;color:var(--ink2)}
+.pm-demo-web{position:relative;overflow:hidden}
+.pm-demo-web iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;max-height:none;min-height:0}
+.rz-dev{margin:16px 0 0;font-size:15px;color:#b9c2be}

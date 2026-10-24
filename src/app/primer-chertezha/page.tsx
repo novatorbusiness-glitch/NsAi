@@ -6,27 +6,27 @@ import "@/styles/pages/primer.css";
 import Hero from "@/components/primer/Hero";
 import Why from "@/components/primer/Why";
 import ProjectMap from "@/components/primer/ProjectMap";
-import Read from "@/components/primer/Read";
+import Parts from "@/components/primer/Parts";
 import Demo from "@/components/primer/Demo";
-import Vedenie from "@/components/primer/Vedenie";
-import You from "@/components/primer/You";
-import Start from "@/components/primer/Start";
+import How from "@/components/primer/How";
+import Price from "@/components/primer/Price";
+import Contact from "@/components/home/Contact";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа (решение 16.10): зачем карта (боль и рынок) → карта (чертёж) → как читать → прототип → ведение по карте → ваш проект в три шага → начать.
+// Пример чертежа v2 (24.10): что такое чертёж → зачем план → семь частей → карта своего AI-сервиса → макет → как проходит → цена и развилка → разбор задачи.
 export default function Page() {
 	const h = primer.hero;
 	return (
 		<>
 			<Hero />
 			<Why />
+			<Parts />
 			<ProjectMap />
-			<Read />
 			<Demo />
-			<Vedenie />
-			<You />
-			<Start />
+			<How />
+			<Price />
+			<Contact num={primer.contactNum} />
 			<JsonLd data={[crumbs([{ name: h.crumb, path: "/primer-chertezha" }])]} />
 		</>
 	);
