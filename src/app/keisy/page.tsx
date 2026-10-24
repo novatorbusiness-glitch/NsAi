@@ -24,7 +24,7 @@ export default function Page() {
 			<Products />
 			<Bridge />
 			<Quotes />
-			<Contact num={keisy.contactNum} />
+			<Contact h2={keisy.contactH2} />
 			<JsonLd data={[crumbs([{ name: keisy.hero.crumb, path: "/keisy" }]), casesLd(allCases())]} />
 		</>
 	);

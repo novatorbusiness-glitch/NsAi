@@ -20,7 +20,7 @@ export default function Page() {
 			<Rhythm />
 			<Terms />
 			<Services />
-			<Contact num={process.contactNum} />
+			<Contact h2={process.contactH2} />
 			<JsonLd data={crumbs([{ name: process.hero.crumb, path: "/kak-my-rabotaem" }])} />
 		</>
 	);

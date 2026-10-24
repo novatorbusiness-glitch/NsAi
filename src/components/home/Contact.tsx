@@ -10,7 +10,7 @@ import SectionHead from "@/components/ui/SectionHead";
 import ChannelLine from "@/components/ui/ChannelLine";
 
 // Разбор задачи (финал главной, «Как работаю», кейсов и примеров): вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX, ниже подписка на канал.
-export default function Contact({ num }: { num?: string }) {
+export default function Contact({ h2 }: { h2?: string }) {
 	const c = home.contact;
 	const [pick, setPick] = useState<number | null>(null);
 	const choose = (i: number) => {
@@ -23,7 +23,7 @@ export default function Contact({ num }: { num?: string }) {
 			<div className="wrap">
 				<div className="card final-card">
 					<div>
-						<SectionHead num={num ?? c.num} label={c.label} title={c.h2} lead={c.lead} />
+						<SectionHead label={c.label} title={h2 ?? c.h2} lead={h2 ? c.leadOther : c.lead} />
 						<p className="lbl">{c.ask}</p>
 						<div className="chips" role="group" aria-label={c.ask}>
 							{c.options.map((o, i) => <button type="button" key={o} className={pick === i ? "chip on" : "chip"} aria-pressed={pick === i} onClick={() => choose(i)}>{o}</button>)}

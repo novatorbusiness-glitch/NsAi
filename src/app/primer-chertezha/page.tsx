@@ -26,7 +26,7 @@ export default function Page() {
 			<Demo />
 			<How />
 			<Price />
-			<Contact num={primer.contactNum} />
+			<Contact h2={primer.contactH2} />
 			<JsonLd data={[crumbs([{ name: h.crumb, path: "/primer-chertezha" }])]} />
 		</>
 	);

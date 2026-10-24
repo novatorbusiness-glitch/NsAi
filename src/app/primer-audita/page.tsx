@@ -22,7 +22,7 @@ export default function Page() {
 			<Doc />
 			<Gets />
 			<Price />
-			<Contact num={razbor.contactNum} />
+			<Contact h2={razbor.contactH2} />
 			<JsonLd data={[crumbs([{ name: h.crumb, path: "/primer-audita" }])]} />
 		</>
 	);
