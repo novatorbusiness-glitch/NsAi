@@ -15,7 +15,7 @@ export default function Doc() {
 						<dl>{d.meta.map((m) => <div key={m.b}><dt>{m.b}</dt><dd>{m.t}</dd></div>)}</dl>
 					</header>
 	
-					<div className="rz-part"><h3><span>01</span>{d.short.h}</h3><div className="rz-short"><p>{d.short.t}</p><p>{d.short.t2}</p></div></div>
+					<div className="rz-part"><h3><span>01</span>{d.short.h}</h3><div className="rz-short"><p>{d.short.t}</p><p>{d.short.t2}</p><p>{d.short.t3}</p></div></div>
 	
 					<div className="rz-part"><h3><span>02</span>{d.funnel.h}</h3><Funnel /><p className="rz-note">{d.funnel.note}</p></div>
 	

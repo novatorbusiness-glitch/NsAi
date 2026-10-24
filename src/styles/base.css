@@ -1126,3 +1126,6 @@ main .cta-row > *,main .cmodal-btns > *{margin-top:0}
 .rz-facts > div{display:block!important}
 .rz-facts span{display:block!important;margin-top:6px}
 .rz-pcard .btn{margin-top:0}
+.author .tga{margin-left:14px} /* канал рядом с «Кто я»: статьи и главы книги */
+.chline{margin:14px 0 0;font-size:15px;color:var(--ink2)}
+.chline a{font-weight:600}
