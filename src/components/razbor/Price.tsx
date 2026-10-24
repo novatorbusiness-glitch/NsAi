@@ -13,7 +13,7 @@ export default function Price() {
 					<p className="lbl">{c.name}</p>
 					<p className="rz-pbig">{c.price}<small>{c.term}</small></p>
 					<ul>{c.points.map((t) => <li key={t}>{t}</li>)}</ul>
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start" data-variant="audit">{c.button}</a>
+					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start_audit">{c.button}</a>
 				</div>
 				<div className="rz-fork">
 					<p className="lbl">{c.forkLabel}</p>
