@@ -7,8 +7,9 @@ import { common } from "@content/pages/common";
 import { goal } from "@/lib/analytics";
 import { goals } from "@/config/goals";
 import SectionHead from "@/components/ui/SectionHead";
+import ChannelLine from "@/components/ui/ChannelLine";
 
-// Разбор задачи (главная и «Как работаю в команде»): вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX.
+// Разбор задачи (финал главной, «Как работаю», кейсов и примеров): вопрос «где вы сейчас?» (выбор копируется для первого сообщения и уходит целью pick_step), Telegram и MAX, ниже подписка на канал.
 export default function Contact({ num }: { num?: string }) {
 	const c = home.contact;
 	const [pick, setPick] = useState<number | null>(null);
@@ -30,6 +31,7 @@ export default function Contact({ num }: { num?: string }) {
 						{pick !== null && <p className="cap" role="status">{c.copied}</p>}
 						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 						<p className="cap">{c.under}</p>
+						<ChannelLine />
 						<ContactNote />
 					</div>
 				</div>

@@ -1,8 +1,9 @@
 import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
+import ChannelLine from "@/components/ui/ChannelLine";
 
-// 04 · опыт: три цифры агентства с оговоркой, два отзыва, коротко кто я. id «trust» — цель «дочитал до кейсов».
+// 04 · опыт: три цифры агентства с оговоркой, два отзыва, коротко кто я, карточка книги и канал. id «trust» — цель «дочитал до кейсов».
 export default function Trust() {
 	const c = home.trust;
 	return (
@@ -19,6 +20,15 @@ export default function Trust() {
 					<img src={c.photo.src} alt={c.photo.alt} width={88} height={88} loading="lazy" />
 					<p><Rich t={c.about} /></p>
 					<a className="btn s" href="/keisy">{c.all}</a>
+				</div>
+				<div className="bookcard">
+					<img src={c.book.cover} alt={c.book.alt} width={120} height={180} loading="lazy" />
+					<div>
+						<p className="lbl">{c.book.label}</p>
+						<h3>{c.book.title}</h3>
+						<p>{c.book.text}</p>
+						<div className="cta-row"><a className="btn s" href="/book">{c.book.read}</a><ChannelLine short /></div>
+					</div>
 				</div>
 			</div>
 		</section>

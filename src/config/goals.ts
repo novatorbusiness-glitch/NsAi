@@ -10,4 +10,5 @@ export const goals = {
 	ctaSreda: "cta_start_sreda", // «Записаться на консультацию» на /svoya-ai-sreda
 	demoOpen: "demo_open", // открыл демо кабинета (прототип) на примере чертежа
 	mapBlock: "map_block", // открыл карточку блока на карте чертежа
+	channel: "channel", // перешёл в канал (24.10): второй путь для тех, кто пока не готов писать
 } as const;

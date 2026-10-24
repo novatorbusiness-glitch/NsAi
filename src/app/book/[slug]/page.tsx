@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { book } from "@content/pages/book";
 import { common } from "@content/pages/common";
+import { goals } from "@/config/goals";
 import { chapters, getChapter, label, seoTitle, describe, readMins } from "@/lib/book";
 import { redirects } from "@/config/redirects";
 import { pageMeta, crumbs, redirectMeta } from "@/lib/seo";
@@ -48,7 +49,7 @@ export default function ChapterPage({ params }: { params: { slug: string } }) {
 				<Chapter slug={c.slug} body={body} title={c.title} tocLabel={t.toc}>
 					<Pager prev={prev} next={next} />
 					<p className="pall"><Link href="/book#toc">{t.all} →</Link></p>
-					<div className="author"><img src="/images/site/ilya-main.jpg" alt={site.name} width={72} height={72} /><div><b>{site.name}</b><p>{t.author}</p><Link href="/">{t.about}</Link></div></div>
+					<div className="author"><img src="/images/site/ilya-main.jpg" alt={site.name} width={72} height={72} /><div><b>{site.name}</b><p>{t.author}</p><Link href="/">{t.about}</Link> <a className="tga" href={site.contacts.channel} target="_blank" rel="noopener" data-goal={goals.channel}>{common.ui.channelLink}</a></div></div>
 				</Chapter>
 			</div>
 			<JsonLd data={[crumbs([{ name: book.hero.crumb, path: "/book" }, { name: label(c), path: `/book/${c.slug}` }])]} />

@@ -6,7 +6,7 @@ import MapCanvas from "@/components/primer/MapCanvas";
 export default function ProjectMap() {
 	const m = primer.map;
 	return (
-		<section id="map">
+		<section id="map" className="alt">
 			<div className="wrap">
 				<SectionHead num={m.num} label={m.label} title={m.h2} lead={m.lead} />
 				<MapCanvas />
