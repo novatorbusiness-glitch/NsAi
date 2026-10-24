@@ -31,13 +31,14 @@ export default function Team() {
 								<ul className="dep-agents">{d.agents.map((a) => <li key={a.n}><b>{a.n}</b><span>{a.t}</span></li>)}</ul>
 								<p className="lbl">{l.me}</p>
 								<p className="dep-me">{d.me}</p>
-								{d.mine && <div className="dep-mine"><p className="lbl">{l.mine}</p><p>{d.mine}</p><small>{l.mineNote}</small></div>}
+								{d.mine && <div className="dep-mine"><p className="lbl">{l.mine}</p><p>{d.mine}</p></div>}
 								<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" data-goal="cta_start" data-variant={`dep-${i + 1}`}>{l.cta} →</a>
 							</div>
 						</details>
 					))}
 				</div>
 				<p className="team-own">{c.own}</p>
+				<p className="cap">{l.mineNote}.</p>
 			</div>
 		</section>
 	);
