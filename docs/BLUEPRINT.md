@@ -75,12 +75,12 @@ ilya-novitsky.ru/
     │   ├── sitemap.ts        ✓ собирает адреса сам: страницы, статьи, главы
     │   └── robots.ts         ✓ без устаревшей строки Host
     ├── components/
-    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка «01 / …» + заголовок + подзаголовок), Fable (цитата Крылова), Partners, BrandMark (знак «N с лепестком»), ContactNote (строка про политику и оферту под кнопками), Offer (цена, срок и «что входит» в примерах: состав с «Как мы работаем», цены из config/prices)   Button, Card… ◐
+    │   ├── ui/               ✓ Rich (разметка текстов), JsonLd, SectionHead (метка + заголовок + подзаголовок, номера блоков не показываем), Partners, BrandMark (знак «N с лепестком»), ContactNote (строка про политику и оферту под кнопками), ChannelLine (канал вторым путём под кнопками заявки)   Button, Card… ◐
     │   ├── layout/           ✓ Header (на телефоне прячется при прокрутке), Footer (колонки, партнёры), CookieBanner, ContactChooser (окно Telegram / MAX), Goals, LegalPage, Redirect (передаёт UTM и якорь)
-    │   ├── home/             ✓ по файлу на блок v9: Hero (схема AI-среды + полоса фактов), Team (отделы раскрываются), Save, Work, Trust, Extra (доп-услуги во всплывающем окне), Faq, Contact (вопрос «где вы сейчас?» → pick_step); StepPicker — подбор шага в статьях блога; EnvScheme — схема AI-среды, общая с «Как работаю в команде»; Proof — цифры из работы
+    │   ├── home/             ✓ по файлу на блок v9: Hero (схема AI-среды + полоса фактов), Team (отделы раскрываются), Save, Work, Trust, Extra (доп-услуги во всплывающем окне), Faq, Contact (вопрос «где вы сейчас?» → pick_step, свой заголовок на каждой странице, канал), Trust (опыт, отзывы, карточка книги с Литрес); EnvScheme — схема AI-среды, общая с «Как работаю в команде»; Proof — цифры из работы
     │   ├── cases/            ✓ Hero (веер экранов), Path, Cases, Products, Bridge, Quotes; разбор задачи — home/Contact
-    │   ├── razbor/           ✓ по файлу на блок примера аудита: Hero, Doc, Vs, You, Start; Funnel (путь клиента полосами), RazborPreview
-    │   ├── primer/           ✓ по файлу на блок примера чертежа: Hero, Why, ProjectMap, Read, Demo, Vedenie, You, Start; MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview + MapMini (превью карты), DemoFrame (демо по кнопке)
+    │   ├── razbor/           ✓ по файлу на блок примера аудита: Hero (итог в рублях), How, Doc, Gets, Price (цена и развилка); Funnel (путь клиента полосами)
+    │   ├── primer/           ✓ по файлу на блок примера чертежа: Hero, Why, Parts (семь частей раскрываются), ProjectMap, Demo, How, Price (цена и развилка); MapCanvas (холст карты: двигать, приближать, карточка блока, список под кнопкой), MapPreview → MapMini (мини-карта), DemoFrame (демо по кнопке, на компьютере веб-версия)
     │   ├── sreda/            ✓ Hero (схема: среда и руководители), Team (цепочки задач), Stacks, Gets, Tasks, Prices, Faq, Start
     │   ├── process/          ✓ Hero (+ схема среды), Scope (участки), Rhythm, Terms (id vedenie), Services (якоря sreda, test-drive, chertezh, razrabotka)
     │   ├── blog/             ✓ ArticleBody, ArticleCard, TagFilter (темы над списком)
@@ -89,7 +89,7 @@ ilya-novitsky.ru/
     ├── config/
     │   ├── site.ts           ✓ имя, меню, контакты, реквизиты
     │   ├── prices.ts         ✓ цены и сроки — одна строка меняет цену на всём сайте
-    │   ├── goals.ts          ✓ цели Метрики: 10 событий в коде (telegram, max, cta_start и cta_start_*, pick_step, home_read_cases, demo_open, map_block) + 5 целей «посещение страниц» в самой Метрике; список — «02 Сайт/Сайт — база знаний/Цели Метрики — 22.10.md»
+    │   ├── goals.ts          ✓ цели Метрики (24.10): 13 событий в коде (telegram, max, cta_start и cta_start_team/audit/blueprint/sreda, pick_step, channel, book_litres, home_read_cases, demo_open, map_block) + 6 целей «посещение страниц» в самой Метрике, условие везде «содержит»; список — «02 Сайт/Сайт — база знаний/Цели Метрики — 22.10.md»
     │   ├── redirects.ts      ✓ старый адрес → новый
     │   └── blog.ts           ✓ порядок статей, темы, даты
     ├── lib/
