@@ -13,7 +13,7 @@ export default function Terms() {
 					<div className="tprice">
 						<p className="wp-big">{c.price} <small>{c.unit}</small></p>
 						<ul>{c.items.map((t) => <li key={t}>{t}</li>)}</ul>
-						<a className="btn p" href="#contact" data-goal="cta_start_vedenie">{process.hero.primary}</a>
+						<a className="btn p" href="#contact" data-goal="cta_start_team">{process.hero.primary}</a>
 					</div>
 					<div className="tnot">
 						<p className="lbl">{c.notLabel}</p>

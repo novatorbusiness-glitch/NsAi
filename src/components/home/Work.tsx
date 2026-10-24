@@ -14,7 +14,7 @@ export default function Work() {
 						<p className="wp-big">{c.price} <small>{c.unit}</small></p>
 						<p className="wp-t">{c.terms}</p>
 						<p className="wp-one">{c.one}</p>
-						<a className="btn p" href="#contact" data-goal="cta_start_vedenie">{home.hero.primary}</a>
+						<a className="btn p" href="#contact" data-goal="cta_start_team">{home.hero.primary}</a>
 					</div>
 				</div>
 			</div>
