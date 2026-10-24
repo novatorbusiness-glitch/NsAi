@@ -2,7 +2,7 @@
 .bookgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;align-items:center}
 .bookcover{width:100%;height:auto;max-width:280px;justify-self:end;border-radius:10px;box-shadow:0 24px 48px rgba(0,0,0,.18)}
 @media(max-width:900px){.bookgrid{grid-template-columns:1fr;gap:28px}}
-@media(max-width:900px){.bookcover{max-width:160px;justify-self:start}}
+@media(max-width:900px){.bookcover{max-width:240px;justify-self:center}}
 .bk-meta{margin:0;font:500 13px/1.4 var(--m);color:var(--mut)}
 .bk-text{font-size:18.5px;line-height:1.75}
 .bk-text h2.bk-part{font-size:clamp(22px,2.6vw,26px);color:var(--acc);margin-top:8px}
