@@ -53,14 +53,13 @@ function inline(s: string) {
 	return s.replace(/(\d) (₽|млн|тыс)/g, "$1 $2");
 }
 
-// Markdown статьи → HTML. Отметка [[pick]] — место для подбора шага, [[viz:имя]] — схема из lib/blog-viz.ts.
+// Markdown статьи → HTML. Отметка [[viz:имя]] — схема из lib/blog-viz.ts.
 export function render(body: string) {
-	const out: (string | { pick: true })[] = [];
+	const out: string[] = [];
 	const toc: { id: string; title: string }[] = [];
 	for (const blk of body.split(/\n\s*\n/)) {
 		const b = blk.trim();
 		if (!b) continue;
-		if (b === "[[pick]]") { out.push({ pick: true }); continue; }
 		const viz = b.match(/^\[\[viz:(\w+)\]\]$/);
 		if (viz && blogViz[viz[1]]) { out.push(blogViz[viz[1]]()); continue; }
 		if (b.startsWith("## ")) { const t = b.slice(3).trim(); const id = `s${toc.length + 1}`; toc.push({ id, title: t }); out.push(`<h2 id="${id}">${inline(t)}</h2>`); continue; }

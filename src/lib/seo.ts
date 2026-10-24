@@ -85,7 +85,7 @@ export function articleLd(a: { slug: string; h1: string; description: string; up
 }
 
 export function bookLd(name: string, description: string, chapters: number) {
-	return { "@context": "https://schema.org", "@type": "Book", name, description, author: person, inLanguage: "ru", isAccessibleForFree: true, numberOfPages: chapters, url: `${site.url}/book`, image: `${site.url}/images/site/book-cover.jpg` };
+	return { "@context": "https://schema.org", "@type": "Book", name, description, author: person, inLanguage: "ru", isAccessibleForFree: true, numberOfPages: chapters, url: `${site.url}/book`, sameAs: [site.litres], image: `${site.url}/images/site/book-cover.jpg` };
 }
 
 export function casesLd(items: { slug: string; title: string; text: string }[]) {

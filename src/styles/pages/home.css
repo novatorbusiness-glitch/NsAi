@@ -109,5 +109,6 @@
 .bookcard h3{margin:0 0 8px;font-size:20px}
 .bookcard p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
 .bookcard .cta-row{margin-top:28px}
-.bookcard .chline{margin:0}
+.bookcard .chline{margin:14px 0 0}
+.bbadge{display:inline-block;margin-left:8px;padding:4px 9px;border-radius:999px;background:#fdf1e3;color:#a3570b;font:600 11px/1 var(--m);letter-spacing:.06em;vertical-align:1px}
 @media(min-width:900px){.bookcard{grid-template-columns:110px 1fr;padding:24px 28px}.bookcard img{width:110px}}
