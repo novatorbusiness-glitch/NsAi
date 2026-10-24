@@ -15,6 +15,8 @@ export const site = {
 		channelHandle: "@lowcortisol_ai",
 		email: "ilya.novitskii@yandex.ru",
 	},
+	// Книга на Литрес (вышла 24.10): ссылка на карточке книги на главной, на /book и в разметке Book.
+	litres: "https://www.litres.ru/book/il-ia-novitskii-34062304/neiro-voronka-kak-stroit-sistemy-prodazh-74459107/",
 	requisites: "Новицкий Илья Сергеевич, самозанятый (НПД), ИНН 550115335168",
 	// Шапка: четыре пункта; меню на телефоне и подвал — все страницы.
 	nav: [

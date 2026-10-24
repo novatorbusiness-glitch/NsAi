@@ -1,3 +1,4 @@
+import { site } from "@/config/site";
 import Rich from "@/components/ui/Rich";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
@@ -24,10 +25,11 @@ export default function Trust() {
 				<div className="bookcard">
 					<img src={c.book.cover} alt={c.book.alt} width={120} height={180} loading="lazy" />
 					<div>
-						<p className="lbl">{c.book.label}</p>
+						<p className="lbl">{c.book.label} <span className="bbadge">{c.book.badge}</span></p>
 						<h3>{c.book.title}</h3>
 						<p>{c.book.text}</p>
-						<div className="cta-row"><a className="btn s" href="/book">{c.book.read}</a><ChannelLine short /></div>
+						<div className="cta-row"><a className="btn s" href="/book">{c.book.read}</a><a className="more-link" href={site.litres} target="_blank" rel="noopener">{c.book.litres}</a></div>
+						<ChannelLine short />
 					</div>
 				</div>
 			</div>
