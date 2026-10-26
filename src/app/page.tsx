@@ -6,6 +6,7 @@ import Save from "@/components/home/Save";
 import Work from "@/components/home/Work";
 import Trust from "@/components/home/Trust";
 import Extra from "@/components/home/Extra";
+import Express from "@/components/home/Express";
 import Faq from "@/components/home/Faq";
 import Contact from "@/components/home/Contact";
 import { home } from "@content/pages/home";
@@ -26,6 +27,7 @@ export default function Page() {
 			<Work />
 			<Trust />
 			<Extra />
+			<Express />
 			<Faq />
 			<Contact />
 			<JsonLd data={[servicesLd(), faqLd(faq)]} />
