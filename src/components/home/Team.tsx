@@ -4,7 +4,7 @@ import SectionHead from "@/components/ui/SectionHead";
 
 const plural = (n: number, [one, few, many]: string[]) => (n % 10 === 1 && n % 100 !== 11 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? few : many);
 
-// 01 · моя среда: как я управляю агентами + 9 отделов карточками. Раскрытие — задачи, агенты, что решаю я, пример из моей работы.
+// 01 · моя среда: круг задачи из 6 шагов, человек — главное звено (решение Ильи 26.10) + 9 отделов карточками. Раскрытие — задачи, агенты, что решаю я, пример из моей работы.
 export default function Team() {
 	const c = home.team;
 	const l = c.labels;
@@ -15,7 +15,9 @@ export default function Team() {
 				<p className="team-note">{c.note}</p>
 				<div className="tflow" aria-label={c.flowLabel}>
 					<p className="lbl">{c.flowLabel}</p>
-					<ol>{c.flow.map((s, i) => <li key={s}><span>{i + 1}</span>{s}</li>)}</ol>
+					<ol className="tcircle">{c.flow.map((s, i) => <li key={s.b}><span>{i + 1}</span><div><em>{s.who}</em><b>{s.b}</b><small>{s.t}</small></div></li>)}</ol>
+					<p className="tloop">↻ {c.loop}</p>
+					<p className="tflow-note">{c.flowNote}</p>
 				</div>
 				<div className="deps">
 					{c.deps.map((d, i) => (
