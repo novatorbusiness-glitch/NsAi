@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Manrope, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
@@ -11,9 +10,7 @@ import { clean } from "@/lib/seo";
 import "../styles/tokens.css";
 import "../styles/base.css";
 
-// Шрифты скачиваются при сборке и отдаются с нашего сайта: без запросов к Google у посетителя.
-const manrope = Manrope({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500", "600", "700"], variable: "--font-mono", display: "swap" });
+// Шрифты лежат у нас (public/fonts, тот же fonts.css, что у книги): сборка не ходит в Google и не падает из-за сети (26.10).
 
 export const metadata: Metadata = {
 	metadataBase: new URL(site.url),
@@ -47,7 +44,11 @@ const JSON_LD = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
-		<html lang="ru" className={`${manrope.variable} ${mono.variable}`}>
+		<html lang="ru">
+			<head>
+				<link rel="preload" href="/fonts/manrope-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+				<link rel="stylesheet" href="/fonts/fonts.css" />
+			</head>
 			<body>
 				<Header />
 				<main>{children}</main>

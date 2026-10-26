@@ -6,5 +6,5 @@
   --acc:#0F6E56; --acc-ink:#ffffff; --acc-soft:#e8f3ef;
   --dark:#111416; --dark2:#1b1f22; --dark-ink:#e9ecea; --dark-mut:#8f979c;
   --r:8px; --max:1120px; --col:680px;
-  --f:var(--font-manrope),'Manrope',-apple-system,system-ui,sans-serif; --m:var(--font-mono),'JetBrains Mono',ui-monospace,monospace;
+  --f:'Manrope',-apple-system,system-ui,sans-serif; --m:'JetBrains Mono',ui-monospace,monospace;
 }
