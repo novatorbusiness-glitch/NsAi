@@ -13,6 +13,8 @@ export const site = {
 		max: "https://max.ru/u/f9LHodD0cOJ7sFFvli4XlmkEOONE_hl47mUJ5CDNggHpSU7D9dpD65nPB3w",
 		channel: "https://t.me/lowcortisol_ai",
 		channelHandle: "@lowcortisol_ai",
+		// Экспресс-разбор за 190 ₽ — бот @NCAi_Agency_bot (ведёт чат «Контент · Боты»), метка start=site — переход с сайта.
+		expressBot: "https://t.me/NCAi_Agency_bot?start=site",
 		email: "ilya.novitskii@yandex.ru",
 	},
 	// Книга на Литрес (вышла 24.10): ссылка на карточке книги на главной, на /book и в разметке Book.
