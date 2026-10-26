@@ -35,7 +35,7 @@
 @media(max-width:719px){.proof{grid-auto-flow:column;grid-auto-columns:82%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -16px;padding-left:16px;padding-right:16px}}
 @media(max-width:719px){.pf{scroll-snap-align:start}}
 @media(min-width:720px){.proof{grid-template-columns:1fr 1fr;gap:16px}}
-@media(min-width:1000px){.proof{grid-template-columns:repeat(4,1fr);gap:18px}}
+@media(min-width:1000px){.proof{grid-template-columns:repeat(3,1fr);gap:18px}}
 @media(min-width:1000px){.pf{padding:24px 22px 20px}}
 @media(min-width:1000px){.pf-n b{font-size:46px}}
 .pf{display:flex;flex-direction:column;background:#fff;border-radius:16px;padding:26px 24px 22px;box-shadow:0 1px 2px rgba(16,24,20,.04),0 14px 34px -18px rgba(16,24,20,.18)}
@@ -168,3 +168,12 @@
 @media(max-width:560px){.xp-scene{height:500px}.xp-stage{transform:rotateX(8deg) rotateY(-8deg)}.xp-phone{left:0;top:10px;width:190px;height:330px}.xp-pdf{right:0;top:160px;width:230px;padding:14px;transform:translateZ(70px) rotateY(-4deg)}@keyframes xpFloat{0%,100%{transform:translateZ(70px) rotateY(-4deg) translateY(0)}50%{transform:translateZ(70px) rotateY(-4deg) translateY(-10px)}}.xp-chip{font-size:13px;padding:8px 11px}.xp-chip.c1{font-size:16px;left:auto;right:4%;top:20px}.xp-chip.c2{left:2%;bottom:30px}.xp-chip.c3{right:-2%;bottom:auto;top:110px}}
 #express{overflow-x:clip}
 @media(max-width:560px){.xp-chip.c1{transform:translateZ(60px);right:6%;top:24px}.xp-chip.c2{transform:translateZ(50px);left:6%;bottom:40px}.xp-chip.c3{transform:translateZ(60px);right:4%;top:118px}}
+/* Круг задачи (26.10): шесть шагов, кто делает — меткой; последний шаг возвращает к первому */
+.tcircle li > div{display:grid;gap:2px}
+.tcircle em{font:600 10.5px/1 var(--m);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--acc)}
+.tcircle b{font-size:15px}
+.tcircle small{font-weight:500;font-size:13.5px;line-height:1.4;color:var(--ink2)}
+.tcircle li{align-items:flex-start}
+@media(min-width:900px){.tflow .tcircle{grid-template-columns:repeat(6,1fr);gap:18px}}
+.tloop{margin:16px 0 0;font:600 13px/1.4 var(--m);color:var(--acc)}
+.tflow-note{margin:8px 0 0;max-width:640px;font-size:15px;line-height:1.5;color:var(--ink2)}
