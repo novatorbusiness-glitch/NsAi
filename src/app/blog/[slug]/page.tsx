@@ -1,6 +1,5 @@
 import ContactNote from "@/components/ui/ContactNote";
-import ChannelLine from "@/components/ui/ChannelLine";
-import ExpressLine from "@/components/ui/ExpressLine";
+import { goals } from "@/config/goals";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -59,10 +58,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 							<div className="acta-act">
 								<div className="cta-row">{c.href.startsWith("/") ? <Link className="btn p" href={c.href}>{c.button}</Link> : <a className="btn p" href={c.href} target="_blank" rel="noopener">{c.button}</a>}<a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 								<p className="under">{c.under}</p>
-								<ExpressLine />
-								<ChannelLine />
 								<ContactNote />
 							</div>
+						</div>
+						<div className="anext">
+							<a className="anx anx-x" href={site.contacts.expressBot} target="_blank" rel="noopener" data-goal={goals.express}><span className="anx-l">{blog.next.express.label}</span><b>{blog.next.express.title}</b><span className="anx-t">{blog.next.express.text}</span><span className="anx-b">{blog.next.express.button} →</span></a>
+							<a className="anx anx-c" href={site.contacts.channel} target="_blank" rel="noopener" data-goal={goals.channel}><span className="anx-l">{blog.next.channel.label}</span><b>{blog.next.channel.title}</b><span className="anx-t">{blog.next.channel.text}</span><span className="anx-b">{blog.next.channel.button} →</span></a>
 						</div>
 						<nav className="pnav" aria-label={t.all}>
 							{prev ? <Link className="pn prev" href={`/blog/${prev.slug}`}><span>← {t.prev}</span><b>{prev.cover}</b></Link> : <span />}
