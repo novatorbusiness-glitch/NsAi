@@ -9,7 +9,7 @@ export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] =
 	{ slug: "kak-sozdat-ii-agenta", tag: "ИИ-агенты", cta: "sreda", updated: "2026-10-29" },
 	{ slug: "skolko-stoit-mvp", tag: "Разработка и MVP", cta: "product", updated: "2026-10-22" },
 	{ slug: "pervye-platyashchie-klienty", tag: "Маркетинг и продажи", cta: "product", updated: "2026-10-22" },
-	{ slug: "podryadchiki-bez-rezultata", tag: "Автоматизация бизнеса", cta: "path", updated: "2026-10-22" },
+	{ slug: "podryadchiki-bez-rezultata", tag: "Автоматизация бизнеса", cta: "path", updated: "2026-10-29" },
 	{ slug: "bol-pokupatelya", tag: "Маркетинг и продажи", cta: "product", updated: "2026-10-22" },
 	{ slug: "cenovoy-yakor", tag: "Маркетинг и продажи", cta: "price", updated: "2026-10-22" },
 	{ slug: "offer-bez-davleniya", tag: "Маркетинг и продажи", cta: "price", updated: "2026-10-22" },
