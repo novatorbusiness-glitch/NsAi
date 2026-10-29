@@ -731,3 +731,14 @@ main .cta-row > *,main .cmodal-btns > *{margin-top:0}
 .author .tga{margin-left:14px} /* канал рядом с «Кто я»: статьи и главы книги */
 .chline{margin:14px 0 0;font-size:15px;color:var(--ink2)}
 .chline a{font-weight:600}
+/* схема v2 (29.10): Илья → шина → отделы → ваш бизнес */
+.env-node.me{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.env-node.me span{margin-top:0}
+.env-bus{position:relative;height:16px;margin:0 18%}
+.env-bus::before{content:"";position:absolute;left:50%;top:0;height:8px;border-left:2px solid #2fb58a}
+.env-bus::after{content:"";position:absolute;left:0;right:0;top:8px;height:8px;border:2px solid #2fb58a;border-bottom:0;border-radius:6px 6px 0 0}
+.env-bus.down::before{top:8px}
+.env-bus.down::after{top:0;border:2px solid #2fb58a;border-top:0;border-radius:0 0 6px 6px}
+.env-deps{margin-top:0}
+.env-node.biz{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:#1b2125;border-color:#2fb58a}
+.env-node.biz span{margin-top:0}
