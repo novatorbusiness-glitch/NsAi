@@ -34,3 +34,4 @@
 .svc2 .lbl{margin:0 0 8px}
 .svc2 ul{margin:0 0 14px;padding-left:18px;font-size:15px;line-height:1.6;color:var(--ink2)}
 .svc2 .btn{font-size:15px;padding:11px 16px}
+.svc2{display:flex;flex-direction:column}.svc2 .cta-row{margin-top:auto;padding-top:22px}

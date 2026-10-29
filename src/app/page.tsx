@@ -5,6 +5,7 @@ import Team from "@/components/home/Team";
 import Proof from "@/components/home/Proof";
 import Save from "@/components/home/Save";
 import Work from "@/components/home/Work";
+import Me from "@/components/home/Me";
 import Trust from "@/components/home/Trust";
 import Extra from "@/components/home/Extra";
 import Express from "@/components/home/Express";
@@ -27,6 +28,7 @@ export default function Page() {
 			<Proof />
 			<Save />
 			<Work />
+			<Me />
 			<Trust />
 			<Extra />
 			<Express />
