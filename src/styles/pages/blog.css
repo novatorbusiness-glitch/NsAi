@@ -116,3 +116,14 @@
 @media(min-width:620px){.bviz-diag .dg-a{display:block}}
 .bviz-diag .dg-b{margin:0!important;font-size:14.5px;color:var(--ink2)}
 .bviz-diag .dg-b b{color:#b5651d;margin-right:6px}
+
+/* Стыки между подрядчиками */
+.bviz-gaps .gp{display:flex;flex-direction:column;align-items:stretch;gap:4px}
+@media(min-width:700px){.bviz-gaps .gp{flex-direction:row;align-items:center}}
+.bviz-gaps .gp-c{flex:1;background:#fff;border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.bviz-gaps .gp-c b{font-size:16px}
+.bviz-gaps .gp-c span{font-size:13px;color:var(--mut)}
+.bviz-gaps .gp-c em{font-style:normal;font-size:13.5px;color:var(--acc);margin-top:4px}
+.bviz-gaps .gp-x{text-align:center;font-size:22px;line-height:1}
+.bviz-gaps .gp-q{margin:14px 0 0!important;text-align:center;font-size:16px}
+.bviz-gaps .gp-q b{color:#b5651d}

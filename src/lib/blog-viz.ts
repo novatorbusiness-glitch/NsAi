@@ -106,4 +106,13 @@ const diag = () => {
 		.join("")}</div><figcaption>Смотрите, на каком этапе уходят люди: это и подскажет, какую ошибку чинить.</figcaption></figure>`;
 };
 
-export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat, loop, diag };
+
+// «Деньги теряются на стыках»: у каждого подрядчика в отчёте всё хорошо, а деньги утекают между ними.
+const gaps = () => {
+	const parts = [["Реклама", "агентство", "клики дешевеют"], ["Сайт", "студия", "грузится быстро"], ["Бот", "фрилансер", "отвечает"], ["Менеджер", "ваша команда", "перезвонил"]];
+	return `<figure class="bviz bviz-gaps"><p class="bviz-l">У каждого в отчёте всё хорошо</p><div class="gp">${parts
+		.map(([b, w, ok], i) => `${i ? `<span class="gp-x" title="стык">💸</span>` : ""}<div class="gp-c"><b>${esc(b)}</b><span>${esc(w)}</span><em>✓ ${esc(ok)}</em></div>`)
+		.join("")}</div><p class="gp-q">А клиент заплатил? <b>Никто не знает</b></p><figcaption>💸 стыки, где заявка переходит из рук в руки и никто не отвечает за сам момент передачи.</figcaption></figure>`;
+};
+
+export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat, loop, diag, gaps };
