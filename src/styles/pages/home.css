@@ -177,3 +177,4 @@
 @media(min-width:900px){.tflow .tcircle{grid-template-columns:repeat(6,1fr);gap:18px}}
 .tloop{margin:16px 0 0;font:600 13px/1.4 var(--m);color:var(--acc)}
 .tflow-note{margin:8px 0 0;max-width:640px;font-size:15px;line-height:1.5;color:var(--ink2)}
+.dep-who{margin:12px 0 0;font-size:13px;line-height:1.45;color:var(--mut)}.dep-who b{font-weight:600;color:var(--ink2)}
