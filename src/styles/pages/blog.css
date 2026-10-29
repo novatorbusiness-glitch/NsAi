@@ -64,3 +64,18 @@
 .bviz-split li{margin:0 0 6px!important;padding:0 0 0 18px!important;position:relative;font-size:15px;line-height:1.45}
 .bviz-split li::before{content:"✓";position:absolute;left:0;top:0;color:var(--acc);font-weight:700;background:none!important;width:auto!important;height:auto!important}
 .bviz-split .hum li::before{content:"●";color:#b5651d;font-size:10px;top:4px}
+
+/* Мем «до / после» */
+.bviz-meme .mm{display:grid;gap:10px}
+@media(min-width:620px){.bviz-meme .mm{grid-template-columns:1fr 1fr}}
+.bviz-meme .mm-p{background:#fff;border-radius:12px;padding:18px;text-align:center}
+.bviz-meme .mm-p.hot{background:var(--dark);color:#fff}
+.bviz-meme .mm-e{font-size:44px;line-height:1;display:block;margin-bottom:8px}
+.bviz-meme .mm-h{font:600 10.5px/1 var(--m)!important;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 8px!important}
+.bviz-meme .hot .mm-h{color:#5fd0a5}
+.bviz-meme .mm-p p:last-child{font-size:19px;font-weight:700;line-height:1.3;margin:0!important}
+/* Воронка с пометками, где поможет ИИ */
+.bviz-funnel .bf-r{margin:0 0 8px}
+.bviz-funnel .bf-bar{background:var(--acc);color:#fff;border-radius:8px;padding:8px 12px;font-size:14.5px;line-height:1.3;min-width:fit-content;white-space:nowrap}
+.bviz-funnel .bf-bar b{font-size:17px;margin-right:8px}
+.bviz-funnel .bf-ai{margin:4px 0 0 4px!important;font-size:13.5px!important;color:#b5651d}

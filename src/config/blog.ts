@@ -3,6 +3,7 @@
 export type Cta = "product" | "path" | "price" | "repeat" | "sreda" | "team";
 
 export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] = [
+	{ slug: "vnedrenie-ii-v-biznes", tag: "Внедрение ИИ", cta: "team", updated: "2026-10-29" },
 	{ slug: "ii-sotrudnik-dlya-biznesa", tag: "ИИ-агенты", cta: "team", updated: "2026-10-29" },
 	{ slug: "kak-sozdat-ii-agenta", tag: "ИИ-агенты", cta: "sreda", updated: "2026-10-29" },
 	{ slug: "skolko-stoit-mvp", tag: "Разработка и MVP", cta: "product", updated: "2026-10-22" },
