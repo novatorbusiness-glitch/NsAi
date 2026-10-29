@@ -95,3 +95,12 @@
 .bviz-chat .ch-m.cl{align-self:flex-end;background:#d9f2e6;border-bottom-right-radius:4px}
 .bviz-chat .ch-m p{margin:0!important;font-size:14.5px!important;line-height:1.4!important;color:var(--ink)!important}
 .bviz-chat .ch-m span{display:block;text-align:right;font-size:11px;color:var(--mut);margin-top:3px}
+
+/* Замкнутый круг после курсов */
+.bviz-loop .lp{list-style:none;margin:0!important;padding:0!important;display:grid;gap:8px;counter-reset:none}
+@media(min-width:700px){.bviz-loop .lp{grid-template-columns:repeat(4,1fr)}}
+.bviz-loop .lp li{margin:0!important;padding:14px 12px!important;background:#fff;border-radius:12px;text-align:center;font-size:14.5px;line-height:1.35;position:relative;display:flex;flex-direction:column;gap:6px;align-items:center}
+.bviz-loop .lp li::before{display:none}
+.bviz-loop .lp-e{font-size:30px;line-height:1}
+@media(min-width:700px){.bviz-loop .lp li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--mut);font-weight:700;z-index:1}}
+.bviz-loop .lp-back{margin:10px 0 0!important;text-align:center;font-weight:700;color:#b5651d}
