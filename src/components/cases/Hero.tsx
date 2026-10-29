@@ -1,7 +1,7 @@
 import { keisy } from "@content/pages/keisy";
 import { common } from "@content/pages/common";
 
-// Первый экран кейсов v2: опыт целиком, две кнопки; справа объёмная сцена: три своих продукта на телефонах с подписью и цифрой, внизу три цифры кейсов (26.10: «сделать круче»).
+// Первый экран кейсов v2: опыт целиком, две кнопки; справа объёмная сцена: три своих продукта на телефонах с подписью и цифрой, без цифр кейсов: они есть ниже (29.10).
 export default function Hero() {
 	const c = keisy.hero;
 	return (
@@ -27,7 +27,6 @@ export default function Hero() {
 								</figure>
 							))}
 						</div>
-						<ul className="kchips">{c.chips.map((x) => <li key={x.num}><b>{x.num}</b><span>{x.text}</span></li>)}</ul>
 					</div>
 				</div>
 			</section>
