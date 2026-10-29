@@ -104,3 +104,15 @@
 .bviz-loop .lp-e{font-size:30px;line-height:1}
 @media(min-width:700px){.bviz-loop .lp li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--mut);font-weight:700;z-index:1}}
 .bviz-loop .lp-back{margin:10px 0 0!important;text-align:center;font-weight:700;color:#b5651d}
+
+/* Диагностика воронки: симптом → ошибка */
+.bviz-diag .dg{display:grid;gap:8px}
+.bviz-diag .dg-r{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:center;background:#fff;border-radius:12px;padding:12px 14px}
+@media(min-width:620px){.bviz-diag .dg-r{grid-template-columns:40px 1fr 24px 1.1fr}}
+.bviz-diag .dg-e{font-size:28px;line-height:1;grid-row:span 2}
+@media(min-width:620px){.bviz-diag .dg-e{grid-row:auto}}
+.bviz-diag .dg-s{margin:0!important;font-weight:600;font-size:15.5px}
+.bviz-diag .dg-a{display:none;color:var(--mut);font-weight:700}
+@media(min-width:620px){.bviz-diag .dg-a{display:block}}
+.bviz-diag .dg-b{margin:0!important;font-size:14.5px;color:var(--ink2)}
+.bviz-diag .dg-b b{color:#b5651d;margin-right:6px}

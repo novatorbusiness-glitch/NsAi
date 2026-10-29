@@ -97,4 +97,13 @@ const loop = () => {
 		.join("")}</ol><p class="lp-back">↺ и снова новый курс</p><figcaption>Выход из круга не в следующем курсе, а в одной задаче, доведённой до конца.</figcaption></figure>`;
 };
 
-export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat, loop };
+
+// «Воронка продаж: три ошибки»: симптом на этапе воронки → какая ошибка.
+const diag = () => {
+	const rows = [["🚪", "Приходят и сразу уходят", "Заголовок", "никто не узнаёт в нём себя"], ["🤷", "Заявки есть, оплат нет", "Предложение", "пытается угодить всем сразу"], ["👀", "Дочитывают и не нажимают", "Кнопка", "нет причины нажать сейчас"]];
+	return `<figure class="bviz bviz-diag"><p class="bviz-l">Диагностика воронки продаж за минуту</p><div class="dg">${rows
+		.map(([e, s, b, t]) => `<div class="dg-r"><span class="dg-e">${e}</span><p class="dg-s">${esc(s)}</p><span class="dg-a">→</span><p class="dg-b"><b>${esc(b)}</b>${esc(t)}</p></div>`)
+		.join("")}</div><figcaption>Смотрите, на каком этапе уходят люди: это и подскажет, какую ошибку чинить.</figcaption></figure>`;
+};
+
+export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat, loop, diag };

@@ -16,7 +16,7 @@ export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] =
 	{ slug: "kursy-po-ai-a-produkta-net", tag: "Внедрение ИИ", cta: "sreda", updated: "2026-10-29" },
 	{ slug: "pochemu-klienty-ne-vozvrashhayutsya", tag: "Маркетинг и продажи", cta: "repeat", updated: "2026-10-22" },
 	{ slug: "doverie-za-7-kasanij", tag: "Маркетинг и продажи", cta: "path", updated: "2026-10-22" },
-	{ slug: "tri-oshibki-voronki", tag: "Маркетинг и продажи", cta: "path", updated: "2026-10-22" },
+	{ slug: "tri-oshibki-voronki", tag: "Маркетинг и продажи", cta: "path", updated: "2026-10-29" },
 ];
 
 export const covers = ["c-emerald", "c-dark", "c-sand", "c-lilac", "c-mint"];
