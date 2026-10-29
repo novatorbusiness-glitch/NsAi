@@ -6,11 +6,8 @@ export default function Me() {
 	const c = home.me;
 	return (
 		<section id="me" className="me-sec">
-			<div className="wrap me-grid">
-				<div className="me-side">
-					<SectionHead label={c.label} title={c.h2} lead={c.lead} />
-					<img className="me-ph" src={c.photo.src} alt={c.photo.alt} width={420} height={420} loading="lazy" />
-				</div>
+			<div className="wrap">
+				<SectionHead label={c.label} title={c.h2} lead={c.lead} />
 				<div>
 					<ol className="me-list">
 						{c.items.map((x, i) => (

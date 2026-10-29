@@ -213,3 +213,5 @@
 .me-list p{margin:6px 0 0;font-size:14.5px;line-height:1.5;color:#c4cbc8}
 .me-list small{display:block;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font:500 11.5px/1.45 var(--m);color:#7fd3b6}
 .me-note{margin:16px 0 0;font:500 12px/1.5 var(--m);color:#8a9196}
+.me-list{margin-top:36px}
+@media(min-width:960px){.me-list{grid-template-columns:repeat(3,1fr);gap:16px}}
