@@ -71,4 +71,21 @@ const funnel = () => {
 		.join("")}<figcaption>Пример аудита сети из трёх студий растяжки, сентябрь. Реклама работала, деньги уходили после обращения.</figcaption></figure>`;
 };
 
-export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel };
+
+// «ИИ в продажах»: скорость ответа из примера аудита студий растяжки (53% против 22%).
+const speed = () => `<figure class="bviz bviz-speed"><p class="bviz-l">Записались на пробное после ответа</p><div class="sp"><div class="sp-c fast"><b>53%</b><span>ответили в течение часа</span></div><div class="sp-vs">vs</div><div class="sp-c slow"><b>22%</b><span>ждали дольше часа</span></div></div><figcaption>Пример аудита сети студий растяжки: реклама и цены одни и те же, разница только в скорости ответа.</figcaption></figure>`;
+
+// «ИИ в продажах»: пример ночного диалога ИИ-агента с клиентом (цена — средний абонемент из примера аудита).
+const chat = () => {
+	const msgs: [boolean, string, string][] = [
+		[false, "23:47", "Здравствуйте! Сколько стоит абонемент и можно ли на пробное в субботу?"],
+		[true, "23:47", "Добрый вечер! Абонемент от 6\u00a0500\u00a0₽. В субботу есть окна на пробное в 11:00 и 13:00. Записать вас?"],
+		[false, "23:49", "Давайте в 11"],
+		[true, "23:49", "Записал на субботу, 11:00. Напомню за день и за 2 часа. Если появятся вопросы, утром ответит администратор."],
+	];
+	return `<figure class="bviz bviz-chat"><p class="bviz-l">Пример: ИИ-агент отвечает, пока офис спит</p><div class="ch">${msgs
+		.map(([ai, tm, t]) => `<div class="ch-m ${ai ? "ai" : "cl"}"><p>${esc(t)}</p><span>${ai ? "ИИ-агент · " : ""}${tm}</span></div>`)
+		.join("")}</div><figcaption>Утром менеджер видит запись и всю переписку в CRM и подтверждает её.</figcaption></figure>`;
+};
+
+export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat };
