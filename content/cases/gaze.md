@@ -4,7 +4,7 @@ title: "GAZE: платформа для мастеров красоты, кот�
 headline: "Новые записи нужны, но в бьюти всё решают повторные визиты"
 tag: "Работает у мастера"
 view: "gaze"
-image: "/images/site/shot-gaze-analytics-phone.png"
+image: "/images/site/shot-gaze-analytics-phone.png?v=2910"
 imageAlt: "GAZE на телефоне: аналитика мастера в рублях"
 imageSize: "800x1159"
 caption: "экран аналитики в демо-режиме"

@@ -114,3 +114,4 @@
 .kph.f2{top:78px}
 .kph.f1,.kph.f3{top:118px}
 @media(max-width:480px){.kfan{height:420px}}
+.kph.f2{left:31%;width:38%}@media(max-width:480px){.kph.f2{left:30%;width:40%}}
