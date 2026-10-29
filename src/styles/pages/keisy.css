@@ -101,3 +101,11 @@
 .kph.f2{top:72px}
 @media(max-width:480px){.kph.f1 .kcap,.kph.f3 .kcap{top:52%}.kph.f1 .kcap{left:40%}.kph.f3 .kcap{left:60%}}
 @media(max-width:480px){.kcap,.kph.f2 .kcap{flex-direction:column;gap:0;align-items:flex-start}.kph.f1 .kcap{top:auto;bottom:-26px;left:6px;translate:0 0}.kph.f3 .kcap{top:auto;bottom:-26px;left:auto;right:6px;translate:0 0}.kph.f1,.kph.f3{top:70px}}
+/* 29.10: без плашек цифр — телефоны крупнее */
+.kfan{height:560px}
+.kstage{inset:0}
+.kph{width:46%}
+.kph.f1{left:-4%;top:110px}
+.kph.f3{right:-4%;top:110px}
+.kph.f2{left:22%;width:56%;top:70px}
+@media(max-width:480px){.kfan{height:470px}.kstage{inset:0}.kph{width:46%}.kph.f2{width:56%;left:22%;top:56px}.kph.f1,.kph.f3{top:90px}}

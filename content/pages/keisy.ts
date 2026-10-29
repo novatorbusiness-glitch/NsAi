@@ -22,11 +22,6 @@ export const keisy = typo({
 			{ cls: "f3", src: "/images/site/shot-nezha-phone.png", alt: "Nezha Quest на телефоне", k: "Nezha Quest", t: "игра для всей семьи" },
 			{ cls: "f2", src: "/images/site/shot-okidelo-phone.png", alt: "Мой AI-сервис на телефоне", k: "Мой AI-сервис", t: "73 экрана до первой строчки кода" },
 		],
-		chips: [
-			{ num: "17 млн ₽", text: "за 8 месяцев в клубе по подписке" },
-			{ num: "3 → 30", text: "филиалов в сети салонов" },
-			{ num: "631", text: "успешная сделка агентства за 3,5 года" },
-		],
 	},
 
 	path: {
