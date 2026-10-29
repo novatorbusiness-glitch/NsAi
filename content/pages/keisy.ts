@@ -20,7 +20,7 @@ export const keisy = typo({
 		fan: [
 			{ cls: "f1", src: "/images/site/shot-gaze-phone.png?v=2910", alt: "GAZE: бот записи клиентов и мини-приложение для мастеров", k: "GAZE", t: "+10 вернувшихся клиенток" },
 			{ cls: "f3", src: "/images/site/shot-nezha-phone.png", alt: "Nezha Quest на телефоне", k: "Nezha Quest", t: "игра для всей семьи" },
-			{ cls: "f2", src: "/images/site/shot-okidelo-phone.png?v=2910", w: 535, alt: "Команда ИИ-агентов в моём ИИ-сервисе", k: "Мой ИИ-сервис", t: "73 экрана до первой строчки кода" },
+			{ cls: "f2", src: "/images/site/shot-okidelo-phone.png?v=2910", w: 535, alt: "Платформа ИИ-агентов: команда агентов в моём ИИ-сервисе", k: "Мой ИИ-сервис", t: "73 экрана до первой строчки кода" },
 		],
 	},
 
