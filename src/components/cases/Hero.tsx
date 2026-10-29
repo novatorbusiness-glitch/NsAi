@@ -22,7 +22,7 @@ export default function Hero() {
 						<div className="kstage">
 							{c.fan.map((f) => (
 								<figure key={f.cls} className={"kph " + f.cls}>
-									<img src={f.src} alt={f.alt} width={800} height={1159} />
+									<img src={f.src} alt={f.alt} width={"w" in f ? f.w : 800} height={1159} />
 									<figcaption className="kcap"><b>{f.k}</b><span>{f.t}</span></figcaption>
 								</figure>
 							))}
