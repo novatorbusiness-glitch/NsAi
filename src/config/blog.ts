@@ -9,7 +9,7 @@ export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] =
 	{ slug: "bol-pokupatelya", tag: "Позиционирование", cta: "product", updated: "2026-10-22" },
 	{ slug: "cenovoy-yakor", tag: "Цена", cta: "price", updated: "2026-10-22" },
 	{ slug: "offer-bez-davleniya", tag: "Оффер", cta: "price", updated: "2026-10-22" },
-	{ slug: "kursy-po-ai-a-produkta-net", tag: "AI своими руками", cta: "product", updated: "2026-10-22" },
+	{ slug: "kursy-po-ai-a-produkta-net", tag: "ИИ своими руками", cta: "product", updated: "2026-10-22" },
 	{ slug: "pochemu-klienty-ne-vozvrashhayutsya", tag: "Повторные продажи", cta: "repeat", updated: "2026-10-22" },
 	{ slug: "doverie-za-7-kasanij", tag: "Путь клиента", cta: "path", updated: "2026-10-22" },
 	{ slug: "tri-oshibki-voronki", tag: "Путь клиента", cta: "path", updated: "2026-10-22" },

@@ -2,7 +2,7 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import { sreda } from "@content/pages/sreda";
 
-// Первый экран v2: своя команда AI-агентов, 90 минут и PDF; справа — пример команды: главный агент и четыре субагента. Факты — полосой под экраном.
+// Первый экран v2: своя команда ИИ-агентов, 90 минут и PDF; справа — пример команды: главный агент и четыре субагента. Факты — полосой под экраном.
 export default function Hero() {
 	const c = sreda.hero;
 	return (

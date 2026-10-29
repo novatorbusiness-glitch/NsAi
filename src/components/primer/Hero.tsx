@@ -2,7 +2,7 @@ import { primer } from "@content/pages/primer";
 import { common } from "@content/pages/common";
 import { MapMini } from "@/components/primer/MapPreview";
 
-// Первый экран: что такое чертёж, две цифры, одна кнопка к примеру; справа кусок карты своего AI-сервиса с плашкой «Пример».
+// Первый экран: что такое чертёж, две цифры, одна кнопка к примеру; справа кусок карты своего ИИ-сервиса с плашкой «Пример».
 export default function Hero() {
 	const h = primer.hero;
 	const c = h.card;

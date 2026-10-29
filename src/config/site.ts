@@ -24,19 +24,19 @@ export const site = {
 	nav: [
 		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
-		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
+		{ href: "/svoya-ai-sreda", label: "Консультация по ИИ" },
 		{ href: "/blog", label: "Блог" },
 	],
 	menu: [
 		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
-		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
+		{ href: "/svoya-ai-sreda", label: "Консультация по ИИ" },
 		{ href: "/blog", label: "Блог" },
 	],
 	footerNav: [
 		{ href: "/kak-my-rabotaem", label: "Как работаю" },
 		{ href: "/keisy", label: "Кейсы" },
-		{ href: "/svoya-ai-sreda", label: "Консультация по AI" },
+		{ href: "/svoya-ai-sreda", label: "Консультация по ИИ" },
 		{ href: "/blog", label: "Блог" },
 		{ href: "/book", label: "Книга" },
 	],

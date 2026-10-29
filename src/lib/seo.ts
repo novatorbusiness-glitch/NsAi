@@ -51,14 +51,14 @@ export function servicesLd() {
 		...(unit ? { priceSpecification: { "@type": "UnitPriceSpecification", price: rub(price), priceCurrency: "RUB", unitText: unit } } : {}),
 	});
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Маркетинг, продажи и автоматизация с AI-средой",
+		"@context": "https://schema.org", "@type": "Service", name: "Внедрение ИИ-агентов и автоматизация бизнеса: маркетинг и продажи",
 		provider: person, areaServed: "RU", url: site.url,
 		hasOfferCatalog: {
 			"@type": "OfferCatalog", name: "Работа в команде и отдельные задачи",
 			itemListElement: [
 				offer("Работа в команде", prices.management.price, "месяц"),
-				offer("Консультация «Своя AI-среда»", prices.consult.price),
-				offer("Аудит и план действий", prices.testDrive.price),
+				offer("Консультация «Своя ИИ-среда»", prices.consult.price),
+				offer("Аудит продаж и план действий", prices.testDrive.price),
 				offer("Чертёж веб-продукта или мини-приложения", prices.blueprint.price),
 				offer("Разработка: сайт, веб-сервис, чат-бот или мини-приложение", prices.dev.price),
 			],
@@ -68,11 +68,11 @@ export function servicesLd() {
 
 export function sredaLd() {
 	return {
-		"@context": "https://schema.org", "@type": "Service", name: "Консультация «Своя AI-среда»: готовая команда AI-агентов и инструкция",
+		"@context": "https://schema.org", "@type": "Service", name: "Консультация «Своя ИИ-среда»: готовая команда ИИ-агентов и инструкция",
 		provider: person, areaServed: "RU", url: `${site.url}/svoya-ai-sreda`,
 		offers: [
 			{ "@type": "Offer", name: "Консультация 90 минут и PDF", priceCurrency: "RUB", price: rub(prices.consult.price) },
-			{ "@type": "Offer", name: "Настройка AI-среды под ключ", priceCurrency: "RUB", price: rub(prices.setup.price) },
+			{ "@type": "Offer", name: "Настройка ИИ-среды под ключ", priceCurrency: "RUB", price: rub(prices.setup.price) },
 		],
 	};
 }
