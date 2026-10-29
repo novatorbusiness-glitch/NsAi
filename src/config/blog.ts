@@ -1,8 +1,9 @@
 // Блог: порядок статей, тема, дата и вид финальной плашки (тексты плашек — content/pages/blog.ts).
 // Новая статья — файл в content/blog + строка здесь.
-export type Cta = "product" | "path" | "price" | "repeat";
+export type Cta = "product" | "path" | "price" | "repeat" | "sreda";
 
 export const posts: { slug: string; tag: string; cta: Cta; updated: string }[] = [
+	{ slug: "kak-sozdat-ii-agenta", tag: "ИИ-агенты", cta: "sreda", updated: "2026-10-29" },
 	{ slug: "skolko-stoit-mvp", tag: "Продукт", cta: "product", updated: "2026-10-22" },
 	{ slug: "pervye-platyashchie-klienty", tag: "Первые клиенты", cta: "product", updated: "2026-10-22" },
 	{ slug: "podryadchiki-bez-rezultata", tag: "Путь клиента", cta: "path", updated: "2026-10-22" },
