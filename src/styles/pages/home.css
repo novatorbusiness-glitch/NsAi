@@ -215,3 +215,10 @@
 .me-note{margin:16px 0 0;font:500 12px/1.5 var(--m);color:#8a9196}
 .me-list{margin-top:36px}
 @media(min-width:960px){.me-list{grid-template-columns:repeat(3,1fr);gap:16px}}
+/* «Какой я в работе»: ровная сетка — номер в фиксированной колонке, заголовок в две строки, источник прижат вниз одной высоты */
+.me-list li{grid-template-columns:40px 1fr;align-items:stretch}
+.me-list li>div{display:flex;flex-direction:column;min-height:100%}
+.me-list p{flex:1}
+.me-list small{margin-top:14px;padding-top:12px}
+@media(min-width:960px){.me-list h3{min-height:2.5em}.me-list small{min-height:calc(1.45em*3 + 12px)}}
+.me-n{padding-top:1px}

@@ -6,7 +6,7 @@ import SectionHead from "@/components/ui/SectionHead";
 export default function Terms() {
 	const c = process.terms;
 	return (
-		<section id="vedenie">
+		<section id="vedenie" className="dark">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="terms">
