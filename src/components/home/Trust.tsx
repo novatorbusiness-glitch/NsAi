@@ -4,15 +4,13 @@ import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
 import ChannelLine from "@/components/ui/ChannelLine";
 
-// 04 · опыт: три цифры агентства с оговоркой, два отзыва, коротко кто я, карточка книги и канал. id «trust» — цель «дочитал до кейсов».
+// 04 · опыт: два отзыва (цифры агентства — только в «Кейсах», 29.10), коротко кто я, карточка книги и канал. id «trust» — цель «дочитал до кейсов».
 export default function Trust() {
 	const c = home.trust;
 	return (
 		<section id="trust" className="alt">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className="facts tnums">{c.nums.map((n) => <div key={n.num}><b>{n.num}</b><span>{n.text}</span></div>)}</div>
-				<p className="cap">{c.note}</p>
 				<div className="quotes2">
 					<p className="lbl">{c.quotesLabel}</p>
 					<div>{c.quotes.map((q) => <figure key={q.who}><blockquote>«{q.text}»</blockquote><figcaption>{q.who}</figcaption></figure>)}</div>
