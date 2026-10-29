@@ -54,4 +54,21 @@ const split = () => {
 	return `<figure class="bviz bviz-split"><p class="bviz-l">ИИ-сотрудник в команде: кто что делает</p><div class="bs">${col("ai", "Отдать ИИ-агентам", ai)}${col("hum", "Оставить людям", hum)}</div><figcaption>Правило простое: если ошибка стоит денег или доверия клиента, последнее слово за человеком.</figcaption></figure>`;
 };
 
-export const blogViz: Record<string, () => string> = { mvp, chain, agent, split };
+// «Внедрение ИИ в бизнес»: мем по цитате из комментариев «делаю ту же ерунду, только быстрее».
+const meme = () => `<figure class="bviz bviz-meme"><div class="mm"><div class="mm-p"><span class="mm-e">🐌</span><p class="mm-h">До внедрения ИИ</p><p>Делаю ерунду</p></div><div class="mm-p hot"><span class="mm-e">🚀</span><p class="mm-h">После внедрения ИИ</p><p>Делаю ту же ерунду, только быстрее</p></div></div><figcaption>Цитата из комментариев предпринимателей. Скорость без цели денег не приносит.</figcaption></figure>`;
+
+// «Внедрение ИИ в бизнес»: путь клиента из примера аудита студий растяжки (content/pages/razbor.ts), где ИИ оправдан.
+const funnel = () => {
+	const rows: [number, string, string][] = [
+		[180, "Обращения", ""],
+		[99, "Ответили в течение часа", "81 ждут ответа больше часа · бот первого ответа"],
+		[70, "Записались на пробное", ""],
+		[45, "Пришли на пробное", "25 не пришли · напоминания за день и за 2 часа"],
+		[18, "Купили абонемент", "продаёт тренер, ИИ здесь не нужен"],
+	];
+	return `<figure class="bviz bviz-funnel"><p class="bviz-l">Где уходят клиенты и где поможет ИИ</p>${rows
+		.map(([n, b, ai]) => `<div class="bf-r"><div class="bf-bar" style="width:${Math.round((n / 180) * 100)}%"><b>${n}</b>${esc(b)}</div>${ai ? `<p class="bf-ai">${esc(ai)}</p>` : ""}</div>`)
+		.join("")}<figcaption>Пример аудита сети из трёх студий растяжки, сентябрь. Реклама работала, деньги уходили после обращения.</figcaption></figure>`;
+};
+
+export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel };
