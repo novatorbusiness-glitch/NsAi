@@ -109,3 +109,8 @@
 .kph.f3{right:-4%;top:110px}
 .kph.f2{left:22%;width:56%;top:70px}
 @media(max-width:480px){.kfan{height:470px}.kstage{inset:0}.kph{width:46%}.kph.f2{width:56%;left:22%;top:56px}.kph.f1,.kph.f3{top:90px}}
+/* 29.10: ровный воздух сверху и снизу */
+.kfan{height:520px}
+.kph.f2{top:78px}
+.kph.f1,.kph.f3{top:118px}
+@media(max-width:480px){.kfan{height:420px}}
