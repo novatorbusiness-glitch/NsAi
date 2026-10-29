@@ -88,4 +88,13 @@ const chat = () => {
 		.join("")}</div><figcaption>Утром менеджер видит запись и всю переписку в CRM и подтверждает её.</figcaption></figure>`;
 };
 
-export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat };
+
+// «Обучение ИИ для бизнеса»: замкнутый круг после курсов (по цитатам из комментариев в статье).
+const loop = () => {
+	const st = [["📚", "Новый курс"], ["✨", "«Сейчас всё соберу»"], ["🐞", "Вечер с ошибкой, которую некому показать"], ["😮‍💨", "«Наверное, я не технарь»"]];
+	return `<figure class="bviz bviz-loop"><p class="bviz-l">Круг, в котором застревают после обучения</p><ol class="lp">${st
+		.map(([e, t]) => `<li><span class="lp-e">${e}</span><span>${esc(t)}</span></li>`)
+		.join("")}</ol><p class="lp-back">↺ и снова новый курс</p><figcaption>Выход из круга не в следующем курсе, а в одной задаче, доведённой до конца.</figcaption></figure>`;
+};
+
+export const blogViz: Record<string, () => string> = { mvp, chain, agent, split, meme, funnel, speed, chat, loop };
