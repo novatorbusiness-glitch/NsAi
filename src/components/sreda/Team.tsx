@@ -5,7 +5,7 @@ import SectionHead from "@/components/ui/SectionHead";
 export default function Team() {
 	const c = sreda.team;
 	return (
-		<section id="team">
+		<section id="team" className="dark">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
 				<div className="tflow" aria-label={c.flowLabel}>

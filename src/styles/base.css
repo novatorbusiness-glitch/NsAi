@@ -746,3 +746,18 @@ main .cta-row > *,main .cmodal-btns > *{margin-top:0}
 section.band,section.dark,.niches-sec,.me-sec{background:radial-gradient(70% 80% at 92% 0%,rgba(127,211,182,.10),transparent 60%),radial-gradient(60% 70% at 0% 100%,rgba(15,110,86,.28),transparent 60%),#111416}
 section.band .snum,section.dark .snum{color:#7fd3b6}
 section.final.dark{background:radial-gradient(70% 80% at 92% 0%,rgba(127,211,182,.10),transparent 60%),radial-gradient(60% 70% at 0% 100%,rgba(15,110,86,.28),transparent 60%),#111416}
+
+/* цифры под первым экраном (29.10): без двойных линий — вертикальные разделители и акцент на цифре */
+.hfacts{border-top:0;padding:8px 0 36px}
+.hfacts .facts{gap:0}
+.hfacts .facts > div{border-top:0;padding:4px 24px;border-left:1px solid var(--line)}
+.hfacts .facts > div:first-child{border-left:0;padding-left:0}
+.hfacts .facts b{color:var(--acc);font-size:22px}
+@media(max-width:560px){.hfacts .facts{gap:10px}.hfacts .facts > div{border-left:0;padding:0}}
+/* тёмные блоки: светлый текст только у своих элементов, белые карточки внутри остаются тёмным текстом */
+section.dark .kpath p{color:#bcc4c0}
+section.dark .tflow li{color:#e9ecea}
+section.dark .tflow small,section.dark .tflow li > div small{color:#aab3b0}
+section.dark .chain{color:var(--ink)}
+section.dark .chain b,section.dark .chain h3{color:var(--ink)}
+section.dark .kpath .ky{color:#7fd3b6}
