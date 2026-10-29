@@ -14,7 +14,7 @@ import Contact from "@/components/home/Contact";
 
 export const metadata: Metadata = pageMeta(primer.meta, "/primer-chertezha", "primer-chertezha");
 
-// Пример чертежа v2 (24.10): что такое чертёж → зачем план → семь частей → карта своего AI-сервиса → макет → как проходит → цена и развилка → разбор задачи.
+// Пример чертежа v2 (24.10): что такое чертёж → зачем план → семь частей → карта своего ИИ-сервиса → макет → как проходит → цена и развилка → разбор задачи.
 export default function Page() {
 	const h = primer.hero;
 	return (

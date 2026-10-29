@@ -2,7 +2,7 @@ import Rich from "@/components/ui/Rich";
 import { keisy } from "@content/pages/keisy";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 01 · путь за 10 лет: четыре этапа линией — от первых продаж до AI-среды.
+// 01 · путь за 10 лет: четыре этапа линией — от первых продаж до ИИ-среды.
 export default function Path() {
 	const c = keisy.path;
 	return (

@@ -7,7 +7,7 @@ import Services from "@/components/process/Services";
 import Contact from "@/components/home/Contact";
 import { process } from "@content/pages/kak-my-rabotaem";
 import JsonLd from "@/components/ui/JsonLd";
-import { pageMeta, crumbs } from "@/lib/seo";
+import { pageMeta, crumbs, servicesLd } from "@/lib/seo";
 import "@/styles/pages/process.css";
 
 export const metadata: Metadata = pageMeta(process.meta, "/kak-my-rabotaem", "kak-my-rabotaem");
@@ -21,7 +21,7 @@ export default function Page() {
 			<Terms />
 			<Services />
 			<Contact h2={process.contactH2} />
-			<JsonLd data={crumbs([{ name: process.hero.crumb, path: "/kak-my-rabotaem" }])} />
+			<JsonLd data={[servicesLd(), crumbs([{ name: process.hero.crumb, path: "/kak-my-rabotaem" }])]} />
 		</>
 	);
 }

@@ -3,7 +3,7 @@ import { allCases } from "@/lib/cases";
 import { keisy } from "@content/pages/keisy";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 03 · разработка и свои продукты: две главные карточки (мой AI-сервис, GAZE), остальные — строкой. Кейсы — content/cases/*.md.
+// 03 · разработка и свои продукты: две главные карточки (мой ИИ-сервис, GAZE), остальные — строкой. Кейсы — content/cases/*.md.
 export default function Products() {
 	const c = keisy.products;
 	const main = allCases().filter((k) => k.order <= 2);

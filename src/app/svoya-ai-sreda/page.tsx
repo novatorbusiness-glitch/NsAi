@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { sreda } from "@content/pages/sreda";
 import JsonLd from "@/components/ui/JsonLd";
-import { pageMeta, crumbs, sredaLd } from "@/lib/seo";
+import { pageMeta, crumbs, sredaLd, faqLd } from "@/lib/seo";
 import "@/styles/pages/sreda.css";
 import Hero from "@/components/sreda/Hero";
 import Team from "@/components/sreda/Team";
@@ -14,8 +14,8 @@ import Start from "@/components/sreda/Start";
 
 export const metadata: Metadata = pageMeta(sreda.meta, "/svoya-ai-sreda", "svoya-ai-sreda");
 
-// Своя AI-среда v2 (23.10): консультация 90 минут и PDF. Команда → связка → что получите → задачи → цены → вопросы → запись.
-// В меню «Консультация по AI». Блоки — components/sreda.
+// Своя ИИ-среда v2 (23.10): консультация 90 минут и PDF. Команда → связка → что получите → задачи → цены → вопросы → запись.
+// В меню «Консультация по ИИ». Блоки — components/sreda.
 export default function Page() {
 	return (
 		<>
@@ -27,7 +27,7 @@ export default function Page() {
 			<Prices />
 			<Faq />
 			<Start />
-			<JsonLd data={[sredaLd(), crumbs([{ name: sreda.hero.crumb, path: "/svoya-ai-sreda" }])]} />
+			<JsonLd data={[sredaLd(), faqLd(sreda.faq.items), crumbs([{ name: sreda.hero.crumb, path: "/svoya-ai-sreda" }])]} />
 		</>
 	);
 }

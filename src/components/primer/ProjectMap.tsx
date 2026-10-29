@@ -2,7 +2,7 @@ import { primer } from "@content/pages/primer";
 import SectionHead from "@/components/ui/SectionHead";
 import MapCanvas from "@/components/primer/MapCanvas";
 
-// 03 Пример целиком: карта своего AI-сервиса в стиле Miro, под ней как читать одной строкой.
+// 03 Пример целиком: карта своего ИИ-сервиса в стиле Miro, под ней как читать одной строкой.
 export default function ProjectMap() {
 	const m = primer.map;
 	return (
