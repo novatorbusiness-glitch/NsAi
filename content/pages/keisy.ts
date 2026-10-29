@@ -18,9 +18,9 @@ export const keisy = typo({
 		secondary: "Смотреть кейсы",
 		fanLabel: "Экраны своих продуктов на телефоне",
 		fan: [
-			{ cls: "f1", src: "/images/site/shot-gaze-phone.png", alt: "GAZE на телефоне" },
-			{ cls: "f3", src: "/images/site/shot-nezha-phone.png", alt: "Nezha Quest на телефоне" },
-			{ cls: "f2", src: "/images/site/shot-okidelo-phone.png", alt: "Мой AI-сервис на телефоне" },
+			{ cls: "f1", src: "/images/site/shot-gaze-phone.png", alt: "GAZE на телефоне", k: "GAZE", t: "+10 вернувшихся клиенток" },
+			{ cls: "f3", src: "/images/site/shot-nezha-phone.png", alt: "Nezha Quest на телефоне", k: "Nezha Quest", t: "игра для всей семьи" },
+			{ cls: "f2", src: "/images/site/shot-okidelo-phone.png", alt: "Мой AI-сервис на телефоне", k: "Мой AI-сервис", t: "73 экрана до первой строчки кода" },
 		],
 		chips: [
 			{ num: "17 млн ₽", text: "за 8 месяцев в клубе по подписке" },
