@@ -127,3 +127,18 @@
 .bviz-gaps .gp-x{text-align:center;font-size:22px;line-height:1}
 .bviz-gaps .gp-q{margin:14px 0 0!important;text-align:center;font-size:16px}
 .bviz-gaps .gp-q b{color:#b5651d}
+
+/* Дырявое ведро */
+.bviz-bucket .bk{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.bviz-bucket .bk-in{margin:0!important;font-size:14.5px;color:var(--acc);font-weight:600}
+.bviz-bucket .bk-b{background:#fff;border-radius:16px;padding:16px 28px;display:flex;flex-direction:column;align-items:center}
+.bviz-bucket .bk-e{font-size:48px;line-height:1}
+.bviz-bucket .bk-b b{font-size:36px;line-height:1.1;margin-top:6px}
+.bviz-bucket .bk-b span:last-child{font-size:13.5px;color:var(--ink2)}
+.bviz-bucket .bk-out{margin:0!important;font-size:15px;color:#b5651d}
+/* Лестница к первым клиентам */
+.bviz-ladder .ld{list-style:none;margin:0!important;padding:0!important;display:flex;flex-direction:column;gap:6px}
+.bviz-ladder .ld li{margin:0 0 0 calc(var(--i)*5%)!important;padding:10px 14px!important;background:#fff;border-radius:10px;font-size:15px;display:flex;gap:10px;align-items:center}
+.bviz-ladder .ld li::before{display:none}
+.bviz-ladder .ld li span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;font:700 13px/26px var(--f);text-align:center}
+.bviz-ladder .ld li:last-child{background:var(--dark);color:#fff}

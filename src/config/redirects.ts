@@ -23,4 +23,9 @@ export const redirects: Record<string, string> = {
 	"/blog/pochemu-ai-agent-ne-chatgpt": "/blog",
 	"/blog/sdelano-i-provereno": "/blog",
 	"/blog/sotrudnik-kotoryy-ne-spit": "/blog",
+	// 30.10: маркетинговая теория ушла из блога в книгу (SEO-план, раздел 8.1)
+	"/blog/bol-pokupatelya": "/book/1-2-nejrokopiraiting",
+	"/blog/cenovoy-yakor": "/book/2-1-produktovaya-matrica",
+	"/blog/offer-bez-davleniya": "/book/1-1-kognitivnye-lovushki",
+	"/blog/doverie-za-7-kasanij": "/book/3-3-cepochki-kasanij",
 };
