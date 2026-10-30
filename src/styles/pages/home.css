@@ -245,3 +245,9 @@
 .team-own b{color:#fff;font-size:16.5px;line-height:1.4}
 .team-own span{color:var(--dark-mut);font-size:13px;line-height:1.45}
 @media(min-width:900px){.team-own{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}.team-own span{max-width:340px;text-align:right}}
+
+/* Какой я в работе · дизайн-проход 30.10: подтверждение тестами без моноширинной простыни — название теста акцентом, вывод обычным текстом */
+.me-list small{display:flex;flex-direction:column;gap:6px;font:400 12.5px/1.4 var(--f);color:#9aa4a0}
+.me-list small span{display:block}
+.me-list small b{display:inline-block;margin-right:6px;padding:2px 7px;border-radius:6px;background:rgba(127,211,182,.12);color:#7fd3b6;font:600 10.5px/1.5 var(--m);letter-spacing:.04em;text-transform:uppercase}
+@media(min-width:960px){.me-list small{min-height:0}}

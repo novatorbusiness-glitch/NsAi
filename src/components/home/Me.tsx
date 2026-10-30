@@ -13,7 +13,7 @@ export default function Me() {
 						{c.items.map((x, i) => (
 							<li key={x.b}>
 								<span className="me-n">{String(i + 1).padStart(2, "0")}</span>
-								<div><h3>{x.b}</h3><p>{x.t}</p><small>{x.src}</small></div>
+								<div><h3>{x.b}</h3><p>{x.t}</p><small>{x.src.split(" · ").map((s) => { const [k, ...v] = s.split(": "); return <span key={k}><b>{k}</b>{v.join(": ")}</span>; })}</small></div>
 							</li>
 						))}
 					</ol>
