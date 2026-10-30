@@ -3,7 +3,8 @@
 
 
 /* 01 · моя среда */
-.team-note{margin:-6px 0 22px;font-weight:600;color:var(--ink)}
+.team-note{margin:-4px 0 28px;max-width:760px;padding:14px 18px;border-radius:12px;background:var(--acc-soft);font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.team-note b{color:var(--ink)}
 .deps{display:grid;gap:10px}
 @media(min-width:800px){.deps{grid-template-columns:1fr 1fr;align-items:start}}
 @media(min-width:1100px){.deps{grid-template-columns:repeat(3,1fr)}}
@@ -222,3 +223,25 @@
 .me-list small{margin-top:14px;padding-top:12px}
 @media(min-width:960px){.me-list h3{min-height:2.5em}.me-list small{min-height:calc(1.45em*3 + 12px)}}
 .me-n{padding-top:1px}
+
+/* 01 · дизайн-проход 30.10: схема задачи панелью, роли цветом, карточки отделов спокойнее, итог блока плашкой */
+#team .tflow{margin:0 0 32px;padding:24px 22px 20px;border-radius:18px;background:var(--bg2)}
+#team .tflow > .lbl{margin:0 0 18px}
+#team .tcircle li{padding-bottom:20px}
+@media(min-width:900px){#team .tcircle li{padding:0}}
+#team .tcircle em{display:inline-block;width:max-content;padding:3px 8px;border-radius:99px;font-size:10px;margin-bottom:4px}
+#team .tcircle li.you em{background:var(--ink);color:#fff}
+#team .tcircle li.me em{background:var(--acc);color:#fff}
+#team .tcircle li.both em{background:#fff;color:var(--acc);box-shadow:inset 0 0 0 1px #cfe3da}
+#team .tcircle li span{background:var(--bg2)}
+#team .tcircle li:last-child span{background:var(--acc)}
+#team .tflow-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:22px;padding-top:16px;border-top:1px solid #dfe5e2}
+#team .tloop{margin:0;padding:6px 12px;border-radius:99px;background:#fff;font-size:12.5px}
+#team .tflow-note{margin:0;font-size:14.5px}
+.dep:hover{border-color:#c9dcd4}
+.dep-h small{display:flex;gap:6px;margin-top:10px}
+.dep-h small i{font-style:normal;padding:4px 8px;border-radius:6px;background:var(--bg2);color:var(--ink2)}
+.team-own{margin:28px 0 0;padding:18px 22px;border-radius:14px;background:var(--dark);display:flex;flex-direction:column;gap:6px;border-left:0}
+.team-own b{color:#fff;font-size:16.5px;line-height:1.4}
+.team-own span{color:var(--dark-mut);font-size:13px;line-height:1.45}
+@media(min-width:900px){.team-own{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}.team-own span{max-width:340px;text-align:right}}
