@@ -12,19 +12,18 @@ export default function Team() {
 		<section id="team" className="team">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<p className="team-note">{c.note}</p>
+				<p className="team-note"><b>{c.note.split(": ")[0]}:</b> {c.note.split(": ").slice(1).join(": ")}</p>
 				<div className="tflow" aria-label={c.flowLabel}>
 					<p className="lbl">{c.flowLabel}</p>
-					<ol className="tcircle">{c.flow.map((s, i) => <li key={s.b}><span>{i + 1}</span><div><em>{s.who}</em><b>{s.b}</b><small>{s.t}</small></div></li>)}</ol>
-					<p className="tloop">↻ {c.loop}</p>
-					<p className="tflow-note">{c.flowNote}</p>
+					<ol className="tcircle">{c.flow.map((s, i) => <li key={s.b} className={s.who === "Вы" ? "you" : s.who === "Я" ? "me" : "both"}><span>{i + 1}</span><div><em>{s.who}</em><b>{s.b}</b><small>{s.t}</small></div></li>)}</ol>
+					<div className="tflow-foot"><p className="tloop">↻ {c.loop}</p><p className="tflow-note">{c.flowNote}</p></div>
 				</div>
 				<div className="deps">
 					{c.deps.map((d, i) => (
 						<details key={d.name} className="dep">
 							<summary>
 								<span className="dep-n">{String(i + 1).padStart(2, "0")}</span>
-								<span className="dep-h"><b>{d.name}</b><span>{d.line}</span><small>{d.agents.length} {plural(d.agents.length, ["агент", "агента", "агентов"])} · {d.skills} {plural(d.skills, ["навык", "навыка", "навыков"])}</small></span>
+								<span className="dep-h"><b>{d.name}</b><span>{d.line}</span><small><i>{d.agents.length} {plural(d.agents.length, ["агент", "агента", "агентов"])}</i><i>{d.skills} {plural(d.skills, ["навык", "навыка", "навыков"])}</i></small></span>
 							</summary>
 							<div className="dep-in">
 								<p className="lbl">{l.tasks}</p>
@@ -40,8 +39,7 @@ export default function Team() {
 						</details>
 					))}
 				</div>
-				<p className="team-own">{c.own}</p>
-				<p className="cap">{l.mineNote}.</p>
+				<div className="team-own"><b>{c.own}</b><span>{l.mineNote}.</span></div>
 			</div>
 		</section>
 	);
