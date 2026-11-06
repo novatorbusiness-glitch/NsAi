@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
+import Metamorph from "@/components/home/Metamorph";
 import Niches from "@/components/home/Niches";
 import Team from "@/components/home/Team";
 import Proof from "@/components/home/Proof";
@@ -23,6 +24,7 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
+			<Metamorph />
 			<Team />
 			<Niches />
 			<Proof />

@@ -412,3 +412,14 @@ section.hero .sub{display:block;font-size:16px;color:#8a9196;margin:0 auto 30px;
 section.hero .btn.p:active,section.hero .btn.p:focus{background:var(--acc);color:#fff}
 @media(max-width:720px){section.hero .lead{font-size:22px}section.hero .sub{font-size:14.5px}}
 @media(max-width:720px){section.hero .hh{gap:12px}section.hero .hb{font-size:13px;padding:9px 14px}}
+
+/* Блок 02 «Сотрудник нового типа»: метаморфоза было → стало. */
+.story{display:grid;gap:22px}
+.srow{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:start}
+.scol p{margin:8px 0 0;font-size:14.5px;line-height:1.5;color:#4b5257}
+.scol .chip{display:inline-block;font:600 11px var(--m);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:5px 12px;background:#0F6E56;color:#fff}
+.scol .chip.dim{background:#c7d2cd;color:#15181a}
+.sarr{font-size:26px;font-weight:800;color:#0F6E56;align-self:center}
+.loutro{margin:6px 0 0;font-size:20px;font-weight:800;letter-spacing:-.01em;color:#0F6E56}
+.sframe{margin:20px auto 0;max-width:640px;text-align:center;font-size:15px;line-height:1.55;color:#8a9196}
+@media(max-width:900px){.srow{grid-template-columns:1fr;gap:10px}.sarr{transform:rotate(90deg);justify-self:center}}
