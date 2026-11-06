@@ -25,10 +25,9 @@ export default function Header() {
 	return (
 		<header className={hide && !open ? "top hide" : "top"}>
 			<div className="wrap">
-				<Link className="brand" href="/">
-					<BrandMark />
-					{site.name}
-				</Link>
+					<Link className="brand" href="/" aria-label={site.name}>
+						<BrandMark />
+					</Link>
 				<nav className="nav">
 					{site.nav.map((i) => (
 						<Link key={i.href} href={i.href}>
@@ -36,15 +35,11 @@ export default function Header() {
 						</Link>
 					))}
 				</nav>
-				<div className="cta-row">
-					<a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener" >
-						<span className="full">{common.ui.headerStart}</span>
-						<span className="short">{common.ui.headerShort}</span>
-					</a>
-					<button className="burger" aria-label={common.ui.menu} aria-expanded={open} onClick={() => setOpen(!open)}>
-						<span></span>
-					</button>
-				</div>
+					<div className="cta-row">
+						<button className="burger" aria-label={common.ui.menu} aria-expanded={open} onClick={() => setOpen(!open)}>
+							<span></span>
+						</button>
+					</div>
 			</div>
 			<div className={open ? "menu open" : "menu"} id="m">
 				{site.menu.map((i) => (

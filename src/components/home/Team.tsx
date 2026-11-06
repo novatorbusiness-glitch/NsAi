@@ -1,6 +1,7 @@
 import { home } from "@content/pages/home";
 import { site } from "@/config/site";
 import SectionHead from "@/components/ui/SectionHead";
+import EnvScheme from "./EnvScheme";
 
 const plural = (n: number, [one, few, many]: string[]) => (n % 10 === 1 && n % 100 !== 11 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? few : many);
 
@@ -12,6 +13,7 @@ export default function Team() {
 		<section id="team" className="team">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
+				<EnvScheme />
 				<p className="team-note"><b>{c.note.split(": ")[0]}:</b> {c.note.split(": ").slice(1).join(": ")}</p>
 				<div className="tflow" aria-label={c.flowLabel}>
 					<p className="lbl">{c.flowLabel}</p>

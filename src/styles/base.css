@@ -761,3 +761,7 @@ section.dark .tflow small,section.dark .tflow li > div small{color:#aab3b0}
 section.dark .chain{color:var(--ink)}
 section.dark .chain b,section.dark .chain h3{color:var(--ink)}
 section.dark .kpath .ky{color:#7fd3b6}
+
+/* Шапка в стиле zcode (06.11): лого без имени, ссылки мельче и не жирные, кнопки заявки нет. */
+.top .nav{font-weight:500;font-size:14px}
+.top .menu a{font-weight:500;font-size:14px}
