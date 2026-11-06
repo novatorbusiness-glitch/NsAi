@@ -64,9 +64,8 @@ function UnloadScene() {
 				<div className="cmsg in2">«И уточните, вы ведёте контент?»</div>
 				<div className="typing" aria-hidden="true"><i /><i /><i /></div>
 				<div className="cans">«Добрый день! Контент ведём: план, посты, рассылки. По смете удобно завтра после 15:00, перед встречей пришлю короткий бриф»</div>
-				<div className="cstamp">агент обучен на вашей базе знаний</div>
-			</div>
-			<p className="scnote">Агент обучен на вашей базе знаний и отвечает клиентам сам</p>
+							</div>
+			<p className="scnote">Агент обучен на вашей базе знаний и отвечает клиентам сам. Черновики не нужны</p>
 		</div>
 	);
 }
