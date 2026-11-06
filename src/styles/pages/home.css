@@ -491,9 +491,6 @@ section{padding:140px 0}
 
 /* Блок 03: линия загрузки и живые сцены (механика z.ai). */
 .titem{position:relative}
-.tprog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:#2fb58a;transform-origin:left;animation:tprog 8s linear forwards}
-.ttabs.paused .tprog{animation-play-state:paused}
-@keyframes tprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .scene{min-height:340px;display:flex;flex-direction:column;justify-content:center}
 .scnote{margin:18px 0 0;font-size:14px;line-height:1.5;color:#0F6E56;font-weight:600}
 .sctimer{display:flex;align-items:baseline;gap:12px;margin-top:24px;padding-top:18px;border-top:1px solid #dfe7e2}
@@ -625,3 +622,4 @@ section{padding:140px 0}
 .rrow em{font:600 11.5px var(--m);white-space:nowrap;font-style:normal}
 .rrow em.ok{color:#7fd3b6}
 .rrow em.run{color:#e0b36a}
+.tprog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:#2fb58a}

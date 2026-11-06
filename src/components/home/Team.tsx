@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
 
@@ -29,7 +29,6 @@ function SpeedScene() {
 						<em className={r.run ? "st run" : "st ok"}>{r.st}</em>
 					</div>
 				))}
-				<div className="wprog"><i /></div>
 			</div>
 			<div className="sctimer"><b>14 дней</b><span>→</span><b className="hi">2 дня</b><small>на тот же набор задач</small></div>
 		</div>
@@ -65,9 +64,9 @@ function UnloadScene() {
 				<div className="cmsg in2">«И уточните, вы ведёте контент?»</div>
 				<div className="typing" aria-hidden="true"><i /><i /><i /></div>
 				<div className="cans">«Добрый день! Контент ведём: план, посты, рассылки. По смете удобно завтра после 15:00, перед встречей пришлю короткий бриф»</div>
-				<div className="cstamp">черновики готовы · вам остаётся отправить</div>
+				<div className="cstamp">агент обучен на вашей базе знаний</div>
 			</div>
-			<p className="scnote">Черновики ответов готовы, вы только отправляете. Решения остаются за вами</p>
+			<p className="scnote">Агент обучен на вашей базе знаний и отвечает клиентам сам</p>
 		</div>
 	);
 }
@@ -88,7 +87,6 @@ function CheckScene() {
 						<em className={r.st === "сдано" ? "ok" : "run"}>{r.st}</em>
 					</div>
 				))}
-				<div className="wprog"><i /></div>
 			</div>
 			<p className="scnote">Пример из моей среды: каждую пятницу такой отчёт уходит владельцу</p>
 		</div>
@@ -100,23 +98,31 @@ const SCENES: Record<string, () => JSX.Element> = { speed: SpeedScene, sync: Syn
 export default function Team() {
 	const c = home.team;
 	const [active, setActive] = useState(0);
-	const [paused, setPaused] = useState(false);
+	const barRef = useRef<HTMLElement | null>(null);
 	useEffect(() => {
-		if (paused) return;
-		const id = setInterval(() => setActive((a) => (a + 1) % TABS.length), 8000);
-		return () => clearInterval(id);
-	}, [paused]);
+		let raf: number | null = null;
+		let start: number | null = null;
+		const step = (t: number) => {
+			if (start === null) start = t;
+			const p = Math.min((t - start) / 8000, 1);
+			if (barRef.current) barRef.current.style.width = (p * 100).toFixed(2) + "%";
+			if (p >= 1) { setActive((a) => (a + 1) % TABS.length); return; }
+			raf = requestAnimationFrame(step);
+		};
+		raf = requestAnimationFrame(step);
+		return () => { if (raf !== null) cancelAnimationFrame(raf); };
+	}, [active]);
 	return (
 		<section id="team" className="team">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className={paused ? "ttabs paused" : "ttabs"} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+				<div className="ttabs">
 					<div className="tlist" role="tablist" aria-label="Как это выглядит в работе">
 						{TABS.map((t, i) => (
 							<button key={t.id} type="button" role="tab" aria-selected={active === i} className={active === i ? "titem on" : "titem"} onClick={() => setActive(i)}>
 								<b>{t.title}</b>
 								{active === i && <span>{t.desc}</span>}
-								{active === i && <i className="tprog" key={String(active)} aria-hidden="true" />}
+								{active === i && <i className="tprog" ref={barRef} aria-hidden="true" />}
 							</button>
 						))}
 					</div>
