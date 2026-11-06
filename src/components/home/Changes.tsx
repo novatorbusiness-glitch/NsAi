@@ -9,6 +9,7 @@ const TABS = [
 	{ id: "traffic", title: "Трафик", desc: "Реклама идёт, а что приносит заявки и что сливает бюджет, не видно. Разбираю рынок и конкурентов до запуска, цифры после → что работает, усиливаем, что пустое, закрываем" },
 	{ id: "sales", title: "Продажи", desc: "Обращения падают в разные окна, и ответ ждёт живой человек → агент отвечает за минуты и закрывает разговор на заявку, каждая сделка видна в CRM" },
 	{ id: "funnel", title: "Автоматизация", desc: "Порядок в бизнесе живёт в головах и в чатах, поэтому передача дела превращается в хаос. Переношу процессы в среду: воронки и документы работают по порядку, по каждой задаче видно статус" },
+	{ id: "analytics", title: "Аналитика", desc: "Цифры смотрят раз в месяц, и то по верхам → дашборд воронки: конверсии по каждому шагу видно каждый день, узкое место найдено раньше, чем потеряны деньги" },
 	{ id: "tools", title: "Инструменты", desc: "Бизнес склеен из чужих сервисов и таблиц, и ни один не подходит под ваши задачи. Собираю свои инструменты: дашборд, статистика, мини-сервисы для команды. Это то, что нельзя купить готовым" },
 ];
 
@@ -85,6 +86,30 @@ function SalesArt() {
 	);
 }
 
+function DashArt() {
+	const steps = [
+		{ t: "Заявки", n: "120", w: 100 },
+		{ t: "Квалифицировано", n: "84", w: 70, c: "70%" },
+		{ t: "КП отправлено", n: "47", w: 39, c: "56%" },
+		{ t: "Сделка", n: "19", w: 16, c: "40%" },
+	];
+	return (
+		<div className="lcard awin">
+			<div className="winbar light"><i /><i /><i /><span>аналитика · воронка продаж</span><em className="wchip">пример</em></div>
+			<div className="funtab">
+				{steps.map((st) => (
+					<div className="fun-row" key={st.t}>
+						<span className="fun-t">{st.t}</span>
+						<span className="fun-bar"><i style={{ width: `${st.w}%` }} /></span>
+						<b className="fun-n">{st.n}</b>
+						<span className="fun-c">{st.c ?? "старт"}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+}
+
 function ToolsArt() {
 	const apps = [
 		{ t: "Упаковка", ico: <g><path d="M12 3 4 7v10l8 4 8-4V7l-8-4z" /><path d="M4 7l8 4 8-4M12 11v10" /></g> },
@@ -113,7 +138,7 @@ function ToolsArt() {
 	);
 }
 
-const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: TrafficArt, sales: SalesArt, funnel: FunnelArt, tools: ToolsArt };
+const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: TrafficArt, sales: SalesArt, funnel: FunnelArt, analytics: DashArt, tools: ToolsArt };
 
 export default function Changes() {
 	const [active, setActive] = useState(0);
@@ -134,7 +159,7 @@ export default function Changes() {
 	return (
 		<section id="changes" className="changes">
 			<div className="wrap">
-				<SectionHead num="04" label="Что меняется" title="Пять мест, где бизнес теряет время и деньги" lead="По каждому направлению: как работает сейчас и как становится со мной. Справа материалы из моей среды" />
+				<SectionHead num="04" label="Что меняется" title="Шесть мест, где бизнес теряет время и деньги" lead="По каждому направлению: как работает сейчас и как становится со мной. Справа материалы из моей среды" />
 				<div className="ttabs">
 					<div className="tlist" role="tablist" aria-label="Что меняется в бизнесе">
 						{TABS.map((t, i) => (
