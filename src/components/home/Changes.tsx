@@ -34,11 +34,10 @@ function TrafficArt() {
 
 function FunnelArt() {
 	const nodes = [
-		{ t: "Форма", s: "заявка с сайта", ico: <rect x="4" y="3" width="16" height="18" rx="3" /> },
-		{ t: "CRM", s: "карточка клиента", ico: <g><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M7 10h6M7 14h10" /></g> },
-		{ t: "Пишем клиенту", s: "в Telegram", ico: <path d="M21 4 3 11l6 2 2 6 4-5 6-10z" /> },
-		{ t: "Агент ведёт диалог", s: "отвечает сам", ico: <g><rect x="4" y="6" width="16" height="12" rx="4" /><path d="M9 11h.01M15 11h.01" /></g> },
-		{ t: "Отчёт", s: "владельцу с цифрами", ico: <g><path d="M5 20V10M12 20V4M19 20v-7" /></g> },
+		{ t: "Виджет на сайте", s: "клиент пишет", ico: <path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z" /> },
+		{ t: "Агент общается", s: "закрывает на заявку", ico: <g><rect x="4" y="6" width="16" height="12" rx="4" /><path d="M9 12h.01M12 12h.01M15 12h.01" /></g> },
+		{ t: "Заявка в CRM", s: "карточка клиента", ico: <g><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M7 10h6M7 14h10" /></g> },
+		{ t: "Отчёт в чат команды", s: "в Telegram", ico: <path d="M21 4 3 11l6 2 2 6 4-5 6-10z" /> },
 	];
 	return (
 		<div className="lcard awin dark-scene">
