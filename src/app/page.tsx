@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import Metamorph from "@/components/home/Metamorph";
 import Niches from "@/components/home/Niches";
+import Changes from "@/components/home/Changes";
+import CtaBanner from "@/components/home/CtaBanner";
 import Team from "@/components/home/Team";
 import Proof from "@/components/home/Proof";
 import Save from "@/components/home/Save";
@@ -26,6 +28,8 @@ export default function Page() {
 			<Hero />
 			<Metamorph />
 			<Team />
+			<CtaBanner />
+			<Changes />
 			<Niches />
 			<Proof />
 			<Save />

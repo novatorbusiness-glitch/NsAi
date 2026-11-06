@@ -623,3 +623,32 @@ section{padding:140px 0}
 .rrow em.ok{color:#7fd3b6}
 .rrow em.run{color:#e0b36a}
 .tprog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:#2fb58a}
+.tprog{height:3px;box-shadow:0 0 12px rgba(47,181,138,.8)}
+
+/* CTA-баннер после блока 03 (как «Pair with ZCode»). */
+.ctab-sec{padding:0 0 140px;background:var(--dark)}
+.ctab{display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;background:linear-gradient(180deg,#131317,#101014);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:26px 30px}
+.ctab .ic{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#123c30,#0F6E56);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -12px rgba(47,181,138,.5)}
+.ctab .ic svg{width:30px;height:34px}
+.ctab h3{margin:0 0 6px;font-size:19px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.ctab p{margin:0;font-size:14px;color:#8a9196;line-height:1.5}
+@media(max-width:900px){.ctab{grid-template-columns:1fr;text-align:center;justify-items:center}.ctab .txt{display:grid;justify-items:center}}
+
+/* Блок 04: светлые артефакты на тёмной секции. */
+.light-scene{background:linear-gradient(160deg,#e9f3ee,#f7faf8)}
+.awin .winbar.light i{background:#c7d2cd}
+.awin .winbar.light span{color:#4b5257}
+.awin .winbar{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.awin .winbar span{margin-left:8px;font:500 11.5px var(--m);color:#8a9196}
+.lgrow{margin-top:16px;background:#0F6E56;color:#fff;border-radius:12px;padding:14px 16px;font-size:14.5px;font-weight:600;opacity:0;animation:sIn .5s ease both}
+.cans2{background:#0F6E56;color:#fff;border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.5;justify-self:end;max-width:85%;opacity:0;animation:sIn .5s ease both}
+.awin .cmsg{color:#4b5257;justify-self:start}
+.lnote{margin:16px 0 0;font-size:14px;font-weight:600;color:#0F6E56}
+
+
+/* Светлые артефакты: тёмный текст вместо белого. */
+.light-scene .rrow{background:#fff;border-color:#dfe7e2}
+.light-scene .rt b{color:#15181a}
+.light-scene .rt span{color:#4b5257}
+.light-scene .rrow em.ok{color:#0F6E56}
+.light-scene .awin .winbar.light i{background:#c7d2cd}
