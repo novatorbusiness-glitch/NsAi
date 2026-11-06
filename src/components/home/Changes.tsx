@@ -76,10 +76,10 @@ function SalesArt() {
 		<div className="lcard awin">
 			<div className="winbar light"><i /><i /><i /><span>переписка · закрытие на заявку</span></div>
 			<div className="schat">
-				<p className="sm in">Можно записаться на завтра к вашему мастеру?</p>
-				<p className="sm out">Добрый день. Есть 14:00 и 16:30, куда удобнее?</p>
-				<p className="sm in">Давайте в 16:30</p>
-				<p className="sm out">Готово: записал на 16:30, адрес и напоминание отправил</p>
+				<p className="sm in">Здравствуйте! Можно записаться на маникюр на этой неделе?</p>
+				<p className="sm out">Добрый день. У Ани свободно завтра 14:00 и 16:30, у Оксаны пятница 11:00. К кому запишем?</p>
+				<p className="sm in">К Ане, в 16:30</p>
+				<p className="sm out">Записал: Аня, завтра 16:30, адрес и напоминание уже отправлены</p>
 				<span className="sbadge">Заявка создана в CRM</span>
 			</div>
 		</div>
