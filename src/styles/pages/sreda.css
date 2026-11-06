@@ -100,3 +100,4 @@
 .sp p:not(.x-price){font-size:15px;line-height:1.55;color:var(--ink2);margin:0 0 20px}
 .sp .btn{margin-top:auto;align-self:flex-start}
 .sp > p:not(.x-price){margin-bottom:28px}
+.steam-b li .ssub{display:block;margin-top:8px;padding-top:7px;border-top:1px dashed #2c3236;font:500 11px/1.3 var(--m);color:#5da88f}

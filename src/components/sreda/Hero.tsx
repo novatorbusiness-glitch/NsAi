@@ -2,7 +2,7 @@ import { site } from "@/config/site";
 import { common } from "@content/pages/common";
 import { sreda } from "@content/pages/sreda";
 
-// Первый экран v2: своя команда ИИ-агентов, 90 минут и PDF; справа — пример команды: главный агент и четыре субагента. Факты — полосой под экраном.
+// Первый экран v3: своя команда ИИ-агентов, 90 минут и PDF; справа — схема: проект → четыре агента → их субагенты. Факты — полосой под экраном.
 export default function Hero() {
 	const c = sreda.hero;
 	return (
@@ -23,7 +23,7 @@ export default function Hero() {
 						<div className="env-bar"><i></i><i></i><i></i><span>{c.team.bar}</span></div>
 						<div className="steam-b">
 							<div className="steam-m"><b>{c.team.main}</b><span>{c.team.mainNote}</span></div>
-							<ul>{c.team.subs.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span></li>)}</ul>
+							<ul>{c.team.subs.map((x) => <li key={x.b}><b>{x.b}</b><span>{x.t}</span><span className="ssub">↳ свои субагенты</span></li>)}</ul>
 						</div>
 						<figcaption>{c.team.cap}</figcaption>
 					</figure>
