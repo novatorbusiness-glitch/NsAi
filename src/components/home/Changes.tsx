@@ -33,11 +33,29 @@ function TrafficArt() {
 }
 
 function FunnelArt() {
+	const nodes = [
+		{ t: "Форма", s: "заявка с сайта", ico: <rect x="4" y="3" width="16" height="18" rx="3" /> },
+		{ t: "CRM", s: "карточка клиента", ico: <g><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M7 10h6M7 14h10" /></g> },
+		{ t: "Пишем клиенту", s: "в Telegram", ico: <path d="M21 4 3 11l6 2 2 6 4-5 6-10z" /> },
+		{ t: "Агент ведёт диалог", s: "отвечает сам", ico: <g><rect x="4" y="6" width="16" height="12" rx="4" /><path d="M9 11h.01M15 11h.01" /></g> },
+		{ t: "Отчёт", s: "владельцу с цифрами", ico: <g><path d="M5 20V10M12 20V4M19 20v-7" /></g> },
+	];
 	return (
-		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>карта проекта · воронка</span></div>
-			<img className="shot" width={1280} height={900} src="/images/site/shot-karta.jpg" alt="Карта проекта AI-сервиса: слои и связи" loading="lazy" />
-			<p className="lnote">Навык проверки запускается перед каждой сдачей: сначала смысл и цифры, потом форма. Так ошибки не доезжают до клиента</p>
+		<div className="lcard awin dark-scene">
+			<div className="winbar light"><i /><i /><i /><span>связка · путь заявки</span></div>
+			<div className="flow" role="img" aria-label="Связка автоматизации: форма, CRM, письмо клиенту, диалог с агентом, отчёт владельцу">
+				{nodes.map((n, i) => (
+					<div key={n.t} style={{ display: "contents" }}>
+						<div className="fnode">
+							<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
+							<b>{n.t}</b>
+							<span>{n.s}</span>
+						</div>
+						{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
+					</div>
+				))}
+			</div>
+			<p className="lnote">Связка из моей среды: заявка проходит путь по порядку, каждый шаг я проверяю</p>
 		</div>
 	);
 }

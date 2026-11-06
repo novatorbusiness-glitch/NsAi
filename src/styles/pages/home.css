@@ -789,3 +789,26 @@ footer a:hover{color:#fff}
 .x-price span{color:#8a9196}
 .x-inc li{color:#a7adb3}
 .x-note{color:#8a9196}
+
+/* Автоматизация: схема связки в стиле n8n (тёмный холст в точку, узлы, импульсы). */
+.lcard.awin.dark-scene{background:#0b0d10;border:1px solid rgba(255,255,255,.08)}
+.dark-scene .winbar.light i{background:#2a3136}
+.dark-scene .winbar.light{color:#8a9196}
+.dark-scene .lnote{color:#a7adb3}
+.flow{display:flex;align-items:flex-start;justify-content:space-between;padding:34px 26px 30px;background:#0b0d10 radial-gradient(circle,rgba(255,255,255,.045) 1px,transparent 1.2px);background-size:22px 22px;border-radius:12px}
+.fnode{display:grid;justify-items:center;gap:9px;width:104px;text-align:center}
+.fnode .fi{width:54px;height:54px;border-radius:14px;background:#131317;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#7fd3b6;box-shadow:0 12px 26px -14px rgba(0,0,0,.8)}
+.fnode .fi svg{width:25px;height:25px}
+.fnode b{font-size:13.5px;font-weight:700;color:#fff;line-height:1.25}
+.fnode > span{font-size:11.5px;color:#8a9196}
+.flink{flex:1;height:2px;background:rgba(255,255,255,.16);position:relative;margin:26px 8px 0;overflow:visible}
+.flink::before{content:"";position:absolute;right:-2px;top:-3px;border:solid rgba(255,255,255,.35);border-width:0 2px 2px 0;transform:rotate(-45deg);width:7px;height:7px}
+.flink::after{content:"";position:absolute;top:-3px;left:0;width:9px;height:8px;border-radius:3px;background:#2fb58a;box-shadow:0 0 12px rgba(47,184,138,.8);animation:fpulse 2.4s ease-in-out infinite;animation-delay:var(--fd)}
+@keyframes fpulse{0%{left:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:calc(100% - 9px);opacity:0}}
+@media (prefers-reduced-motion: reduce){.flink::after{animation:none;opacity:.6;left:40%}}
+@media(max-width:820px){.flow{flex-direction:column;align-items:center;gap:4px;padding:26px 16px}
+.fnode{width:auto}
+.flink{width:2px;height:30px;margin:2px 0;flex:none}
+.flink::after{top:0;left:-3px;width:8px;height:9px;animation-name:fpulseV}
+.flink::before{display:none}}
+@keyframes fpulseV{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% - 9px);opacity:0}}
