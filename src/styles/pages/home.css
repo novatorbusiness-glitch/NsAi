@@ -865,7 +865,7 @@ footer a:hover{color:#fff}
 .os-app:hover{border-color:#bfe0d0;transform:translateY(-2px)}
 .oi{width:42px;height:42px;border-radius:12px;background:#eef5f0;color:#0F6E56;display:flex;align-items:center;justify-content:center}
 .oi svg{width:21px;height:21px}
-.os-app b{font-size:12px;color:#15201b;font-weight:700;text-align:center}
+.os-app b{font-size:11.5px;color:#15201b;font-weight:700;text-align:center;white-space:nowrap}
 
 /* Аналитика: дашборд воронки конверсий (пример). */
 .wchip{margin-left:auto;font:700 10.5px var(--m);letter-spacing:.06em;text-transform:uppercase;color:#8a6d1f;background:#fdf3d7;border-radius:6px;padding:3px 7px}
@@ -902,7 +902,8 @@ footer a:hover{color:#fff}
 /* Блок 4: все артефакты строго одного размера, контент центрируется. */
 #changes .tpanel .lcard.awin{height:540px;display:flex;flex-direction:column}
 #changes .tpanel .lcard.awin > .winbar{flex:none}
-#changes .tpanel .lcard.awin > :not(.winbar){flex:1;display:flex;flex-direction:column;justify-content:center}
-#changes .funtab{flex:1;justify-content:center}
+#changes .tpanel .lcard.awin > :not(.winbar){flex:1;min-height:0;justify-content:center}
+#changes .funtab{display:grid;align-content:center}
+#changes .osgrid,#changes .schat,#changes .vitr{align-content:center}
 @media(max-width:820px){#changes .tpanel .lcard.awin{height:auto}}
 .schat .sbadge{align-self:flex-end;width:max-content;justify-self:auto}
