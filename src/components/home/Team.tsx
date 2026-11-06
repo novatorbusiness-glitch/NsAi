@@ -55,17 +55,33 @@ function SyncScene() {
 	);
 }
 
-function UnloadScene() {
+function OrderScene() {
+	const junk = [
+		{ t: "ответить в 3 чатах", l: 4, tp: 6, r: -8 },
+		{ t: "напомнить себе", l: 52, tp: 2, r: 6 },
+		{ t: "перенести в таблицу", l: 30, tp: 30, r: 4 },
+		{ t: "найти переписку", l: 2, tp: 55, r: 7 },
+		{ t: "внести в CRM", l: 58, tp: 52, r: -6 },
+		{ t: "не забыть позвонить", l: 22, tp: 78, r: -5 },
+		{ t: "свести отчёт руками", l: 60, tp: 80, r: 9 },
+		{ t: "кто это вообще?", l: 66, tp: 28, r: -10 },
+	];
 	return (
 		<div className="scene">
-			<div className="appwin chat">
-				<div className="winbar"><i /><i /><i /><span>telegram · заявки</span></div>
-				<div className="cmsg in1">«Здравствуйте! Когда можем обсудить смету?»</div>
-				<div className="cmsg in2">«И уточните, вы ведёте контент?»</div>
-				<div className="typing" aria-hidden="true"><i /><i /><i /></div>
-				<div className="cans">«Добрый день! Контент ведём: план, посты, рассылки. По смете удобно завтра после 15:00, перед встречей пришлю короткий бриф»</div>
-							</div>
-			<p className="scnote">Заявка пришла, ответ ушёл. Черновики и ожидание не нужны</p>
+			<div className="order2">
+				<div className="o-chaos">
+					<span className="olab">хаос</span>
+					{junk.map((j) => (
+						<i key={j.t} className="ojunk" style={{ left: `${j.l}%`, top: `${j.tp}%`, "--rot": `${j.r}deg` } as React.CSSProperties}>{j.t}</i>
+					))}
+				</div>
+				<div className="o-arr" aria-hidden="true">→</div>
+				<div className="o-order">
+					<span className="olab ok">порядок</span>
+					<div className="o-map"><img src="/images/site/order-map.jpg" width={1740} height={1160} alt="Граф Obsidian: карта процессов и заметок среды" loading="lazy" /></div>
+				</div>
+			</div>
+			<p className="scnote">Карта Obsidian из моей среды: процессы связаны и на месте, ничего не теряется</p>
 		</div>
 	);
 }
@@ -92,7 +108,7 @@ function CheckScene() {
 	);
 }
 
-const SCENES: Record<string, () => JSX.Element> = { speed: SpeedScene, sync: SyncScene, unload: UnloadScene, check: CheckScene };
+const SCENES: Record<string, () => JSX.Element> = { speed: SpeedScene, sync: SyncScene, unload: OrderScene, check: CheckScene };
 
 export default function Team() {
 	const c = home.team;
