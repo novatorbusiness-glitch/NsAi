@@ -858,3 +858,11 @@ footer a:hover{color:#fff}
 .o-map{background:#fff;border-radius:12px;padding:7px;box-shadow:0 18px 40px -18px rgba(0,0,0,.7)}
 .o-map img{display:block;width:100%;height:auto;border-radius:8px}
 @media(max-width:720px){.order2{grid-template-columns:1fr;gap:18px}.o-arr{transform:rotate(90deg)}.o-chaos{height:170px}}
+
+/* Инструменты: своя ОС — ровная сетка разделов, порядок и чистота. */
+.osgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:16px 18px 20px}
+.os-app{display:grid;justify-items:center;gap:8px;padding:15px 4px 12px;border:1px solid #e3eae4;border-radius:13px;background:#f8faf8;transition:border-color .2s,transform .2s}
+.os-app:hover{border-color:#bfe0d0;transform:translateY(-2px)}
+.oi{width:42px;height:42px;border-radius:12px;background:#eef5f0;color:#0F6E56;display:flex;align-items:center;justify-content:center}
+.oi svg{width:21px;height:21px}
+.os-app b{font-size:12px;color:#15201b;font-weight:700;text-align:center}

@@ -86,10 +86,29 @@ function SalesArt() {
 }
 
 function ToolsArt() {
+	const apps = [
+		{ t: "Упаковка", ico: <g><path d="M12 3 4 7v10l8 4 8-4V7l-8-4z" /><path d="M4 7l8 4 8-4M12 11v10" /></g> },
+		{ t: "Трафик", ico: <g><path d="M4 18 10 11l3 3 7-8" /><path d="M15 6h5v5" /></g> },
+		{ t: "Продажи", ico: <g><path d="M4 12c3-6 13-6 16 0" /><circle cx="12" cy="16" r="4" /><path d="M12 14v4" /></g> },
+		{ t: "Автоматизация", ico: <g><circle cx="12" cy="12" r="4" /><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.5 6.5l2 2M15.5 15.5l2 2M17.5 6.5l-2 2M8.5 15.5l-2 2" /></g> },
+		{ t: "Аналитика", ico: <g><path d="M5 20V10M12 20V4M19 20v-7" /></g> },
+		{ t: "Документы", ico: <g><path d="M6 3h9l4 4v14H6V3z" /><path d="M9 12h7M9 16h7" /></g> },
+		{ t: "Финансы", ico: <g><circle cx="12" cy="12" r="8" /><path d="M10 8h2.5a2.5 2.5 0 1 1 0 5H10V8zM10 13v3M14 8l-4 8" /></g> },
+		{ t: "Клиенты", ico: <g><circle cx="9" cy="8" r="3.5" /><path d="M3.5 19c.7-3 3-4.5 5.5-4.5S13.8 16 14.5 19" /><circle cx="17" cy="9" r="2.6" /><path d="M16 14.7c2.4.3 4 1.7 4.5 4.3" /></g> },
+		{ t: "Задачи", ico: <g><path d="M4 7l2 2 3-3M4 15l2 2 3-3M13 8h7M13 16h7" /></g> },
+		{ t: "Отчёты", ico: <g><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 9h8M8 13h8M8 17h5" /></g> },
+	];
 	return (
 		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>статистика бота · дашборд</span></div>
-			<img className="shot" width={640} height={1280} src="/images/gaze/analytics.jpg" alt="Дашборд статистики бота GAZE: визиты, возвраты, динамика" loading="lazy" />
+			<div className="winbar light"><i /><i /><i /><span>своя ОС · ваш бизнес</span></div>
+			<div className="osgrid">
+				{apps.map((a) => (
+					<div className="os-app" key={a.t}>
+						<span className="oi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{a.ico}</svg></span>
+						<b>{a.t}</b>
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }
