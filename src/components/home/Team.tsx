@@ -8,7 +8,7 @@ import SectionHead from "@/components/ui/SectionHead";
 const TABS = [
 	{ id: "speed", title: "Делаю отложенное", desc: "Контент-план, разбор конкурентов, ответы клиентам и сайт делаются фоном. Вы только проверяете итог" },
 	{ id: "sync", title: "Усиливаю то, что есть", desc: "Не начинаю с нуля: связываю ваши системы, докручиваю процессы и воронки" },
-	{ id: "unload", title: "Разгружаю вас", desc: "Агент помнит ваш продукт, клиентов и голос. Посты и письма звучат как вы, а не как шаблон" },
+	{ id: "unload", title: "Снимаю рутину", desc: "Агент помнит ваш продукт, клиентов и голос. Посты и письма звучат как вы, а не как шаблон" },
 	{ id: "check", title: "Отвечаю за результат", desc: "Перед сдачей работа проходит проверку в два прохода: факты, цифры, тон" },
 ];
 
@@ -107,7 +107,7 @@ export default function Team() {
 							<button key={t.id} type="button" role="tab" aria-selected={active === i} className={active === i ? "titem on" : "titem"} onClick={() => setActive(i)}>
 								<b>{t.title}</b>
 								{active === i && <span>{t.desc}</span>}
-								{active === i && <i className="tprog" key={`${t.id}-${paused}`} aria-hidden="true" />}
+								{active === i && <i className="tprog" key={String(active)} aria-hidden="true" />}
 							</button>
 						))}
 					</div>

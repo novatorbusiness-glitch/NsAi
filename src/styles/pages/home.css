@@ -427,7 +427,7 @@ section.hero .btn.p:active,section.hero .btn.p:focus{background:var(--acc);color
 /* Блок 02 по паспорту: центрирование, панель 44×48, сетка было/стрелка/стало. */
 #story{padding:140px 0}
 #story .section-head{text-align:center}
-#story .section-head h2{font-weight:600;font-size:clamp(28px,3.6vw,44px);max-width:900px;margin-left:auto;margin-right:auto}
+#story .section-head h2{font-size:clamp(28px,3.6vw,44px);max-width:900px}
 #story .section-head .lead{font-size:18px;color:rgba(220,220,220,.66);max-width:720px;margin-left:auto;margin-right:auto;margin-bottom:56px}
 .lcard.story{padding:44px 48px;display:grid;gap:32px}
 .srow{grid-template-columns:1fr 40px 1fr;gap:24px}
@@ -562,3 +562,25 @@ section{padding:140px 0}
 .sync-links i{background:rgba(127,211,182,.22);height:2px}
 .sync-links i::after{background:#2fb58a}
 @keyframes hubGlow{0%,100%{box-shadow:0 24px 60px -24px rgba(47,181,138,.55)}50%{box-shadow:0 24px 70px -18px rgba(47,181,138,.8)}}
+
+/* Единый стиль заголовков всех блоков: жирный H2 у всех без исключений. */
+.section-head h2{font-weight:600 !important}
+
+/* Сцены блока 03: тёмная стеклянная панель вместо светлой — премиально на тёмном фоне. */
+.lcard.scene-card{background:linear-gradient(180deg,#0d0f12,#111416);border:1px solid rgba(255,255,255,.09);box-shadow:0 40px 90px -40px rgba(0,0,0,.9)}
+.scene .tlabel{color:#7fd3b6}
+.scene .appwin{background:linear-gradient(180deg,#16191d,#1b1f23);border-color:rgba(255,255,255,.12);box-shadow:0 24px 60px -30px rgba(0,0,0,.9)}
+.scene .winbar i{background:#3a4044}
+.crow{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);color:#fff}
+.crow i{background:#2fb58a}
+.cstamp2{color:#7fd3b6}
+.sctimer{border-top-color:rgba(255,255,255,.1)}
+.sctimer b{color:#8a9196}
+.sctimer b.hi{color:#3bd39f}
+.sctimer small{color:#8a9196}
+.scnote{color:#7fd3b6}
+.sync-node{background:linear-gradient(180deg,#16191d,#1b1f23);border-color:rgba(255,255,255,.12)}
+.sync-node.biz{background:linear-gradient(135deg,#35c795,#0F6E56);border:0}
+.cmsg{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:#c9d1cd}
+.cans{background:rgba(47,181,138,.14)}
+.cstamp{background:transparent;color:#7fd3b6}
