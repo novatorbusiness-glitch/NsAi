@@ -779,16 +779,18 @@ footer .fbrand p{color:#a7adb3}
 footer a{color:#a7adb3}
 footer a:hover{color:#fff}
 
-/* Модалка «Что входит» и все окна главной — тёмные (07.11). */
-.cmodal-box{background:linear-gradient(180deg,#131317,#0f0f13);color:#e9ecea;border:1px solid rgba(255,255,255,.08);box-shadow:0 30px 80px rgba(0,0,0,.55)}
-.cmodal-t{color:#fff}
-.cmodal-lead{color:#a7adb3}
-.cmodal-x{color:#8a9196}
-.cmodal-x:hover{color:#fff}
-.x-price b{color:#fff}
-.x-price span{color:#8a9196}
-.x-inc li{color:#a7adb3}
-.x-note{color:#8a9196}
+/* Модалки главной — фирменные светлые окна (07.11). */
+.cmodal-box{background:#f6f9f6;color:#15201b;border:1px solid #e3eae4;border-radius:20px;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.cmodal-t{color:#15201b}
+.cmodal-lead{color:#4b5257}
+.cmodal-x{color:#6b7276;border-radius:9px;outline:none}
+.cmodal-x:hover{color:#0F6E56;background:#eef5f0}
+.xmodal .lbl{color:#0F6E56}
+.x-price b{color:#0F6E56}
+.x-price span{color:#6b7276}
+.x-inc li{color:#313a36}
+.x-inc li::marker{color:#2fb58a}
+.x-note{color:#6b7276}
 
 /* Автоматизация: схема связки в стиле n8n (тёмный холст в точку, узлы, импульсы). */
 .lcard.awin.dark-scene{background:#0b0d10;border:1px solid rgba(255,255,255,.08)}
