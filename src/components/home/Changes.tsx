@@ -37,10 +37,27 @@ function PackArt() {
 }
 
 function TrafficArt() {
+	const nodes = [
+		{ t: "Разбор конкурентов", s: "действующие компании: цены, офферы", ico: <g><circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5 21 21" /></g> },
+		{ t: "Конверсионные креативы", s: "под сегменты, с оффером", ico: <g><path d="M13 3 5 13h6l-2 8 8-11h-6l2-7z" /></g> },
+		{ t: "SEO + Метрика", s: "одна картина: трафик и поведение", ico: <g><circle cx="8" cy="12" r="4.5" /><circle cx="16" cy="12" r="4.5" /><path d="M12 12h.01" /></g> },
+		{ t: "Рост показателей", s: "что работает, усиливаем", ico: <g><path d="M4 18 10 11l3 3 7-8" /><path d="M15 6h5v5" /></g> },
+	];
 	return (
-		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>разбор заявок · пример</span></div>
-			<img className="shot" width={1280} height={900} src="/images/site/shot-razbor.jpg" alt="Пример разбора заявок: воронка и места потерь с расчётом" loading="lazy" />
+		<div className="lcard awin dark-scene">
+			<div className="winbar light"><i /><i /><i /><span>связка · рост трафика</span></div>
+			<div className="flow" role="img" aria-label="Связка трафика: разбор конкурентов, креативы, SEO с Метрикой, рост показателей">
+				{nodes.map((n, i) => (
+					<div key={n.t} style={{ display: "contents" }}>
+						<div className="fnode">
+							<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
+							<b>{n.t}</b>
+							<span>{n.s}</span>
+						</div>
+						{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }
@@ -55,7 +72,7 @@ function FunnelArt() {
 	return (
 		<div className="lcard awin dark-scene">
 			<div className="winbar light"><i /><i /><i /><span>связка · путь заявки</span></div>
-			<div className="flow" role="img" aria-label="Связка автоматизации: форма, CRM, письмо клиенту, диалог с агентом, отчёт владельцу">
+			<div className="flow" role="img" aria-label="Связка автоматизации: виджет, агент, CRM, отчёт в чат команды">
 				{nodes.map((n, i) => (
 					<div key={n.t} style={{ display: "contents" }}>
 						<div className="fnode">
