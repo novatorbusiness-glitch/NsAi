@@ -471,3 +471,14 @@ section{padding:140px 0}
 .section-head .snum{display:block;text-align:center}
 .section-head h2,.section-head .lead{margin-left:auto;margin-right:auto;text-align:center}
 #story .section-head{max-width:900px}
+
+/* Лента ИИ-среды под первым экраном: плашки брендов и механик, одна профит-строка. */
+.envrow{margin-top:64px}
+.envrow-cap{margin:20px 0 0;font-size:15px;color:#8a9196;text-align:center}
+.envstrip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.ev{display:flex;align-items:center;gap:10px;background:#131317;border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:13px 18px;transition:border-color .2s}
+.ev:hover{border-color:rgba(127,211,182,.4)}
+.ev img{width:20px;height:20px;filter:invert(.85);opacity:.85}
+.ev .ev-g{width:22px;height:22px;border-radius:6px;background:#1d2a26;color:#7fd3b6;font:700 13px/22px var(--m);text-align:center}
+.ev b{font:500 12.5px var(--m);color:#b9c2be;letter-spacing:.01em;white-space:nowrap}
+.ev.txt b{font-size:13px;color:#8a9196}
