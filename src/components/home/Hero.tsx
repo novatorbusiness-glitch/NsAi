@@ -13,9 +13,10 @@ export default function Hero() {
 						<div className="hh">
 							<span className="hb bl" aria-hidden="true">Отдел агентов</span>
 							<h1>{c.h1} <span className="thin">{c.h1Thin}</span></h1>
-							<span className="hb br" aria-hidden="true">Управленец</span>
+							<span className="hb br" aria-hidden="true">под моим управлением</span>
 						</div>
 						<p className="lead">{c.lead}</p>
+						<p className="sub">{c.sub}</p>
 						<div className="cta-row">
 							<a className="btn p" href="#contact" data-goal="cta_start">{c.primary}</a>
 						</div>

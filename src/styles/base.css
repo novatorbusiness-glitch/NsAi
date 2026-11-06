@@ -774,3 +774,5 @@ section.dark .kpath .ky{color:#7fd3b6}
 .top .menu{background:var(--dark);border-bottom-color:rgba(255,255,255,.08)}
 .top .menu a{color:#e9ecea;border-top-color:rgba(255,255,255,.08)}
 .top .burger span{background:#e9ecea}
+.btn.p:active,.btn.p:focus{color:#fff;background:var(--acc)}
+.top{background:rgba(13,13,15,.55);border-bottom:1px solid rgba(255,255,255,.05);backdrop-filter:blur(10px)}
