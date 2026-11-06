@@ -153,6 +153,8 @@ function ToolsArt() {
 		{ t: "Клиенты", ico: <g><circle cx="9" cy="8" r="3.5" /><path d="M3.5 19c.7-3 3-4.5 5.5-4.5S13.8 16 14.5 19" /><circle cx="17" cy="9" r="2.6" /><path d="M16 14.7c2.4.3 4 1.7 4.5 4.3" /></g> },
 		{ t: "Задачи", ico: <g><path d="M4 7l2 2 3-3M4 15l2 2 3-3M13 8h7M13 16h7" /></g> },
 		{ t: "Отчёты", ico: <g><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 9h8M8 13h8M8 17h5" /></g> },
+		{ t: "Рассылки", ico: <g><path d="M21 4 3 11l6 2 2 6 4-5 6-10z" /><path d="M9 13v5l3-3" /></g> },
+		{ t: "База знаний", ico: <g><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" /></g> },
 	];
 	return (
 		<div className="lcard awin">

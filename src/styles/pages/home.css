@@ -908,3 +908,16 @@ section.team .team-own{margin:28px 0 0;padding:18px 22px;border-radius:14px;back
 section.team .team-own b{color:#fff;font-size:16.5px;line-height:1.4}
 section.team .team-own span{color:var(--dark-mut);font-size:13px;line-height:1.45}
 @media(min-width:900px){section.team .team-own{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}section.team .team-own span{max-width:340px;text-align:right}}
+
+/* Правки по скринам Ильи (07.11 ночь). */
+.faq .a{font-size:17px;color:#c9d1cc;line-height:1.55}
+.faq .a b{color:#fff}
+.fnode{height:172px}
+.osgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.os-app b{font-size:12px}
+.funsum{align-items:stretch}
+.fs{align-content:start;height:100%}
+
+/* Восстановлено после чистки (07.11): двухколоночные табы блоков 3-4 и мобильные размеры. */
+@media(min-width:900px){.ttabs{grid-template-columns:1fr 1.4fr;gap:44px;align-items:center}}
+@media(max-width:720px){.titem b{font-size:16px}.titem span{font-size:13px}}
