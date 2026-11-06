@@ -423,3 +423,45 @@ section.hero .btn.p:active,section.hero .btn.p:focus{background:var(--acc);color
 .loutro{margin:6px 0 0;font-size:20px;font-weight:800;letter-spacing:-.01em;color:#0F6E56}
 .sframe{margin:20px auto 0;max-width:640px;text-align:center;font-size:15px;line-height:1.55;color:#8a9196}
 @media(max-width:900px){.srow{grid-template-columns:1fr;gap:10px}.sarr{transform:rotate(90deg);justify-self:center}}
+
+/* Блок 02 по паспорту: центрирование, панель 44×48, сетка было/стрелка/стало. */
+#story{padding:140px 0}
+#story .section-head{text-align:center}
+#story .section-head h2{font-weight:600;font-size:clamp(28px,3.6vw,44px);max-width:900px;margin-left:auto;margin-right:auto}
+#story .section-head .lead{font-size:18px;color:rgba(220,220,220,.66);max-width:720px;margin-left:auto;margin-right:auto;margin-bottom:56px}
+.lcard.story{padding:44px 48px;display:grid;gap:32px}
+.srow{grid-template-columns:1fr 40px 1fr;gap:24px}
+.srow .chip{margin:0}
+.scol .swas{color:#4b5257}
+.scol .snow{font-weight:600;color:#15181a}
+.sarr{font-size:26px;color:#0F6E56;align-self:center;justify-self:center}
+.loutro{margin:32px 0 0;font-size:20px;font-weight:700;color:#0F6E56}
+.sframe{margin:24px auto 0;max-width:640px;text-align:center;font-size:15px;line-height:1.55;color:#8a9196}
+@media(max-width:900px){#story{padding:80px 0}.lcard.story{padding:24px 20px;gap:22px}.srow{grid-template-columns:1fr;gap:10px}.sarr{transform:rotate(90deg)}#story .section-head h2{font-size:28px}#story .section-head .lead{font-size:15px}.loutro{font-size:17px}}
+
+/* Блок 02 по паспорту: центрированная шапка, панель было→стало, z.ai-заголовки (жирный + тонкий). */
+section{padding:140px 0}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head h2{font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.15}
+.section-head h2 b{font-weight:700}
+.section-head .lead{font-size:18px;max-width:720px;margin:18px auto 0;color:rgba(220,220,220,.66)}
+.metamorph .lcard{padding:44px 48px}
+.story{display:grid;gap:32px}
+.srow{display:grid;grid-template-columns:1fr 40px 1fr;gap:24px;align-items:start}
+.scol p{margin:10px 0 0;font-size:15px;line-height:1.55}
+.scol p{color:#15181a;font-weight:600}
+.scol:first-child p{color:#4b5257;font-weight:400}
+.sarr{font-size:26px;font-weight:800;color:#0F6E56;align-self:center;justify-self:center}
+.loutro{margin:10px 0 0;font-size:20px;font-weight:700;color:#0F6E56}
+.metamorph .sframe{margin:24px auto 0;max-width:640px;text-align:center;font-size:15px;line-height:1.55;color:#8a9196}
+@media(max-width:900px){.srow{grid-template-columns:1fr;gap:12px}.sarr{transform:rotate(90deg)}.metamorph .lcard{padding:28px 22px}}
+.swas{color:#4b5257;font-weight:400}
+.snow{color:#15181a;font-weight:600}
+
+/* Центрирование шапки блока 02 — принудительно, все элементы. */
+.metamorph .section-head{text-align:center}
+.metamorph .section-head .snum,.metamorph .section-head h2{display:block;text-align:center}
+
+/* Центрирование шапки блока 02 — принудительно. */
+.metamorph .section-head{text-align:center}
+.metamorph .section-head .snum,.metamorph .section-head h2{display:block;text-align:center}
