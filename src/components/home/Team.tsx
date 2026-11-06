@@ -45,7 +45,7 @@ function SyncScene() {
 					{src.map((s) => <div key={s} className="sync-node">{s}</div>)}
 				</div>
 				<div className="lines3" aria-hidden="true">
-					{src.map((s, i) => <div key={s} className="sync-line"><i style={{ animationDelay: `${i * 0.8}s` }} /></div>)}
+					{src.map((s) => <div key={s} className="sync-line"><i /></div>)}
 				</div>
 				<div className="sync-hub">Среда<span>8 отделов · 204 навыка</span></div>
 				<div className="lines1" aria-hidden="true"><div className="sync-line"><i /></div></div>
@@ -83,9 +83,9 @@ function CheckScene() {
 			<div className="appwin">
 				<div className="winbar"><i /><i /><i /><span>отчёт владельцу · пятница</span></div>
 				{rows.map((r, i) => (
-					<div key={r.t} className="wrow" style={{ animationDelay: `${0.3 + i * 0.5}s` }}>
-						<div className="wt"><b>{r.t.split(": ")[0]}</b><span>{r.t.split(": ")[1]}</span></div>
-						<em className={r.st === "сдано" ? "st ok" : "st run"}>{r.st}</em>
+					<div key={r.t} className="rrow" style={{ animationDelay: `${0.3 + i * 0.5}s` }}>
+						<div className="rt"><b>{r.t.split(": ")[0]}</b><span>{r.t.split(": ")[1]}</span></div>
+						<em className={r.st === "сдано" ? "ok" : "run"}>{r.st}</em>
 					</div>
 				))}
 				<div className="wprog"><i /></div>

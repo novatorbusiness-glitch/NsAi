@@ -610,3 +610,18 @@ section{padding:140px 0}
 .sync3 .sync-node.biz{background:linear-gradient(135deg,#35c795,#0F6E56);border:0;color:#fff;padding:24px 18px;border-radius:14px;text-align:center;font-weight:700}
 @media(max-width:900px){.sync3{grid-template-columns:1fr;justify-items:center;row-gap:14px}.lines3{gap:14px}.sync-line{width:2px;height:34px}.sync-line i{left:-3px;top:-34px;width:8px;height:34px;background:linear-gradient(180deg,rgba(47,181,138,0),#2fb58a);animation-name:slideV}.lines1{width:2px;height:34px}.lines1 .sync-line{height:34px}.lines1 .sync-line i{left:-3px;top:-34px;width:8px;height:34px;background:linear-gradient(180deg,rgba(47,181,138,0),#2fb58a)}}
 .wrow em{align-self:start;margin-left:6px}
+
+
+/* Выравнивание линий по узлам: одинаковые строки сетки. */
+.sync3 .scol{grid-template-rows:repeat(3,1fr);gap:0;align-self:stretch}
+.sync3 .sync-node{align-self:center}
+.lines3{grid-template-rows:repeat(3,1fr);gap:0;align-self:stretch}
+.sync3 .sync-line{align-self:center}
+
+/* Строки отчёта владельца: название + статус без наложения. */
+.rrow{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 16px;margin-bottom:10px;animation:sIn .5s ease both}
+.rrow .rt b{display:block;font-size:14.5px;color:#fff}
+.rrow .rt span{display:block;font-size:12.5px;color:#8a9196;margin-top:2px}
+.rrow em{font:600 11.5px var(--m);white-space:nowrap;font-style:normal}
+.rrow em.ok{color:#7fd3b6}
+.rrow em.run{color:#e0b36a}
