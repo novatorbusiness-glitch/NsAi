@@ -883,3 +883,10 @@ footer a:hover{color:#fff}
 .o-chaos,.o-order{display:grid;grid-template-rows:auto 1fr;gap:10px;align-items:start}
 .o-chaos{height:auto;min-height:230px}
 .o-map{margin-top:0}
+
+/* Узлы схемы — одного размера (как тайлы z.ai); чипы хаоса не обрезаются. */
+.fnode{width:112px}
+.fnode b{min-height:2.7em;display:flex;align-items:center;justify-content:center}
+.fnode > span{min-height:2.1em;display:flex;align-items:flex-start;justify-content:center}
+.ojunk{font-size:11px}
+.ojunk{font-size:10.5px;padding:5px 8px}
