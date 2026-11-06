@@ -890,3 +890,11 @@ footer a:hover{color:#fff}
 .fnode > span{min-height:2.1em;display:flex;align-items:flex-start;justify-content:center}
 .ojunk{font-size:11px}
 .ojunk{font-size:10.5px;padding:5px 8px}
+
+/* Аналитика: деньги воронки. */
+.funsum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:0 18px 18px}
+.fs{display:grid;gap:3px;border:1px solid #e3eae4;border-radius:12px;background:#f8faf8;padding:11px 12px}
+.fs span{font-size:11px;line-height:1.3;color:#6b7276}
+.fs b{font-size:14.5px;font-weight:700;color:#15201b}
+.fs.hi{background:#e7f3ec;border-color:#bfe0d0}
+.fs.hi b{color:#0F6E56}

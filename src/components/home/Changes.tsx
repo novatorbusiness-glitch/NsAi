@@ -88,21 +88,35 @@ function SalesArt() {
 
 function DashArt() {
 	const steps = [
-		{ t: "Заявки", n: "120", w: 100 },
+		{ t: "Заявки", n: "120", w: 100, c: "старт" },
 		{ t: "Квалифицировано", n: "84", w: 70, c: "70%" },
-		{ t: "КП отправлено", n: "47", w: 39, c: "56%" },
-		{ t: "Сделка", n: "19", w: 16, c: "40%" },
+		{ t: "КП отправлено", n: "32", w: 27, c: "38%" },
+		{ t: "Сделка", n: "7", w: 6, c: "22%" },
+	];
+	const sum = [
+		{ s: "Средний чек", v: "130 000 ₽" },
+		{ s: "Маркетинг · 1 500 ₽ за заявку", v: "180 000 ₽" },
+		{ s: "Деньги в кассе", v: "910 000 ₽" },
+		{ s: "В кассе без маркетинга", v: "730 000 ₽", hi: true },
 	];
 	return (
 		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>аналитика · воронка продаж</span><em className="wchip">пример</em></div>
+			<div className="winbar light"><i /><i /><i /><span>аналитика · воронка продаж</span></div>
 			<div className="funtab">
 				{steps.map((st) => (
 					<div className="fun-row" key={st.t}>
 						<span className="fun-t">{st.t}</span>
 						<span className="fun-bar"><i style={{ width: `${st.w}%` }} /></span>
 						<b className="fun-n">{st.n}</b>
-						<span className="fun-c">{st.c ?? "старт"}</span>
+						<span className="fun-c">{st.c}</span>
+					</div>
+				))}
+			</div>
+			<div className="funsum">
+				{sum.map((x) => (
+					<div className={x.hi ? "fs hi" : "fs"} key={x.s}>
+						<span>{x.s}</span>
+						<b>{x.v}</b>
 					</div>
 				))}
 			</div>
