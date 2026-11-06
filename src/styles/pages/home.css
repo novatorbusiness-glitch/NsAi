@@ -407,7 +407,7 @@ section.hero .lead{margin:22px auto 30px}
 @media(max-width:720px){section.hero .hpre{font-size:12px}}
 
 /* Первый экран: лид крупный тонкий + мелкое описание (как у z.ai), кнопка читается всегда. */
-section.hero .lead{font-weight:300;font-size:clamp(20px,2.6vw,30px);line-height:1.28;margin:26px auto 14px;max-width:26em}
+section.hero .lead{font-weight:300;font-size:clamp(19px,2.2vw,25px);line-height:1.32;margin:26px auto 14px;max-width:30em}
 section.hero .sub{display:block;font-size:16px;color:#8a9196;margin:0 auto 30px;max-width:40em}
 section.hero .btn.p:active,section.hero .btn.p:focus{background:var(--acc);color:#fff}
 @media(max-width:720px){section.hero .lead{font-size:22px}section.hero .sub{font-size:14.5px}}
