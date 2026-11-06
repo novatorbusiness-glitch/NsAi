@@ -921,3 +921,14 @@ section.team .team-own span{color:var(--dark-mut);font-size:13px;line-height:1.4
 /* Восстановлено после чистки (07.11): двухколоночные табы блоков 3-4 и мобильные размеры. */
 @media(min-width:900px){.ttabs{grid-template-columns:1fr 1.4fr;gap:44px;align-items:center}}
 @media(max-width:720px){.titem b{font-size:16px}.titem span{font-size:13px}}
+
+/* Подвал и финал: приглушить партнёров, поднять читаемость ссылок и лида (07.11). */
+footer .partners li{background:#15181b;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:7px 12px;opacity:1}
+footer .partners img{filter:brightness(0) invert(1);opacity:.62;height:20px}
+footer .partners .pl{color:#6b7276}
+footer .partners ul{gap:8px 10px}
+.final .card .lead{color:#b9c4bf}
+.final .card a:not(.btn){color:#4ee3ac}
+.final .card a:not(.btn):hover{color:#7fe8c2}
+footer .partners li{background:none;border:0;padding:0;color:#a7adb3;font-size:14px;opacity:1}
+footer .partners img{display:none}
