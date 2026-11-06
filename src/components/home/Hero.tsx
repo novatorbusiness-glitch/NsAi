@@ -7,19 +7,19 @@ export default function Hero() {
 	return (
 		<section className="hero">
 			<div className="wrap hero-grid">
-				<div>
-					<div className="role"><span className="pill">{c.pill}</span></div>
-					<div className="hh">
-						<span className="hb bl" aria-hidden="true">19 агентов</span>
-						<h1>{c.h1} <span className="thin">{c.h1Thin}</span></h1>
-						<span className="hb br" aria-hidden="true">1 управленец</span>
+					<div>
+						<div className="role"><span className="pill">{c.pill}</span></div>
+						<p className="hpre">{c.pre}</p>
+						<div className="hh">
+							<span className="hb bl" aria-hidden="true">Отдел агентов</span>
+							<h1>{c.h1} <span className="thin">{c.h1Thin}</span></h1>
+							<span className="hb br" aria-hidden="true">Управленец</span>
+						</div>
+						<p className="lead">{c.lead}</p>
+						<div className="cta-row">
+							<a className="btn p" href="#contact" data-goal="cta_start">{c.primary}</a>
+						</div>
 					</div>
-					<p className="lead">{c.lead}</p>
-					<p className="sub">{c.sub}</p>
-					<div className="cta-row">
-						<a className="btn p" href="#contact" data-goal="cta_start">{c.primary}</a>
-					</div>
-				</div>
 			</div>
 		</section>
 	);
