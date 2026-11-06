@@ -36,7 +36,6 @@ export default function Hero() {
 							<span className="ev txt"><b>промпты</b></span>
 							<span className="ev txt"><b>память</b></span>
 						</div>
-						<p className="envrow-cap">Такую же среду я собираю для вашего бизнеса</p>
 					</div>
 			</div>
 		</section>

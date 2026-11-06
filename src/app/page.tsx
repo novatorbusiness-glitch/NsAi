@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import Metamorph from "@/components/home/Metamorph";
-import Niches from "@/components/home/Niches";
 import Changes from "@/components/home/Changes";
 import CtaBanner from "@/components/home/CtaBanner";
 import Team from "@/components/home/Team";
-import Proof from "@/components/home/Proof";
-import Save from "@/components/home/Save";
+import Position from "@/components/home/Position";
 import Work from "@/components/home/Work";
-import Me from "@/components/home/Me";
 import Trust from "@/components/home/Trust";
 import Extra from "@/components/home/Extra";
 import Express from "@/components/home/Express";
@@ -30,11 +27,8 @@ export default function Page() {
 			<Team />
 			<CtaBanner />
 			<Changes />
-			<Niches />
-			<Proof />
-			<Save />
+			<Position />
 			<Work />
-			<Me />
 			<Trust />
 			<Extra />
 			<Express />
