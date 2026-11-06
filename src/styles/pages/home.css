@@ -465,3 +465,9 @@ section{padding:140px 0}
 /* Центрирование шапки блока 02 — принудительно. */
 .metamorph .section-head{text-align:center}
 .metamorph .section-head .snum,.metamorph .section-head h2{display:block;text-align:center}
+
+/* Шапка каждого блока: колонка центрируется целиком (как у z.ai), а не только текст внутри. */
+.section-head{max-width:820px;margin-left:auto;margin-right:auto;text-align:center}
+.section-head .snum{display:block;text-align:center}
+.section-head h2,.section-head .lead{margin-left:auto;margin-right:auto;text-align:center}
+#story .section-head{max-width:900px}
