@@ -31,7 +31,6 @@ function PackArt() {
 					</div>
 				))}
 			</div>
-			<p className="lnote">Материалы упаковки живут в одном месте: план ведёт их по графику, вы утверждаете перед выпуском</p>
 		</div>
 	);
 }
@@ -41,7 +40,6 @@ function TrafficArt() {
 		<div className="lcard awin">
 			<div className="winbar light"><i /><i /><i /><span>разбор заявок · пример</span></div>
 			<img className="shot" width={1280} height={900} src="/images/site/shot-razbor.jpg" alt="Пример разбора заявок: воронка и места потерь с расчётом" loading="lazy" />
-			<p className="lnote">Страница из разбора конкурента по моему проекту: цены, обещания, сильные и слабые места</p>
 		</div>
 	);
 }
@@ -68,7 +66,6 @@ function FunnelArt() {
 					</div>
 				))}
 			</div>
-			<p className="lnote">Связка из моей среды: заявка проходит путь по порядку, каждый шаг я проверяю</p>
 		</div>
 	);
 }
@@ -84,7 +81,6 @@ function SalesArt() {
 				<p className="sm out">Готово: записал на 16:30, адрес и напоминание отправил</p>
 				<span className="sbadge">Заявка создана в CRM</span>
 			</div>
-			<p className="lnote">Пример переписки из моей среды: агент довёл разговор до заявки, карточка появилась в CRM</p>
 		</div>
 	);
 }
@@ -94,7 +90,6 @@ function ToolsArt() {
 		<div className="lcard awin">
 			<div className="winbar light"><i /><i /><i /><span>статистика бота · дашборд</span></div>
 			<img className="shot" width={640} height={1280} src="/images/gaze/analytics.jpg" alt="Дашборд статистики бота GAZE: визиты, возвраты, динамика" loading="lazy" />
-			<p className="lnote">Инструмент делаю под задачу: статистика, история и нужные документы под рукой</p>
 		</div>
 	);
 }
