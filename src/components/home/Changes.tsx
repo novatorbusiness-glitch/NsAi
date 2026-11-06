@@ -13,11 +13,30 @@ const TABS = [
 ];
 
 function PackArt() {
+	const rows = [
+		{ d: "02.11", t: "Где взять первых 20 платящих клиентов, если бюджета на рекламу нет" },
+		{ d: "05.11", t: "Почему мы откладываем автоматизацию, хотя знаем, что надо" },
+		{ d: "06.11", t: "Промпт без системы похож на ключ от чужой двери" },
+		{ d: "08.11", t: "Я мог бы сделать презентацию одной кнопкой. Но иду по шагам" },
+	];
 	return (
 		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>ваш сайт · обновлено сегодня</span></div>
-			<img className="shot" width={1280} height={900} src="/images/site/shot-new-home.jpg" alt="Скрин новой главной страницы: оффер «Масштабируйте бизнес с ИИ-агентами», кнопка разбора и бренды среды" loading="lazy" />
-			<p className="lnote">Файл памяти из моей среды: что вы продаёте, кому и каким тоном. Это первый шаг работы</p>
+			<div className="winbar light"><i /><i /><i /><span>контент-план · ноябрь</span></div>
+			<div className="cplan">
+				{rows.map((r) => (
+					<div className="cp-row" key={r.d}>
+						<span className="cp-d">{r.d}</span>
+						<b>{r.t}</b>
+					</div>
+				))}
+			</div>
+			<div className="cshelf" aria-label="Материалы упаковки">
+				<span>Посты</span>
+				<span>Рассылки</span>
+				<span>Страницы сайта</span>
+				<span>Промпты</span>
+			</div>
+			<p className="lnote">Реальный контент-план из моей среды: посты идут по графику, страницы и письма к ним собраны рядом</p>
 		</div>
 	);
 }

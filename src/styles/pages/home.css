@@ -812,3 +812,11 @@ footer a:hover{color:#fff}
 .flink::after{top:0;left:-3px;width:8px;height:9px;animation-name:fpulseV}
 .flink::before{display:none}}
 @keyframes fpulseV{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% - 9px);opacity:0}}
+
+/* Упаковка: окно контент-плана (реальные строки) + витрина материалов. */
+.cplan{padding:8px 18px 0}
+.cp-row{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:13px 2px;border-bottom:1px solid #e7ede8;align-items:baseline}
+.cp-d{font:600 12px var(--m);color:#0F6E56;letter-spacing:.04em}
+.cp-row b{font-size:14.5px;line-height:1.45;color:#15201b;font-weight:600}
+.cshelf{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 18px 4px}
+.cshelf span{display:flex;align-items:center;justify-content:center;padding:10px 6px;border:1px dashed #c9d4cc;border-radius:10px;font:600 12px var(--f);color:#4b5257;background:#f6f9f6}
