@@ -765,3 +765,12 @@ section.dark .kpath .ky{color:#7fd3b6}
 /* Шапка в стиле zcode (06.11): лого без имени, ссылки мельче и не жирные, кнопки заявки нет. */
 .top .nav{font-weight:500;font-size:14px}
 .top .menu a{font-weight:500;font-size:14px}
+
+/* Шапка тёмная, как у zcode (06.11). */
+.top{background:rgba(17,20,22,.94);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .brand{color:#e9ecea}
+.top .nav a{color:#b9c2be}
+.top .nav a:hover{color:#fff}
+.top .menu{background:var(--dark);border-bottom-color:rgba(255,255,255,.08)}
+.top .menu a{color:#e9ecea;border-top-color:rgba(255,255,255,.08)}
+.top .burger span{background:#e9ecea}

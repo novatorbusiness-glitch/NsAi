@@ -23,8 +23,8 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
-			<Niches />
 			<Team />
+			<Niches />
 			<Proof />
 			<Save />
 			<Work />
