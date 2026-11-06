@@ -491,7 +491,7 @@ section{padding:140px 0}
 
 /* Блок 03: линия загрузки и живые сцены (механика z.ai). */
 .titem{position:relative}
-.tprog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:#2fb58a;transform-origin:left;animation:tprog 6s linear forwards}
+.tprog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:#2fb58a;transform-origin:left;animation:tprog 8s linear forwards}
 .ttabs.paused .tprog{animation-play-state:paused}
 @keyframes tprog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .scene{min-height:340px;display:flex;flex-direction:column;justify-content:center}
@@ -584,3 +584,29 @@ section{padding:140px 0}
 .cmsg{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1);color:#c9d1cd}
 .cans{background:rgba(47,181,138,.14)}
 .cstamp{background:transparent;color:#7fd3b6}
+
+/* Sync-сцена v2: линии соединяют элементы встык, импульсы бегут по всей линии ровно. */
+.sync2{display:grid;grid-template-columns:1fr 1fr auto 1fr 1fr;gap:0;align-items:center}
+.sync2 .sync-node{border-radius:14px;padding:18px 16px;font-size:14.5px;font-weight:700;text-align:center;background:linear-gradient(180deg,#16191d,#1b1f23);border:1px solid rgba(255,255,255,.12);color:#e9ecea}
+.sync2 .sync-hub{align-self:center;justify-self:center;text-align:center;border-radius:18px;padding:26px 24px;background:linear-gradient(160deg,#123c30,#0F6E56);border:1px solid rgba(127,211,182,.35);color:#fff;box-shadow:0 24px 60px -24px rgba(47,181,138,.6);animation:hubGlow 4s ease infinite}
+.sync2 .sync-hub span{display:block;margin-top:6px;font:500 11.5px var(--m);color:#cfeee3}
+.sync2 .sync-node.biz{background:linear-gradient(135deg,#35c795,#0F6E56);border:0;color:#fff;padding:22px 18px}
+.sync-line{position:relative;height:2px;background:rgba(127,211,182,.22);border-radius:2px}
+.sync-line i{position:absolute;top:-3px;height:8px;width:34px;border-radius:8px;background:linear-gradient(90deg,rgba(47,181,138,0),#2fb58a);animation:slideP 2.4s linear infinite}
+.sync-line .p2{animation-delay:.8s}.sync-line .p3{animation-delay:1.6s}
+@keyframes slideP{from{left:-34px}to{left:100%}}
+@media(max-width:900px){.sync2{grid-template-columns:1fr;gap:18px;justify-items:center}.sync-line{width:2px;height:34px;background:rgba(127,211,182,.22)}.sync-line i{left:-3px;top:-34px;width:8px;height:34px;background:linear-gradient(180deg,rgba(47,181,138,0),#2fb58a);animation-name:slideV}@keyframes slideV{from{top:-34px}to{top:100%}}}
+
+/* Sync v3: три линии от трёх узлов, хаб на всю высоту, всё встык. */
+.sync3{display:grid;grid-template-columns:1fr 90px auto 90px 1fr;column-gap:0;align-items:stretch}
+.sync3 .scol{display:grid;gap:14px;align-content:center}
+.sync3 .sync-node{border-radius:14px;padding:20px 16px;font-size:14.5px;font-weight:700;text-align:center;background:linear-gradient(180deg,#16191d,#1b1f23);border:1px solid rgba(255,255,255,.12);color:#e9ecea}
+.lines3{display:grid;gap:14px;align-content:center}
+.sync-line{position:relative;height:2px;background:rgba(127,211,182,.22);border-radius:2px;align-self:center}
+.sync-line i{position:absolute;top:-3px;height:8px;width:34px;border-radius:8px;background:linear-gradient(90deg,rgba(47,181,138,0),#2fb58a);animation:slideP 2.4s linear infinite}
+.sync3 .sync-hub{align-self:stretch;display:flex;flex-direction:column;justify-content:center;text-align:center;border-radius:18px;padding:24px 26px;background:linear-gradient(160deg,#123c30,#0F6E56);border:1px solid rgba(127,211,182,.35);color:#fff;box-shadow:0 24px 60px -24px rgba(47,181,138,.6);animation:hubGlow 4s ease infinite}
+.lines1{display:grid;align-items:center}
+.dbcol{display:grid;align-items:center}
+.sync3 .sync-node.biz{background:linear-gradient(135deg,#35c795,#0F6E56);border:0;color:#fff;padding:24px 18px;border-radius:14px;text-align:center;font-weight:700}
+@media(max-width:900px){.sync3{grid-template-columns:1fr;justify-items:center;row-gap:14px}.lines3{gap:14px}.sync-line{width:2px;height:34px}.sync-line i{left:-3px;top:-34px;width:8px;height:34px;background:linear-gradient(180deg,rgba(47,181,138,0),#2fb58a);animation-name:slideV}.lines1{width:2px;height:34px}.lines1 .sync-line{height:34px}.lines1 .sync-line i{left:-3px;top:-34px;width:8px;height:34px;background:linear-gradient(180deg,rgba(47,181,138,0),#2fb58a)}}
+.wrow em{align-self:start;margin-left:6px}
