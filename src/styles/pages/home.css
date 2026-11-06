@@ -482,3 +482,9 @@ section{padding:140px 0}
 .ev .ev-g{width:22px;height:22px;border-radius:6px;background:#1d2a26;color:#7fd3b6;font:700 13px/22px var(--m);text-align:center}
 .ev b{font:500 12.5px var(--m);color:#b9c2be;letter-spacing:.01em;white-space:nowrap}
 .ev.txt b{font-size:13px;color:#8a9196}
+
+/* Лого глифы через mask: серые по умолчанию, фирменный цвет при наведении на плашку. */
+.ev .gl{display:inline-block;width:20px;height:20px;background:#9aa3a9;mask:var(--gl) no-repeat center / contain;-webkit-mask:var(--gl) no-repeat center / contain;transition:background .2s}
+.ev:hover .gl{background:var(--bc)}
+.ev .gl{background:var(--bc)}
+.ev:hover .gl{filter:brightness(1.15)}

@@ -24,11 +24,11 @@ export default function Hero() {
 					<div className="envrow">
 						<div className="envstrip">
 							<span className="ev"><span className="ev-g">Z</span><b>ZCode</b></span>
-							<span className="ev"><img src="/images/ai/claude.svg" alt="Claude Code" width="20" height="20" loading="lazy" /><b>Claude Code</b></span>
+							<span className="ev"><i className="gl" style={{ "--gl": "url(/images/ai/claude.svg)", "--bc": "#D97757" } as React.CSSProperties} aria-hidden="true"></i><b>Claude Code</b></span>
 							<span className="ev"><span className="ev-g">G</span><b>GLM</b></span>
-							<span className="ev"><img src="/images/ai/obsidian.svg" alt="Obsidian" width="20" height="20" loading="lazy" /><b>Obsidian</b></span>
-							<span className="ev"><img src="/images/ai/github.svg" alt="GitHub" width="20" height="20" loading="lazy" /><b>GitHub</b></span>
-							<span className="ev"><img src="/images/ai/telegram.svg" alt="Telegram" width="20" height="20" loading="lazy" /><b>Telegram</b></span>
+							<span className="ev"><i className="gl" style={{ "--gl": "url(/images/ai/obsidian.svg)", "--bc": "#A78BFA" } as React.CSSProperties} aria-hidden="true"></i><b>Obsidian</b></span>
+							<span className="ev"><i className="gl" style={{ "--gl": "url(/images/ai/github.svg)", "--bc": "#E6EDF3" } as React.CSSProperties} aria-hidden="true"></i><b>GitHub</b></span>
+							<span className="ev"><i className="gl" style={{ "--gl": "url(/images/ai/telegram.svg)", "--bc": "#26A5E4" } as React.CSSProperties} aria-hidden="true"></i><b>Telegram</b></span>
 							<span className="ev txt"><b>субагенты</b></span>
 							<span className="ev txt"><b>проекты</b></span>
 							<span className="ev txt"><b>автозадачи</b></span>
