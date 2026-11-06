@@ -1,7 +1,7 @@
 import { sreda } from "@content/pages/sreda";
 import SectionHead from "@/components/ui/SectionHead";
 
-// 02 · две связки: Claude Code или Hermes + DeepSeek (вторая снимает страх блокировок).
+// 02 · среда ZCode и модели внутри неё (вторая карточка снимает страх блокировок: смена модели не ломает работу).
 export default function Stacks() {
 	const c = sreda.stacks;
 	return (
