@@ -820,3 +820,19 @@ footer a:hover{color:#fff}
 .cp-row b{font-size:14.5px;line-height:1.45;color:#15201b;font-weight:600}
 .cshelf{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 18px 4px}
 .cshelf span{display:flex;align-items:center;justify-content:center;padding:10px 6px;border:1px dashed #c9d4cc;border-radius:10px;font:600 12px var(--f);color:#4b5257;background:#f6f9f6}
+
+/* Упаковка: витрина материалов. Продажи: переписка закрытия. */
+.vitr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 18px 4px}
+.vit{display:grid;justify-items:center;gap:9px;padding:18px 10px 14px;border:1px solid #e3eae4;border-radius:14px;background:#f6f9f6;text-align:center}
+.vi{width:42px;height:42px;border-radius:12px;background:#eef5f0;color:#0F6E56;display:flex;align-items:center;justify-content:center}
+.vi svg{width:22px;height:22px}
+.vit b{font-size:13px;line-height:1.3;color:#15201b;font-weight:700}
+.vit:nth-child(4){grid-column:1}
+.vit:nth-child(5){grid-column:2}
+@media(min-width:820px){.vitr{grid-template-columns:repeat(5,1fr)}.vit:nth-child(4){grid-column:auto}.vit:nth-child(5){grid-column:auto}}
+.schat{display:grid;gap:9px;padding:16px 18px 6px}
+.sm{margin:0;max-width:86%;padding:10px 12px;border-radius:14px;font-size:13.5px;line-height:1.45}
+.sm.in{background:#14181c;color:#dfe5e2;border-radius:14px 14px 14px 4px;justify-self:start}
+.sm.out{background:#0F6E56;color:#fff;border-radius:14px 14px 4px 14px;justify-self:end}
+.sbadge{justify-self:end;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:9px;background:#e7f3ec;color:#0F6E56;font:700 12px var(--f)}
+.sbadge::before{content:"";width:7px;height:7px;border-radius:50%;background:#2fb58a}

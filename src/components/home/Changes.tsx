@@ -7,36 +7,31 @@ import SectionHead from "@/components/ui/SectionHead";
 const TABS = [
 	{ id: "pack", title: "Упаковка", desc: "Бизнес вырос, а упаковка осталась прежней: сайт, посты и презентации рассказывают о вас старую историю. Клиент это считывает и уходит туда, где выглядит сильнее → веду упаковку постоянно, вы утверждаете перед выпуском" },
 	{ id: "traffic", title: "Трафик", desc: "Реклама идёт, а что приносит заявки и что сливает бюджет, не видно. Разбираю рынок и конкурентов до запуска, цифры после → что работает, усиливаем, что пустое, закрываем" },
+	{ id: "sales", title: "Продажи", desc: "Обращения падают в разные окна, и ответ ждёт живой человек → агент отвечает за минуты и закрывает разговор на заявку, каждая сделка видна в CRM" },
 	{ id: "funnel", title: "Автоматизация", desc: "Порядок в бизнесе живёт в головах и в чатах, поэтому передача дела превращается в хаос. Переношу процессы в среду: воронки и документы работают по порядку, по каждой задаче видно статус" },
-	{ id: "clients", title: "Клиенты", desc: "Заявки стоят дорого, а купившие клиенты лежат в базе без движения. Повторная продажа дешевле привлечения, но ею некогда заниматься → работу с базой веду постоянно: возвраты, продления, реакция на тишину, а не когда вспомнилось" },
 	{ id: "tools", title: "Инструменты", desc: "Бизнес склеен из чужих сервисов и таблиц, и ни один не подходит под ваши задачи. Собираю свои инструменты: дашборд, статистика, мини-сервисы для команды. Это то, что нельзя купить готовым" },
 ];
 
 function PackArt() {
-	const rows = [
-		{ d: "02.11", t: "Где взять первых 20 платящих клиентов, если бюджета на рекламу нет" },
-		{ d: "05.11", t: "Почему мы откладываем автоматизацию, хотя знаем, что надо" },
-		{ d: "06.11", t: "Промпт без системы похож на ключ от чужой двери" },
-		{ d: "08.11", t: "Я мог бы сделать презентацию одной кнопкой. Но иду по шагам" },
+	const items = [
+		{ t: "Контент-план", ico: <g><rect x="4" y="4" width="16" height="16" rx="3" /><path d="M8 2v4M16 2v4M4 9h16M8 14h5" /></g> },
+		{ t: "Сайт", ico: <g><rect x="3" y="4" width="18" height="14" rx="3" /><path d="M3 9h18M6 12h7" /></g> },
+		{ t: "Презентация", ico: <g><rect x="4" y="4" width="16" height="11" rx="2" /><path d="M12 15v4M8 21h8M8 9h8" /></g> },
+		{ t: "Фирменный стиль", ico: <g><circle cx="9" cy="10" r="5" /><circle cx="15" cy="14" r="5" /></g> },
+		{ t: "Сценарии под видео", ico: <g><rect x="3" y="6" width="14" height="12" rx="3" /><path d="M17 10l5-3v10l-5-3" /></g> },
 	];
 	return (
 		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>контент-план · ноябрь</span></div>
-			<div className="cplan">
-				{rows.map((r) => (
-					<div className="cp-row" key={r.d}>
-						<span className="cp-d">{r.d}</span>
-						<b>{r.t}</b>
+			<div className="winbar light"><i /><i /><i /><span>упаковка · материалы</span></div>
+			<div className="vitr">
+				{items.map((it) => (
+					<div className="vit" key={it.t}>
+						<span className="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{it.ico}</svg></span>
+						<b>{it.t}</b>
 					</div>
 				))}
 			</div>
-			<div className="cshelf" aria-label="Материалы упаковки">
-				<span>Посты</span>
-				<span>Рассылки</span>
-				<span>Страницы сайта</span>
-				<span>Промпты</span>
-			</div>
-			<p className="lnote">Реальный контент-план из моей среды: посты идут по графику, страницы и письма к ним собраны рядом</p>
+			<p className="lnote">Материалы упаковки живут в одном месте: план ведёт их по графику, вы утверждаете перед выпуском</p>
 		</div>
 	);
 }
@@ -78,12 +73,18 @@ function FunnelArt() {
 	);
 }
 
-function ClientsArt() {
+function SalesArt() {
 	return (
 		<div className="lcard awin">
-			<div className="winbar light"><i /><i /><i /><span>возврат клиенток · GAZE</span></div>
-			<img className="shot" width={640} height={1280} src="/images/gaze/okoshko.jpg" alt="Мини-апп GAZE: «Есть окошко» — кому написать и готовый текст сообщения" loading="lazy" />
-			<p className="lnote">Экран GAZE, система моей жены: окно записи и готовый текст сообщения</p>
+			<div className="winbar light"><i /><i /><i /><span>переписка · закрытие на заявку</span></div>
+			<div className="schat">
+				<p className="sm in">Можно записаться на завтра к вашему мастеру?</p>
+				<p className="sm out">Добрый день. Есть 14:00 и 16:30, куда удобнее?</p>
+				<p className="sm in">Давайте в 16:30</p>
+				<p className="sm out">Готово: записал на 16:30, адрес и напоминание отправил</p>
+				<span className="sbadge">Заявка создана в CRM</span>
+			</div>
+			<p className="lnote">Пример переписки из моей среды: агент довёл разговор до заявки, карточка появилась в CRM</p>
 		</div>
 	);
 }
@@ -98,7 +99,7 @@ function ToolsArt() {
 	);
 }
 
-const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: TrafficArt, funnel: FunnelArt, clients: ClientsArt, tools: ToolsArt };
+const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: TrafficArt, sales: SalesArt, funnel: FunnelArt, tools: ToolsArt };
 
 export default function Changes() {
 	const [active, setActive] = useState(0);
