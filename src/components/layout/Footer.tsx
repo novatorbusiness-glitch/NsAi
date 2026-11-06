@@ -12,7 +12,7 @@ export default function Footer() {
 			<div className="wrap">
 				<div className="fgrid">
 					<div className="fbrand">
-						<img className="fmark" src="/brand/ncai.svg" alt="NCAi" width={77} height={27} />
+						<img className="fmark" src="/brand/ncai-white.svg" alt="NCAi" width={77} height={27} />
 						<p><b>{site.name}</b><br />{site.roleFooter}</p>
 					</div>
 					<nav className="fcol" aria-label={u.footPages}>

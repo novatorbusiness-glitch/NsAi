@@ -726,3 +726,55 @@ section{padding:140px 0}
 .enter-foot .btn{white-space:nowrap;margin:0}
 @media(max-width:900px){.enter-cols{grid-template-columns:1fr;gap:36px;padding:28px 24px 32px}.enter-foot{grid-template-columns:1fr;justify-items:start;gap:12px;padding:20px 24px}.ep-big{white-space:normal}}
 @media (prefers-reduced-motion: reduce){.enter-line{transform:none;transition:none}.enter-day{opacity:1;transform:none;transition:none}.enter-grid.pre .enter-day{opacity:1;transform:none}.enter-grid.pre .enter-line{transform:none}}
+
+/* Тёмная тема главной: бывшие светлые элементы приведены к тёмным панелям (скан контраста 07.11). */
+.faq .a{color:#a7adb3}
+.faq .a b{color:#fff}
+.faq .a a{color:#3bd39f}
+.xrow{color:#e9ecea}
+.xrow h3{color:#fff}
+.xrow b{color:#fff}
+.xrow p{color:#a7adb3}
+.x-more{color:#3bd39f}
+.xp-msg{background:#14181c;color:#dfe5e2;box-shadow:0 2px 0 rgba(0,0,0,.4),0 6px 12px -8px rgba(0,0,0,.6)}
+.xp-msg.me{background:rgba(47,184,138,.18);color:#dfe5e2}
+.xp-brand{color:#101418}
+.xp-h{color:#101418}
+.xp-s{color:#5a6167}
+.xp-chip{background:#101014;color:#fff}
+.xp-chip small{color:#8a9196}
+.bookcard{background:#101014;border:1px solid rgba(255,255,255,.08)}
+.bookcard h3{color:#fff}
+.bookcard p{color:#a7adb3}
+.final .card{background:linear-gradient(180deg,#131317,#0f0f13);border:1px solid rgba(255,255,255,.08)}
+.me-mini p{color:#a7adb3}
+.me-mini p b,.me-mini p strong{color:#fff}
+.quotes2 figcaption{color:#6b7276}
+
+/* Финал и экспресс-сцена: дозакрытие светлых остатков (07.11). */
+.final{background:var(--dark)}
+.final .lead,.final .chline{color:#a7adb3}
+.final .card p a{color:#3bd39f}
+.more-link{color:#3bd39f}
+.bookcard .more-link{color:#3bd39f}
+.xp-bar b,.xp-bar small{color:#101418}
+.xp-msg.me{background:#0e3f31;color:#dfe5e2}
+
+/* Финал, экспресс, услуги, футер: дозакрытие светлых остатков (07.11, скан контраста). */
+.final{background:var(--dark)}
+.final .lead,.final .chline{color:#a7adb3}
+.final .card p a{color:#3bd39f}
+.more-link,.bookcard .more-link{color:#3bd39f}
+.xp-bar b,.xp-bar small{color:#101418}
+.xp-msg.me{background:#0e3f31;color:#dfe5e2}
+.xrow{background:transparent}
+.xrow:hover,.xrow:focus-visible{background:rgba(255,255,255,.04)}
+footer .fbrand b{color:#fff}
+footer .fbrand p{color:#a7adb3}
+
+/* Добор контраста 07.11: экспресс-список, ссылки финала и футера. */
+.xp-list li span{color:#a7adb3}
+.xp-list li b{color:#fff}
+.final .chline a{color:#3bd39f}
+footer a{color:#a7adb3}
+footer a:hover{color:#fff}

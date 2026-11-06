@@ -15,9 +15,12 @@ export default function Express() {
 		const el = scene.current;
 		if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 		el.classList.add("wait");
-		const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { el.classList.add("on"); io.disconnect(); } }, { threshold: 0.3 });
+		let shown = false;
+		const show = () => { if (!shown) { shown = true; el.classList.add("on"); } };
+		const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { show(); io.disconnect(); } }, { threshold: 0.3 });
 		io.observe(el);
-		if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return () => io.disconnect();
+		const failsafe = setTimeout(show, 3000); // сцена появляется, даже если наблюдатель молчит
+		if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return () => { io.disconnect(); clearTimeout(failsafe); };
 		let raf = 0;
 		const move = (e: PointerEvent) => {
 			const r = el.getBoundingClientRect();
