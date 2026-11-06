@@ -910,3 +910,30 @@ footer a:hover{color:#fff}
 @media(max-width:820px){#changes .tpanel .lcard.awin{height:auto}}
 .schat .sbadge{align-self:flex-end;width:max-content;justify-self:auto}
 .fs b{white-space:nowrap}
+
+/* Блок 4: контент заполняет окно без пустот (правки по скринам Ильи 07.11). */
+#changes .funtab{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;padding:8px 22px 4px}
+#changes .funsum{flex:none;padding:0 22px 20px}
+.fun-row{padding:13px 2px}
+.fun-bar{height:13px}
+.fun-t{font-size:15px}
+.fun-n{font-size:17px}
+.fun-c{font-size:12px}
+.funsum{gap:12px}
+.fs{padding:12px 14px;gap:4px;align-content:start}
+.fs b{font-size:16px}
+.flow{align-items:center;padding:22px 26px;gap:8px}
+.fnode .fi{width:62px;height:62px;border-radius:16px}
+.fnode .fi svg{width:28px;height:28px}
+.fnode b{font-size:14.5px}
+.fnode > span{font-size:12.5px}
+.schat{gap:12px;padding:18px 22px}
+.sm{font-size:14.5px;padding:12px 14px}
+.sbadge{padding:8px 12px;font-size:12.5px}
+#changes .vitr{align-content:space-evenly;height:100%;padding:8px 22px}
+.vit{padding:17px 10px}
+.vi{width:50px;height:50px}
+.vi svg{width:24px;height:24px}
+.vit b{font-size:16px}
+#changes .tpanel .lcard.awin > .funsum{flex:none}
+.funsum .fs{align-content:start;justify-items:start}
