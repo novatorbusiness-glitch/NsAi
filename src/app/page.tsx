@@ -24,8 +24,8 @@ export default function Page() {
 	return (
 		<>
 			<Hero />
-			<Metamorph />
 			<Numbers />
+			<Metamorph />
 			<Team />
 			<CtaBanner />
 			<Changes />
