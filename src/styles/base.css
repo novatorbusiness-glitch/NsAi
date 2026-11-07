@@ -785,3 +785,4 @@ section.dark .kpath .ky{color:#7fd3b6}
 .booktoc .cc{font:600 11px var(--m);color:#3bd39f;letter-spacing:.04em}
 .booktoc .bpart{border-radius:16px;padding:22px;background:var(--card);border-color:rgba(255,255,255,.07)}
 .booktoc .bpart h3{font-size:17px;color:var(--ink)}
+.booktoc li.noc a{grid-template-columns:minmax(0,1fr)}

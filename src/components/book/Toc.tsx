@@ -6,7 +6,7 @@ const Row = ({ c }: { c: Chapter }) => {
 	const txt = label(c);
 	const m = txt.match(/^(\d+\.\d+)\s+(.*)$/);
 	return (
-		<li key={c.slug}>
+		<li key={c.slug} className={m ? "" : "noc"}>
 			<a href={`/book/${c.slug}`}>
 				{m ? <><span className="cc">{m[1]}</span>{m[2]}</> : txt}
 			</a>
