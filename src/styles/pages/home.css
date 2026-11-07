@@ -824,3 +824,23 @@ footer .partners img{display:none}
 .xp-b.main{background:#e9f5ef}
 .scol p{color:#313a36;font-weight:500}
 .scol .swas{color:#313a36}
+
+/* Светлые панели: тёмные тексты поверх каскада подключённых css-файлов. */
+.metamorph .scol p,.metamorph .scol .swas{color:#4b5257!important;font-weight:500}
+.metamorph .scol .snow{color:#15201b!important;font-weight:600}
+.metamorph .scol .chip.dim{background:#c7d2cd!important;color:#313a36!important}
+.metamorph .sframe{color:#4b5257!important}
+.metamorph .loutro{color:#0F6E56!important}
+.awin .winbar.light span{color:#4b5257!important}
+.os-app{background:#f6f9f6!important;border-color:#e3eae4!important}
+.os-app b{color:#15201b!important}
+.oi{background:#eef5f0!important;color:#0F6E56!important}
+.fun-t{color:#15201b!important}
+.fun-n{color:#15201b!important}
+.fun-bar{background:#dfe7e2!important}
+.funsum .fs{background:#f6f9f6!important;border-color:#e3eae4!important}
+.fs b{color:#15201b!important}
+.fs span{color:#4b5257!important}
+.vit{background:#f6f9f6!important;border-color:#e3eae4!important}
+.vitr b{color:#15201b!important}
+.sbadge{background:#e7f3ec!important;color:#0F6E56!important}
