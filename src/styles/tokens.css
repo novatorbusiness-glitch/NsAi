@@ -1,11 +1,12 @@
 /* tokens.css — цвета, шрифты, размеры сайта.
    07.11: тёмная тема на всём сайте (главная v3 тёмная — внутренние страницы приведены к ней).
+   07.11: серые карточки как на zcode.z.ai (цвета сняты со скриншота): фон страницы #09090a, карточка #1b1b1f, рамка #28292f 1px, радиус 16px, заголовок #f7f8fa, текст #76767f, без теней.
    Меняются только здесь. */
 :root{
-  --bg:#0e1013; --bg2:#101316; --ink:#e9ecea; --ink2:#a8b3ae; --mut:#8a9196;
-  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.12);
+  --bg:#09090a; --bg2:#0c0c0e; --ink:#f7f8fa; --ink2:#a8b3ae; --mut:#8a9196;
+  --line:#28292f; --line2:#34353c;
   --acc:#2fb58a; --acc-ink:#05231c; --acc-soft:rgba(47,184,138,.12);
-  --dark:#111416; --dark2:#1b1f22; --dark-ink:#e9ecea; --dark-mut:#8f979c;
-  --card:#16191c; --r:8px; --max:1120px; --col:680px;
+  --dark:#0c0c0e; --dark2:#1b1b1f; --dark-ink:#e9ecea; --dark-mut:#8f979c;
+  --card:#1b1b1f; --card-line:#28292f; --card-ink:#f7f8fa; --card-mut:#76767f; --r:16px; --max:1120px; --col:680px;
   --f:'Manrope',-apple-system,system-ui,sans-serif; --m:'JetBrains Mono',ui-monospace,monospace;
 }

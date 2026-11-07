@@ -6,7 +6,7 @@
 .bk-meta{margin:0;font:500 13px/1.4 var(--m);color:var(--mut)}
 /* Читалка светлая (07.11): весь сайт тёмный, но длинный текст читается на белом. Цвета переопределены только внутри .bk, рисунки книги нарисованы на белом.
    Текст не чисто чёрный, а мягкий серый; шрифт на ступень мельче прежних 18.5px. */
-.bk{--bg:#fff;--bg2:#f4f6f5;--ink:#3a423f;--ink2:#58625d;--mut:#6a7570;--line:rgba(24,36,31,.12);--line2:rgba(24,36,31,.18);--acc:#0f7a5c;--acc-soft:rgba(15,122,92,.09);background:var(--bg);color:var(--ink);padding-bottom:64px}
+.bk{--card:#f4f6f5;--card-line:rgba(24,36,31,.12);--bg:#fff;--bg2:#f4f6f5;--ink:#3a423f;--ink2:#58625d;--mut:#6a7570;--line:rgba(24,36,31,.12);--line2:rgba(24,36,31,.18);--acc:#0f7a5c;--acc-soft:rgba(15,122,92,.09);background:var(--bg);color:var(--ink);padding-bottom:64px}
 .bk h1,.bk h2,.bk h3{color:#1f2724}
 .bk .pn{background:var(--bg2)}
 .bk-text{font-size:17px;line-height:1.75}

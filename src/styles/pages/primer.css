@@ -20,10 +20,10 @@
 .pm-board.dim .pm-note:not(.hl){opacity:.22}
 .pm-board.dim .pm-frame{opacity:.75}
 .pm-b{display:inline-block;font:600 11px/1.4 var(--f);border-radius:999px;padding:2px 8px;background:rgba(255,255,255,.75)}
-.pm-leg{position:absolute;left:14px;top:14px;z-index:4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;background:#111416;border-radius:12px;padding:8px 12px;
+.pm-leg{position:absolute;left:14px;top:14px;z-index:4;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;background:var(--card);border-radius:12px;padding:8px 12px;
   font:500 12.5px/1.3 var(--f);color:var(--pm-sub);box-shadow:0 6px 18px -8px rgba(29,26,51,.25)}
 .pm-leg .pm-b{padding:0;background:none;margin-right:4px;font-size:13px}
-.pm-tools{position:absolute;right:14px;bottom:14px;z-index:4;display:flex;align-items:center;gap:2px;background:#111416;border-radius:12px;padding:4px;box-shadow:0 6px 18px -8px rgba(29,26,51,.25)}
+.pm-tools{position:absolute;right:14px;bottom:14px;z-index:4;display:flex;align-items:center;gap:2px;background:var(--card);border-radius:12px;padding:4px;box-shadow:0 6px 18px -8px rgba(29,26,51,.25)}
 .pm-tools button{font:600 15px/1 var(--f);border:0;background:none;border-radius:8px;min-width:34px;height:32px;cursor:pointer;color:var(--pm-ink);padding:0 8px}
 .pm-tools button:hover{background:#f1effa}
 .pm-tools .pm-fit{font-size:13px}
@@ -42,7 +42,7 @@
 @media(max-width:699px){.pm-card{left:10px;right:10px;top:auto;bottom:60px;width:auto;max-height:58%}}
 @media(max-width:699px){.pm-leg{font-size:11.5px;padding:6px 10px;right:14px}}
 @media(prefers-reduced-motion:reduce){.pm-note,.pm-world{transition:none}}
-.pm-demo{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:#111416;box-shadow:0 18px 44px -24px rgba(29,26,51,.35)}
+.pm-demo{border:1px solid var(--line2);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 18px 44px -24px rgba(29,26,51,.35)}
 .pm-demo iframe{display:block;width:100%;height:78vh;min-height:560px;max-height:820px;border:0}
 .pm-demo-start{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:320px;padding:32px 16px;text-align:center;
   background:#f6f5f1 radial-gradient(#d8d4c8 1.1px,transparent 1.2px) 0 0/24px 24px}
@@ -61,7 +61,7 @@
 /* Семь частей чертежа: раскрываются по нажатию. */
 .pm-parts{display:grid;gap:12px;margin-top:28px}
 @media(min-width:900px){.pm-parts{grid-template-columns:1fr 1fr;align-items:start;gap:14px 20px}}
-.pm-parts details{background:#111416;border:1px solid var(--line);border-radius:16px;transition:border-color .2s}
+.pm-parts details{background:var(--card);border:1px solid var(--line);border-radius:16px;transition:border-color .2s}
 .pm-parts details[open]{border-color:var(--acc);box-shadow:0 18px 40px -28px rgba(16,24,20,.35)}
 .pm-parts summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 20px}
 .pm-parts summary::-webkit-details-marker{display:none}

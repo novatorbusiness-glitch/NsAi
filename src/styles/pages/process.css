@@ -11,7 +11,7 @@
 /* 02 · ритм */
 .rsteps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 @media(min-width:900px){.rsteps{grid-template-columns:repeat(3,1fr);gap:20px}}
-.rsteps li{background:#111416;border-radius:14px;padding:24px}
+.rsteps li{background:var(--card);border-radius:14px;padding:24px}
 .rsteps li > span{display:inline-flex;width:34px;height:34px;border-radius:50%;border:2px solid var(--acc);align-items:center;justify-content:center;font:700 14px/1 var(--m);color:var(--acc);margin-bottom:14px}
 .rsteps h3{margin:0 0 6px}
 .rsteps p{margin:0;font-size:15px;line-height:1.55;color:var(--ink2)}
@@ -26,7 +26,7 @@
 /* 04 · отдельные задачи подробно */
 .svcs{display:grid;gap:14px}
 @media(min-width:900px){.svcs{grid-template-columns:1fr 1fr;gap:20px}}
-.svc2{background:#111416;border-radius:14px;padding:26px;scroll-margin-top:80px}
+.svc2{background:var(--card);border-radius:14px;padding:26px;scroll-margin-top:80px}
 .svc2-h{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:10px}
 .svc2-h h3{margin:0}
 .svc2-h .x-price{text-align:right;flex:none}

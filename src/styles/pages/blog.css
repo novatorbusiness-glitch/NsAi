@@ -1,11 +1,11 @@
 /* Стили страницы: блог: список и статьи. Общее — в styles/base.css. */
 .bloghero{padding-bottom:28px}
 .blogs{padding-top:40px}
-.acard{display:grid;background:#111416;border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.acard{display:grid;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink);transition:transform .15s,box-shadow .15s}
 .acard:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 14px 34px rgba(17,20,22,.08)}
 .acover::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;border:1.5px solid currentColor;opacity:.15}
 .c-emerald{background:linear-gradient(150deg,#3bd39f,#0b5242);color:#fff}
-.c-dark{background:linear-gradient(150deg,#1b1f22,#111416);color:#e9ecea}
+.c-dark{background:linear-gradient(150deg,var(--card),var(--card));color:#e9ecea}
 .c-sand{background:linear-gradient(150deg,#f6ece4,#eadbcf);color:#3a2a20}
 .c-lilac{background:linear-gradient(150deg,#efeafb,#e1d9f7);color:#2a1f4a}
 .c-mint{background:linear-gradient(150deg,#e8f3ef,#d5ebe2);color:#123f33}
@@ -25,18 +25,18 @@
 .agrid .acard{grid-template-rows:auto 1fr}
 .tgline{margin:14px 0 0;font-size:15px;color:var(--ink2)}
 .btags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px} /* все темы видны сразу, без прокрутки вбок (24.10) */
-.tagb{flex:0 0 auto;font:600 14px/1 var(--f);color:var(--ink2);background:#111416;border:1px solid var(--line2);border-radius:999px;padding:9px 14px;cursor:pointer}
+.tagb{flex:0 0 auto;font:600 14px/1 var(--f);color:var(--ink2);background:var(--card);border:1px solid var(--line2);border-radius:999px;padding:9px 14px;cursor:pointer}
 .tagb.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .acta{grid-template-columns:1fr!important}
 .acta-act .cta-row{gap:10px}
 .bviz-l{margin:0 0 14px !important;font:600 11.5px/1 var(--m) !important;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
 .bm-row{display:grid;grid-template-columns:1fr;gap:6px;padding:12px 0;border-top:1px solid var(--line)}
-.bm-bar{height:12px;border-radius:6px;background:#111416;overflow:hidden}
+.bm-bar{height:12px;border-radius:6px;background:var(--card);overflow:hidden}
 .bm-bar i{display:block;height:100%;min-width:8px;border-radius:6px;background:linear-gradient(90deg,#2fb58a,#7fd3b6)}
 .bm-sum{font:700 16px/1.3 var(--f);color:var(--acc)}
 @media(min-width:760px){.bm-row{grid-template-columns:190px 1fr 210px;gap:16px;align-items:center}}
 .bc-n{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font:700 14px/1 var(--f);color:#fff;background:var(--c)}
-.bviz-chain li div{background:#111416;border-radius:10px;padding:10px 14px}
+.bviz-chain li div{background:var(--card);border-radius:10px;padding:10px 14px}
 .bc-k{font:600 10.5px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;color:var(--c)}
 .k-p{--c:#c46a3b}
 .k-e{--c:#2f6fe0}
@@ -46,7 +46,7 @@
 /* Два шага под плашкой статьи (29.10): экспресс-разбор и канал отдельными карточками */
 .anext{display:grid;gap:12px;margin:0 0 28px}
 @media(min-width:700px){.anext{grid-template-columns:1fr 1fr}}
-.anx{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:14px;border:1px solid #d7ddda;background:#111416;text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
+.anx{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:14px;border:1px solid #d7ddda;background:var(--card);text-decoration:none;color:var(--ink);transition:border-color .2s,transform .2s}
 .anx:hover{border-color:var(--acc);transform:translateY(-2px)}
 .anx-l{font:600 10.5px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;color:var(--acc)}
 .anx b{font-size:18px;line-height:1.3;margin-top:2px}
@@ -57,7 +57,7 @@
 /* Схема «отдать агентам / оставить людям» */
 .bviz-split .bs{display:grid;gap:10px}
 @media(min-width:620px){.bviz-split .bs{grid-template-columns:1fr 1fr}}
-.bviz-split .bs-c{background:#111416;border-radius:10px;padding:14px 16px}
+.bviz-split .bs-c{background:var(--card);border-radius:10px;padding:14px 16px}
 .bviz-split .bs-h{font:600 10.5px/1 var(--m);letter-spacing:.07em;text-transform:uppercase;margin:0 0 10px!important;color:var(--acc)}
 .bviz-split .bs-c.hum .bs-h{color:#b5651d}
 .bviz-split ul{margin:0!important;padding:0!important;list-style:none}
@@ -68,7 +68,7 @@
 /* Мем «до / после» */
 .bviz-meme .mm{display:grid;gap:10px}
 @media(min-width:620px){.bviz-meme .mm{grid-template-columns:1fr 1fr}}
-.bviz-meme .mm-p{background:#111416;border-radius:12px;padding:18px;text-align:center}
+.bviz-meme .mm-p{background:var(--card);border-radius:12px;padding:18px;text-align:center}
 .bviz-meme .mm-p.hot{background:var(--dark);color:#fff}
 .bviz-meme .mm-e{font-size:44px;line-height:1;display:block;margin-bottom:8px}
 .bviz-meme .mm-h{font:600 10.5px/1 var(--m)!important;letter-spacing:.07em;text-transform:uppercase;color:var(--acc);margin:0 0 8px!important}
@@ -82,7 +82,7 @@
 
 /* Скорость ответа: два больших числа */
 .bviz-speed .sp{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
-.bviz-speed .sp-c{background:#111416;border-radius:12px;padding:18px 12px;text-align:center}
+.bviz-speed .sp-c{background:var(--card);border-radius:12px;padding:18px 12px;text-align:center}
 .bviz-speed .sp-c b{display:block;font-size:44px;line-height:1;letter-spacing:-.02em}
 .bviz-speed .fast b{color:var(--acc)}
 .bviz-speed .slow b{color:#b5651d}
@@ -90,7 +90,7 @@
 .bviz-speed .sp-vs{font:600 12px/1 var(--m);color:var(--mut);text-transform:uppercase}
 /* Пример переписки с ИИ-агентом */
 .bviz-chat .ch{background:#e9eef0;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;max-width:440px;margin:0 auto}
-.bviz-chat .ch-m{max-width:84%;padding:9px 12px 6px;border-radius:14px;background:#111416}
+.bviz-chat .ch-m{max-width:84%;padding:9px 12px 6px;border-radius:14px;background:var(--card)}
 .bviz-chat .ch-m.ai{align-self:flex-start;border-bottom-left-radius:4px}
 .bviz-chat .ch-m.cl{align-self:flex-end;background:#d9f2e6;border-bottom-right-radius:4px}
 .bviz-chat .ch-m p{margin:0!important;font-size:14.5px!important;line-height:1.4!important;color:var(--ink)!important}
@@ -99,7 +99,7 @@
 /* Замкнутый круг после курсов */
 .bviz-loop .lp{list-style:none;margin:0!important;padding:0!important;display:grid;gap:8px;counter-reset:none}
 @media(min-width:700px){.bviz-loop .lp{grid-template-columns:repeat(4,1fr)}}
-.bviz-loop .lp li{margin:0!important;padding:14px 12px!important;background:#111416;border-radius:12px;text-align:center;font-size:14.5px;line-height:1.35;position:relative;display:flex;flex-direction:column;gap:6px;align-items:center}
+.bviz-loop .lp li{margin:0!important;padding:14px 12px!important;background:var(--card);border-radius:12px;text-align:center;font-size:14.5px;line-height:1.35;position:relative;display:flex;flex-direction:column;gap:6px;align-items:center}
 .bviz-loop .lp li::before{display:none}
 .bviz-loop .lp-e{font-size:30px;line-height:1}
 @media(min-width:700px){.bviz-loop .lp li:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--mut);font-weight:700;z-index:1}}
@@ -107,7 +107,7 @@
 
 /* Диагностика воронки: симптом → ошибка */
 .bviz-diag .dg{display:grid;gap:8px}
-.bviz-diag .dg-r{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:center;background:#111416;border-radius:12px;padding:12px 14px}
+.bviz-diag .dg-r{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;align-items:center;background:var(--card);border-radius:12px;padding:12px 14px}
 @media(min-width:620px){.bviz-diag .dg-r{grid-template-columns:40px 1fr 24px 1.1fr}}
 .bviz-diag .dg-e{font-size:28px;line-height:1;grid-row:span 2}
 @media(min-width:620px){.bviz-diag .dg-e{grid-row:auto}}
@@ -120,7 +120,7 @@
 /* Стыки между подрядчиками */
 .bviz-gaps .gp{display:flex;flex-direction:column;align-items:stretch;gap:4px}
 @media(min-width:700px){.bviz-gaps .gp{flex-direction:row;align-items:center}}
-.bviz-gaps .gp-c{flex:1;background:#111416;border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.bviz-gaps .gp-c{flex:1;background:var(--card);border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;gap:2px}
 .bviz-gaps .gp-c b{font-size:16px}
 .bviz-gaps .gp-c span{font-size:13px;color:var(--mut)}
 .bviz-gaps .gp-c em{font-style:normal;font-size:13.5px;color:var(--acc);margin-top:4px}
@@ -131,14 +131,14 @@
 /* Дырявое ведро */
 .bviz-bucket .bk{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .bviz-bucket .bk-in{margin:0!important;font-size:14.5px;color:var(--acc);font-weight:600}
-.bviz-bucket .bk-b{background:#111416;border-radius:16px;padding:16px 28px;display:flex;flex-direction:column;align-items:center}
+.bviz-bucket .bk-b{background:var(--card);border-radius:16px;padding:16px 28px;display:flex;flex-direction:column;align-items:center}
 .bviz-bucket .bk-e{font-size:48px;line-height:1}
 .bviz-bucket .bk-b b{font-size:36px;line-height:1.1;margin-top:6px}
 .bviz-bucket .bk-b span:last-child{font-size:13.5px;color:var(--ink2)}
 .bviz-bucket .bk-out{margin:0!important;font-size:15px;color:#b5651d}
 /* Лестница к первым клиентам */
 .bviz-ladder .ld{list-style:none;margin:0!important;padding:0!important;display:flex;flex-direction:column;gap:6px}
-.bviz-ladder .ld li{margin:0 0 0 calc(var(--i)*5%)!important;padding:10px 14px!important;background:#111416;border-radius:10px;font-size:15px;display:flex;gap:10px;align-items:center}
+.bviz-ladder .ld li{margin:0 0 0 calc(var(--i)*5%)!important;padding:10px 14px!important;background:var(--card);border-radius:10px;font-size:15px;display:flex;gap:10px;align-items:center}
 .bviz-ladder .ld li::before{display:none}
 .bviz-ladder .ld li span{flex:none;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;font:700 13px/26px var(--f);text-align:center}
 .bviz-ladder .ld li:last-child{background:var(--dark);color:#fff}
