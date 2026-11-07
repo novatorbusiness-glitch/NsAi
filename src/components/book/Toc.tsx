@@ -1,7 +1,20 @@
 import { book } from "@content/pages/book";
 import { chapters, parts, label, type Chapter } from "@/lib/book";
 
-const List = ({ items }: { items: Chapter[] }) => <ol>{items.map((c) => <li key={c.slug}><a href={`/book/${c.slug}`}>{label(c)}</a></li>)}</ol>;
+// Строка оглавления: код главы зелёной mono-меткой, название белым, ховер — подсветка.
+const Row = ({ c }: { c: Chapter }) => {
+	const txt = label(c);
+	const m = txt.match(/^(\d+\.\d+)\s+(.*)$/);
+	return (
+		<li key={c.slug}>
+			<a href={`/book/${c.slug}`}>
+				{m ? <><span className="cc">{m[1]}</span>{m[2]}</> : txt}
+			</a>
+		</li>
+	);
+};
+
+const List = ({ items }: { items: Chapter[] }) => <ul className="tlistb">{items.map((c) => <Row c={c} key={c.slug} />)}</ul>;
 
 // Оглавление: начало, шесть этапов, эпилог — из книги v2.
 export default function Toc() {
