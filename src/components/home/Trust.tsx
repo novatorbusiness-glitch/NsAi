@@ -11,7 +11,7 @@ export default function Trust() {
 		<section id="trust" className="alt">
 			<div className="wrap">
 				<SectionHead num={c.num} label={c.label} title={c.h2} lead={c.lead} />
-				<div className="quotes2">
+				<div className="quotes2 zcards">
 					<p className="lbl">{c.quotesLabel}</p>
 					<div>{c.quotes.map((q) => <figure key={q.who}><blockquote>«{q.text}»</blockquote><figcaption>{q.who}</figcaption></figure>)}</div>
 				</div>
