@@ -30,7 +30,7 @@ function SpeedScene() {
 					</div>
 				))}
 			</div>
-			<div className="sctimer"><b>14 дней</b><span>→</span><b className="hi">2 дня</b><small>на тот же набор задач</small></div>
+			<div className="sctimer"><b>14 дней</b><span>→</span><b className="hi">2 дня</b>{' '}<small>на тот же набор задач</small></div>
 		</div>
 	);
 }
