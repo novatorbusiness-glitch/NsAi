@@ -786,8 +786,8 @@ footer .partners img{display:none}
 .quotes2.zcards figcaption{color:#8f979c}
 
 /* Слайдер табов: трек панелей, свайп на мобиле, маска меню. */
-.slider{overflow:hidden;border-radius:20px}
-.slider-track{display:flex;align-items:stretch;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.slider{overflow:hidden;border-radius:20px;transition:height .3s ease}
+.slider-track{display:flex;align-items:flex-start;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
 .slide{flex:0 0 100%;min-width:0;display:flex}
 .slide > *{flex:1;min-width:0}
 @media(max-width:768px){
