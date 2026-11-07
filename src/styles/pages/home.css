@@ -180,7 +180,7 @@ section.hero .hb.br{right:-30px;transform:translateY(-50%) rotate(6deg)}
 
 section.hero .hb{font-size:17px;font-weight:600;padding:15px 22px;border-radius:16px;letter-spacing:.01em}
 section.hero .hb.bl{background:linear-gradient(135deg,#202c28,#101715);border:1px solid rgba(127,211,182,.4);color:#cfeee3;box-shadow:0 18px 40px -12px rgba(47,181,138,.35);padding-top:18px;padding-bottom:18px}
-section.hero .hb.br{background:linear-gradient(135deg,#3aa981,#2fb58a);border:0;color:#0d0d0d;box-shadow:0 18px 44px -10px rgba(47,181,138,.45)}
+section.hero .hb.br{background:linear-gradient(135deg,#3aa981,#2fb58a);border:0;color:#0d0d0d;box-shadow:0 18px 44px -10px rgba(47,181,138,.45);padding-top:18px;padding-bottom:18px}
 section.hero .lead{font-weight:400;color:#b9c4bf}
 section.hero .btn.p{background:#3bd39f;color:#05231a;font-weight:700}
 section.hero .btn.p:hover{background:#55e2b2;color:#05231a}
@@ -713,7 +713,7 @@ footer .partners li{background:#15181b;border:1px solid rgba(255,255,255,.1);bor
 footer .partners img{filter:brightness(0) invert(1);opacity:.62;height:20px}
 footer .partners .pl{color:#8a9196}
 footer .partners ul{gap:8px 10px}
-.final .card .lead{color:#b9c4bf}
+.final .card .lead{color:#c9d1cc}
 .final .card a:not(.btn){color:#4ee3ac}
 .final .card a:not(.btn):hover{color:#7fe8c2}
 footer .partners li{background:none;border:0;padding:0;color:#a7adb3;font-size:14px;opacity:1}
