@@ -185,7 +185,6 @@ export default function Changes() {
 	const barRef = useRef<HTMLElement | null>(null);
 	const sliderRef = useRef<HTMLDivElement | null>(null);
 	const touchX = useRef<number | null>(null);
-	const sliderRef = useRef<HTMLDivElement | null>(null);
 	const [sh, setSh] = useState<number | null>(null);
 	const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
 	const onTouchEnd = (e: React.TouchEvent) => {
