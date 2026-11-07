@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import Metamorph from "@/components/home/Metamorph";
+import Numbers from "@/components/home/Numbers";
 import Changes from "@/components/home/Changes";
 import CtaBanner from "@/components/home/CtaBanner";
 import Team from "@/components/home/Team";
@@ -24,6 +25,7 @@ export default function Page() {
 		<>
 			<Hero />
 			<Metamorph />
+			<Numbers />
 			<Team />
 			<CtaBanner />
 			<Changes />

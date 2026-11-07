@@ -192,7 +192,7 @@ export default function Changes() {
 	return (
 		<section id="changes" className="changes">
 			<div className="wrap">
-				<SectionHead num="04" label="Что меняется" title="Шесть мест, где бизнес теряет время и деньги" lead="По каждому направлению: как работает сейчас и как становится со мной. Справа материалы из моей среды" />
+				<SectionHead num="04" label="Что меняется" title="Шесть мест, где бизнес теряет время и деньги" lead="По каждому направлению: что меняется со мной. Справа материалы из моей среды" />
 				<div className="ttabs">
 					<div className="tlist" role="tablist" aria-label="Что меняется в бизнесе">
 						{TABS.map((t, i) => (
