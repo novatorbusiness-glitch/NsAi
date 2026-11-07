@@ -11,9 +11,9 @@ export default function Hero() {
 						<div className="role"><span className="pill">{c.pill}</span></div>
 						<p className="hpre">{c.pre}</p>
 						<div className="hh">
-							<span className="hb bl" aria-hidden="true">Отдел агентов</span>
+							<span className="hb bl" aria-hidden="true">ИИ-среда</span>
 							<h1>{c.h1} <span className="thin">{c.h1Thin}</span></h1>
-							<span className="hb br" aria-hidden="true">управленец агентов</span>
+							<span className="hb br" aria-hidden="true">Управленец среды</span>
 						</div>
 						<p className="lead">{c.lead}</p>
 						<p className="sub">{c.sub}</p>
