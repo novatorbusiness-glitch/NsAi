@@ -176,6 +176,8 @@ function ToolsArt() {
 	);
 }
 
+// Высокие сцены на телефоне целиком уменьшаются под ширину экрана, чтобы табы и схема помещались в один экран (потоки с .flow уже масштабируются внутри).
+const FIT_IDS = new Set(["pack", "sales", "analytics", "tools"]);
 const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: TrafficArt, sales: SalesArt, funnel: FunnelArt, analytics: DashArt, tools: ToolsArt };
 
 export default function Changes() {
@@ -235,7 +237,7 @@ export default function Changes() {
 				<div className="slider" ref={sliderRef} style={sh ? { height: sh } : undefined} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 					<div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
 						{TABS.map((t, i) => (
-							<div className="slide" key={t.id}>{SCENES[t.id]()}</div>
+							<div className="slide" key={t.id}>{FIT_IDS.has(t.id) ? <FitScheme width={560}>{SCENES[t.id]()}</FitScheme> : SCENES[t.id]()}</div>
 						))}
 					</div>
 				</div>
