@@ -937,9 +937,9 @@ footer .partners img{display:none}
 
 /* Цифры: лаконичная полоса сразу после первого экрана. */
 .nums{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:34px 0 38px}
-.nums-lbl{font:600 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#2fb58a;margin:0 0 24px}
-.nums-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
-.nums-i{display:grid;gap:6px;justify-items:start;text-align:left;border-left:1px solid rgba(255,255,255,.12);padding-left:18px}
+.nums-lbl{font:600 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#2fb58a;margin:0 0 24px;text-align:center}
+.nums-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1040px;margin:0 auto}
+.nums-i{display:grid;gap:6px;justify-items:center;text-align:center;border-left:1px solid rgba(255,255,255,.12);padding-left:18px;padding-right:10px}
 .nums-i:first-child{border-left:0;padding-left:0}
 .nums-i b{font-weight:200;font-size:clamp(28px,2.8vw,38px);line-height:1;color:#fff;letter-spacing:-.02em;white-space:nowrap}
 .nums-i span{font-size:12.5px;line-height:1.45;color:#8a9196}
