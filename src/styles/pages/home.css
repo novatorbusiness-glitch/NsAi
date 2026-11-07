@@ -521,7 +521,8 @@ section{padding:140px 0}
 .final .card p a{color:#3bd39f}
 .more-link{color:#3bd39f}
 .bookcard .more-link{color:#3bd39f}
-.xp-bar b,.xp-bar small{color:#e9ecea}
+.xp-bar b{color:#2d312e}
+.xp-bar small{color:#5a6167}
 .xp-msg.me{background:#0e3f31;color:#dfe5e2}
 
 .more-link,.bookcard .more-link{color:#3bd39f}
@@ -723,13 +724,15 @@ footer .partners img{display:none}
 
 .t-mdesc{display:none}
 
-@media(max-width:768px){  .tlist{display:flex;flex-direction:row;overflow-x:auto;gap:22px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-.tlist::-webkit-scrollbar{display:none}
-.titem{flex:none;border-bottom:1px solid var(--card-line);padding:12px 0 10px}
-.titem b{font-size:16px}
-.titem span{display:none}
-.titem.on::after{left:0;right:0}
-.t-mdesc{display:block;margin:16px 0 12px;font-size:14.5px;line-height:1.55;color:#b9c2be}
+@media(max-width:768px){
+/* Табы как у zcode на телефоне: вертикальный список, у активного пункта описание и полоска прогресса, схема ниже списка. */
+.tlist{display:flex;flex-direction:column;overflow:visible;gap:0;white-space:normal}
+.titem{flex:none;border-bottom:1px solid var(--card-line);padding:22px 0 20px}
+.titem b{font-size:20px;font-weight:500;color:var(--card-ink);letter-spacing:0}
+.titem span{display:block;margin-top:12px;font-size:14.5px;line-height:1.6;color:var(--card-mut)}
+.titem.on{border-bottom-color:transparent}
+.titem.on::after{left:0;right:0;height:1px;background:var(--card-line)}
+.t-mdesc{display:none}
 #changes .tpanel .lcard.awin{height:auto;min-height:0}
 .lcard.awin,.scene-card{padding:16px 14px}
 .winbar{padding:0 4px 12px}
@@ -796,7 +799,6 @@ footer .partners img{display:none}
 .slider{border-radius:16px}
 .slide .lcard.awin{padding:14px 16px}
 .slide .scene-card{padding:16px 14px}
-.tlist{overflow-x:auto;padding:2px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 26px,#000 calc(100% - 26px),transparent);mask-image:linear-gradient(90deg,transparent,#000 26px,#000 calc(100% - 26px),transparent)}
 .titem{outline:none;-webkit-tap-highlight-color:transparent}
 .titem.on::after{height:2px}
 }
