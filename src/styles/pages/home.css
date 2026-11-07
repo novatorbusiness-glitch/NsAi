@@ -743,8 +743,8 @@ footer .partners img{display:none}
 .oi svg{width:19px;height:19px}
 .os-app b{font-size:11.5px}
 .funtab{padding:8px 16px 4px}
-.fun-row{grid-template-columns:96px minmax(0,1fr) 40px 44px;gap:10px;padding:9px 0}
-.fun-t{font-size:13.5px}
+.fun-row{grid-template-columns:132px minmax(0,1fr) 40px 44px;gap:10px;padding:9px 0}
+.fun-t{font-size:14px;white-space:nowrap}
 .fun-n{font-size:15px}
 .fun-c{font-size:11px}
 .fun-bar{height:10px}
