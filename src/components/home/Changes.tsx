@@ -183,6 +183,7 @@ const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: Traf
 export default function Changes() {
 	const [active, setActive] = useState(0);
 	const barRef = useRef<HTMLElement | null>(null);
+	const sliderRef = useRef<HTMLDivElement | null>(null);
 	const touchX = useRef<number | null>(null);
 	const sliderRef = useRef<HTMLDivElement | null>(null);
 	const [sh, setSh] = useState<number | null>(null);
@@ -219,6 +220,21 @@ export default function Changes() {
 		raf = requestAnimationFrame(step);
 		return () => { if (raf !== null) cancelAnimationFrame(raf); };
 	}, [active]);
+	useEffect(() => {
+		const fit = () => {
+			const sl = sliderRef.current;
+			if (!sl) return;
+			const flow = sl.querySelector(".flow") as HTMLElement | null;
+			if (!flow) return;
+			const k = Math.min(1, sl.clientWidth / 640);
+			flow.style.transform = `scale(${k})`;
+			const fitEl = flow.parentElement as HTMLElement | null;
+			if (fitEl) fitEl.style.height = `${Math.round(320 * k)}px`;
+		};
+		fit();
+		window.addEventListener("resize", fit);
+		return () => window.removeEventListener("resize", fit);
+	}, []);
 	return (
 		<section id="changes" className="changes">
 			<div className="wrap">

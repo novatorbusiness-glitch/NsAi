@@ -839,3 +839,7 @@ footer .partners img{display:none}
 .fit{width:100%;position:relative;overflow-x:clip}
 .fit-in{transform-origin:0 0}
 @media(max-width:900px){.scene:has(.fit){min-height:0;justify-content:flex-start}}
+
+/* z.ai-серые карточки «один в один» (Правила, Отзывы) */
+.pos-card{background:#1a1d1f!important;border:1px solid rgba(255,255,255,.04)!important;border-radius:18px!important;box-shadow:none!important}
+.quotes2.zcards figure{background:#1a1d1f!important;border:1px solid rgba(255,255,255,.04)!important;border-radius:18px!important;box-shadow:none!important}

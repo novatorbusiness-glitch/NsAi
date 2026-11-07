@@ -119,6 +119,7 @@ export default function Team() {
 	const c = home.team;
 	const [active, setActive] = useState(0);
 	const barRef = useRef<HTMLElement | null>(null);
+	const sliderRef = useRef<HTMLDivElement | null>(null);
 	const touchX = useRef<number | null>(null);
 	const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
 	const onTouchEnd = (e: React.TouchEvent) => {
@@ -155,10 +156,10 @@ export default function Team() {
 						))}
 					</div>
 				<div className="t-mdesc">{TABS[active].desc}</div>
-				<div className="slider" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+				<div className="slider" ref={sliderRef} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 					<div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
 						{TABS.map((t, i) => (
-							<div className="slide" key={t.id}>{SCENES[t.id]()}</div>
+							<div className="slide" key={t.id}><div className="flow-fit">{SCENES[t.id]()}</div></div>
 						))}
 					</div>
 				</div>
