@@ -119,7 +119,7 @@ export default function Team() {
 		let start: number | null = null;
 		const step = (t: number) => {
 			if (start === null) start = t;
-			const p = Math.min((t - start) / 8000, 1);
+			const p = Math.min((t - start) / 10000, 1);
 			if (barRef.current) barRef.current.style.width = (p * 100).toFixed(2) + "%";
 			if (p >= 1) { setActive((a) => (a + 1) % TABS.length); return; }
 			raf = requestAnimationFrame(step);
