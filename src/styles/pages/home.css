@@ -424,8 +424,6 @@ section{padding:140px 0}
 .metamorph .section-head .snum,.metamorph .section-head h2{display:block;text-align:center}
 
 /* Центрирование шапки блока 02 — принудительно. */
-.metamorph .section-head{text-align:center}
-.metamorph .section-head .snum,.metamorph .section-head h2{display:block;text-align:center}
 
 /* Шапка каждого блока: колонка центрируется целиком (как у z.ai), а не только текст внутри. */
 .section-head{max-width:820px;margin-left:auto;margin-right:auto;text-align:center}
@@ -524,7 +522,6 @@ section{padding:140px 0}
 .cstamp2{color:#7fd3b6}
 .sctimer{border-top-color:rgba(255,255,255,.1)}
 .sctimer b{color:#8a9196}
-.sctimer b.hi{color:#3bd39f}
 .sctimer small{color:#8a9196}
 .scnote{color:#7fd3b6}
 .sync-node{background:linear-gradient(180deg,#16191d,#1b1f23);border-color:rgba(255,255,255,.12)}
@@ -549,7 +546,6 @@ section{padding:140px 0}
 .sync3 .sync-node{border-radius:14px;padding:20px 16px;font-size:14.5px;font-weight:700;text-align:center;background:linear-gradient(180deg,#16191d,#1b1f23);border:1px solid rgba(255,255,255,.12);color:#e9ecea}
 .lines3{display:grid;gap:14px;align-content:center}
 .sync-line{position:relative;height:2px;background:rgba(127,211,182,.22);border-radius:2px;align-self:center}
-.sync-line i{position:absolute;top:-3px;height:8px;width:34px;border-radius:8px;background:linear-gradient(90deg,rgba(47,181,138,0),#2fb58a);animation:slideP 2.4s linear infinite}
 .sync3 .sync-hub{align-self:stretch;display:flex;flex-direction:column;justify-content:center;text-align:center;border-radius:18px;padding:24px 26px;background:linear-gradient(160deg,#123c30,#3bd39f);border:1px solid rgba(127,211,182,.35);color:#fff;box-shadow:0 24px 60px -24px rgba(47,181,138,.6);animation:hubGlow 4s ease infinite}
 .lines1{display:grid;align-items:center}
 .dbcol{display:grid;align-items:center}
@@ -702,12 +698,7 @@ section{padding:140px 0}
 .xp-msg.me{background:#0e3f31;color:#dfe5e2}
 
 /* Финал, экспресс, услуги, футер: дозакрытие светлых остатков (07.11, скан контраста). */
-.final{background:var(--dark)}
-.final .lead,.final .chline{color:#a7adb3}
-.final .card p a{color:#3bd39f}
 .more-link,.bookcard .more-link{color:#3bd39f}
-.xp-bar b,.xp-bar small{color:#e9ecea}
-.xp-msg.me{background:#0e3f31;color:#dfe5e2}
 .xrow{background:transparent}
 .xrow:hover,.xrow:focus-visible{background:rgba(255,255,255,.04)}
 footer .fbrand b{color:#fff}
@@ -757,10 +748,6 @@ footer a:hover{color:#fff}
 @keyframes fpulseV{0%{top:0;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:calc(100% - 9px);opacity:0}}
 
 /* Упаковка: окно контент-плана (реальные строки) + витрина материалов. */
-.cplan{padding:8px 18px 0}
-.cp-row{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:13px 2px;border-bottom:1px solid rgba(255,255,255,.09);align-items:baseline}
-.cp-d{font:600 12px var(--m);color:#3bd39f;letter-spacing:.04em}
-.cp-row b{font-size:14.5px;line-height:1.45;color:#e9ecea;font-weight:600}
 .cshelf{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 18px 4px}
 .cshelf span{display:flex;align-items:center;justify-content:center;padding:10px 6px;border:1px dashed rgba(255,255,255,.14);border-radius:10px;font:600 12px var(--f);color:#a8b3ae;background:#14171b}
 
@@ -905,7 +892,6 @@ section.team .team-own span{color:var(--dark-mut);font-size:13px;line-height:1.4
 
 /* Правки по скринам Ильи (07.11 ночь). */
 .faq .a{font-size:17px;color:#c9d1cc;line-height:1.55}
-.faq .a b{color:#fff}
 .fnode{height:172px}
 .osgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .os-app b{font-size:12px}
@@ -937,13 +923,9 @@ footer .partners img{display:none}
 
 /* Цифры: лаконичная полоса сразу после первого экрана. */
 .nums{background:var(--dark);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:34px 0 38px}
-.nums-lbl{font:600 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#2fb58a;margin:0 0 24px;text-align:center}
-.nums-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1040px;margin:0 auto}
-.nums-i{display:grid;gap:6px;justify-items:center;text-align:center;border-left:1px solid rgba(255,255,255,.12);padding-left:18px;padding-right:10px}
 .nums-i:first-child{border-left:0;padding-left:0}
 .nums-i b{font-weight:200;font-size:clamp(28px,2.8vw,38px);line-height:1;color:#fff;letter-spacing:-.02em;white-space:nowrap}
 .nums-i span{font-size:12.5px;line-height:1.45;color:#8a9196}
-@media(max-width:820px){.nums-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.nums-i{border-left:0;padding-left:0}.nums-i b{font-size:28px}}
 .titem span{color:#b9c2be}
 
 .t-mdesc{display:none}
@@ -981,10 +963,35 @@ footer .partners img{display:none}
 .fs b{font-size:14.5px}
 /* Схемы n8n: вертикально, узлы по центру */
 .flow{flex-direction:column;align-items:center;gap:2px;padding:18px 14px}
-.fnode{width:auto}
 .fnode b{font-size:13.5px}
 .fnode > span{font-size:11.5px}
 .flink{width:2px;height:26px;margin:0;flex:none}
-.flink::after{top:0;left:-3px;width:8px;height:9px;animation-name:fpulseV}
 .flink::before{display:none}
 }
+
+/* Откат перекраски светлых панелей: фоны светлые, тексты тёмные (07.11). */
+.scol p{color:#4b5257}
+.scol .swas{color:#4b5257}
+.scol .snow{color:#15201b}
+.scol .chip.dim{background:#c7d2cd;color:#313a36}
+.sframe{color:#4b5257}
+.loutro{color:#0F6E56}
+.awin .winbar.light span{color:#4b5257}
+.os-app{background:#f6f9f6;border-color:#e3eae4}
+.os-app b{color:#15201b}
+.oi{background:#eef5f0;color:#0F6E56}
+.fun-bar{background:#dfe7e2}
+.fun-t{color:#15201b}
+.fun-n{color:#15201b}
+.funsum .fs{background:#f6f9f6;border-color:#e3eae4}
+.fs b{color:#15201b}
+.fs span{color:#4b5257}
+.vit{background:#f6f9f6;border-color:#e3eae4}
+.vitr b{color:#15201b}
+.sbadge{background:#e7f3ec;color:#0F6E56}
+
+/* Полоса цифр после hero (живая): центрированная. */
+.nums-lbl{font:600 11px var(--m);letter-spacing:.12em;text-transform:uppercase;color:#2fb58a;margin:0 0 24px;text-align:center}
+.nums-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));max-width:1040px;margin:0 auto}
+.nums-i{display:grid;gap:6px;justify-items:center;text-align:center;border-left:1px solid rgba(255,255,255,.12);padding-left:18px;padding-right:10px}
+@media(max-width:820px){.nums-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.nums-i{border-left:0;padding-left:0}.nums-i b{font-size:28px}}
