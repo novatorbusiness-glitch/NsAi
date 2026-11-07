@@ -1,5 +1,5 @@
 /* Стили страницы: пример аудита. Общее — в styles/base.css. */
-.rz-doc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:28px;box-shadow:0 20px 50px -34px rgba(16,24,20,.35)}
+.rz-doc{background:#111416;border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:28px;box-shadow:0 20px 50px -34px rgba(16,24,20,.35)}
 .rz-head{border-bottom:1px solid var(--line);padding-bottom:18px}
 .rz-q{margin:0 0 14px;font-size:18px;line-height:1.45;font-weight:600}
 .rz-head dl{margin:0;display:grid;gap:8px}
@@ -39,7 +39,7 @@
 
 /* Что остаётся у вас. */
 .rz-gets{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
-.rz-gets li{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:#fff}
+.rz-gets li{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:#111416}
 .rz-gets span{display:block;font:700 13px/1 var(--m);color:var(--acc);margin-bottom:12px}
 .rz-gets b{display:block;font-size:17px;margin-bottom:6px}
 .rz-gets p{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}

@@ -8,7 +8,7 @@
 .bk-text h2.bk-part{font-size:clamp(22px,2.6vw,26px);color:var(--acc);margin-top:8px}
 .bk-text hr.bk-start{border:0;border-top:1px solid var(--line);margin:32px 0}
 .bk-fig{margin:28px 0 32px}
-.bk-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
+.bk-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#111416}
 .bk-fig figcaption{margin-top:10px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
 .bk-text i{font-style:italic}
 .bk-cover{margin:0 0 32px}
@@ -17,7 +17,7 @@
 .bk-col{max-width:760px}
 .bk-head{margin:6px 0 24px}
 .bk-head h1{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 12px}
-.bk-toc{border:1px solid var(--line);border-radius:12px;background:#fff;margin:0 0 32px}
+.bk-toc{border:1px solid var(--line);border-radius:12px;background:#111416;margin:0 0 32px}
 .bk-toc summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:14px 18px;font:600 12.5px/1 var(--m);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .bk-toc summary::-webkit-details-marker{display:none}
 .bk-toc summary span{color:var(--acc)}
