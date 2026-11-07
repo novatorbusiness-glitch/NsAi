@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import SectionHead from "@/components/ui/SectionHead";
+import FitScheme from "@/components/ui/FitScheme";
 
 // 04 · что меняется (06.11): пять направлений, линия загрузки (фиолетовая, rAF),
 // справа — отрисованные артефакты: экран сайта, разбор цифр, воронка, возврат клиенток, дашборд-инструмент.
@@ -46,18 +47,20 @@ function TrafficArt() {
 	return (
 		<div className="lcard awin dark-scene">
 			<div className="winbar light"><i /><i /><i /><span>связка · рост трафика</span></div>
-			<div className="flow" role="img" aria-label="Связка трафика: разбор конкурентов, креативы, SEO с Метрикой, рост показателей">
-				{nodes.map((n, i) => (
-					<div key={n.t} style={{ display: "contents" }}>
-						<div className="fnode">
-							<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
-							<b>{n.t}</b>
-							<span>{n.s}</span>
+			<FitScheme width={600}>
+				<div className="flow" role="img" aria-label="Связка трафика: разбор конкурентов, креативы, SEO с Метрикой, рост показателей">
+					{nodes.map((n, i) => (
+						<div key={n.t} style={{ display: "contents" }}>
+							<div className="fnode">
+								<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
+								<b>{n.t}</b>
+								<span>{n.s}</span>
+							</div>
+							{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
 						</div>
-						{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
-					</div>
-				))}
-			</div>
+					))}
+				</div>
+			</FitScheme>
 		</div>
 	);
 }
@@ -72,18 +75,20 @@ function FunnelArt() {
 	return (
 		<div className="lcard awin dark-scene">
 			<div className="winbar light"><i /><i /><i /><span>связка · путь заявки</span></div>
-			<div className="flow" role="img" aria-label="Связка автоматизации: виджет, агент, CRM, отчёт в чат команды">
-				{nodes.map((n, i) => (
-					<div key={n.t} style={{ display: "contents" }}>
-						<div className="fnode">
-							<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
-							<b>{n.t}</b>
-							<span>{n.s}</span>
+			<FitScheme width={600}>
+				<div className="flow" role="img" aria-label="Связка автоматизации: виджет, агент, CRM, отчёт в чат команды">
+					{nodes.map((n, i) => (
+						<div key={n.t} style={{ display: "contents" }}>
+							<div className="fnode">
+								<span className="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{n.ico}</svg></span>
+								<b>{n.t}</b>
+								<span>{n.s}</span>
+							</div>
+							{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
 						</div>
-						{i < nodes.length - 1 && <div className="flink" aria-hidden="true" style={{ "--fd": `${i * 0.6}s` } as React.CSSProperties} />}
-					</div>
-				))}
-			</div>
+					))}
+				</div>
+			</FitScheme>
 		</div>
 	);
 }

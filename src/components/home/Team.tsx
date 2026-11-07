@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { home } from "@content/pages/home";
 import SectionHead from "@/components/ui/SectionHead";
+import FitScheme from "@/components/ui/FitScheme";
 
 // 03 · как это выглядит в работе (06.11): механика z.ai — активный смысл с линией загрузки, авто-переключение
 // каждые 6 секунд (пауза при наведении), справа живые отрисованные сцены с анимациями.
@@ -39,17 +40,19 @@ function SyncScene() {
 	const src = ["amoCRM", "Сайт и landing", "Telegram"];
 	return (
 		<div className="scene">
-			<div className="sync3">
-				<div className="scol">
-					{src.map((s) => <div key={s} className="sync-node">{s}</div>)}
+			<FitScheme width={560}>
+				<div className="sync3">
+					<div className="scol">
+						{src.map((s) => <div key={s} className="sync-node">{s}</div>)}
+					</div>
+					<div className="lines3" aria-hidden="true">
+						{src.map((s) => <div key={s} className="sync-line"><i /></div>)}
+					</div>
+					<div className="sync-hub">Среда<span>8 отделов · 204 навыка</span></div>
+					<div className="lines1" aria-hidden="true"><div className="sync-line"><i /></div></div>
+					<div className="dbcol"><div className="sync-node biz">Дашборд владельца</div></div>
 				</div>
-				<div className="lines3" aria-hidden="true">
-					{src.map((s) => <div key={s} className="sync-line"><i /></div>)}
-				</div>
-				<div className="sync-hub">Среда<span>8 отделов · 204 навыка</span></div>
-				<div className="lines1" aria-hidden="true"><div className="sync-line"><i /></div></div>
-				<div className="dbcol"><div className="sync-node biz">Дашборд владельца</div></div>
-			</div>
+			</FitScheme>
 			<p className="scnote">CRM, сайт и мессенджеры сходятся в одном месте: картина бизнеса перед вами</p>
 		</div>
 	);
@@ -68,19 +71,21 @@ function OrderScene() {
 	];
 	return (
 		<div className="scene">
-			<div className="order2">
-				<div className="o-chaos">
-					<span className="olab">хаос</span>
-					{junk.map((j) => (
-						<i key={j.t} className="ojunk" style={{ left: `${j.l}%`, top: `${j.tp}%`, "--rot": `${j.r}deg` } as React.CSSProperties}>{j.t}</i>
-					))}
+			<FitScheme width={600}>
+				<div className="order2">
+					<div className="o-chaos">
+						<span className="olab">хаос</span>
+						{junk.map((j) => (
+							<i key={j.t} className="ojunk" style={{ left: `${j.l}%`, top: `${j.tp}%`, "--rot": `${j.r}deg` } as React.CSSProperties}>{j.t}</i>
+						))}
+					</div>
+					<div className="o-arr" aria-hidden="true">→</div>
+					<div className="o-order">
+						<span className="olab ok">порядок</span>
+						<div className="o-map"><img src="/images/site/order-map.jpg" width={1740} height={1160} alt="Граф Obsidian: карта процессов и заметок среды" loading="lazy" /></div>
+					</div>
 				</div>
-				<div className="o-arr" aria-hidden="true">→</div>
-				<div className="o-order">
-					<span className="olab ok">порядок</span>
-					<div className="o-map"><img src="/images/site/order-map.jpg" width={1740} height={1160} alt="Граф Obsidian: карта процессов и заметок среды" loading="lazy" /></div>
-				</div>
-			</div>
+			</FitScheme>
 			<p className="scnote">Инженерный граф моей ИИ-среды: все процессы жёстко связаны между собой, поэтому ни одна задача не теряется</p>
 		</div>
 	);
