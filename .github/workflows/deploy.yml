@@ -6,16 +6,17 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
+# Выкладка пушем собранного out/ в ветку gh-pages (Pages = Deploy from branch, legacy).
+# Старый путь через actions/deploy-pages стабильно падал по таймауту на syncing_files.
+# .nojekyll обязателен: без него Jekyll выбрасывает папку _next (CSS/JS) — сайт без стилей.
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,21 +35,18 @@ jobs:
       - name: Build and check
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to gh-pages
+        run: |
+          git clone --depth 1 --branch gh-pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy-repo
+          rsync -a --delete --exclude '.git' --exclude '.nojekyll' out/ deploy-repo/
+          touch deploy-repo/.nojekyll
+          cd deploy-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Выкладка из main @ ${{ github.sha }}"
+            git push origin gh-pages
+          else
+            echo "Изменений нет — выкладка не нужна"
+          fi
