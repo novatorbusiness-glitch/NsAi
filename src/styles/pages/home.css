@@ -812,3 +812,5 @@ footer .partners img{display:none}
 .titem{outline:none;-webkit-tap-highlight-color:transparent}
 .titem.on::after{height:2px}
 }
+.xp-msg{color:#fff;font-size:13px}
+.xp-msg.me{color:#eafaf3}
