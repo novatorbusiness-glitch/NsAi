@@ -203,7 +203,8 @@ export default function Changes() {
 							</button>
 						))}
 					</div>
-					<div className="tpanel" role="tabpanel">
+					<div className="t-mdesc">{TABS[active].desc}</div>
+				<div className="tpanel" role="tabpanel">
 						<div className="lcard scene-card light-scene" key={active}>{SCENES[TABS[active].id]()}</div>
 					</div>
 				</div>

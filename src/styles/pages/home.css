@@ -945,3 +945,46 @@ footer .partners img{display:none}
 .nums-i span{font-size:12.5px;line-height:1.45;color:#8a9196}
 @media(max-width:820px){.nums-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.nums-i{border-left:0;padding-left:0}.nums-i b{font-size:28px}}
 .titem span{color:#b9c2be}
+
+.t-mdesc{display:none}
+
+/* Мобильная адаптивность интерактивных блоков по ТЗ (z.ai-механика). */
+@media(max-width:768px){
+/* Таб-меню: горизонтальный скролл-ряд заголовков */
+.tlist{display:flex;flex-direction:row;overflow-x:auto;gap:22px;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tlist::-webkit-scrollbar{display:none}
+.titem{flex:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px 0 10px}
+.titem b{font-size:16px}
+.titem span{display:none}
+.titem.on::after{left:0;right:0}
+/* Описание активного таба: отдельная строка над артефактом */
+.t-mdesc{display:block;margin:16px 0 12px;font-size:14.5px;line-height:1.55;color:#b9c2be}
+/* Артефакт-карточка: компактные поля, без фикс. высоты */
+#changes .tpanel .lcard.awin{height:auto;min-height:0}
+.lcard.awin,.scene-card{padding:16px 14px}
+.winbar{padding:0 4px 12px}
+/* Своя ОС: 2 колонки */
+.osgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:14px 14px 16px}
+.os-app{padding:12px 4px 10px;gap:6px}
+.oi{width:40px;height:40px;border-radius:11px}
+.oi svg{width:19px;height:19px}
+.os-app b{font-size:11.5px}
+/* Аналитика: воронка и деньги 2х2 */
+.funtab{padding:8px 16px 4px}
+.fun-row{grid-template-columns:96px minmax(0,1fr) 40px 44px;gap:10px;padding:9px 0}
+.fun-t{font-size:13.5px}
+.fun-n{font-size:15px}
+.fun-c{font-size:11px}
+.fun-bar{height:10px}
+.funsum{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 16px 16px}
+.fs{padding:10px 12px}
+.fs b{font-size:14.5px}
+/* Схемы n8n: вертикально, узлы по центру */
+.flow{flex-direction:column;align-items:center;gap:2px;padding:18px 14px}
+.fnode{width:auto}
+.fnode b{font-size:13.5px}
+.fnode > span{font-size:11.5px}
+.flink{width:2px;height:26px;margin:0;flex:none}
+.flink::after{top:0;left:-3px;width:8px;height:9px;animation-name:fpulseV}
+.flink::before{display:none}
+}

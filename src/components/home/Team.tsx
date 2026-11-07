@@ -141,7 +141,8 @@ export default function Team() {
 							</button>
 						))}
 					</div>
-					<div className="tpanel" role="tabpanel">
+					<div className="t-mdesc">{TABS[active].desc}</div>
+				<div className="tpanel" role="tabpanel">
 						<div className="lcard scene-card" key={active}>{SCENES[TABS[active].id]()}</div>
 					</div>
 				</div>
