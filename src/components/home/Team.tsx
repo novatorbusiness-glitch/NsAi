@@ -81,7 +81,7 @@ function OrderScene() {
 					<div className="o-map"><img src="/images/site/order-map.jpg" width={1740} height={1160} alt="Граф Obsidian: карта процессов и заметок среды" loading="lazy" /></div>
 				</div>
 			</div>
-			<p className="scnote">Карта Obsidian из моей среды: процессы связаны и на месте, ничего не теряется</p>
+			<p className="scnote">Инженерный граф моей ИИ-среды: все процессы жёстко связаны между собой, поэтому ни один документ не теряется</p>
 		</div>
 	);
 }
