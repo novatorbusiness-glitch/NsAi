@@ -182,6 +182,8 @@ export default function Changes() {
 	const [active, setActive] = useState(0);
 	const barRef = useRef<HTMLElement | null>(null);
 	const touchX = useRef<number | null>(null);
+	const sliderRef = useRef<HTMLDivElement | null>(null);
+	const [sh, setSh] = useState<number | null>(null);
 	const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
 	const onTouchEnd = (e: React.TouchEvent) => {
 		if (touchX.current === null) return;
@@ -189,6 +191,19 @@ export default function Changes() {
 		if (Math.abs(dx) > 48) setActive((a) => (a + (dx < 0 ? 1 : -1) + TABS.length) % TABS.length);
 		touchX.current = null;
 	};
+	// На телефоне высота слайдера равна высоте активного слайда, иначе схема висит над пустотой до высоты самого высокого таба.
+	useEffect(() => {
+		const box = sliderRef.current;
+		const slide = box?.firstElementChild?.children[active] as HTMLElement | undefined;
+		if (!box || !slide) return;
+		const mq = window.matchMedia("(max-width:768px)");
+		const fit = () => setSh(mq.matches ? slide.offsetHeight : null);
+		fit();
+		const ro = new ResizeObserver(fit);
+		ro.observe(slide);
+		mq.addEventListener("change", fit);
+		return () => { ro.disconnect(); mq.removeEventListener("change", fit); };
+	}, [active]);
 	useEffect(() => {
 		let raf: number | null = null;
 		let start: number | null = null;
@@ -217,7 +232,7 @@ export default function Changes() {
 						))}
 					</div>
 				<div className="t-mdesc">{TABS[active].desc}</div>
-				<div className="slider" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+				<div className="slider" ref={sliderRef} style={sh ? { height: sh } : undefined} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 					<div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
 						{TABS.map((t, i) => (
 							<div className="slide" key={t.id}>{SCENES[t.id]()}</div>
