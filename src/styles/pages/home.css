@@ -798,3 +798,17 @@ footer .partners img{display:none}
 .quotes2.zcards figure{background:#16191c;border:1px solid rgba(255,255,255,.05);border-radius:18px;padding:26px 26px 22px;box-shadow:0 20px 50px -30px rgba(0,0,0,.8)}
 .quotes2.zcards blockquote{color:#e9ecea;font-size:15.5px;line-height:1.6}
 .quotes2.zcards figcaption{color:#8f979c}
+
+/* Слайдер табов: трек панелей, свайп на мобиле, маска меню. */
+.slider{overflow:hidden;border-radius:20px}
+.slider-track{display:flex;align-items:stretch;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.slide{flex:0 0 100%;min-width:0;display:flex}
+.slide > *{flex:1;min-width:0}
+@media(max-width:768px){
+.slider{border-radius:16px}
+.slide .lcard.awin{padding:14px 16px}
+.slide .scene-card{padding:16px 14px}
+.tlist{overflow-x:auto;padding:2px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 26px,#000 calc(100% - 26px),transparent);mask-image:linear-gradient(90deg,transparent,#000 26px,#000 calc(100% - 26px),transparent)}
+.titem{outline:none;-webkit-tap-highlight-color:transparent}
+.titem.on::after{height:2px}
+}

@@ -176,6 +176,14 @@ const SCENES: Record<string, () => JSX.Element> = { pack: PackArt, traffic: Traf
 export default function Changes() {
 	const [active, setActive] = useState(0);
 	const barRef = useRef<HTMLElement | null>(null);
+	const touchX = useRef<number | null>(null);
+	const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
+	const onTouchEnd = (e: React.TouchEvent) => {
+		if (touchX.current === null) return;
+		const dx = e.changedTouches[0].clientX - touchX.current;
+		if (Math.abs(dx) > 48) setActive((a) => (a + (dx < 0 ? 1 : -1) + TABS.length) % TABS.length);
+		touchX.current = null;
+	};
 	useEffect(() => {
 		let raf: number | null = null;
 		let start: number | null = null;
@@ -203,10 +211,14 @@ export default function Changes() {
 							</button>
 						))}
 					</div>
-					<div className="t-mdesc">{TABS[active].desc}</div>
-				<div className="tpanel" role="tabpanel">
-						<div className="lcard scene-card light-scene" key={active}>{SCENES[TABS[active].id]()}</div>
+				<div className="t-mdesc">{TABS[active].desc}</div>
+				<div className="slider" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+					<div className="slider-track" style={{ transform: `translateX(-${active * 100}%)` }}>
+						{TABS.map((t, i) => (
+							<div className="slide" key={t.id}>{SCENES[t.id]()}</div>
+						))}
 					</div>
+				</div>
 				</div>
 			</div>
 		</section>
