@@ -28,8 +28,7 @@ export default function Contact({ h2 }: { h2?: string }) {
 						<div className="chips" role="group" aria-label={c.ask}>
 							{c.options.map((o, i) => <button type="button" key={o} className={pick === i ? "chip on" : "chip"} aria-pressed={pick === i} onClick={() => choose(i)}>{o}</button>)}
 						</div>
-						{pick !== null && <p className="cap" role="status">{c.copied}</p>}
-						<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
+							<div className="cta-row"><a className="btn p" href={site.contacts.telegram} target="_blank" rel="noopener">{common.buttons.telegram}</a><a className="btn s" href={site.contacts.max} target="_blank" rel="noopener">{common.buttons.max}</a></div>
 						<p className="cap">{c.under}</p>
 						<ChannelLine />
 						<ContactNote />
