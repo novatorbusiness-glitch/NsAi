@@ -275,7 +275,7 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
-var PAGE_VER="1794431697";
+var PAGE_VER="1794432155";
 var D={},subs=[],cur=null,started=false,lastSig="";
 window.__TOCHKA_VER=PAGE_VER;
 var COLLS=["days","weeks","meta","labs","ai"];
@@ -330,6 +330,7 @@ lock.style.cssText="position:fixed;inset:0;z-index:99999;background:#f4f5f4;disp
 lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Личный трекер</b><div style='max-width:280px;line-height:1.5'>Страница открывается только из Telegram у владельца.</div>";
 document.body.appendChild(lock);
 function unlock(){if(lock.parentNode)lock.parentNode.removeChild(lock)}
+function lockMsg(t){try{var d=lock.querySelectorAll("div");if(d[1])d[1].textContent=t}catch(e){}}
 function isAuthed(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)return true}catch(e){}return !!tgInit()}
 function tgReady(){
   try{window.parent.postMessage(JSON.stringify({eventType:"web_app_ready"}),"*")}catch(e){}
@@ -341,9 +342,11 @@ var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram
 tg.onload=function(){tgReady();refresh()};
 document.head.appendChild(tg);
 ping("start");
-/* запросы только с подписью: ждём SDK, дальше тикаем */
-setInterval(function(){if(!isAuthed())return;unlock();refresh()},15000);
-function whenSdk(){if(isAuthed()){unlock();refresh()}else setTimeout(whenSdk,300)}
+/* запросы только с подписью: ждём SDK, дальше тикаем.
+   Панель открываем ТОЛЬКО после первой загрузки данных — иначе мелькает «нулевая» версия. */
+setInterval(function(){if(!isAuthed()||!started)return;refresh()},15000);
+function firstLoad(){lockMsg("Загружаю данные…");return refresh().then(function(){unlock()})}
+function whenSdk(){if(isAuthed()){firstLoad()}else setTimeout(whenSdk,300)}
 whenSdk();
 try{window.addEventListener("focus",function(){if(isAuthed())refresh()})}catch(e){}
 })();
