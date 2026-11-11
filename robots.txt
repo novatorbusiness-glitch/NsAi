@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
+Disallow: /opora/
 
 Sitemap: https://ilya-novitsky.ru/sitemap.xml
