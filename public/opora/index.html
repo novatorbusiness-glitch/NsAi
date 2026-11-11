@@ -275,7 +275,7 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
-var PAGE_VER="1794430254";
+var PAGE_VER="1794431697";
 var D={},subs=[],cur=null,started=false,lastSig="";
 window.__TOCHKA_VER=PAGE_VER;
 var COLLS=["days","weeks","meta","labs","ai"];
@@ -285,7 +285,7 @@ function tgInit(){
   var q=new URLSearchParams(location.search).get("tgWebAppData");if(q)return q;
   return new URLSearchParams(location.hash.replace(/^#/,"")).get("tgWebAppData")||"";
 }
-function hdrs(){var h={"Content-Type":"application/json"};var t=tgInit();if(t)h["x-tg-initdata"]=t;return h}
+function hdrs(){return {"Content-Type":"application/json"}}
 function ping(){}
 function dsnap(c,id){var v=(D[c]||{})[id];return {id:id,exists:v!==undefined,data:function(){return v===undefined?undefined:JSON.parse(JSON.stringify(v))},ref:dref(c,id)}}
 function csnap(c){var docs=Object.keys(D[c]||{}).map(function(id){return dsnap(c,id)});return {docs:docs,size:docs.length,empty:!docs.length,forEach:function(f){docs.forEach(f)},metadata:{fromCache:false}}}
@@ -296,14 +296,15 @@ function banner(msg){var b=document.getElementById("banner")||document.querySele
   s.style.cssText="position:sticky;top:0;z-index:9999;background:#fbefe2;padding:8px 16px;font:13px system-ui";
   s.textContent=msg;document.body.insertBefore(s,document.body.firstChild)}}
 function refresh(){if(cur)return cur;
-  cur=fetch(API,{method:"POST",cache:"no-store",headers:hdrs(),body:JSON.stringify({op:"read"})}).then(function(r){return r.json()})
+  cur=fetch(API,{method:"POST",cache:"no-store",headers:hdrs(),body:JSON.stringify({op:"read",initData:tgInit()})}).then(function(r){return r.json()})
     .then(function(j){if(!j||!j.ok)throw new Error((j&&j.error)||"bad payload");
       var sig=JSON.stringify(j.data);var changed=sig!==lastSig;lastSig=sig;D=j.data||{};
       if(changed){subs.forEach(fire)}})
     .catch(function(e){ping(e&&e.message||e);if(!started)banner("Нет связи: открой страницу из Telegram.")})
     .then(function(){started=true;cur=null});
   return cur}
-function post(req){return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stringify(req)})
+function post(req){var body=Object.assign({initData:tgInit()},req);
+  return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stringify(body)})
   .then(function(r){return r.json().catch(function(){return {ok:false}})})
   .then(function(j){if(!j||!j.ok)ping("post "+(req&&req.op||"")+" → "+((j&&j.error)||"нет ответа"));if(!j||!j.ok)throw {code:"server",message:(j&&j.error)||"сервер отклонил операцию"};return refresh()})
   .catch(function(e){if(!e||e.code!=="server")ping("post "+(req&&req.op||"")+" → сеть: "+String(e&&e.message||e).slice(0,120));throw e})}
