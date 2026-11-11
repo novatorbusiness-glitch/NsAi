@@ -323,7 +323,7 @@ window.claude={use:function(n){
   return Promise.reject({code:"no_impl"})}};
 var lock=document.createElement("div");
 lock.style.cssText="position:fixed;inset:0;z-index:99999;background:#f4f5f4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:16px system-ui;color:#2a3b34;text-align:center;padding:24px";
-lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Точка опоры — личный трекер</b><div style='max-width:280px;line-height:1.5'>Открой через Telegram: бот <b>@opora_habits_bot</b> → кнопка меню внизу справа.<br>Данные видны только владельцу.</div>";
+lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Личный трекер</b><div style='max-width:280px;line-height:1.5'>Страница открывается только из Telegram у владельца.</div>";
 document.body.appendChild(lock);
 function unlock(){lock.remove()}
 var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram-web-app.js";
