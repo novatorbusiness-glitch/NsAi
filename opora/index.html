@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name="robots" content="noindex, nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Личное · Точка опоры</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -321,8 +321,20 @@ window.claude={use:function(n){
   if(n==="db")return Promise.resolve({collection:function(c){return cref(c)},doc:function(p){var i=p.indexOf("/");return dref(p.slice(0,i),p.slice(i+1))}});
   if(n==="user")return Promise.resolve({can:function(){return Promise.resolve(true)}});
   return Promise.reject({code:"no_impl"})}};
+var lock=document.createElement("div");
+lock.style.cssText="position:fixed;inset:0;z-index:99999;background:#f4f5f4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:16px system-ui;color:#2a3b34;text-align:center;padding:24px";
+lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Точка опоры — личный трекер</b><div style='max-width:280px;line-height:1.5'>Открой через Telegram: бот <b>@opora_habits_bot</b> → кнопка меню внизу справа.<br>Данные видны только владельцу.</div>";
+document.body.appendChild(lock);
+function unlock(){lock.remove()}
 var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram-web-app.js";
-tg.onload=function(){try{window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}catch(e){}refresh()};
+tg.onload=function(){
+  var authed=false;
+  try{authed=!!(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)}catch(e){}
+  if(!authed)authed=!!new URLSearchParams(location.search).get("tgWebAppData");
+  if(!authed)return; /* обычный браузер — замок остаётся */
+  try{window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}catch(e){}
+  unlock();refresh();
+};
 document.head.appendChild(tg);
 refresh();setInterval(refresh,15000);
 try{window.addEventListener("focus",refresh)}catch(e){}
