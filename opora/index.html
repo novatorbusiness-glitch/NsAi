@@ -275,8 +275,16 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
+var PAGE_VER="1794421266";
 var D={},subs=[],cur=null,started=false,lastSig="";
 var COLLS=["days","weeks","meta","labs","ai"];
+function ping(err){
+  try{
+    fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({op:"ping",v:PAGE_VER,href:String(location.href).slice(0,180),
+        authed:isAuthed(),initDataLen:(tgInit()||"").length,err:String(err||"").slice(0,180)})}).catch(function(){});
+  }catch(e){}
+}
 function tgInit(){
   try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)return window.Telegram.WebApp.initData}catch(e){}
   return new URLSearchParams(location.search).get("tgWebAppData")||"";
@@ -296,10 +304,10 @@ function banner(msg){var b=document.getElementById("banner")||document.querySele
   s.textContent=msg;document.body.insertBefore(s,document.body.firstChild)}}
 function refresh(){if(cur)return cur;
   cur=fetch(API,{method:"POST",cache:"no-store",headers:hdrs(),body:JSON.stringify({op:"read"})}).then(function(r){return r.json()})
-    .then(function(j){if(!j||!j.ok)throw new Error("bad payload");
+    .then(function(j){if(!j||!j.ok)throw new Error((j&&j.error)||"bad payload");
       var sig=JSON.stringify(j.data);var changed=sig!==lastSig;lastSig=sig;D=j.data||{};
       if(changed){subs.forEach(fire)}})
-    .catch(function(){if(!started)banner("Нет связи: открой страницу из Telegram.")})
+    .catch(function(e){ping(e&&e.message||e);if(!started)banner("Нет связи: открой страницу из Telegram.")})
     .then(function(){started=true;cur=null});
   return cur}
 function post(req){return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stringify(req)})
@@ -330,6 +338,7 @@ function isAuthed(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Teleg
 var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram-web-app.js";
 tg.onload=function(){try{window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}catch(e){}}
 document.head.appendChild(tg);
+ping("start");
 /* запросы только с подписью: ждём SDK, дальше тикаем */
 setInterval(function(){if(!isAuthed())return;unlock();refresh()},15000);
 function whenSdk(){if(isAuthed()){unlock();refresh()}else setTimeout(whenSdk,300)}
