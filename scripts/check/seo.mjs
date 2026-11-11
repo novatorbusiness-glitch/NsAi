@@ -13,6 +13,7 @@ for (const f of pages()) {
 	const html = fs.readFileSync(f, "utf8");
 	const r = rel(f);
 	if (isRedirect(html) || r === "/404.html" || /google[0-9a-f]+\.html$/.test(r)) continue;
+	if (r.startsWith("/opora/")) continue; // оболочка мини-аппа «Точка опоры» — приложение, не контентная страница (noindex)
 	const title = unesc(html.match(/<title>([^<]*)<\/title>/)?.[1] || "");
 	const desc = unesc(html.match(/<meta name="description" content="([^"]*)"/)?.[1] || "");
 	const canon = html.match(/<link rel="canonical" href="([^"]*)"/)?.[1];
