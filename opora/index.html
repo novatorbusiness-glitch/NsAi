@@ -325,19 +325,16 @@ var lock=document.createElement("div");
 lock.style.cssText="position:fixed;inset:0;z-index:99999;background:#f4f5f4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:16px system-ui;color:#2a3b34;text-align:center;padding:24px";
 lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Личный трекер</b><div style='max-width:280px;line-height:1.5'>Страница открывается только из Telegram у владельца.</div>";
 document.body.appendChild(lock);
-function unlock(){lock.remove()}
+function unlock(){if(lock.parentNode)lock.parentNode.removeChild(lock)}
+function isAuthed(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)return true}catch(e){}return !!new URLSearchParams(location.search).get("tgWebAppData")}
 var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram-web-app.js";
-tg.onload=function(){
-  var authed=false;
-  try{authed=!!(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)}catch(e){}
-  if(!authed)authed=!!new URLSearchParams(location.search).get("tgWebAppData");
-  if(!authed)return; /* обычный браузер — замок остаётся */
-  try{window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}catch(e){}
-  unlock();refresh();
-};
+tg.onload=function(){try{window.Telegram.WebApp.ready();window.Telegram.WebApp.expand()}catch(e){}}
 document.head.appendChild(tg);
-refresh();setInterval(refresh,15000);
-try{window.addEventListener("focus",refresh)}catch(e){}
+/* запросы только с подписью: ждём SDK, дальше тикаем */
+setInterval(function(){if(!isAuthed())return;unlock();refresh()},15000);
+function whenSdk(){if(isAuthed()){unlock();refresh()}else setTimeout(whenSdk,300)}
+whenSdk();
+try{window.addEventListener("focus",function(){if(isAuthed())refresh()})}catch(e){}
 })();
 </script>
 
