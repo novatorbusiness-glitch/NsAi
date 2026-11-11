@@ -299,7 +299,7 @@ function refresh(){if(cur)return cur;
     .then(function(j){if(!j||!j.ok)throw new Error("bad payload");
       var sig=JSON.stringify(j.data);var changed=sig!==lastSig;lastSig=sig;D=j.data||{};
       if(changed){subs.forEach(fire)}})
-    .catch(function(){if(!started)banner("Нет связи с ботом: открой страницу через Telegram (@opora_habits_bot).")})
+    .catch(function(){if(!started)banner("Нет связи: открой страницу из Telegram.")})
     .then(function(){started=true;cur=null});
   return cur}
 function post(req){return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stringify(req)})
