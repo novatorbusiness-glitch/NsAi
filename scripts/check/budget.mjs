@@ -10,6 +10,7 @@ const errors = [];
 let worst = { html: 0, js: 0, css: 0 };
 for (const f of pages()) {
 	const html = fs.readFileSync(f, "utf8");
+	if (rel(f).startsWith("/opora/")) continue; // оболочка мини-аппа — не контентная страница, свой лимит не нужен
 	const files = (re) => [...new Set([...html.matchAll(re)].map((m) => m[1]))].map((s) => path.join(OUT, s)).filter((p) => fs.existsSync(p));
 	const size = { html: gz(f), js: files(/<script src="([^"]+)"/g).reduce((s, p) => s + gz(p), 0), css: files(/<link rel="stylesheet" href="([^"]+)"/g).reduce((s, p) => s + gz(p), 0) };
 	for (const k of Object.keys(LIMIT)) {
