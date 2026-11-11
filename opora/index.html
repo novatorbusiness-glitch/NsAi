@@ -275,14 +275,19 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
-var PAGE_VER="1794421266";
+var PAGE_VER="1794421559";
 var D={},subs=[],cur=null,started=false,lastSig="";
 var COLLS=["days","weeks","meta","labs","ai"];
+function lockstat(t){try{var el=document.getElementById("lockstat");if(el)el.textContent=t}catch(e){}}
 function ping(err){
+  var msg="v"+PAGE_VER+" | auth:"+(isAuthed()?"да":"нет")+" | init:"+(tgInit()||"").length+(err?" | "+String(err).slice(0,90):"");
+  try{lockstat(msg)}catch(e){}
   try{
     fetch(API,{method:"POST",headers:{"Content-Type":"application/json"},
       body:JSON.stringify({op:"ping",v:PAGE_VER,href:String(location.href).slice(0,180),
-        authed:isAuthed(),initDataLen:(tgInit()||"").length,err:String(err||"").slice(0,180)})}).catch(function(){});
+        authed:isAuthed(),initDataLen:(tgInit()||"").length,err:String(err||"").slice(0,180)})})
+      .then(function(r){try{lockstat(msg+" | отправлено")}catch(e){}})
+      .catch(function(pe){try{lockstat(msg+" | НЕ ОТПРАВЛЕНО: "+String(pe).slice(0,60))}catch(e){}});
   }catch(e){}
 }
 function tgInit(){
@@ -331,7 +336,7 @@ window.claude={use:function(n){
   return Promise.reject({code:"no_impl"})}};
 var lock=document.createElement("div");
 lock.style.cssText="position:fixed;inset:0;z-index:99999;background:#f4f5f4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font:16px system-ui;color:#2a3b34;text-align:center;padding:24px";
-lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Личный трекер</b><div style='max-width:280px;line-height:1.5'>Страница открывается только из Telegram у владельца.</div>";
+lock.innerHTML="<div style='font-size:44px'>🔒</div><b>Личный трекер</b><div style='max-width:280px;line-height:1.5'>Страница открывается только из Telegram у владельца.</div><div id='lockstat' style='font:11px monospace;color:#9aa89f;max-width:280px;word-break:break-all'></div>";
 document.body.appendChild(lock);
 function unlock(){if(lock.parentNode)lock.parentNode.removeChild(lock)}
 function isAuthed(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)return true}catch(e){}return !!new URLSearchParams(location.search).get("tgWebAppData")}
