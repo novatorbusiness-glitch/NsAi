@@ -275,11 +275,17 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
-var PAGE_VER="1794428659";
+var PAGE_VER="1794430254";
 var D={},subs=[],cur=null,started=false,lastSig="";
 window.__TOCHKA_VER=PAGE_VER;
 var COLLS=["days","weeks","meta","labs","ai"];
 function lockstat(t){try{var el=document.getElementById("lockstat");if(el)el.textContent=t}catch(e){}}
+function tgInit(){
+  try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)return window.Telegram.WebApp.initData}catch(e){}
+  var q=new URLSearchParams(location.search).get("tgWebAppData");if(q)return q;
+  return new URLSearchParams(location.hash.replace(/^#/,"")).get("tgWebAppData")||"";
+}
+function hdrs(){var h={"Content-Type":"application/json"};var t=tgInit();if(t)h["x-tg-initdata"]=t;return h}
 function ping(){}
 function dsnap(c,id){var v=(D[c]||{})[id];return {id:id,exists:v!==undefined,data:function(){return v===undefined?undefined:JSON.parse(JSON.stringify(v))},ref:dref(c,id)}}
 function csnap(c){var docs=Object.keys(D[c]||{}).map(function(id){return dsnap(c,id)});return {docs:docs,size:docs.length,empty:!docs.length,forEach:function(f){docs.forEach(f)},metadata:{fromCache:false}}}
@@ -301,7 +307,7 @@ function post(req){return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stri
   .then(function(r){return r.json().catch(function(){return {ok:false}})})
   .then(function(j){if(!j||!j.ok)ping("post "+(req&&req.op||"")+" → "+((j&&j.error)||"нет ответа"));if(!j||!j.ok)throw {code:"server",message:(j&&j.error)||"сервер отклонил операцию"};return refresh()})
   .catch(function(e){if(!e||e.code!=="server")ping("post "+(req&&req.op||"")+" → сеть: "+String(e&&e.message||e).slice(0,120));throw e})}
-try{var __c=JSON.parse(localStorage.getItem(LSK)||"null");if(__c&&__c.v!==PAGE_VER){localStorage.removeItem("tochka-cache-v1")}}catch(e){}
+try{var __c=JSON.parse(localStorage.getItem("tochka-cache-v1")||"null");if(__c&&__c.v!==PAGE_VER){localStorage.removeItem("tochka-cache-v1")}}catch(e){}
 function dref(c,id){return {id:id,path:c+"/"+id,
   onSnapshot:onS(function(){return dsnap(c,id)}),
   get:function(){return refresh().then(function(){return dsnap(c,id)})},
@@ -738,7 +744,6 @@ function ensureMeta(){const m=M();if(!m.start)return;let ch=false;if(!m.dofaStar
   if(!m.mig2){Object.keys(S.days).forEach(d=>{const c=S.days[d].counts;if(c&&c.snus!=null){c['snus.vk']=(c['snus.vk']||0)+c.snus;delete c.snus;touchD(d)}});if(m.est&&m.est.snus!=null&&m.est['snus.vk']==null)m.est['snus.vk']=m.est.snus;m.mig2=true;ch=true}
   if(ch)touch('meta/state')}
 function afterSnap(){
-  try{window.tochkaPing&&window.tochkaPing("afterSnap: booted="+booted+" loaded="+JSON.stringify(loaded)+" dirty="+dirty.size+" start="+((S.meta&&S.meta.start)||"нет")+" days="+Object.keys(S.days||{}).length+" dbState="+dbState+" syncErr="+(syncErr||"-"))}catch(e){}
   if(!allLoaded())return;
   booted=true;ensureMeta();
   if(dirty.size){clearTimeout(flushT);flushT=setTimeout(flush,300)}
@@ -749,7 +754,7 @@ async function boot(){
   if(window.claude&&window.claude.use){window.claude.use('sample').then(x=>{sample=x;maybeWeekly();if(tab==='stats')softRender()},()=>{})}
   let d=null;
   try{d=window.claude&&window.claude.use?await window.claude.use('db'):null}catch(e){d=null}
-  if(!d){window.tochkaPing&&window.tochkaPing('dbState=none: window.claude нет');dbState='none';booted=true;ensureMeta();render();return}
+  if(!d){dbState='none';booted=true;ensureMeta();render();return}
   db=d;dbState='ok';syncUI();
   try{assets=await window.claude.use('assets')}catch(e){assets=null}
   db.collection('ai').onSnapshot(q=>{AIH=q.docs.filter(x=>x.exists).map(x=>({id:x.id,...clone(x.data())}));aiLoaded=true;maybeWeekly();if(tab==='stats'&&!aiBusy)softRender()},()=>{});
