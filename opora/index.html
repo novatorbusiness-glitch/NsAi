@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=robots content="noindex,nofollow"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Личное · Точка опоры</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -275,7 +275,7 @@ section.card+section.card,section.card+.banner,.banner+section.card{margin-top:1
 <script>/* бот-страница: база «Точка опоры» в Supabase через Edge Function — чтение и запись настоящие */
 (function(){
 var API="https://puduuhyeddxjmhiponxl.supabase.co/functions/v1/app";
-var PAGE_VER="1794432155";
+var PAGE_VER="1794498710";
 var D={},subs=[],cur=null,started=false,lastSig="";
 window.__TOCHKA_VER=PAGE_VER;
 var COLLS=["days","weeks","meta","labs","ai"];
@@ -286,11 +286,10 @@ function tgInit(){
   return new URLSearchParams(location.hash.replace(/^#/,"")).get("tgWebAppData")||"";
 }
 function hdrs(){return {"Content-Type":"application/json"}}
-function ping(){}
 function dsnap(c,id){var v=(D[c]||{})[id];return {id:id,exists:v!==undefined,data:function(){return v===undefined?undefined:JSON.parse(JSON.stringify(v))},ref:dref(c,id)}}
 function csnap(c){var docs=Object.keys(D[c]||{}).map(function(id){return dsnap(c,id)});return {docs:docs,size:docs.length,empty:!docs.length,forEach:function(f){docs.forEach(f)},metadata:{fromCache:false}}}
 function onS(mk){return function(cb,err){var s={mk:mk,cb:cb,err:err};subs.push(s);setTimeout(function(){fire(s)},0);return function(){var i=subs.indexOf(s);if(i>=0)subs.splice(i,1)}}}
-function fire(s){try{s.cb(s.mk())}catch(e){ping("snapshot cb: "+String(e&&e.message||e).slice(0,150));if(s.err)s.err(e)}}
+function fire(s){try{s.cb(s.mk())}catch(e){if(s.err)s.err(e)}}
 function banner(msg){var b=document.getElementById("banner")||document.querySelector(".banner");
   if(b){b.textContent=msg;b.hidden=!msg}else if(msg){var s=document.createElement("div");
   s.style.cssText="position:sticky;top:0;z-index:9999;background:#fbefe2;padding:8px 16px;font:13px system-ui";
@@ -300,14 +299,13 @@ function refresh(){if(cur)return cur;
     .then(function(j){if(!j||!j.ok)throw new Error((j&&j.error)||"bad payload");
       var sig=JSON.stringify(j.data);var changed=sig!==lastSig;lastSig=sig;D=j.data||{};
       if(changed){subs.forEach(fire)}})
-    .catch(function(e){ping(e&&e.message||e);if(!started)banner("Нет связи: открой страницу из Telegram.")})
+    .catch(function(e){if(!started)banner("Нет связи: открой страницу из Telegram.")})
     .then(function(){started=true;cur=null});
   return cur}
 function post(req){var body=Object.assign({initData:tgInit()},req);
   return fetch(API,{method:"POST",headers:hdrs(),body:JSON.stringify(body)})
   .then(function(r){return r.json().catch(function(){return {ok:false}})})
-  .then(function(j){if(!j||!j.ok)ping("post "+(req&&req.op||"")+" → "+((j&&j.error)||"нет ответа"));if(!j||!j.ok)throw {code:"server",message:(j&&j.error)||"сервер отклонил операцию"};return refresh()})
-  .catch(function(e){if(!e||e.code!=="server")ping("post "+(req&&req.op||"")+" → сеть: "+String(e&&e.message||e).slice(0,120));throw e})}
+  .then(function(j){if(!j||!j.ok)throw {code:"server",message:(j&&j.error)||"сервер отклонил операцию"};return refresh()})}
 try{var __c=JSON.parse(localStorage.getItem("tochka-cache-v1")||"null");if(__c&&__c.v!==PAGE_VER){localStorage.removeItem("tochka-cache-v1")}}catch(e){}
 function dref(c,id){return {id:id,path:c+"/"+id,
   onSnapshot:onS(function(){return dsnap(c,id)}),
@@ -341,7 +339,6 @@ function tgReady(){
 var tg=document.createElement("script");tg.src="https://telegram.org/js/telegram-web-app.js";
 tg.onload=function(){tgReady();refresh()};
 document.head.appendChild(tg);
-ping("start");
 /* запросы только с подписью: ждём SDK, дальше тикаем.
    Панель открываем ТОЛЬКО после первой загрузки данных — иначе мелькает «нулевая» версия. */
 setInterval(function(){if(!isAuthed()||!started)return;refresh()},15000);
@@ -704,7 +701,7 @@ let db=null,dbState='pending',booted=false,syncErr=null,pendingRender=false;
 const dirty=new Set();let flushT=null,flushing=false;
 const loaded={meta:false,days:false,weeks:false};
 const allLoaded=()=>loaded.meta&&loaded.days&&loaded.weeks;
-function cache(){try{localStorage.setItem(LSK,JSON.stringify(S))}catch(e){}}
+function cache(){try{localStorage.setItem(LSK,JSON.stringify(Object.assign({v:window.__TOCHKA_VER},S)))}catch(e){}}
 function touch(p){dirty.add(p);cache();clearTimeout(flushT);flushT=setTimeout(flush,600);syncUI()}
 const touchD=d=>touch('days/'+d);
 function bodyOf(p){const[c,id]=p.split('/');return c==='meta'?S.meta:c==='days'?S.days[id]:S.weeks[id]}
